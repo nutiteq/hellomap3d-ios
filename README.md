@@ -1,6 +1,6 @@
-hellomap3d-ios
+Nutiteq HelloMap 3D for iOs
 ==============
 
 Here are some simple example apps with Nutiteq Maps SDK for iOS.
 
-See individual project readme files for details.
+Developer guides are in [Wiki pages](https://github.com/nutiteq/hellomap3d-ios/wiki)
