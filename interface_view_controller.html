@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK iOs: Nutiteq SDK for iOS</title>
+<title>Nutiteq Maps SDK iOs: ViewController Interface Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('index.html','');});
+$(document).ready(function(){initNavTree('interface_view_controller.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -90,27 +90,44 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Nutiteq SDK for iOS </div>  </div>
+<div class="title">ViewController Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
-Introduction</h1>
-<p>Nutiteq SDK for iOS is a native-level maps library, provided as prebuilt binary for armv7 and x86 architectures and with ObjectiveC API.</p>
-<h1><a class="anchor" id="install_sec"></a>
-Getting started</h1>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>```</p>
+<p>and implementation <b>ViewController.mm</b> : ```ObjectiveC</p>
+<p>#import "ViewController.h"</p>
+<p><a class="el" href="interface_view_controller.html">ViewController</a></p>
 <ul>
-<li>See tutorials in <a href="https://github.com/nutiteq/hellomap3d-ios/wiki/">wiki pages</a></li>
-<li><a href="https://github.com/nutiteq/hellomap3d-ios">View On GitHub</a></li>
+<li><p class="startli">(void)viewDidLoad { [super viewDidLoad]; // Initialize a OSM raster data source NTHTTPRasterTileDataSource* rasterDataSource = [[<a class="el" href="interface_n_t_h_t_t_p_raster_tile_data_source.html">NTHTTPRasterTileDataSource</a> alloc] initWithMinZoom:0 maxZoom:24 baseURL:"<a href="http://api.tiles.mapbox.com/v3/nutiteq.map-j6a1wkx0/{zoom}/{x}/{y}.png">http://api.tiles.mapbox.com/v3/nutiteq.map-j6a1wkx0/{zoom}/{x}/{y}.png</a>"];</p>
+<p class="startli">// Initialize a raster layer with the data source, and add it to the MapView NTRasterTileLayer* rasterLayer = [[<a class="el" href="interface_n_t_raster_tile_layer.html">NTRasterTileLayer</a> alloc] initWithDataSource:rasterDataSource]; [[self getLayers] add:rasterLayer]; }</p>
+</li>
 </ul>
-<div class="image">
-<img src="screenshot_sample.png"  alt="Screenshot sample"/>
-</div>
- </div></div><!-- contents -->
+<p>```</p>
+<h3>2. Modify storyboard to enable view</h3>
+<p><em>Summary: Default storyboard template uses UIView class, we need GLKView here.</em></p>
+<ol type="1">
+<li>Repeat next step with both Main_iPhone.storyboard and Main_iPad.storyboard files.</li>
+</ol>
+<ol type="1">
+<li>Open Storyboard, find View Controller Scene -&gt; View Controller and View. From Navigator window find Identity Inspector, and change the first parameter (Custom Class) to <b>GLKView</b> (from the default UIView).</li>
+</ol>
+<h3>3. Run the app</h3>
+<p>Run the app - you should see the map with OpenStreetMap, as defined in your <a class="el" href="interface_view_controller.html">ViewController</a>. It is zoomable, rotatable and tilt-able out of the box, with the default world view.</p>
+<h3>4. View manipulations</h3>
+<p>Manipulating the map view directly:</p>
+<p>```ObjectiveC // Define a projection, that will be used for most MapView, MapEventListener and Options methods NTEPSG3857* proj = [[<a class="el" href="interface_n_t_e_p_s_g3857.html">NTEPSG3857</a> alloc] init]; // Set Option for map (EPSG3857 is anyway default projection) [[self getOptions] setBaseProjection:proj];</p>
+<p>// Set initial location and other parameters, don't animate [self setFocusPos:[proj fromWgs84:[[<a class="el" href="interface_n_t_map_pos.html">NTMapPos</a> alloc] initWithX:24.650415 y:59.428773]] durationSeconds:0]; [self setZoom:14 durationSeconds:0]; [self setRotation:0 durationSeconds:0]; ``` </p>
+</div><hr/>The documentation for this interface was generated from the following file:<ul>
+<li>dox/getstarted.md</li>
+</ul>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Jun 29 2014 18:48:13 for Nutiteq Maps SDK iOs by
+    <li class="navelem"><a class="el" href="interface_view_controller.html">ViewController</a></li>
+    <li class="footer">Generated on Sun Jun 29 2014 18:36:06 for Nutiteq Maps SDK iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

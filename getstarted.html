@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK iOs: Nutiteq SDK for iOS</title>
+<title>Nutiteq Maps SDK iOs: Getting Started</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('index.html','');});
+$(document).ready(function(){initNavTree('getstarted.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -90,27 +90,35 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Nutiteq SDK for iOS </div>  </div>
+<div class="title">Getting Started </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
-Introduction</h1>
-<p>Nutiteq SDK for iOS is a native-level maps library, provided as prebuilt binary for armv7 and x86 architectures and with ObjectiveC API.</p>
-<h1><a class="anchor" id="install_sec"></a>
-Getting started</h1>
-<ul>
-<li>See tutorials in <a href="https://github.com/nutiteq/hellomap3d-ios/wiki/">wiki pages</a></li>
-<li><a href="https://github.com/nutiteq/hellomap3d-ios">View On GitHub</a></li>
-</ul>
-<div class="image">
-<img src="screenshot_sample.png"  alt="Screenshot sample"/>
-</div>
- </div></div><!-- contents -->
+<div class="textblock"><h3>1. Create new project with Nutiteq SDK framework</h3>
+<p><em>Summary: Create new project, add SDK framework (binary and headers) and assets to it, and make sure that builder will find new framework .h files. Also add dependencies: GLKit and libz.</em></p>
+<ol type="1">
+<li>Create a new Xcode project. 'File' -&gt; 'New' -&gt; 'Project' -&gt; 'Single View application'.</li>
+</ol>
+<ol type="1">
+<li>Copy <b>Nuti.framework</b> to the project root directory.</li>
+</ol>
+<ol type="1">
+<li>Add dependencies: <b>GLkit.framework</b> and <b>libz.dynlib</b> frameworks (Build Phases &gt; Link Binary with Libraries)</li>
+</ol>
+<h3>2. Create Controller for Map View</h3>
+<p><em>Summary: Extend <a class="el" href="interface_view_controller.html">ViewController</a> and add MapView manipulation code into it. Make sure it is Objective C++, not plain Objective C class</em></p>
+<ol type="1">
+<li><b>Rename</b> 'ViewController.m' (comes with template) to 'ViewController.mm' to avoid compilation issues</li>
+</ol>
+<ol type="1">
+<li>Add minimal code to <b>ViewController.h</b> for map creation and setup:</li>
+</ol>
+<p>```ObjectiveC #include &lt;Nuti/Nuti.h&gt; #import &lt;UIKit/UIKit.h&gt; </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Jun 29 2014 18:48:13 for Nutiteq Maps SDK iOs by
+    <li class="footer">Generated on Sun Jun 29 2014 18:36:05 for Nutiteq Maps SDK iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
