@@ -1,9 +1,5 @@
 var hierarchy =
 [
-    [ "Nuti::BalloonPopup", "class_nuti_1_1_balloon_popup.html", null ],
-    [ "Nuti::BalloonPopupStyle", "class_nuti_1_1_balloon_popup_style.html", null ],
-    [ "Nuti::BalloonPopupStyleBuilder", "class_nuti_1_1_balloon_popup_style_builder.html", null ],
-    [ "Nuti::BitmapUtils", "class_nuti_1_1_bitmap_utils.html", null ],
     [ "MatrixDBase", "interface_matrix_d_base.html", null ],
     [ "MatrixFBase", "interface_matrix_f_base.html", null ],
     [ "NTBaseMapView", "interface_n_t_base_map_view.html", null ],
@@ -95,8 +91,5 @@ var hierarchy =
     ] ],
     [ "NTVectorElementClickInfo", "interface_n_t_vector_element_click_info.html", null ],
     [ "NTVectorElementsClickInfo", "interface_n_t_vector_elements_click_info.html", null ],
-    [ "NTViewState", "interface_n_t_view_state.html", null ],
-    [ "Nuti::Text", "class_nuti_1_1_text.html", null ],
-    [ "Nuti::TextStyle", "class_nuti_1_1_text_style.html", null ],
-    [ "Nuti::TextStyleBuilder", "class_nuti_1_1_text_style_builder.html", null ]
+    [ "NTViewState", "interface_n_t_view_state.html", null ]
 ];

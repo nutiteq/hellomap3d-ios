@@ -1,14 +1,5 @@
 var annotated =
 [
-    [ "Nuti", null, [
-      [ "BalloonPopupStyle", "class_nuti_1_1_balloon_popup_style.html", "class_nuti_1_1_balloon_popup_style" ],
-      [ "BalloonPopupStyleBuilder", "class_nuti_1_1_balloon_popup_style_builder.html", "class_nuti_1_1_balloon_popup_style_builder" ],
-      [ "TextStyle", "class_nuti_1_1_text_style.html", "class_nuti_1_1_text_style" ],
-      [ "TextStyleBuilder", "class_nuti_1_1_text_style_builder.html", "class_nuti_1_1_text_style_builder" ],
-      [ "BitmapUtils", "class_nuti_1_1_bitmap_utils.html", null ],
-      [ "BalloonPopup", "class_nuti_1_1_balloon_popup.html", "class_nuti_1_1_balloon_popup" ],
-      [ "Text", "class_nuti_1_1_text.html", "class_nuti_1_1_text" ]
-    ] ],
     [ "MatrixDBase", "interface_matrix_d_base.html", null ],
     [ "MatrixFBase", "interface_matrix_f_base.html", null ],
     [ "NTAssetRasterTileDataSource", "interface_n_t_asset_raster_tile_data_source.html", "interface_n_t_asset_raster_tile_data_source" ],

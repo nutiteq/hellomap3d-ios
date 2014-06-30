@@ -14,19 +14,15 @@ var NAVTREE =
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ]
       ] ]
-    ] ],
-    [ "Files", null, [
-      [ "File List", "files.html", "files" ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-".html",
-"interface_n_t_billboard.html#a52e1c0b7b98daecff72dfcbf46a35199",
-"interface_n_t_map_vec.html#a6c35d1207f353bb689b6f1ce8c67c361",
-"interface_n_t_vector_data_source.html#a6304f3c44f7b30dbafdea2c7a32ef8da"
+"annotated.html",
+"interface_n_t_line_style_builder.html#aca8872304eff49630aa139b219d3a551",
+"interface_n_t_polygon_style_builder.html#aa9928646fa7e59421786e67ca8d33461"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
