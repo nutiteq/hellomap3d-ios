@@ -10,9 +10,9 @@
 
 - (void)viewDidLoad
 {
-    //[NTLog setShowDebug:YES];
-    //[NTLog setShowInfo:YES];
-    
+//    [NTLog SetShowDebug:YES];
+//    [NTLog SetShowInfo:YES];
+  
     [super viewDidLoad];
     
     // Set the base projection, that will be used for most MapView, MapEventListener and Options methods
