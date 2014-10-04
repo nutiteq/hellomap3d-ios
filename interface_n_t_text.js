@@ -1,6 +1,6 @@
 var interface_n_t_text =
 [
-    [ "drawBitmap:", "interface_n_t_text.html#ac0d12d02db9998c5fa90d57ec4ba143b", null ],
+    [ "drawBitmap:", "interface_n_t_text.html#ab579a0f7711d09d2eab4cbdee1a9551b", null ],
     [ "getStyle", "interface_n_t_text.html#a0e9018977ffa414d89080354cde1c26b", null ],
     [ "getText", "interface_n_t_text.html#a6d914350744d3c8c5d6740110388d8ca", null ],
     [ "initWithBaseBillboard:style:text:", "interface_n_t_text.html#a8d6da75fc82bed4ac2d60f15793ea6a7", null ],

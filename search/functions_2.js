@@ -1,6 +1,9 @@
 var searchData=
 [
+  ['cancelalltasks',['cancelAllTasks',['../interface_n_t_base_map_view.html#ae33f7ab1a982ca708ca71cba9d83c2f8',1,'NTBaseMapView']]],
   ['circleintersects_3aradius_3a',['circleIntersects:radius:',['../interface_n_t_frustum.html#a5887f29b764e71ad11435df3a0ebcaa7',1,'NTFrustum']]],
+  ['clearallcaches',['clearAllCaches',['../interface_n_t_base_map_view.html#a908a7a4fe1ffa6ad7326c7ef61403b5c',1,'NTBaseMapView']]],
+  ['clearpreloadingcaches',['clearPreloadingCaches',['../interface_n_t_base_map_view.html#a0d33cdf5a196bce627cd5eaedee05138',1,'NTBaseMapView']]],
   ['clone_3a',['clone:',['../interface_n_t_map_envelope.html#a362e24d0ee7267e2201016554b9841ad',1,'NTMapEnvelope::clone:()'],['../interface_n_t_style_builder.html#a940e4a2b8046a755ad6a57954e57a3c9',1,'NTStyleBuilder::clone:()']]],
   ['compresstopng',['compressToPng',['../interface_n_t_bitmap.html#aef76e969d93d46888f59588576add8fa',1,'NTBitmap']]],
   ['contains_3a',['contains:',['../interface_n_t_map_envelope.html#a228b2e2e66bc7b4e240302f907f5f838',1,'NTMapEnvelope']]],

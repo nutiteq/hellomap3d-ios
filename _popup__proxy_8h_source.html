@@ -122,29 +122,28 @@ $(document).ready(function(){initNavTree('_popup__proxy_8h_source.html','');});
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;-(id)initWithBaseBillboard: (<a class="code" href="interface_n_t_billboard.html">NTBillboard</a>*)baseBillboard style: (<a class="code" href="interface_n_t_popup_style.html">NTPopupStyle</a>*)style;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;-(id)initWithGeometry: (NTPointGeometry*)geometry style: (<a class="code" href="interface_n_t_popup_style.html">NTPopupStyle</a>*)style;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;-(id)initWithPos: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)pos style: (<a class="code" href="interface_n_t_popup_style.html">NTPopupStyle</a>*)style;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;-(<a class="code" href="interface_n_t_bitmap.html">NTBitmap</a>*)drawBitmap: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)anchorScreenPos screenWidth: (<span class="keywordtype">float</span>)screenWidth screenHeight: (<span class="keywordtype">float</span>)screenHeight screenDPI: (<span class="keywordtype">float</span>)screenDPI;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;-(<a class="code" href="interface_n_t_bitmap.html">NTBitmap</a>*)drawBitmap: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)anchorScreenPos screenWidth: (<span class="keywordtype">float</span>)screenWidth screenHeight: (<span class="keywordtype">float</span>)screenHeight dpToPX: (<span class="keywordtype">float</span>)dpToPX;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;-(float)<a class="code" href="interface_n_t_popup.html#a3a78fd3c48ce6a1bf118b6f3ad18ab98">getAnchorPointX</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;-(void)setAnchorPointX: (<span class="keywordtype">float</span>)anchorPointX;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;-(float)<a class="code" href="interface_n_t_popup.html#a99f728134d93895361ce8d384d8542d3">getAnchorPointY</a>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;-(void)setAnchorPointY: (<span class="keywordtype">float</span>)anchorPointY;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;-(<a class="code" href="interface_n_t_popup_style.html">NTPopupStyle</a>*)<a class="code" href="interface_n_t_popup.html#a121b595cd20e7ba902f10d2606387591">getStyle</a>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;-(void)setStyle: (<a class="code" href="interface_n_t_popup_style.html">NTPopupStyle</a>*)style;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;-(void)dealloc;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;-(float)<a class="code" href="interface_n_t_popup.html#a99f728134d93895361ce8d384d8542d3">getAnchorPointY</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;-(void)setAnchorPointX: (<span class="keywordtype">float</span>)anchorPointX anchorPointY: (<span class="keywordtype">float</span>)anchorPointY;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;-(<a class="code" href="interface_n_t_popup_style.html">NTPopupStyle</a>*)<a class="code" href="interface_n_t_popup.html#a121b595cd20e7ba902f10d2606387591">getStyle</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;-(void)setStyle: (<a class="code" href="interface_n_t_popup_style.html">NTPopupStyle</a>*)style;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;-(void)dealloc;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="interface_n_t_map_pos_html"><div class="ttname"><a href="interface_n_t_map_pos.html">NTMapPos</a></div><div class="ttdef"><b>Definition:</b> MapPos_proxy.h:27</div></div>
 <div class="ttc" id="interface_n_t_popup_html_a3a78fd3c48ce6a1bf118b6f3ad18ab98"><div class="ttname"><a href="interface_n_t_popup.html#a3a78fd3c48ce6a1bf118b6f3ad18ab98">-[NTPopup getAnchorPointX]</a></div><div class="ttdeci">float getAnchorPointX()</div></div>
 <div class="ttc" id="interface_n_t_popup_html"><div class="ttname"><a href="interface_n_t_popup.html">NTPopup</a></div><div class="ttdef"><b>Definition:</b> Popup_proxy.h:28</div></div>
 <div class="ttc" id="interface_n_t_popup_html_a121b595cd20e7ba902f10d2606387591"><div class="ttname"><a href="interface_n_t_popup.html#a121b595cd20e7ba902f10d2606387591">-[NTPopup getStyle]</a></div><div class="ttdeci">NTPopupStyle * getStyle()</div></div>
 <div class="ttc" id="interface_n_t_popup_html_a99f728134d93895361ce8d384d8542d3"><div class="ttname"><a href="interface_n_t_popup.html#a99f728134d93895361ce8d384d8542d3">-[NTPopup getAnchorPointY]</a></div><div class="ttdeci">float getAnchorPointY()</div></div>
-<div class="ttc" id="interface_n_t_bitmap_html"><div class="ttname"><a href="interface_n_t_bitmap.html">NTBitmap</a></div><div class="ttdef"><b>Definition:</b> Bitmap_proxy.h:60</div></div>
+<div class="ttc" id="interface_n_t_bitmap_html"><div class="ttname"><a href="interface_n_t_bitmap.html">NTBitmap</a></div><div class="ttdef"><b>Definition:</b> Bitmap_proxy.h:70</div></div>
 <div class="ttc" id="interface_n_t_billboard_html"><div class="ttname"><a href="interface_n_t_billboard.html">NTBillboard</a></div><div class="ttdef"><b>Definition:</b> Billboard_proxy.h:28</div></div>
 <div class="ttc" id="interface_n_t_popup_style_html"><div class="ttname"><a href="interface_n_t_popup_style.html">NTPopupStyle</a></div><div class="ttdef"><b>Definition:</b> PopupStyle_proxy.h:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -153,7 +152,7 @@ $(document).ready(function(){initNavTree('_popup__proxy_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_84fc5dba3506812825191c0c043e3c97.html">generated</a></li><li class="navelem"><a class="el" href="dir_3334d4c9ec8f5b0c232438c1e5914065.html">proxies</a></li><li class="navelem"><b>Popup_proxy.h</b></li>
-    <li class="footer">Generated on Mon Jun 30 2014 09:32:21 for Nutiteq Maps SDK iOs by
+    <li class="footer">Generated on Sat Oct 4 2014 14:21:05 for Nutiteq Maps SDK iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

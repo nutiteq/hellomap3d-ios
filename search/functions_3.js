@@ -10,6 +10,6 @@ var searchData=
   ['div_3a',['div:',['../interface_n_t_map_vec.html#a127d85be074d2cf74ee3b249570eb602',1,'NTMapVec']]],
   ['divthis_3a',['divThis:',['../interface_n_t_map_vec.html#a003715f20e08b368006d0a500f5bf104',1,'NTMapVec']]],
   ['dotproduct_3a',['dotProduct:',['../interface_n_t_map_vec.html#aeba3c697ab28c328f01849830a882e94',1,'NTMapVec']]],
-  ['drawbitmap_3a',['drawBitmap:',['../interface_n_t_label.html#a6b985906a142d5cfd4612f83e96549f8',1,'NTLabel::drawBitmap:()'],['../interface_n_t_text.html#ac0d12d02db9998c5fa90d57ec4ba143b',1,'NTText::drawBitmap:()']]],
-  ['drawbitmap_3ascreenwidth_3ascreenheight_3ascreendpi_3a',['drawBitmap:screenWidth:screenHeight:screenDPI:',['../interface_n_t_balloon_popup.html#a600bb130386dacd9f8d1afa8fcb39a7f',1,'NTBalloonPopup::drawBitmap:screenWidth:screenHeight:screenDPI:()'],['../interface_n_t_popup.html#a161c530e8332aaac8729ce3b2d050995',1,'NTPopup::drawBitmap:screenWidth:screenHeight:screenDPI:()']]]
+  ['drawbitmap_3a',['drawBitmap:',['../interface_n_t_label.html#a1d670a927e87de0dbe72579f5420634b',1,'NTLabel::drawBitmap:()'],['../interface_n_t_text.html#ab579a0f7711d09d2eab4cbdee1a9551b',1,'NTText::drawBitmap:()']]],
+  ['drawbitmap_3ascreenwidth_3ascreenheight_3adptopx_3a',['drawBitmap:screenWidth:screenHeight:dpToPX:',['../interface_n_t_balloon_popup.html#ae21929fd2ea4458a30c900956c22d57a',1,'NTBalloonPopup::drawBitmap:screenWidth:screenHeight:dpToPX:()'],['../interface_n_t_popup.html#af7d0bcbfa25002044a3e90cba6028c62',1,'NTPopup::drawBitmap:screenWidth:screenHeight:dpToPX:()']]]
 ];

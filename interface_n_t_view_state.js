@@ -6,6 +6,7 @@ var interface_n_t_view_state =
     [ "getCosHalfFOVXY", "interface_n_t_view_state.html#a8c3cffb8d057129788a222b5c3915eb5", null ],
     [ "getCosHalfFOVY", "interface_n_t_view_state.html#acbbea62fac3029d99137bf2f1ba41106", null ],
     [ "getDPI", "interface_n_t_view_state.html#a95803be1241088b88e41f3fc46866584", null ],
+    [ "getDPToPX", "interface_n_t_view_state.html#a483cfd02f298d50765c477b40246a10d", null ],
     [ "getFar", "interface_n_t_view_state.html#a6fcb4f6ce2e60d76ccdb8e276fd4b68d", null ],
     [ "getFocusPos", "interface_n_t_view_state.html#a16337412be0a28742602ecc9fa507a81", null ],
     [ "getFOVY", "interface_n_t_view_state.html#a6bd0393f4b84847580bae281178aeed2", null ],

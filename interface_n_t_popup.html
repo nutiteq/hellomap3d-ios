@@ -118,16 +118,14 @@ Instance Methods</h2></td></tr>
 <tr class="separator:ad4fa10fc9ea2c77f3fbcf368b865a942"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6022d8db2f44004c8441329fbf53206e"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_popup.html#a6022d8db2f44004c8441329fbf53206e">initWithPos:style:</a></td></tr>
 <tr class="separator:a6022d8db2f44004c8441329fbf53206e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a161c530e8332aaac8729ce3b2d050995"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_bitmap.html">NTBitmap</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_popup.html#a161c530e8332aaac8729ce3b2d050995">drawBitmap:screenWidth:screenHeight:screenDPI:</a></td></tr>
-<tr class="separator:a161c530e8332aaac8729ce3b2d050995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7d0bcbfa25002044a3e90cba6028c62"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_bitmap.html">NTBitmap</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_popup.html#af7d0bcbfa25002044a3e90cba6028c62">drawBitmap:screenWidth:screenHeight:dpToPX:</a></td></tr>
+<tr class="separator:af7d0bcbfa25002044a3e90cba6028c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a78fd3c48ce6a1bf118b6f3ad18ab98"><td class="memItemLeft" align="right" valign="top">(float)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_popup.html#a3a78fd3c48ce6a1bf118b6f3ad18ab98">getAnchorPointX</a></td></tr>
 <tr class="separator:a3a78fd3c48ce6a1bf118b6f3ad18ab98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af62c7d5058ba014627280b0cb537c625"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_popup.html#af62c7d5058ba014627280b0cb537c625">setAnchorPointX:</a></td></tr>
-<tr class="separator:af62c7d5058ba014627280b0cb537c625"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99f728134d93895361ce8d384d8542d3"><td class="memItemLeft" align="right" valign="top">(float)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_popup.html#a99f728134d93895361ce8d384d8542d3">getAnchorPointY</a></td></tr>
 <tr class="separator:a99f728134d93895361ce8d384d8542d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27c3d75cbcf9133726e1d4431ec20c95"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_popup.html#a27c3d75cbcf9133726e1d4431ec20c95">setAnchorPointY:</a></td></tr>
-<tr class="separator:a27c3d75cbcf9133726e1d4431ec20c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad925bd54c882fc93e4ad9e62eb51e51a"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_popup.html#ad925bd54c882fc93e4ad9e62eb51e51a">setAnchorPointX:anchorPointY:</a></td></tr>
+<tr class="separator:ad925bd54c882fc93e4ad9e62eb51e51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a121b595cd20e7ba902f10d2606387591"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_popup_style.html">NTPopupStyle</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_popup.html#a121b595cd20e7ba902f10d2606387591">getStyle</a></td></tr>
 <tr class="separator:a121b595cd20e7ba902f10d2606387591"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa451b9f8e94baee686e9e1bce1dadab5"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_popup.html#aa451b9f8e94baee686e9e1bce1dadab5">setStyle:</a></td></tr>
@@ -177,7 +175,7 @@ Instance Methods</h2></td></tr>
 <div class="textblock"><p>An abstract billboard element that can be displayed on the map. It<br/>
  always faces the camera and has a dynamically drawn bitmap. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
-<a class="anchor" id="a161c530e8332aaac8729ce3b2d050995"></a>
+<a class="anchor" id="af7d0bcbfa25002044a3e90cba6028c62"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -200,10 +198,10 @@ Instance Methods</h2></td></tr>
           <td class="paramname"><em>screenHeight</em></td>
         </tr>
         <tr>
-          <td class="paramkey">screenDPI:</td>
+          <td class="paramkey">dpToPX:</td>
           <td></td>
           <td class="paramtype">(float)&#160;</td>
-          <td class="paramname"><em>screenDPI</em>&#160;</td>
+          <td class="paramname"><em>dpToPX</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -222,15 +220,14 @@ Instance Methods</h2></td></tr>
     <tr><td class="paramname">screenWidth</td><td>The current screen width in pixels.<br/>
  </td></tr>
     <tr><td class="paramname">screenHeight</td><td>The current screen height in pixels.<br/>
- </td></tr>
-    <tr><td class="paramname">screenDPI</td><td>The dots per inch parameter of the screen.<br/>
+ <br/>
  </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The custom Popup bitmap. </dd></dl>
 
-<p>Implemented in <a class="el" href="interface_n_t_balloon_popup.html#a600bb130386dacd9f8d1afa8fcb39a7f">NTBalloonPopup</a>.</p>
+<p>Implemented in <a class="el" href="interface_n_t_balloon_popup.html#ae21929fd2ea4458a30c900956c22d57a">NTBalloonPopup</a>.</p>
 
 </div>
 </div>
@@ -397,7 +394,7 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af62c7d5058ba014627280b0cb537c625"></a>
+<a class="anchor" id="ad925bd54c882fc93e4ad9e62eb51e51a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -406,45 +403,31 @@ Instance Methods</h2></td></tr>
           <td></td>
           <td class="paramtype">(float)&#160;</td>
           <td class="paramname"><em>anchorPointX</em></td>
-          <td></td>
         </tr>
-      </table>
-</div><div class="memdoc">
-<p>Sets the horizontal anchor point for this popup. It should only be called from<br/>
- Popup::drawBitmap method, to match the anchor point to the drawn bitmap.<br/>
- -1 means the left side, 0 the center and 1 the right side of the popup. <br/>
- The default is BillboardAnchor::CENTER.<br/>
- </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">anchorPointX</td><td>The new horizontal anchor point for this popup. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a27c3d75cbcf9133726e1d4431ec20c95"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">- (void) setAnchorPointY: </td>
+          <td class="paramkey">anchorPointY:</td>
           <td></td>
           <td class="paramtype">(float)&#160;</td>
-          <td class="paramname"><em>anchorPointY</em></td>
+          <td class="paramname"><em>anchorPointY</em>&#160;</td>
+        </tr>
+        <tr>
           <td></td>
+          <td></td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets the vertical anchor point for this popup. It should only be called from<br/>
- Popup::drawBitmap method, to match the anchor point to the drawn bitmap.<br/>
- -1 means the bottom, 0 the center and 1 the top of the popup. <br/>
- The default is BillboardAnchor::BOTTOM.<br/>
+<p>Sets the anchor point for the popup. It should only be called from<br/>
+ Popup::drawBitmap method, to match the anchor point to the drawn bitmap. <br/>
+ Values will be clamped to [-1, 1] range.<br/>
  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">anchorPointY</td><td>The vertical anchor point for this popup. </td></tr>
+    <tr><td class="paramname">anchorPointX</td><td>The new horizontal anchor point for the popup. -1 means the left side,<br/>
+ 0 the center and 1 the right side of the popup. The default is 0.<br/>
+ </td></tr>
+    <tr><td class="paramname">anchorPointY</td><td>The vertical anchor point for the popup. -1 means the bottom,<br/>
+ 0 the center and 1 the top of the popup. The default is -1. </td></tr>
   </table>
   </dd>
 </dl>
@@ -466,7 +449,7 @@ Instance Methods</h2></td></tr>
 </div><div class="memdoc">
 <p>Sets the style for this Popup.<br/>
  </p>
-<dl class="section return"><dt>Returns</dt><dd>The new style that defines what this marker looks like. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The new style that defines what this popup looks like. </dd></dl>
 
 </div>
 </div>
@@ -479,7 +462,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_popup.html">NTPopup</a></li>
-    <li class="footer">Generated on Mon Jun 30 2014 09:32:21 for Nutiteq Maps SDK iOs by
+    <li class="footer">Generated on Sat Oct 4 2014 14:21:05 for Nutiteq Maps SDK iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

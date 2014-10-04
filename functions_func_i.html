@@ -101,12 +101,12 @@ $(document).ready(function(){initNavTree('functions_func_i.html','');});
 , <a class="el" href="interface_n_t_line_style_builder.html#a14734381fa3a75c46de6c933e24b28d6">NTLineStyleBuilder</a>
 , <a class="el" href="interface_n_t_map_bounds.html#a4b316ec59897beb51487036ce00a100c">NTMapBounds</a>
 , <a class="el" href="interface_n_t_map_envelope.html#a6f5dcaa2b4f4cd27c6304f72b9092aeb">NTMapEnvelope</a>
-, <a class="el" href="interface_n_t_map_event_listener.html#aeb748935efb80415926555b40ba155a9">NTMapEventListener</a>
 , <a class="el" href="interface_n_t_map_pos.html#a50d0b4af554d4aedd6469a7b9d52cccf">NTMapPos</a>
 , <a class="el" href="interface_n_t_map_range.html#af22eb02744ead10e6f7d5c307c5acdba">NTMapRange</a>
 , <a class="el" href="interface_n_t_map_vec.html#a6c35d1207f353bb689b6f1ce8c67c361">NTMapVec</a>
 , <a class="el" href="interface_n_t_marker_style_builder.html#adedd4e3cf009d0307b735584f1599e4e">NTMarkerStyleBuilder</a>
 , <a class="el" href="interface_n_t_point_style_builder.html#a32dbe33f37e57b1f2e06b3c0a4d56ba8">NTPointStyleBuilder</a>
+, <a class="el" href="interface_n_t_polygon3_d_style_builder.html#afce8a82c0dcf3f75e1ba79d700ebb707">NTPolygon3DStyleBuilder</a>
 , <a class="el" href="interface_n_t_polygon_style_builder.html#a4ae4c7f8f9765ea5b90a9a636c0e2a43">NTPolygonStyleBuilder</a>
 , <a class="el" href="interface_n_t_popup_style_builder.html#a3f4adbced33317b552986cb97fc12eb4">NTPopupStyleBuilder</a>
 , <a class="el" href="interface_n_t_text_style_builder.html#a21f91a647ef6ac9335b0ac835407a8a8">NTTextStyleBuilder</a>
@@ -133,6 +133,7 @@ $(document).ready(function(){initNavTree('functions_func_i.html','');});
 </li>
 <li>initWithColor:
 : <a class="el" href="interface_n_t_color.html#ad57865ace78b6bff6cb604f5962fd13b">NTColor</a>
+, <a class="el" href="interface_n_t_polygon3_d_style.html#a045caaf3b07ed97594484fe7935b973a">NTPolygon3DStyle</a>
 </li>
 <li>initWithColor:attachAnchorPointX:attachAnchorPointY:causesOverlap:hideIfOverlapped:horizontalOffset:verticalOffset:placementPriority:scaleWidthDPI:anchorPointX:anchorPointY:bitmap:orientationMode:scalingMode:size:
 : <a class="el" href="interface_n_t_marker_style.html#aa932f42f61aa195bacf73bf77366834c">NTMarkerStyle</a>
@@ -164,6 +165,10 @@ $(document).ready(function(){initNavTree('functions_func_i.html','');});
 <li>initWithConvexHull:
 : <a class="el" href="interface_n_t_map_envelope.html#a65cd04772ef219a196a5971014d0dc2f">NTMapEnvelope</a>
 </li>
+<li>initWithData:
+: <a class="el" href="interface_n_t_m_b_vector_tile_style_set.html#a91f22db42eb1e08aaef8881a53e3c751">NTMBVectorTileStyleSet</a>
+, <a class="el" href="interface_n_t_vector_tile_data.html#aef84ac196b91f73b937312770dfa818f">NTVectorTileData</a>
+</li>
 <li>initWithDataSource:
 : <a class="el" href="interface_n_t_compressed_cache_raster_tile_data_source.html#a610dc0441832d4664faa754583dd33d1">NTCompressedCacheRasterTileDataSource</a>
 , <a class="el" href="interface_n_t_n_m_l_model_l_o_d_tree_layer.html#a8de335d582c19bda4ce850736c305adb">NTNMLModelLODTreeLayer</a>
@@ -172,6 +177,9 @@ $(document).ready(function(){initNavTree('functions_func_i.html','');});
 </li>
 <li>initWithDataSource:databasePath:
 : <a class="el" href="interface_n_t_persistent_cache_raster_tile_data_source.html#a826f7cc9569461728ad58cba65ba5f77">NTPersistentCacheRasterTileDataSource</a>
+</li>
+<li>initWithDataSource:decoder:
+: <a class="el" href="interface_n_t_vector_tile_layer.html#a2c5c39fa63faddd3c290c5a68e62889b">NTVectorTileLayer</a>
 </li>
 <li>initWithEnvelope:
 : <a class="el" href="interface_n_t_map_envelope.html#afe076cdd07d409e6d2285c795986413a">NTMapEnvelope</a>
@@ -190,6 +198,9 @@ $(document).ready(function(){initNavTree('functions_func_i.html','');});
 , <a class="el" href="interface_n_t_polygon.html#a435e756aecefdbbc9d1ed88ce511f29c">NTPolygon</a>
 , <a class="el" href="interface_n_t_popup.html#ad4fa10fc9ea2c77f3fbcf368b865a942">NTPopup</a>
 </li>
+<li>initWithGeometry:style:height:
+: <a class="el" href="interface_n_t_polygon3_d.html#a249d354fd5335af3dd8ca15c7bab281e">NTPolygon3D</a>
+</li>
 <li>initWithGeometry:style:text:
 : <a class="el" href="interface_n_t_text.html#ad9e756178caca7b349cab66f7efb09ad">NTText</a>
 </li>
@@ -202,18 +213,24 @@ $(document).ready(function(){initNavTree('functions_func_i.html','');});
 </li>
 <li>initWithMinZoom:maxZoom:
 : <a class="el" href="interface_n_t_raster_tile_data_source.html#a7d7756f78ac6d76d5aafd35130f4306e">NTRasterTileDataSource</a>
+, <a class="el" href="interface_n_t_vector_tile_data_source.html#af09af5eb556106cfcabf4c5d04293cf2">NTVectorTileDataSource</a>
 </li>
 <li>initWithMinZoom:maxZoom:basePath:
 : <a class="el" href="interface_n_t_asset_raster_tile_data_source.html#a2197b8b8aa83a03ea271862aa24de991">NTAssetRasterTileDataSource</a>
 </li>
 <li>initWithMinZoom:maxZoom:baseURL:
 : <a class="el" href="interface_n_t_h_t_t_p_raster_tile_data_source.html#a676299bd1ce3c6d6932a27ceb34ac504">NTHTTPRasterTileDataSource</a>
+, <a class="el" href="interface_n_t_h_t_t_p_vector_tile_data_source.html#ae2e4c4c54b1d675174127db1760a85c2">NTHTTPVectorTileDataSource</a>
 </li>
 <li>initWithMinZoom:maxZoom:path:
 : <a class="el" href="interface_n_t_m_b_tiles_raster_tile_data_source.html#a57a4e2aef01e7c01c1ae83e9765d94ad">NTMBTilesRasterTileDataSource</a>
+, <a class="el" href="interface_n_t_m_b_tiles_vector_tile_data_source.html#a111eebc1ddc2a2979f71d8f6accda462">NTMBTilesVectorTileDataSource</a>
 </li>
 <li>initWithMvpMatrix:
 : <a class="el" href="interface_n_t_frustum.html#ad63b3b97f07b180adc932ceb213ab325">NTFrustum</a>
+</li>
+<li>initWithPos:
+: <a class="el" href="interface_n_t_n_m_l_model_l_o_d_tree_proxy.html#a350e0468b3c8e4a22c119290381c5307">NTNMLModelLODTreeProxy</a>
 </li>
 <li>initWithPos:sourceModelData:
 : <a class="el" href="interface_n_t_n_m_l_model.html#a83c3a44ba434451364d3af27fe384618">NTNMLModel</a>
@@ -233,9 +250,15 @@ $(document).ready(function(){initNavTree('functions_func_i.html','');});
 <li>initWithPoses:holes:style:
 : <a class="el" href="interface_n_t_polygon.html#a6517c66b1b61487011e6d4aa5bcc5c20">NTPolygon</a>
 </li>
+<li>initWithPoses:holes:style:height:
+: <a class="el" href="interface_n_t_polygon3_d.html#ac07e01ce3164ec5906e3f51798f25fe8">NTPolygon3D</a>
+</li>
 <li>initWithPoses:style:
 : <a class="el" href="interface_n_t_line.html#a42f8df97ae9c492241fed19b624721c8">NTLine</a>
 , <a class="el" href="interface_n_t_polygon.html#a23e73b73cfea73ba69097b239672c06f">NTPolygon</a>
+</li>
+<li>initWithPoses:style:height:
+: <a class="el" href="interface_n_t_polygon3_d.html#a15869a08c3961708fa0fba1d82ca101f">NTPolygon3D</a>
 </li>
 <li>initWithProjection:
 : <a class="el" href="interface_n_t_k_d_tree_vector_data_source.html#ab77dc77ac39d4398f3ca0d722c974da5">NTKDTreeVectorDataSource</a>
@@ -250,6 +273,9 @@ $(document).ready(function(){initNavTree('functions_func_i.html','');});
 </li>
 <li>initWithStyleBuilder:
 : <a class="el" href="interface_n_t_style_builder.html#ae8dc6d52a380ed658db58ba4b4c12290">NTStyleBuilder</a>
+</li>
+<li>initWithStyleSet:
+: <a class="el" href="interface_n_t_m_b_vector_tile_decoder.html#a47a0557b2b4e8a1ae53d5f930ad758b4">NTMBVectorTileDecoder</a>
 </li>
 <li>initWithX:y:
 : <a class="el" href="interface_n_t_map_pos.html#aa5560847b9575025648443356e162e0b">NTMapPos</a>
@@ -274,6 +300,10 @@ $(document).ready(function(){initNavTree('functions_func_i.html','');});
 </li>
 <li>isClickTypeDetection
 : <a class="el" href="interface_n_t_options.html#a67bdb5beffa0d7e9acba302319d4a5e4">NTOptions</a>
+</li>
+<li>isDescriptionWrap
+: <a class="el" href="interface_n_t_balloon_popup_style.html#a2874bf9586874be3339b9967f28b7adc">NTBalloonPopupStyle</a>
+, <a class="el" href="interface_n_t_balloon_popup_style_builder.html#a8aca13cc468f5347dcf98470ae051d0e">NTBalloonPopupStyleBuilder</a>
 </li>
 <li>isFlippable
 : <a class="el" href="interface_n_t_label_style.html#ab1aba60dd3c922097908d5ecdffcf967">NTLabelStyle</a>
@@ -303,9 +333,12 @@ $(document).ready(function(){initNavTree('functions_func_i.html','');});
 <li>isSeamlessPanning
 : <a class="el" href="interface_n_t_options.html#a702c8a866c3c87d9219253b2c0452107">NTOptions</a>
 </li>
-<li>isSmoothFading
-: <a class="el" href="interface_n_t_raster_tile_layer.html#a48f70449cdacb734c7dc9bcd76931eac">NTRasterTileLayer</a>
-, <a class="el" href="interface_n_t_tile_layer.html#a7b837be22e3a2d115f24148e228f1a27">NTTileLayer</a>
+<li>isSynchronizedRefresh
+: <a class="el" href="interface_n_t_raster_tile_layer.html#a59f16d00208931277b3571e5e148b884">NTRasterTileLayer</a>
+</li>
+<li>isTitleWrap
+: <a class="el" href="interface_n_t_balloon_popup_style.html#a76f63901d8148b8970b9b4c370d439c9">NTBalloonPopupStyle</a>
+, <a class="el" href="interface_n_t_balloon_popup_style_builder.html#a7ef10b26c82b2a1a4d64b8a9f2bb3812">NTBalloonPopupStyleBuilder</a>
 </li>
 <li>isUserInput
 : <a class="el" href="interface_n_t_options.html#a8b456477a15d09ea909ef756707f172e">NTOptions</a>
@@ -320,7 +353,7 @@ $(document).ready(function(){initNavTree('functions_func_i.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jun 30 2014 09:32:22 for Nutiteq Maps SDK iOs by
+    <li class="footer">Generated on Sat Oct 4 2014 14:21:06 for Nutiteq Maps SDK iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

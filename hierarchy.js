@@ -14,7 +14,8 @@ var hierarchy =
     [ "NTLayer", "interface_n_t_layer.html", [
       [ "NTNMLModelLODTreeLayer", "interface_n_t_n_m_l_model_l_o_d_tree_layer.html", null ],
       [ "NTTileLayer", "interface_n_t_tile_layer.html", [
-        [ "NTRasterTileLayer", "interface_n_t_raster_tile_layer.html", null ]
+        [ "NTRasterTileLayer", "interface_n_t_raster_tile_layer.html", null ],
+        [ "NTVectorTileLayer", "interface_n_t_vector_tile_layer.html", null ]
       ] ],
       [ "NTVectorLayer", "interface_n_t_vector_layer.html", null ]
     ] ],
@@ -26,6 +27,7 @@ var hierarchy =
     [ "NTMapRange", "interface_n_t_map_range.html", null ],
     [ "NTMapTile", "interface_n_t_map_tile.html", null ],
     [ "NTMarkerStyle", "interface_n_t_marker_style.html", null ],
+    [ "NTMBVectorTileStyleSet", "interface_n_t_m_b_vector_tile_style_set.html", null ],
     [ "NTNMLModelLODTreeDataSource", "interface_n_t_n_m_l_model_l_o_d_tree_data_source.html", [
       [ "NTNMLModelLODTreeSqliteDataSource", "interface_n_t_n_m_l_model_l_o_d_tree_sqlite_data_source.html", null ]
     ] ],
@@ -40,6 +42,7 @@ var hierarchy =
     [ "NTStyle", "interface_n_t_style.html", [
       [ "NTLineStyle", "interface_n_t_line_style.html", null ],
       [ "NTPointStyle", "interface_n_t_point_style.html", null ],
+      [ "NTPolygon3DStyle", "interface_n_t_polygon3_d_style.html", null ],
       [ "NTPolygonStyle", "interface_n_t_polygon_style.html", null ]
     ] ],
     [ "NTStyleBuilder", "interface_n_t_style_builder.html", [
@@ -54,6 +57,7 @@ var hierarchy =
       ] ],
       [ "NTLineStyleBuilder", "interface_n_t_line_style_builder.html", null ],
       [ "NTPointStyleBuilder", "interface_n_t_point_style_builder.html", null ],
+      [ "NTPolygon3DStyleBuilder", "interface_n_t_polygon3_d_style_builder.html", null ],
       [ "NTPolygonStyleBuilder", "interface_n_t_polygon_style_builder.html", null ]
     ] ],
     [ "NTTileDataSource", "interface_n_t_tile_data_source.html", [
@@ -63,8 +67,13 @@ var hierarchy =
         [ "NTHTTPRasterTileDataSource", "interface_n_t_h_t_t_p_raster_tile_data_source.html", null ],
         [ "NTMBTilesRasterTileDataSource", "interface_n_t_m_b_tiles_raster_tile_data_source.html", null ],
         [ "NTPersistentCacheRasterTileDataSource", "interface_n_t_persistent_cache_raster_tile_data_source.html", null ]
+      ] ],
+      [ "NTVectorTileDataSource", "interface_n_t_vector_tile_data_source.html", [
+        [ "NTHTTPVectorTileDataSource", "interface_n_t_h_t_t_p_vector_tile_data_source.html", null ],
+        [ "NTMBTilesVectorTileDataSource", "interface_n_t_m_b_tiles_vector_tile_data_source.html", null ]
       ] ]
     ] ],
+    [ "NTTileLoadListener", "interface_n_t_tile_load_listener.html", null ],
     [ "NTTuple3D", "interface_n_t_tuple3_d.html", [
       [ "NTMapPos", "interface_n_t_map_pos.html", null ],
       [ "NTMapVec", "interface_n_t_map_vec.html", null ]
@@ -85,11 +94,16 @@ var hierarchy =
       ] ],
       [ "NTLine", "interface_n_t_line.html", null ],
       [ "NTNMLModel", "interface_n_t_n_m_l_model.html", null ],
-      [ "NTNMLModelLODTree", "interface_n_t_n_m_l_model_l_o_d_tree.html", null ],
+      [ "NTNMLModelLODTreeProxy", "interface_n_t_n_m_l_model_l_o_d_tree_proxy.html", null ],
       [ "NTPoint", "interface_n_t_point.html", null ],
-      [ "NTPolygon", "interface_n_t_polygon.html", null ]
+      [ "NTPolygon", "interface_n_t_polygon.html", null ],
+      [ "NTPolygon3D", "interface_n_t_polygon3_d.html", null ]
     ] ],
     [ "NTVectorElementClickInfo", "interface_n_t_vector_element_click_info.html", null ],
     [ "NTVectorElementsClickInfo", "interface_n_t_vector_elements_click_info.html", null ],
+    [ "NTVectorTileData", "interface_n_t_vector_tile_data.html", null ],
+    [ "NTVectorTileDecoder", "interface_n_t_vector_tile_decoder.html", [
+      [ "NTMBVectorTileDecoder", "interface_n_t_m_b_vector_tile_decoder.html", null ]
+    ] ],
     [ "NTViewState", "interface_n_t_view_state.html", null ]
 ];

@@ -105,11 +105,14 @@ Inheritance diagram for NTTileDataSource:</div>
   <img src="interface_n_t_tile_data_source.png" usemap="#NTTileDataSource_map" alt=""/>
   <map id="NTTileDataSource_map" name="NTTileDataSource_map">
 <area href="interface_n_t_raster_tile_data_source.html" alt="NTRasterTileDataSource" shape="rect" coords="536,56,794,80"/>
+<area href="interface_n_t_vector_tile_data_source.html" alt="NTVectorTileDataSource" shape="rect" coords="1474,56,1732,80"/>
 <area href="interface_n_t_asset_raster_tile_data_source.html" alt="NTAssetRasterTileDataSource" shape="rect" coords="0,112,258,136"/>
 <area href="interface_n_t_compressed_cache_raster_tile_data_source.html" alt="NTCompressedCacheRasterTileDataSource" shape="rect" coords="268,112,526,136"/>
 <area href="interface_n_t_h_t_t_p_raster_tile_data_source.html" alt="NTHTTPRasterTileDataSource" shape="rect" coords="536,112,794,136"/>
 <area href="interface_n_t_m_b_tiles_raster_tile_data_source.html" alt="NTMBTilesRasterTileDataSource" shape="rect" coords="804,112,1062,136"/>
 <area href="interface_n_t_persistent_cache_raster_tile_data_source.html" alt="NTPersistentCacheRasterTileDataSource" shape="rect" coords="1072,112,1330,136"/>
+<area href="interface_n_t_h_t_t_p_vector_tile_data_source.html" alt="NTHTTPVectorTileDataSource" shape="rect" coords="1340,112,1598,136"/>
+<area href="interface_n_t_m_b_tiles_vector_tile_data_source.html" alt="NTMBTilesVectorTileDataSource" shape="rect" coords="1608,112,1866,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -119,8 +122,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:af75186f24f771cceb1a7cfdc9c71b951"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd0d7b6149fae3e25793df8bba4a8c00"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_data_source.html#acd0d7b6149fae3e25793df8bba4a8c00">getMaxZoom</a></td></tr>
 <tr class="separator:acd0d7b6149fae3e25793df8bba4a8c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84abbc725a042776ddbc92cab95d4f4f"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_data_source.html#a84abbc725a042776ddbc92cab95d4f4f">notifyTilesChanged:</a></td></tr>
-<tr class="separator:a84abbc725a042776ddbc92cab95d4f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34576b12ecfcc4a5b5298fdf15c160ce"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_data_source.html#a34576b12ecfcc4a5b5298fdf15c160ce">notifyTilesChanged:removeTiles:</a></td></tr>
+<tr class="separator:a34576b12ecfcc4a5b5298fdf15c160ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for tile data sources. It provides default implementation <br/>
@@ -162,16 +165,26 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a84abbc725a042776ddbc92cab95d4f4f"></a>
+<a class="anchor" id="a34576b12ecfcc4a5b5298fdf15c160ce"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">- (void) notifyTilesChanged: </td>
           <td></td>
-          <td class="paramtype">(BOOL)&#160;</td>
-          <td class="paramname"><em>removeTiles</em></td>
+          <td class="paramtype">(enum TilesType)&#160;</td>
+          <td class="paramname"><em>tilesType</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">removeTiles:</td>
           <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>removeTiles</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -181,12 +194,14 @@ Instance Methods</h2></td></tr>
  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">tilesType</td><td>The type of tiles the event affects.<br/>
+ </td></tr>
     <tr><td class="paramname">removeTiles</td><td>The remove tiles flag. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="interface_n_t_persistent_cache_raster_tile_data_source.html#a7a7c18c3fe300106f70e51040c6b559a">NTPersistentCacheRasterTileDataSource</a>, and <a class="el" href="interface_n_t_compressed_cache_raster_tile_data_source.html#acd80d4d8be8dc3eb4054a1e5cfe9c22e">NTCompressedCacheRasterTileDataSource</a>.</p>
+<p>Reimplemented in <a class="el" href="interface_n_t_persistent_cache_raster_tile_data_source.html#a70927439b33a0ef64ac350709dcb15ef">NTPersistentCacheRasterTileDataSource</a>, and <a class="el" href="interface_n_t_compressed_cache_raster_tile_data_source.html#a4758c482582e45dce41885f67342dc2f">NTCompressedCacheRasterTileDataSource</a>.</p>
 
 </div>
 </div>
@@ -200,7 +215,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_tile_data_source.html">NTTileDataSource</a></li>
-    <li class="footer">Generated on Mon Jun 30 2014 09:32:22 for Nutiteq Maps SDK iOs by
+    <li class="footer">Generated on Sat Oct 4 2014 14:21:05 for Nutiteq Maps SDK iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

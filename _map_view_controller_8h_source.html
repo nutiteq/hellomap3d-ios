@@ -109,34 +109,40 @@ $(document).ready(function(){initNavTree('_map_view_controller_8h_source.html','
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">@property</span> (readonly, assign, nonatomic) Nuti::BaseMapView* nativeMapView;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;-(<a class="code" href="interface_n_t_layers.html">NTLayers</a>*)getLayers;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;-(<a class="code" href="interface_n_t_options.html">NTOptions</a>*)getOptions;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;-(<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)getFocusPos;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;-(float)getRotation;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;-(float)getTilt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;-(float)getZoom;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;-(void)pan: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)deltaPos durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;-(void)setFocusPos: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)pos durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;-(void)rotate: (<span class="keywordtype">float</span>)deltaAngle durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;-(void)rotate: (<span class="keywordtype">float</span>)deltaAngle targetPos: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)targetPos durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;-(void)setRotation: (<span class="keywordtype">float</span>)angle durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;-(void)setRotation: (<span class="keywordtype">float</span>)angle targetPos: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)targetPos durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;-(void)tilt: (<span class="keywordtype">float</span>)deltaTilt durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;-(void)setTilt: (<span class="keywordtype">float</span>)tilt durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;-(void)zoom: (<span class="keywordtype">float</span>)deltaZoom durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;-(void)zoom: (<span class="keywordtype">float</span>)deltaZoom targetPos: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)targetPos durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;-(void)setZoom: (<span class="keywordtype">float</span>)zoom durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;-(void)setZoom: (<span class="keywordtype">float</span>)zoom targetPos: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)targetPos durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;-(void)moveToFitBounds: (<a class="code" href="interface_n_t_map_bounds.html">NTMapBounds</a>*)bounds screenPadding: (<span class="keywordtype">float</span>)screenPadding integerZoom: (BOOL)integerZoom durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;-(void)moveToFitBounds: (<a class="code" href="interface_n_t_map_bounds.html">NTMapBounds</a>*)bounds screenPadding: (<span class="keywordtype">float</span>)screenPadding integerZoom: (BOOL)integerZoom resetRotation: (BOOL)resetRotation resetTilt: (BOOL)resetTilt durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;-(<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)screenToWorld: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)screenPos;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;-(<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)worldToScreen: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)worldPos;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;-(void)releaseMaxMemory;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;+(BOOL)RegisterLicense: (NSString*)licenseKey;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;-(<a class="code" href="interface_n_t_layers.html">NTLayers</a>*)getLayers;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;-(<a class="code" href="interface_n_t_options.html">NTOptions</a>*)getOptions;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;-(<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)getFocusPos;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;-(float)getRotation;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;-(float)getTilt;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;-(float)getZoom;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;-(void)pan: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)deltaPos durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;-(void)setFocusPos: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)pos durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;-(void)rotate: (<span class="keywordtype">float</span>)deltaAngle durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;-(void)rotate: (<span class="keywordtype">float</span>)deltaAngle targetPos: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)targetPos durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;-(void)setRotation: (<span class="keywordtype">float</span>)angle durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;-(void)setRotation: (<span class="keywordtype">float</span>)angle targetPos: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)targetPos durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;-(void)tilt: (<span class="keywordtype">float</span>)deltaTilt durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;-(void)setTilt: (<span class="keywordtype">float</span>)tilt durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;-(void)zoom: (<span class="keywordtype">float</span>)deltaZoom durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;-(void)zoom: (<span class="keywordtype">float</span>)deltaZoom targetPos: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)targetPos durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;-(void)setZoom: (<span class="keywordtype">float</span>)zoom durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;-(void)setZoom: (<span class="keywordtype">float</span>)zoom targetPos: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)targetPos durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;-(void)moveToFitBounds: (<a class="code" href="interface_n_t_map_bounds.html">NTMapBounds</a>*)bounds screenPadding: (<span class="keywordtype">float</span>)screenPadding integerZoom: (BOOL)integerZoom durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;-(void)moveToFitBounds: (<a class="code" href="interface_n_t_map_bounds.html">NTMapBounds</a>*)bounds screenPadding: (<span class="keywordtype">float</span>)screenPadding integerZoom: (BOOL)integerZoom resetRotation: (BOOL)resetRotation resetTilt: (BOOL)resetTilt durationSeconds: (<span class="keywordtype">float</span>)durationSeconds;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;-(<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)screenToWorld: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)screenPos;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;-(<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)worldToScreen: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)worldPos;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;-(void)cancelAllTasks;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;-(void)clearPreloadingCaches;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;-(void)clearAllCaches;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="keyword">@end</span></div>
 <div class="ttc" id="interface_n_t_map_vec_html"><div class="ttname"><a href="interface_n_t_map_vec.html">NTMapVec</a></div><div class="ttdef"><b>Definition:</b> MapVec_proxy.h:24</div></div>
 <div class="ttc" id="interface_n_t_map_pos_html"><div class="ttname"><a href="interface_n_t_map_pos.html">NTMapPos</a></div><div class="ttdef"><b>Definition:</b> MapPos_proxy.h:27</div></div>
-<div class="ttc" id="interface_n_t_options_html"><div class="ttname"><a href="interface_n_t_options.html">NTOptions</a></div><div class="ttdef"><b>Definition:</b> Options_proxy.h:72</div></div>
+<div class="ttc" id="interface_n_t_options_html"><div class="ttname"><a href="interface_n_t_options.html">NTOptions</a></div><div class="ttdef"><b>Definition:</b> Options_proxy.h:74</div></div>
 <div class="ttc" id="interface_n_t_layers_html"><div class="ttname"><a href="interface_n_t_layers.html">NTLayers</a></div><div class="ttdef"><b>Definition:</b> Layers_proxy.h:31</div></div>
 <div class="ttc" id="interface_n_t_map_bounds_html"><div class="ttname"><a href="interface_n_t_map_bounds.html">NTMapBounds</a></div><div class="ttdef"><b>Definition:</b> MapBounds_proxy.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -145,7 +151,7 @@ $(document).ready(function(){initNavTree('_map_view_controller_8h_source.html','
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_2ffd77a14b2221cc16d83102b0190748.html">objc</a></li><li class="navelem"><a class="el" href="dir_270ac8147c6452f9b4ce4d82f2138358.html">ui</a></li><li class="navelem"><b>MapViewController.h</b></li>
-    <li class="footer">Generated on Mon Jun 30 2014 09:16:05 for Nutiteq Maps SDK iOs by
+    <li class="footer">Generated on Sat Oct 4 2014 14:21:05 for Nutiteq Maps SDK iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

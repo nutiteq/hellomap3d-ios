@@ -115,8 +115,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a826f7cc9569461728ad58cba65ba5f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ca8eae9ec7096cc41c4de596a4363af"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_raster_tile_bitmap.html">NTRasterTileBitmap</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_persistent_cache_raster_tile_data_source.html#a6ca8eae9ec7096cc41c4de596a4363af">loadTile:</a></td></tr>
 <tr class="separator:a6ca8eae9ec7096cc41c4de596a4363af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a7c18c3fe300106f70e51040c6b559a"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_persistent_cache_raster_tile_data_source.html#a7a7c18c3fe300106f70e51040c6b559a">notifyTilesChanged:</a></td></tr>
-<tr class="separator:a7a7c18c3fe300106f70e51040c6b559a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70927439b33a0ef64ac350709dcb15ef"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_persistent_cache_raster_tile_data_source.html#a70927439b33a0ef64ac350709dcb15ef">notifyTilesChanged:removeTiles:</a></td></tr>
+<tr class="separator:a70927439b33a0ef64ac350709dcb15ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af02ff8ae18eb0109c861d65e87369cf5"><td class="memItemLeft" align="right" valign="top">(unsigned int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_persistent_cache_raster_tile_data_source.html#af02ff8ae18eb0109c861d65e87369cf5">getCapacity</a></td></tr>
 <tr class="separator:af02ff8ae18eb0109c861d65e87369cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab77666835c1087860ea1eb4640d88a53"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_persistent_cache_raster_tile_data_source.html#ab77666835c1087860ea1eb4640d88a53">setCapacity:</a></td></tr>
@@ -221,16 +221,26 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7a7c18c3fe300106f70e51040c6b559a"></a>
+<a class="anchor" id="a70927439b33a0ef64ac350709dcb15ef"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">- (void) notifyTilesChanged: </td>
           <td></td>
-          <td class="paramtype">(BOOL)&#160;</td>
-          <td class="paramname"><em>removeTiles</em></td>
+          <td class="paramtype">(enum TilesType)&#160;</td>
+          <td class="paramname"><em>tilesType</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">removeTiles:</td>
           <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>removeTiles</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -240,12 +250,14 @@ Instance Methods</h2></td></tr>
  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">tilesType</td><td>The type of tiles the event affects.<br/>
+ </td></tr>
     <tr><td class="paramname">removeTiles</td><td>The remove tiles flag. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="interface_n_t_tile_data_source.html#a84abbc725a042776ddbc92cab95d4f4f">NTTileDataSource</a>.</p>
+<p>Reimplemented from <a class="el" href="interface_n_t_tile_data_source.html#a34576b12ecfcc4a5b5298fdf15c160ce">NTTileDataSource</a>.</p>
 
 </div>
 </div>
@@ -280,7 +292,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_persistent_cache_raster_tile_data_source.html">NTPersistentCacheRasterTileDataSource</a></li>
-    <li class="footer">Generated on Mon Jun 30 2014 09:32:21 for Nutiteq Maps SDK iOs by
+    <li class="footer">Generated on Sat Oct 4 2014 14:21:05 for Nutiteq Maps SDK iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

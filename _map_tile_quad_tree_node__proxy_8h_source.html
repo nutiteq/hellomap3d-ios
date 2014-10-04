@@ -132,28 +132,30 @@ $(document).ready(function(){initNavTree('_map_tile_quad_tree_node__proxy_8h_sou
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">@interface </span>NTMapTileQuadTreeNode : <a class="code" href="interface_n_t_map_tile.html">NTMapTile</a></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;-(void*)getCptr;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;-(id)initWithRootType: (enum QuadTreeRootType)rootType;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;-(id)initWithParent: (NTMapTileQuadTreeNode*)parent nodeType: (enum QuadTreeNodeType)nodeType;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;-(<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)getCenter;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;-(<a class="code" href="interface_n_t_map_bounds.html">NTMapBounds</a>*)getTileBounds;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;-(double)getDistanceFromCamera;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;-(void)setDistanceFromCamera: (<span class="keywordtype">double</span>)distance;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;-(float)getRadius;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;-(NTMapTileQuadTreeNode*)getTopLeftChild;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;-(NTMapTileQuadTreeNode*)getTopRightChild;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;-(NTMapTileQuadTreeNode*)getBottomRightChild;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;-(NTMapTileQuadTreeNode*)getBottomLeftChild;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;-(NTMapTileQuadTreeNode*)getParent;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;-(void)dealloc;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;-(id)initWithX: (<span class="keywordtype">int</span>)x y: (<span class="keywordtype">int</span>)y zoom: (<span class="keywordtype">int</span>)zoom frameNr: (<span class="keywordtype">int</span>)frameNr;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;-(id)initWithRootType: (enum QuadTreeRootType)rootType frameNr: (<span class="keywordtype">int</span>)frameNr;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;-(id)initWithParent: (NTMapTileQuadTreeNode*)parent nodeType: (enum QuadTreeNodeType)nodeType;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;-(void)setFrameNr: (<span class="keywordtype">int</span>)frameNr;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;-(<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)getCenter;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;-(<a class="code" href="interface_n_t_map_bounds.html">NTMapBounds</a>*)getTileBounds;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;-(double)getDistanceFromCamera;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;-(void)setDistanceFromCamera: (<span class="keywordtype">double</span>)distance;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;-(float)getRadius;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;-(NTMapTileQuadTreeNode*)getTopLeftChild;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;-(NTMapTileQuadTreeNode*)getTopRightChild;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;-(NTMapTileQuadTreeNode*)getBottomRightChild;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;-(NTMapTileQuadTreeNode*)getBottomLeftChild;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;-(NTMapTileQuadTreeNode*)getParent;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;-(void)dealloc;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="interface_n_t_map_pos_html"><div class="ttname"><a href="interface_n_t_map_pos.html">NTMapPos</a></div><div class="ttdef"><b>Definition:</b> MapPos_proxy.h:27</div></div>
 <div class="ttc" id="interface_n_t_map_tile_html"><div class="ttname"><a href="interface_n_t_map_tile.html">NTMapTile</a></div><div class="ttdef"><b>Definition:</b> MapTile_proxy.h:21</div></div>
 <div class="ttc" id="interface_n_t_map_bounds_html"><div class="ttname"><a href="interface_n_t_map_bounds.html">NTMapBounds</a></div><div class="ttdef"><b>Definition:</b> MapBounds_proxy.h:26</div></div>
@@ -163,7 +165,7 @@ $(document).ready(function(){initNavTree('_map_tile_quad_tree_node__proxy_8h_sou
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_84fc5dba3506812825191c0c043e3c97.html">generated</a></li><li class="navelem"><a class="el" href="dir_3334d4c9ec8f5b0c232438c1e5914065.html">proxies</a></li><li class="navelem"><b>MapTileQuadTreeNode_proxy.h</b></li>
-    <li class="footer">Generated on Mon Jun 30 2014 09:32:21 for Nutiteq Maps SDK iOs by
+    <li class="footer">Generated on Sat Oct 4 2014 14:21:05 for Nutiteq Maps SDK iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

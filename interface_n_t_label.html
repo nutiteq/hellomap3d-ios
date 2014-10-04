@@ -118,8 +118,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a415e753e9cc011ead4fd2750a0bbef9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab55ec8787def8bd2348558c9a85d4af3"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_label.html#ab55ec8787def8bd2348558c9a85d4af3">initWithPos:style:</a></td></tr>
 <tr class="separator:ab55ec8787def8bd2348558c9a85d4af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b985906a142d5cfd4612f83e96549f8"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_bitmap.html">NTBitmap</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_label.html#a6b985906a142d5cfd4612f83e96549f8">drawBitmap:</a></td></tr>
-<tr class="separator:a6b985906a142d5cfd4612f83e96549f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d670a927e87de0dbe72579f5420634b"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_bitmap.html">NTBitmap</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_label.html#a1d670a927e87de0dbe72579f5420634b">drawBitmap:</a></td></tr>
+<tr class="separator:a1d670a927e87de0dbe72579f5420634b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa41116c5cf9e19cc1c430747945a6601"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_label_style.html">NTLabelStyle</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_label.html#aa41116c5cf9e19cc1c430747945a6601">getStyle</a></td></tr>
 <tr class="separator:aa41116c5cf9e19cc1c430747945a6601"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c3944ee2cd5b6f810261c4198d0a345"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_label.html#a8c3944ee2cd5b6f810261c4198d0a345">setStyle:</a></td></tr>
@@ -168,7 +168,7 @@ Instance Methods</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An abstract billboard element with a dynamically drawn bitmap that can be displayed on the map. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
-<a class="anchor" id="a6b985906a142d5cfd4612f83e96549f8"></a>
+<a class="anchor" id="a1d670a927e87de0dbe72579f5420634b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -176,24 +176,18 @@ Instance Methods</h2></td></tr>
           <td class="memname">- (<a class="el" href="interface_n_t_bitmap.html">NTBitmap</a>*) drawBitmap: </td>
           <td></td>
           <td class="paramtype">(float)&#160;</td>
-          <td class="paramname"><em>screenDPI</em></td>
+          <td class="paramname"><em>dpToPX</em></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Draws a custom bitmap for this label that will be used for drawing the label on the map.<br/>
  The method is called each time the label gets reloaded internally.<br/>
+ <br/>
  </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">screenDPI</td><td>The dots per inch parameter of the screen.<br/>
- </td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>The custom label bitmap. </dd></dl>
 
-<p>Implemented in <a class="el" href="interface_n_t_text.html#ac0d12d02db9998c5fa90d57ec4ba143b">NTText</a>.</p>
+<p>Implemented in <a class="el" href="interface_n_t_text.html#ab579a0f7711d09d2eab4cbdee1a9551b">NTText</a>.</p>
 
 </div>
 </div>
@@ -352,7 +346,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_label.html">NTLabel</a></li>
-    <li class="footer">Generated on Mon Jun 30 2014 09:32:21 for Nutiteq Maps SDK iOs by
+    <li class="footer">Generated on Sat Oct 4 2014 14:21:05 for Nutiteq Maps SDK iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

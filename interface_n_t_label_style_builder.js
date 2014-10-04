@@ -7,8 +7,7 @@ var interface_n_t_label_style_builder =
     [ "getScalingMode", "interface_n_t_label_style_builder.html#ac069641c5beeb4bfb6ff1ba1022e1774", null ],
     [ "init", "interface_n_t_label_style_builder.html#ae80ff8044dbba374cb28558cf4d3a1cb", null ],
     [ "isFlippable", "interface_n_t_label_style_builder.html#a2679e3b46304949e7edd6fc1a45c25dd", null ],
-    [ "setAnchorPointX:", "interface_n_t_label_style_builder.html#ae3af028950fa2175e2cb8dbfc45a4482", null ],
-    [ "setAnchorPointY:", "interface_n_t_label_style_builder.html#a1faff0eaa85226843ac2377347ac0e43", null ],
+    [ "setAnchorPointX:anchorPointY:", "interface_n_t_label_style_builder.html#aac8595ea6439e14ec7930ab890b2c971", null ],
     [ "setFlippable:", "interface_n_t_label_style_builder.html#a564fd3f024c9a8d1aba79f14054ed5a0", null ],
     [ "setOrientationMode:", "interface_n_t_label_style_builder.html#a1c9a9e1f15d5e18cd41b7824e2fbdfec", null ],
     [ "setScalingMode:", "interface_n_t_label_style_builder.html#aecdab21177f2ec25eed4d4f745f80e73", null ]

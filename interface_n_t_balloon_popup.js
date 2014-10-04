@@ -1,6 +1,6 @@
 var interface_n_t_balloon_popup =
 [
-    [ "drawBitmap:screenWidth:screenHeight:screenDPI:", "interface_n_t_balloon_popup.html#a600bb130386dacd9f8d1afa8fcb39a7f", null ],
+    [ "drawBitmap:screenWidth:screenHeight:dpToPX:", "interface_n_t_balloon_popup.html#ae21929fd2ea4458a30c900956c22d57a", null ],
     [ "getDescription", "interface_n_t_balloon_popup.html#a4837282109faa5569a95edb5db577a59", null ],
     [ "getStyle", "interface_n_t_balloon_popup.html#a5ffd47399b695a90268db7daecc21f43", null ],
     [ "getTitle", "interface_n_t_balloon_popup.html#a0cc2e14824f90f0eca55a161830428b4", null ],

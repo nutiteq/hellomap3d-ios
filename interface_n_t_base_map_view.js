@@ -1,5 +1,8 @@
 var interface_n_t_base_map_view =
 [
+    [ "cancelAllTasks", "interface_n_t_base_map_view.html#ae33f7ab1a982ca708ca71cba9d83c2f8", null ],
+    [ "clearAllCaches", "interface_n_t_base_map_view.html#a908a7a4fe1ffa6ad7326c7ef61403b5c", null ],
+    [ "clearPreloadingCaches", "interface_n_t_base_map_view.html#a0d33cdf5a196bce627cd5eaedee05138", null ],
     [ "getFocusPos", "interface_n_t_base_map_view.html#a4e1dec077861e0e787c36b707f89df29", null ],
     [ "getLayers", "interface_n_t_base_map_view.html#a0cd6937a40991f3aa50b9c5efc32c51c", null ],
     [ "getOptions", "interface_n_t_base_map_view.html#a1aa6f4a39cb46a7060956f90186b86d7", null ],
@@ -13,12 +16,10 @@ var interface_n_t_base_map_view =
     [ "onSurfaceChanged:height:", "interface_n_t_base_map_view.html#a9bd9d9ae2682ee9136e7982ca47ee359", null ],
     [ "onSurfaceCreated", "interface_n_t_base_map_view.html#a7983dfe37e4ca21af9153db09de39bed", null ],
     [ "pan:durationSeconds:", "interface_n_t_base_map_view.html#a0f63eea9818694aa069c589981fd5b27", null ],
-    [ "releaseMaxMemory", "interface_n_t_base_map_view.html#a4f65cb7cc28fe5197c77b0419e5e41f9", null ],
     [ "rotate:durationSeconds:", "interface_n_t_base_map_view.html#ab6efcf984c43d0c619a52b0372517091", null ],
     [ "rotate:targetPos:durationSeconds:", "interface_n_t_base_map_view.html#a57de30e59baf89a2aa8213bdb05692e1", null ],
     [ "screenToWorld:", "interface_n_t_base_map_view.html#a2216f275a611934a540d81f035829a6e", null ],
     [ "setFocusPos:durationSeconds:", "interface_n_t_base_map_view.html#a3df1f775770ff9cd97ca8d7a516282c9", null ],
-    [ "setRedrawRequestListener:", "interface_n_t_base_map_view.html#adb39c6d433ff25b8905f71e0915ffd2f", null ],
     [ "setRotation:durationSeconds:", "interface_n_t_base_map_view.html#ad6e9c6e25cba98348b8fb6dfef2be553", null ],
     [ "setRotation:targetPos:durationSeconds:", "interface_n_t_base_map_view.html#a3d00d219372d63d2b3e069d41d1d88dc", null ],
     [ "setTilt:durationSeconds:", "interface_n_t_base_map_view.html#af39ed457ad261fc1af8065542f6c006c", null ],

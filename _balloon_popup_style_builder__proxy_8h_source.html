@@ -120,72 +120,93 @@ $(document).ready(function(){initNavTree('_balloon_popup_style_builder__proxy_8h
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;-(void*)getCptr;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;-(id)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a69690d4a6e2c44439706eb3957f79f99">init</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;-(int)getCornerRadius;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;-(void)setCornerRadius: (<span class="keywordtype">int</span>)cornerRadius;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;-(<a class="code" href="interface_n_t_color.html">NTColor</a>*)getLeftColor;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;-(void)setLeftColor: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)leftColor;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;-(UIImage*)getLeftImage;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;-(void)setLeftImage: (UIImage*)leftImage;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;-(NTBalloonPopupMargins*)getLeftMargins;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;-(void)setLeftMargins: (NTBalloonPopupMargins*)leftMargins;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;-(<a class="code" href="interface_n_t_color.html">NTColor</a>*)getRightColor;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;-(void)setRightColor: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)rightColor;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;-(UIImage*)getRightImage;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;-(void)setRightImage: (UIImage*)rightImage;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;-(NTBalloonPopupMargins*)getRightMargins;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;-(void)setRightMargins: (NTBalloonPopupMargins*)rightMargins;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;-(<a class="code" href="interface_n_t_color.html">NTColor</a>*)getTitleColor;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;-(void)setTitleColor: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)titleColor;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;-(NSString*)getTitleFontName;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;-(void)setTitleFontName: (NSString*)titleFontName;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;-(int)getTitleFontSize;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;-(void)setTitleFontSize: (<span class="keywordtype">int</span>)titleFontSize;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;-(NTBalloonPopupMargins*)getTitleMargins;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;-(void)setTitleMargins: (NTBalloonPopupMargins*)titleMargins;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;-(BOOL)getTitleWrap;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;-(void)setTitleWrap: (BOOL)titleWrap;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;-(<a class="code" href="interface_n_t_color.html">NTColor</a>*)getDescriptionColor;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;-(void)setDescriptionColor: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)descColor;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;-(NSString*)getDescriptionFontName;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;-(void)setDescriptionFontName: (NSString*)descFontName;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;-(int)getDescriptionFontSize;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;-(void)setDescriptionFontSize: (<span class="keywordtype">int</span>)descFontSize;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;-(NTBalloonPopupMargins*)getDescriptionMargins;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;-(void)setDescriptionMargins: (NTBalloonPopupMargins*)descMargins;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;-(BOOL)getDescriptionWrap;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;-(void)setDescriptionWrap: (BOOL)descWrap;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;-(<a class="code" href="interface_n_t_color.html">NTColor</a>*)getStrokeColor;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;-(void)setStrokeColor: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)strokeColor;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;-(int)getStrokeWidth;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;-(void)setStrokeWidth: (<span class="keywordtype">int</span>)strokeWidth;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;-(int)getTriangleWidth;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;-(void)setTriangleWidth: (<span class="keywordtype">int</span>)triangleWidth;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;-(int)getTriangleHeight;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;-(void)setTriangleHeight: (<span class="keywordtype">int</span>)triangleHeight;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;-(<a class="code" href="interface_n_t_balloon_popup_style.html">NTBalloonPopupStyle</a>*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#ab4275aac88856724807e1931e97bc28c">buildStyle</a>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;-(void)dealloc;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;-(int)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#ae3c958c28169add5aa23d857fb0c5655">getCornerRadius</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;-(void)setCornerRadius: (<span class="keywordtype">int</span>)cornerRadius;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;-(<a class="code" href="interface_n_t_color.html">NTColor</a>*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a43b799308d41f1052c8e07e32afccfaf">getLeftColor</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;-(void)setLeftColor: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)leftColor;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;-(UIImage*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a22251955c484a97f96713c5f223c9467">getLeftImage</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;-(void)setLeftImage: (UIImage*)leftImage;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;-(NTBalloonPopupMargins*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a881bd43edd903eacfd64836091874aeb">getLeftMargins</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;-(void)setLeftMargins: (NTBalloonPopupMargins*)leftMargins;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;-(<a class="code" href="interface_n_t_color.html">NTColor</a>*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#afb114d20057fc6ff782842a15128c033">getRightColor</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;-(void)setRightColor: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)rightColor;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;-(UIImage*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#af5a020e8900ea1c481e552fb76802870">getRightImage</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;-(void)setRightImage: (UIImage*)rightImage;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;-(NTBalloonPopupMargins*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#ac90ca4cc75f70d3c9e51c06549466db4">getRightMargins</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;-(void)setRightMargins: (NTBalloonPopupMargins*)rightMargins;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;-(<a class="code" href="interface_n_t_color.html">NTColor</a>*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a04a6185564c1678a58f3cb8ece53a667">getTitleColor</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;-(void)setTitleColor: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)titleColor;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;-(NSString*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a2ebd30cc94e66a6a06100ff0e5d95fb0">getTitleFontName</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;-(void)setTitleFontName: (NSString*)titleFontName;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;-(int)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#aba495c0f079a0074326ebf1858f9f00d">getTitleFontSize</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;-(void)setTitleFontSize: (<span class="keywordtype">int</span>)titleFontSize;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;-(NTBalloonPopupMargins*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a739e37a09a295e42a54c8063bff39936">getTitleMargins</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;-(void)setTitleMargins: (NTBalloonPopupMargins*)titleMargins;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;-(BOOL)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a7ef10b26c82b2a1a4d64b8a9f2bb3812">isTitleWrap</a>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;-(void)setTitleWrap: (BOOL)titleWrap;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;-(<a class="code" href="interface_n_t_color.html">NTColor</a>*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a813e64fd7f3ea6f71ab89a899f4324c6">getDescriptionColor</a>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;-(void)setDescriptionColor: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)descColor;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;-(NSString*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a4fdf0777f2904ebcff2a77c97b8e1996">getDescriptionFontName</a>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;-(void)setDescriptionFontName: (NSString*)descFontName;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;-(int)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a97a336428c62df8affd53261e1e38e85">getDescriptionFontSize</a>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;-(void)setDescriptionFontSize: (<span class="keywordtype">int</span>)descFontSize;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;-(NTBalloonPopupMargins*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a647c60acf64a7ef7feffa54ccd40a23c">getDescriptionMargins</a>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;-(void)setDescriptionMargins: (NTBalloonPopupMargins*)descMargins;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;-(BOOL)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a8aca13cc468f5347dcf98470ae051d0e">isDescriptionWrap</a>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;-(void)setDescriptionWrap: (BOOL)descWrap;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;-(<a class="code" href="interface_n_t_color.html">NTColor</a>*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#acb56b5c589bd185448f419c417bfe9b5">getStrokeColor</a>;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;-(void)setStrokeColor: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)strokeColor;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;-(int)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a5edb24ab7fbf34fd00d5628cf18e905f">getStrokeWidth</a>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;-(void)setStrokeWidth: (<span class="keywordtype">int</span>)strokeWidth;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;-(int)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#a1d46d4f46f121f8c726643da54766ea6">getTriangleWidth</a>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;-(void)setTriangleWidth: (<span class="keywordtype">int</span>)triangleWidth;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;-(int)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#abbd8c63888b274e6d3bd840c6e4c0493">getTriangleHeight</a>;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;-(void)setTriangleHeight: (<span class="keywordtype">int</span>)triangleHeight;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;-(<a class="code" href="interface_n_t_balloon_popup_style.html">NTBalloonPopupStyle</a>*)<a class="code" href="interface_n_t_balloon_popup_style_builder.html#ab4275aac88856724807e1931e97bc28c">buildStyle</a>;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;-(void)dealloc;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="interface_n_t_color_html"><div class="ttname"><a href="interface_n_t_color.html">NTColor</a></div><div class="ttdef"><b>Definition:</b> Color_proxy.h:21</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a2ebd30cc94e66a6a06100ff0e5d95fb0"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a2ebd30cc94e66a6a06100ff0e5d95fb0">-[NTBalloonPopupStyleBuilder getTitleFontName]</a></div><div class="ttdeci">NSString * getTitleFontName()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:140</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a43b799308d41f1052c8e07e32afccfaf"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a43b799308d41f1052c8e07e32afccfaf">-[NTBalloonPopupStyleBuilder getLeftColor]</a></div><div class="ttdeci">NTColor * getLeftColor()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:41</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a97a336428c62df8affd53261e1e38e85"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a97a336428c62df8affd53261e1e38e85">-[NTBalloonPopupStyleBuilder getDescriptionFontSize]</a></div><div class="ttdeci">int getDescriptionFontSize()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:210</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_ac90ca4cc75f70d3c9e51c06549466db4"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#ac90ca4cc75f70d3c9e51c06549466db4">-[NTBalloonPopupStyleBuilder getRightMargins]</a></div><div class="ttdeci">NTBalloonPopupMargins * getRightMargins()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:110</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_afb114d20057fc6ff782842a15128c033"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#afb114d20057fc6ff782842a15128c033">-[NTBalloonPopupStyleBuilder getRightColor]</a></div><div class="ttdeci">NTColor * getRightColor()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:83</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_aba495c0f079a0074326ebf1858f9f00d"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#aba495c0f079a0074326ebf1858f9f00d">-[NTBalloonPopupStyleBuilder getTitleFontSize]</a></div><div class="ttdeci">int getTitleFontSize()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:150</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_af5a020e8900ea1c481e552fb76802870"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#af5a020e8900ea1c481e552fb76802870">-[NTBalloonPopupStyleBuilder getRightImage]</a></div><div class="ttdeci">UIImage * getRightImage()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:98</div></div>
 <div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_ab4275aac88856724807e1931e97bc28c"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#ab4275aac88856724807e1931e97bc28c">-[NTBalloonPopupStyleBuilder buildStyle]</a></div><div class="ttdeci">NTBalloonPopupStyle * buildStyle()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:290</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a22251955c484a97f96713c5f223c9467"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a22251955c484a97f96713c5f223c9467">-[NTBalloonPopupStyleBuilder getLeftImage]</a></div><div class="ttdeci">UIImage * getLeftImage()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:56</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a1d46d4f46f121f8c726643da54766ea6"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a1d46d4f46f121f8c726643da54766ea6">-[NTBalloonPopupStyleBuilder getTriangleWidth]</a></div><div class="ttdeci">int getTriangleWidth()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:270</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a8aca13cc468f5347dcf98470ae051d0e"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a8aca13cc468f5347dcf98470ae051d0e">-[NTBalloonPopupStyleBuilder isDescriptionWrap]</a></div><div class="ttdeci">BOOL isDescriptionWrap()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:235</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a4fdf0777f2904ebcff2a77c97b8e1996"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a4fdf0777f2904ebcff2a77c97b8e1996">-[NTBalloonPopupStyleBuilder getDescriptionFontName]</a></div><div class="ttdeci">NSString * getDescriptionFontName()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:200</div></div>
 <div class="ttc" id="interface_n_t_balloon_popup_style_builder_html"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html">NTBalloonPopupStyleBuilder</a></div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.h:27</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_acb56b5c589bd185448f419c417bfe9b5"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#acb56b5c589bd185448f419c417bfe9b5">-[NTBalloonPopupStyleBuilder getStrokeColor]</a></div><div class="ttdeci">NTColor * getStrokeColor()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:245</div></div>
 <div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a69690d4a6e2c44439706eb3957f79f99"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a69690d4a6e2c44439706eb3957f79f99">-[NTBalloonPopupStyleBuilder init]</a></div><div class="ttdeci">id init()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:26</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_abbd8c63888b274e6d3bd840c6e4c0493"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#abbd8c63888b274e6d3bd840c6e4c0493">-[NTBalloonPopupStyleBuilder getTriangleHeight]</a></div><div class="ttdeci">int getTriangleHeight()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:280</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a5edb24ab7fbf34fd00d5628cf18e905f"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a5edb24ab7fbf34fd00d5628cf18e905f">-[NTBalloonPopupStyleBuilder getStrokeWidth]</a></div><div class="ttdeci">int getStrokeWidth()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:260</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a881bd43edd903eacfd64836091874aeb"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a881bd43edd903eacfd64836091874aeb">-[NTBalloonPopupStyleBuilder getLeftMargins]</a></div><div class="ttdeci">NTBalloonPopupMargins * getLeftMargins()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:68</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_ae3c958c28169add5aa23d857fb0c5655"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#ae3c958c28169add5aa23d857fb0c5655">-[NTBalloonPopupStyleBuilder getCornerRadius]</a></div><div class="ttdeci">int getCornerRadius()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:31</div></div>
 <div class="ttc" id="interface_n_t_popup_style_builder_html"><div class="ttname"><a href="interface_n_t_popup_style_builder.html">NTPopupStyleBuilder</a></div><div class="ttdef"><b>Definition:</b> PopupStyleBuilder_proxy.h:25</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a739e37a09a295e42a54c8063bff39936"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a739e37a09a295e42a54c8063bff39936">-[NTBalloonPopupStyleBuilder getTitleMargins]</a></div><div class="ttdeci">NTBalloonPopupMargins * getTitleMargins()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:160</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a7ef10b26c82b2a1a4d64b8a9f2bb3812"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a7ef10b26c82b2a1a4d64b8a9f2bb3812">-[NTBalloonPopupStyleBuilder isTitleWrap]</a></div><div class="ttdeci">BOOL isTitleWrap()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:175</div></div>
 <div class="ttc" id="interface_n_t_balloon_popup_style_html"><div class="ttname"><a href="interface_n_t_balloon_popup_style.html">NTBalloonPopupStyle</a></div><div class="ttdef"><b>Definition:</b> BalloonPopupStyle_proxy.h:46</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a647c60acf64a7ef7feffa54ccd40a23c"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a647c60acf64a7ef7feffa54ccd40a23c">-[NTBalloonPopupStyleBuilder getDescriptionMargins]</a></div><div class="ttdeci">NTBalloonPopupMargins * getDescriptionMargins()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:220</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a04a6185564c1678a58f3cb8ece53a667"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a04a6185564c1678a58f3cb8ece53a667">-[NTBalloonPopupStyleBuilder getTitleColor]</a></div><div class="ttdeci">NTColor * getTitleColor()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:125</div></div>
+<div class="ttc" id="interface_n_t_balloon_popup_style_builder_html_a813e64fd7f3ea6f71ab89a899f4324c6"><div class="ttname"><a href="interface_n_t_balloon_popup_style_builder.html#a813e64fd7f3ea6f71ab89a899f4324c6">-[NTBalloonPopupStyleBuilder getDescriptionColor]</a></div><div class="ttdeci">NTColor * getDescriptionColor()</div><div class="ttdef"><b>Definition:</b> BalloonPopupStyleBuilder_proxy.mm:185</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_84fc5dba3506812825191c0c043e3c97.html">generated</a></li><li class="navelem"><a class="el" href="dir_3334d4c9ec8f5b0c232438c1e5914065.html">proxies</a></li><li class="navelem"><b>BalloonPopupStyleBuilder_proxy.h</b></li>
-    <li class="footer">Generated on Mon Jun 30 2014 09:32:21 for Nutiteq Maps SDK iOs by
+    <li class="footer">Generated on Sat Oct 4 2014 14:21:05 for Nutiteq Maps SDK iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
