@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CDAFA9F19E01A9400510365 /* osmbright.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0CDAFA9E19E01A9400510365 /* osmbright.zip */; };
 		2A16AB941905FFDE00DE7F8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A16AB921905FFDE00DE7F8D /* Main.storyboard */; };
 		2A319B43187C4F8F0004A3CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B42187C4F8F0004A3CB /* Foundation.framework */; };
 		2A319B45187C4F8F0004A3CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B44187C4F8F0004A3CB /* CoreGraphics.framework */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CDAFA9E19E01A9400510365 /* osmbright.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = osmbright.zip; path = "../../nutiteq-ios-sample/osmbright.zip"; sourceTree = "<group>"; };
 		2A16AB931905FFDE00DE7F8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "nutiteq-ios-sample/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		2A319B3F187C4F8F0004A3CB /* nutiteq-ios-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nutiteq-ios-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A319B42187C4F8F0004A3CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -83,6 +85,7 @@
 		2A319B36187C4F8F0004A3CB = {
 			isa = PBXGroup;
 			children = (
+				0CDAFA9E19E01A9400510365 /* osmbright.zip */,
 				2AEA4FAB19140909002ED69F /* arrow.png */,
 				2A710BBF19196AD100647B81 /* arrow@2x.png */,
 				2AEA4FA51913F38C002ED69F /* info.png */,
@@ -210,6 +213,7 @@
 				2A710BBE191956CC00647B81 /* info@2x.png in Resources */,
 				2A710BC019196AD100647B81 /* arrow@2x.png in Resources */,
 				2AD24F8518FEDB89000969F4 /* Images.xcassets in Resources */,
+				0CDAFA9F19E01A9400510365 /* osmbright.zip in Resources */,
 				2AD24F7C18FEDAA6000969F4 /* nutiteq-ios-sample-Info.plist in Resources */,
 				2AC26E5F1940FE55000CA859 /* milktruck.nml in Resources */,
 				2AEA4FAC19140909002ED69F /* arrow.png in Resources */,

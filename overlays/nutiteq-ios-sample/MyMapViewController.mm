@@ -26,6 +26,42 @@
     
     // General options
     [[self getOptions] setTileDrawSize:256];
+  
+#define VECTOR_BACKGROUND 1
+  
+  if(VECTOR_BACKGROUND){
+    // Use modern vector background. Suggested strongly, especially if you rotate and tilt the map
+    
+    // Load vector tile styleset
+    UnsignedCharVector *vectorTileStyleSetData = [NTAssetUtils loadBytes: @"osmbright.zip"];
+    NTMBVectorTileStyleSet *vectorTileStyleSet = [[NTMBVectorTileStyleSet alloc] initWithData:vectorTileStyleSetData];
+    // Create vector tile decoder using the styleset
+    NTMBVectorTileDecoder *vectorTileDecoder = [[NTMBVectorTileDecoder alloc] initWithStyleSet:vectorTileStyleSet];
+    
+    NTVectorTileDataSource *vectorTileDataSource;
+
+#define ONLINE_VECTOR 1
+    
+    if(ONLINE_VECTOR){
+      
+    // Create online vector tile data source, use Nutiteq test account
+      vectorTileDataSource = [[NTHTTPVectorTileDataSource alloc] initWithMinZoom:0 maxZoom:14 baseURL:@"http://api.nutiteq.com/v1/nutiteq.mbstreets/{zoom}/{x}/{y}.vt?user_key=15cd9131072d6df68b8a54feda5b0496"];
+
+    }else{
+      // file-based offline datasource
+      NSString* fullpathVT = [[NSBundle mainBundle] pathForResource:@"budapest_mbvt"
+                                                             ofType:@"db"];
+      vectorTileDataSource = [[NTMBTilesVectorTileDataSource alloc] initWithMinZoom:0 maxZoom:14 path: fullpathVT];
+    }
+    // Create vector tile layer, using previously created data source and decoder
+    NTVectorTileLayer *vectorTileLayer = [[NTVectorTileLayer alloc] initWithDataSource:vectorTileDataSource decoder:vectorTileDecoder];
+    // Add vector tile layer
+    [[self getLayers] add:vectorTileLayer];
+
+    
+    
+  }else{
+    // use old-school raster background layer. Use only if vector is not available for your case
     
     // Initialize a OSM raster data source
     NTHTTPRasterTileDataSource* baseRasterTileDataSource = [[NTHTTPRasterTileDataSource alloc] initWithMinZoom:0 maxZoom:24 baseURL:@"http://api.tiles.mapbox.com/v3/nutiteq.map-j6a1wkx0/{zoom}/{x}/{y}.png"];
@@ -39,9 +75,12 @@
     // Initialize a raster layer with the previous data source
     NTRasterTileLayer* rasterLayer = [[NTRasterTileLayer alloc] initWithDataSource:cachedRasterTileDataSource];
     //[rasterLayer setPreloading:NO];
-    [rasterLayer setSmoothFading:NO];
     // Add the previous raster layer to the map
     [[self getLayers] add:rasterLayer];
+    
+  }
+  
+  
     
     // Initialize an unculled vector data source
     NTUnculledVectorDataSource* vectorDataSource1 = [[NTUnculledVectorDataSource alloc] initWithProjection:proj];
