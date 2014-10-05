@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0CDAFA9F19E01A9400510365 /* osmbright.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0CDAFA9E19E01A9400510365 /* osmbright.zip */; };
+		0C1FFD5519E1C08B006E9AF2 /* osmbright.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FFD4F19E1C08B006E9AF2 /* osmbright.zip */; };
+		0C1FFD5619E1C08B006E9AF2 /* osmbright3d.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FFD5019E1C08B006E9AF2 /* osmbright3d.zip */; };
+		0C1FFD6619E1DC75006E9AF2 /* berlin_ntvt.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FFD6519E1DC75006E9AF2 /* berlin_ntvt.mbtiles */; };
 		2A16AB941905FFDE00DE7F8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A16AB921905FFDE00DE7F8D /* Main.storyboard */; };
 		2A319B43187C4F8F0004A3CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B42187C4F8F0004A3CB /* Foundation.framework */; };
 		2A319B45187C4F8F0004A3CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B44187C4F8F0004A3CB /* CoreGraphics.framework */; };
@@ -18,7 +20,6 @@
 		2A710BC019196AD100647B81 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A710BBF19196AD100647B81 /* arrow@2x.png */; };
 		2AB2803418EB150400666197 /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AB2803318EB150400666197 /* marker.png */; };
 		2ABFB6B81947460E00A64571 /* Nuti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABFB6B71947460E00A64571 /* Nuti.framework */; };
-		2AC26E5F1940FE55000CA859 /* milktruck.nml in Resources */ = {isa = PBXBuildFile; fileRef = 2AC26E5E1940FE55000CA859 /* milktruck.nml */; };
 		2AC270581941EFF9000CA859 /* MyMergedRasterTileDataSource.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2AC270571941EFF9000CA859 /* MyMergedRasterTileDataSource.mm */; };
 		2AD24F6818FED992000969F4 /* saku_ios_4bpp.nmldb in Resources */ = {isa = PBXBuildFile; fileRef = 2AD24F6718FED992000969F4 /* saku_ios_4bpp.nmldb */; };
 		2AD24F7518FEDAA6000969F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD24F6A18FEDAA6000969F4 /* AppDelegate.m */; };
@@ -33,7 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0CDAFA9E19E01A9400510365 /* osmbright.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = osmbright.zip; path = "../../nutiteq-ios-sample/osmbright.zip"; sourceTree = "<group>"; };
+		0C1FFD4F19E1C08B006E9AF2 /* osmbright.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright.zip; sourceTree = "<group>"; };
+		0C1FFD5019E1C08B006E9AF2 /* osmbright3d.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright3d.zip; sourceTree = "<group>"; };
+		0C1FFD6519E1DC75006E9AF2 /* berlin_ntvt.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = berlin_ntvt.mbtiles; sourceTree = "<group>"; };
 		2A16AB931905FFDE00DE7F8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "nutiteq-ios-sample/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		2A319B3F187C4F8F0004A3CB /* nutiteq-ios-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nutiteq-ios-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A319B42187C4F8F0004A3CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,7 +49,6 @@
 		2A710BBF19196AD100647B81 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 		2AB2803318EB150400666197 /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
 		2ABFB6B71947460E00A64571 /* Nuti.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nuti.framework; sourceTree = "<group>"; };
-		2AC26E5E1940FE55000CA859 /* milktruck.nml */ = {isa = PBXFileReference; lastKnownFileType = file; path = milktruck.nml; sourceTree = "<group>"; };
 		2AC270561941EFF9000CA859 /* MyMergedRasterTileDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMergedRasterTileDataSource.h; path = "nutiteq-ios-sample/MyMergedRasterTileDataSource.h"; sourceTree = SOURCE_ROOT; };
 		2AC270571941EFF9000CA859 /* MyMergedRasterTileDataSource.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MyMergedRasterTileDataSource.mm; path = "nutiteq-ios-sample/MyMergedRasterTileDataSource.mm"; sourceTree = SOURCE_ROOT; };
 		2AD24F6718FED992000969F4 /* saku_ios_4bpp.nmldb */ = {isa = PBXFileReference; lastKnownFileType = file; path = saku_ios_4bpp.nmldb; sourceTree = "<group>"; };
@@ -85,13 +87,14 @@
 		2A319B36187C4F8F0004A3CB = {
 			isa = PBXGroup;
 			children = (
-				0CDAFA9E19E01A9400510365 /* osmbright.zip */,
+				0C1FFD6519E1DC75006E9AF2 /* berlin_ntvt.mbtiles */,
 				2AEA4FAB19140909002ED69F /* arrow.png */,
+				0C1FFD4F19E1C08B006E9AF2 /* osmbright.zip */,
+				0C1FFD5019E1C08B006E9AF2 /* osmbright3d.zip */,
 				2A710BBF19196AD100647B81 /* arrow@2x.png */,
 				2AEA4FA51913F38C002ED69F /* info.png */,
 				2A710BBD191956CC00647B81 /* info@2x.png */,
 				2AB2803318EB150400666197 /* marker.png */,
-				2AC26E5E1940FE55000CA859 /* milktruck.nml */,
 				2AD24F6718FED992000969F4 /* saku_ios_4bpp.nmldb */,
 				2A319B48187C4F8F0004A3CB /* nutiteq-ios-sample */,
 				2A319B41187C4F8F0004A3CB /* Frameworks */,
@@ -213,11 +216,12 @@
 				2A710BBE191956CC00647B81 /* info@2x.png in Resources */,
 				2A710BC019196AD100647B81 /* arrow@2x.png in Resources */,
 				2AD24F8518FEDB89000969F4 /* Images.xcassets in Resources */,
-				0CDAFA9F19E01A9400510365 /* osmbright.zip in Resources */,
 				2AD24F7C18FEDAA6000969F4 /* nutiteq-ios-sample-Info.plist in Resources */,
-				2AC26E5F1940FE55000CA859 /* milktruck.nml in Resources */,
+				0C1FFD5619E1C08B006E9AF2 /* osmbright3d.zip in Resources */,
 				2AEA4FAC19140909002ED69F /* arrow.png in Resources */,
 				2AB2803418EB150400666197 /* marker.png in Resources */,
+				0C1FFD6619E1DC75006E9AF2 /* berlin_ntvt.mbtiles in Resources */,
+				0C1FFD5519E1C08B006E9AF2 /* osmbright.zip in Resources */,
 				2AD24F8018FEDB5C000969F4 /* InfoPlist.strings in Resources */,
 				2AEA4FA61913F38C002ED69F /* info.png in Resources */,
 			);

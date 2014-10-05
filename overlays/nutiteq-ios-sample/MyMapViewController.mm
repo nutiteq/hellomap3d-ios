@@ -44,14 +44,20 @@
     
     if(ONLINE_VECTOR){
       
-    // Create online vector tile data source, use Nutiteq test account
+    // Create global online vector tile data source, use Nutiteq test account
       vectorTileDataSource = [[NTHTTPVectorTileDataSource alloc] initWithMinZoom:0 maxZoom:14 baseURL:@"http://api.nutiteq.com/v1/nutiteq.mbstreets/{zoom}/{x}/{y}.vt?user_key=15cd9131072d6df68b8a54feda5b0496"];
 
     }else{
-      // file-based offline datasource
-      NSString* fullpathVT = [[NSBundle mainBundle] pathForResource:@"budapest_mbvt"
-                                                             ofType:@"db"];
+      // file-based local offline datasource
+      NSString* fullpathVT = [[NSBundle mainBundle] pathForResource:@"berlin_ntvt"
+                                                             ofType:@"mbtiles"];
       vectorTileDataSource = [[NTMBTilesVectorTileDataSource alloc] initWithMinZoom:0 maxZoom:14 path: fullpathVT];
+      
+      // zoom to Berlin
+      [self setFocusPos:[proj fromWgs84:[[NTMapPos alloc] initWithX:13.38933 y:52.51704]]  durationSeconds:0];
+      [self setZoom:12 durationSeconds:0];
+
+      
     }
     // Create vector tile layer, using previously created data source and decoder
     NTVectorTileLayer *vectorTileLayer = [[NTVectorTileLayer alloc] initWithDataSource:vectorTileDataSource decoder:vectorTileDecoder];
