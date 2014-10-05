@@ -58,7 +58,7 @@
     // Add vector tile layer
     [[self getLayers] add:vectorTileLayer];
 
-    
+
     
   }else{
     // use old-school raster background layer. Use only if vector is not available for your case
@@ -300,14 +300,6 @@
     [popup3 setMetaDataElement:@"ClickText" element:@"Popupception nr 3"];
     [vectorDataSource1 add:popup3 ];
     
-    // Add a single 3D model
-    UnsignedCharVector* modelData = [NTAssetUtils loadBytes:@"milktruck.nml"];
-    pos = [proj fromWgs84:[[NTMapPos alloc] initWithX:24.646469 y:59.424939]];
-    NTNMLModel* model = [[NTNMLModel alloc] initWithPos:pos sourceModelData:modelData];
-    [model setMetaDataElement:@"ClickText" element:@"Single model"];
-    [model setScale:20];
-    [vectorDataSource1 add:model];
-
     //Add a 3D model database layer
     NSString* fullpath = [[NSBundle mainBundle] pathForResource:@"saku_ios_4bpp" ofType:@"nmldb"];
     NTNMLModelLODTreeSqliteDataSource* nmlDataSource = [[NTNMLModelLODTreeSqliteDataSource alloc] initWithProjection:proj fileName:fullpath];
