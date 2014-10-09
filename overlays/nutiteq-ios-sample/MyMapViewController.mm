@@ -155,7 +155,7 @@
     NTLine* line1 = [[NTLine alloc] initWithGeometry:[[NTLineGeometry alloc] initWithPoses:linePoses] style:[lineStyleBuilder buildStyle]];
     [line1 setMetaDataElement:@"ClickText" element:@"Line nr 1"];
     [vectorDataSource2 add:line1];
-    
+  
     // Second line, create style, reuse the same line position
     lineStyleBuilder = [[NTLineStyleBuilder alloc] init];
     [lineStyleBuilder setColor:[[NTColor alloc] initWithColor:0xFFCC0F00]];
@@ -164,7 +164,7 @@
     NTLine* line2 = [[NTLine alloc] initWithGeometry:[[NTLineGeometry alloc] initWithPoses:linePoses] style:[lineStyleBuilder buildStyle]];
     [line2 setMetaDataElement:@"ClickText" element:@"Line nr 2"];
     [vectorDataSource1 add:line2];
-    
+  
     // Create polygon style and poses
     NTPolygonStyleBuilder* polygonStyleBuilder = [[NTPolygonStyleBuilder alloc] init];
     [polygonStyleBuilder setColor:[[NTColor alloc] initWithColor:0xFFFF0000]];
@@ -198,7 +198,33 @@
     NTPolygon* polygon = [[NTPolygon alloc] initWithGeometry:[[NTPolygonGeometry alloc] initWithPoses:polygonPoses holes:holes] style:[polygonStyleBuilder buildStyle]];
     [polygon setMetaDataElement:@"ClickText" element:@"Polygon"];
     [vectorDataSource1 add:polygon];
-    
+  
+  
+    // Create 3D polygon style and poses
+    NTPolygon3DStyleBuilder* polygon3DStyleBuilder = [[NTPolygon3DStyleBuilder alloc] init];
+    [polygon3DStyleBuilder setColor:[[NTColor alloc] initWithColor:0xFF3333FF]];
+  
+    MapPosVector* polygon3DPoses = [[MapPosVector alloc] init];
+    [polygon3DPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.635930 y:59.416659]]];
+    [polygon3DPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.642453 y:59.411354]]];
+    [polygon3DPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.646187 y:59.409607]]];
+    [polygon3DPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.652667 y:59.413123]]];
+    [polygon3DPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.650736 y:59.416703]]];
+    [polygon3DPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.646444 y:59.416245]]];
+
+  
+    // Create 3D polygon holes poses
+    MapPosVectorVector* polygon3DHoles = [[MapPosVectorVector alloc] init];
+    [polygon3DHoles add:[[MapPosVector alloc] init]];
+    [[polygon3DHoles get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.643409 y:59.411922]]];
+    [[polygon3DHoles get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.651207 y:59.412896]]];
+    [[polygon3DHoles get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.643207 y:59.414411]]];
+  
+    // Add to datasource
+    NTPolygon3D* polygon3D = [[NTPolygon3D alloc] initWithGeometry:[[NTPolygonGeometry alloc] initWithPoses:polygon3DPoses holes:[[MapPosVectorVector alloc] init]] style:[polygon3DStyleBuilder buildStyle] height: 150];
+    [polygon3D setMetaDataElement:@"ClickText" element:@"3D Polygon"];
+    [vectorDataSource1 add:polygon3D];
+  
     // Load bitmaps for custom markers
     UIImage* markerImage = [UIImage imageNamed:@"marker.png"];
     NTBitmap* markerBitmap = [NTBitmapUtils createBitmapFromUIImage:markerImage];
@@ -312,6 +338,17 @@
     NTNMLModelLODTreeLayer* nmlLayer = [[NTNMLModelLODTreeLayer alloc] initWithDataSource:nmlDataSource];
     [nmlLayer setVisibleZoomRange:[[NTMapRange alloc] initWithMin:12 max:25]];
     [[self getLayers] add:nmlLayer];
+  
+    // Add a single 3D model to map
+    UnsignedCharVector* modelData = [NTAssetUtils loadBytes:@"fcd_auto.nml"];
+    pos = [proj fromWgs84:[[NTMapPos alloc] initWithX:24.646469 y:59.424939]];
+    NTNMLModel* model = [[NTNMLModel alloc] initWithPos:pos sourceModelData:modelData];
+    [model setMetaDataElement:@"ClickText" element:@"My nice car"];
+      // oversize it 10*, just to make it more visible
+    [model setScale:10];
+    [vectorDataSource1 add:model];
+
+  
  }
 
 - (void)didReceiveMemoryWarning
