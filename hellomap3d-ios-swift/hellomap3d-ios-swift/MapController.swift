@@ -13,7 +13,7 @@ class MapController: NTMapViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let rasterdDataSource = NTHTTPRasterTileDataSource(minZoom: 0, maxZoom: 24, baseURL: "http://api.tiles.mapbox.com/v3/nutiteq.map-j6a1wkx0/{zoom}/{x}/{y}.png")
+        let rasterdDataSource = NTHTTPTileDataSource(minZoom: 0, maxZoom: 24, baseURL: "http://api.tiles.mapbox.com/v3/nutiteq.map-j6a1wkx0/{zoom}/{x}/{y}.png")
         
         // Initialize a raster layer with the data source, and add it to the MapView
         let rasterLayer = NTRasterTileLayer(dataSource: rasterdDataSource)
