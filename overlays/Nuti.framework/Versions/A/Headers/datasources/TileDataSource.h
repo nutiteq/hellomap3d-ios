@@ -4,6 +4,9 @@
 #include <mutex>
 #include <vector>
 
+#include "core/MapTile.h"
+#include "core/TileData.h"
+
 namespace Nuti {
 
 /**
@@ -43,6 +46,13 @@ public:
         virtual void onTilesChanged(TilesType tilesType, bool removeTiles) = 0;
 	};
     
+	/**
+	 * Constructs an abstract TileDataSource object.
+	 * @param minZoom The minimum zoom level supported by this data source.
+	 * @param maxZoom The maximum zoom level supported by this data source.
+	 */
+	TileDataSource(int minZoom, int maxZoom);
+	
 	virtual ~TileDataSource();
     
     /**
@@ -56,7 +66,14 @@ public:
      */
     int getMaxZoom() const;
     
-    /**
+	/**
+	 * Loads the specified tile.
+	 * @param tile The tile to load.
+	 * @return The tile data. If the tile is not available, null may be returned.
+	 */
+	virtual std::shared_ptr<TileData> loadTile(const MapTile& tile) = 0;
+
+	/**
      * Notifies listeners that the tiles have changed. Action taken depends on the implementation of the
      * listeners, but generally all cached tiles will be reloaded. If the removeTiles flag is set all caches will be cleared
      * prior to reloading, if it's not set then the reloaded tiles will replace the old tiles in caches as they finish loading.
@@ -77,8 +94,6 @@ public:
 	void unregisterOnChangeListener(OnChangeListener* listener);
 
 protected:
-	TileDataSource(int minZoom, int maxZoom);
-
 	int _minZoom;
 	int _maxZoom;
 

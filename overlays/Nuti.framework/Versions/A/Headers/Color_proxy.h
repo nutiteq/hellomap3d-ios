@@ -77,10 +77,10 @@ extern "C" {
  */
 -(unsigned char)getA;
 /**
- * Encodes this map color into 32-bit integer value.<br>
+ * Encodes this map color into 32-bit integer value (ARGB format).<br>
  * @return The encoded 32-bit integer representation of this map color.
  */
--(int)getHex;
+-(int)getARGB;
 /**
  * Creates a string representation of this map color, useful for logging.<br>
  * @return The string representation of this map color.

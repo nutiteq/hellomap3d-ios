@@ -17,7 +17,7 @@ extern "C" {
 
 
 #import "VectorTileDecoder_proxy.h"
-#import "VectorTileDataSource_proxy.h"
+#import "TileDataSource_proxy.h"
 #import "TileLayer_proxy.h"
 
 /**
@@ -31,7 +31,7 @@ extern "C" {
  * Constructs a VectorTileLayer object from a data source.<br>
  * @param dataSource The data source from which this layer loads data.
  */
--(id)initWithDataSource: (NTVectorTileDataSource*)dataSource decoder: (NTVectorTileDecoder*)decoder;
+-(id)initWithDataSource: (NTTileDataSource*)dataSource decoder: (NTVectorTileDecoder*)decoder;
 /**
  * Returns the tile cache capacity.<br>
  * @return The tile cache capacity in bytes.

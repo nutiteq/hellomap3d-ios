@@ -5,7 +5,7 @@
 #include "components/CancelableTask.h"
 #include "components/Task.h"
 #include "core/MapTile.h"
-#include "datasources/RasterTileDataSource.h"
+#include "datasources/TileDataSource.h"
 #include "renderers/RasterTileRenderer.h"
 #include "utils/LRUCache.h"
 #include "utils/LRUTextureCache.h"
@@ -29,7 +29,7 @@ public:
      * Constructs a RasterTileLayer object from a data source.
      * @param dataSource The data source from which this layer loads data.
      */
-	RasterTileLayer(const std::shared_ptr<RasterTileDataSource>& dataSource);
+	RasterTileLayer(const std::shared_ptr<TileDataSource>& dataSource);
 	virtual ~RasterTileLayer();
 
 	/**
@@ -139,7 +139,7 @@ private:
 	std::shared_ptr<TileLoadListener> _tileLoadListener;
 	mutable std::mutex _tileLoadListenerMutex;
 
-	std::shared_ptr<RasterTileDataSource> _dataSource;
+	std::shared_ptr<TileDataSource> _dataSource;
 	std::shared_ptr<RasterTileRenderer> _renderer;
     
     TextureCache<long long> _visibleCache;

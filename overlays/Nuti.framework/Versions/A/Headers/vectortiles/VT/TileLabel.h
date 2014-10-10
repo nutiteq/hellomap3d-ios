@@ -69,11 +69,12 @@ namespace Nuti {
 			void applyTransform(const cglib::mat4x4<double>& transform);
 
 			LabelOrientation getOrientation() const { return _orientation; }
-			std::shared_ptr<Font> getFont() const { return _font; }
-			std::shared_ptr<Bitmap> getBitmap() const { return _font->getBitmap(); }
+			const std::shared_ptr<Font>& getFont() const { return _font; }
+			const std::shared_ptr<Bitmap>& getBitmap() const { return _bitmap; }
 
 			void copyPlacement(const std::shared_ptr<TileLabel>& label);
 			bool updatePlacement(const ViewState& viewState);
+			void updateFontBitmap() { _bitmap = _font->getBitmap(); }
 
 			bool calculateCenter(cglib::vec3<double>& pos) const;
 			bool calculateEnvelope(const ViewState& viewState, std::array<cglib::vec3<float>, 4>& envelope) const;
@@ -112,6 +113,7 @@ namespace Nuti {
 			const long long _groupId;
 			const int _priority;
 			std::shared_ptr<Font> _font;
+			std::shared_ptr<Bitmap> _bitmap;
 			std::vector<Font::Glyph> _glyphs;
 			LabelOrientation _orientation;
 			boost::variant<Vertex, VerticesList> _position;

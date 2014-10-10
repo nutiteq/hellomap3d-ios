@@ -110,10 +110,10 @@ private:
 
 	std::shared_ptr<BillboardRenderer> _billboardRenderer;
 	std::shared_ptr<LineRenderer> _lineRenderer;
-    std::shared_ptr<NMLModelRenderer> _nmlModelRenderer;
 	std::shared_ptr<PointRenderer> _pointRenderer;
-    std::shared_ptr<Polygon3DRenderer> _polygon3DRenderer;
 	std::shared_ptr<PolygonRenderer> _polygonRenderer;
+	std::shared_ptr<Polygon3DRenderer> _polygon3DRenderer;
+	std::shared_ptr<NMLModelRenderer> _nmlModelRenderer;
 
 	std::shared_ptr<CancelableTask> _lastTask;
 };

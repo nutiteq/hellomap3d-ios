@@ -20,7 +20,7 @@ static std::string diffuse_lighting_vert_glsl =
     "varying vec2 v_texCoord;"
     "void main() {"
     "   float dotProduct = max(0.0, dot(a_normal, u_lightDir));"
-    "	v_color = (u_ambientColor + u_lightColor * dotProduct) * a_color;"
+    "	v_color = vec4(u_ambientColor.rgb + u_lightColor.rgb * dotProduct, 1.0) * a_color;"
     "   v_texCoord = a_texCoord;"
     "	gl_Position = u_mvpMat * a_coord;"
     "}";

@@ -83,6 +83,14 @@ enum NTColorFormat {
  */
 -(id)initWithAssetPath: (NSString*)assetPath pow2Padding: (BOOL)pow2Padding;
 /**
+ * Constructs a bitmap by decoding a vector of compressed image bytes. If the power of two conversion flag<br>
+ * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating<br>
+ * OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.<br>
+ * @param compressedData A vector of compressed image bytes.<br>
+ * @param pow2Padding The power of two conversion flag.
+ */
+-(id)initWithCompressedData: (UnsignedCharVector*)compressedData pow2Padding: (BOOL)pow2Padding;
+/**
  * Returns the width of the bitmap.<br>
  * @return The width of the bitmap.
  */
@@ -120,7 +128,13 @@ enum NTColorFormat {
  */
 -(UnsignedCharVector*)compressToPng;
 /**
- * Resizes the bitmap to the desired dimensions. The power of two padding added during the construction of this bitmap <br>
+ * Compresses this bitmap to a internal format.<br>
+ * This operation is intended for serialization of the data only, no actual compression is performed.<br>
+ * @return A byte vector of the serialized data.
+ */
+-(UnsignedCharVector*)compressToInternal;
+/**
+ * Resizes the bitmap to the desired dimensions. The power of two padding added during the construction of this bitmap<br>
  * will be removed prior to resizing. If the power of two conversion flag is set, new padding will be added to the image <br>
  * after resizing to make it's dimensions power of two.<br>
  * @param width The new width of this bitmap.<br>

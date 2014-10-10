@@ -16,7 +16,7 @@ extern "C" {
 #endif
 
 
-#import "RasterTileDataSource_proxy.h"
+#import "TileDataSource_proxy.h"
 #import "TileLayer_proxy.h"
 #import "TileLoadListener_proxy.h"
 
@@ -31,7 +31,7 @@ extern "C" {
  * Constructs a RasterTileLayer object from a data source.<br>
  * @param dataSource The data source from which this layer loads data.
  */
--(id)initWithDataSource: (NTRasterTileDataSource*)dataSource;
+-(id)initWithDataSource: (NTTileDataSource*)dataSource;
 /**
  * Returns the current frame number.<br>
  * @return The current frame number.

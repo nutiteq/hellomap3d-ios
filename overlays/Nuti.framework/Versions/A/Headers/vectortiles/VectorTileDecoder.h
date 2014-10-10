@@ -1,7 +1,7 @@
 #ifndef VECTORTILEDECODER_H_
 #define VECTORTILEDECODER_H_
 
-#include "VectorTileData.h"
+#include "core/TileData.h"
 #include "graphics/Color.h"
 
 #include <memory>
@@ -46,7 +46,7 @@ public:
      * @param tile The tile to load.
      * @return The vector tile data. If the tile is not available, null may be returned.
      */
-	virtual std::shared_ptr<VT::Tile> decodeTile(const VT::TileId& tile, const VT::TileId& targetTile, const std::shared_ptr<VectorTileData>& data) const = 0;
+	virtual std::shared_ptr<VT::Tile> decodeTile(const VT::TileId& tile, const VT::TileId& targetTile, const std::shared_ptr<TileData>& data) const = 0;
 };
     
 }

@@ -9,16 +9,15 @@
 #include "core/MapRange.h"
 #include "core/MapTile.h"
 #include "core/MapVec.h"
+#include "core/TileData.h"
 
-#include "datasources/AssetRasterTileDataSource.h"
-#include "datasources/HTTPRasterTileDataSource.h"
+#include "datasources/AssetTileDataSource.h"
+#include "datasources/HTTPTileDataSource.h"
 #include "datasources/KDTreeVectorDataSource.h"
-#include "datasources/MBTilesRasterTileDataSource.h"
+#include "datasources/MBTilesTileDataSource.h"
 #include "datasources/NMLModelLODTreeSqliteDataSource.h"
-#include "datasources/PersistentCacheRasterTileDataSource.h"
+#include "datasources/PersistentCacheTileDataSource.h"
 #include "datasources/UnculledVectorDataSource.h"
-#include "datasources/HTTPVectorTileDataSource.h"
-#include "datasources/MBTilesVectorTileDataSource.h"
 
 #include "geometry/LineGeometry.h"
 #include "geometry/PointGeometry.h"
@@ -28,7 +27,6 @@
 #include "graphics/Bitmap.h"
 #include "graphics/Color.h"
 #include "graphics/MapTileQuadTreeNode.h"
-#include "graphics/RasterTileBitmap.h"
 #include "graphics/ViewState.h"
 
 #include "layers/Layers.h"
@@ -85,7 +83,6 @@
 #include "vectorelements/Popup.h"
 #include "vectorelements/Text.h"
 
-#include "vectortiles/VectorTileData.h"
 #include "vectortiles/MBVectorTileStyleSet.h"
 #include "vectortiles/MBVectorTileDecoder.h"
 

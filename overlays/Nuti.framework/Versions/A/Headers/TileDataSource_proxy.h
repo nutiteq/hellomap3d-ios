@@ -33,6 +33,10 @@ enum TilesType {
   TILES_TYPE_BOTH
 };
 
+
+#import "MapTile_proxy.h"
+#import "TileData_proxy.h"
+
 /**
  * Abstract base class for tile data sources. It provides default implementation <br>
  * for listener registration and other common tile data source methods.
@@ -45,6 +49,12 @@ enum TilesType {
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
+ * Constructs an abstract TileDataSource object.<br>
+ * @param minZoom The minimum zoom level supported by this data source.<br>
+ * @param maxZoom The maximum zoom level supported by this data source.
+ */
+-(id)initWithMinZoom: (int)minZoom maxZoom: (int)maxZoom;
+/**
  * Returns the minimum zoom level supported by this data source.<br>
  * @return The minimum zoom level supported (inclusive).
  */
@@ -54,6 +64,12 @@ enum TilesType {
  * @return The maximum zoom level supported (exclusive).
  */
 -(int)getMaxZoom;
+/**
+ * Loads the specified tile.<br>
+ * @param tile The tile to load.<br>
+ * @return The tile data. If the tile is not available, null may be returned.
+ */
+-(NTTileData*)loadTile: (NTMapTile*)tile;
 /**
  * Notifies listeners that the tiles have changed. Action taken depends on the implementation of the<br>
  * listeners, but generally all cached tiles will be reloaded. If the removeTiles flag is set all caches will be cleared<br>

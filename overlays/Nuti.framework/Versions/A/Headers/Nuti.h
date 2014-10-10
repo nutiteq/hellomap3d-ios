@@ -9,17 +9,16 @@
 #import "MapRange_proxy.h"
 #import "MapTile_proxy.h"
 #import "MapVec_proxy.h"
+#import "TileData_proxy.h"
 
-#import "AssetRasterTileDataSource_proxy.h"
-#import "CompressedCacheRasterTileDataSource_proxy.h"
-#import "HTTPRasterTileDataSource_proxy.h"
+#import "AssetTileDataSource_proxy.h"
+#import "CompressedCacheTileDataSource_proxy.h"
+#import "HTTPTileDataSource_proxy.h"
 #import "KDTreeVectorDataSource_proxy.h"
-#import "MBTilesRasterTileDataSource_proxy.h"
+#import "MBTilesTileDataSource_proxy.h"
 #import "NMLModelLODTreeSqliteDataSource_proxy.h"
-#import "PersistentCacheRasterTileDataSource_proxy.h"
+#import "PersistentCacheTileDataSource_proxy.h"
 #import "UnculledVectorDataSource_proxy.h"
-#import "HTTPVectorTileDataSource_proxy.h"
-#import "MBTilesVectorTileDataSource_proxy.h"
 
 #import "LineGeometry_proxy.h"
 #import "PointGeometry_proxy.h"
@@ -86,6 +85,5 @@
 
 #import "MBVectorTileDecoder_proxy.h"
 #import "MBVectorTileStyleSet_proxy.h"
-#import "VectorTileData_proxy.h"
 
 #endif

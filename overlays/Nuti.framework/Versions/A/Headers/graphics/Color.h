@@ -66,10 +66,10 @@ public:
 	unsigned char getA() const;
 
     /**
-     * Encodes this map color into 32-bit integer value.
+     * Encodes this map color into 32-bit integer value (ARGB format).
      * @return The encoded 32-bit integer representation of this map color.
      */
-	int getHex() const;
+	int getARGB() const;
 
     /**
      * Creates a string representation of this map color, useful for logging.

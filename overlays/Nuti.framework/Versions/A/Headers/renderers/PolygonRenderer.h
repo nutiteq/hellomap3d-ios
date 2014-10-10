@@ -43,7 +43,7 @@ private:
                                     GLuint a_coord,
                                     std::vector<unsigned char>& colorBuf,
                                     std::vector<float>& coordBuf,
-                                    std::vector<unsigned int>& indexBuf,
+                                    std::vector<unsigned short>& indexBuf,
                                     std::vector<const PolygonDrawData*>& drawDataBuffer,
                                     LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache,
                                     const ViewState& viewState);
@@ -58,7 +58,7 @@ private:
 
     std::vector<unsigned char> _colorBuf;
 	std::vector<float> _coordBuf;
-	std::vector<unsigned int> _indexBuf;
+	std::vector<unsigned short> _indexBuf;
     std::vector<float> _texCoordBuf;
 
 	const Shader* _shader;

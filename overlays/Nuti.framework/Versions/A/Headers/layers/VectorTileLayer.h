@@ -14,7 +14,6 @@
 namespace Nuti {
 class VectorTileDecoder;
 class VectorTileRenderer;
-class VectorTileDataSource;
     
 namespace VT { struct TileId; class Tile; }
 
@@ -29,7 +28,7 @@ public:
      * Constructs a VectorTileLayer object from a data source.
      * @param dataSource The data source from which this layer loads data.
      */
-	VectorTileLayer(const std::shared_ptr<VectorTileDataSource>& dataSource, const std::shared_ptr<VectorTileDecoder>& decoder);
+	VectorTileLayer(const std::shared_ptr<TileDataSource>& dataSource, const std::shared_ptr<VectorTileDecoder>& decoder);
 	virtual ~VectorTileLayer();
 
     /**
@@ -98,7 +97,7 @@ private:
     static const int CULL_DELAY_TIME = 200;
 	static const int PRELOADING_PRIORITY_OFFSET = -2;
 
-	std::shared_ptr<VectorTileDataSource> _dataSource;
+	std::shared_ptr<TileDataSource> _dataSource;
 	std::shared_ptr<VectorTileDecoder> _decoder;
 	std::shared_ptr<VectorTileRenderer> _renderer;
 

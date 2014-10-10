@@ -77,6 +77,14 @@ public:
      * @param pow2Padding The power of two conversion flag.
      */
 	Bitmap(const std::vector<unsigned char>& compressedData, bool pow2Padding);
+	/**
+	 * Constructs a bitmap by decoding a vector of compressed image bytes. If the power of two conversion flag
+	 * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating
+	 * OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.
+	 * @param compressedData A vector of compressed image bytes.
+	 * @param pow2Padding The power of two conversion flag.
+	 */
+	Bitmap(const std::shared_ptr<std::vector<unsigned char> >& compressedData, bool pow2Padding);
     /**
      * Constructs a bitmap by decoding an array of compressed image bytes. If the power of two conversion flag
      * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating
@@ -160,8 +168,15 @@ public:
      */
 	std::shared_ptr<std::vector<unsigned char> > compressToPng() const;
 
-    /** 
-     * Resizes the bitmap to the desired dimensions. The power of two padding added during the construction of this bitmap 
+	/**
+	 * Compresses this bitmap to a internal format.
+	 * This operation is intended for serialization of the data only, no actual compression is performed.
+	 * @return A byte vector of the serialized data.
+	 */
+	std::shared_ptr<std::vector<unsigned char> > compressToInternal() const;
+	
+    /**
+     * Resizes the bitmap to the desired dimensions. The power of two padding added during the construction of this bitmap
      * will be removed prior to resizing. If the power of two conversion flag is set, new padding will be added to the image 
      * after resizing to make it's dimensions power of two.
      * @param width The new width of this bitmap.
@@ -181,11 +196,13 @@ protected:
 	bool isJPEG(const unsigned char* compressedData, int dataSize);
 	bool isPNG(const unsigned char* compressedData, int dataSize);
     bool isWEBP(const unsigned char* compressedData, int dataSize);
+	bool isNUTI(const unsigned char* compressedData, int dataSize);
 
 	bool loadJPEG(const unsigned char* compressedData, int dataSize, bool makePow2);
 	bool loadPNG(const unsigned char* compressedData, int dataSize, bool makePow2);
     bool loadWEBP(const unsigned char* compressedData, int dataSize, bool makePow2);
-
+	bool loadNUTI(const unsigned char* compressedData, int dataSize, bool makePow2);
+	
 	static const unsigned int PNG_SIGNATURE_LENGTH = 8;
 
 	unsigned int _origWidth;

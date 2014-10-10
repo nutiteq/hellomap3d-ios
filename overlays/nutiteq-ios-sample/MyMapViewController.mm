@@ -38,20 +38,20 @@
     // Create vector tile decoder using the styleset
     NTMBVectorTileDecoder *vectorTileDecoder = [[NTMBVectorTileDecoder alloc] initWithStyleSet:vectorTileStyleSet];
     
-    NTVectorTileDataSource *vectorTileDataSource;
+    NTTileDataSource *vectorTileDataSource;
 
 #define ONLINE_VECTOR 1
     
     if(ONLINE_VECTOR){
       
     // Create global online vector tile data source, use Nutiteq test account
-      vectorTileDataSource = [[NTHTTPVectorTileDataSource alloc] initWithMinZoom:0 maxZoom:14 baseURL:@"http://api.nutiteq.com/v1/nutiteq.mbstreets/{zoom}/{x}/{y}.vt?user_key=15cd9131072d6df68b8a54feda5b0496"];
+      vectorTileDataSource = [[NTHTTPTileDataSource alloc] initWithMinZoom:0 maxZoom:14 baseURL:@"http://api.nutiteq.com/v1/nutiteq.mbstreets/{zoom}/{x}/{y}.vt?user_key=15cd9131072d6df68b8a54feda5b0496"];
 
     }else{
       // file-based local offline datasource
       NSString* fullpathVT = [[NSBundle mainBundle] pathForResource:@"berlin_ntvt"
                                                              ofType:@"mbtiles"];
-      vectorTileDataSource = [[NTMBTilesVectorTileDataSource alloc] initWithMinZoom:0 maxZoom:14 path: fullpathVT];
+      vectorTileDataSource = [[NTMBTilesTileDataSource alloc] initWithMinZoom:0 maxZoom:14 path: fullpathVT];
       
       // zoom to Berlin
       [self setFocusPos:[proj fromWgs84:[[NTMapPos alloc] initWithX:13.38933 y:52.51704]]  durationSeconds:0];
@@ -70,13 +70,13 @@
     // use old-school raster background layer. Use only if vector is not available for your case
     
     // Initialize a OSM raster data source
-    NTHTTPRasterTileDataSource* baseRasterTileDataSource = [[NTHTTPRasterTileDataSource alloc] initWithMinZoom:0 maxZoom:24 baseURL:@"http://api.tiles.mapbox.com/v3/nutiteq.map-j6a1wkx0/{zoom}/{x}/{y}.png"];
+    NTHTTPTileDataSource* baseRasterTileDataSource = [[NTHTTPTileDataSource alloc] initWithMinZoom:0 maxZoom:24 baseURL:@"http://api.tiles.mapbox.com/v3/nutiteq.map-j6a1wkx0/{zoom}/{x}/{y}.png"];
     // Initialize PSM hillshading raster data source
-    NTHTTPRasterTileDataSource* hillsRasterTileDataSource = [[NTHTTPRasterTileDataSource alloc] initWithMinZoom:0 maxZoom:24 baseURL:@"http://toolserver.org/~cmarqu/hill/{zoom}/{x}/{y}.png"];
+    NTHTTPTileDataSource* hillsRasterTileDataSource = [[NTHTTPTileDataSource alloc] initWithMinZoom:0 maxZoom:24 baseURL:@"http://toolserver.org/~cmarqu/hill/{zoom}/{x}/{y}.png"];
     // Initialize a custom datasource that will combine those two datasources into one
     MyMergedRasterTileDataSource* mergedRasterTileDataSource = [[MyMergedRasterTileDataSource alloc] initWithDataSource1:baseRasterTileDataSource dataSource2:hillsRasterTileDataSource];
     // Initialize offline raster tile cache with the previous datasource and a sqlite database
-    NTPersistentCacheRasterTileDataSource* cachedRasterTileDataSource = [[NTPersistentCacheRasterTileDataSource alloc] initWithDataSource:mergedRasterTileDataSource databasePath:[NTAssetUtils calculateWritablePath:@"cache4.db"]];
+    NTPersistentCacheTileDataSource* cachedRasterTileDataSource = [[NTPersistentCacheTileDataSource alloc] initWithDataSource:mergedRasterTileDataSource databasePath:[NTAssetUtils calculateWritablePath:@"cache4.db"]];
     
     // Initialize a raster layer with the previous data source
     NTRasterTileLayer* rasterLayer = [[NTRasterTileLayer alloc] initWithDataSource:cachedRasterTileDataSource];
@@ -221,7 +221,7 @@
     [[polygon3DHoles get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.643207 y:59.414411]]];
   
     // Add to datasource
-    NTPolygon3D* polygon3D = [[NTPolygon3D alloc] initWithGeometry:[[NTPolygonGeometry alloc] initWithPoses:polygon3DPoses holes:[[MapPosVectorVector alloc] init]] style:[polygon3DStyleBuilder buildStyle] height: 150];
+    NTPolygon3D* polygon3D = [[NTPolygon3D alloc] initWithGeometry:[[NTPolygonGeometry alloc] initWithPoses:polygon3DPoses holes:polygon3DHoles] style:[polygon3DStyleBuilder buildStyle] height: 150];
     [polygon3D setMetaDataElement:@"ClickText" element:@"3D Polygon"];
     [vectorDataSource1 add:polygon3D];
   
@@ -315,7 +315,7 @@
     NTBalloonPopup* popup2 = [[NTBalloonPopup alloc] initWithBaseBillboard:marker1
                                                                      style:[balloonPopupStyleBuilder buildStyle]
                                                                      title:@"Popup attached to marker"
-                                                                      desc:@"Black, rectangle"];
+                                                                      desc:@"ru: тест"];
     [popup2 setMetaDataElement:@"ClickText" element:@"Popupception nr 2"];
     [vectorDataSource1 add:popup2];
     
