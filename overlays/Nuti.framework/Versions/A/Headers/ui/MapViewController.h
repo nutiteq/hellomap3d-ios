@@ -6,13 +6,9 @@
 @class NTMapVec;
 @class NTOptions;
 
-namespace Nuti {
-    class BaseMapView;
-}
-
 @interface NTMapViewController : GLKViewController
 
-@property (readonly, assign, nonatomic) Nuti::BaseMapView* nativeMapView;
+@property (readonly, assign, nonatomic) void* nativeMapView;
 
 /**
  * Registers the SDK license. This is class method and must be called before <br>
