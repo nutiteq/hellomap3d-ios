@@ -72,7 +72,7 @@
     // Initialize a OSM raster data source
     NTHTTPTileDataSource* baseRasterTileDataSource = [[NTHTTPTileDataSource alloc] initWithMinZoom:0 maxZoom:24 baseURL:@"http://api.tiles.mapbox.com/v3/nutiteq.map-j6a1wkx0/{zoom}/{x}/{y}.png"];
     // Initialize PSM hillshading raster data source
-    NTHTTPTileDataSource* hillsRasterTileDataSource = [[NTHTTPTileDataSource alloc] initWithMinZoom:0 maxZoom:24 baseURL:@"http://toolserver.org/~cmarqu/hill/{zoom}/{x}/{y}.png"];
+    NTHTTPTileDataSource* hillsRasterTileDataSource = [[NTHTTPTileDataSource alloc] initWithMinZoom:0 maxZoom:24 baseURL:@"http://tiles.wmflabs.org/hillshading/{zoom}/{x}/{y}.png"];
     // Initialize a custom datasource that will combine those two datasources into one
     MyMergedRasterTileDataSource* mergedRasterTileDataSource = [[MyMergedRasterTileDataSource alloc] initWithDataSource1:baseRasterTileDataSource dataSource2:hillsRasterTileDataSource];
     // Initialize offline raster tile cache with the previous datasource and a sqlite database
@@ -85,9 +85,6 @@
     [[self getLayers] add:rasterLayer];
     
   }
-  
-  
-    
     // Initialize an unculled vector data source
     NTUnculledVectorDataSource* vectorDataSource1 = [[NTUnculledVectorDataSource alloc] initWithProjection:proj];
     // Initialize a vector layer with the previous data source
