@@ -21,7 +21,7 @@ public:
 	virtual void offsetLayerHorizontally(double offset);
 
 	virtual void onSurfaceCreated(ShaderManager& shaderManager);
-	virtual void onDrawFrame(float deltaSeconds, const ViewState& viewState);
+	virtual bool onDrawFrame(float deltaSeconds, const ViewState& viewState);
 	virtual void onSurfaceDestroyed();
 
 protected:
@@ -43,7 +43,7 @@ protected:
 
 	NMLModelRendererBase();
 
-	virtual void drawModels(const ViewState& viewState) = 0;
+	virtual bool drawModels(const ViewState& viewState) = 0;
 
 	std::shared_ptr<GLContext> _glContext;
     

@@ -20,29 +20,6 @@ class MapTileQuadTreeNode;
  */
 class TileLayer : public Layer {
 public:
-    class FetchingTiles {
-    public:
-        FetchingTiles() : _fetchingTiles(), _mutex() {}
-        
-        void add(long long tileId) {
-            std::lock_guard<std::mutex> lock(_mutex);
-            _fetchingTiles.insert(tileId);
-        }
-        
-        bool exists(long long tileId) {
-            std::lock_guard<std::mutex> lock(_mutex);
-            return _fetchingTiles.find(tileId) != _fetchingTiles.end();
-        }
-        
-        void remove(long long tileId) {
-            std::lock_guard<std::mutex> lock(_mutex);
-            _fetchingTiles.erase(tileId);
-        }
-    private:
-        std::unordered_set<long long> _fetchingTiles;
-        mutable std::mutex _mutex;
-    };
-    
 	virtual ~TileLayer();
     
     /**
@@ -56,7 +33,8 @@ public:
      * @return True if preloading is enabled.
      */
 	bool isPreloading() const;
-    /**
+
+	/**
      * Sets the state of preloading for this layer. Preloading allows the downloading of tiles that are not
      * currently visible on screen, but are adjacent to ones that are. This means that the user can pan the map without
      * immediately noticing any missing tiles.
@@ -79,14 +57,45 @@ public:
      * @param The new bias value, both positive and negative fractional values are supported.
      */
 	void setZoomLevelBias(float bias);
-
+	
+	/**
+	 * Clear layer tile caches. This will release memory allocated to tiles.
+	 * @param all True if all tiles should be released, otherwise only preloading (invisible) tiles are released.
+	 */
+	virtual void clearTileCaches(bool all) = 0;
+	
 protected:
-    struct DataSourceListener : public TileDataSource::OnChangeListener {
-		DataSourceListener(TileLayer& tileLayer);
+	class FetchingTiles {
+	public:
+		FetchingTiles() : _fetchingTiles(), _mutex() {}
+		
+		void add(long long tileId) {
+			std::lock_guard<std::mutex> lock(_mutex);
+			_fetchingTiles.insert(tileId);
+		}
+		
+		bool exists(long long tileId) {
+			std::lock_guard<std::mutex> lock(_mutex);
+			return _fetchingTiles.find(tileId) != _fetchingTiles.end();
+		}
+		
+		void remove(long long tileId) {
+			std::lock_guard<std::mutex> lock(_mutex);
+			_fetchingTiles.erase(tileId);
+		}
+	private:
+		std::unordered_set<long long> _fetchingTiles;
+		mutable std::mutex _mutex;
+	};
+	
+    class DataSourceListener : public TileDataSource::OnChangeListener {
+	public:
+		DataSourceListener(const std::shared_ptr<TileLayer>& layer);
         
-		virtual void onTilesChanged(TilesType tilesType, bool removeTiles);
-        
-		TileLayer& _layer;
+		virtual void onTilesChanged(bool removeTiles);
+		
+	private:
+		std::weak_ptr<TileLayer> _layer;
 	};
     
 	TileLayer();
@@ -100,7 +109,7 @@ protected:
 	virtual void calculateDrawData(const MapTileQuadTreeNode& requestedTile, const MapTileQuadTreeNode& closestTile, bool preloadingTile) = 0;
 	virtual void refreshDrawData(const std::shared_ptr<CullState>& cullState) = 0;
     
-    virtual void tilesChanged(TilesType tilesType, bool removeTiles) = 0;
+    virtual void tilesChanged(bool removeTiles) = 0;
     
     virtual int getMinZoom() const = 0;
     virtual int getMaxZoom() const = 0;
@@ -108,7 +117,7 @@ protected:
     std::atomic<bool> _calculatingTiles;
     std::atomic<bool> _refreshedTiles;
 
-    DataSourceListener _dataSourceListener;
+	std::shared_ptr<DataSourceListener> _dataSourceListener;
     
     FetchingTiles _fetchingTiles;
     

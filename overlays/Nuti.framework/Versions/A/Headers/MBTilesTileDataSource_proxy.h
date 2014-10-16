@@ -15,6 +15,20 @@
 extern "C" {
 #endif
 
+/**
+ * MBTiles tile schemes.
+ */
+enum MBTilesScheme {
+/**
+ * The default scheme. Vertical coordinate is not flipped.
+ */
+  MBTILES_SCHEME_TMS,
+/**
+ * Alternative to TMS scheme. Vertical coordinate is flipped.
+ */
+  MBTILES_SCHEME_XYZ
+};
+
 
 #import "MapTile_proxy.h"
 #import "TileData_proxy.h"
@@ -30,12 +44,20 @@ extern "C" {
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
- * Constructs a MBTilesTileDataSource object.<br>
+ * Constructs a MBTilesTileDataSource object. TMS tile scheme is used.<br>
  * @param minZoom The minimum zoom level supported by this data source.<br>
  * @param maxZoom The maximum zoom level supported by this data source.<br>
  * @param path The path to the local Sqlite database file.
  */
 -(id)initWithMinZoom: (int)minZoom maxZoom: (int)maxZoom path: (NSString*)path;
+/**
+ * Constructs a MBTilesTileDataSource object with specified tile scheme.<br>
+ * @param minZoom The minimum zoom level supported by this data source.<br>
+ * @param maxZoom The maximum zoom level supported by this data source.<br>
+ * @param path The path to the local Sqlite database file.<br>
+ * @param scheme Tile scheme to use.
+ */
+-(id)initWithMinZoom: (int)minZoom maxZoom: (int)maxZoom path: (NSString*)path scheme: (enum MBTilesScheme)scheme;
 -(NTTileData*)loadTile: (NTMapTile*)mapTile;
 
 -(void)dealloc;

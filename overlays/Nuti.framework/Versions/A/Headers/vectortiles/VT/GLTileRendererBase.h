@@ -64,8 +64,8 @@ namespace Nuti {
 
 			static cglib::mat4x4<double> calculateLocalViewMatrix(const cglib::mat4x4<double>& cameraMatrix);
 
-			cglib::mat3x3<double> calculateTileMatrix2d(const TileId& tileId) const;
-			cglib::mat4x4<double> calculateTileMatrix(const TileId& tileId) const;
+			cglib::mat3x3<double> calculateTileMatrix2d(const TileId& tileId, float coordScale = 1.0f) const;
+			cglib::mat4x4<double> calculateTileMatrix(const TileId& tileId, float coordScale = 1.0f) const;
 			cglib::bounding_box<double, 3> calculateTileBBox(const TileId& tileId) const;
 
 			void updateBlendNode(const std::shared_ptr<BlendNode>& blendNode, float dBlend);

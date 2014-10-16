@@ -14,7 +14,6 @@ namespace Nuti {
 
 class Bitmap;
 class CancelableThreadPool;
-class MapEventListener;
 
 namespace ProjectionMode {
     /**
@@ -426,17 +425,6 @@ public:
 	void setPanBounds(const MapBounds& panBounds);
 
     /**
-     * Returns the map event listener. May be null.
-     * @return The map event listener.
-     */
-	std::shared_ptr<MapEventListener> getMapEventListener() const;
-    /**
-     * Sets the map event listener. If a null pointer is passed no map events will be generated. The default is null.
-     * @param mapEventListener The new map event listener.
-     */
-	void setMapEventListener(const std::shared_ptr<MapEventListener>& mapEventListener);
-    
-    /**
      * Returns the base projection.
      * @return The base projection.
      */
@@ -501,8 +489,6 @@ private:
 	MapRange _zoomRange;
     MapBounds _panBounds;
 
-	std::shared_ptr<MapEventListener> _mapEventListener;
-    
     std::shared_ptr<Projection> _baseProjection;
 
     std::shared_ptr<CancelableThreadPool> _envelopeThreadPool;

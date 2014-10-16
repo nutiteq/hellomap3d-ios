@@ -42,7 +42,7 @@ protected:
 	DrawDataVector _tempDrawDatas;
 	ModelNodeDrawRecordMap _drawRecordMap;
 
-	virtual void drawModels(const ViewState& viewState);
+	virtual bool drawModels(const ViewState& viewState);
 };
 
 }

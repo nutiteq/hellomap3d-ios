@@ -43,6 +43,11 @@ extern "C" {
  * @return Maximum supported zoom level.
  */
 -(int)getMaxZoom;
+/**
+ * Notifies listeners that the decoder parameters have changed. Action taken depends on the implementation of the<br>
+ * listeners, but generally all cached tiles will be reloaded. 
+ */
+-(void)notifyDecoderChanged;
 
 -(void)dealloc;
 

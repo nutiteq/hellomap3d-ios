@@ -28,7 +28,7 @@ public:
 					const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
 
 protected:
-	virtual void drawModels(const ViewState& viewState);
+	virtual bool drawModels(const ViewState& viewState);
 
 private:
     typedef std::vector<std::shared_ptr<NMLModel> > ElementsVector;

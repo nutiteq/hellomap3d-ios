@@ -2,6 +2,7 @@
 #define TILEDATASOURCE_H_
 
 #include <mutex>
+#include <memory>
 #include <vector>
 
 #include "core/MapTile.h"
@@ -10,40 +11,23 @@
 namespace Nuti {
 
 /**
- * Possible tiles types.
- */
-enum TilesType {
-	/**
-	 * Tiles that are visible on the screen.
-	 */
-	TILES_TYPE_VISIBLE,
-	/**
-	 * Tiles that are not visible on the screen, but are right outside the visible frustum.
-	 */
-	TILES_TYPE_PRELOADING,
-	/**
-	 * Both visible and preloading tiles.
-	 */
-	TILES_TYPE_BOTH
-};
-
-/**
  * Abstract base class for tile data sources. It provides default implementation 
  * for listener registration and other common tile data source methods.
  */
-class TileDataSource {
+class TileDataSource : public std::enable_shared_from_this<TileDataSource> {
 public:
     /**
      * Interface for monitoring data source change events.
      */
     struct OnChangeListener {
+		virtual ~OnChangeListener() { }
+
         /**
          * Listener method that gets called when tiles have changes and need to be updated.
          * If the removeTiles flag is set all caches should be cleared prior to updating.
-         * @param tilesType The type of tiles the event affects.
          * @param removeTiles The remove tiles flag.
          */
-        virtual void onTilesChanged(TilesType tilesType, bool removeTiles) = 0;
+        virtual void onTilesChanged(bool removeTiles) = 0;
 	};
     
 	/**
@@ -74,33 +58,33 @@ public:
 	virtual std::shared_ptr<TileData> loadTile(const MapTile& tile) = 0;
 
 	/**
-     * Notifies listeners that the tiles have changed. Action taken depends on the implementation of the
-     * listeners, but generally all cached tiles will be reloaded. If the removeTiles flag is set all caches will be cleared
-     * prior to reloading, if it's not set then the reloaded tiles will replace the old tiles in caches as they finish loading.
-     * @param tilesType The type of tiles the event affects.
-     * @param removeTiles The remove tiles flag.
-     */
-    virtual void notifyTilesChanged(TilesType tilesType, bool removeTiles);
-    
-    /**
+	 * Notifies listeners that the tiles have changed. Action taken depends on the implementation of the
+	 * listeners, but generally all cached tiles will be reloaded. If the removeTiles flag is set all caches will be cleared
+	 * prior to reloading, if it's not set then the reloaded tiles will replace the old tiles in caches as they finish loading.
+	 * @param removeTiles The remove tiles flag.
+	 */
+	virtual void notifyTilesChanged(bool removeTiles);
+
+	/**
      * Registers listener for data source change events.
      * @param listener The listener for change events.
      */
-    void registerOnChangeListener(OnChangeListener* listener);
-    /**
+	void registerOnChangeListener(const std::shared_ptr<OnChangeListener>& listener);
+
+	/**
      * Unregisters listener from data source change events.
      * @param listener The previously added listener.
      */
-	void unregisterOnChangeListener(OnChangeListener* listener);
+	void unregisterOnChangeListener(const std::shared_ptr<OnChangeListener>& listener);
 
 protected:
 	int _minZoom;
 	int _maxZoom;
 
-	mutable std::mutex _mutex;
+	mutable std::recursive_mutex _mutex;
     
 private:
-	std::vector<OnChangeListener*> _onChangeListeners;
+	std::vector<std::shared_ptr<OnChangeListener> > _onChangeListeners;
 };
 
 }

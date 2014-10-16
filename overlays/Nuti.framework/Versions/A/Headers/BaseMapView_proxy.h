@@ -265,6 +265,16 @@ extern "C" {
  */
 -(void)moveToFitBounds: (NTMapBounds*)bounds screenPadding: (float)screenPadding integerZoom: (BOOL)integerZoom resetRotation: (BOOL)resetRotation resetTilt: (BOOL)resetTilt durationSeconds: (float)durationSeconds;
 /**
+ * Returns the map event listener. May be null.<br>
+ * @return The map event listener.
+ */
+-(NTMapEventListener*)getMapEventListener;
+/**
+ * Sets the map event listener. If a null pointer is passed no map events will be generated. The default is null.<br>
+ * @param mapEventListener The new map event listener.
+ */
+-(void)setMapEventListener: (NTMapEventListener*)mapEventListener;
+/**
  * Calculates the world map position corresponding to a screen position, using the current view parameters.<br>
  * @param screenPos The screen position.<br>
  * @return The calculated world map position.

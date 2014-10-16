@@ -3,7 +3,8 @@
 
 #include "vectorelements/NMLModelLODTree.h"
 
-#include <thread>
+#include <memory>
+#include <mutex>
 
 namespace NMLPackage {
 
@@ -22,7 +23,7 @@ class ViewState;
  * An abstract base class for NML model LOD tree data sources. NML model LOD tree data sources are tile based data sources
  * that provide access to different entities: map tiles, LOD tree metadata, model meshes and textures.
  */
-class NMLModelLODTreeDataSource {
+class NMLModelLODTreeDataSource : public std::enable_shared_from_this<NMLModelLODTreeDataSource> {
 public:
 	/**
 	 * Map tile containing reference to LOD tree.

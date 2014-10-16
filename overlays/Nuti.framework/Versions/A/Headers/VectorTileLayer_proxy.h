@@ -26,12 +26,18 @@ extern "C" {
 @interface NTVectorTileLayer : NTTileLayer
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
--(NTTileDataSource*)getDataSource;
 /**
- * Constructs a VectorTileLayer object from a data source.<br>
- * @param dataSource The data source from which this layer loads data.
+ * Constructs a VectorTileLayer object from a data source and tile decoder.<br>
+ * @param dataSource The data source from which this layer loads data.<br>
+ * @param decoder The tile decoder that decoder loaded tiles and applies styles.
  */
 -(id)initWithDataSource: (NTTileDataSource*)dataSource decoder: (NTVectorTileDecoder*)decoder;
+-(NTTileDataSource*)getDataSource;
+/**
+ * Returns the tile decoder assigned to this layer.<br>
+ * @return The tile decoder assigned to this layer.
+ */
+-(NTVectorTileDecoder*)getTileDecoder;
 /**
  * Returns the tile cache capacity.<br>
  * @return The tile cache capacity in bytes.
@@ -42,11 +48,12 @@ extern "C" {
  * all tiles contained within the cache are stored as uncompressed vertex buffers and can immediately be<br>
  * drawn to the screen. Setting the cache size too small may cause artifacts, such as disappearing tiles.<br>
  * The more tiles are visible on the screen, the larger this cache should be. <br>
- * The default is 18MB, which should be enough for most use cases with preloading enabled. If preloading is<br>
+ * The default is 10MB, which should be enough for most use cases with preloading enabled. If preloading is<br>
  * disabled, the cache size should be reduced by the user to conserve memory.<br>
  * @return The new tile bitmap cache capacity in bytes.
  */
 -(void)setTileCacheCapacity: (unsigned int)capacityInBytes;
+-(void)clearTileCaches: (BOOL)all;
 
 -(void)dealloc;
 

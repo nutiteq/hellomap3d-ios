@@ -26,12 +26,12 @@ extern "C" {
 @interface NTRasterTileLayer : NTTileLayer
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
--(NTTileDataSource*)getDataSource;
 /**
  * Constructs a RasterTileLayer object from a data source.<br>
  * @param dataSource The data source from which this layer loads data.
  */
 -(id)initWithDataSource: (NTTileDataSource*)dataSource;
+-(NTTileDataSource*)getDataSource;
 /**
  * Returns the current frame number.<br>
  * @return The current frame number.
@@ -78,11 +78,12 @@ extern "C" {
  * up 192KB of memory, a transparent tile of the same size takes 256KB. The number of tiles on the screen depends<br>
  * on the screen size and density, current rotation and tilt angle, tile draw size parameter and <br>
  * whether or not preloading is enabled.<br>
- * The default is 18MB, which should be enough for most use cases with preloading enabled. If preloading is<br>
+ * The default is 10MB, which should be enough for most use cases with preloading enabled. If preloading is<br>
  * disabled, the cache size should be reduced by the user to conserve memory.<br>
  * @return The new tile bitmap cache capacity in bytes.
  */
 -(void)setTextureCacheCapacity: (unsigned int)capacityInBytes;
+-(void)clearTileCaches: (BOOL)all;
 
 -(void)dealloc;
 

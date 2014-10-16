@@ -1,7 +1,7 @@
 #ifndef PERSISTENTCACHETILEDATASOURCE_H_
 #define PERSISTENTCACHETILEDATASOURCE_H_
 
-#include "datasources/TileDataSource.h"
+#include "datasources/CacheTileDataSource.h"
 
 #include <list>
 #include <string>
@@ -20,8 +20,9 @@ namespace Nuti {
  * The database contains table "persistent_cache" with the following fields:
  * "tileId" (tile id), "compressed" (compressed tile image),
  * "time" (the time the tile was cached in milliseconds from epoch).
+ * Default cache capacity is 50MB.
  */
-class PersistentCacheTileDataSource : public TileDataSource {
+class PersistentCacheTileDataSource : public CacheTileDataSource {
 public:
     /**
      * Constructs a PersistentCacheTileDataSource object from tile data source
@@ -35,19 +36,10 @@ public:
 
 	virtual std::shared_ptr<TileData> loadTile(const MapTile& mapTile);
     
-    virtual void notifyTilesChanged(TilesType tilesType, bool removeTiles);
+    virtual void clear();
     
-    /**
-     * Returns the presistent tile cache capacity.
-     * @return The persistent tile cache capacity in bytes.
-     */
     unsigned int getCapacity() const;
-    /**
-     * Sets the persistent tile cache capacity. Tiles from this cache can't be drawn directly to the screen, 
-     * they must first be read from the disk and decompressed which may cause a small delay before they can be seen.
-     * The default is 50MB.
-     * @return The new persistent tile cache capacity in bytes.
-     */
+
 	void setCapacity(unsigned int capacity);
 
 protected:
@@ -74,8 +66,6 @@ protected:
     
     void store(long long tileId, const std::shared_ptr<TileData>& tileBitmap);
     
-    std::shared_ptr<TileDataSource> _dataSource;
-    
     std::unique_ptr<sqlite3pp::database> _database;
     
     unsigned int _capacityInBytes;
@@ -83,9 +73,6 @@ protected:
     
     CacheElementList _lruElements;
 	CacheElementItMap _mappedElements;
-    
-    mutable std::mutex _mutex;
-
 };
 
 }

@@ -27,19 +27,46 @@ extern "C" {
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
- * Constructs decoder for MapBox vector tiles based on given style set.<br>
+ * Constructs decoder for MapBox vector tiles based on specified style set.<br>
+ * If the style set contains multiple styles, the first one (based on lexicographical order) from the root folder is chosen.<br>
  * @param styleSet Style set for the tiles.
  */
 -(id)initWithStyleSet: (NTMBVectorTileStyleSet*)styleSet;
 /**
+ * Constructs decoder for MapBox vector tiles based on specified style set.<br>
+ * Specified style is selected as the current style.<br>
+ * @param styleSet Style set for the tiles.<br>
+ * @param styleName Style to select.
+ */
+-(id)initWithStyleSet: (NTMBVectorTileStyleSet*)styleSet styleName: (NSString*)styleName;
+/**
+ * Returns the current style name.<br>
+ * @return The current style name.
+ */
+-(NSString*)getCurrentStyleName;
+/**
+ * Select current style by style name. The style must exist in the style set container specified in the constructor as an xml file.<br>
+ * This call will also reset style-related parameters, like geometry and billboard scales of the decoder.<br>
+ * @param styleName style to use
+ */
+-(void)setCurrentStyle: (NSString*)styleName;
+/**
+ * Returns the relative scale of geometry elements.<br>
+ * @return The current geometry scale.
+ */
+-(float)getGeometryScale;
+/**
  * Updates relative scale of geometry elements (lines). Default is 1.0f.<br>
- * Warning: changing this value may corrupt map appearance.<br>
  * @param scale New relative scale (1.0f is the default).
  */
 -(void)setGeometryScale: (float)scale;
 /**
+ * Returns the relative scale of billboard elements.<br>
+ * @return The current billboard scale.
+ */
+-(float)getBillboardScale;
+/**
  * Updates the relative scale of billboard and text elements. Default is 1.0f.<br>
- * Warning: changing this value may corrupt map appearance.<br>
  * @param scale New relative scale (1.0f is the default).
  */
 -(void)setBillboardScale: (float)scale;

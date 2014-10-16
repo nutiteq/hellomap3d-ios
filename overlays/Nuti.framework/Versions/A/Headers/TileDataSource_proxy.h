@@ -15,24 +15,6 @@
 extern "C" {
 #endif
 
-/**
- * Possible tiles types.
- */
-enum TilesType {
-/**
- * Tiles that are visible on the screen.
- */
-  TILES_TYPE_VISIBLE,
-/**
- * Tiles that are not visible on the screen, but are right outside the visible frustum.
- */
-  TILES_TYPE_PRELOADING,
-/**
- * Both visible and preloading tiles.
- */
-  TILES_TYPE_BOTH
-};
-
 
 #import "MapTile_proxy.h"
 #import "TileData_proxy.h"
@@ -74,10 +56,9 @@ enum TilesType {
  * Notifies listeners that the tiles have changed. Action taken depends on the implementation of the<br>
  * listeners, but generally all cached tiles will be reloaded. If the removeTiles flag is set all caches will be cleared<br>
  * prior to reloading, if it's not set then the reloaded tiles will replace the old tiles in caches as they finish loading.<br>
- * @param tilesType The type of tiles the event affects.<br>
  * @param removeTiles The remove tiles flag.
  */
--(void)notifyTilesChanged: (enum TilesType)tilesType removeTiles: (BOOL)removeTiles;
+-(void)notifyTilesChanged: (BOOL)removeTiles;
 
 -(void)dealloc;
 

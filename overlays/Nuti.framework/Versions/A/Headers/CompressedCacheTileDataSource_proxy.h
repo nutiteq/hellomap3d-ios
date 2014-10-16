@@ -18,14 +18,14 @@ extern "C" {
 
 #import "MapTile_proxy.h"
 #import "TileData_proxy.h"
-#import "TileDataSource_proxy.h"
+#import "CacheTileDataSource_proxy.h"
 
 /**
  * A tile data source that loads tiles from another tile data source<br>
  * and caches them in memory as compressed images. This cache is not persistent, tiles <br>
- * will be cleared once the application closes.
+ * will be cleared once the application closes. Default cache capacity is 6MB.
  */
-@interface NTCompressedCacheTileDataSource : NTTileDataSource
+@interface NTCompressedCacheTileDataSource : NTCacheTileDataSource
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
@@ -34,19 +34,9 @@ extern "C" {
  */
 -(id)initWithDataSource: (NTTileDataSource*)dataSource;
 -(NTTileData*)loadTile: (NTMapTile*)mapTile;
--(void)notifyTilesChanged: (enum TilesType)tilesType removeTiles: (BOOL)removeTiles;
-/**
- * Returns the compressed tile cache capacity.<br>
- * @return The compressed tile cache capacity in bytes.
- */
 -(unsigned int)getCapacity;
-/**
- * Sets the compressed tile cache capacity. Tiles from this cache can't be drawn directly to the screen,<br>
- * they must first be decompressed which may cause a small delay before they can be seen.<br>
- * The default is 5MB.<br>
- * @return The new compressed tile cache capacity in bytes.
- */
 -(void)setCapacity: (unsigned int)capacity;
+-(void)clear;
 
 -(void)dealloc;
 

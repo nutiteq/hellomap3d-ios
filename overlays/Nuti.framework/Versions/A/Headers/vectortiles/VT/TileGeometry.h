@@ -4,6 +4,7 @@
 #include "VertexArray.h"
 
 #include <memory>
+#include <array>
 #include <vector>
 
 namespace Nuti {
@@ -15,11 +16,13 @@ namespace Nuti {
 			};
 
 			struct StyleParameters {
-				std::vector<unsigned int> colorTable;
-				std::vector<float> lineWidthTable;
+				enum { MAX_PARAMETERS = 32 };
+				int parameterCount;
+				std::array<unsigned int, MAX_PARAMETERS> colorTable;
+				std::array<float, MAX_PARAMETERS> lineWidthTable;
 				std::shared_ptr<const BitmapPattern> pattern;
 
-				StyleParameters() : colorTable(), lineWidthTable(), pattern() { }
+				StyleParameters() : parameterCount(0), colorTable(), lineWidthTable(), pattern() { }
 			};
 
 			struct GeometryLayoutParameters {

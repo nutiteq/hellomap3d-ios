@@ -46,7 +46,6 @@ namespace Nuti {
 			bool tesselateLineEndPoint(const Vertex& p0, float u0, int i0, const cglib::vec2<float>& tangent, const cglib::vec2<float>& binormal, char styleIndex, const LineStyle& style);
 
 			const std::size_t RESERVED_VERTICES = 4096;
-			const std::size_t MAX_STYLES_PER_GEOMETRY = 32;
 			const float MIN_MITER_DOT = -0.8f;
 
 			TileGeometry::Type _type = TileGeometry::Type::NONE;

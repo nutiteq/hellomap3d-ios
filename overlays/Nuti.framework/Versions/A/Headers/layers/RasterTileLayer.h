@@ -23,8 +23,6 @@ class TileLoadListener;
  */
 class RasterTileLayer: public TileLayer {
 public:
-    virtual std::shared_ptr<TileDataSource> getDataSource();
-    
     /**
      * Constructs a RasterTileLayer object from a data source.
      * @param dataSource The data source from which this layer loads data.
@@ -32,6 +30,8 @@ public:
 	RasterTileLayer(const std::shared_ptr<TileDataSource>& dataSource);
 	virtual ~RasterTileLayer();
 
+	virtual std::shared_ptr<TileDataSource> getDataSource();
+	
 	/**
 	 * Returns the current frame number.
 	 * @return The current frame number.
@@ -73,7 +73,8 @@ public:
      * @return The tile texture cache capacity in bytes.
      */
 	int getTextureCacheCapacity() const;
-    /**
+
+	/**
      * Sets the tile texture cache capacity. Texture cache is the primary storage for raster data,
      * all tiles contained within the texture cache are stored as uncompressed openGL textures and can immediately be
      * drawn to the screen. Setting the cache size too small may cause artifacts, such as disappearing tiles.
@@ -81,11 +82,13 @@ public:
      * up 192KB of memory, a transparent tile of the same size takes 256KB. The number of tiles on the screen depends
      * on the screen size and density, current rotation and tilt angle, tile draw size parameter and 
      * whether or not preloading is enabled.
-     * The default is 18MB, which should be enough for most use cases with preloading enabled. If preloading is
+     * The default is 10MB, which should be enough for most use cases with preloading enabled. If preloading is
      * disabled, the cache size should be reduced by the user to conserve memory.
      * @return The new tile bitmap cache capacity in bytes.
      */
 	void setTextureCacheCapacity(unsigned int capacityInBytes);
+
+	virtual void clearTileCaches(bool all);
 
 protected:
     virtual bool tileExists(const MapTile& mapTile, bool preloadingTile);
@@ -95,7 +98,7 @@ protected:
 	virtual void calculateDrawData(const MapTileQuadTreeNode& requestedTile, const MapTileQuadTreeNode& closestTile, bool preloadingTile);
 	virtual void refreshDrawData(const std::shared_ptr<CullState>& cullState);
     
-	virtual void tilesChanged(TilesType tilesType, bool removeTiles);
+	virtual void tilesChanged(bool removeTiles);
     
     virtual int getMinZoom() const;
     virtual int getMaxZoom() const;
@@ -103,8 +106,7 @@ protected:
     virtual void offsetLayerHorizontally(double offset) ;
     
 	virtual void onSurfaceCreated(ShaderManager& shaderManager);
-	virtual bool onDrawFrame(float deltaSeconds, BillboardSorter& BillboardSorter, LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache,
-                             const ViewState& viewState);
+	virtual bool onDrawFrame(float deltaSeconds, BillboardSorter& BillboardSorter, LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache, const ViewState& viewState);
 	virtual void onSurfaceDestroyed();
     
 	virtual void calculateRayIntersectedElements(const Projection& projection, const MapPos& rayOrig, const MapVec& rayDir,

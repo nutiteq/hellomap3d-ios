@@ -81,8 +81,9 @@ protected:
 	virtual void loadData(const std::shared_ptr<CullState>& cullState);
 
 private:
-	struct DataSourceListener : public VectorDataSource::OnChangeListener {
-		DataSourceListener(VectorLayer& vectorLayer);
+	class DataSourceListener : public VectorDataSource::OnChangeListener {
+	public:
+		DataSourceListener(const std::shared_ptr<VectorLayer>& vectorLayer);
 
 		virtual void onElementAdded(const std::shared_ptr<VectorElement>& element);
 		virtual void onElementChanged(const std::shared_ptr<VectorElement>& element);
@@ -91,7 +92,8 @@ private:
         virtual void onElementsChanged();
 		virtual void onElementsRemoved();
 
-		VectorLayer& _layer;
+	private:
+		std::weak_ptr<VectorLayer> _layer;
 	};
 
 	class FetchTask : public CancelableTask {
@@ -106,7 +108,7 @@ private:
     void updateElement(const std::shared_ptr<VectorElement>& element, bool remove);
 
 	std::shared_ptr<VectorDataSource> _dataSource;
-	DataSourceListener _dataSourceListener;
+	std::shared_ptr<DataSourceListener> _dataSourceListener;
 
 	std::shared_ptr<BillboardRenderer> _billboardRenderer;
 	std::shared_ptr<LineRenderer> _lineRenderer;

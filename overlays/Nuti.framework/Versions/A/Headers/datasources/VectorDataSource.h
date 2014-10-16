@@ -18,13 +18,15 @@ class Projection;
  *
  * The draw order of vector elements within the data source is undefined.
  */
-class VectorDataSource: public std::enable_shared_from_this<VectorDataSource> {
+class VectorDataSource : public std::enable_shared_from_this<VectorDataSource> {
 public:
     /**
      * Interface for monitoring data source change events.
      */
 	struct OnChangeListener {
-        /**
+		virtual ~OnChangeListener() { }
+
+		/**
          * Listener method that gets called when a vector element was added to the data source.
          * @param element The added vector element.
          */
@@ -86,12 +88,12 @@ public:
      * Registers listener for data source change events.
      * @param listener The listener for change events.
      */
-	void registerOnChangeListener(OnChangeListener* listener);
+	void registerOnChangeListener(const std::shared_ptr<OnChangeListener>& listener);
     /**
      * Unregisters listener from data source change events.
      * @param listener The previously added listener.
      */
-	void unregisterOnChangeListener(OnChangeListener* listener);
+	void unregisterOnChangeListener(const std::shared_ptr<OnChangeListener>& listener);
 
 protected:
 	friend class VectorElement;
@@ -107,7 +109,7 @@ protected:
 	mutable std::mutex _mutex;
 
 private:
-	std::vector<OnChangeListener*> _onChangeListeners;
+	std::vector<std::shared_ptr<OnChangeListener> > _onChangeListeners;
 
 };
 

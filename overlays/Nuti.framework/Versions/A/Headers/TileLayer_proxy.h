@@ -17,7 +17,7 @@ extern "C" {
 
 
 #import "Layer_proxy.h"
-#import "TileDatasource_proxy.h"
+#import "TileDataSource_proxy.h"
 
 /**
  * An abstract base class for all tile layers.
@@ -56,6 +56,11 @@ extern "C" {
  * 
  */
 -(void)setZoomLevelBias: (float)bias;
+/**
+ * Clear layer tile caches. This will release memory allocated to tiles.<br>
+ * @param all True if all tiles should be released, otherwise only preloading (invisible) tiles are released.
+ */
+-(void)clearTileCaches: (BOOL)all;
 
 -(void)dealloc;
 

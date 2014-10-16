@@ -16,6 +16,7 @@ class MapPos;
 class MapRenderer;
 class MapVec;
 class Options;
+class MapEventListener;
 class RedrawRequestListener;
 class TouchHandler;
 
@@ -269,7 +270,18 @@ public:
      */
     void moveToFitBounds(const MapBounds& bounds, float screenPadding, bool integerZoom, bool resetRotation, bool resetTilt, float durationSeconds);
     
-    /**
+	/**
+	 * Returns the map event listener. May be null.
+	 * @return The map event listener.
+	 */
+	std::shared_ptr<MapEventListener> getMapEventListener() const;
+	/**
+	 * Sets the map event listener. If a null pointer is passed no map events will be generated. The default is null.
+	 * @param mapEventListener The new map event listener.
+	 */
+	void setMapEventListener(const std::shared_ptr<MapEventListener>& mapEventListener);
+	
+	/**
 	 * Returns the redraw request listener.
 	 * @return The redraw request listener.
 	 */
@@ -320,8 +332,8 @@ private:
     std::shared_ptr<Options> _options;
     std::shared_ptr<Layers> _layers;
 	std::shared_ptr<MapRenderer> _mapRenderer;
-
-    std::shared_ptr<TouchHandler> _touchHandler;
+	
+	std::shared_ptr<TouchHandler> _touchHandler;
     
     mutable std::mutex _mutex;
 };

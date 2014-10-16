@@ -18,7 +18,7 @@ extern "C" {
 
 #import "MapTile_proxy.h"
 #import "TileData_proxy.h"
-#import "TileDataSource_proxy.h"
+#import "CacheTileDataSource_proxy.h"
 
 /**
  * A tile data source that loads tiles from another tile data source<br>
@@ -26,9 +26,10 @@ extern "C" {
  * even after the application is closed.<br>
  * The database contains table "persistent_cache" with the following fields:<br>
  * "tileId" (tile id), "compressed" (compressed tile image),<br>
- * "time" (the time the tile was cached in milliseconds from epoch).
+ * "time" (the time the tile was cached in milliseconds from epoch).<br>
+ * Default cache capacity is 50MB.
  */
-@interface NTPersistentCacheTileDataSource : NTTileDataSource
+@interface NTPersistentCacheTileDataSource : NTCacheTileDataSource
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
@@ -40,18 +41,8 @@ extern "C" {
  */
 -(id)initWithDataSource: (NTTileDataSource*)dataSource databasePath: (NSString*)databasePath;
 -(NTTileData*)loadTile: (NTMapTile*)mapTile;
--(void)notifyTilesChanged: (enum TilesType)tilesType removeTiles: (BOOL)removeTiles;
-/**
- * Returns the presistent tile cache capacity.<br>
- * @return The persistent tile cache capacity in bytes.
- */
+-(void)clear;
 -(unsigned int)getCapacity;
-/**
- * Sets the persistent tile cache capacity. Tiles from this cache can't be drawn directly to the screen, <br>
- * they must first be read from the disk and decompressed which may cause a small delay before they can be seen.<br>
- * The default is 50MB.<br>
- * @return The new persistent tile cache capacity in bytes.
- */
 -(void)setCapacity: (unsigned int)capacity;
 
 -(void)dealloc;

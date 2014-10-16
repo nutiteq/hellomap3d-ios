@@ -7,9 +7,6 @@
 
 namespace Nuti {
 
-class MapTile;
-class RasterTileBitmap;
-
 /**
  * Abstract base class for raster tile data sources.
  */
@@ -24,14 +21,6 @@ public:
         TileDataSource(minZoom, maxZoom) {}
 
 	virtual ~RasterTileDataSource() {}
-
-    /**
-     * Loads the specified raster tile.
-     * @param tile The tile to load.
-     * @return The raster tile bitmap containing the tile image. If the tile is not available, null may be returned.
-     */
-	virtual std::shared_ptr<RasterTileBitmap> loadTile(const MapTile& tile) = 0;
-
 };
     
 }

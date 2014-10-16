@@ -394,16 +394,6 @@ enum NTPanningMode {
  */
 -(void)setPanBounds: (NTMapBounds*)panBounds;
 /**
- * Returns the map event listener. May be null.<br>
- * @return The map event listener.
- */
--(NTMapEventListener*)getMapEventListener;
-/**
- * Sets the map event listener. If a null pointer is passed no map events will be generated. The default is null.<br>
- * @param mapEventListener The new map event listener.
- */
--(void)setMapEventListener: (NTMapEventListener*)mapEventListener;
-/**
  * Returns the base projection.<br>
  * @return The base projection.
  */

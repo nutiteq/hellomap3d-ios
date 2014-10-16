@@ -4,6 +4,7 @@
 @class NTMapBounds;
 @class NTMapPos;
 @class NTMapVec;
+@class NTMapEventListener;
 @class NTOptions;
 
 @interface NTMapViewController : GLKViewController
@@ -212,6 +213,18 @@
  * @param durationSeconds The duration in which the operation will be completed in seconds.
  */
 -(void)moveToFitBounds: (NTMapBounds*)bounds screenPadding: (float)screenPadding integerZoom: (BOOL)integerZoom resetRotation: (BOOL)resetRotation resetTilt: (BOOL)resetTilt durationSeconds: (float)durationSeconds;
+/**
+ * Returns the map event listener. May be null.
+ * @return The map event listener.
+ */
+-(NTMapEventListener*) getMapEventListener;
+
+/**
+ * Sets the map event listener. If a null pointer is passed no map events will be generated. The default is null.
+ * @param mapEventListener The new map event listener.
+ */
+-(void)setMapEventListener: (NTMapEventListener*)mapEventListener;
+
 /**
  * Calculates the world map position corresponding to a screen position, using the current view parameters.
  * @param screenPos The screen position.

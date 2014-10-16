@@ -96,9 +96,9 @@
     
     // Create a map event listener
     MyMapEventListener* mapListener = [[MyMapEventListener alloc] init];
-    [[self getOptions] setMapEventListener:mapListener];
+    [self setMapEventListener:mapListener];
     mapListener = [[MyMapEventListener alloc] init];
-    [[self getOptions] setMapEventListener:mapListener];
+    [self setMapEventListener:mapListener];
     // MapEventListener needs the data source and the layer to display balloons
     // over the clicked vector elements
     [mapListener setMapView:self vectorDataSource:vectorDataSource1 vectorLayer:vectorLayer1];

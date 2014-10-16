@@ -30,6 +30,7 @@ class Layer;
 class Layers;
 class MapPos;
 class MapVec;
+class MapEventListener;
 class RedrawRequestListener;
 class Options;
 class VectorElementClickInfo;
@@ -58,6 +59,9 @@ public:
     AnimationHandler& getAnimationHandler();
 	KineticEventHandler& getKineticEventHandler();
     
+	std::shared_ptr<MapEventListener> getMapEventListener() const;
+	void setMapEventListener(const std::shared_ptr<MapEventListener>& mapEventListener);
+
 	std::shared_ptr<RedrawRequestListener> getRedrawRequestListener() const;
     void setRedrawRequestListener(const std::shared_ptr<RedrawRequestListener>& listener);
     
@@ -120,7 +124,8 @@ private:
 	AnimationHandler _animationHandler;
 	KineticEventHandler _kineticEventHandler;
     
-    std::shared_ptr<RedrawRequestListener> _redrawRequestListener;
+	std::shared_ptr<MapEventListener> _mapEventListener;
+	std::shared_ptr<RedrawRequestListener> _redrawRequestListener;
     mutable std::recursive_mutex _redrawRequestMutex;
     
     bool _surfaceChanged;
