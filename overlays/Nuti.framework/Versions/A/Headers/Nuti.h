@@ -28,7 +28,6 @@
 #import "Bitmap_proxy.h"
 #import "Color_proxy.h"
 #import "MapTileQuadTreeNode_proxy.h"
-#import "RasterTileBitmap_proxy.h"
 #import "ViewState_proxy.h"
 
 #import "Layers_proxy.h"

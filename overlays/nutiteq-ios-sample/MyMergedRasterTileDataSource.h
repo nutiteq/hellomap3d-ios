@@ -4,6 +4,6 @@
 
 -(id)initWithDataSource1: (NTTileDataSource*)dataSource1 dataSource2: (NTTileDataSource*)dataSource2;
 
--(NTRasterTileBitmap*)loadTile: (NTMapTile*)tile;
+-(NTTileData*)loadTile: (NTMapTile*)tile;
 
 @end
