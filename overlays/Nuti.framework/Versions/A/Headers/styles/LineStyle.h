@@ -55,7 +55,7 @@ public:
      * not recommended, LineStyleBuilder should be used instead.
      * @param color The color for the line.
      * @param bitmap The bitmap for the line.
-     * @param width The width of the line used for click detection.
+     * @param clickWidth The width of the line used for click detection.
      * @param lineEndType The line's end point type.
      * @param lineJointType The joint type for the line.
      * @param stretchFactor The color for the line.

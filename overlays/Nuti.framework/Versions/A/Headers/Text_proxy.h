@@ -39,10 +39,10 @@ extern "C" {
  * @param style The style that defines what this text label looks like.<br>
  * @param text The text to be displayed.
  */
--(id)initWithGeometry: (NTPointGeometry*)geometry style: (NTTextStyle*)style text: (NSString*)text;
+-(id)initWithGeometry: (NTGeometry*)geometry style: (NTTextStyle*)style text: (NSString*)text;
 /**
  * Constructs a Text object from a map position and a style.<br>
- * <br>
+ * @param pos The map position that defines the location of this text label.<br>
  * @param style The style that defines what this text label looks like.<br>
  * @param text The text to be displayed.
  */

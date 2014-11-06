@@ -16,13 +16,17 @@
 #import "HTTPTileDataSource_proxy.h"
 #import "KDTreeVectorDataSource_proxy.h"
 #import "MBTilesTileDataSource_proxy.h"
-#import "NMLModelLODTreeSqliteDataSource_proxy.h"
+#import "OnlineNMLModelLODTreeDataSource_proxy.h"
+#import "SqliteNMLModelLODTreeDataSource_proxy.h"
 #import "PersistentCacheTileDataSource_proxy.h"
 #import "UnculledVectorDataSource_proxy.h"
+#import "LocalVectorDataSource_proxy.h"
+#import "OGRVectorDataSource_proxy.h"
 
 #import "LineGeometry_proxy.h"
 #import "PointGeometry_proxy.h"
 #import "PolygonGeometry_proxy.h"
+#import "DouglasPeuckerGeometrySimplifier_proxy.h"
 
 #import "Frustum_proxy.h"
 #import "Bitmap_proxy.h"
@@ -59,6 +63,8 @@
 #import "PopupStyle_proxy.h"
 #import "TextStyleBuilder_proxy.h"
 #import "TextStyle_proxy.h"
+#import "StyleSelector_proxy.h"
+#import "StyleSelectorBuilder_proxy.h"
 
 #import "ui/MapViewController.h"
 #import "MapClickInfo_proxy.h"

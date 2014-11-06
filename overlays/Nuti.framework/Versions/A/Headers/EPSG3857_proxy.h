@@ -29,6 +29,7 @@ extern "C" {
 -(double)fromInternalScale: (double)size;
 -(NTMapPos*)fromWgs84: (NTMapPos*)wgs84Pos;
 -(NTMapPos*)toWgs84: (NTMapPos*)mapPos;
+-(NSString*)getName;
 
 -(void)dealloc;
 

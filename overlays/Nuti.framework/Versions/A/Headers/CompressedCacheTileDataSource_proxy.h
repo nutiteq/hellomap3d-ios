@@ -30,7 +30,7 @@ extern "C" {
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
  * Constructs a CompressedCacheTileDataSource object from tile data source.<br>
- * 
+ * @param dataSource The datasource to be cached.
  */
 -(id)initWithDataSource: (NTTileDataSource*)dataSource;
 -(NTTileData*)loadTile: (NTMapTile*)mapTile;

@@ -64,7 +64,7 @@ enum NTLineJointType {
  * not recommended, LineStyleBuilder should be used instead.<br>
  * @param color The color for the line.<br>
  * @param bitmap The bitmap for the line.<br>
- * @param width The width of the line used for click detection.<br>
+ * @param clickWidth The width of the line used for click detection.<br>
  * @param lineEndType The line's end point type.<br>
  * @param lineJointType The joint type for the line.<br>
  * @param stretchFactor The color for the line.<br>

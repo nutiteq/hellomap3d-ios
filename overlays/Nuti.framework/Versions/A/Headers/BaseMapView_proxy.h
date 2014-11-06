@@ -64,10 +64,10 @@ extern "C" {
  * Handles a user input event.<br>
  * @param event The event type. First pointer down = 0, second pointer down = 1, either pointer moved = 2, <br>
  * gesture canceled = 3, first pointer up = 4, second pointer up = 5.<br>
- * <br>
- * <br>
- * <br>
- * 
+ * @param x1 The x coordinate of the first pointer. -1 if there are no coordinates.<br>
+ * @param y1 The y coordinate of the first pointer. -1 if there are no coordinates.<br>
+ * @param x2 The x coordinate of the second pointer. -1 if there are no coordinates.<br>
+ * @param y2 The y coordinate of the second pointer. -1 if there are no coordinates.
  */
 -(void)onInputEvent: (int)event x1: (float)x1 y1: (float)y1 x2: (float)x2 y2: (float)y2;
 /**
@@ -108,8 +108,8 @@ extern "C" {
  * <br>
  * If durationSeconds &gt; 0 the panning operation will be animated over time. If the previous panning animation has not<br>
  * finished by the time this method is called, it will be stopped.<br>
- * <br>
- * @param durationSeconds The duration in which the tilting operation will be completed in seconds.
+ * @param deltaPos The relative coordinate shift.<br>
+ * @param durationSeconds The duration in which the panning operation will be completed in seconds.
  */
 -(void)pan: (NTMapVec*)deltaPos durationSeconds: (float)durationSeconds;
 /**
@@ -119,8 +119,8 @@ extern "C" {
  * <br>
  * If durationSeconds &gt; 0 the panning operation will be animated over time. If the previous panning animation has not<br>
  * finished by the time this method is called, it will be stopped.<br>
- * <br>
- * @param durationSeconds The duration in which the tilting operation will be completed in seconds.
+ * @param pos The new absolute focus position.<br>
+ * @param durationSeconds The duration in which the panning operation will be completed in seconds.
  */
 -(void)setFocusPos: (NTMapPos*)pos durationSeconds: (float)durationSeconds;
 /**
@@ -130,8 +130,8 @@ extern "C" {
  * <br>
  * If durationSeconds &gt; 0 the rotating operation will be animated over time. If the previous rotating animation has not<br>
  * finished by the time this method is called, it will be stopped.<br>
- * <br>
- * @param durationSeconds The duration in which the zooming operation will be completed in seconds.
+ * @param deltaAngle The delta rotation value in degrees.<br>
+ * @param durationSeconds The duration in which the rotation operation will be completed in seconds.
  */
 -(void)rotate: (float)deltaAngle durationSeconds: (float)durationSeconds;
 /**
@@ -143,9 +143,9 @@ extern "C" {
  * <br>
  * If durationSeconds &gt; 0 the rotating operation will be animated over time. If the previous rotating animation has not<br>
  * finished by the time this method is called, it will be stopped.<br>
- * <br>
+ * @param deltaAngle The delta angle value in degrees.<br>
  * @param targetPos The zooming target position in the coordinate system of the base projection.<br>
- * @param durationSeconds The duration in which the zooming operation will be completed in seconds.
+ * @param durationSeconds The duration in which the rotation operation will be completed in seconds.
  */
 -(void)rotate: (float)deltaAngle targetPos: (NTMapPos*)targetPos durationSeconds: (float)durationSeconds;
 /**
@@ -155,8 +155,8 @@ extern "C" {
  * <br>
  * If durationSeconds &gt; 0 the rotating operation will be animated over time. If the previous rotating animation has not<br>
  * finished by the time this method is called, it will be stopped.<br>
- * <br>
- * @param durationSeconds The duration in which the zooming operation will be completed in seconds.
+ * @param angle The new absolute angle value in degrees.<br>
+ * @param durationSeconds The duration in which the rotation operation will be completed in seconds.
  */
 -(void)setRotation: (float)angle durationSeconds: (float)durationSeconds;
 /**
@@ -168,9 +168,9 @@ extern "C" {
  * <br>
  * If durationSeconds &gt; 0 the rotating operation will be animated over time. If the previous rotating animation has not<br>
  * finished by the time this method is called, it will be stopped.<br>
- * <br>
+ * @param angle The new absolute angle value in degrees.<br>
  * @param targetPos The zooming target position in the coordinate system of the base projection.<br>
- * @param durationSeconds The duration in which the zooming operation will be completed in seconds.
+ * @param durationSeconds The duration in which the rotation operation will be completed in seconds.
  */
 -(void)setRotation: (float)angle targetPos: (NTMapPos*)targetPos durationSeconds: (float)durationSeconds;
 /**

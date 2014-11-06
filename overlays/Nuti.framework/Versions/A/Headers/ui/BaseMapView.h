@@ -61,10 +61,10 @@ public:
      * Handles a user input event.
      * @param event The event type. First pointer down = 0, second pointer down = 1, either pointer moved = 2, 
                     gesture canceled = 3, first pointer up = 4, second pointer up = 5.
-     * @param float x1 The x coordinate of the first pointer. -1 if there are no coordinates.
-     * @param float y1 The y coordinate of the first pointer. -1 if there are no coordinates.
-     * @param float x2 The x coordinate of the second pointer. -1 if there are no coordinates.
-     * @param float y2 The y coordinate of the second pointer. -1 if there are no coordinates.
+     * @param x1 The x coordinate of the first pointer. -1 if there are no coordinates.
+     * @param y1 The y coordinate of the first pointer. -1 if there are no coordinates.
+     * @param x2 The x coordinate of the second pointer. -1 if there are no coordinates.
+     * @param y2 The y coordinate of the second pointer. -1 if there are no coordinates.
      */
 	void onInputEvent(int event, float x1, float y1, float x2, float y2);
     
@@ -109,8 +109,8 @@ public:
      *
      * If durationSeconds > 0 the panning operation will be animated over time. If the previous panning animation has not
      * finished by the time this method is called, it will be stopped.
-     * @param deltaTilt The number of degrees the camera should be tilted by.
-     * @param durationSeconds The duration in which the tilting operation will be completed in seconds.
+     * @param deltaPos The relative coordinate shift.
+     * @param durationSeconds The duration in which the panning operation will be completed in seconds.
      */
 	void pan(const MapVec& deltaPos, float durationSeconds);
     /**
@@ -120,8 +120,8 @@ public:
      *
      * If durationSeconds > 0 the panning operation will be animated over time. If the previous panning animation has not
      * finished by the time this method is called, it will be stopped.
-     * @param tilt The new absolute tilt value in degrees.
-     * @param durationSeconds The duration in which the tilting operation will be completed in seconds.
+     * @param pos The new absolute focus position.
+     * @param durationSeconds The duration in which the panning operation will be completed in seconds.
      */
 	void setFocusPos(const MapPos& pos, float durationSeconds);
     
@@ -132,8 +132,8 @@ public:
      *
      * If durationSeconds > 0 the rotating operation will be animated over time. If the previous rotating animation has not
      * finished by the time this method is called, it will be stopped.
-     * @param deltaZoom The delta zoom value.
-     * @param durationSeconds The duration in which the zooming operation will be completed in seconds.
+     * @param deltaAngle The delta rotation value in degrees.
+     * @param durationSeconds The duration in which the rotation operation will be completed in seconds.
      */
 	void rotate(float deltaAngle, float durationSeconds);
     /**
@@ -145,9 +145,9 @@ public:
      *
      * If durationSeconds > 0 the rotating operation will be animated over time. If the previous rotating animation has not
      * finished by the time this method is called, it will be stopped.
-     * @param deltaZoom The delta zoom value.
+     * @param deltaAngle The delta angle value in degrees.
      * @param targetPos The zooming target position in the coordinate system of the base projection.
-     * @param durationSeconds The duration in which the zooming operation will be completed in seconds.
+     * @param durationSeconds The duration in which the rotation operation will be completed in seconds.
      */
     void rotate(float deltaAngle, const MapPos& targetPos, float durationSeconds);
     /**
@@ -157,8 +157,8 @@ public:
      *
      * If durationSeconds > 0 the rotating operation will be animated over time. If the previous rotating animation has not
      * finished by the time this method is called, it will be stopped.
-     * @param zoom The new absolute zoom value.
-     * @param durationSeconds The duration in which the zooming operation will be completed in seconds.
+     * @param angle The new absolute angle value in degrees.
+     * @param durationSeconds The duration in which the rotation operation will be completed in seconds.
      */
 	void setRotation(float angle, float durationSeconds);
     /**
@@ -170,9 +170,9 @@ public:
      *
      * If durationSeconds > 0 the rotating operation will be animated over time. If the previous rotating animation has not
      * finished by the time this method is called, it will be stopped.
-     * @param zoom The new absolute zoom value.
+     * @param angle The new absolute angle value in degrees.
      * @param targetPos The zooming target position in the coordinate system of the base projection.
-     * @param durationSeconds The duration in which the zooming operation will be completed in seconds.
+     * @param durationSeconds The duration in which the rotation operation will be completed in seconds.
      */
     void setRotation(float angle, const MapPos& targetPos, float durationSeconds);
     

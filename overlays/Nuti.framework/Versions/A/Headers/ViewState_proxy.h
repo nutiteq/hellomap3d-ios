@@ -177,30 +177,30 @@ extern "C" {
  * Returns the projection matrix.<br>
  * @return The projection matrix.
  */
--(Matrix4D*)getProjectionMat;
+-(NTMatrix4D*)getProjectionMat;
 /**
  * Returns the modelview matrix.<br>
  * @return The modelview matrix.
  */
--(Matrix4D*)getModelviewMat;
+-(NTMatrix4D*)getModelviewMat;
 /**
  * Returns the modelview-projection matrix. This is equivalent to the the projeciton matrix multiplied with the<br>
  * modelview matrix.<br>
  * @return The modelview-projection matrix.
  */
--(Matrix4D*)getModelviewProjectionMat;
+-(NTMatrix4D*)getModelviewProjectionMat;
 /**
  * Returns the relative-to-eye modelview matrix. This equivalent to the modelview matrix with the first<br>
  * three elements of the last column set to 0.<br>
  * @return The relative-to-eye modelview matrix.
  */
--(Matrix4F*)getRTEModelviewMat;
+-(NTMatrix4F*)getRTEModelviewMat;
 /**
  * Returns the relative-to-eye modelview-projection matrix. This is equivalent to the projection matrix <br>
  * multiplied with the relative-to-eye modelview matrix.<br>
  * @return The relative-to-eye modelview-projection matrix.
  */
--(Matrix4F*)getRTEModelviewProjectionMat;
+-(NTMatrix4F*)getRTEModelviewProjectionMat;
 /**
  * Returns the view frustum.<br>
  * @return The view frustum.

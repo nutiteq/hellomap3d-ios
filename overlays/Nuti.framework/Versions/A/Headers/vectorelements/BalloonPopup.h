@@ -19,7 +19,7 @@ public:
      * @param baseBillboard The billboard this balloon popup will be attached to.
      * @param style The style that defines what this balloon popup looks like.
      * @param title The text this balloon popup will display.
-     * @param description The description this balloon popup will display.
+     * @param desc The description this balloon popup will display.
      */
     BalloonPopup(const std::shared_ptr<Billboard>& baseBillboard, const std::shared_ptr<BalloonPopupStyle>& style,
                  const std::string& title, const std::string& desc);
@@ -29,17 +29,17 @@ public:
      * @param geometry The geometry object that defines the location of this balloon popup.
      * @param style The style that defines what this balloon popup looks like.
      * @param title The text this balloon popup will display.
-     * @param description The description this balloon popup will display.
+     * @param desc The description this balloon popup will display.
      */
-    BalloonPopup(const std::shared_ptr<PointGeometry>& geometry, const std::shared_ptr<BalloonPopupStyle>& style,
+    BalloonPopup(const std::shared_ptr<Geometry>& geometry, const std::shared_ptr<BalloonPopupStyle>& style,
                 const std::string& title, const std::string& desc);
     /**
      * Constructs a BalloonPopup object from a map position and a style.
      * If an empty string is passed for the title, it will not be drawn. The same applies to the description.
-     * @param poses The map position that defines the location of this balloon popup.
+     * @param pos The map position that defines the location of this balloon popup.
      * @param style The style that defines what this balloon popup looks like.
      * @param title The text this balloon popup will display.
-     * @param description The description this balloon popup will display.
+     * @param desc The description this balloon popup will display.
      */
     BalloonPopup(const MapPos& pos, const std::shared_ptr<BalloonPopupStyle>& style,
                  const std::string& title, const std::string& desc);
@@ -68,7 +68,7 @@ public:
     /**
      * Sets the description this balloon popup will display. If an empty string is passed
      * the description will not be drawn.
-     * @param description The new description this balloon popup will display.
+     * @param desc The new description this balloon popup will display.
      */
     void setDescription(const std::string& desc);
     

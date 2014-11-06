@@ -105,7 +105,7 @@ private:
 	private:
 		std::weak_ptr<VectorTileLayer> _layer;
 		MapTileQuadTreeNode _tile;
-		MapTileQuadTreeNode _dataSourceTile;
+		std::vector<MapTileQuadTreeNode> _dataSourceTiles; // ordered to top
 		bool _preloadingTile;
         
 		bool _started;

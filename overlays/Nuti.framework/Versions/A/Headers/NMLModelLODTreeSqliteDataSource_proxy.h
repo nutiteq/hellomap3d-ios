@@ -28,7 +28,7 @@ extern "C" {
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
  * Constructs a NMLModelLODTreeSqliteDataSource object.<br>
- * <br>
+ * @param projection The projection for the database. Currently only EPSG3857 is supported.<br>
  * @param fileName The file name of the sqlite database file.
  */
 -(id)initWithProjection: (NTProjection*)projection fileName: (NSString*)fileName;

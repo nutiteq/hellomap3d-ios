@@ -25,7 +25,7 @@ public:
      * @param horizontalOffset The horizontal offset for the popup.
      * @param verticalOffset The vertical offset for the popup.
      * @param placementPriority The placement priority for the popup.
-     * @param scaleWithDpi The scale with DPI flag for the label.
+     * @param scaleWithDPI The scale with DPI flag for the label.
      */
 	PopupStyle(const Color& color,
                float attachAnchorPointX,

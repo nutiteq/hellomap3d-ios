@@ -36,7 +36,7 @@ extern "C" {
  * @param horizontalOffset The horizontal offset for the popup.<br>
  * @param verticalOffset The vertical offset for the popup.<br>
  * @param placementPriority The placement priority for the popup.<br>
- * 
+ * @param scaleWithDPI The scale with DPI flag for the label.
  */
 -(id)initWithColor: (NTColor*)color attachAnchorPointX: (float)attachAnchorPointX attachAnchorPointY: (float)attachAnchorPointY causesOverlap: (BOOL)causesOverlap hideIfOverlapped: (BOOL)hideIfOverlapped horizontalOffset: (float)horizontalOffset verticalOffset: (float)verticalOffset placementPriority: (int)placementPriority scaleWithDPI: (BOOL)scaleWithDPI;
 

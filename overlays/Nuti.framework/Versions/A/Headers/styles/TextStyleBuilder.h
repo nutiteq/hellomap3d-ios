@@ -21,25 +21,25 @@ public:
 
     /**
      * Sets the font name for the text label.
-     * @param The new platfrom dependent font name for the text label.
+     * @param fontName The new platfrom dependent font name for the text label.
      */
 	void setFontName(const std::string& fontName);
 
     /**
      * Sets the font size for the text label.
-     * @param The new font size for the text label in points.
+     * @param size The new font size for the text label in points.
      */
 	void setFontSize(int size);
 
     /**
      * Sets the stroke color for the text label.
-     * @param The new stroke color for the text label.
+     * @param strokeColor The new stroke color for the text label.
      */
 	void setStrokeColor(const Color& strokeColor);
 
     /**
      * Sets the stroke width for the text label.
-     * @param The new stroke widht for the text label in screen density independent pixels.
+     * @param strokeWidth The new stroke widht for the text label in screen density independent pixels.
      */
 	void setStrokeWidth(float strokeWidth);
 

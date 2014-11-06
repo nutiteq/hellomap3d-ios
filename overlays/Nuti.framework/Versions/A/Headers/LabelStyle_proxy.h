@@ -36,7 +36,7 @@ extern "C" {
  * @param horizontalOffset The horizontal offset for the label.<br>
  * @param verticalOffset The vertical offset for the label.<br>
  * @param placementPriority The placement priority for the label.<br>
- * <br>
+ * @param scaleWithDPI The scale with DPI flag for the label.<br>
  * @param anchorPointX The horizontal anchor point for the label.<br>
  * @param anchorPointY The vertical anchor point for the label.<br>
  * @param flippable The fliappble flag for the label.<br>

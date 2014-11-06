@@ -40,7 +40,7 @@ class MapRenderer : public std::enable_shared_from_this<MapRenderer> {
 public:
 	MapRenderer(const std::shared_ptr<Layers>& layers,
                 const std::shared_ptr<Options>& options,
-                WatermarkType::WatermarkType licenseType);
+                const WatermarkType::WatermarkType& licenseType);
     void init();
 	virtual ~MapRenderer();
     void deinit();

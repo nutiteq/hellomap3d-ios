@@ -74,7 +74,7 @@ public:
      * Adds a new key-value pair to the meta data map. If the key already exists in the map,
      * it's value will be replaced by the new value.
      * @param key The new key.
-     * @param value The new value.
+     * @param element The new value.
      */
     void setMetaDataElement(const std::string& key, const std::string& element);
 
@@ -97,7 +97,6 @@ public:
 	void notifyElementChanged();
 
 protected:
-    friend class NMLModelDataSource;
     friend class VectorDataSource;
     
 	VectorElement(const std::string& className, const std::shared_ptr<Geometry>& geometry);

@@ -36,10 +36,10 @@ extern "C" {
  * @param geometry The geometry object that defines the location of this marker.<br>
  * @param style The style that defines what this marker looks like.
  */
--(id)initWithGeometry: (NTPointGeometry*)geometry style: (NTMarkerStyle*)style;
+-(id)initWithGeometry: (NTGeometry*)geometry style: (NTMarkerStyle*)style;
 /**
  * Constructs a Marker object from a map position and a style.<br>
- * <br>
+ * @param pos The map position that defines the location of this marker.<br>
  * @param style The style that defines what this marker looks like.
  */
 -(id)initWithPos: (NTMapPos*)pos style: (NTMarkerStyle*)style;

@@ -24,7 +24,7 @@ public:
      * Builds a new instance of the PopupStyle object using previously set parameters.
      * @return A new PopupStyle object.
      */
-	std::shared_ptr<PopupStyle> buildStyle();
+	std::shared_ptr<PopupStyle> buildStyle() const;
 
 };
 

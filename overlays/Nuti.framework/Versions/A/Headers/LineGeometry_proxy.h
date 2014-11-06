@@ -23,6 +23,7 @@ extern "C" {
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 -(id)initWithPoses: (MapPosVector*)poses;
+-(NTMapPos*)getCenterPos;
 -(MapPosVector*)getPoses;
 
 -(void)dealloc;

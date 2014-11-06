@@ -20,7 +20,7 @@ extern "C" {
  * T is assumed to be float or double (although should work in other<br>
  * instances also).
  */
-@interface MatrixFBase : NSObject
+@interface NTMatrixFBase : NSObject
 {
 	void *swigCPtr;
 	BOOL swigCMemOwn;
@@ -33,7 +33,7 @@ extern "C" {
 
 @end
 
-@interface Matrix4F : MatrixFBase
+@interface NTMatrix4F : NTMatrixFBase
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 
@@ -46,7 +46,7 @@ extern "C" {
  * T is assumed to be float or double (although should work in other<br>
  * instances also).
  */
-@interface MatrixDBase : NSObject
+@interface NTMatrixDBase : NSObject
 {
 	void *swigCPtr;
 	BOOL swigCMemOwn;
@@ -59,7 +59,7 @@ extern "C" {
 
 @end
 
-@interface Matrix4D : MatrixDBase
+@interface NTMatrix4D : NTMatrixDBase
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 

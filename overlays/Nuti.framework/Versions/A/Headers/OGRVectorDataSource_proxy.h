@@ -16,34 +16,6 @@ extern "C" {
 #endif
 
 
-#import "UnsignedCharVector_proxy.h"
-
-/**
- * A wrapper class for vector tile data.
- */
-@interface NTVectorTileData : NSObject
-{
-	void *swigCPtr;
-	BOOL swigCMemOwn;
-}
--(void*)getCptr;
--(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
-/**
- * Constructs a VectorTileData object from a data blob.<br>
- * @param data The source tile data.
- */
--(id)initWithData: (UnsignedCharVector*)data;
-/**
- * Returns tile data as a byte vector.<br>
- * @return Tile data as a byte vector.
- */
--(UnsignedCharVector*)getData;
-
--(void)dealloc;
-
-@end
-
-
 #ifdef __cplusplus
 }
 #endif

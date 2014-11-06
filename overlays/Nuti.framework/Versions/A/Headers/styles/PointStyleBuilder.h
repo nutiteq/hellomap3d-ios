@@ -41,7 +41,7 @@ public:
      * Sets the size for the point that will be used for click detection.
      * Units are screen density independent pixels (DP or DIP). If set to -1 the click size will be
      * calculated automatically. The default is -1.
-     * @param width The new point size in dp.
+     * @param size The new point size in dp.
      */
 	void setClickSize(float size);
 
@@ -52,7 +52,7 @@ public:
     float getSize() const;
     /**
      * Sets the size for the point in screen density independent pixels (DP or DIP). The default is 20.
-     * @param width The new point size in dp.
+     * @param size The new point size in dp.
      */
 	void setSize(float size);
 
@@ -60,7 +60,7 @@ public:
      * Builds a new instance of the PointStyle object using previously set parameters.
      * @return A new PointStyle object.
      */
-	std::shared_ptr<PointStyle> buildStyle();
+	std::shared_ptr<PointStyle> buildStyle() const;
 
 protected:
 	static std::shared_ptr<Bitmap> GetDefaultBitmap();

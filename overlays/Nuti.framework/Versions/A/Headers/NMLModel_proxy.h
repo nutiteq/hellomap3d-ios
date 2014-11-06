@@ -35,20 +35,19 @@ extern "C" {
  * @param geometry The geometry object that defines the location of this model.<br>
  * @param sourceModelData Serialized data for 3D model.
  */
--(id)initWithGeometry: (NTPointGeometry*)geometry sourceModelData: (UnsignedCharVector*)sourceModelData;
+-(id)initWithGeometry: (NTGeometry*)geometry sourceModelData: (UnsignedCharVector*)sourceModelData;
 /**
  * Constructs a NMLModel object from a map position and serialized model data.<br>
- * <br>
+ * @param pos The map position that defines the location of this model.<br>
  * @param sourceModelData Serialized data for 3D model.
  */
 -(id)initWithPos: (NTMapPos*)pos sourceModelData: (UnsignedCharVector*)sourceModelData;
 -(NTMapBounds*)getBounds;
--(NTPointGeometry*)getGeometry;
 /**
  * Sets the location for this model.<br>
  * @param geometry The new geometry object that defines the location of this model.
  */
--(void)setGeometry: (NTPointGeometry*)geometry;
+-(void)setGeometry: (NTGeometry*)geometry;
 /**
  * Sets the location for this model.<br>
  * @param pos The new map position that defines the location of this model.
@@ -58,7 +57,7 @@ extern "C" {
  * Returns a local transformation matrix. Includes rotation and scaling transformation.<br>
  * @return A 4x4 transformation matrix.
  */
--(Matrix4F*)getLocalMat;
+-(NTMatrix4F*)getLocalMat;
 /**
  * Returns the rotation axis of this model. If rotation angle is 0, then the axis is irrelevant.<br>
  * @return The rotation axis vector.

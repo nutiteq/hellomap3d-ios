@@ -4,7 +4,7 @@
 #include "renderers/NMLModelRendererBase.h"
 #include "vectorelements/NMLModelLODTree.h"
 #include "drawdatas/NMLModelLODTreeDrawData.h"
-#include "nmlpackage/GLModel.h"
+#include "drawdatas/nmlGL/Model.h"
 
 #include <list>
 #include <vector>

@@ -9,8 +9,9 @@
 
 #include <list>
 #include <map>
-#include <memory>
 #include <string>
+#include <memory>
+#include <mutex>
 
 namespace NMLPackage {
 
@@ -24,6 +25,7 @@ public:
 	void dispose(const GLContextPtr& gl);
 
 	void replaceMesh(const std::string& id, const GLMeshPtr& glMesh);
+	void replaceMesh(const std::string& id, const GLMeshPtr& glMesh, const std::shared_ptr<NMLPackage::MeshOp>& meshOp);
 	void replaceTexture(const std::string& id, const GLTexturePtr& glTexture);
 
 	void draw(const GLContextPtr& gl);
@@ -34,10 +36,13 @@ public:
 	int getTotalGeometrySize() const;
 
 private:
+	typedef std::pair<GLMeshPtr, std::shared_ptr<NMLPackage::MeshOp> > GLMeshMeshOpPair;
+
 	cglib::bounding_box<float, 3> _bounds;
-	std::map<std::string, GLMeshPtr> _meshMap;
+	std::map<std::string, GLMeshMeshOpPair> _meshMap;
 	std::map<std::string, GLTexturePtr> _textureMap;
 	std::list<GLMeshInstancePtr> _meshInstanceList;
+	mutable std::mutex _mutex;
 };
 
 typedef std::shared_ptr<GLModel> GLModelPtr;

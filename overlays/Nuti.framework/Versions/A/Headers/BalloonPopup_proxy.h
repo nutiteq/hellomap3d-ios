@@ -32,7 +32,7 @@ extern "C" {
  * @param baseBillboard The billboard this balloon popup will be attached to.<br>
  * @param style The style that defines what this balloon popup looks like.<br>
  * @param title The text this balloon popup will display.<br>
- * 
+ * @param desc The description this balloon popup will display.
  */
 -(id)initWithBaseBillboard: (NTBillboard*)baseBillboard style: (NTBalloonPopupStyle*)style title: (NSString*)title desc: (NSString*)desc;
 /**
@@ -41,16 +41,16 @@ extern "C" {
  * @param geometry The geometry object that defines the location of this balloon popup.<br>
  * @param style The style that defines what this balloon popup looks like.<br>
  * @param title The text this balloon popup will display.<br>
- * 
+ * @param desc The description this balloon popup will display.
  */
--(id)initWithGeometry: (NTPointGeometry*)geometry style: (NTBalloonPopupStyle*)style title: (NSString*)title desc: (NSString*)desc;
+-(id)initWithGeometry: (NTGeometry*)geometry style: (NTBalloonPopupStyle*)style title: (NSString*)title desc: (NSString*)desc;
 /**
  * Constructs a BalloonPopup object from a map position and a style.<br>
  * If an empty string is passed for the title, it will not be drawn. The same applies to the description.<br>
- * <br>
+ * @param pos The map position that defines the location of this balloon popup.<br>
  * @param style The style that defines what this balloon popup looks like.<br>
  * @param title The text this balloon popup will display.<br>
- * 
+ * @param desc The description this balloon popup will display.
  */
 -(id)initWithPos: (NTMapPos*)pos style: (NTBalloonPopupStyle*)style title: (NSString*)title desc: (NSString*)desc;
 -(NTBitmap*)drawBitmap: (NTMapPos*)anchorScreenPos screenWidth: (float)screenWidth screenHeight: (float)screenHeight dpToPX: (float)dpToPX;
@@ -73,7 +73,7 @@ extern "C" {
 /**
  * Sets the description this balloon popup will display. If an empty string is passed<br>
  * the description will not be drawn.<br>
- * 
+ * @param desc The new description this balloon popup will display.
  */
 -(void)setDescription: (NSString*)desc;
 /**

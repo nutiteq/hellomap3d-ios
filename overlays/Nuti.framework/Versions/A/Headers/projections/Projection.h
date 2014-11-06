@@ -75,6 +75,12 @@ public:
      */
 	virtual MapPos toWgs84(const MapPos &pos) const = 0;
 
+	/**
+	 * Return name of this projection in Well-Known format. For example, as "EPSG:3857"
+	 * @return The name of this projection.
+	 */
+	virtual std::string getName() const = 0;
+
 protected:
 	Projection(const MapBounds &bounds);
 

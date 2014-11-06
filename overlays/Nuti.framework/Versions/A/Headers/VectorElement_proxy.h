@@ -76,7 +76,7 @@ extern "C" {
  * Adds a new key-value pair to the meta data map. If the key already exists in the map,<br>
  * it's value will be replaced by the new value.<br>
  * @param key The new key.<br>
- * 
+ * @param element The new value.
  */
 -(void)setMetaDataElement: (NSString*)key element: (NSString*)element;
 /**

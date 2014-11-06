@@ -24,10 +24,10 @@ public:
      * @param geometry The geometry object that defines the location of this marker.
      * @param style The style that defines what this marker looks like.
      */
-	Marker(const std::shared_ptr<PointGeometry>& geometry, const std::shared_ptr<MarkerStyle>& style);
+	Marker(const std::shared_ptr<Geometry>& geometry, const std::shared_ptr<MarkerStyle>& style);
     /**
      * Constructs a Marker object from a map position and a style.
-     * @param poses The map position that defines the location of this marker.
+     * @param pos The map position that defines the location of this marker.
      * @param style The style that defines what this marker looks like.
      */
     Marker(const MapPos& pos, const std::shared_ptr<MarkerStyle>& style);

@@ -17,6 +17,10 @@ public:
 
 	static bool PointInsidePolygon(const std::vector<MapPos>& polygon, const MapPos& point);
 
+	static MapPos CalculatePointInsidePolygon(const std::vector<MapPos>& polygon, const std::vector<std::vector<MapPos> >& holes);
+	
+	static MapPos CalculatePointOnLine(const std::vector<MapPos>& line);
+
 	static bool PolygonsIntersect(const std::vector<MapPos>& polygon1, const std::vector<MapPos>& polygon2);
 
 	static std::vector<MapPos> CalculateConvexHull(std::vector<MapPos> points);

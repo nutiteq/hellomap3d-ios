@@ -22,6 +22,7 @@ public:
     /**
      * Constructs a VectorElementClickInfo object from a click position, distance, draw order and a vector element.
      * @param clickPos The click position in the coordinate system of the base projection.
+	 * @param elementClickPos The click position in the coordinate system of the base projection that corresponds to element point.
      * @param distance The distance from the vector element to the camera in the internal coordiante system.
      * @param order The draw order of this element relative to others.
      * @param vectorElement The vector element on which the click was performed.

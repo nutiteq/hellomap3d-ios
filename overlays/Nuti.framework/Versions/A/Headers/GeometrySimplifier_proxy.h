@@ -16,28 +16,26 @@ extern "C" {
 #endif
 
 
-#import "MapTile_proxy.h"
-#import "VectorTileData_proxy.h"
-#import "TileDataSource_proxy.h"
+#import "Geometry_proxy.h"
 
 /**
- * Abstract base class for all vector tile data sources.
+ * Base class for geometry simplifiers.
  */
-@interface NTVectorTileDataSource : NTTileDataSource
+@interface NTGeometrySimplifier : NSObject
+{
+	void *swigCPtr;
+	BOOL swigCMemOwn;
+}
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
- * Constructs an abstract VectorTileDataSource object.<br>
- * @param minZoom The minimum zoom level supported by this data source.<br>
- * @param maxZoom The maximum zoom level supported by this data source.
+ * Perform the simplification of the given geometry, given relative scale.<br>
+ * @param geometry The geometry to simplify.<br>
+ * @param scale Relative scale for simplification, this is proportional to 2^zoom.<br>
+ * @return The simplified geometry. If simplification failed, original geometry may be returned. <br>
+ *         Null pointer may be returned if geometry should be discarded.
  */
--(id)initWithMinZoom: (int)minZoom maxZoom: (int)maxZoom;
-/**
- * Loads the specified vector tile.<br>
- * @param tile The tile to load.<br>
- * @return The vector tile data. If the tile is not available, null may be returned.
- */
--(NTVectorTileData*)loadTile: (NTMapTile*)tile;
+-(NTGeometry*)simplify: (NTGeometry*)geometry scale: (float)scale;
 
 -(void)dealloc;
 

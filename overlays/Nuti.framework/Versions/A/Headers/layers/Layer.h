@@ -114,14 +114,14 @@ protected:
     std::weak_ptr<MapRenderer> _mapRenderer;
     
     std::shared_ptr<CullState> _lastCullState;
+   
+	int _priority;
     
-    int _priority;
-    
-    bool _visible;
+	bool _visible;
     
 	MapRange _visibleZoomRange;
 
-	mutable std::mutex _mutex;
+	mutable std::recursive_mutex _mutex;
 
 private:
 	bool _surfaceCreated;

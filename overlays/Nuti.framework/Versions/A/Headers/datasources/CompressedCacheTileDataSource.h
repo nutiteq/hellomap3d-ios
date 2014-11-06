@@ -15,7 +15,7 @@ class CompressedCacheTileDataSource : public CacheTileDataSource {
 public:
     /**
      * Constructs a CompressedCacheTileDataSource object from tile data source.
-     * @param datasource The datasource to be cached.
+     * @param dataSource The datasource to be cached.
      */
 	CompressedCacheTileDataSource(const std::shared_ptr<TileDataSource>& dataSource);
 	virtual ~CompressedCacheTileDataSource();

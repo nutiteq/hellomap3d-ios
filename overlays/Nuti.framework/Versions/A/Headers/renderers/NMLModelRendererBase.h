@@ -1,9 +1,10 @@
 #ifndef NMLMODELRENDERERBASE_H_
 #define NMLMODELRENDERERBASE_H_
 
-#include "nmlpackage/BaseTypes.h"
+#include "drawdatas/nmlGL/BaseTypes.h"
 
 #include <mutex>
+#include <memory>
 
 namespace Nuti {
 
@@ -25,7 +26,7 @@ public:
 	virtual void onSurfaceDestroyed();
 
 protected:
-	struct GLContext : NMLPackage::GLContext {
+	struct GLContext : nmlGL::GLContext {
 		GLContext(const Shader &shader);
 		virtual ~GLContext();
 

@@ -90,7 +90,7 @@ public:
      * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating
      * OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.
      * @param compressedData The pointer to the beginning of an array containing the compressed image bytes.
-     * @param compressedData The number of bytes in the given byte array.
+     * @param dataSize The number of bytes in the given byte array.
      * @param pow2Padding The power of two conversion flag.
      */
 	Bitmap(const unsigned char* compressedData, int dataSize, bool pow2Padding);
@@ -98,7 +98,7 @@ public:
      * Constructs a bitmap from an already decoded vector of bytes. The bitmap data is expected to be alpha premultiplied.
      * If the power of two conversion flag is set, additional padding will be added to the image to make it's dimensions power of two.
      * This can be useful when creating OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.
-     * @param compressedData A vector of decoded, premultiplied bitmap bytes.
+     * @param uncompressedData A vector of decoded, premultiplied bitmap bytes.
      * @param width The width of the bitmap.
      * @param height The height of the bitmap.
      * @param colorFormat The color format of the bitmap.
@@ -111,7 +111,7 @@ public:
      * Constructs a bitmap from an already decoded array of bytes. The bitmap data is expected to be alpha premultiplied.
      * If the power of two conversion flag is set, additional padding will be added to the image to make it's dimensions power of two.
      * This can be useful when creating OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.
-     * @param compressedData The pointer to the beginning of an array containing the decoded, premultiplied bitmap bytes.
+     * @param uncompressedData The pointer to the beginning of an array containing the decoded, premultiplied bitmap bytes.
      * @param width The width of the bitmap.
      * @param height The height of the bitmap.
      * @param colorFormat The color format of the bitmap.
@@ -180,7 +180,7 @@ public:
      * will be removed prior to resizing. If the power of two conversion flag is set, new padding will be added to the image 
      * after resizing to make it's dimensions power of two.
      * @param width The new width of this bitmap.
-     * @param width The new height of this bitmap.
+     * @param height The new height of this bitmap.
      * @param pow2Padding The power of two conversion flag.
      */
 	void resize(unsigned int width, unsigned int height, bool pow2Padding);

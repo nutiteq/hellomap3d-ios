@@ -10,12 +10,12 @@
 
 #include <cglib/mat.h>
 
-namespace NMLPackage {
-
+namespace nml {
+class Mesh;
 class MeshOp;
+class Texture;
 class ModelLODTree;
 class ModelLODTreeNode;
-
 }
 
 namespace Nuti {
@@ -50,10 +50,10 @@ public:
 	struct MeshBinding {
 		long long meshId;
 		std::string localId;
-		std::shared_ptr<NMLPackage::MeshOp> meshOp;
+		std::shared_ptr<nml::MeshOp> meshOp;
 
 		MeshBinding(long long meshId, const std::string &localId) : meshId(meshId), localId(localId), meshOp() { }
-		MeshBinding(long long meshId, const std::string &localId, std::shared_ptr<NMLPackage::MeshOp> meshOp) : meshId(meshId), localId(localId), meshOp(meshOp) { }
+		MeshBinding(long long meshId, const std::string &localId, std::shared_ptr<nml::MeshOp> meshOp) : meshId(meshId), localId(localId), meshOp(meshOp) { }
 	};
 
 	struct TextureBinding {
@@ -64,25 +64,28 @@ public:
 		TextureBinding(long long textureId, int level, const std::string &localId) : textureId(textureId), level(level), localId(localId) { }
 	};
 
+	typedef nml::Mesh Mesh;
+	typedef nml::MeshOp MeshOp;
+	typedef nml::Texture Texture;
 	typedef std::list<MeshBinding> MeshBindingList;
 	typedef std::list<TextureBinding> TextureBindingList;
 	typedef std::map<int, MeshBindingList> MeshBindingsMap;
 	typedef std::map<int, TextureBindingList> TextureBindingsMap;
 	typedef std::map<int, std::shared_ptr<NMLModelLODTreeProxy> > ProxyMap;
 	
-	NMLModelLODTree(long long modelLODTreeId, const MapPos& mapPos, std::shared_ptr<Projection> projection, std::shared_ptr<NMLPackage::ModelLODTree> sourceModelLODTree, const ProxyMap& proxyMap, const MeshBindingsMap& meshBindingsMap, const TextureBindingsMap& textureBindingsMap);
+	NMLModelLODTree(long long modelLODTreeId, const MapPos& mapPos, std::shared_ptr<Projection> projection, std::shared_ptr<nml::ModelLODTree> sourceModelLODTree, const ProxyMap& proxyMap, const MeshBindingsMap& meshBindingsMap, const TextureBindingsMap& textureBindingsMap);
 	virtual ~NMLModelLODTree();
 
 	const MapPos& getMapPos() const;
 	const cglib::mat4x4<double>& getLocalMat() const;
-	std::shared_ptr<NMLPackage::ModelLODTree> getSourceModelLODTree() const;
+	std::shared_ptr<nml::ModelLODTree> getSourceModelLODTree() const;
 	std::shared_ptr<ProxyMap> getProxyMap() const;
 
 	const MeshBindingsMap& getMeshBindingsMap() const;
 	const TextureBindingsMap& getTextureBindingsMap() const;
 
 	int getSourceNodeCount() const;
-	const NMLPackage::ModelLODTreeNode* getSourceNode(int nodeId) const;
+	const nml::ModelLODTreeNode* getSourceNode(int nodeId) const;
 	int getNodeParentId(int nodeId) const;
 	long long getGlobalNodeId(int nodeId) const;
 
@@ -90,7 +93,7 @@ private:
 	long long _modelLODTreeId;
 	MapPos _mapPos;
 	cglib::mat4x4<double> _localMat;
-	std::shared_ptr<NMLPackage::ModelLODTree> _sourceModelLODTree;
+	std::shared_ptr<nml::ModelLODTree> _sourceModelLODTree;
 	std::shared_ptr<ProxyMap> _proxyMap;
 	MeshBindingsMap _meshBindingsMap;
 	TextureBindingsMap _textureBindingsMap;

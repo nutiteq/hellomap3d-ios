@@ -18,7 +18,7 @@ public:
 	KDTree();
 	virtual ~KDTree();
 
-	int count();
+	int count() const;
 
 	void insert(const MapBounds& bounds, const T& object);
 	bool remove(const MapBounds& bounds, const T& object);
@@ -26,7 +26,7 @@ public:
 	void removeAll();
 
 	std::vector<T> query(const Frustum& frustum) const;
-    std::vector<T> query(const MapBounds& bounds) const;
+	std::vector<T> query(const MapBounds& bounds) const;
 	std::vector<T> getAll() const;
 
 private:
@@ -56,7 +56,7 @@ private:
 	std::shared_ptr<Node> removeFromNode(const std::shared_ptr<Node>& node, const MapBounds* bounds, const T& object);
 
 	void queryNode(const std::shared_ptr<Node>& node, const Frustum& frustum, std::vector<T>& results) const;
-    void queryNode(const std::shared_ptr<Node>& node, const MapBounds& bounds, std::vector<T>& results) const;
+	void queryNode(const std::shared_ptr<Node>& node, const MapBounds& bounds, std::vector<T>& results) const;
 	void getAllFromNode(const std::shared_ptr<Node>& node, std::vector<T>& results) const;
 
 	std::shared_ptr<Node> _root;
@@ -75,8 +75,8 @@ KDTree<T>::~KDTree() {
 }
 
 template<typename T>
-int KDTree<T>::count() {
-	return count;
+int KDTree<T>::count() const {
+	return _count;
 }
 
 template<typename T>
@@ -116,9 +116,9 @@ std::vector<T> KDTree<T>::query(const Frustum& frustum) const {
     
 template<typename T>
 std::vector<T> KDTree<T>::query(const MapBounds& bounds) const {
-    std::vector<T> results;
-    queryNode(_root, bounds, results);
-    return results;
+	std::vector<T> results;
+	queryNode(_root, bounds, results);
+	return results;
 }
 
 template<typename T>
@@ -228,7 +228,7 @@ std::shared_ptr<typename KDTree<T>::Node> KDTree<T>::removeFromNode(const std::s
 
 	// Recurse and prune
 	bool empty = true;
-	for (int i = 0; i < node->children.size(); i++) {
+	for (size_t i = 0; i < node->children.size(); i++) {
 		node->children[i] = removeFromNode(node->children[i], bounds, object);
 		if (node->children[i]) {
 			empty = false;

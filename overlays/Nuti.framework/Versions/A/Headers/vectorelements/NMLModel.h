@@ -9,15 +9,14 @@
 
 #include <cglib/mat.h>
 
-namespace NMLPackage {
-class Model;
+namespace nml {
+	class Model;
 }
 
 namespace Nuti {
     
 class MapPos;
 class NMLModelDrawData;
-class PointGeometry;
 
 /**
  * A 3D model that can be displayed on the map.
@@ -32,22 +31,22 @@ public:
      * @param geometry The geometry object that defines the location of this model.
      * @param sourceModel The 3D source model that defines what this model looks like.
      */
-	NMLModel(const std::shared_ptr<PointGeometry>& geometry, const std::shared_ptr<NMLPackage::Model>& sourceModel);
+	NMLModel(const std::shared_ptr<Geometry>& geometry, const std::shared_ptr<nml::Model>& sourceModel);
     /**
      * Constructs a NMLModel object from a map position and a source model.
-     * @param poses The map position that defines the location of this model.
+     * @param pos The map position that defines the location of this model.
      * @param sourceModel The 3D source model that defines what this model looks like.
      */
-    NMLModel(const MapPos& pos, const std::shared_ptr<NMLPackage::Model>& sourceModel);
+    NMLModel(const MapPos& pos, const std::shared_ptr<nml::Model>& sourceModel);
 	/**
 	* Constructs a NMLModel object from a geometry object and serialized model data.
 	* @param geometry The geometry object that defines the location of this model.
 	* @param sourceModelData Serialized data for 3D model.
 	*/
-	NMLModel(const std::shared_ptr<PointGeometry>& geometry, const std::shared_ptr<std::vector<unsigned char> >& sourceModelData);
+	NMLModel(const std::shared_ptr<Geometry>& geometry, const std::shared_ptr<std::vector<unsigned char> >& sourceModelData);
 	/**
 	* Constructs a NMLModel object from a map position and serialized model data.
-	* @param poses The map position that defines the location of this model.
+	* @param pos The map position that defines the location of this model.
 	* @param sourceModelData Serialized data for 3D model.
 	*/
 	NMLModel(const MapPos& pos, const std::shared_ptr<std::vector<unsigned char> >& sourceModelData);
@@ -55,12 +54,11 @@ public:
 
     virtual const MapBounds& getBounds() const;
     
-	std::shared_ptr<PointGeometry> getGeometry() const;
 	/**
      * Sets the location for this model.
      * @param geometry The new geometry object that defines the location of this model.
      */
-	void setGeometry(const std::shared_ptr<PointGeometry>& geometry);
+	void setGeometry(const std::shared_ptr<Geometry>& geometry);
 	/**
      * Sets the location for this model.
      * @param pos The new map position that defines the location of this model.
@@ -108,7 +106,7 @@ public:
      * Returns the source model of this model.
      * @return The 3D source model that defines what this model looks like.
      */
-	std::shared_ptr<NMLPackage::Model> getSourceModel() const;
+	std::shared_ptr<nml::Model> getSourceModel() const;
     
 protected:
     friend class NMLModelRenderer;
@@ -118,8 +116,6 @@ protected:
     void setDrawData(const std::shared_ptr<NMLModelDrawData>& drawData);
     
 private:
-    static std::shared_ptr<NMLPackage::Model> ParseModel(const std::vector<unsigned char>& modelData);
-    
     MapBounds _bounds;
     
     std::shared_ptr<NMLModelDrawData> _drawData;
@@ -129,7 +125,7 @@ private:
     
 	float _scale;
     
-	std::shared_ptr<NMLPackage::Model> _sourceModel;
+	std::shared_ptr<nml::Model> _sourceModel;
 };
 
 }

@@ -36,7 +36,7 @@ extern "C" {
  * @param horizontalOffset The horizontal offset for the marker.<br>
  * @param verticalOffset The vertical offset for the marker.<br>
  * @param placementPriority The placement priority for the marker.<br>
- * <br>
+ * @param scaleWithDPI The scale with DPI flag for the label.<br>
  * @param anchorPointX The horizontal anchor point for the marker.<br>
  * @param anchorPointY The vertical anchor point for the marker.<br>
  * @param bitmap The bitmap for the marker.<br>
@@ -44,7 +44,7 @@ extern "C" {
  * @param scalingMode The scaling mode for the marker.<br>
  * @param size The size for the marker.
  */
--(id)initWithColor: (NTColor*)color attachAnchorPointX: (float)attachAnchorPointX attachAnchorPointY: (float)attachAnchorPointY causesOverlap: (BOOL)causesOverlap hideIfOverlapped: (BOOL)hideIfOverlapped horizontalOffset: (float)horizontalOffset verticalOffset: (float)verticalOffset placementPriority: (int)placementPriority scaleWidthDPI: (BOOL)scaleWidthDPI anchorPointX: (float)anchorPointX anchorPointY: (float)anchorPointY bitmap: (NTBitmap*)bitmap orientationMode: (enum NTBillboardOrientation)orientationMode scalingMode: (enum NTBillboardScaling)scalingMode size: (float)size;
+-(id)initWithColor: (NTColor*)color attachAnchorPointX: (float)attachAnchorPointX attachAnchorPointY: (float)attachAnchorPointY causesOverlap: (BOOL)causesOverlap hideIfOverlapped: (BOOL)hideIfOverlapped horizontalOffset: (float)horizontalOffset verticalOffset: (float)verticalOffset placementPriority: (int)placementPriority scaleWithDPI: (BOOL)scaleWithDPI anchorPointX: (float)anchorPointX anchorPointY: (float)anchorPointY bitmap: (NTBitmap*)bitmap orientationMode: (enum NTBillboardOrientation)orientationMode scalingMode: (enum NTBillboardScaling)scalingMode size: (float)size;
 /**
  * Returns the horizontal anchor point of the marker.<br>
  * @return The horizontal anchor point of the marker.

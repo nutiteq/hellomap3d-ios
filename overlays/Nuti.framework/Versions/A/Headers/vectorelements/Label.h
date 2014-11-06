@@ -25,10 +25,10 @@ public:
      * @param geometry The geometry object that defines the location of this label.
      * @param style The style that defines what this label looks like.
      */
-    Label(const std::shared_ptr<PointGeometry>& geometry, const std::shared_ptr<LabelStyle>& style);
+    Label(const std::shared_ptr<Geometry>& geometry, const std::shared_ptr<LabelStyle>& style);
     /**
      * Constructs an abstract Label object from a map position and a style.
-     * @param poses The map position that defines the location of this label.
+     * @param pos The map position that defines the location of this label.
      * @param style The style that defines what this label looks like.
      */
     Label(const MapPos& pos, const std::shared_ptr<LabelStyle>& style);
@@ -37,7 +37,7 @@ public:
     /**
      * Draws a custom bitmap for this label that will be used for drawing the label on the map.
      * The method is called each time the label gets reloaded internally.
-     * @param dpToPx The value used for converting display independent pixels (dp) to pixels (px).
+     * @param dpToPX The value used for converting display independent pixels (dp) to pixels (px).
      * @return The custom label bitmap.
      */
 	virtual std::shared_ptr<Bitmap> drawBitmap(float dpToPX) const = 0;

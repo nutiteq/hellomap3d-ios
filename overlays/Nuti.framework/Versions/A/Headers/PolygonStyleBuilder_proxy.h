@@ -30,13 +30,6 @@ extern "C" {
  */
 -(id)init;
 /**
- * Returns the bitmap of the point.<br>
- * @return The bitmap of the point.<br>
- * <br>
- * Sets the bitmap that will be used for drawing the polygon. The image will be repeated <br>
- * vertically and horizontally to cover the polygon. The default is "default_polygon.png"<br>
- * <br>
- * <br>
  * Returns the line style of the edges of the polygon.<br>
  * @return The line style of the edges of the polygon. May be null.
  */

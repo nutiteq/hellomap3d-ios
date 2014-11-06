@@ -36,7 +36,7 @@ extern "C" {
  * Constructs a PersistentCacheTileDataSource object from tile data source<br>
  * and a sqlite database. The sqlite database must be writable, if it doesn't exist, an empty one<br>
  * will be created instead.<br>
- * <br>
+ * @param dataSource The datasource to be cached.<br>
  * @param databasePath The path to the sqlite database, where the tiles will be cached.
  */
 -(id)initWithDataSource: (NTTileDataSource*)dataSource databasePath: (NSString*)databasePath;

@@ -32,22 +32,22 @@ extern "C" {
 -(id)init;
 /**
  * Sets the font name for the text label.<br>
- * 
+ * @param fontName The new platfrom dependent font name for the text label.
  */
 -(void)setFontName: (NSString*)fontName;
 /**
  * Sets the font size for the text label.<br>
- * 
+ * @param size The new font size for the text label in points.
  */
 -(void)setFontSize: (int)size;
 /**
  * Sets the stroke color for the text label.<br>
- * 
+ * @param strokeColor The new stroke color for the text label.
  */
 -(void)setStrokeColor: (NTColor*)strokeColor;
 /**
  * Sets the stroke width for the text label.<br>
- * 
+ * @param strokeWidth The new stroke widht for the text label in screen density independent pixels.
  */
 -(void)setStrokeWidth: (float)strokeWidth;
 /**

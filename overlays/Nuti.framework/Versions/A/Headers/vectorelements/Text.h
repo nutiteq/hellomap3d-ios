@@ -28,10 +28,10 @@ public:
      * @param style The style that defines what this text label looks like.
      * @param text The text to be displayed.
      */
-    Text(const std::shared_ptr<PointGeometry>& geometry, const std::shared_ptr<TextStyle>& style, const std::string& text);
+    Text(const std::shared_ptr<Geometry>& geometry, const std::shared_ptr<TextStyle>& style, const std::string& text);
     /**
      * Constructs a Text object from a map position and a style.
-     * @param poses The map position that defines the location of this text label.
+     * @param pos The map position that defines the location of this text label.
      * @param style The style that defines what this text label looks like.
      * @param text The text to be displayed.
      */

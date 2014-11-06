@@ -25,7 +25,7 @@ public:
      * @param horizontalOffset The horizontal offset for the label.
      * @param verticalOffset The vertical offset for the label.
      * @param placementPriority The placement priority for the label.
-     * @param scaleWithDpi The scale with DPI flag for the label.
+     * @param scaleWithDPI The scale with DPI flag for the label.
      * @param anchorPointX The horizontal anchor point for the label.
      * @param anchorPointY The vertical anchor point for the label.
      * @param flippable The fliappble flag for the label.

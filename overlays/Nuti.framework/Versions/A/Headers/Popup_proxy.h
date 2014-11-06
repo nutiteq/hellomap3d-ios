@@ -39,10 +39,10 @@ extern "C" {
  * @param geometry The geometry object that defines the location of this popup.<br>
  * @param style The style that defines what this popup looks like.
  */
--(id)initWithGeometry: (NTPointGeometry*)geometry style: (NTPopupStyle*)style;
+-(id)initWithGeometry: (NTGeometry*)geometry style: (NTPopupStyle*)style;
 /**
  * Constructs an abstract Popup object from a map position and a style.<br>
- * <br>
+ * @param pos The map position that defines the location of this popup.<br>
  * @param style The style that defines what this popup looks like.
  */
 -(id)initWithPos: (NTMapPos*)pos style: (NTPopupStyle*)style;
@@ -52,7 +52,7 @@ extern "C" {
  * @param anchorScreenPos The screen position of the anchor point of this popup in pixels.<br>
  * @param screenWidth The current screen width in pixels.<br>
  * @param screenHeight The current screen height in pixels.<br>
- * <br>
+ * @param dpToPX The value used for converting display independent pixels (dp) to pixels (px).<br>
  * @return The custom Popup bitmap.
  */
 -(NTBitmap*)drawBitmap: (NTMapPos*)anchorScreenPos screenWidth: (float)screenWidth screenHeight: (float)screenHeight dpToPX: (float)dpToPX;

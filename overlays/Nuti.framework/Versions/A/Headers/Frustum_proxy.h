@@ -38,7 +38,7 @@ extern "C" {
  * Constructs a frustum from a modelview projection matrix.<br>
  * @param mvpMatrix The modelview projection matrix.
  */
--(id)initWithMvpMatrix: (Matrix4D*)mvpMatrix;
+-(id)initWithMvpMatrix: (NTMatrix4D*)mvpMatrix;
 /**
  * Tests if a point is inside with the frustum.<br>
  * @param point The point to be tested.<br>

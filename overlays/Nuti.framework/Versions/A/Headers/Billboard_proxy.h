@@ -45,12 +45,6 @@ extern "C" {
  */
 -(NTMapBounds*)getBounds;
 /**
- * Returns the location of this billboard.<br>
- * @return The geometry object that defines the location of this billboard. <br>
- *         Null if billboard is attached to another billboard.
- */
--(NTPointGeometry*)getGeometry;
-/**
  * Returns the location of the root billboard. If this billboard has a location,<br>
  * this method is equavalent to the Billboard::getGeometry method. If this billboard is attached <br>
  * to another billboard, the hierarchy is traveled recursively and the location of the root <br>
@@ -58,13 +52,13 @@ extern "C" {
  * @return The geometry object that defines the location of the root billboard. <br>
  * Null if there's no root billboard.
  */
--(NTPointGeometry*)getRootGeometry;
+-(NTGeometry*)getRootGeometry;
 /**
  * Sets the location for this billboard. If this billboard is attached<br>
  * to another billboard, it will first be detached.<br>
  * @param geometry The new geometry object that defines the location of this billboard.
  */
--(void)setGeometry: (NTPointGeometry*)geometry;
+-(void)setGeometry: (NTGeometry*)geometry;
 /**
  * Sets the location for this billboard. If this billboard is attached<br>
  * to another billboard, it will first be detached.<br>

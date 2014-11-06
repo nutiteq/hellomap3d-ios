@@ -114,9 +114,9 @@ enum NTPanningMode {
 -(enum NTProjectionMode)getProjectionMode;
 /**
  * Sets the projection mode. The default is ProjectionMode::PERSPECTIVE.<br>
- * 
+ * @param projectionMode The new projection mode.
  */
--(void)setProjectionMode: (enum NTProjectionMode)projecitonMode;
+-(void)setProjectionMode: (enum NTProjectionMode)projectionMode;
 /**
  * Returns the click type detection state.<br>
  * @return True if click type detecton is enabled.
@@ -269,6 +269,17 @@ enum NTPanningMode {
  */
 -(void)setWatermarkAlignment: (float)alignmentX alignmentY: (float)alignmentY;
 /**
+ * Returns the watermark relative scale.<br>
+ * @return The watermark relative scale. The default is 1.
+ */
+-(float)getWatermarkScale;
+/**
+ * Set the watermark relative scale. By default, watermark size is independant of the actual watermark bitmap size.<br>
+ * This method can be used to change this.<br>
+ * @param scale The new relative scale value.
+ */
+-(void)setWatermarkScale: (float)scale;
+/**
  * Returns the watermark bitmap. May be null.<br>
  * @return The watermark bitmap.
  */
@@ -291,8 +302,8 @@ enum NTPanningMode {
 -(float)getWatermarkPaddingY;
 /**
  * Sets the padding between the watermark and the edge of the screen.<br>
- * <br>
- * 
+ * @param paddingX The new horizontal padding for the watermark in dp. The default is 4.<br>
+ * @param paddingY The new vertical padding for the watermark in dp. The default is 4.
  */
 -(void)setWatermarkPaddingX: (float)paddingX paddingY: (float)paddingY;
 /**

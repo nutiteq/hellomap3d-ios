@@ -117,9 +117,9 @@ public:
 	ProjectionMode::ProjectionMode getProjectionMode() const;
     /**
      * Sets the projection mode. The default is ProjectionMode::PERSPECTIVE.
-     * @param options The new projection mode.
+     * @param projectionMode The new projection mode.
      */
-	void setProjectionMode(ProjectionMode::ProjectionMode projecitonMode);
+	void setProjectionMode(ProjectionMode::ProjectionMode projectionMode);
 
     /**
      * Returns the click type detection state.
@@ -283,6 +283,18 @@ public:
      * 0 the center and 1 the top. The default is -1.
      */
     void setWatermarkAlignment(float alignmentX, float alignmentY);
+
+	/**
+	 * Returns the watermark relative scale.
+	 * @return The watermark relative scale. The default is 1.
+	 */
+	float getWatermarkScale() const;
+	/**
+	 * Set the watermark relative scale. By default, watermark size is independant of the actual watermark bitmap size.
+	 * This method can be used to change this.
+	 * @param scale The new relative scale value.
+	 */
+	void setWatermarkScale(float scale);
     
     /**
      * Returns the watermark bitmap. May be null.
@@ -308,8 +320,8 @@ public:
     float getWatermarkPaddingY() const;
     /**
      * Sets the padding between the watermark and the edge of the screen.
-     * @param alignmentX The new horizontal padding for the watermark in dp. The default is 4.
-     * @param alignmentY The new vertical padding for the watermark in dp. The default is 4.
+     * @param paddingX The new horizontal padding for the watermark in dp. The default is 4.
+     * @param paddingY The new vertical padding for the watermark in dp. The default is 4.
      */
     void setWatermarkPadding(float paddingX, float paddingY);
     
@@ -477,6 +489,7 @@ private:
     std::shared_ptr<Bitmap> _watermarkBitmap;
     float _watermarkPaddingX;
     float _watermarkPaddingY;
+	float _watermarkScale;
     
     bool _userInput;
 

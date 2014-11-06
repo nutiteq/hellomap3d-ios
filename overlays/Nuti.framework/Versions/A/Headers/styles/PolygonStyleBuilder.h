@@ -22,12 +22,12 @@ public:
 	PolygonStyleBuilder();
 	virtual ~PolygonStyleBuilder();
 
-    /**
-     * Returns the bitmap of the point.
-     * @return The bitmap of the point.
+    /*
+     * Returns the bitmap of the polygon.
+     * @return The bitmap of the polygon.
      */
     //std::shared_ptr<Bitmap> getBitmap() const;
-    /**
+    /*
      * Sets the bitmap that will be used for drawing the polygon. The image will be repeated 
      * vertically and horizontally to cover the polygon. The default is "default_polygon.png"
      * @param bitmap The new bitmap for the polygon.
@@ -50,7 +50,7 @@ public:
      * Builds a new instance of the PolygonStyle object using previously set parameters.
      * @return A new PolygonStyle object.
      */
-	std::shared_ptr<PolygonStyle> buildStyle();
+	std::shared_ptr<PolygonStyle> buildStyle() const;
 
 protected:
 	static std::shared_ptr<Bitmap> GetDefaultBitmap();

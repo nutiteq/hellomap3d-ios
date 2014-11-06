@@ -14,6 +14,8 @@ public:
 	PolygonGeometry(const std::vector<MapPos>& poses);
 	PolygonGeometry(const std::vector<MapPos>& poses, const std::vector<std::vector<MapPos> >& holes);
 	virtual ~PolygonGeometry();
+	
+	virtual MapPos getCenterPos() const;
 
 	const std::vector<MapPos>& getPoses() const;
 

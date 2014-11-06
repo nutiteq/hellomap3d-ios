@@ -57,7 +57,7 @@ extern "C" {
  * @param horizontalOffset The horizontal offset for the popup.<br>
  * @param verticalOffset The vertical offset for the popup.<br>
  * @param placementPriority The placement priority for the popup.<br>
- * <br>
+ * @param scaleWithDPI The scale with DPI flag for the popup.<br>
  * @param cornerRadius The corner radius of the popup in dp.<br>
  * @param leftColor The background color of the left part of the popup.<br>
  * @param leftImage The image of the left part of the popup.<br>

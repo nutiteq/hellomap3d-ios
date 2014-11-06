@@ -28,7 +28,7 @@ public:
      * Constructs a PersistentCacheTileDataSource object from tile data source
      * and a sqlite database. The sqlite database must be writable, if it doesn't exist, an empty one
      * will be created instead.
-     * @param datasource The datasource to be cached.
+     * @param dataSource The datasource to be cached.
      * @param databasePath The path to the sqlite database, where the tiles will be cached.
      */
 	PersistentCacheTileDataSource(const std::shared_ptr<TileDataSource>& dataSource, const std::string& databasePath);

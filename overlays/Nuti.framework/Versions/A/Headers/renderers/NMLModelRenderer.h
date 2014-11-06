@@ -4,14 +4,16 @@
 #include "NMLModelRendererBase.h"
 #include "vectorelements/NMLModel.h"
 #include "drawdatas/NMLModelDrawData.h"
-#include "nmlpackage/GLModel.h"
 
 #include <list>
 #include <vector>
 
 namespace Nuti {
+	
+namespace nmlGL {
+		class Model;
+}
 
-class NMLModelDataSource;
 class Projection;
 
 class NMLModelRenderer : public NMLModelRendererBase {
@@ -32,7 +34,7 @@ protected:
 
 private:
     typedef std::vector<std::shared_ptr<NMLModel> > ElementsVector;
-	typedef std::map<const std::shared_ptr<NMLPackage::Model>, NMLPackage::GLModelPtr> GLModelMap;
+	typedef std::map<std::shared_ptr<nml::Model>, std::shared_ptr<nmlGL::Model>> GLModelMap;
 
 	GLModelMap _glModelMap;
 	ElementsVector _elements;

@@ -24,6 +24,7 @@ extern "C" {
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 -(id)initWithPoses: (MapPosVector*)poses;
 -(id)initWithPoses: (MapPosVector*)poses holes: (MapPosVectorVector*)holes;
+-(NTMapPos*)getCenterPos;
 -(MapPosVector*)getPoses;
 -(MapPosVectorVector*)getHoles;
 

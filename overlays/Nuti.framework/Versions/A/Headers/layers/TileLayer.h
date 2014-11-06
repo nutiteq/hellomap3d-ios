@@ -41,7 +41,7 @@ public:
      *
      * Enabling this option might introduce a small performance hit on slower devices. It should also be noted that this
      * will considerably increase network traffic if used with online maps. The default is false.
-    * @param visible The new visibility state of the layer.
+    * @param preloading The new preloading state of the layer.
     */
 	void setPreloading(bool preloading);
 
@@ -54,7 +54,7 @@ public:
     /**
      * Sets the zoom level bias for this layer. Higher zoom level bias forces SDK to use more detailed tiles for given view compared to lower zoom bias.
      * The default bias is 0.
-     * @param The new bias value, both positive and negative fractional values are supported.
+     * @param bias The new bias value, both positive and negative fractional values are supported.
      */
 	void setZoomLevelBias(float bias);
 	
@@ -124,9 +124,9 @@ protected:
     int _frameNr;
     int _lastFrameNr;
 
-    std::atomic<bool> _preloading;
+    bool _preloading;
 
-    std::atomic<float> _zoomLevelBias;
+    float _zoomLevelBias;
 
 	std::unordered_map<long long int, std::shared_ptr<CancelableTask> > _lastVisibleTasks;
 	std::unordered_map<long long int, std::shared_ptr<CancelableTask> > _lastPreloadingTasks;

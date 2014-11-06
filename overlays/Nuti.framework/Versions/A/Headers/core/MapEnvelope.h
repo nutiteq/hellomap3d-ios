@@ -30,30 +30,32 @@ public:
 	 * Constructs a MapEnvelope object from a convex bounding polygon.
 	 */
 	MapEnvelope(const std::vector<MapPos>& convexHull);
-    /**
-    * Copy constructs a MapEnvelope object from another map envelope by making a deep copy.
-    * @param envelope The other map envelope.
-    */
-	MapEnvelope(const MapEnvelope& envelope);
 	virtual ~MapEnvelope();
 
-    /**
-     * Deep copies another map envelope to this one.
-     * @param envelope The other map envelope.
-     * @return This map envelope after the deep copy.
-     */
-	MapEnvelope& operator=(const MapEnvelope& envelope);
-
+	/**
+	 * Checks for equality between this and another envelope.
+	 * @param envelope The other map envelope object.
+	 * @return True if equal.
+	 */
+	bool operator==(const MapEnvelope& envelope) const;
+	/**
+	 * Checks for inequality between this and another map envelope.
+	 * @param envelope The other map envelope object.
+	 * @return True if not equal.
+	 */
+	bool operator!=(const MapEnvelope& envelope) const;
+	
     /**
      * Returns the map bounds of this map envelope.
      * @return The map bounds of this map envelope.
      */
 	const MapBounds& getBounds() const;
+
     /**
-     * Returns the convex hull of this map envelope, if it exists.
-     * @return The convex hull of this map envelope if it exists or null if it doesn't.
+     * Returns the convex hull of this map envelope.
+     * @return The convex hull of this map envelope.
      */
-	const std::vector<MapPos>* getConvexHull() const;
+	const std::vector<MapPos>& getConvexHull() const;
 
     /**
      * Tests whether this map envelope contains another map envelope.
@@ -76,8 +78,8 @@ public:
 
 private:
 	MapBounds _bounds;
-
-	std::unique_ptr<std::vector<MapPos> > _convexHull;
+	bool _rectangularConvexHull;
+	std::vector<MapPos> _convexHull;
     
 };
 

@@ -18,6 +18,7 @@ public:
 
     virtual MapPos fromWgs84(const MapPos &wgs84Pos) const;
 	virtual MapPos toWgs84(const MapPos &mapPos) const;
+	virtual std::string getName() const;
     
 private:
     static const int EARTH_RADIUS = 6378137;

@@ -2,7 +2,6 @@
 #define POINTGEOMETRY_H_
 
 #include "geometry/Geometry.h"
-#include "core/MapPos.h"
 
 namespace Nuti {
 
@@ -11,6 +10,7 @@ public:
 	PointGeometry(const MapPos& pos);
 	virtual ~PointGeometry();
 
+	virtual MapPos getCenterPos() const;
 	const MapPos& getPos() const;
 
 private:

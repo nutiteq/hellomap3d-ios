@@ -50,7 +50,7 @@ extern "C" {
  * Sets the width for the line that will be used for click detection.<br>
  * Units are screen density independent pixels (DP or DIP). If set to -1 the click width will be<br>
  * calculated automatically. The default is -1.<br>
- * 
+ * @param clickWidth The new point size in dp.
  */
 -(void)setClickWidth: (float)clickWidth;
 /**
@@ -83,7 +83,7 @@ extern "C" {
  * vertically by the stretch factor and then repeated along the length of the line. For example, <br>
  * setting the stretch factor to 2.0 will stretch the bitmap vertically to double the original height <br>
  * and reduces the number of times the bitmap gets repeated by half. The default is 1.0.<br>
- * 
+ * @param stretchFactor The new relative stretching coefficient for the line.
  */
 -(void)setStretchFactor: (float)stretchFactor;
 /**

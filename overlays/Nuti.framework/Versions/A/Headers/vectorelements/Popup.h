@@ -26,10 +26,10 @@ public:
      * @param geometry The geometry object that defines the location of this popup.
      * @param style The style that defines what this popup looks like.
      */
-    Popup(const std::shared_ptr<PointGeometry>& geometry, const std::shared_ptr<PopupStyle>& style);
+    Popup(const std::shared_ptr<Geometry>& geometry, const std::shared_ptr<PopupStyle>& style);
     /**
      * Constructs an abstract Popup object from a map position and a style.
-     * @param poses The map position that defines the location of this popup.
+     * @param pos The map position that defines the location of this popup.
      * @param style The style that defines what this popup looks like.
      */
     Popup(const MapPos& pos, const std::shared_ptr<PopupStyle>& style);
@@ -41,7 +41,7 @@ public:
      * @param anchorScreenPos The screen position of the anchor point of this popup in pixels.
      * @param screenWidth The current screen width in pixels.
      * @param screenHeight The current screen height in pixels.
-     * @param dpToPx The value used for converting display independent pixels (dp) to pixels (px).
+     * @param dpToPX The value used for converting display independent pixels (dp) to pixels (px).
      * @return The custom Popup bitmap.
      */
 	virtual std::shared_ptr<Bitmap> drawBitmap(const MapPos& anchorScreenPos,

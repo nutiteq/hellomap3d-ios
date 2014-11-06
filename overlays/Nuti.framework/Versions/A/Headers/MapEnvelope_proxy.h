@@ -44,24 +44,25 @@ extern "C" {
  */
 -(id)initWithConvexHull: (MapPosVector*)convexHull;
 /**
- * Copy constructs a MapEnvelope object from another map envelope by making a deep copy.<br>
- * @param envelope The other map envelope.
+ * Checks for equality between this and another envelope.<br>
+ * @param envelope The other map envelope object.<br>
+ * @return True if equal.
  */
--(id)initWithEnvelope: (NTMapEnvelope*)envelope;
+-(BOOL)equals: (NTMapEnvelope*)envelope;
 /**
- * Deep copies another map envelope to this one.<br>
- * @param envelope The other map envelope.<br>
- * @return This map envelope after the deep copy.
+ * Checks for inequality between this and another map envelope.<br>
+ * @param envelope The other map envelope object.<br>
+ * @return True if not equal.
  */
--(NTMapEnvelope*)clone: (NTMapEnvelope*)envelope;
+-(BOOL)differs: (NTMapEnvelope*)envelope;
 /**
  * Returns the map bounds of this map envelope.<br>
  * @return The map bounds of this map envelope.
  */
 -(NTMapBounds*)getBounds;
 /**
- * Returns the convex hull of this map envelope, if it exists.<br>
- * @return The convex hull of this map envelope if it exists or null if it doesn't.
+ * Returns the convex hull of this map envelope.<br>
+ * @return The convex hull of this map envelope.
  */
 -(MapPosVector*)getConvexHull;
 /**

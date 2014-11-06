@@ -37,17 +37,17 @@ extern "C" {
  * @param geometry The geometry object that defines the location of this label.<br>
  * @param style The style that defines what this label looks like.
  */
--(id)initWithGeometry: (NTPointGeometry*)geometry style: (NTLabelStyle*)style;
+-(id)initWithGeometry: (NTGeometry*)geometry style: (NTLabelStyle*)style;
 /**
  * Constructs an abstract Label object from a map position and a style.<br>
- * <br>
+ * @param pos The map position that defines the location of this label.<br>
  * @param style The style that defines what this label looks like.
  */
 -(id)initWithPos: (NTMapPos*)pos style: (NTLabelStyle*)style;
 /**
  * Draws a custom bitmap for this label that will be used for drawing the label on the map.<br>
  * The method is called each time the label gets reloaded internally.<br>
- * <br>
+ * @param dpToPX The value used for converting display independent pixels (dp) to pixels (px).<br>
  * @return The custom label bitmap.
  */
 -(NTBitmap*)drawBitmap: (float)dpToPX;

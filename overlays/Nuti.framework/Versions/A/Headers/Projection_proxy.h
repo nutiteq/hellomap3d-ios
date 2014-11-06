@@ -58,6 +58,11 @@ extern "C" {
  * @return The transformed position in the WGS84 coordinate system.
  */
 -(NTMapPos*)toWgs84: (NTMapPos*)pos;
+/**
+ * Return name of this projection in Well-Known format. For example, as "EPSG:3857"<br>
+ * @return The name of this projection.
+ */
+-(NSString*)getName;
 
 -(void)dealloc;
 

@@ -8,7 +8,6 @@ namespace Nuti {
 class BillboardDrawData;
 class BillboardStyle;
 class MapPos;
-class PointGeometry;
 class VectorLayer;
 
 /**
@@ -39,12 +38,6 @@ public:
     virtual const MapBounds& getBounds() const;
 
     /**
-     * Returns the location of this billboard.
-     * @return The geometry object that defines the location of this billboard. 
-     *         Null if billboard is attached to another billboard.
-     */
-	std::shared_ptr<PointGeometry> getGeometry() const;
-    /**
      * Returns the location of the root billboard. If this billboard has a location,
      * this method is equavalent to the Billboard::getGeometry method. If this billboard is attached 
      * to another billboard, the hierarchy is traveled recursively and the location of the root 
@@ -52,13 +45,13 @@ public:
      * @return The geometry object that defines the location of the root billboard. 
                 Null if there's no root billboard.
      */
-    std::shared_ptr<PointGeometry> getRootGeometry() const;
+    std::shared_ptr<Geometry> getRootGeometry() const;
     /**
      * Sets the location for this billboard. If this billboard is attached
      * to another billboard, it will first be detached.
      * @param geometry The new geometry object that defines the location of this billboard.
      */
-	void setGeometry(const std::shared_ptr<PointGeometry>& geometry);
+	void setGeometry(const std::shared_ptr<Geometry>& geometry);
     /**
      * Sets the location for this billboard. If this billboard is attached
      * to another billboard, it will first be detached.
@@ -89,7 +82,7 @@ protected:
     friend class VectorLayer;
     
     Billboard(const std::string& className, const std::shared_ptr<Billboard>& baseBillboard);
-	Billboard(const std::string& className, const std::shared_ptr<PointGeometry>& geometry);
+	Billboard(const std::string& className, const std::shared_ptr<Geometry>& geometry);
     Billboard(const std::string& className, const MapPos& pos);
     
     std::shared_ptr<BillboardDrawData> getDrawData() const;

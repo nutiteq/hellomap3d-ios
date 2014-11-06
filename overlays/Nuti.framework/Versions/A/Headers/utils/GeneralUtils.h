@@ -13,7 +13,7 @@ public:
 		return value < low ? low : (value > high ? high : value);
 	}
 
-	static long long intPow(int x, int p);
+	static long long IntPow(int x, unsigned int p);
 
 	static unsigned int UpperPow2(unsigned int n);
 

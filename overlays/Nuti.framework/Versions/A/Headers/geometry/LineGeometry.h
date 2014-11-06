@@ -13,6 +13,8 @@ class LineGeometry : public Geometry {
 public:
 	LineGeometry(const std::vector<MapPos>& poses);
 	virtual ~LineGeometry();
+	
+	virtual MapPos getCenterPos() const;
 
 	const std::vector<MapPos>& getPoses() const;
 

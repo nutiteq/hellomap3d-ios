@@ -25,6 +25,7 @@ extern "C" {
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+-(NTMapPos*)getCenterPos;
 -(NTMapBounds*)getBounds;
 
 -(void)dealloc;

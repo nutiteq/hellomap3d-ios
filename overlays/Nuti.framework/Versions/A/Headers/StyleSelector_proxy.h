@@ -16,39 +16,18 @@ extern "C" {
 #endif
 
 
-#import "Bitmap_proxy.h"
-#import "UnsignedCharVector_proxy.h"
+#import "Style_proxy.h"
 
 /**
- * A wrapper class for bitmaps representing raster map tiles.
+ * A collection of style rules.
  */
-@interface NTRasterTileBitmap : NSObject
+@interface NTStyleSelector : NSObject
 {
 	void *swigCPtr;
 	BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
-/**
- * Constructs a RasterTileBitmap object from an uncompressed bitmap.<br>
- * @param bitmap The source bitmap for this raster tile bitmap.
- */
--(id)initWithBitmap: (NTBitmap*)bitmap;
-/**
- * Constructs a RasterTileBitmap object from a compressed image.<br>
- * 
- */
--(id)initWithCompressed: (UnsignedCharVector*)compressed;
-/**
- * Returns the source bitmap.<br>
- * @return The source bitmap.
- */
--(NTBitmap*)getBitmap;
-/**
- * Returns this raster tile bitmap as a compressed byte vector.<br>
- * @return The compressed bitmap as a byte vector.
- */
--(UnsignedCharVector*)getCompressed;
 
 -(void)dealloc;
 

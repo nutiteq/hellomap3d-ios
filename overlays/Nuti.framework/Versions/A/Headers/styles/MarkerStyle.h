@@ -25,7 +25,7 @@ public:
      * @param horizontalOffset The horizontal offset for the marker.
      * @param verticalOffset The vertical offset for the marker.
      * @param placementPriority The placement priority for the marker.
-     * @param scaleWithDpi The scale with DPI flag for the label.
+     * @param scaleWithDPI The scale with DPI flag for the label.
      * @param anchorPointX The horizontal anchor point for the marker.
      * @param anchorPointY The vertical anchor point for the marker.
      * @param bitmap The bitmap for the marker.
@@ -41,7 +41,7 @@ public:
                 float horizontalOffset,
                 float verticalOffset,
                 int placementPriority,
-                bool scaleWidthDPI,
+                bool scaleWithDPI,
                 float anchorPointX,
                 float anchorPointY,
                 const std::shared_ptr<Bitmap>& bitmap,

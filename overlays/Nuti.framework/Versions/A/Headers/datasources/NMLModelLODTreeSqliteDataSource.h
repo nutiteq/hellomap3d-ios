@@ -15,18 +15,18 @@ namespace Nuti {
  */
 class NMLModelLODTreeSqliteDataSource : public NMLModelLODTreeDataSource {
 public:
-    /**
-     * Constructs a NMLModelLODTreeSqliteDataSource object.
-	 * @param proj The projection for the database. Currently only EPSG3857 is supported.
+	/**
+	 * Constructs a NMLModelLODTreeSqliteDataSource object.
+	 * @param projection The projection for the database. Currently only EPSG3857 is supported.
 	 * @param fileName The file name of the sqlite database file.
 	 */
-	NMLModelLODTreeSqliteDataSource(std::shared_ptr<Projection> projection, const std::string& fileName);
+	NMLModelLODTreeSqliteDataSource(const std::shared_ptr<Projection>& projection, const std::string& fileName);
 	virtual ~NMLModelLODTreeSqliteDataSource();
 
-	virtual MapTileList loadMapTiles(const ViewState& viewState);
+	virtual std::vector<MapTile> loadMapTiles(const std::shared_ptr<CullState>& cullState);
 	virtual std::shared_ptr<NMLModelLODTree> loadModelLODTree(const MapTile& mapTile);
-	virtual std::shared_ptr<NMLPackage::Mesh> loadMesh(long long meshId);
-	virtual std::shared_ptr<NMLPackage::Texture> loadTexture(long long textureId, int level);
+	virtual std::shared_ptr<nml::Mesh> loadMesh(long long meshId);
+	virtual std::shared_ptr<nml::Texture> loadTexture(long long textureId, int level);
 
 private:
 	std::unique_ptr<sqlite3pp::database> _db;

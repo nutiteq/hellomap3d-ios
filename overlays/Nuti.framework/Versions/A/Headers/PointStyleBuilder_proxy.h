@@ -48,7 +48,7 @@ extern "C" {
  * Sets the size for the point that will be used for click detection.<br>
  * Units are screen density independent pixels (DP or DIP). If set to -1 the click size will be<br>
  * calculated automatically. The default is -1.<br>
- * 
+ * @param size The new point size in dp.
  */
 -(void)setClickSize: (float)size;
 /**
@@ -58,7 +58,7 @@ extern "C" {
 -(float)getSize;
 /**
  * Sets the size for the point in screen density independent pixels (DP or DIP). The default is 20.<br>
- * 
+ * @param size The new point size in dp.
  */
 -(void)setSize: (float)size;
 /**

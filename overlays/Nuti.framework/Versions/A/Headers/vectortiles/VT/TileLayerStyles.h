@@ -62,9 +62,10 @@ namespace Nuti {
 			TextFormatter::Options formatterOptions;
 			std::shared_ptr<Font> font;
 			float backgroundScale;
+			cglib::vec2<float> backgroundOffset;
 			std::shared_ptr<Bitmap> backgroundBitmap;
 
-			TextLabelStyle(LabelOrientation placement, float scale, const TextFormatter::Options& formatterOptions, const std::shared_ptr<Font>& font, float backgroundScale, const std::shared_ptr<Bitmap>& backgroundBitmap) : placement(placement), scale(scale), formatterOptions(formatterOptions), font(font), backgroundScale(backgroundScale), backgroundBitmap(backgroundBitmap) { }
+			TextLabelStyle(LabelOrientation placement, float scale, const TextFormatter::Options& formatterOptions, const std::shared_ptr<Font>& font, float backgroundScale, const cglib::vec2<float>& backgroundOffset, const std::shared_ptr<Bitmap>& backgroundBitmap) : placement(placement), scale(scale), formatterOptions(formatterOptions), font(font), backgroundScale(backgroundScale), backgroundOffset(backgroundOffset), backgroundBitmap(backgroundBitmap) { }
 		};
 	}
 }

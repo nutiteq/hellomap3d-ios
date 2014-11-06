@@ -33,7 +33,7 @@
     // Use modern vector background. Suggested strongly, especially if you rotate and tilt the map
     
     // Load vector tile styleset
-    UnsignedCharVector *vectorTileStyleSetData = [NTAssetUtils loadBytes: @"osmbright.zip"];
+    UnsignedCharVector *vectorTileStyleSetData = [NTAssetUtils loadBytes: @"osmbright_en.zip"];
     NTMBVectorTileStyleSet *vectorTileStyleSet = [[NTMBVectorTileStyleSet alloc] initWithData:vectorTileStyleSetData];
     // Create vector tile decoder using the styleset
     NTMBVectorTileDecoder *vectorTileDecoder = [[NTMBVectorTileDecoder alloc] initWithStyleSet:vectorTileStyleSet];
@@ -85,8 +85,8 @@
     [[self getLayers] add:rasterLayer];
     
   }
-    // Initialize an unculled vector data source
-    NTUnculledVectorDataSource* vectorDataSource1 = [[NTUnculledVectorDataSource alloc] initWithProjection:proj];
+    // Initialize a local vector data source
+    NTLocalVectorDataSource* vectorDataSource1 = [[NTLocalVectorDataSource alloc] initWithProjection:proj];
     // Initialize a vector layer with the previous data source
     NTVectorLayer* vectorLayer1 = [[NTVectorLayer alloc] initWithDataSource:vectorDataSource1];
     // Add the previous vector layer to the map
@@ -109,7 +109,7 @@
     // Drawing order withing a layer is currently undefined.
     // Using multiple layers is the only way to guarantee
     // that point, line and polygon elements are drawn in a specific order.
-    NTUnculledVectorDataSource* vectorDataSource2 = [[NTUnculledVectorDataSource alloc] initWithProjection:proj];
+    NTLocalVectorDataSource* vectorDataSource2 = [[NTLocalVectorDataSource alloc] initWithProjection:proj];
     NTVectorLayer* vectorLayer2 = [[NTVectorLayer alloc] initWithDataSource:vectorDataSource2];
     [[self getLayers] add:vectorLayer2];
     [vectorLayer2 setVisibleZoomRange:[[NTMapRange alloc] initWithMin:10 max:24]];
@@ -331,7 +331,7 @@
     
     //Add a 3D model database layer
     NSString* fullpath = [[NSBundle mainBundle] pathForResource:@"saku_ios_4bpp" ofType:@"nmldb"];
-    NTNMLModelLODTreeSqliteDataSource* nmlDataSource = [[NTNMLModelLODTreeSqliteDataSource alloc] initWithProjection:proj fileName:fullpath];
+    NTSqliteNMLModelLODTreeDataSource* nmlDataSource = [[NTSqliteNMLModelLODTreeDataSource alloc] initWithProjection:proj fileName:fullpath];
     NTNMLModelLODTreeLayer* nmlLayer = [[NTNMLModelLODTreeLayer alloc] initWithDataSource:nmlDataSource];
     [nmlLayer setVisibleZoomRange:[[NTMapRange alloc] initWithMin:12 max:25]];
     [[self getLayers] add:nmlLayer];

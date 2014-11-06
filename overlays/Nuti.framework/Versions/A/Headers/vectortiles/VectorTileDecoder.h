@@ -56,7 +56,9 @@ public:
     
     /**
      * Loads the specified vector tile.
-     * @param tile The tile to load.
+     * @param tile The id of the tile to load.
+	 * @param targetTile The target tile id that will be created from the data.
+	 * @param data The tile data to decode.
      * @return The vector tile data. If the tile is not available, null may be returned.
      */
 	virtual std::shared_ptr<VT::Tile> decodeTile(const VT::TileId& tile, const VT::TileId& targetTile, const std::shared_ptr<TileData>& data) const = 0;

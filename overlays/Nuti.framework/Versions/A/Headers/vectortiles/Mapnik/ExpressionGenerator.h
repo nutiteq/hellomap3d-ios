@@ -109,10 +109,10 @@ namespace Nuti {
 				return false;
 			}
 
-			template <typename T>
+			template <typename Op>
 			static bool getUnaryExpression(const std::shared_ptr<Expression>& expr, std::shared_ptr<Expression>& expr1) {
 				if (auto unaryExpr = std::dynamic_pointer_cast<UnaryExpression>(expr)) {
-					if (std::dynamic_pointer_cast<T>(unaryExpr->getOperator())) {
+					if (std::dynamic_pointer_cast<Op>(unaryExpr->getOperator())) {
 						expr1 = unaryExpr->getExpression();
 						return true;
 					}
@@ -120,10 +120,10 @@ namespace Nuti {
 				return false;
 			}
 
-			template <typename T>
+			template <typename Op>
 			static bool getBinaryExpression(const std::shared_ptr<Expression>& expr, std::shared_ptr<Expression>& expr1, std::shared_ptr<Expression>& expr2) {
 				if (auto binaryExpr = std::dynamic_pointer_cast<BinaryExpression>(expr)) {
-					if (std::dynamic_pointer_cast<T>(binaryExpr->getOperator())) {
+					if (std::dynamic_pointer_cast<Op>(binaryExpr->getOperator())) {
 						expr1 = binaryExpr->getExpression(0);
 						expr2 = binaryExpr->getExpression(1);
 						return true;
@@ -132,10 +132,10 @@ namespace Nuti {
 				return false;
 			}
 
-			template <typename T>
+			template <typename Op>
 			static bool getTertiaryExpression(const std::shared_ptr<Expression>& expr, std::shared_ptr<Expression>& expr1, std::shared_ptr<Expression>& expr2, std::shared_ptr<Expression>& expr3) {
 				if (auto tertiaryExpr = std::dynamic_pointer_cast<TertiaryExpression>(expr)) {
-					if (std::dynamic_pointer_cast<T>(tertiaryExpr->getOperator())) {
+					if (std::dynamic_pointer_cast<Op>(tertiaryExpr->getOperator())) {
 						expr1 = tertiaryExpr->getExpression(0);
 						expr2 = tertiaryExpr->getExpression(1);
 						expr3 = tertiaryExpr->getExpression(2);

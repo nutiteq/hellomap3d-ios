@@ -138,7 +138,7 @@ enum NTColorFormat {
  * will be removed prior to resizing. If the power of two conversion flag is set, new padding will be added to the image <br>
  * after resizing to make it's dimensions power of two.<br>
  * @param width The new width of this bitmap.<br>
- * @param width The new height of this bitmap.<br>
+ * @param height The new height of this bitmap.<br>
  * @param pow2Padding The power of two conversion flag.
  */
 -(void)resize: (unsigned int)width height: (unsigned int)height pow2Padding: (BOOL)pow2Padding;

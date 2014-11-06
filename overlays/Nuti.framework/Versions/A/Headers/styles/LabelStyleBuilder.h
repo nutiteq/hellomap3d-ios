@@ -78,7 +78,7 @@ public:
      * Builds a new instance of the LabelStyle object using previously set parameters.
      * @return A new LabelStyle object.
      */
-	std::shared_ptr<LabelStyle> buildStyle();
+	std::shared_ptr<LabelStyle> buildStyle() const;
 
 protected:
     float _anchorPointX;

@@ -92,7 +92,7 @@ public:
      * of the billboard vertically relative to the billboard rotation. The units are the same as the
      * units used in the setSize method. Negative values offset the bitmap to the bottom and positive values to the top.
      * The default is 0.
-     * @param horizontalOffset The new vertical offset for the billboard.
+     * @param verticalOffset The new vertical offset for the billboard.
      */
 	void setVerticalOffset(float verticalOffset);
 

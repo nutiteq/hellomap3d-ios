@@ -16,28 +16,22 @@ extern "C" {
 #endif
 
 
-#import "MapTile_proxy.h"
-#import "RasterTileBitmap_proxy.h"
-#import "TileDataSource_proxy.h"
+#import "VectorTileLayer_proxy.h"
 
 /**
- * Abstract base class for raster tile data sources.
+ * Specialized online vector tile layer that connects to Nutiteq online tile server.<br>
+ * This layer is intended as a 'shortcut' to make using Nutiteq online service and vector tiles as simple as possible.
  */
-@interface NTRasterTileDataSource : NTTileDataSource
+@interface NTNutiteqOnlineVectorTileLayer : NTVectorTileLayer
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
- * Constructs an abstract RasterTileDataSource object.<br>
- * @param minZoom The minimum zoom level supported by this data source.<br>
- * @param maxZoom The maximum zoom level supported by this data source.
+ * Constructs a NutiteqOnlineVectorTileLayer object from a registered API key and a style asset name.<br>
+ * Style asset must be included in the project, style asset defines visual style of the map.<br>
+ * @param apiKey The registered API key for the app.<br>
+ * @param styleAssetName The name of the style asset that defines visual style of the map.
  */
--(id)initWithMinZoom: (int)minZoom maxZoom: (int)maxZoom;
-/**
- * Loads the specified raster tile.<br>
- * @param tile The tile to load.<br>
- * @return The raster tile bitmap containing the tile image. If the tile is not available, null may be returned.
- */
--(NTRasterTileBitmap*)loadTile: (NTMapTile*)tile;
+-(id)initWithApiKey: (NSString*)apiKey styleAssetName: (NSString*)styleAssetName;
 
 -(void)dealloc;
 

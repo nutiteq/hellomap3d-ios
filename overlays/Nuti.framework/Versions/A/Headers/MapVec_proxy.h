@@ -79,25 +79,25 @@ extern "C" {
 -(NTMapVec*)sub: (NTMapVec*)v;
 /**
  * Creates a new map vector by multiplying this map vector with a multiplier.<br>
- * <br>
+ * @param multiplier The multiplier.<br>
  * @return The new map vector.
  */
 -(NTMapVec*)mul: (double)multiplier;
 /**
  * Creates a new map vector by dividing this map vector with a divider.<br>
- * <br>
+ * @param divider The divider.<br>
  * @return The new map vector.
  */
 -(NTMapVec*)div: (double)divider;
 /**
  * Checks for equality between this and another map vector.<br>
- * <br>
+ * @param v The other map vector.<br>
  * @return True if equal.
  */
 -(BOOL)equals: (NTMapVec*)v;
 /**
  * Checks for inequality between this and another map vector.<br>
- * <br>
+ * @param v The other map vector.<br>
  * @return True if not equal.
  */
 -(BOOL)differs: (NTMapVec*)v;

@@ -69,26 +69,26 @@ public:
 	MapVec operator-(const MapVec& v) const;
     /**
 	 * Creates a new map vector by multiplying this map vector with a multiplier.
-	 * @param v The multiplier.
+	 * @param multiplier The multiplier.
 	 * @return The new map vector.
 	 */
 	MapVec operator*(double multiplier) const;
     /**
 	 * Creates a new map vector by dividing this map vector with a divider.
-	 * @param v The divider.
+	 * @param divider The divider.
 	 * @return The new map vector.
 	 */
 	MapVec operator/(double divider) const;
 
     /**
      * Checks for equality between this and another map vector.
-     * @param p The other map vector.
+     * @param v The other map vector.
      * @return True if equal.
      */
 	bool operator==(const MapVec& v) const;
     /**
      * Checks for inequality between this and another map vector.
-     * @param p The other map vector.
+     * @param v The other map vector.
      * @return True if not equal.
      */
 	bool operator!=(const MapVec& v) const;

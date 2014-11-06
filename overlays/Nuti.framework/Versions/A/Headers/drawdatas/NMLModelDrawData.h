@@ -3,7 +3,6 @@
 
 #include "VectorElementDrawData.h"
 #include "vectorelements/NMLModel.h"
-#include "nmlpackage/GLModel.h"
 
 #include <memory>
 

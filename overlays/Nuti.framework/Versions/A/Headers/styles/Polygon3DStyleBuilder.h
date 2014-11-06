@@ -24,8 +24,7 @@ public:
      * Builds a new instance of the Polygon3DStyle object using previously set parameters.
      * @return A new Polygon3DStyle object.
      */
-	std::shared_ptr<Polygon3DStyle> buildStyle();
-    
+	std::shared_ptr<Polygon3DStyle> buildStyle() const;
 };
 
 }

@@ -92,7 +92,7 @@ public:
      * Builds a new instance of the MarkerStyle object using previously set parameters.
      * @return A new MarkerStyle object.
      */
-	std::shared_ptr<MarkerStyle> buildStyle();
+	std::shared_ptr<MarkerStyle> buildStyle() const;
 
 protected:
 	static std::shared_ptr<Bitmap> GetDefaultBitmap();

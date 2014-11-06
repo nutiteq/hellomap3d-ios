@@ -19,7 +19,7 @@ class ViewState;
 
 class WatermarkRenderer {
 public:
-	WatermarkRenderer(const Options& options, WatermarkType::WatermarkType licenseType);
+	WatermarkRenderer(const Options& options, const WatermarkType::WatermarkType& licenseType);
 	virtual ~WatermarkRenderer();
 
 	void onSurfaceCreated(ShaderManager& shaderManager);
@@ -44,7 +44,7 @@ protected:
     
     void drawWatermark(const ViewState& viewState);
     
-    WatermarkType::WatermarkType _licenseType;
+    const WatermarkType::WatermarkType& _licenseType;
     
     float _randomAlignmentX;
     float _randomAlignmentY;

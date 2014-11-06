@@ -3,7 +3,7 @@
 
 #include "components/ThreadWorker.h"
 #include "core/MapEnvelope.h"
-#include "utils/KDTree.h"
+#include "utils/KDTreeSpatialIndex.h"
 
 #include <condition_variable>
 #include <memory>
@@ -37,7 +37,7 @@ private:
     
 	volatile bool _stop;
     
-    KDTree<MapEnvelope> _kdTree;
+    KDTreeSpatialIndex<MapEnvelope> _kdTree;
     
     bool _sort3D;
 

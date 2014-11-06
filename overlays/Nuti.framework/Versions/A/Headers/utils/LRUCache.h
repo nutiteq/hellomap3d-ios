@@ -23,6 +23,8 @@ public:
 	bool existsNoMod(const K& id) const;
 	const V get(const K& id);
 	const V getNoMod(const K& id) const;
+	bool get(const K& id, V& value);
+	bool getNoMod(const K& id, V& value) const;
 
 	void invalidate(const K& id);
     void invalidateAll();
@@ -155,6 +157,41 @@ const V LRUCache<K, V>::getNoMod(const K& id) const {
 		return element._data;
 	}
 }
+
+template <typename K, typename V>
+bool LRUCache<K, V>::get(const K& id, V& value) {
+	std::lock_guard<std::mutex> lock(_mutex);
+		
+	typename CacheElementItMap::const_iterator it = _mappedElements.find(id);
+	if (it == _mappedElements.end()) {
+		return false;
+	} else {
+		// Move the element to the back of the cache list
+		CacheElement element(*it->second);
+		_lruElements.erase(it->second);
+		_lruElements.push_back(element);
+			
+		// Update the iterator in the map
+		_mappedElements[id] = --_lruElements.end();
+		value = element._data;
+		return true;
+	}
+}
+
+template <typename K, typename V>
+bool LRUCache<K, V>::getNoMod(const K& id, V& value) const {
+	std::lock_guard<std::mutex> lock(_mutex);
+		
+	typename CacheElementItMap::const_iterator it = _mappedElements.find(id);
+	if (it == _mappedElements.end()) {
+		return false;
+	} else {
+		CacheElement& element = *it->second;
+		value = element._data;
+		return true;
+	}
+}
+	
 
 template <typename K, typename V>
 void LRUCache<K, V>::invalidate(const K& id) {

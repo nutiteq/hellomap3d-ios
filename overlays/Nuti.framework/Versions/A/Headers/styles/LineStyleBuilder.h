@@ -44,7 +44,7 @@ public:
      * Sets the width for the line that will be used for click detection.
      * Units are screen density independent pixels (DP or DIP). If set to -1 the click width will be
      * calculated automatically. The default is -1.
-     * @param width The new point size in dp.
+     * @param clickWidth The new point size in dp.
      */
 	void setClickWidth(float clickWidth);
     
@@ -80,7 +80,7 @@ public:
      * vertically by the stretch factor and then repeated along the length of the line. For example, 
      * setting the stretch factor to 2.0 will stretch the bitmap vertically to double the original height 
      * and reduces the number of times the bitmap gets repeated by half. The default is 1.0.
-     * @param stretch The new relative stretching coefficient for the line.
+     * @param stretchFactor The new relative stretching coefficient for the line.
      */
 	void setStretchFactor(float stretchFactor);
 
@@ -99,7 +99,7 @@ public:
      * Builds a new instance of the LineStyle object using previously set parameters.
      * @return A new LineStyle object.
      */
-	std::shared_ptr<LineStyle> buildStyle();
+	std::shared_ptr<LineStyle> buildStyle() const;
 
 protected:
 	static std::shared_ptr<Bitmap> GetDefaultBitmap();

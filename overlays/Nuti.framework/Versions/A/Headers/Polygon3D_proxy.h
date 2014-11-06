@@ -73,7 +73,7 @@ extern "C" {
 -(float)getHeight;
 /**
  * Sets the height for this 3d polygon.<br>
- * 
+ * @param height The new height for this 3d polygon in meters.
  */
 -(void)setHeight: (float)height;
 /**

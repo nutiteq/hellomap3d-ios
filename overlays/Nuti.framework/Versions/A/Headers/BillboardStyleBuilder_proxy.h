@@ -100,7 +100,7 @@ extern "C" {
  * of the billboard vertically relative to the billboard rotation. The units are the same as the<br>
  * units used in the setSize method. Negative values offset the bitmap to the bottom and positive values to the top.<br>
  * The default is 0.<br>
- * 
+ * @param verticalOffset The new vertical offset for the billboard.
  */
 -(void)setVerticalOffset: (float)verticalOffset;
 /**
