@@ -294,7 +294,7 @@
                                                            style:[balloonPopupStyleBuilder buildStyle]
                                                            title:@"Popup with pos"
                                                             desc:@"Images, round"];
-    [popup1 setMetaDataElement:@"ClickText" element:@"Popupception nr 1"];
+    [popup1 setMetaDataElement:@"ClickText" element:@"Popupcaption nr 1"];
     [vectorDataSource1 add:popup1];
     
     // Second popup, but instead of giving it a position attach it to a marker
@@ -313,7 +313,7 @@
                                                                      style:[balloonPopupStyleBuilder buildStyle]
                                                                      title:@"Popup attached to marker"
                                                                       desc:@"ru: тест"];
-    [popup2 setMetaDataElement:@"ClickText" element:@"Popupception nr 2"];
+    [popup2 setMetaDataElement:@"ClickText" element:@"Popupcaption nr 2"];
     [vectorDataSource1 add:popup2];
     
     // Third popup, create a style and position
@@ -326,7 +326,7 @@
                                                            style:[balloonPopupStyleBuilder buildStyle]
                                                            title:@"This title will be wrapped if there's not enough space on the screen."
                                                             desc:@"Description is set to be truncated with three dots, unless the screen is really really big."];
-    [popup3 setMetaDataElement:@"ClickText" element:@"Popupception nr 3"];
+    [popup3 setMetaDataElement:@"ClickText" element:@"Popupcaption nr 3"];
     [vectorDataSource1 add:popup3 ];
     
     //Add a 3D model database layer
