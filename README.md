@@ -1,9 +1,10 @@
 Nutiteq HelloMap 3D for iOs
-==============
+===========================
 
 Here are some simple example apps with Nutiteq Maps SDK for iOS.
 
-   * Overlays: various overlay options [readme](https://github.com/nutiteq/hellomap3d-ios/blob/master/overlays/README.md)
+   * HelloMap3: an example showing marker (pin) on top of vector tile base map
+   * AdvancedMap3: various advanced samples showing different aspects and APIs of the SDK
 
 Developer getting started and doc references are in [Wiki pages](https://github.com/nutiteq/hellomap3d-ios/wiki)
 

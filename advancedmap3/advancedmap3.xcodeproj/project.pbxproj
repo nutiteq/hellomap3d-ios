@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C1FFD5619E1C08B006E9AF2 /* osmbright3d_en.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FFD5019E1C08B006E9AF2 /* osmbright3d_en.zip */; };
+		0C1FFD7319E3FAC2006E9AF2 /* osmbright_ru.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FFD7019E3FAC2006E9AF2 /* osmbright_ru.zip */; };
+		0C1FFD7519E3FAC2006E9AF2 /* osmbright_en.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FFD7219E3FAC2006E9AF2 /* osmbright_en.zip */; };
+		0C1FFD7719E414C1006E9AF2 /* berlin_ntvt.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FFD7619E414C1006E9AF2 /* berlin_ntvt.mbtiles */; };
+		0C3C369819E66E0A007573FD /* fcd_auto.nml in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C369719E66E0A007573FD /* fcd_auto.nml */; };
+		2A319B43187C4F8F0004A3CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B42187C4F8F0004A3CB /* Foundation.framework */; };
+		2A319B45187C4F8F0004A3CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B44187C4F8F0004A3CB /* CoreGraphics.framework */; };
+		2A319B47187C4F8F0004A3CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B46187C4F8F0004A3CB /* UIKit.framework */; };
+		2A319B91187C50760004A3CB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B90187C50760004A3CB /* libz.dylib */; };
+		2A319BAE187CBEBD0004A3CB /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319BAC187CBEBD0004A3CB /* GLKit.framework */; };
+		2A710BBE191956CC00647B81 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A710BBD191956CC00647B81 /* info@2x.png */; };
+		2A710BC019196AD100647B81 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A710BBF19196AD100647B81 /* arrow@2x.png */; };
+		2AB2803418EB150400666197 /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AB2803318EB150400666197 /* marker.png */; };
+		2AC270581941EFF9000CA859 /* MyMergedRasterTileDataSource.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2AC270571941EFF9000CA859 /* MyMergedRasterTileDataSource.mm */; };
+		2AD24F6818FED992000969F4 /* saku_ios_4bpp.nmldb in Resources */ = {isa = PBXBuildFile; fileRef = 2AD24F6718FED992000969F4 /* saku_ios_4bpp.nmldb */; };
+		2AD24F7518FEDAA6000969F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD24F6A18FEDAA6000969F4 /* AppDelegate.m */; };
+		2AD24F7918FEDAA6000969F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD24F6E18FEDAA6000969F4 /* main.m */; };
+		2AD24F7A18FEDAA6000969F4 /* MyMapEventListener.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2AD24F7018FEDAA6000969F4 /* MyMapEventListener.mm */; };
+		2AD24F8518FEDB89000969F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD24F8418FEDB89000969F4 /* Images.xcassets */; };
+		2AEA4FA61913F38C002ED69F /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEA4FA51913F38C002ED69F /* info.png */; };
+		2AEA4FAC19140909002ED69F /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEA4FAB19140909002ED69F /* arrow.png */; };
+		4DC850081A0E718100C5124F /* LauncherListController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DC850071A0E718100C5124F /* LauncherListController.mm */; };
+		4DC8500C1A0E77CA00C5124F /* VectorMapSampleBaseController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8500B1A0E77CA00C5124F /* VectorMapSampleBaseController.mm */; };
+		4DC850101A0E7A5100C5124F /* PinSampleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8500F1A0E7A5100C5124F /* PinSampleController.mm */; };
+		4DC850121A0E7DC500C5124F /* CustomRasterDataSourceSampleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DC850111A0E7DC500C5124F /* CustomRasterDataSourceSampleController.mm */; };
+		4DEB06D01A10BDB7003D111C /* Overlays2DSampleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB06CF1A10BDB7003D111C /* Overlays2DSampleController.mm */; };
+		4DEB06D21A10C103003D111C /* Overlays3DSampleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB06D11A10C103003D111C /* Overlays3DSampleController.mm */; };
+		4DEB06D41A10C904003D111C /* MapListenerSampleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB06D31A10C904003D111C /* MapListenerSampleController.mm */; };
+		4DEB06D81A10CDC0003D111C /* OfflineVectorMapSampleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB06D71A10CDC0003D111C /* OfflineVectorMapSampleController.mm */; };
+		4DEB06DA1A10D3D1003D111C /* AerialMapSampleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB06D91A10D3D1003D111C /* AerialMapSampleController.mm */; };
+		4DEB06E11A10DFD4003D111C /* Nuti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEB06E01A10DFD4003D111C /* Nuti.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0C1FFD5019E1C08B006E9AF2 /* osmbright3d_en.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright3d_en.zip; sourceTree = "<group>"; };
+		0C1FFD7019E3FAC2006E9AF2 /* osmbright_ru.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright_ru.zip; sourceTree = "<group>"; };
+		0C1FFD7219E3FAC2006E9AF2 /* osmbright_en.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright_en.zip; sourceTree = "<group>"; };
+		0C1FFD7619E414C1006E9AF2 /* berlin_ntvt.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = berlin_ntvt.mbtiles; sourceTree = "<group>"; };
+		0C3C369719E66E0A007573FD /* fcd_auto.nml */ = {isa = PBXFileReference; lastKnownFileType = file; path = fcd_auto.nml; sourceTree = "<group>"; };
+		2A319B3F187C4F8F0004A3CB /* advancedmap3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = advancedmap3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A319B42187C4F8F0004A3CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2A319B44187C4F8F0004A3CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2A319B46187C4F8F0004A3CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2A319B64187C4F8F0004A3CB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2A319B90187C50760004A3CB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		2A319BAC187CBEBD0004A3CB /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		2A710BBD191956CC00647B81 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
+		2A710BBF19196AD100647B81 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		2AB2803318EB150400666197 /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
+		2ABFB6B71947460E00A64571 /* Nuti.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nuti.framework; sourceTree = "<group>"; };
+		2AC270561941EFF9000CA859 /* MyMergedRasterTileDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMergedRasterTileDataSource.h; path = advancedmap3/MyMergedRasterTileDataSource.h; sourceTree = SOURCE_ROOT; };
+		2AC270571941EFF9000CA859 /* MyMergedRasterTileDataSource.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MyMergedRasterTileDataSource.mm; path = advancedmap3/MyMergedRasterTileDataSource.mm; sourceTree = SOURCE_ROOT; };
+		2AD24F6718FED992000969F4 /* saku_ios_4bpp.nmldb */ = {isa = PBXFileReference; lastKnownFileType = file; path = saku_ios_4bpp.nmldb; sourceTree = "<group>"; };
+		2AD24F6918FEDAA6000969F4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = advancedmap3/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		2AD24F6A18FEDAA6000969F4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = advancedmap3/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		2AD24F6E18FEDAA6000969F4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = advancedmap3/main.m; sourceTree = SOURCE_ROOT; };
+		2AD24F6F18FEDAA6000969F4 /* MyMapEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMapEventListener.h; path = advancedmap3/MyMapEventListener.h; sourceTree = SOURCE_ROOT; };
+		2AD24F7018FEDAA6000969F4 /* MyMapEventListener.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MyMapEventListener.mm; path = advancedmap3/MyMapEventListener.mm; sourceTree = SOURCE_ROOT; };
+		2AD24F7318FEDAA6000969F4 /* advancedmap3-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "advancedmap3-Info.plist"; path = "advancedmap3/advancedmap3-Info.plist"; sourceTree = SOURCE_ROOT; };
+		2AD24F7F18FEDB5C000969F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = advancedmap3/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		2AD24F8418FEDB89000969F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = advancedmap3/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		2AEA4FA51913F38C002ED69F /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		2AEA4FAB19140909002ED69F /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		4DC850071A0E718100C5124F /* LauncherListController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LauncherListController.mm; path = advancedmap3/LauncherListController.mm; sourceTree = SOURCE_ROOT; };
+		4DC8500A1A0E778900C5124F /* VectorMapSampleBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VectorMapSampleBaseController.h; path = advancedmap3/VectorMapSampleBaseController.h; sourceTree = SOURCE_ROOT; };
+		4DC8500B1A0E77CA00C5124F /* VectorMapSampleBaseController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = VectorMapSampleBaseController.mm; path = advancedmap3/VectorMapSampleBaseController.mm; sourceTree = SOURCE_ROOT; };
+		4DC8500F1A0E7A5100C5124F /* PinSampleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PinSampleController.mm; path = advancedmap3/PinSampleController.mm; sourceTree = SOURCE_ROOT; };
+		4DC850111A0E7DC500C5124F /* CustomRasterDataSourceSampleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CustomRasterDataSourceSampleController.mm; path = advancedmap3/CustomRasterDataSourceSampleController.mm; sourceTree = SOURCE_ROOT; };
+		4DC850151A0EE3B100C5124F /* Nuti */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = Nuti; path = ../../sdk_3d/dist/ios/Nuti.framework/Versions/A/Nuti; sourceTree = "<group>"; };
+		4DEB06CF1A10BDB7003D111C /* Overlays2DSampleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Overlays2DSampleController.mm; path = advancedmap3/Overlays2DSampleController.mm; sourceTree = SOURCE_ROOT; };
+		4DEB06D11A10C103003D111C /* Overlays3DSampleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Overlays3DSampleController.mm; path = advancedmap3/Overlays3DSampleController.mm; sourceTree = SOURCE_ROOT; };
+		4DEB06D31A10C904003D111C /* MapListenerSampleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MapListenerSampleController.mm; path = advancedmap3/MapListenerSampleController.mm; sourceTree = SOURCE_ROOT; };
+		4DEB06D71A10CDC0003D111C /* OfflineVectorMapSampleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OfflineVectorMapSampleController.mm; path = advancedmap3/OfflineVectorMapSampleController.mm; sourceTree = SOURCE_ROOT; };
+		4DEB06D91A10D3D1003D111C /* AerialMapSampleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AerialMapSampleController.mm; path = advancedmap3/AerialMapSampleController.mm; sourceTree = SOURCE_ROOT; };
+		4DEB06DE1A10D8B3003D111C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4DEB06DF1A10DF0F003D111C /* LauncherListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LauncherListController.h; path = advancedmap3/LauncherListController.h; sourceTree = SOURCE_ROOT; };
+		4DEB06E01A10DFD4003D111C /* Nuti.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuti.framework; path = ../hellomap3/Nuti.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A319B3C187C4F8F0004A3CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DEB06E11A10DFD4003D111C /* Nuti.framework in Frameworks */,
+				2A319BAE187CBEBD0004A3CB /* GLKit.framework in Frameworks */,
+				2A319B91187C50760004A3CB /* libz.dylib in Frameworks */,
+				2A319B45187C4F8F0004A3CB /* CoreGraphics.framework in Frameworks */,
+				2A319B47187C4F8F0004A3CB /* UIKit.framework in Frameworks */,
+				2A319B43187C4F8F0004A3CB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A319B36187C4F8F0004A3CB = {
+			isa = PBXGroup;
+			children = (
+				4DEB06DE1A10D8B3003D111C /* README.md */,
+				2AEA4FAB19140909002ED69F /* arrow.png */,
+				0C3C369719E66E0A007573FD /* fcd_auto.nml */,
+				0C1FFD5019E1C08B006E9AF2 /* osmbright3d_en.zip */,
+				0C1FFD7619E414C1006E9AF2 /* berlin_ntvt.mbtiles */,
+				0C1FFD7019E3FAC2006E9AF2 /* osmbright_ru.zip */,
+				0C1FFD7219E3FAC2006E9AF2 /* osmbright_en.zip */,
+				2A710BBF19196AD100647B81 /* arrow@2x.png */,
+				2AEA4FA51913F38C002ED69F /* info.png */,
+				2A710BBD191956CC00647B81 /* info@2x.png */,
+				2AB2803318EB150400666197 /* marker.png */,
+				2AD24F6718FED992000969F4 /* saku_ios_4bpp.nmldb */,
+				2A319B48187C4F8F0004A3CB /* advancedmap3 */,
+				2A319B41187C4F8F0004A3CB /* Frameworks */,
+				2A319B40187C4F8F0004A3CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A319B40187C4F8F0004A3CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A319B3F187C4F8F0004A3CB /* advancedmap3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A319B41187C4F8F0004A3CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DEB06E01A10DFD4003D111C /* Nuti.framework */,
+				4DC850151A0EE3B100C5124F /* Nuti */,
+				2ABFB6B71947460E00A64571 /* Nuti.framework */,
+				2A319BAC187CBEBD0004A3CB /* GLKit.framework */,
+				2A319B90187C50760004A3CB /* libz.dylib */,
+				2A319B42187C4F8F0004A3CB /* Foundation.framework */,
+				2A319B44187C4F8F0004A3CB /* CoreGraphics.framework */,
+				2A319B46187C4F8F0004A3CB /* UIKit.framework */,
+				2A319B64187C4F8F0004A3CB /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A319B48187C4F8F0004A3CB /* advancedmap3 */ = {
+			isa = PBXGroup;
+			children = (
+				4DEB06D61A10CD88003D111C /* Data Sources */,
+				4DEB06D51A10C94E003D111C /* Listeners */,
+				2AD24F8418FEDB89000969F4 /* Images.xcassets */,
+				2AD24F7D18FEDAE0000969F4 /* Supporting Files */,
+				2AD24F6918FEDAA6000969F4 /* AppDelegate.h */,
+				2AD24F6A18FEDAA6000969F4 /* AppDelegate.m */,
+				4DEB06DF1A10DF0F003D111C /* LauncherListController.h */,
+				4DC850071A0E718100C5124F /* LauncherListController.mm */,
+				4DC8500A1A0E778900C5124F /* VectorMapSampleBaseController.h */,
+				4DC8500B1A0E77CA00C5124F /* VectorMapSampleBaseController.mm */,
+				4DC8500F1A0E7A5100C5124F /* PinSampleController.mm */,
+				4DC850111A0E7DC500C5124F /* CustomRasterDataSourceSampleController.mm */,
+				4DEB06CF1A10BDB7003D111C /* Overlays2DSampleController.mm */,
+				4DEB06D11A10C103003D111C /* Overlays3DSampleController.mm */,
+				4DEB06D31A10C904003D111C /* MapListenerSampleController.mm */,
+				4DEB06D71A10CDC0003D111C /* OfflineVectorMapSampleController.mm */,
+				4DEB06D91A10D3D1003D111C /* AerialMapSampleController.mm */,
+			);
+			name = advancedmap3;
+			path = sdk_3d_ios_app;
+			sourceTree = "<group>";
+		};
+		2AD24F7D18FEDAE0000969F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2AD24F7E18FEDB5C000969F4 /* InfoPlist.strings */,
+				2AD24F6E18FEDAA6000969F4 /* main.m */,
+				2AD24F7318FEDAA6000969F4 /* advancedmap3-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4DEB06D51A10C94E003D111C /* Listeners */ = {
+			isa = PBXGroup;
+			children = (
+				2AD24F6F18FEDAA6000969F4 /* MyMapEventListener.h */,
+				2AD24F7018FEDAA6000969F4 /* MyMapEventListener.mm */,
+			);
+			name = Listeners;
+			sourceTree = "<group>";
+		};
+		4DEB06D61A10CD88003D111C /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2AC270561941EFF9000CA859 /* MyMergedRasterTileDataSource.h */,
+				2AC270571941EFF9000CA859 /* MyMergedRasterTileDataSource.mm */,
+			);
+			name = "Data Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A319B3E187C4F8F0004A3CB /* advancedmap3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A319B74187C4F8F0004A3CB /* Build configuration list for PBXNativeTarget "advancedmap3" */;
+			buildPhases = (
+				2A319B3B187C4F8F0004A3CB /* Sources */,
+				2A319B3C187C4F8F0004A3CB /* Frameworks */,
+				2A319B3D187C4F8F0004A3CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = advancedmap3;
+			productName = sdk_3d_ios_app;
+			productReference = 2A319B3F187C4F8F0004A3CB /* advancedmap3.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A319B37187C4F8F0004A3CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Nutiteq;
+				TargetAttributes = {
+					2A319B3E187C4F8F0004A3CB = {
+						DevelopmentTeam = 4SEU7F9DVX;
+					};
+				};
+			};
+			buildConfigurationList = 2A319B3A187C4F8F0004A3CB /* Build configuration list for PBXProject "advancedmap3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A319B36187C4F8F0004A3CB;
+			productRefGroup = 2A319B40187C4F8F0004A3CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A319B3E187C4F8F0004A3CB /* advancedmap3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A319B3D187C4F8F0004A3CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AD24F6818FED992000969F4 /* saku_ios_4bpp.nmldb in Resources */,
+				0C1FFD7319E3FAC2006E9AF2 /* osmbright_ru.zip in Resources */,
+				2A710BBE191956CC00647B81 /* info@2x.png in Resources */,
+				0C1FFD7719E414C1006E9AF2 /* berlin_ntvt.mbtiles in Resources */,
+				2A710BC019196AD100647B81 /* arrow@2x.png in Resources */,
+				0C3C369819E66E0A007573FD /* fcd_auto.nml in Resources */,
+				2AD24F8518FEDB89000969F4 /* Images.xcassets in Resources */,
+				0C1FFD5619E1C08B006E9AF2 /* osmbright3d_en.zip in Resources */,
+				0C1FFD7519E3FAC2006E9AF2 /* osmbright_en.zip in Resources */,
+				2AEA4FAC19140909002ED69F /* arrow.png in Resources */,
+				2AB2803418EB150400666197 /* marker.png in Resources */,
+				2AEA4FA61913F38C002ED69F /* info.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A319B3B187C4F8F0004A3CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DEB06D01A10BDB7003D111C /* Overlays2DSampleController.mm in Sources */,
+				2AD24F7918FEDAA6000969F4 /* main.m in Sources */,
+				2AC270581941EFF9000CA859 /* MyMergedRasterTileDataSource.mm in Sources */,
+				4DC850121A0E7DC500C5124F /* CustomRasterDataSourceSampleController.mm in Sources */,
+				4DC8500C1A0E77CA00C5124F /* VectorMapSampleBaseController.mm in Sources */,
+				4DEB06D81A10CDC0003D111C /* OfflineVectorMapSampleController.mm in Sources */,
+				4DEB06DA1A10D3D1003D111C /* AerialMapSampleController.mm in Sources */,
+				4DC850081A0E718100C5124F /* LauncherListController.mm in Sources */,
+				4DEB06D41A10C904003D111C /* MapListenerSampleController.mm in Sources */,
+				2AD24F7A18FEDAA6000969F4 /* MyMapEventListener.mm in Sources */,
+				4DEB06D21A10C103003D111C /* Overlays3DSampleController.mm in Sources */,
+				4DC850101A0E7A5100C5124F /* PinSampleController.mm in Sources */,
+				2AD24F7518FEDAA6000969F4 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2AD24F7E18FEDB5C000969F4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AD24F7F18FEDB5C000969F4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A319B72187C4F8F0004A3CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A319B73187C4F8F0004A3CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A319B75187C4F8F0004A3CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+					"/Users/mark/projects/Nutiteq/hellomap3d-ios/hellomap3",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = "advancedmap3/advancedmap3-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mark/projects/Nutiteq/sdk_3d/dist/ios/Nuti.framework/Versions/A,
+				);
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_NAME = advancedmap3;
+				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2A319B76187C4F8F0004A3CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+					"/Users/mark/projects/Nutiteq/hellomap3d-ios/hellomap3",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				INFOPLIST_FILE = "advancedmap3/advancedmap3-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mark/projects/Nutiteq/sdk_3d/dist/ios/Nuti.framework/Versions/A,
+				);
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_NAME = advancedmap3;
+				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A319B3A187C4F8F0004A3CB /* Build configuration list for PBXProject "advancedmap3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A319B72187C4F8F0004A3CB /* Debug */,
+				2A319B73187C4F8F0004A3CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A319B74187C4F8F0004A3CB /* Build configuration list for PBXNativeTarget "advancedmap3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A319B75187C4F8F0004A3CB /* Debug */,
+				2A319B76187C4F8F0004A3CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A319B37187C4F8F0004A3CB /* Project object */;
+}
