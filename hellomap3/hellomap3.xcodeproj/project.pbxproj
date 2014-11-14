@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C1FFD7519E3FAC2006E9AF2 /* osmbright_en.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FFD7219E3FAC2006E9AF2 /* osmbright_en.zip */; };
 		2A319B43187C4F8F0004A3CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B42187C4F8F0004A3CB /* Foundation.framework */; };
 		2A319B45187C4F8F0004A3CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B44187C4F8F0004A3CB /* CoreGraphics.framework */; };
 		2A319B47187C4F8F0004A3CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B46187C4F8F0004A3CB /* UIKit.framework */; };
@@ -15,6 +14,7 @@
 		2A319BAE187CBEBD0004A3CB /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319BAC187CBEBD0004A3CB /* GLKit.framework */; };
 		2AB2803418EB150400666197 /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AB2803318EB150400666197 /* marker.png */; };
 		2ABFB6B81947460E00A64571 /* Nuti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABFB6B71947460E00A64571 /* Nuti.framework */; };
+		4DB60ECC1A15601C00A6AF18 /* osmbright.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60ECB1A15601C00A6AF18 /* osmbright.zip */; };
 		4DC84FD31A0E357100C5124F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC84FD21A0E357100C5124F /* AppDelegate.m */; };
 		4DC84FD61A0E358700C5124F /* MyMapViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DC84FD51A0E358700C5124F /* MyMapViewController.mm */; };
 		4DC850061A0E691300C5124F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DC850051A0E691300C5124F /* main.m */; };
@@ -23,7 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C1FFD7219E3FAC2006E9AF2 /* osmbright_en.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright_en.zip; sourceTree = "<group>"; };
 		2A319B3F187C4F8F0004A3CB /* hellomap3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hellomap3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A319B42187C4F8F0004A3CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2A319B44187C4F8F0004A3CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -32,6 +31,7 @@
 		2A319BAC187CBEBD0004A3CB /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		2AB2803318EB150400666197 /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
 		2ABFB6B71947460E00A64571 /* Nuti.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nuti.framework; sourceTree = "<group>"; };
+		4DB60ECB1A15601C00A6AF18 /* osmbright.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright.zip; sourceTree = "<group>"; };
 		4DC84FD11A0E357100C5124F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = hellomap3/AppDelegate.h; sourceTree = "<group>"; };
 		4DC84FD21A0E357100C5124F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = hellomap3/AppDelegate.m; sourceTree = "<group>"; };
 		4DC84FD41A0E358700C5124F /* MyMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMapViewController.h; path = hellomap3/MyMapViewController.h; sourceTree = "<group>"; };
@@ -63,9 +63,9 @@
 		2A319B36187C4F8F0004A3CB = {
 			isa = PBXGroup;
 			children = (
+				4DB60ECB1A15601C00A6AF18 /* osmbright.zip */,
 				4DEB06DD1A10D888003D111C /* README.md */,
 				4DC84FD01A0E351D00C5124F /* hellomap3 */,
-				0C1FFD7219E3FAC2006E9AF2 /* osmbright_en.zip */,
 				2AB2803318EB150400666197 /* marker.png */,
 				2A319B41187C4F8F0004A3CB /* Frameworks */,
 				2A319B40187C4F8F0004A3CB /* Products */,
@@ -174,8 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DEB06E21A10E083003D111C /* Main.storyboard in Resources */,
+				4DB60ECC1A15601C00A6AF18 /* osmbright.zip in Resources */,
 				4DEB06CE1A0FB11D003D111C /* Images.xcassets in Resources */,
-				0C1FFD7519E3FAC2006E9AF2 /* osmbright_en.zip in Resources */,
 				2AB2803418EB150400666197 /* marker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

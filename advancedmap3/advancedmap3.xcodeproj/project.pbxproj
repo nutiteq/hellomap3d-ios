@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C1FFD5619E1C08B006E9AF2 /* osmbright3d_en.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FFD5019E1C08B006E9AF2 /* osmbright3d_en.zip */; };
-		0C1FFD7319E3FAC2006E9AF2 /* osmbright_ru.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FFD7019E3FAC2006E9AF2 /* osmbright_ru.zip */; };
-		0C1FFD7519E3FAC2006E9AF2 /* osmbright_en.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FFD7219E3FAC2006E9AF2 /* osmbright_en.zip */; };
 		0C1FFD7719E414C1006E9AF2 /* berlin_ntvt.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FFD7619E414C1006E9AF2 /* berlin_ntvt.mbtiles */; };
 		0C3C369819E66E0A007573FD /* fcd_auto.nml in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C369719E66E0A007573FD /* fcd_auto.nml */; };
 		2A319B43187C4F8F0004A3CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B42187C4F8F0004A3CB /* Foundation.framework */; };
@@ -28,6 +25,7 @@
 		2AD24F8518FEDB89000969F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD24F8418FEDB89000969F4 /* Images.xcassets */; };
 		2AEA4FA61913F38C002ED69F /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEA4FA51913F38C002ED69F /* info.png */; };
 		2AEA4FAC19140909002ED69F /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEA4FAB19140909002ED69F /* arrow.png */; };
+		4DB60ECA1A155FF500A6AF18 /* osmbright.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60EC91A155FF500A6AF18 /* osmbright.zip */; };
 		4DC850081A0E718100C5124F /* LauncherListController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DC850071A0E718100C5124F /* LauncherListController.mm */; };
 		4DC8500C1A0E77CA00C5124F /* VectorMapSampleBaseController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8500B1A0E77CA00C5124F /* VectorMapSampleBaseController.mm */; };
 		4DC850101A0E7A5100C5124F /* PinSampleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8500F1A0E7A5100C5124F /* PinSampleController.mm */; };
@@ -41,9 +39,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C1FFD5019E1C08B006E9AF2 /* osmbright3d_en.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright3d_en.zip; sourceTree = "<group>"; };
-		0C1FFD7019E3FAC2006E9AF2 /* osmbright_ru.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright_ru.zip; sourceTree = "<group>"; };
-		0C1FFD7219E3FAC2006E9AF2 /* osmbright_en.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright_en.zip; sourceTree = "<group>"; };
 		0C1FFD7619E414C1006E9AF2 /* berlin_ntvt.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = berlin_ntvt.mbtiles; sourceTree = "<group>"; };
 		0C3C369719E66E0A007573FD /* fcd_auto.nml */ = {isa = PBXFileReference; lastKnownFileType = file; path = fcd_auto.nml; sourceTree = "<group>"; };
 		2A319B3F187C4F8F0004A3CB /* advancedmap3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = advancedmap3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +65,7 @@
 		2AD24F8418FEDB89000969F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = advancedmap3/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		2AEA4FA51913F38C002ED69F /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		2AEA4FAB19140909002ED69F /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		4DB60EC91A155FF500A6AF18 /* osmbright.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright.zip; sourceTree = "<group>"; };
 		4DC850071A0E718100C5124F /* LauncherListController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LauncherListController.mm; path = advancedmap3/LauncherListController.mm; sourceTree = SOURCE_ROOT; };
 		4DC8500A1A0E778900C5124F /* VectorMapSampleBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VectorMapSampleBaseController.h; path = advancedmap3/VectorMapSampleBaseController.h; sourceTree = SOURCE_ROOT; };
 		4DC8500B1A0E77CA00C5124F /* VectorMapSampleBaseController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = VectorMapSampleBaseController.mm; path = advancedmap3/VectorMapSampleBaseController.mm; sourceTree = SOURCE_ROOT; };
@@ -106,13 +102,11 @@
 		2A319B36187C4F8F0004A3CB = {
 			isa = PBXGroup;
 			children = (
+				4DB60EC91A155FF500A6AF18 /* osmbright.zip */,
 				4DEB06DE1A10D8B3003D111C /* README.md */,
 				2AEA4FAB19140909002ED69F /* arrow.png */,
 				0C3C369719E66E0A007573FD /* fcd_auto.nml */,
-				0C1FFD5019E1C08B006E9AF2 /* osmbright3d_en.zip */,
 				0C1FFD7619E414C1006E9AF2 /* berlin_ntvt.mbtiles */,
-				0C1FFD7019E3FAC2006E9AF2 /* osmbright_ru.zip */,
-				0C1FFD7219E3FAC2006E9AF2 /* osmbright_en.zip */,
 				2A710BBF19196AD100647B81 /* arrow@2x.png */,
 				2AEA4FA51913F38C002ED69F /* info.png */,
 				2A710BBD191956CC00647B81 /* info@2x.png */,
@@ -259,17 +253,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AD24F6818FED992000969F4 /* saku_ios_4bpp.nmldb in Resources */,
-				0C1FFD7319E3FAC2006E9AF2 /* osmbright_ru.zip in Resources */,
 				2A710BBE191956CC00647B81 /* info@2x.png in Resources */,
 				0C1FFD7719E414C1006E9AF2 /* berlin_ntvt.mbtiles in Resources */,
 				2A710BC019196AD100647B81 /* arrow@2x.png in Resources */,
 				0C3C369819E66E0A007573FD /* fcd_auto.nml in Resources */,
 				2AD24F8518FEDB89000969F4 /* Images.xcassets in Resources */,
-				0C1FFD5619E1C08B006E9AF2 /* osmbright3d_en.zip in Resources */,
-				0C1FFD7519E3FAC2006E9AF2 /* osmbright_en.zip in Resources */,
 				2AEA4FAC19140909002ED69F /* arrow.png in Resources */,
 				2AB2803418EB150400666197 /* marker.png in Resources */,
 				2AEA4FA61913F38C002ED69F /* info.png in Resources */,
+				4DB60ECA1A155FF500A6AF18 /* osmbright.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

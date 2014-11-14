@@ -29,7 +29,7 @@
 	// Use modern vector background. Suggested strongly, especially if you rotate and tilt the map
 		
 	// Load vector tile styleset
-	UnsignedCharVector *vectorTileStyleSetData = [NTAssetUtils loadBytes: @"osmbright_en.zip"];
+	UnsignedCharVector *vectorTileStyleSetData = [NTAssetUtils loadBytes: @"osmbright.zip"];
 	NTMBVectorTileStyleSet *vectorTileStyleSet = [[NTMBVectorTileStyleSet alloc] initWithData:vectorTileStyleSetData];
 	// Create vector tile decoder using the styleset
 	self.vectorTileDecoder = [[NTMBVectorTileDecoder alloc] initWithStyleSet:vectorTileStyleSet];

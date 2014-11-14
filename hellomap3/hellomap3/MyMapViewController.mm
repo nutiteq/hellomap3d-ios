@@ -10,12 +10,13 @@
 {
     [super viewDidLoad];
     
-    // Set the base projection
+	// Set the base projection, that will be used for most MapView, MapEventListener and Options methods
 	NTEPSG3857* proj = [[NTEPSG3857 alloc] init];
-    [[self getOptions] setBaseProjection:proj];
+    [[self getOptions] setBaseProjection:proj]; // EPSG3857 is actually the default base projection, so this is actually not needed
     
 	// General options
-	[[self getOptions] setTileDrawSize:256];
+	[[self getOptions] setRotatable:YES]; // make map rotatable (this is actually the default)
+	[[self getOptions] setTileThreadPoolSize:2]; // use 2 threads to download tiles
 	
     // Set initial location and other parameters, don't animate
     [self setFocusPos:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.650415 y:59.428773]]  durationSeconds:0];
@@ -23,7 +24,7 @@
     [self setRotation:0 durationSeconds:0];
     
 	// Create online vector tile layer, connect to with demo key and use style asset embedded in the project
-	NTVectorTileLayer* vectorTileLayer = [[NTNutiteqOnlineVectorTileLayer alloc] initWithApiKey: @"15cd9131072d6df68b8a54feda5b0496" styleAssetName: @"osmbright_en.zip"];
+	NTVectorTileLayer* vectorTileLayer = [[NTNutiteqOnlineVectorTileLayer alloc] initWithApiKey: @"15cd9131072d6df68b8a54feda5b0496" styleAssetName: @"osmbright.zip"];
 
 	// Add vector tile layer
     [[self getLayers] add:vectorTileLayer];
@@ -42,7 +43,7 @@
     NTLocalVectorDataSource* vectorDataSource = [[NTLocalVectorDataSource alloc] initWithProjection:proj];
 
 	// Create marker, add it to the data source
-	NTMapPos* pos = [proj fromWgs84:[[NTMapPos alloc] initWithX:24.646469 y:59.426939]];
+	NTMapPos* pos = [proj fromWgs84:[[NTMapPos alloc] initWithX:24.646469 y:59.426939]]; // Tallinn
 	NTMarker* marker = [[NTMarker alloc] initWithPos:pos style:sharedMarkerStyle];
 	[vectorDataSource add:marker];
 
