@@ -22,7 +22,13 @@ This is sample for Nutiteq SDK (http://www.nutiteq.com), demonstrating several k
 7. Add 3D data to map
    - Two offline datasets: building in NMLDB (3D city) format, and simple 3D car in NML (3D model) format. You can reposition, rotate etc NML models via code easily.
 
-The project should work as plug and play, Nutiteq SDK and dependencies are included. It requires iOS 7 or newer.
+## Running
+The project requires Nutiteq SDK what you can get from the hellomap3 project. Just copy Nuti.framework folder to your application project. In your app folder run:
+
+    cp -r ../Nuti.framework ./
+
+
+The app works on iOS 7 or newer.
 
 ## Debugging
 
