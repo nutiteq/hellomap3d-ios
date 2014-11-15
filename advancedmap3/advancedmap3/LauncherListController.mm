@@ -5,7 +5,8 @@
 
 @implementation LauncherListController
 
--(NSArray*) samples {
+-(NSArray*) samples
+{
 	return @[
 			@{ @"name": @"Pin Sample", @"controller": @"PinSampleController" },
 			@{ @"name": @"2D OverlaysSample", @"controller": @"Overlays2DSampleController" },
@@ -17,7 +18,8 @@
 		];
 }
 
-- (void)loadView {
+- (void)loadView
+{
 	// Create custom back button for navigation bar
 	UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStylePlain target: nil action: nil];
 	[self.navigationItem setBackBarButtonItem: backButton];
@@ -32,12 +34,14 @@
 	self.view = tableView;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
 	[super viewDidLoad];
 	self.navigationItem.title = @"Samples";
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
 	// Launch selected sample, use basic reflection to convert class name to class instance
 	NSDictionary* sample = [[self samples] objectAtIndex:indexPath.row];
 	UIViewController* subViewController = [[NSClassFromString([sample objectForKey:@"controller"]) alloc] init];
@@ -45,23 +49,28 @@
 	[self.navigationController pushViewController: subViewController animated:YES];
 }
 
-- (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
+{
 	return UITableViewCellAccessoryDisclosureIndicator;
 }
 
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
 	[self tableView:tableView didSelectRowAtIndexPath:indexPath];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
 	return 1;
 }
 
-- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
+{
 	return [[self samples] count];
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
 	static NSString* cellIdentifier = @"sampleId";
 	UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if (cell == nil) {
@@ -72,7 +81,8 @@
 	return cell;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
 	[super didReceiveMemoryWarning];
 }
 

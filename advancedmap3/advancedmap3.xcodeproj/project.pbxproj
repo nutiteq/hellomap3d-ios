@@ -26,6 +26,16 @@
 		2AEA4FA61913F38C002ED69F /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEA4FA51913F38C002ED69F /* info.png */; };
 		2AEA4FAC19140909002ED69F /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEA4FAB19140909002ED69F /* arrow.png */; };
 		4DB60ECA1A155FF500A6AF18 /* osmbright.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60EC91A155FF500A6AF18 /* osmbright.zip */; };
+		4DB60ED71A16615A00A6AF18 /* UITableContract.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60ECE1A16615A00A6AF18 /* UITableContract.png */; };
+		4DB60ED81A16615A00A6AF18 /* UITableContract@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60ECF1A16615A00A6AF18 /* UITableContract@2x.png */; };
+		4DB60ED91A16615A00A6AF18 /* UITableExpand.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60ED01A16615A00A6AF18 /* UITableExpand.png */; };
+		4DB60EDA1A16615A00A6AF18 /* UITableExpand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60ED11A16615A00A6AF18 /* UITableExpand@2x.png */; };
+		4DB60EDB1A16615A00A6AF18 /* VPPDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB60ED31A16615A00A6AF18 /* VPPDropDown.m */; };
+		4DB60EDC1A16615A00A6AF18 /* VPPDropDownElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB60ED61A16615A00A6AF18 /* VPPDropDownElement.m */; };
+		4DB60F341A16AE1600A6AF18 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60F321A16AE1600A6AF18 /* menu.png */; };
+		4DB60F351A16AE1600A6AF18 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60F331A16AE1600A6AF18 /* menu@2x.png */; };
+		4DB60F371A1770DE00A6AF18 /* looseleaf.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60F361A1770DE00A6AF18 /* looseleaf.zip */; };
+		4DB60F391A1770E500A6AF18 /* basic.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60F381A1770E500A6AF18 /* basic.zip */; };
 		4DC850081A0E718100C5124F /* LauncherListController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DC850071A0E718100C5124F /* LauncherListController.mm */; };
 		4DC8500C1A0E77CA00C5124F /* VectorMapSampleBaseController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8500B1A0E77CA00C5124F /* VectorMapSampleBaseController.mm */; };
 		4DC850101A0E7A5100C5124F /* PinSampleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8500F1A0E7A5100C5124F /* PinSampleController.mm */; };
@@ -66,6 +76,19 @@
 		2AEA4FA51913F38C002ED69F /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		2AEA4FAB19140909002ED69F /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		4DB60EC91A155FF500A6AF18 /* osmbright.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright.zip; sourceTree = "<group>"; };
+		4DB60ECE1A16615A00A6AF18 /* UITableContract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UITableContract.png; path = VPPDropDown/UITableContract.png; sourceTree = SOURCE_ROOT; };
+		4DB60ECF1A16615A00A6AF18 /* UITableContract@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UITableContract@2x.png"; path = "VPPDropDown/UITableContract@2x.png"; sourceTree = SOURCE_ROOT; };
+		4DB60ED01A16615A00A6AF18 /* UITableExpand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UITableExpand.png; path = VPPDropDown/UITableExpand.png; sourceTree = SOURCE_ROOT; };
+		4DB60ED11A16615A00A6AF18 /* UITableExpand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UITableExpand@2x.png"; path = "VPPDropDown/UITableExpand@2x.png"; sourceTree = SOURCE_ROOT; };
+		4DB60ED21A16615A00A6AF18 /* VPPDropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VPPDropDown.h; path = VPPDropDown/VPPDropDown.h; sourceTree = SOURCE_ROOT; };
+		4DB60ED31A16615A00A6AF18 /* VPPDropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VPPDropDown.m; path = VPPDropDown/VPPDropDown.m; sourceTree = SOURCE_ROOT; };
+		4DB60ED41A16615A00A6AF18 /* VPPDropDownDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VPPDropDownDelegate.h; path = VPPDropDown/VPPDropDownDelegate.h; sourceTree = SOURCE_ROOT; };
+		4DB60ED51A16615A00A6AF18 /* VPPDropDownElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VPPDropDownElement.h; path = VPPDropDown/VPPDropDownElement.h; sourceTree = SOURCE_ROOT; };
+		4DB60ED61A16615A00A6AF18 /* VPPDropDownElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VPPDropDownElement.m; path = VPPDropDown/VPPDropDownElement.m; sourceTree = SOURCE_ROOT; };
+		4DB60F321A16AE1600A6AF18 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		4DB60F331A16AE1600A6AF18 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		4DB60F361A1770DE00A6AF18 /* looseleaf.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = looseleaf.zip; sourceTree = "<group>"; };
+		4DB60F381A1770E500A6AF18 /* basic.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = basic.zip; sourceTree = "<group>"; };
 		4DC850071A0E718100C5124F /* LauncherListController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LauncherListController.mm; path = advancedmap3/LauncherListController.mm; sourceTree = SOURCE_ROOT; };
 		4DC8500A1A0E778900C5124F /* VectorMapSampleBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VectorMapSampleBaseController.h; path = advancedmap3/VectorMapSampleBaseController.h; sourceTree = SOURCE_ROOT; };
 		4DC8500B1A0E77CA00C5124F /* VectorMapSampleBaseController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = VectorMapSampleBaseController.mm; path = advancedmap3/VectorMapSampleBaseController.mm; sourceTree = SOURCE_ROOT; };
@@ -102,16 +125,20 @@
 		2A319B36187C4F8F0004A3CB = {
 			isa = PBXGroup;
 			children = (
+				4DB60F381A1770E500A6AF18 /* basic.zip */,
 				4DB60EC91A155FF500A6AF18 /* osmbright.zip */,
+				4DB60F361A1770DE00A6AF18 /* looseleaf.zip */,
 				4DEB06DE1A10D8B3003D111C /* README.md */,
-				2AEA4FAB19140909002ED69F /* arrow.png */,
 				0C3C369719E66E0A007573FD /* fcd_auto.nml */,
 				0C1FFD7619E414C1006E9AF2 /* berlin_ntvt.mbtiles */,
+				2AB2803318EB150400666197 /* marker.png */,
+				2AD24F6718FED992000969F4 /* saku_ios_4bpp.nmldb */,
+				2AEA4FAB19140909002ED69F /* arrow.png */,
 				2A710BBF19196AD100647B81 /* arrow@2x.png */,
 				2AEA4FA51913F38C002ED69F /* info.png */,
 				2A710BBD191956CC00647B81 /* info@2x.png */,
-				2AB2803318EB150400666197 /* marker.png */,
-				2AD24F6718FED992000969F4 /* saku_ios_4bpp.nmldb */,
+				4DB60F321A16AE1600A6AF18 /* menu.png */,
+				4DB60F331A16AE1600A6AF18 /* menu@2x.png */,
 				2A319B48187C4F8F0004A3CB /* advancedmap3 */,
 				2A319B41187C4F8F0004A3CB /* Frameworks */,
 				2A319B40187C4F8F0004A3CB /* Products */,
@@ -145,6 +172,7 @@
 		2A319B48187C4F8F0004A3CB /* advancedmap3 */ = {
 			isa = PBXGroup;
 			children = (
+				4DB60ECD1A16614A00A6AF18 /* VPPDropDown */,
 				4DEB06D61A10CD88003D111C /* Data Sources */,
 				4DEB06D51A10C94E003D111C /* Listeners */,
 				2AD24F8418FEDB89000969F4 /* Images.xcassets */,
@@ -175,6 +203,22 @@
 				2AD24F7318FEDAA6000969F4 /* advancedmap3-Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4DB60ECD1A16614A00A6AF18 /* VPPDropDown */ = {
+			isa = PBXGroup;
+			children = (
+				4DB60ECE1A16615A00A6AF18 /* UITableContract.png */,
+				4DB60ECF1A16615A00A6AF18 /* UITableContract@2x.png */,
+				4DB60ED01A16615A00A6AF18 /* UITableExpand.png */,
+				4DB60ED11A16615A00A6AF18 /* UITableExpand@2x.png */,
+				4DB60ED21A16615A00A6AF18 /* VPPDropDown.h */,
+				4DB60ED31A16615A00A6AF18 /* VPPDropDown.m */,
+				4DB60ED41A16615A00A6AF18 /* VPPDropDownDelegate.h */,
+				4DB60ED51A16615A00A6AF18 /* VPPDropDownElement.h */,
+				4DB60ED61A16615A00A6AF18 /* VPPDropDownElement.m */,
+			);
+			name = VPPDropDown;
 			sourceTree = "<group>";
 		};
 		4DEB06D51A10C94E003D111C /* Listeners */ = {
@@ -252,14 +296,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DB60F391A1770E500A6AF18 /* basic.zip in Resources */,
 				2AD24F6818FED992000969F4 /* saku_ios_4bpp.nmldb in Resources */,
+				4DB60ED91A16615A00A6AF18 /* UITableExpand.png in Resources */,
 				2A710BBE191956CC00647B81 /* info@2x.png in Resources */,
+				4DB60EDA1A16615A00A6AF18 /* UITableExpand@2x.png in Resources */,
 				0C1FFD7719E414C1006E9AF2 /* berlin_ntvt.mbtiles in Resources */,
+				4DB60ED81A16615A00A6AF18 /* UITableContract@2x.png in Resources */,
 				2A710BC019196AD100647B81 /* arrow@2x.png in Resources */,
 				0C3C369819E66E0A007573FD /* fcd_auto.nml in Resources */,
 				2AD24F8518FEDB89000969F4 /* Images.xcassets in Resources */,
+				4DB60F371A1770DE00A6AF18 /* looseleaf.zip in Resources */,
 				2AEA4FAC19140909002ED69F /* arrow.png in Resources */,
+				4DB60ED71A16615A00A6AF18 /* UITableContract.png in Resources */,
+				4DB60F341A16AE1600A6AF18 /* menu.png in Resources */,
 				2AB2803418EB150400666197 /* marker.png in Resources */,
+				4DB60F351A16AE1600A6AF18 /* menu@2x.png in Resources */,
 				2AEA4FA61913F38C002ED69F /* info.png in Resources */,
 				4DB60ECA1A155FF500A6AF18 /* osmbright.zip in Resources */,
 			);
@@ -272,9 +324,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DB60EDC1A16615A00A6AF18 /* VPPDropDownElement.m in Sources */,
 				4DEB06D01A10BDB7003D111C /* Overlays2DSampleController.mm in Sources */,
 				2AD24F7918FEDAA6000969F4 /* main.m in Sources */,
 				2AC270581941EFF9000CA859 /* MyMergedRasterTileDataSource.mm in Sources */,
+				4DB60EDB1A16615A00A6AF18 /* VPPDropDown.m in Sources */,
 				4DC850121A0E7DC500C5124F /* CustomRasterDataSourceSampleController.mm in Sources */,
 				4DC8500C1A0E77CA00C5124F /* VectorMapSampleBaseController.mm in Sources */,
 				4DEB06D81A10CDC0003D111C /* OfflineVectorMapSampleController.mm in Sources */,
