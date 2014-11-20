@@ -55,32 +55,16 @@ __attribute__ ((visibility("default"))) @interface NTMapRange : NSObject
  */
 -(float)getMin;
 /**
- * Sets the min value of this map range.<br>
- * @param min The new min value of this map range.
- */
--(void)setMin: (float)min;
-/**
  * Returns the max value of this map range.<br>
  * @return The max value of this map range.
  */
 -(float)getMax;
-/**
- * Sets the max value of this map range.<br>
- * @param max The new max value of this map range.
- */
--(void)setMax: (float)max;
 /**
  * Tests if a value is in this map range. Value is considered in range if min &lt;= val &lt; max.<br>
  * @param value The value to be tested.<br>
  * @return True if value is in this map range.
  */
 -(BOOL)inRange: (float)value;
-/**
- * Sets the min and max values of this map range.<br>
- * @param min The new min value of this map range.<br>
- * @param max The new max value of this map range.
- */
--(void)setRange: (float)min max: (float)max;
 /**
  * Calculates the length of this map range. Defined as max - min.<br>
  * @return The length of this map range.

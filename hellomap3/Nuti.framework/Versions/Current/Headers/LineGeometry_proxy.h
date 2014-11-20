@@ -19,11 +19,21 @@ extern "C" {
 #import "Geometry_proxy.h"
 #import "MapPosVectors_proxy.h"
 
+/**
+ * Line geometry defined by a list of map positions.
+ */
 __attribute__ ((visibility("default"))) @interface NTLineGeometry : NTGeometry
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+/**
+ * Constructs a new LineGeometry object from a map position list.
+ */
 -(id)initWithPoses: (MapPosVector*)poses;
 -(NTMapPos*)getCenterPos;
+/**
+ * Returns the list of of map positions defining the line.<br>
+ * @return The list of of map positions defining the line.
+ */
 -(MapPosVector*)getPoses;
 
 -(void)dealloc;

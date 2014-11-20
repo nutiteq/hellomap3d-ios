@@ -21,7 +21,7 @@ public:
 
     /**
      * Sets the font name for the text label.
-     * @param fontName The new platfrom dependent font name for the text label.
+     * @param fontName The new platform dependent font name for the text label.
      */
 	void setFontName(const std::string& fontName);
 
@@ -39,7 +39,7 @@ public:
 
     /**
      * Sets the stroke width for the text label.
-     * @param strokeWidth The new stroke widht for the text label in screen density independent pixels.
+     * @param strokeWidth The new stroke width for the text label in screen density independent pixels.
      */
 	void setStrokeWidth(float strokeWidth);
 

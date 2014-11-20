@@ -42,30 +42,6 @@ __attribute__ ((visibility("default"))) @interface NTMapVec : NTTuple3D
  */
 -(id)initWithX: (double)x y: (double)y z: (double)z;
 /**
- * Adds another map vector to this map vector.<br>
- * @param v The map vector to be added.<br>
- * @return This map vector after the addition.
- */
--(NTMapVec*)addThis: (NTMapVec*)v;
-/**
- * Subtracts another map vector from this map vector.<br>
- * @param v The map vector to be added.<br>
- * @return This map vector after the subtraction.
- */
--(NTMapVec*)subThis: (NTMapVec*)v;
-/**
- * Multiplies this map vector by a multiplier.<br>
- * @param multiplier The multiplier.<br>
- * @return This map vector after the multiplication.
- */
--(NTMapVec*)mulThis: (double)multiplier;
-/**
- * Divides this map vector by a divider.<br>
- * @param divider The divider.<br>
- * @return This map vector after the division.
- */
--(NTMapVec*)divThis: (double)divider;
-/**
  * Creates a new map vector by adding a map vector to this map vector.<br>
  * @param v The map vector to be added.<br>
  * @return The new map vector.
@@ -112,22 +88,10 @@ __attribute__ ((visibility("default"))) @interface NTMapVec : NTTuple3D
  */
 -(double)lengthSqr;
 /**
- * Normalizes this map vector.<br>
- * @return This map vector after the normalization.
- */
--(NTMapVec*)normalize;
-/**
  * Creates a new map vector by normalizing this map vector.<br>
  * @return The new normalized map vector.
  */
 -(NTMapVec*)getNormalized;
-/**
- * Rotates this map vector around it's back end and around z axis.<br>
- * @param sin The sine value of the rotation angle.<br>
- * @param cos The cosine value of the rotation angle.<br>
- * @return This map vector after the rotation.
- */
--(NTMapVec*)rotate2D: (double)sin cos: (double)cos;
 /**
  * Creates a new map vector by rotating this map vector around it's back end and around z axis.<br>
  * @param sin The sine value of the rotation angle.<br>

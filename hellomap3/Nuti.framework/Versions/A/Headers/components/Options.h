@@ -81,31 +81,31 @@ public:
     
     /**
      * Returns the color of the ambient light.
-     * @return The color of the ambient light.
+     * @return The color of the ambient light.
      */
     Color getAmbientLightColor() const;
     /**
      * Sets the parameters for the ambient light. Ambient light affects all lighting enabled models
      * in the scene equally, it has no direction or location.
-     * @param color The new color for the ambient light.
+     * @param color The new color for the ambient light.
      */
     void setAmbientLight(const Color& color);
     
     /**
      * Returns the color of the main light.
-     * @return The color of the main light.
+     * @return The color of the main light.
      */
     Color getMainLightColor() const;
     /**
      * Returns the direction of the main light.
-     * @return The direction of the main light.
+     * @return The direction of the main light.
      */
     MapVec getMainLightDirection() const;
     /**
      * Sets the parameters for the main light. The main light affects all lighting enabled models
      * in the scene equally from a certain direction. This light can be used to simulate sun or moon light.
-     * @param color The new color for the main light.
-     * @param direction The new direction vector for the main light. (0,0,-1) means straight down, (-0.707,0,-0.707) means
+     * @param color The new color for the main light.
+     * @param direction The new direction vector for the main light. (0,0,-1) means straight down, (-0.707,0,-0.707) means
      *        from east with a 45 degree angle. The direction vector will be normalized.
      */
     void setMainLight(const Color& color, const MapVec& direction);

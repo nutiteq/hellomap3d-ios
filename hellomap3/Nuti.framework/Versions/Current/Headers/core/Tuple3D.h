@@ -10,7 +10,6 @@ namespace Nuti {
  */
 class Tuple3D {
 public:
-    virtual ~Tuple3D();
     /**
      * Returns the x coordinate of this tuple.
      * @return The x coordinate of this tuple.
@@ -69,12 +68,6 @@ public:
      */
 	void setCoords(double x, double y, double z);
 
-    /**
-     * An abstract method for creating a string representation of a this tuple, useful for logging.
-     * @return The string representation of this tuple.
-     */
-	virtual std::string toString() const = 0;
-    
 protected:
 	Tuple3D();
     Tuple3D(double x, double y);
@@ -85,7 +78,6 @@ protected:
 	double _x;
 	double _y;
 	double _z;
-    
 };
 
 }

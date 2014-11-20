@@ -49,6 +49,9 @@ namespace BillboardScaling {
         BILLBOARD_SCALING_CONST_SCREEN_SIZE};
 }
 
+/**
+ * A base class for BillboardStyle subclasses.
+ */
 class BillboardStyle : public Style {
 public:
     /**
@@ -62,7 +65,7 @@ public:
      * @param horizontalOffset The horizontal offset for the billboard.
      * @param verticalOffset The vertical offset for the billboard.
      * @param placementPriority The placement priority for the billboard.
-     * @param scaleWithDpi The scale with DPI flag for the billboard.
+     * @param scaleWithDPI The scale with DPI flag for the billboard.
      */
 	BillboardStyle(const Color& color,
                    float attachAnchorPointX,

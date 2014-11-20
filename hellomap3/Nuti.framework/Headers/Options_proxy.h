@@ -80,30 +80,30 @@ __attribute__ ((visibility("default"))) @interface NTOptions : NSObject
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
  * Returns the color of the ambient light.<br>
- *  @return The color of the ambient light.
+ * @return The color of the ambient light.
  */
 -(NTColor*)getAmbientLightColor;
 /**
  * Sets the parameters for the ambient light. Ambient light affects all lighting enabled models<br>
  * in the scene equally, it has no direction or location.<br>
- *  @param color The new color for the ambient light.
+ * @param color The new color for the ambient light.
  */
 -(void)setAmbientLight: (NTColor*)color;
 /**
  * Returns the color of the main light.<br>
- *  @return The color of the main light.
+ * @return The color of the main light.
  */
 -(NTColor*)getMainLightColor;
 /**
  * Returns the direction of the main light.<br>
- *  @return The direction of the main light.
+ * @return The direction of the main light.
  */
 -(NTMapVec*)getMainLightDirection;
 /**
  * Sets the parameters for the main light. The main light affects all lighting enabled models<br>
  * in the scene equally from a certain direction. This light can be used to simulate sun or moon light.<br>
- *  @param color The new color for the main light.<br>
- *  @param direction The new direction vector for the main light. (0,0,-1) means straight down, (-0.707,0,-0.707) means<br>
+ * @param color The new color for the main light.<br>
+ * @param direction The new direction vector for the main light. (0,0,-1) means straight down, (-0.707,0,-0.707) means<br>
  *        from east with a 45 degree angle. The direction vector will be normalized.
  */
 -(void)setMainLight: (NTColor*)color direction: (NTMapVec*)direction;

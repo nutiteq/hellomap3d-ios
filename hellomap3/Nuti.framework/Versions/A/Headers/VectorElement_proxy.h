@@ -33,7 +33,7 @@ __attribute__ ((visibility("default"))) @interface NTVectorElement : NSObject
  * Returns the actual class name of this vector element. This is used<br>
  * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically<br>
  * generate child proxy classes from a base class pointer.<br>
- *  @return The class name of this vector element.
+ * @return The class name of this vector element.
  */
 -(NSString*)getClassName;
 /**

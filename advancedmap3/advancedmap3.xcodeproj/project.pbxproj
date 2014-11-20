@@ -439,7 +439,7 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
-					"/Users/mark/projects/Nutiteq/hellomap3d-ios/hellomap3",
+					"$(PROJECT_DIR)/../hellomap3",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -451,7 +451,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/mark/projects/Nutiteq/sdk_3d/dist/ios/Nuti.framework/Versions/A,
+					"$(PROJECT_DIR)/../hellomap3/Nuti.framework/Versions/A",
 				);
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_NAME = advancedmap3;
@@ -472,7 +472,7 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
-					"/Users/mark/projects/Nutiteq/hellomap3d-ios/hellomap3",
+					"$(PROJECT_DIR)/../hellomap3",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -484,7 +484,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/mark/projects/Nutiteq/sdk_3d/dist/ios/Nuti.framework/Versions/A,
+					"$(PROJECT_DIR)/../hellomap3/Nuti.framework/Versions/A",
 				);
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_NAME = advancedmap3;

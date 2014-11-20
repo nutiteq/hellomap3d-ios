@@ -19,13 +19,33 @@ extern "C" {
 #import "Geometry_proxy.h"
 #import "MapPosVectors_proxy.h"
 
+/**
+ * Polygon geometry defined by an outer ring and optional multiple inner rings (holes).
+ */
 __attribute__ ((visibility("default"))) @interface NTPolygonGeometry : NTGeometry
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+/**
+ * Constructs a PolygonGeometry objects from an outer ring.<br>
+ * @param poses The list of map positions defining the outer ring.
+ */
 -(id)initWithPoses: (MapPosVector*)poses;
+/**
+ * Constructs a PolygonGeometry objects from an outer ring and list of inner rings (holes).<br>
+ * @param poses The list of map positions defining the outer ring.<br>
+ * @param holes The list of map position lists defining the inner rings.
+ */
 -(id)initWithPoses: (MapPosVector*)poses holes: (MapPosVectorVector*)holes;
 -(NTMapPos*)getCenterPos;
+/**
+ * Returns the list of map positions defining the outer ring of the polygon.<br>
+ * @return The list of map positions defining the outer ring of the polygon.
+ */
 -(MapPosVector*)getPoses;
+/**
+ * Returns the list of map position lists defining the inner rings of the polygon (holes).<br>
+ * @return The list of map position lists defining the inner rings of the polygon (holes).
+ */
 -(MapPosVectorVector*)getHoles;
 
 -(void)dealloc;

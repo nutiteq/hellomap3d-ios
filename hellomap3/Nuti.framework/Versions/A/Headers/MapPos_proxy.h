@@ -45,18 +45,6 @@ __attribute__ ((visibility("default"))) @interface NTMapPos : NTTuple3D
  */
 -(id)initWithX: (double)x y: (double)y z: (double)z;
 /**
- * Adds another tuple to this map position.<br>
- * @param t The tuple to be added.<br>
- * @return This map position after the addition.
- */
--(NTMapPos*)addThis: (NTTuple3D*)t;
-/**
- * Subtracts another tuple from this map position.<br>
- * @param t The tuple to be subtracted.<br>
- * @return This map position after the subtraction.
- */
--(NTMapPos*)subThis: (NTTuple3D*)t;
-/**
  * Creates a new map position by adding a map vector to this map position.<br>
  * @param v The map vector to be added.<br>
  * @return The new map position.
@@ -133,13 +121,6 @@ __attribute__ ((visibility("default"))) @interface NTMapPos : NTTuple3D
  * @return The nearest point from this map position that lies on the line segment.
  */
 -(NTMapPos*)nearestPointOnLineSegment: (NTMapPos*)a b: (NTMapPos*)b;
-/**
- * Rotates this map position around the z axis by an angle.<br>
- * @param sin The sine value of the rotation angle.<br>
- * @param cos The cosine value of the rotation angle.<br>
- * @return This map position after the rotation.
- */
--(NTMapPos*)rotate2D: (double)sin cos: (double)cos;
 /**
  * Creates a new map position by rotating this map position around the z axis by an angle.<br>
  * @param sin The sine value of the rotation angle.<br>

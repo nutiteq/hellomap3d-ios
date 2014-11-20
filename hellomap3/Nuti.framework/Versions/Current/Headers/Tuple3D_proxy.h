@@ -31,48 +31,15 @@ __attribute__ ((visibility("default"))) @interface NTTuple3D : NSObject
  */
 -(double)getX;
 /**
- * Sets the x coordinate of this tuple.<br>
- * @param x The new x coordinate of this tuple.
- */
--(void)setX: (double)x;
-/**
  * Returns the y coordinate of this tuple.<br>
  * @return The y coordinate of this tuple.
  */
 -(double)getY;
 /**
- * Sets the y coordinate of this tuple.<br>
- * @param y The new y coordinate of this tuple.
- */
--(void)setY: (double)y;
-/**
  * Returns the z coordinate of this tuple.<br>
  * @return The z coordinate of this tuple.
  */
 -(double)getZ;
-/**
- * Sets the z coordinate of this tuple.<br>
- * @param z The new z coordinate of this tuple.
- */
--(void)setZ: (double)z;
-/**
- * Sets the x and y coordinates of this tuple.<br>
- * @param x The new x coordinate of this tuple.<br>
- * @param y The new y coordinate of this tuple.
- */
--(void)setCoordsWithX: (double)x y: (double)y;
-/**
- * Sets the x, y and z coordinates of this tuple.<br>
- * @param x The new x coordinate of this tuple.<br>
- * @param y The new y coordinate of this tuple.<br>
- * @param z The new z coordinate of this tuple.
- */
--(void)setCoordsWithX: (double)x y: (double)y z: (double)z;
-/**
- * An abstract method for creating a string representation of a this tuple, useful for logging.<br>
- * @return The string representation of this tuple.
- */
--(NSString*)toString;
 
 -(void)dealloc;
 

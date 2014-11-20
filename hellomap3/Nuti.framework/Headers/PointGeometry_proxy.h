@@ -19,11 +19,22 @@ extern "C" {
 #import "Geometry_proxy.h"
 #import "MapPos_proxy.h"
 
+/**
+ * Point geometry. Geometry is defined by a single map position.
+ */
 __attribute__ ((visibility("default"))) @interface NTPointGeometry : NTGeometry
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+/**
+ * Constructs a PointGeometry object from a given map position.<br>
+ * @param pos The map position.
+ */
 -(id)initWithPos: (NTMapPos*)pos;
 -(NTMapPos*)getCenterPos;
+/**
+ * Returns the position of the point.<br>
+ * @return The position of the point.
+ */
 -(NTMapPos*)getPos;
 
 -(void)dealloc;

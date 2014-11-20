@@ -18,6 +18,9 @@ extern "C" {
 
 #import "MapBounds_proxy.h"
 
+/**
+ * A base class for all geometry types.
+ */
 __attribute__ ((visibility("default"))) @interface NTGeometry : NSObject
 {
 	void *swigCPtr;
@@ -25,7 +28,15 @@ __attribute__ ((visibility("default"))) @interface NTGeometry : NSObject
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+/**
+ * Returns the center point of the geometry.<br>
+ * @return The center point of the geometry.
+ */
 -(NTMapPos*)getCenterPos;
+/**
+ * Returns the minimal bounds for the geometry.<br>
+ * @return The bounds for the geometry.
+ */
 -(NTMapBounds*)getBounds;
 
 -(void)dealloc;

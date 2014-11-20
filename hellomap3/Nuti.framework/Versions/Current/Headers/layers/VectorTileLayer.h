@@ -95,20 +95,12 @@ private:
 		std::weak_ptr<VectorTileLayer> _layer;
 	};
 
-	class FetchTask : public CancelableTask {
+	class FetchTask : public TileLayer::FetchTaskBase {
 	public:
 		FetchTask(const std::shared_ptr<VectorTileLayer>& layer, const MapTileQuadTreeNode& tile, bool preloadingTile);
 		
-		virtual void cancel();
-		virtual void run();
-
-	private:
-		std::weak_ptr<VectorTileLayer> _layer;
-		MapTileQuadTreeNode _tile;
-		std::vector<MapTileQuadTreeNode> _dataSourceTiles; // ordered to top
-		bool _preloadingTile;
-        
-		bool _started;
+	protected:
+		bool loadTile(const std::shared_ptr<TileLayer>& tileLayer);
 	};
 	
 	class LabelCullTask : public CancelableTask {

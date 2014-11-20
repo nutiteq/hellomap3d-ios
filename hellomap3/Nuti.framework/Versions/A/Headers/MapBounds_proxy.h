@@ -103,16 +103,6 @@ __attribute__ ((visibility("default"))) @interface NTMapBounds : NSObject
  */
 -(BOOL)intersects: (NTMapBounds*)bounds;
 /**
- * Expands this map bounds object to contain a map position.<br>
- * @param pos The map position.
- */
--(void)expandToContainMapPos: (NTMapPos*)pos;
-/**
- * Expands this map bounds object to contain another map bounds object.<br>
- * @param bounds The other map bounds object.
- */
--(void)expandToContainMapBounds: (NTMapBounds*)bounds;
-/**
  * Creates a string representation of this map bounds object, useful for logging.<br>
  * @return The string representation of this map bounds object.
  */

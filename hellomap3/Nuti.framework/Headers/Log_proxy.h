@@ -15,6 +15,9 @@
 extern "C" {
 #endif
 
+/**
+ * A diagnostic log for various SDK events.
+ */
 __attribute__ ((visibility("default"))) @interface NTLog : NSObject
 {
 	void *swigCPtr;
@@ -22,10 +25,26 @@ __attribute__ ((visibility("default"))) @interface NTLog : NSObject
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+/**
+ * Enables or disables writing error messages to the log.<br>
+ * @param showError If true, then error messages will be written to the log.
+ */
 +(void)SetShowError: (BOOL)showError;
+/**
+ * Enables or disables writing warning messages to the log.<br>
+ * @param showWarn If true, then warning messages will be written to the log.
+ */
 +(void)SetShowWarn: (BOOL)showWarn;
-+(void)SetShowInfo: (BOOL)showError;
-+(void)SetShowDebug: (BOOL)showError;
+/**
+ * Enables or disables writing info messages to the log.<br>
+ * @param showInfo If true, then info messages will be written to the log.
+ */
++(void)SetShowInfo: (BOOL)showInfo;
+/**
+ * Enables or disables writing internal debug messages to the log.<br>
+ * @param showDebug If true, then debug messages will be written to the log.
+ */
++(void)SetShowDebug: (BOOL)showDebug;
 -(id)init;
 
 -(void)dealloc;

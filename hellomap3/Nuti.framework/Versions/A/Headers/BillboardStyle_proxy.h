@@ -60,6 +60,9 @@ enum NTBillboardScaling {
 
 #import "Style_proxy.h"
 
+/**
+ * A base class for BillboardStyle subclasses.
+ */
 __attribute__ ((visibility("default"))) @interface NTBillboardStyle : NTStyle
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
@@ -74,7 +77,7 @@ __attribute__ ((visibility("default"))) @interface NTBillboardStyle : NTStyle
  * @param horizontalOffset The horizontal offset for the billboard.<br>
  * @param verticalOffset The vertical offset for the billboard.<br>
  * @param placementPriority The placement priority for the billboard.<br>
- * 
+ * @param scaleWithDPI The scale with DPI flag for the billboard.
  */
 -(id)initWithColor: (NTColor*)color attachAnchorPointX: (float)attachAnchorPointX attachAnchorPointY: (float)attachAnchorPointY causesOverlap: (BOOL)causesOverlap hideIfOverlapped: (BOOL)hideIfOverlapped horizontalOffset: (float)horizontalOffset verticalOffset: (float)verticalOffset placementPriority: (int)placementPriority scaleWithDPI: (BOOL)scaleWithDPI;
 /**

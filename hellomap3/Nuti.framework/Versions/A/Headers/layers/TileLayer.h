@@ -3,6 +3,8 @@
 
 #include "datasources/TileDataSource.h"
 #include "layers/Layer.h"
+#include "utils/LRUCache.h"
+#include "components/CancelableTask.h"
 
 #include <atomic>
 #include <unordered_map>
@@ -41,9 +43,22 @@ public:
      *
      * Enabling this option might introduce a small performance hit on slower devices. It should also be noted that this
      * will considerably increase network traffic if used with online maps. The default is false.
-    * @param preloading The new preloading state of the layer.
-    */
+     * @param preloading The new preloading state of the layer.
+     */
 	void setPreloading(bool preloading);
+	
+	/**
+	 * Returns the state of parent tile replacement flag of this layer.
+	 * @return True if replacement is enabled.
+	 */
+	bool isParentTileReplacement() const;
+	
+	/**
+	 * Sets the parent tile replacement flag for this layer. This flag applies only to missing tiles -
+	 * if replacement is enabled, missing/bad tiles are replaced by parent tiles. The default is true.
+	 * @param parentTileReplacement The new parent tile replacement state of the layer.
+	 */
+	void setParentTileReplacement(bool parentTileReplacement);
 
     /**
      * Gets the current zoom level bias for this layer.
@@ -98,6 +113,25 @@ protected:
 		std::weak_ptr<TileLayer> _layer;
 	};
     
+	class FetchTaskBase : public CancelableTask {
+	public:
+		FetchTaskBase(const std::shared_ptr<TileLayer>& layer, const MapTileQuadTreeNode& tile, bool preloadingTile);
+		
+		virtual void cancel();
+		virtual void run();
+		
+	protected:
+		virtual bool loadTile(const std::shared_ptr<TileLayer>& layer) = 0;
+		
+		std::weak_ptr<TileLayer> _layer;
+		MapTile _tile; // original tile
+		std::vector<MapTile> _dataSourceTiles; // tiles in valid datasource range, ordered to top
+		bool _preloadingTile;
+		
+		bool _started;
+	};
+	
+
 	TileLayer();
 
 	void loadData(const std::shared_ptr<CullState>& cullState);
@@ -125,11 +159,14 @@ protected:
     int _lastFrameNr;
 
     bool _preloading;
+	bool _parentTileReplacement;
 
     float _zoomLevelBias;
 
 	std::unordered_map<long long int, std::shared_ptr<CancelableTask> > _lastVisibleTasks;
 	std::unordered_map<long long int, std::shared_ptr<CancelableTask> > _lastPreloadingTasks;
+
+	LRUCache<long long, bool> _missingTileCache; // tiles that should be replaced with parent tiles
 
 private:
     static bool DistanceComparator(const MapTileQuadTreeNode* tile1, const MapTileQuadTreeNode* tile2);

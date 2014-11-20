@@ -116,21 +116,12 @@ protected:
 	virtual void unregisterDataSourceListener();
 
 private:    
-	class FetchTask : public CancelableTask {
+	class FetchTask : public TileLayer::FetchTaskBase {
 	public:
-		FetchTask(const std::shared_ptr<RasterTileLayer>& layer, const MapTile& tile, bool preloadingTile);
-		virtual ~FetchTask();
-        
-        virtual void cancel();
-        
-		virtual void run();
-	private:
-        std::weak_ptr<RasterTileLayer> _layer;
-		MapTile _tile;
-        
-        bool _preloadingTile;
-        
-        bool _started;
+		FetchTask(const std::shared_ptr<RasterTileLayer>& layer, const MapTileQuadTreeNode& tile, bool preloadingTile);
+
+	protected:
+		bool loadTile(const std::shared_ptr<TileLayer>& tileLayer);
 	};
 
 	static const int PRELOADING_PRIORITY_OFFSET = -2;

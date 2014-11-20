@@ -32,7 +32,7 @@ __attribute__ ((visibility("default"))) @interface NTTextStyleBuilder : NTLabelS
 -(id)init;
 /**
  * Sets the font name for the text label.<br>
- * @param fontName The new platfrom dependent font name for the text label.
+ * @param fontName The new platform dependent font name for the text label.
  */
 -(void)setFontName: (NSString*)fontName;
 /**
@@ -47,7 +47,7 @@ __attribute__ ((visibility("default"))) @interface NTTextStyleBuilder : NTLabelS
 -(void)setStrokeColor: (NTColor*)strokeColor;
 /**
  * Sets the stroke width for the text label.<br>
- * @param strokeWidth The new stroke widht for the text label in screen density independent pixels.
+ * @param strokeWidth The new stroke width for the text label in screen density independent pixels.
  */
 -(void)setStrokeWidth: (float)strokeWidth;
 /**

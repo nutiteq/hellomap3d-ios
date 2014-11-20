@@ -46,6 +46,17 @@ __attribute__ ((visibility("default"))) @interface NTTileLayer : NTLayer
  */
 -(void)setPreloading: (BOOL)preloading;
 /**
+ * Returns the state of parent tile replacement flag of this layer.<br>
+ * @return True if replacement is enabled.
+ */
+-(BOOL)isParentTileReplacement;
+/**
+ * Sets the parent tile replacement flag for this layer. This flag applies only to missing tiles -<br>
+ * if replacement is enabled, missing/bad tiles are replaced by parent tiles. The default is true.<br>
+ * @param parentTileReplacement The new parent tile replacement state of the layer.
+ */
+-(void)setParentTileReplacement: (BOOL)parentTileReplacement;
+/**
  * Gets the current zoom level bias for this layer.<br>
  * @return The current zoom level bias for this layer.
  */

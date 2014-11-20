@@ -26,7 +26,7 @@ public:
      * Returns the actual class name of this vector element. This is used
      * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically
      * generate child proxy classes from a base class pointer.
-     * @return The class name of this vector element.
+     * @return The class name of this vector element.
      */
 	const std::string& getClassName() const;
     
