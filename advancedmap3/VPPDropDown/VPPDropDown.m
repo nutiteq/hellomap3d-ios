@@ -524,8 +524,12 @@ static NSMutableDictionary *dropDowns = nil;
             // table view remove rows
             [_tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];        
         }
-        
-        [_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:_rootIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+		
+		@try {
+			[_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:_rootIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+		}
+		@catch (NSException*) {
+		}
     }
 
     else {
@@ -556,17 +560,21 @@ static NSMutableDictionary *dropDowns = nil;
 }
 
 - (void) selectionDidSelectRowAtIndexPath:(NSIndexPath *)globalIndexPath {
-    NSIndexPath *iPath = [self convertIndexPath:globalIndexPath];
-    NSIndexPath *previousSelectedItem = [NSIndexPath indexPathForRow:_selectedIndex+1 inSection:globalIndexPath.section];
+	@try {
+		NSIndexPath *iPath = [self convertIndexPath:globalIndexPath];
+		NSIndexPath *previousSelectedItem = [NSIndexPath indexPathForRow:_selectedIndex+1 inSection:globalIndexPath.section];
     
-    _selectedIndex = iPath.row-1;
+		_selectedIndex = iPath.row-1;
     
-    [_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:previousSelectedItem, _rootIndexPath, nil] withRowAnimation:UITableViewRowAnimationNone];
-    [_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:globalIndexPath, nil] withRowAnimation:UITableViewRowAnimationFade];
+		[_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:previousSelectedItem, _rootIndexPath, nil] withRowAnimation:UITableViewRowAnimationNone];
+		[_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:globalIndexPath, nil] withRowAnimation:UITableViewRowAnimationFade];
     
     
-    // delegate would do whatever it wants: change nspreference, ...
-    [_delegate dropDown:self elementSelected:[_elements objectAtIndex:_selectedIndex] atGlobalIndexPath:globalIndexPath];
+		// delegate would do whatever it wants: change nspreference, ...
+		[_delegate dropDown:self elementSelected:[_elements objectAtIndex:_selectedIndex] atGlobalIndexPath:globalIndexPath];
+	}
+	@catch (NSException*) {
+	}
 }
 
 
@@ -588,7 +596,11 @@ static NSMutableDictionary *dropDowns = nil;
                     [dd disclosureDidSelectRowAtIndexPath:globalIndexPath];
                     break;
                 case VPPDropDownTypeSelection:
-                    [dd selectionDidSelectRowAtIndexPath:globalIndexPath];
+					@try {
+						[dd selectionDidSelectRowAtIndexPath:globalIndexPath];
+					}
+					@catch (NSException*) {
+					}
                     [tableView deselectRowAtIndexPath:globalIndexPath animated:YES];
                     break;
             }
@@ -833,9 +845,13 @@ static NSMutableDictionary *dropDowns = nil;
     
     // delegate would do whatever it wants: change nspreference, ...
     [_delegate dropDown:self elementSelected:[_elements objectAtIndex:_selectedIndex] atGlobalIndexPath:globalIndexPath];
-    
-    [_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:previousSelectedItem, _rootIndexPath, nil] withRowAnimation:UITableViewRowAnimationNone];
-    [_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:globalIndexPath, nil] withRowAnimation:UITableViewRowAnimationFade];
+	
+	@try {
+		[_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:previousSelectedItem, _rootIndexPath, nil] withRowAnimation:UITableViewRowAnimationNone];
+		[_tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:globalIndexPath, nil] withRowAnimation:UITableViewRowAnimationFade];
+	}
+	@catch (NSException*) {
+	}
 }
 
 
