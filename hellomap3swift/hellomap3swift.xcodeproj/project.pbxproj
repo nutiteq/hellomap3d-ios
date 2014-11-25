@@ -1,0 +1,348 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D301AF81A1E2D4D00F4CCD0 /* Nuti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D301AF71A1E2D4D00F4CCD0 /* Nuti.framework */; };
+		4D79D1EB1A1A756F000709E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D79D1EA1A1A756F000709E8 /* UIKit.framework */; };
+		4D79D1ED1A1A758B000709E8 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D79D1EC1A1A758B000709E8 /* GLKit.framework */; };
+		4D79D1F11A1A75B4000709E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D79D1F01A1A75B4000709E8 /* CoreGraphics.framework */; };
+		4D79D1F31A1A75BA000709E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D79D1F21A1A75BA000709E8 /* Foundation.framework */; };
+		4D79D1FA1A1A7822000709E8 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D79D1F91A1A7822000709E8 /* libc++.dylib */; };
+		4D79D1FC1A1A782E000709E8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D79D1FB1A1A782E000709E8 /* libz.dylib */; };
+		4D79D1FF1A1A7EED000709E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D79D1FD1A1A7CCE000709E8 /* Main.storyboard */; };
+		4D79D2021A1A8083000709E8 /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D79D2011A1A8083000709E8 /* marker.png */; };
+		4D79D2041A1A8089000709E8 /* osmbright.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4D79D2031A1A8089000709E8 /* osmbright.zip */; };
+		4DB60F4B1A1A6C1500A6AF18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB60F4A1A1A6C1500A6AF18 /* AppDelegate.swift */; };
+		4DB60F4D1A1A6C1500A6AF18 /* MyMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB60F4C1A1A6C1500A6AF18 /* MyMapViewController.swift */; };
+		4DB60F521A1A6C1500A6AF18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60F511A1A6C1500A6AF18 /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4D301AF71A1E2D4D00F4CCD0 /* Nuti.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuti.framework; path = ../../hellomap3/Nuti.framework; sourceTree = "<group>"; };
+		4D498DAA1A1A82200062BD5C /* hellomap3swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hellomap3swift-Bridging-Header.h"; path = "hellomap3swift/hellomap3swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		4D79D1EA1A1A756F000709E8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4D79D1EC1A1A758B000709E8 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		4D79D1EE1A1A7591000709E8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		4D79D1F01A1A75B4000709E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4D79D1F21A1A75BA000709E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4D79D1F71A1A7656000709E8 /* Nuti.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuti.framework; path = ../Nuti.framework; sourceTree = "<group>"; };
+		4D79D1F91A1A7822000709E8 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		4D79D1FB1A1A782E000709E8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		4D79D1FD1A1A7CCE000709E8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4D79D2011A1A8083000709E8 /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
+		4D79D2031A1A8089000709E8 /* osmbright.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright.zip; sourceTree = "<group>"; };
+		4DB60F451A1A6C1500A6AF18 /* hellomap3swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hellomap3swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DB60F491A1A6C1500A6AF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DB60F4A1A1A6C1500A6AF18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4DB60F4C1A1A6C1500A6AF18 /* MyMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapViewController.swift; sourceTree = "<group>"; };
+		4DB60F511A1A6C1500A6AF18 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4DB60F421A1A6C1500A6AF18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D79D1FC1A1A782E000709E8 /* libz.dylib in Frameworks */,
+				4D79D1FA1A1A7822000709E8 /* libc++.dylib in Frameworks */,
+				4D301AF81A1E2D4D00F4CCD0 /* Nuti.framework in Frameworks */,
+				4D79D1F31A1A75BA000709E8 /* Foundation.framework in Frameworks */,
+				4D79D1F11A1A75B4000709E8 /* CoreGraphics.framework in Frameworks */,
+				4D79D1ED1A1A758B000709E8 /* GLKit.framework in Frameworks */,
+				4D79D1EB1A1A756F000709E8 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D79D2001A1A8029000709E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D301AF71A1E2D4D00F4CCD0 /* Nuti.framework */,
+				4D79D1FB1A1A782E000709E8 /* libz.dylib */,
+				4D79D1F91A1A7822000709E8 /* libc++.dylib */,
+				4D79D1F71A1A7656000709E8 /* Nuti.framework */,
+				4D79D1F21A1A75BA000709E8 /* Foundation.framework */,
+				4D79D1F01A1A75B4000709E8 /* CoreGraphics.framework */,
+				4D79D1EE1A1A7591000709E8 /* CoreFoundation.framework */,
+				4D79D1EC1A1A758B000709E8 /* GLKit.framework */,
+				4D79D1EA1A1A756F000709E8 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			path = hellomap3swift;
+			sourceTree = "<group>";
+		};
+		4DB60F3C1A1A6C1500A6AF18 = {
+			isa = PBXGroup;
+			children = (
+				4D498DAA1A1A82200062BD5C /* hellomap3swift-Bridging-Header.h */,
+				4D79D2031A1A8089000709E8 /* osmbright.zip */,
+				4D79D2011A1A8083000709E8 /* marker.png */,
+				4D79D2001A1A8029000709E8 /* Frameworks */,
+				4DB60F471A1A6C1500A6AF18 /* hellomap3swift */,
+				4DB60F461A1A6C1500A6AF18 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4DB60F461A1A6C1500A6AF18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4DB60F451A1A6C1500A6AF18 /* hellomap3swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4DB60F471A1A6C1500A6AF18 /* hellomap3swift */ = {
+			isa = PBXGroup;
+			children = (
+				4D79D1FD1A1A7CCE000709E8 /* Main.storyboard */,
+				4DB60F4A1A1A6C1500A6AF18 /* AppDelegate.swift */,
+				4DB60F4C1A1A6C1500A6AF18 /* MyMapViewController.swift */,
+				4DB60F511A1A6C1500A6AF18 /* Images.xcassets */,
+				4DB60F481A1A6C1500A6AF18 /* Supporting Files */,
+			);
+			path = hellomap3swift;
+			sourceTree = "<group>";
+		};
+		4DB60F481A1A6C1500A6AF18 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DB60F491A1A6C1500A6AF18 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4DB60F441A1A6C1500A6AF18 /* hellomap3swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DB60F641A1A6C1500A6AF18 /* Build configuration list for PBXNativeTarget "hellomap3swift" */;
+			buildPhases = (
+				4DB60F411A1A6C1500A6AF18 /* Sources */,
+				4DB60F421A1A6C1500A6AF18 /* Frameworks */,
+				4DB60F431A1A6C1500A6AF18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hellomap3swift;
+			productName = hellomap3swift;
+			productReference = 4DB60F451A1A6C1500A6AF18 /* hellomap3swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4DB60F3D1A1A6C1500A6AF18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Nutiteq;
+				TargetAttributes = {
+					4DB60F441A1A6C1500A6AF18 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 4DB60F401A1A6C1500A6AF18 /* Build configuration list for PBXProject "hellomap3swift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4DB60F3C1A1A6C1500A6AF18;
+			productRefGroup = 4DB60F461A1A6C1500A6AF18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4DB60F441A1A6C1500A6AF18 /* hellomap3swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4DB60F431A1A6C1500A6AF18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D79D1FF1A1A7EED000709E8 /* Main.storyboard in Resources */,
+				4D79D2041A1A8089000709E8 /* osmbright.zip in Resources */,
+				4DB60F521A1A6C1500A6AF18 /* Images.xcassets in Resources */,
+				4D79D2021A1A8083000709E8 /* marker.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4DB60F411A1A6C1500A6AF18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DB60F4D1A1A6C1500A6AF18 /* MyMapViewController.swift in Sources */,
+				4DB60F4B1A1A6C1500A6AF18 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4DB60F621A1A6C1500A6AF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4DB60F631A1A6C1500A6AF18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4DB60F651A1A6C1500A6AF18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../hellomap3",
+				);
+				INFOPLIST_FILE = hellomap3swift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../hellomap3/Nuti.framework/Versions/A",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "hellomap3swift/hellomap3swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4DB60F661A1A6C1500A6AF18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../hellomap3",
+				);
+				INFOPLIST_FILE = hellomap3swift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../hellomap3/Nuti.framework/Versions/A",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "hellomap3swift/hellomap3swift-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4DB60F401A1A6C1500A6AF18 /* Build configuration list for PBXProject "hellomap3swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DB60F621A1A6C1500A6AF18 /* Debug */,
+				4DB60F631A1A6C1500A6AF18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DB60F641A1A6C1500A6AF18 /* Build configuration list for PBXNativeTarget "hellomap3swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DB60F651A1A6C1500A6AF18 /* Debug */,
+				4DB60F661A1A6C1500A6AF18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4DB60F3D1A1A6C1500A6AF18 /* Project object */;
+}
