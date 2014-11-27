@@ -4,6 +4,7 @@
 #ifdef _NUTI_GDAL_SUPPORT
 
 #include "VectorDataSource.h"
+#include "core/MapBounds.h"
 
 #include <vector>
 
@@ -52,9 +53,33 @@ namespace Nuti {
 		 * @param simplifier The new geometry simplifier to use (can be null).
 		 */
 		void setGeometrySimplifier(const std::shared_ptr<GeometrySimplifier>& simplifier);
-
+		
+		/**
+		 * Returns the extent of this data source. Extent is the minimal bounding box encompassing all the elements.
+		 * @return The minimal bounding box for the elements.
+		 */
+		MapBounds getDataExtent() const;
+		
+		/**
+		 * Find the total feature count for this data source. For simple geometry, this corresponds to element count. In case of multigeometry, each feature is divided into multiple elements.
+		 * @return The feature count for the data source.
+		 */
+		int getFeatureCount() const;
+		
+		/**
+		 * Get the names of active layers.
+		 * @return The names of the used layers from the data source.
+		 */
+		std::vector<std::string> getActiveLayerNames() const;
+		
+		/**
+		 * Get the names of all layers in the data source. This list may contain layers that are not used.
+		 * @return The names of the layers contained in the data source.
+		 */
+		std::vector<std::string> getAvailableLayerNames() const;
+		
 		virtual std::vector<std::shared_ptr<VectorElement> > loadElements(const std::shared_ptr<CullState>& cullState);
-
+		
 	private:
 		struct LayerSpatialReference;
 
@@ -62,6 +87,8 @@ namespace Nuti {
 
 		std::shared_ptr<StyleSelector> _styleSelector;
 		std::shared_ptr<GeometrySimplifier> _geometrySimplifier;
+		std::vector<std::string> _activeLayerNames;
+		std::vector<std::string> _availableLayerNames;
 		OGRDataSource* _poDS;
 		std::vector<OGRLayer*> _poLayers;
 		std::map<OGRLayer*, std::shared_ptr<LayerSpatialReference> > _poLayerSpatialReferenceMap;

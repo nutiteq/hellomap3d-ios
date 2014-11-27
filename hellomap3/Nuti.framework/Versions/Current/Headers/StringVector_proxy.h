@@ -15,23 +15,22 @@
 extern "C" {
 #endif
 
-
-#import "NMLModelLODTreeDataSource_proxy.h"
-#import "Projection_proxy.h"
-
-/**
- * A sqlite database based data source for NML model LOD trees. The database must be created using<br>
- * custom toolkit from Nutiteq that supports several input formats like KMZ or GeoJSON.
- */
-@interface NTNMLModelLODTreeSqliteDataSource : NTNMLModelLODTreeDataSource
+__attribute__ ((visibility("default"))) @interface StringVector : NSObject
+{
+	void *swigCPtr;
+	BOOL swigCMemOwn;
+}
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
-/**
- * Constructs a NMLModelLODTreeSqliteDataSource object.<br>
- * @param projection The projection for the database. Currently only EPSG3857 is supported.<br>
- * @param fileName The file name of the sqlite database file.
- */
--(id)initWithProjection: (NTProjection*)projection fileName: (NSString*)fileName;
+-(id)init;
+-(unsigned long)size;
+-(unsigned long)capacity;
+-(void)reserve: (unsigned long)n;
+-(BOOL)isEmpty;
+-(void)clear;
+-(void)add: (NSString*)x;
+-(NSString*)get: (int)i;
+-(void)set: (int)i val: (NSString*)val;
 
 -(void)dealloc;
 

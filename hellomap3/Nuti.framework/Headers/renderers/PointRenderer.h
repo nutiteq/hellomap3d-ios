@@ -39,16 +39,16 @@ public:
 
 private:
 	static void BuildAndDrawBuffers(GLuint a_color,
-                                      GLuint a_coord,
-                                      GLuint a_texCoord,
-                                      std::vector<unsigned char>& colorBuf,
-                                      std::vector<float>& coordBuf,
-                                      std::vector<unsigned short>& indexBuf,
-                                      std::vector<float>& texCoordBuf,
-                                      std::vector<const PointDrawData*>& drawDataBuffer,
-                                      const MapBounds& texCoordBounds,
-                                      LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache,
-                                      const ViewState& viewState);
+									GLuint a_coord,
+									GLuint a_texCoord,
+									std::vector<unsigned char>& colorBuf,
+									std::vector<float>& coordBuf,
+									std::vector<unsigned short>& indexBuf,
+									std::vector<float>& texCoordBuf,
+									std::vector<std::shared_ptr<PointDrawData> >& drawDataBuffer,
+									const MapBounds& texCoordBounds,
+									LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache,
+									const ViewState& viewState);
     
     void drawBatch(LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache, const ViewState& viewState);
     void drawBuffers(int indexCount) const;
@@ -56,7 +56,7 @@ private:
 	std::vector<std::shared_ptr<Point> > _elements;
 	std::vector<std::shared_ptr<Point> > _tempElements;
     
-    std::vector<const PointDrawData*> _drawDataBuffer;
+	std::vector<std::shared_ptr<PointDrawData> > _drawDataBuffer;
 
     std::vector<unsigned char> _colorBuf;
 	std::vector<float> _coordBuf;

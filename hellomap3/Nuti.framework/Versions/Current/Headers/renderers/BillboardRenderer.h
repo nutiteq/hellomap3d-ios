@@ -56,7 +56,7 @@ private:
                                     std::vector<float>& coordBuf,
                                     std::vector<unsigned short>& indexBuf,
                                     std::vector<float>& texCoordBuf,
-                                    std::vector<const BillboardDrawData*>& drawDataBuffer,
+									std::vector<std::shared_ptr<BillboardDrawData> >& drawDataBuffer,
                                     const MapBounds& texCoordBounds,
                                     LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache,
                                     const ViewState& viewState);
@@ -68,7 +68,7 @@ private:
 	std::vector<std::shared_ptr<Billboard> > _elements;
 	std::vector<std::shared_ptr<Billboard> > _tempElements;
     
-    std::vector<const BillboardDrawData*> _drawDataBuffer;
+	std::vector<std::shared_ptr<BillboardDrawData> > _drawDataBuffer;
     
     std::vector<unsigned char> _colorBuf;
 	std::vector<float> _coordBuf;

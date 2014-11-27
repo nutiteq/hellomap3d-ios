@@ -1,7 +1,7 @@
 #ifndef WATERMARKRENDERER_H_
 #define WATERMARKRENDERER_H_
 
-#include "ui/BasemapView.h"
+#include "ui/BaseMapView.h"
 #include "utils/GLES2.h"
 #include "utils/LicenseUtils.h"
 

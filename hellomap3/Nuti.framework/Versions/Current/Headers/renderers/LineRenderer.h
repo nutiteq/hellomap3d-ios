@@ -55,7 +55,8 @@ private:
 	std::vector<std::shared_ptr<Line> > _elements;
 	std::vector<std::shared_ptr<Line> > _tempElements;
     
-    std::vector<const LineDrawData*> _drawDataBuffer;
+	std::vector<std::shared_ptr<LineDrawData> > _drawDataBuffer; // this buffer is used to keep objects alive
+    std::vector<const LineDrawData*> _lineDrawDataBuffer;
 
     std::vector<unsigned char> _colorBuf;
 	std::vector<float> _coordBuf;

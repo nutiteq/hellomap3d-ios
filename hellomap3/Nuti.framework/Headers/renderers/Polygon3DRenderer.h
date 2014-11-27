@@ -46,7 +46,7 @@ private:
                                     std::vector<unsigned char>& colorBuf,
                                     std::vector<float>& coordBuf,
                                     std::vector<float>& normalBuf,
-                                    std::vector<const Polygon3DDrawData*>& drawDataBuffer,
+									std::vector<std::shared_ptr<Polygon3DDrawData> >& drawDataBuffer,
                                     const ViewState& viewState);
     
     static std::shared_ptr<Bitmap> GetPolygon3DBitmap();
@@ -60,7 +60,7 @@ private:
 	std::vector<std::shared_ptr<Polygon3D> > _elements;
 	std::vector<std::shared_ptr<Polygon3D> > _tempElements;
     
-    std::vector<const Polygon3DDrawData*> _drawDataBuffer;
+	std::vector<std::shared_ptr<Polygon3DDrawData> > _drawDataBuffer;
 
     std::vector<unsigned char> _colorBuf;
 	std::vector<float> _coordBuf;

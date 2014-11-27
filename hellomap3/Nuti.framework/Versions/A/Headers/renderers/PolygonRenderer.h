@@ -44,7 +44,7 @@ private:
                                     std::vector<unsigned char>& colorBuf,
                                     std::vector<float>& coordBuf,
                                     std::vector<unsigned short>& indexBuf,
-                                    std::vector<const PolygonDrawData*>& drawDataBuffer,
+									std::vector<std::shared_ptr<PolygonDrawData> >& drawDataBuffer,
                                     LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache,
                                     const ViewState& viewState);
     
@@ -53,7 +53,7 @@ private:
 	std::vector<std::shared_ptr<Polygon> > _elements;
 	std::vector<std::shared_ptr<Polygon> > _tempElements;
     
-    std::vector<const PolygonDrawData*> _drawDataBuffer;
+	std::vector<std::shared_ptr<PolygonDrawData> > _drawDataBuffer;
     std::vector<const LineDrawData*> _lineDrawDataBuffer;
 
     std::vector<unsigned char> _colorBuf;
