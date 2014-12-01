@@ -97,21 +97,26 @@
     
     // Check the type of vector element
     NTVectorElement* vectorElement = [clickInfo getVectorElement];
-    if ([vectorElement isKindOfClass:[NTBillboard class]])
+	NSString* clickText = [vectorElement getMetaDataElement:@"ClickText"];
+	if (clickText == nil || [clickText length] == 0) {
+		return;
+	}
+
+	if ([vectorElement isKindOfClass:[NTBillboard class]])
     {
         NTBillboard* billboard = (NTBillboard*)vectorElement;
         // If the element is billboard, attach the click label to the billboard element
         clickPopup = [[NTBalloonPopup alloc] initWithBaseBillboard:billboard
                                                              style:[styleBuilder buildStyle]
-                                                             title:[billboard getMetaDataElement:@"ClickText"]
-                                                              desc:@""];
+                                                             title:clickText
+															 desc:@""];
     }
     else
     {
         // for lines and polygons set label to click location
         clickPopup = [[NTBalloonPopup alloc] initWithPos:[clickInfo getElementClickPos]
-                                                   style:[styleBuilder buildStyle]
-                                                   title:[vectorElement getMetaDataElement:@"ClickText"]
+													style:[styleBuilder buildStyle]
+													title:clickText
                                                     desc:@""];
     }
     [_vectorDataSource add:clickPopup];
