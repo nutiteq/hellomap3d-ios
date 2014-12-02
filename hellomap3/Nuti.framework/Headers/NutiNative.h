@@ -6,6 +6,7 @@
 #include "core/MapBounds.h"
 #include "core/MapEnvelope.h"
 #include "core/MapPos.h"
+#include "core/ScreenPos.h"
 #include "core/MapRange.h"
 #include "core/MapTile.h"
 #include "core/MapVec.h"
@@ -13,12 +14,10 @@
 
 #include "datasources/AssetTileDataSource.h"
 #include "datasources/HTTPTileDataSource.h"
-#include "datasources/KDTreeVectorDataSource.h"
 #include "datasources/MBTilesTileDataSource.h"
 #include "datasources/OnlineNMLModelLODTreeDataSource.h"
 #include "datasources/SqliteNMLModelLODTreeDataSource.h"
 #include "datasources/PersistentCacheTileDataSource.h"
-#include "datasources/UnculledVectorDataSource.h"
 #include "datasources/LocalVectorDataSource.h"
 #include "datasources/OGRVectorDataSource.h"
 

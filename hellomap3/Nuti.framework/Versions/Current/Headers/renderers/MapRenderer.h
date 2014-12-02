@@ -29,6 +29,7 @@ class Bitmap;
 class Layer;
 class Layers;
 class MapPos;
+class ScreenPos;
 class MapVec;
 class MapEventListener;
 class RedrawRequestListener;
@@ -75,8 +76,8 @@ public:
     void moveToFitPoints(const MapPos& center, const std::vector<MapPos>& points, float screenPadding,
                          bool integerZoom, bool resetTilt, bool resetRotation, float durationSeconds);
     
-	MapPos screenToWorld(const MapPos& screenPos, float offsetPercent) const;
-	MapPos worldToScreen(const MapPos& worldPos) const;
+	MapPos screenToWorld(const ScreenPos& screenPos, float offsetPercent) const;
+	ScreenPos worldToScreen(const MapPos& worldPos) const;
 
 	void onSurfaceCreated();
 	void onSurfaceChanged(int width, int height);

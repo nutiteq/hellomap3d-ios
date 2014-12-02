@@ -45,7 +45,7 @@ public:
                  const std::string& title, const std::string& desc);
     virtual ~BalloonPopup();
     
-    virtual std::shared_ptr<Bitmap> drawBitmap(const MapPos& anchorScreenPos,
+    virtual std::shared_ptr<Bitmap> drawBitmap(const ScreenPos& anchorScreenPos,
                                                float screenWidth, float screenHeight, float dpToPX);
     
     /**

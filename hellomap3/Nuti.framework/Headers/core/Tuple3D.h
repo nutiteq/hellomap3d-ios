@@ -52,7 +52,7 @@ public:
      * @param n The index of the requested coordinate.
      * @return The modifiable n-th coordinate of this tuple.
      */
-	double &operator[](std::size_t n);
+	double& operator[](std::size_t n);
 
     /**
      * Sets the x and y coordinates of this tuple.

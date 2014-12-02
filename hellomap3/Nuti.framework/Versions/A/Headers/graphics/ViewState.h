@@ -2,6 +2,7 @@
 #define VIEWSTATE_H_
 
 #include "core/MapPos.h"
+#include "core/ScreenPos.h"
 #include "core/MapVec.h"
 #include "components/Options.h"
 #include "graphics/Frustum.h"
@@ -293,14 +294,14 @@ public:
      * @param offsetPercent The percentage used to offset the resulting world space coordinate, in the range of [0..1].
      * @return The screen position projected into the map plane, in internal coordinates.
      */
-	MapPos screenToWorldPlane(const MapPos& screenPos, float offsetPercent) const;
+	MapPos screenToWorldPlane(const ScreenPos& screenPos, float offsetPercent) const;
     /**
      * Projects a world position onto the screen using the current view state.
      * @param worldPos The world position.
      * @param options The options object.
      * @return The world position projected onto the screen, in pixel coordinates.
      */
-	MapPos worldToScreen(const MapPos& worldPos, const Options& options) const;
+	ScreenPos worldToScreen(const MapPos& worldPos, const Options& options) const;
 
     /**
      * Returns the horizontal offset direction, caused by seamless panning horizontally over the map borders.

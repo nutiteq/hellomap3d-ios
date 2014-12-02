@@ -2,6 +2,7 @@
 #define POPUP_H_
 
 #include "vectorelements/Billboard.h"
+#include "core/ScreenPos.h"
 
 namespace Nuti {
 
@@ -44,7 +45,7 @@ public:
      * @param dpToPX The value used for converting display independent pixels (dp) to pixels (px).
      * @return The custom Popup bitmap.
      */
-	virtual std::shared_ptr<Bitmap> drawBitmap(const MapPos& anchorScreenPos,
+	virtual std::shared_ptr<Bitmap> drawBitmap(const ScreenPos& anchorScreenPos,
                                                 float screenWidth, float screenHeight, float dpToPX) = 0;
     
     /**

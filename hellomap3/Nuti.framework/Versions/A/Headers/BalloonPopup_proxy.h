@@ -53,7 +53,7 @@ __attribute__ ((visibility("default"))) @interface NTBalloonPopup : NTPopup
  * @param desc The description this balloon popup will display.
  */
 -(id)initWithPos: (NTMapPos*)pos style: (NTBalloonPopupStyle*)style title: (NSString*)title desc: (NSString*)desc;
--(NTBitmap*)drawBitmap: (NTMapPos*)anchorScreenPos screenWidth: (float)screenWidth screenHeight: (float)screenHeight dpToPX: (float)dpToPX;
+-(NTBitmap*)drawBitmap: (NTScreenPos*)anchorScreenPos screenWidth: (float)screenWidth screenHeight: (float)screenHeight dpToPX: (float)dpToPX;
 /**
  * Returns the title of this balloon popup.<br>
  * @return The title of this balloon popup.

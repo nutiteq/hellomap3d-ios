@@ -13,6 +13,7 @@ class CancelableThreadPool;
 class Layers;
 class MapBounds;
 class MapPos;
+class ScreenPos;
 class MapRenderer;
 class MapVec;
 class Options;
@@ -293,17 +294,17 @@ public:
     void setRedrawRequestListener(const std::shared_ptr<RedrawRequestListener>& listener);
     
     /**
-     * Calculates the world map position corresponding to a screen position, using the current view parameters.
+     * Calculates the map position corresponding to a screen position, using the current view parameters.
      * @param screenPos The screen position.
-     * @return The calculated world map position.
+     * @return The calculated map position in base projection coordinate system.
      */
-    MapPos screenToWorld(const MapPos& screenPos);
+    MapPos screenToMap(const ScreenPos& screenPos);
     /**
-     * Calculates the screen position corresponding to a world map position, using the current view parameters.
-     * @param worldPos The world map position.
+     * Calculates the screen position corresponding to a map position, using the current view parameters.
+     * @param mapPos The map position in base projection coordinate system.
      * @return The calculated screen position.
      */
-    MapPos worldToScreen(const MapPos& worldPos);
+    ScreenPos mapToScreen(const MapPos& mapPos);
     
     /**
      * Cancels all qued tasks such as tile and vector data fetches. Tasks that have already started

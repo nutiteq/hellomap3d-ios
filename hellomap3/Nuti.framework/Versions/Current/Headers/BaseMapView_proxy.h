@@ -20,6 +20,7 @@ extern "C" {
 #import "LicenseUtils_proxy.h"
 #import "MapBounds_proxy.h"
 #import "MapPos_proxy.h"
+#import "ScreenPos_proxy.h"
 #import "MapVec_proxy.h"
 #import "Options_proxy.h"
 
@@ -275,17 +276,17 @@ __attribute__ ((visibility("default"))) @interface NTBaseMapView : NSObject
  */
 -(void)setMapEventListener: (NTMapEventListener*)mapEventListener;
 /**
- * Calculates the world map position corresponding to a screen position, using the current view parameters.<br>
+ * Calculates the map position corresponding to a screen position, using the current view parameters.<br>
  * @param screenPos The screen position.<br>
- * @return The calculated world map position.
+ * @return The calculated map position in base projection coordinate system.
  */
--(NTMapPos*)screenToWorld: (NTMapPos*)screenPos;
+-(NTMapPos*)screenToMap: (NTScreenPos*)screenPos;
 /**
- * Calculates the screen position corresponding to a world map position, using the current view parameters.<br>
- * @param worldPos The world map position.<br>
+ * Calculates the screen position corresponding to a map position, using the current view parameters.<br>
+ * @param mapPos The map position in base projection coordinate system.<br>
  * @return The calculated screen position.
  */
--(NTMapPos*)worldToScreen: (NTMapPos*)worldPos;
+-(NTScreenPos*)mapToScreen: (NTMapPos*)mapPos;
 /**
  * Cancels all qued tasks such as tile and vector data fetches. Tasks that have already started<br>
  * may continue until they finish. Tasks that are added after this method call are not affected.

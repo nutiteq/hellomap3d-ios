@@ -24,7 +24,7 @@ public:
      * @param pos The position in the internal coordinate system.
      * @return The local scale for the specified position.
      */
-    virtual double getLocalScale(const MapPos &pos) const;
+    virtual double getLocalScale(const MapPos& pos) const;
     
     /**
      * Converts meters to approximate internal size at the specified position, towards specified direction.
@@ -33,7 +33,7 @@ public:
      * @param meters The meters.
      * @return The approximate size in internal coordinate system.
      */
-	double toInternalScale(const MapPos &pos, const MapVec& dir, double meters) const;
+	double toInternalScale(const MapPos& pos, const MapVec& dir, double meters) const;
     
     /**
      * Converts internal size to meters at the equator.
@@ -54,20 +54,20 @@ public:
      * @param pos The position in the internal coordiante system.
      * @return The transformed position in the coordinate system of this projection.
      */
-	virtual MapPos fromInternal(const MapPos &pos) const;
+	virtual MapPos fromInternal(const MapPos& pos) const;
     /**
      * Transforms a position from the coordinate system of this projection to the internal coordinate system.
      * @param pos The position in the coordinate system of this projection.
      * @return The transformed position in the internal coordinate system.
      */
-	virtual MapPos toInternal(const MapPos &pos) const;
+	virtual MapPos toInternal(const MapPos& pos) const;
     
     /**
      * Transforms a position from the WGS84 coordinate system to the coordinate system of this projection.
      * @param pos The position in the WGS84 coordinate system.
      * @return The transformed position in the coordinate system of this projection.
      */
-    virtual MapPos fromWgs84(const MapPos &pos) const = 0;
+    virtual MapPos fromWgs84(const MapPos& pos) const = 0;
     /**
      * Transforms a position from the coordinate system of this projection to the WGS84 coordinate system.
      * @param pos The position in the coordinate system of this projection.
@@ -82,7 +82,7 @@ public:
 	virtual std::string getName() const = 0;
 
 protected:
-	Projection(const MapBounds &bounds);
+	Projection(const MapBounds& bounds);
 
 	MapBounds _bounds;
     

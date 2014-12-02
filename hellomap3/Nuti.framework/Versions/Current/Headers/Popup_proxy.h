@@ -19,6 +19,7 @@ extern "C" {
 #import "Bitmap_proxy.h"
 #import "Billboard_proxy.h"
 #import "MapPos_proxy.h"
+#import "ScreenPos_proxy.h"
 #import "PopupStyle_proxy.h"
 
 /**
@@ -55,7 +56,7 @@ __attribute__ ((visibility("default"))) @interface NTPopup : NTBillboard
  * @param dpToPX The value used for converting display independent pixels (dp) to pixels (px).<br>
  * @return The custom Popup bitmap.
  */
--(NTBitmap*)drawBitmap: (NTMapPos*)anchorScreenPos screenWidth: (float)screenWidth screenHeight: (float)screenHeight dpToPX: (float)dpToPX;
+-(NTBitmap*)drawBitmap: (NTScreenPos*)anchorScreenPos screenWidth: (float)screenWidth screenHeight: (float)screenHeight dpToPX: (float)dpToPX;
 /**
  * Returns the horizontal anchor point of this popup.<br>
  * @return The horizontal anchor point of this popup.

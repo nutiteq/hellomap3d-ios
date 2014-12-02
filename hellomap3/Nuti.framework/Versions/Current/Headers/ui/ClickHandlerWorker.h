@@ -2,7 +2,7 @@
 #define CLICKHANDLERTASK_H_
 
 #include "components/ThreadWorker.h"
-#include "core/MapPos.h"
+#include "core/ScreenPos.h"
 
 #include <chrono>
 #include <condition_variable>
@@ -25,12 +25,12 @@ public:
 	void init();
 	void stop();
 
-	void pointer1Down(const MapPos& screenPos);
-	void pointer1Moved(const MapPos& screenPos);
+	void pointer1Down(const ScreenPos& screenPos);
+	void pointer1Moved(const ScreenPos& screenPos);
 	void pointer1Up();
 
-	void pointer2Down(const MapPos& screenPos);
-	void pointer2Moved(const MapPos& screenPos);
+	void pointer2Down(const ScreenPos& screenPos);
+	void pointer2Moved(const ScreenPos& screenPos);
 	void pointer2Up();
 
 	void cancel();
@@ -63,11 +63,11 @@ private:
 
 	int _pointersDown;
 
-	MapPos _pointer1Down;
-    MapPos _pointer1Moved;
+	ScreenPos _pointer1Down;
+    ScreenPos _pointer1Moved;
 	float _pointer1MovedSum;
-	MapPos _pointer2Down;
-    MapPos _pointer2Moved;
+	ScreenPos _pointer2Down;
+    ScreenPos _pointer2Moved;
 	float _pointer2MovedSum;
 
 	bool _chosen;

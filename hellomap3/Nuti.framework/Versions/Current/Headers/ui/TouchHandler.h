@@ -3,12 +3,15 @@
 
 #include "ClickHandlerWorker.h"
 #include "core/MapPos.h"
+#include "core/ScreenPos.h"
 #include "core/MapVec.h"
 
 #include <chrono>
 #include <memory>
 #include <thread>
 #include <vector>
+
+#include <cglib/vec.h>
 
 namespace Nuti {
 
@@ -31,14 +34,14 @@ public:
 	virtual ~TouchHandler();
     void deinit();
 
-	void onTouchEvent(int action, const MapPos& screenPos1, const MapPos& screenPos2);
+	void onTouchEvent(int action, const ScreenPos& screenPos1, const ScreenPos& screenPos2);
 
-	void click(const MapPos& screenPos) const;
-	void longClick(const MapPos& screenPos);
-	void doubleClick(const MapPos& screenPos) const;
-	void dualClick(const MapPos& screenPos1, const MapPos& screenPos2) const;
-	void startSinglePointer(const MapPos& screenPos);
-	void startDualPointer(const MapPos& screenPos1, const MapPos& screenPos2);
+	void click(const ScreenPos& screenPos) const;
+	void longClick(const ScreenPos& screenPos);
+	void doubleClick(const ScreenPos& screenPos) const;
+	void dualClick(const ScreenPos& screenPos1, const ScreenPos& screenPos2) const;
+	void startSinglePointer(const ScreenPos& screenPos);
+	void startDualPointer(const ScreenPos& screenPos1, const ScreenPos& screenPos2);
     
 protected:
     friend class BaseMapView;
@@ -46,12 +49,12 @@ protected:
     void setMapRenderer(std::shared_ptr<MapRenderer> mapRenderer);
 
 private:
-	double calculateRotatingScalingFactor(const MapVec& deltaPos1, const MapVec& deltaPos2);
+	double calculateRotatingScalingFactor(const cglib::vec2<float>& deltaPos1, const cglib::vec2<float>& deltaPos2);
 
-	void singlePointerPan(const MapPos& screenPos);
-	void dualPointerGuess(const MapPos& screenPos1, const MapPos& screenPos2);
-	void dualPointerTilt(const MapPos& screenPos);
-	void dualPointerPan(const MapPos& screenPos1, const MapPos& screenPos2, bool rotate, bool scale);
+	void singlePointerPan(const ScreenPos& screenPos);
+	void dualPointerGuess(const ScreenPos& screenPos1, const ScreenPos& screenPos2);
+	void dualPointerTilt(const ScreenPos& screenPos);
+	void dualPointerPan(const ScreenPos& screenPos1, const ScreenPos& screenPos2, bool rotate, bool scale);
 
 	static const int SINGLE_POINTER_CLICK_GUESS = 0;
 	static const int DUAL_POINTER_CLICK_GUESS = 1;
@@ -87,11 +90,11 @@ private:
 
 	int _panningMode;
 
-	MapPos _prevScreenPos1;
-	MapPos _prevScreenPos2;
+	ScreenPos _prevScreenPos1;
+	ScreenPos _prevScreenPos2;
 
-	MapVec _swipe1;
-	MapVec _swipe2;
+	cglib::vec2<float> _swipe1;
+	cglib::vec2<float> _swipe2;
 
 	bool _noDualPointerYet;
     std::chrono::time_point<std::chrono::system_clock> _dualPointerReleaseTime;

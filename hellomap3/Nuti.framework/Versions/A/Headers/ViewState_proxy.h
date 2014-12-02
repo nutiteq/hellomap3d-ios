@@ -18,6 +18,7 @@ extern "C" {
 
 #import "Frustum_proxy.h"
 #import "MapPos_proxy.h"
+#import "ScreenPos_proxy.h"
 #import "MapVec_proxy.h"
 #import "Matrices_proxy.h"
 #import "Options_proxy.h"
@@ -212,7 +213,7 @@ __attribute__ ((visibility("default"))) @interface NTViewState : NSObject
  * @param options The options object.<br>
  * @return The world position projected onto the screen, in pixel coordinates.
  */
--(NTMapPos*)worldToScreen: (NTMapPos*)worldPos options: (NTOptions*)options;
+-(NTScreenPos*)worldToScreen: (NTMapPos*)worldPos options: (NTOptions*)options;
 
 -(void)dealloc;
 
