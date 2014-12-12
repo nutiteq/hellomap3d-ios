@@ -31,6 +31,7 @@ __attribute__ ((visibility("default"))) @interface StringMap : NSObject
 -(void)set: (NSString*)key x: (NSString*)x;
 -(void)del: (NSString*)key;
 -(BOOL)has_key: (NSString*)key;
+-(NSString*)get_key: (unsigned int)idx;
 
 -(void)dealloc;
 

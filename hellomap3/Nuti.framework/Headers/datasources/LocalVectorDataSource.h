@@ -95,11 +95,13 @@ namespace Nuti {
 		 */
 		void setGeometrySimplifier(const std::shared_ptr<GeometrySimplifier>& simplifier);
 		
-	protected:
+	private:
 		std::shared_ptr<GeometrySimplifier> _geometrySimplifier;
 		std::shared_ptr<SpatialIndex<std::shared_ptr<VectorElement> > > _spatialIndex;
 		
 		unsigned int _elementId;
+
+		mutable std::mutex _mutex;
 	};
 	
 }

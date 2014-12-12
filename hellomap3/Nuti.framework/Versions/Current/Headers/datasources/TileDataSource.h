@@ -81,10 +81,10 @@ protected:
 	int _minZoom;
 	int _maxZoom;
 
-	mutable std::recursive_mutex _mutex;
-    
 private:
 	std::vector<std::shared_ptr<OnChangeListener> > _onChangeListeners;
+	mutable std::mutex _onChangeListenersMutex;
+	
 };
 
 }

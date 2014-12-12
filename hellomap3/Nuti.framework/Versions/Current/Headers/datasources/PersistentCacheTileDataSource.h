@@ -73,6 +73,8 @@ protected:
     
     CacheElementList _lruElements;
 	CacheElementItMap _mappedElements;
+	
+	mutable std::recursive_mutex _mutex;
 };
 
 }

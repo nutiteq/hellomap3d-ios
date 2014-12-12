@@ -273,6 +273,16 @@ public:
 	static cglib::mat4x4<double> GetLocalMat(const MapPos& mapPos, const Projection& proj);
 	cglib::mat4x4<float> getRTELocalMat(const MapPos &mapPos, const Projection &proj) const;
 
+	/**
+	 * Returns the screen width.
+	 * @return The current screen width.
+	 */
+	int getScreenWidth() const;
+	/**
+	 * Returns the screen height.
+	 * @return The current screen height.
+	 */
+	int getScreenHeight() const;
     /**
      * Sets the screen size. The view will be updated at the beginning of the next frame.
      * @param width The new width of the screen.

@@ -208,6 +208,16 @@ __attribute__ ((visibility("default"))) @interface NTViewState : NSObject
  */
 -(NTFrustum*)getFrustum;
 /**
+ * Returns the screen width.<br>
+ * @return The current screen width.
+ */
+-(int)getScreenWidth;
+/**
+ * Returns the screen height.<br>
+ * @return The current screen height.
+ */
+-(int)getScreenHeight;
+/**
  * Projects a world position onto the screen using the current view state.<br>
  * @param worldPos The world position.<br>
  * @param options The options object.<br>

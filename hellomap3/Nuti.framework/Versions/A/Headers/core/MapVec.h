@@ -121,7 +121,7 @@ public:
      * @param cos The cosine value of the rotation angle.
      * @return This map vector after the rotation.
      */
-	virtual MapVec& rotate2D(double sin, double cos);
+	MapVec& rotate2D(double sin, double cos);
     /**
      * Creates a new map vector by rotating this map vector around it's back end and around z axis.
      * @param sin The sine value of the rotation angle.

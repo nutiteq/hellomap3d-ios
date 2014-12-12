@@ -30,6 +30,7 @@ public:
 
 protected:
     LRUCache<long long, std::shared_ptr<std::vector<unsigned char> > > _cache;
+	mutable std::recursive_mutex _mutex;
 };
 
 }

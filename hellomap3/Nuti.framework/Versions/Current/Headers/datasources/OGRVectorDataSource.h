@@ -61,22 +61,35 @@ namespace Nuti {
 		MapBounds getDataExtent() const;
 		
 		/**
-		 * Find the total feature count for this data source. For simple geometry, this corresponds to element count. In case of multigeometry, each feature is divided into multiple elements.
+		 * Finds the total feature count for this data source. For simple geometry, this corresponds to element count. In case of multigeometry, each feature is divided into multiple elements.
 		 * @return The feature count for the data source.
 		 */
 		int getFeatureCount() const;
 		
 		/**
-		 * Get the names of active layers.
+		 * Returns the names of active layers.
 		 * @return The names of the used layers from the data source.
 		 */
 		std::vector<std::string> getActiveLayerNames() const;
 		
 		/**
-		 * Get the names of all layers in the data source. This list may contain layers that are not used.
+		 * Returns the names of all layers in the data source. This list may contain layers that are not used.
 		 * @return The names of the layers contained in the data source.
 		 */
 		std::vector<std::string> getAvailableLayerNames() const;
+		
+		/**
+		 * Sets global OGR configuration option. This method can be used to redefine default locale, for example.
+		 * @param name The name of the option parameter to set ("SHAPE_ENCODING", for example)
+		 * @param value The value of the parameter.
+		 */
+		void SetConfigOption(const std::string& name, const std::string& value);
+		/**
+		 * Returns the value of global OGR configuration option.
+		 * @param name The name of the the option parameter to read.
+		 * @return The value of the specified option parameter.
+		 */
+		std::string GetConfigOption(const std::string& name) const;
 		
 		virtual std::vector<std::shared_ptr<VectorElement> > loadElements(const std::shared_ptr<CullState>& cullState);
 		
@@ -92,6 +105,8 @@ namespace Nuti {
 		OGRDataSource* _poDS;
 		std::vector<OGRLayer*> _poLayers;
 		std::map<OGRLayer*, std::shared_ptr<LayerSpatialReference> > _poLayerSpatialReferenceMap;
+		
+		mutable std::mutex _mutex;
 	};
 }
 

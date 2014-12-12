@@ -18,9 +18,10 @@ extern "C" {
 
 #import "Layers_proxy.h"
 #import "LicenseUtils_proxy.h"
-#import "MapBounds_proxy.h"
 #import "MapPos_proxy.h"
+#import "MapBounds_proxy.h"
 #import "ScreenPos_proxy.h"
+#import "ScreenBounds_proxy.h"
 #import "MapVec_proxy.h"
 #import "Options_proxy.h"
 
@@ -247,24 +248,24 @@ __attribute__ ((visibility("default"))) @interface NTBaseMapView : NSObject
 /**
  * Animate the view parameters (focus position, tilt, rotation, zoom) so that the specified bounding box becomes fully visible.<br>
  * This method does not work before the screen size is set.<br>
- * @param bounds The bounding box to be made visible in the base projection's coordinate system.<br>
- * @param screenPadding The amount of padding to add to the edges of the screen in screen density independent pixels (dp).<br>
+ * @param mapBounds The bounding box on the map to be made visible in the base projection's coordinate system.<br>
+ * @param screenBounds The screen bounding box where to fit the map bounding box.<br>
  * @param integerZoom If true, then closest integer zoom level will be used. If false, exact fractional zoom level will be used.<br>
  * @param durationSeconds The duration in which the operation will be completed in seconds.
  */
--(void)moveToFitBounds: (NTMapBounds*)bounds screenPadding: (float)screenPadding integerZoom: (BOOL)integerZoom durationSeconds: (float)durationSeconds;
+-(void)moveToFitBounds: (NTMapBounds*)mapBounds screenBounds: (NTScreenBounds*)screenBounds integerZoom: (BOOL)integerZoom durationSeconds: (float)durationSeconds;
 /**
  * Animate the view parameters (focus position, tilt, rotation, zoom) so that the specified bounding box becomes fully visible.<br>
  * Also supports resetting the tilt and rotation angles over the course of the animation.<br>
  * This method does not work before the screen size is set.<br>
- * @param bounds The bounding box to be made visible in the base projection's coordinate system.<br>
- * @param screenPadding The amount of padding to add to the edges of the screen in screen density independent pixels (dp). <br>
+ * @param mapBounds The bounding box on the map to be made visible in the base projection's coordinate system.<br>
+ * @param screenBounds The screen bounding box where to fit the map bounding box.<br>
  * @param integerZoom If true, then closest integer zoom level will be used. If false, exact fractional zoom level will be used.<br>
  * @param resetTilt If true, view will be untilted. If false, current tilt will be kept.<br>
  * @param resetRotation If true, rotation will be reset. If false, current rotation will be kept.<br>
  * @param durationSeconds The duration in which the operation will be completed in seconds.
  */
--(void)moveToFitBounds: (NTMapBounds*)bounds screenPadding: (float)screenPadding integerZoom: (BOOL)integerZoom resetRotation: (BOOL)resetRotation resetTilt: (BOOL)resetTilt durationSeconds: (float)durationSeconds;
+-(void)moveToFitBounds: (NTMapBounds*)mapBounds screenBounds: (NTScreenBounds*)screenBounds integerZoom: (BOOL)integerZoom resetRotation: (BOOL)resetRotation resetTilt: (BOOL)resetTilt durationSeconds: (float)durationSeconds;
 /**
  * Returns the map event listener. May be null.<br>
  * @return The map event listener.

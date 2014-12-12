@@ -106,11 +106,9 @@ protected:
     
     std::shared_ptr<Projection> _projection;
 
-	mutable std::mutex _mutex;
-
 private:
-	std::vector<std::shared_ptr<OnChangeListener> > _onChangeListeners;
-
+	std::shared_ptr<std::vector<std::shared_ptr<OnChangeListener> > > _onChangeListeners;
+	mutable std::mutex _onChangeListenersMutex;
 };
 
 }

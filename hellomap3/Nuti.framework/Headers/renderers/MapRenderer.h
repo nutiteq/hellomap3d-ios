@@ -30,6 +30,7 @@ class Layer;
 class Layers;
 class MapPos;
 class ScreenPos;
+class ScreenBounds;
 class MapVec;
 class MapEventListener;
 class RedrawRequestListener;
@@ -73,7 +74,7 @@ public:
     void calculateCameraEvent(CameraTiltEvent& cameraEvent, float durationSeconds, bool updateKinetic);
     void calculateCameraEvent(CameraZoomEvent& cameraEvent, float durationSeconds, bool updateKinetic);
 
-    void moveToFitPoints(const MapPos& center, const std::vector<MapPos>& points, float screenPadding,
+    void moveToFitPoints(const MapPos& center, const std::vector<MapPos>& points, const ScreenBounds& screenBounds,
                          bool integerZoom, bool resetTilt, bool resetRotation, float durationSeconds);
     
 	MapPos screenToWorld(const ScreenPos& screenPos, float offsetPercent) const;

@@ -70,21 +70,21 @@ public:
      */
 	const MapPos& getMin() const;
     /**
-     * Returns the modifiable minimum map position of this map envelope object.
-     * @return The modifiable minimum map position of this map envelope object.
+     * Sets the minimum map position of this map envelope object.
+     * @param min The new minimum map position of this map envelope object.
      */
-	MapPos& getMin();
+	void setMin(const MapPos& min);
 
     /**
      * Returns the maximum map position of this map envelope object.
      * @return The maximum map position of this map envelope object.
      */
 	const MapPos& getMax() const;
-    /**
-     * Returns the modifiable maximum map position of this map envelope object.
-     * @return The modifiable maximum map position of this map envelope object.
-     */
-	MapPos& getMax();
+	/**
+	 * Sets the maximum map position of this map envelope object.
+	 * @param max The new maximum map position of this map envelope object.
+	 */
+	void setMax(const MapPos& max);
 
     /**
      * Tests whether this map bounds object contains a map position.
