@@ -49,7 +49,7 @@ __attribute__ ((visibility("default"))) @interface NTLayers : NSObject
  * Returns a list of layers. The layers are in the order in which they were added.<br>
  * @return A vector of all previously added layers.
  */
--(LayerVector*)getLayers;
+-(NTLayerVector*)getLayers;
 
 -(void)dealloc;
 

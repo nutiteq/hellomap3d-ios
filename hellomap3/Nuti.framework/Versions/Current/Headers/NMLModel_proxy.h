@@ -35,13 +35,13 @@ __attribute__ ((visibility("default"))) @interface NTNMLModel : NTVectorElement
  * @param geometry The geometry object that defines the location of this model.<br>
  * @param sourceModelData Serialized data for 3D model.
  */
--(id)initWithGeometry: (NTGeometry*)geometry sourceModelData: (UnsignedCharVector*)sourceModelData;
+-(id)initWithGeometry: (NTGeometry*)geometry sourceModelData: (NTUnsignedCharVector*)sourceModelData;
 /**
  * Constructs a NMLModel object from a map position and serialized model data.<br>
  * @param pos The map position that defines the location of this model.<br>
  * @param sourceModelData Serialized data for 3D model.
  */
--(id)initWithPos: (NTMapPos*)pos sourceModelData: (UnsignedCharVector*)sourceModelData;
+-(id)initWithPos: (NTMapPos*)pos sourceModelData: (NTUnsignedCharVector*)sourceModelData;
 -(NTMapBounds*)getBounds;
 /**
  * Sets the location for this model.<br>

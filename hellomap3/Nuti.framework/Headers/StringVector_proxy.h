@@ -15,7 +15,7 @@
 extern "C" {
 #endif
 
-__attribute__ ((visibility("default"))) @interface StringVector : NSObject
+__attribute__ ((visibility("default"))) @interface NTStringVector : NSObject
 {
 	void *swigCPtr;
 	BOOL swigCMemOwn;

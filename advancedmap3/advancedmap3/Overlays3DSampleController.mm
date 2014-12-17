@@ -26,7 +26,7 @@
 	NTPolygon3DStyleBuilder* polygon3DStyleBuilder = [[NTPolygon3DStyleBuilder alloc] init];
 	[polygon3DStyleBuilder setColor:[[NTColor alloc] initWithColor:0xFF3333FF]];
 	
-	MapPosVector* polygon3DPoses = [[MapPosVector alloc] init];
+	NTMapPosVector* polygon3DPoses = [[NTMapPosVector alloc] init];
 	[polygon3DPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.635930 y:59.416659]]];
 	[polygon3DPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.642453 y:59.411354]]];
 	[polygon3DPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.646187 y:59.409607]]];
@@ -35,8 +35,8 @@
 	[polygon3DPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.646444 y:59.416245]]];
 	
 	// Create 3D polygon holes poses
-	MapPosVectorVector* polygon3DHoles = [[MapPosVectorVector alloc] init];
-	[polygon3DHoles add:[[MapPosVector alloc] init]];
+	NTMapPosVectorVector* polygon3DHoles = [[NTMapPosVectorVector alloc] init];
+	[polygon3DHoles add:[[NTMapPosVector alloc] init]];
 	[[polygon3DHoles get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.643409 y:59.411922]]];
 	[[polygon3DHoles get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.651207 y:59.412896]]];
 	[[polygon3DHoles get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.643207 y:59.414411]]];
@@ -54,7 +54,7 @@
 	[[self getLayers] add:nmlLayer];
 	
 	// Add a single 3D model to map
-	UnsignedCharVector* modelData = [NTAssetUtils loadBytes:@"fcd_auto.nml"];
+	NTUnsignedCharVector* modelData = [NTAssetUtils loadBytes:@"fcd_auto.nml"];
 	NTMapPos* pos = [proj fromWgs84:[[NTMapPos alloc] initWithX:24.646469 y:59.424939]];
 	NTNMLModel* model = [[NTNMLModel alloc] initWithPos:pos sourceModelData:modelData];
 	[model setMetaDataElement:@"ClickText" element:@"My nice car"];

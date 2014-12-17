@@ -49,7 +49,7 @@ __attribute__ ((visibility("default"))) @interface NTVectorDataSource : NSObject
  * @param cullState State for describing view parameters and conservative view envelope.<br>
  * @return The vector of loaded vector elements. If no elements are available, null may be returned.
  */
--(VectorElementVector*)loadElements: (NTCullState*)cullState;
+-(NTVectorElementVector*)loadElements: (NTCullState*)cullState;
 /**
  * Notifies listeners that all vector elements have changed. This method refreshes all the existing <br>
  * vector elements in the data source.

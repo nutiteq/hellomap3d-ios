@@ -29,24 +29,24 @@ __attribute__ ((visibility("default"))) @interface NTPolygonGeometry : NTGeometr
  * Constructs a PolygonGeometry objects from an outer ring.<br>
  * @param poses The list of map positions defining the outer ring.
  */
--(id)initWithPoses: (MapPosVector*)poses;
+-(id)initWithPoses: (NTMapPosVector*)poses;
 /**
  * Constructs a PolygonGeometry objects from an outer ring and list of inner rings (holes).<br>
  * @param poses The list of map positions defining the outer ring.<br>
  * @param holes The list of map position lists defining the inner rings.
  */
--(id)initWithPoses: (MapPosVector*)poses holes: (MapPosVectorVector*)holes;
+-(id)initWithPoses: (NTMapPosVector*)poses holes: (NTMapPosVectorVector*)holes;
 -(NTMapPos*)getCenterPos;
 /**
  * Returns the list of map positions defining the outer ring of the polygon.<br>
  * @return The list of map positions defining the outer ring of the polygon.
  */
--(MapPosVector*)getPoses;
+-(NTMapPosVector*)getPoses;
 /**
  * Returns the list of map position lists defining the inner rings of the polygon (holes).<br>
  * @return The list of map position lists defining the inner rings of the polygon (holes).
  */
--(MapPosVectorVector*)getHoles;
+-(NTMapPosVectorVector*)getHoles;
 
 -(void)dealloc;
 

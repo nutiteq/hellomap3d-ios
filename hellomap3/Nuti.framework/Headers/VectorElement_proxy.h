@@ -61,12 +61,12 @@ __attribute__ ((visibility("default"))) @interface NTVectorElement : NSObject
  * Returns a modifiable meta data map. Users may add their data as key-value pairs.<br>
  * @return The modifiable meta data map of this vector element.
  */
--(StringMap*)getMetaData;
+-(NTStringMap*)getMetaData;
 /**
  * Sets a new meta data map for the vector element. Old meta data values will be lost.<br>
  * @param metaData The new meta data map for this vector element.
  */
--(void)setMetaData: (StringMap*)metaData;
+-(void)setMetaData: (NTStringMap*)metaData;
 /**
  * Returns a meta data element corresponding to the key. If no value is found an empty string is returned.<br>
  * @return The value corresponding to the key from the meta data map. May be null.

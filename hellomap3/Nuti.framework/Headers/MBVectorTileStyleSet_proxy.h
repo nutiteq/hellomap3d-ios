@@ -33,7 +33,7 @@ __attribute__ ((visibility("default"))) @interface NTMBVectorTileStyleSet : NSOb
  * Constructs a styleset from byte vector.<br>
  * @param data Opaque byte vector describing the style set.
  */
--(id)initWithData: (UnsignedCharVector*)data;
+-(id)initWithData: (NTUnsignedCharVector*)data;
 
 -(void)dealloc;
 

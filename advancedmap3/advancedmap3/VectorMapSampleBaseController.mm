@@ -56,7 +56,7 @@
 		styleAssetName = @"osmbright.zip";
 		styleBuildings3D = YES;
 	}
-	UnsignedCharVector *vectorTileStyleSetData = [NTAssetUtils loadBytes:styleAssetName];
+	NTUnsignedCharVector *vectorTileStyleSetData = [NTAssetUtils loadBytes:styleAssetName];
 	NTMBVectorTileStyleSet *vectorTileStyleSet = [[NTMBVectorTileStyleSet alloc] initWithData:vectorTileStyleSetData];
 
 	// Create vector tile decoder using the styleset and update style parameters

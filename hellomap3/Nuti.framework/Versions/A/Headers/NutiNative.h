@@ -1,5 +1,5 @@
-#ifndef NUTINATIVE_H_
-#define NUTINATIVE_H_
+#ifndef _NUTINATIVE_H_
+#define _NUTINATIVE_H_
 
 #include "components/Options.h"
 
@@ -7,6 +7,7 @@
 #include "core/MapEnvelope.h"
 #include "core/MapPos.h"
 #include "core/ScreenPos.h"
+#include "core/ScreenBounds.h"
 #include "core/MapRange.h"
 #include "core/MapTile.h"
 #include "core/MapVec.h"
