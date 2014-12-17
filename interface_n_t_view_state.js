@@ -15,14 +15,16 @@ var interface_n_t_view_state =
     [ "getHalfHeight", "interface_n_t_view_state.html#ab493de2e7795ca245dbbad54c39897da", null ],
     [ "getHalfWidth", "interface_n_t_view_state.html#a069f52c077e1669cb2e4a03fd56a49e3", null ],
     [ "getHeight", "interface_n_t_view_state.html#ae6135f7103d739303f5e61e94ef8ca03", null ],
-    [ "getModelviewMat", "interface_n_t_view_state.html#a0c2c24315450b495f6c37940cc2a95c4", null ],
-    [ "getModelviewProjectionMat", "interface_n_t_view_state.html#a713d6f5992f75c2cfc8634ecd2aab017", null ],
+    [ "getModelviewMat", "interface_n_t_view_state.html#a0216db5fb0cfef18540d843fa87862ac", null ],
+    [ "getModelviewProjectionMat", "interface_n_t_view_state.html#aece6f6682e67b0d082ee16ce5e865513", null ],
     [ "getNear", "interface_n_t_view_state.html#adab27d8bd705db9cb2fa8ffc6c2d326f", null ],
-    [ "getProjectionMat", "interface_n_t_view_state.html#a9be115f2ca7255918120273d92b700a2", null ],
+    [ "getProjectionMat", "interface_n_t_view_state.html#aa58e648e2ce4c84922857d1a2ea07aab", null ],
     [ "getProjectionMode", "interface_n_t_view_state.html#a3fc23d4b6d4a20dc8e36594589b8975c", null ],
     [ "getRotation", "interface_n_t_view_state.html#af68bc590070bdf3e06ad143795010769", null ],
-    [ "getRTEModelviewMat", "interface_n_t_view_state.html#a4674b93e5a74974cdb18426d70f402c1", null ],
-    [ "getRTEModelviewProjectionMat", "interface_n_t_view_state.html#a6bed9b7521daac20fa47309621c94d95", null ],
+    [ "getRTEModelviewMat", "interface_n_t_view_state.html#a266c0613be28b6e5cc67649179920c62", null ],
+    [ "getRTEModelviewProjectionMat", "interface_n_t_view_state.html#a1823e1543515b0cfc02159fd3b5233f8", null ],
+    [ "getScreenHeight", "interface_n_t_view_state.html#a95c2c74ffe34dc0cb8b3ac2dc563d4ce", null ],
+    [ "getScreenWidth", "interface_n_t_view_state.html#ad8251c2b9214c36ea13c6cdb5e895977", null ],
     [ "getTanHalfFOVX", "interface_n_t_view_state.html#a4df5a9e25cde61da16aeb8ad74008a9a", null ],
     [ "getTanHalfFOVY", "interface_n_t_view_state.html#a70b3ba8480467f2c59c2487cb052ecbb", null ],
     [ "getTilt", "interface_n_t_view_state.html#a73d5fac9112ac5e67de7dcaf049f975c", null ],
@@ -33,5 +35,5 @@ var interface_n_t_view_state =
     [ "getZoom", "interface_n_t_view_state.html#a19ddaf2960540a21f156e26fd7713ccb", null ],
     [ "getZoom0Distance", "interface_n_t_view_state.html#afd324b55469dd69fee93a1b41d189c63", null ],
     [ "isCameraChanged", "interface_n_t_view_state.html#a4fe74c4db77176e6d3779183a482e22d", null ],
-    [ "worldToScreen:options:", "interface_n_t_view_state.html#a806269b54f9ace157015f445e91925b3", null ]
+    [ "worldToScreen:options:", "interface_n_t_view_state.html#a9d0b844853026e55407147c0d42218c8", null ]
 ];

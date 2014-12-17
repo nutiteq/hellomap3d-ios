@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK iOs: NTVectorDataSource Class Reference</title>
+<title>Nutiteq Maps SDK 3 iOs: NTVectorDataSource Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK iOs
-   &#160;<span id="projectnumber">3.0.0 beta</span>
+   <div id="projectname">Nutiteq Maps SDK 3 iOs
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -104,8 +104,7 @@ Inheritance diagram for NTVectorDataSource:</div>
  <div class="center">
   <img src="interface_n_t_vector_data_source.png" usemap="#NTVectorDataSource_map" alt=""/>
   <map id="NTVectorDataSource_map" name="NTVectorDataSource_map">
-<area href="interface_n_t_k_d_tree_vector_data_source.html" alt="NTKDTreeVectorDataSource" shape="rect" coords="0,56,182,80"/>
-<area href="interface_n_t_unculled_vector_data_source.html" alt="NTUnculledVectorDataSource" shape="rect" coords="192,56,374,80"/>
+<area href="interface_n_t_local_vector_data_source.html" alt="NTLocalVectorDataSource" shape="rect" coords="0,56,164,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -115,8 +114,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:aa835fb45dc78897683b24f09814e6cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9a192b42c917e69cf2d5dc82350a170"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_projection.html">NTProjection</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_vector_data_source.html#ad9a192b42c917e69cf2d5dc82350a170">getProjection</a></td></tr>
 <tr class="separator:ad9a192b42c917e69cf2d5dc82350a170"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4df90d9ed6d24ea1614c589a3861cfde"><td class="memItemLeft" align="right" valign="top">(VectorElementVector *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_vector_data_source.html#a4df90d9ed6d24ea1614c589a3861cfde">loadElements:</a></td></tr>
-<tr class="separator:a4df90d9ed6d24ea1614c589a3861cfde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40312f7601e024201905df46b8ec951c"><td class="memItemLeft" align="right" valign="top">(NTVectorElementVector *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_vector_data_source.html#a40312f7601e024201905df46b8ec951c">loadElements:</a></td></tr>
+<tr class="separator:a40312f7601e024201905df46b8ec951c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6304f3c44f7b30dbafdea2c7a32ef8da"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_vector_data_source.html#a6304f3c44f7b30dbafdea2c7a32ef8da">notifyElementsChanged</a></td></tr>
 <tr class="separator:a6304f3c44f7b30dbafdea2c7a32ef8da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -167,16 +166,16 @@ Instance Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="interface_n_t_unculled_vector_data_source.html#af99ab738d9bdff6353ecbcbb532db491">NTUnculledVectorDataSource</a>, and <a class="el" href="interface_n_t_k_d_tree_vector_data_source.html#ab77dc77ac39d4398f3ca0d722c974da5">NTKDTreeVectorDataSource</a>.</p>
+<p>Implemented in <a class="el" href="interface_n_t_local_vector_data_source.html#a206d003394a7b10d099cc14b7e81ff3e">NTLocalVectorDataSource</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a4df90d9ed6d24ea1614c589a3861cfde"></a>
+<a class="anchor" id="a40312f7601e024201905df46b8ec951c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (VectorElementVector*) loadElements: </td>
+          <td class="memname">- (NTVectorElementVector*) loadElements: </td>
           <td></td>
           <td class="paramtype">(<a class="el" href="interface_n_t_cull_state.html">NTCullState</a> *)&#160;</td>
           <td class="paramname"><em>cullState</em></td>
@@ -195,7 +194,7 @@ Instance Methods</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The vector of loaded vector elements. If no elements are available, null may be returned. </dd></dl>
 
-<p>Implemented in <a class="el" href="interface_n_t_unculled_vector_data_source.html#aa3785480d1649edf872231140f3df038">NTUnculledVectorDataSource</a>, and <a class="el" href="interface_n_t_k_d_tree_vector_data_source.html#a976b3e11b14b41500cc33220c7b84c3f">NTKDTreeVectorDataSource</a>.</p>
+<p>Implemented in <a class="el" href="interface_n_t_local_vector_data_source.html#a4becc242488cb5ec004b0603657f4365">NTLocalVectorDataSource</a>.</p>
 
 </div>
 </div>
@@ -217,7 +216,7 @@ Instance Methods</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>generated/proxies/<a class="el" href="_vector_data_source__proxy_8h_source.html">VectorDataSource_proxy.h</a></li>
+<li>tmp-doxygen/<a class="el" href="_vector_data_source__proxy_8h_source.html">VectorDataSource_proxy.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -225,7 +224,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_vector_data_source.html">NTVectorDataSource</a></li>
-    <li class="footer">Generated on Sat Oct 4 2014 14:21:05 for Nutiteq Maps SDK iOs by
+    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK iOs: generated/proxies/RasterTileLayer_proxy.h Source File</title>
+<title>Nutiteq Maps SDK 3 iOs: tmp-doxygen/RasterTileLayer_proxy.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK iOs
-   &#160;<span id="projectnumber">3.0.0 beta</span>
+   <div id="projectname">Nutiteq Maps SDK 3 iOs
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -111,15 +111,15 @@ $(document).ready(function(){initNavTree('_raster_tile_layer__proxy_8h_source.ht
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;RasterTileDataSource_proxy.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;TileDataSource_proxy.h&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;TileLayer_proxy.h&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#import &quot;TileLoadListener_proxy.h&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="interface_n_t_raster_tile_layer.html">   26</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_n_t_raster_tile_layer.html">NTRasterTileLayer</a> : <a class="code" href="interface_n_t_tile_layer.html">NTTileLayer</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="interface_n_t_raster_tile_layer.html">   26</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_raster_tile_layer.html">NTRasterTileLayer</a> : <a class="code" href="interface_n_t_tile_layer.html">NTTileLayer</a></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;-(void*)getCptr;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;-(<a class="code" href="interface_n_t_tile_data_source.html">NTTileDataSource</a>*)<a class="code" href="interface_n_t_raster_tile_layer.html#ad684f1b80575ee60cbbcecf6337eec88">getDataSource</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;-(id)initWithDataSource: (<a class="code" href="interface_n_t_raster_tile_data_source.html">NTRasterTileDataSource</a>*)dataSource;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;-(id)initWithDataSource: (<a class="code" href="interface_n_t_tile_data_source.html">NTTileDataSource</a>*)dataSource;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;-(<a class="code" href="interface_n_t_tile_data_source.html">NTTileDataSource</a>*)<a class="code" href="interface_n_t_raster_tile_layer.html#ad684f1b80575ee60cbbcecf6337eec88">getDataSource</a>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;-(int)<a class="code" href="interface_n_t_raster_tile_layer.html#aa65e8cc9ab14e03d3b54db98c78696a1">getFrameNr</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;-(void)setFrameNr: (<span class="keywordtype">int</span>)frameNr;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;-(BOOL)<a class="code" href="interface_n_t_raster_tile_layer.html#a59f16d00208931277b3571e5e148b884">isSynchronizedRefresh</a>;</div>
@@ -128,20 +128,20 @@ $(document).ready(function(){initNavTree('_raster_tile_layer__proxy_8h_source.ht
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;-(void)setTileLoadListener: (<a class="code" href="interface_n_t_tile_load_listener.html">NTTileLoadListener</a>*)tileLoadListener;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;-(int)<a class="code" href="interface_n_t_raster_tile_layer.html#a20ecc33d9f3628875351841bc8cd5235">getTextureCacheCapacity</a>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;-(void)setTextureCacheCapacity: (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)capacityInBytes;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;-(void)dealloc;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;-(void)clearTileCaches: (BOOL)all;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;-(void)dealloc;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">@end</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor"></span></div>
-<div class="ttc" id="interface_n_t_raster_tile_data_source_html"><div class="ttname"><a href="interface_n_t_raster_tile_data_source.html">NTRasterTileDataSource</a></div><div class="ttdef"><b>Definition:</b> RasterTileDataSource_proxy.h:26</div></div>
-<div class="ttc" id="interface_n_t_raster_tile_layer_html_ad684f1b80575ee60cbbcecf6337eec88"><div class="ttname"><a href="interface_n_t_raster_tile_layer.html#ad684f1b80575ee60cbbcecf6337eec88">-[NTRasterTileLayer getDataSource]</a></div><div class="ttdeci">NTTileDataSource * getDataSource()</div><div class="ttdef"><b>Definition:</b> RasterTileLayer_proxy.mm:26</div></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="interface_n_t_raster_tile_layer_html_ad684f1b80575ee60cbbcecf6337eec88"><div class="ttname"><a href="interface_n_t_raster_tile_layer.html#ad684f1b80575ee60cbbcecf6337eec88">-[NTRasterTileLayer getDataSource]</a></div><div class="ttdeci">NTTileDataSource * getDataSource()</div><div class="ttdef"><b>Definition:</b> RasterTileLayer_proxy.mm:31</div></div>
 <div class="ttc" id="interface_n_t_raster_tile_layer_html_a3b71d1ebe9bc18a0d84db0c345d7c64d"><div class="ttname"><a href="interface_n_t_raster_tile_layer.html#a3b71d1ebe9bc18a0d84db0c345d7c64d">-[NTRasterTileLayer getTileLoadListener]</a></div><div class="ttdeci">NTTileLoadListener * getTileLoadListener()</div><div class="ttdef"><b>Definition:</b> RasterTileLayer_proxy.mm:61</div></div>
-<div class="ttc" id="interface_n_t_tile_data_source_html"><div class="ttname"><a href="interface_n_t_tile_data_source.html">NTTileDataSource</a></div><div class="ttdef"><b>Definition:</b> TileDataSource_proxy.h:40</div></div>
+<div class="ttc" id="interface_n_t_tile_data_source_html"><div class="ttname"><a href="interface_n_t_tile_data_source.html">NTTileDataSource</a></div><div class="ttdef"><b>Definition:</b> TileDataSource_proxy.h:26</div></div>
 <div class="ttc" id="interface_n_t_tile_layer_html"><div class="ttname"><a href="interface_n_t_tile_layer.html">NTTileLayer</a></div><div class="ttdef"><b>Definition:</b> TileLayer_proxy.h:25</div></div>
 <div class="ttc" id="interface_n_t_tile_load_listener_html"><div class="ttname"><a href="interface_n_t_tile_load_listener.html">NTTileLoadListener</a></div><div class="ttdef"><b>Definition:</b> TileLoadListener_proxy.h:21</div></div>
 <div class="ttc" id="interface_n_t_raster_tile_layer_html_a20ecc33d9f3628875351841bc8cd5235"><div class="ttname"><a href="interface_n_t_raster_tile_layer.html#a20ecc33d9f3628875351841bc8cd5235">-[NTRasterTileLayer getTextureCacheCapacity]</a></div><div class="ttdeci">int getTextureCacheCapacity()</div><div class="ttdef"><b>Definition:</b> RasterTileLayer_proxy.mm:76</div></div>
@@ -153,8 +153,8 @@ $(document).ready(function(){initNavTree('_raster_tile_layer__proxy_8h_source.ht
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_84fc5dba3506812825191c0c043e3c97.html">generated</a></li><li class="navelem"><a class="el" href="dir_3334d4c9ec8f5b0c232438c1e5914065.html">proxies</a></li><li class="navelem"><b>RasterTileLayer_proxy.h</b></li>
-    <li class="footer">Generated on Sat Oct 4 2014 14:21:05 for Nutiteq Maps SDK iOs by
+    <li class="navelem"><a class="el" href="dir_39407a35a676e69a760fd4862d1e3e08.html">tmp-doxygen</a></li><li class="navelem"><b>RasterTileLayer_proxy.h</b></li>
+    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

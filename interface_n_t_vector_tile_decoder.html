@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK iOs: NTVectorTileDecoder Class Reference</title>
+<title>Nutiteq Maps SDK 3 iOs: NTVectorTileDecoder Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK iOs
-   &#160;<span id="projectnumber">3.0.0 beta</span>
+   <div id="projectname">Nutiteq Maps SDK 3 iOs
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -116,6 +116,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a80cdb29c429d27a8635d6e799898b0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8584357e9201940e1dc5c630eb686c66"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_vector_tile_decoder.html#a8584357e9201940e1dc5c630eb686c66">getMaxZoom</a></td></tr>
 <tr class="separator:a8584357e9201940e1dc5c630eb686c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51c8ce2ece7cf1ad1ddbac20e4cda0e8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_vector_tile_decoder.html#a51c8ce2ece7cf1ad1ddbac20e4cda0e8">notifyDecoderChanged</a></td></tr>
+<tr class="separator:a51c8ce2ece7cf1ad1ddbac20e4cda0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for vector tile decoders. </p>
@@ -180,9 +182,26 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a51c8ce2ece7cf1ad1ddbac20e4cda0e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) notifyDecoderChanged </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Notifies listeners that the decoder parameters have changed. Action taken depends on the implementation of the<br/>
+ listeners, but generally all cached tiles will be reloaded. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>generated/proxies/<a class="el" href="_vector_tile_decoder__proxy_8h_source.html">VectorTileDecoder_proxy.h</a></li>
-<li>generated/proxies/VectorTileDecoder_proxy.mm</li>
+<li>tmp-doxygen/<a class="el" href="_vector_tile_decoder__proxy_8h_source.html">VectorTileDecoder_proxy.h</a></li>
+<li>tmp-doxygen/VectorTileDecoder_proxy.mm</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -190,7 +209,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_vector_tile_decoder.html">NTVectorTileDecoder</a></li>
-    <li class="footer">Generated on Sat Oct 4 2014 14:21:05 for Nutiteq Maps SDK iOs by
+    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

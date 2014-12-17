@@ -1,12 +1,10 @@
 var interface_n_t_map_vec =
 [
     [ "add:", "interface_n_t_map_vec.html#a099210f5f2375cafbbe857726b0d1b3e", null ],
-    [ "addThis:", "interface_n_t_map_vec.html#a3cd19a50a7466aec5a9cd022c3a984d3", null ],
     [ "crossProduct2D:", "interface_n_t_map_vec.html#a91e34fb9be7d771c1e1aede04fdcd101", null ],
     [ "crossProduct3D:", "interface_n_t_map_vec.html#a0cbdc44ef6826aa4fe9a03fb38042ff1", null ],
     [ "differs:", "interface_n_t_map_vec.html#af02e60deddb578d41f34a90d3311ed29", null ],
     [ "div:", "interface_n_t_map_vec.html#a127d85be074d2cf74ee3b249570eb602", null ],
-    [ "divThis:", "interface_n_t_map_vec.html#a003715f20e08b368006d0a500f5bf104", null ],
     [ "dotProduct:", "interface_n_t_map_vec.html#aeba3c697ab28c328f01849830a882e94", null ],
     [ "equals:", "interface_n_t_map_vec.html#a23f9e22d0b686e2a7f371475f4748c60", null ],
     [ "getNormalized", "interface_n_t_map_vec.html#ac7b18f3eb6cf3aaf82c102714739e737", null ],
@@ -17,10 +15,6 @@ var interface_n_t_map_vec =
     [ "length", "interface_n_t_map_vec.html#a60e637f1a371c7feae7739047eb64e78", null ],
     [ "lengthSqr", "interface_n_t_map_vec.html#afc25bd94a04696893ce4f229f15415e6", null ],
     [ "mul:", "interface_n_t_map_vec.html#a92e439f09ce86ae694219b32e264ebaa", null ],
-    [ "mulThis:", "interface_n_t_map_vec.html#a26d8b245f2189128d7d094c673b27efe", null ],
-    [ "normalize", "interface_n_t_map_vec.html#a6b50f5f7ff44b9cbcefe536162d246a4", null ],
-    [ "rotate2D:cos:", "interface_n_t_map_vec.html#aeacce4b837625b1d2320864e07cd9696", null ],
     [ "sub:", "interface_n_t_map_vec.html#a1c3fcec20e5cb488c0f89743f3f1867c", null ],
-    [ "subThis:", "interface_n_t_map_vec.html#a2d6c384256e115c142a4a81a2df4eb1b", null ],
     [ "toString", "interface_n_t_map_vec.html#a2b2e012bf821cdbc1adca93ace84c5fe", null ]
 ];

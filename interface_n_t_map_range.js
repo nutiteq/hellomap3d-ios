@@ -8,8 +8,5 @@ var interface_n_t_map_range =
     [ "initWithMin:max:", "interface_n_t_map_range.html#a2b9e5776dba7c46e31165e5f28a98e1c", null ],
     [ "inRange:", "interface_n_t_map_range.html#a63d5b7cf0e12ecc4c9d548e9e214f7be", null ],
     [ "length", "interface_n_t_map_range.html#a4992a4fe177484f85b6c2b8446cc3023", null ],
-    [ "setMax:", "interface_n_t_map_range.html#ae08b2fcfe9da7a5e8025efa85e82fbb2", null ],
-    [ "setMin:", "interface_n_t_map_range.html#a746bbcb9b5b0cec9f8176034f86d6c29", null ],
-    [ "setRange:max:", "interface_n_t_map_range.html#a3212379d199d4f341384fb76654282d7", null ],
     [ "toString", "interface_n_t_map_range.html#acadc722c9ceaa1e46536b9338422dbe8", null ]
 ];

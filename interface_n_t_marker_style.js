@@ -6,5 +6,5 @@ var interface_n_t_marker_style =
     [ "getOrientationMode", "interface_n_t_marker_style.html#a0542aac8baba753177bc4ee9caa6f1c4", null ],
     [ "getScalingMode", "interface_n_t_marker_style.html#a915aceda19b2bff9574feffa31c37a9c", null ],
     [ "getSize", "interface_n_t_marker_style.html#ad568a90c117c7ef351a0dbbd5dd88142", null ],
-    [ "initWithColor:attachAnchorPointX:attachAnchorPointY:causesOverlap:hideIfOverlapped:horizontalOffset:verticalOffset:placementPriority:scaleWidthDPI:anchorPointX:anchorPointY:bitmap:orientationMode:scalingMode:size:", "interface_n_t_marker_style.html#aa932f42f61aa195bacf73bf77366834c", null ]
+    [ "initWithColor:attachAnchorPointX:attachAnchorPointY:causesOverlap:hideIfOverlapped:horizontalOffset:verticalOffset:placementPriority:scaleWithDPI:anchorPointX:anchorPointY:bitmap:orientationMode:scalingMode:size:", "interface_n_t_marker_style.html#ae0192e8cc63d01c17dfa9bf474bb3ae5", null ]
 ];

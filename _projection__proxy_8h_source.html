@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK iOs: generated/proxies/Projection_proxy.h Source File</title>
+<title>Nutiteq Maps SDK 3 iOs: tmp-doxygen/Projection_proxy.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK iOs
-   &#160;<span id="projectnumber">3.0.0 beta</span>
+   <div id="projectname">Nutiteq Maps SDK 3 iOs
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('_projection__proxy_8h_source.html','')
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;MapBounds_proxy.h&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;MapPos_proxy.h&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="interface_n_t_projection.html">   25</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="interface_n_t_projection.html">NTProjection</a> : NSObject</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="interface_n_t_projection.html">   25</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_projection.html">NTProjection</a> : NSObject</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> *swigCPtr;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    BOOL swigCMemOwn;</div>
@@ -126,16 +126,17 @@ $(document).ready(function(){initNavTree('_projection__proxy_8h_source.html','')
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;-(double)fromInternalScale: (<span class="keywordtype">double</span>)size;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;-(<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)fromWgs84: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)pos;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;-(<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)toWgs84: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)pos;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;-(void)dealloc;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;-(NSString*)getName;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;-(void)dealloc;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="interface_n_t_map_pos_html"><div class="ttname"><a href="interface_n_t_map_pos.html">NTMapPos</a></div><div class="ttdef"><b>Definition:</b> MapPos_proxy.h:27</div></div>
 <div class="ttc" id="interface_n_t_projection_html"><div class="ttname"><a href="interface_n_t_projection.html">NTProjection</a></div><div class="ttdef"><b>Definition:</b> Projection_proxy.h:25</div></div>
 <div class="ttc" id="interface_n_t_map_bounds_html"><div class="ttname"><a href="interface_n_t_map_bounds.html">NTMapBounds</a></div><div class="ttdef"><b>Definition:</b> MapBounds_proxy.h:26</div></div>
@@ -144,8 +145,8 @@ $(document).ready(function(){initNavTree('_projection__proxy_8h_source.html','')
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_84fc5dba3506812825191c0c043e3c97.html">generated</a></li><li class="navelem"><a class="el" href="dir_3334d4c9ec8f5b0c232438c1e5914065.html">proxies</a></li><li class="navelem"><b>Projection_proxy.h</b></li>
-    <li class="footer">Generated on Sat Oct 4 2014 14:21:05 for Nutiteq Maps SDK iOs by
+    <li class="navelem"><a class="el" href="dir_39407a35a676e69a760fd4862d1e3e08.html">tmp-doxygen</a></li><li class="navelem"><b>Projection_proxy.h</b></li>
+    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

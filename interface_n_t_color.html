@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK iOs: NTColor Class Reference</title>
+<title>Nutiteq Maps SDK 3 iOs: NTColor Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK iOs
-   &#160;<span id="projectnumber">3.0.0 beta</span>
+   <div id="projectname">Nutiteq Maps SDK 3 iOs
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -121,8 +121,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a876e20385579abb85bc69473868f0790"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af74e866767c85df5da10d8420279c895"><td class="memItemLeft" align="right" valign="top">(unsigned char)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_color.html#af74e866767c85df5da10d8420279c895">getA</a></td></tr>
 <tr class="separator:af74e866767c85df5da10d8420279c895"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb7b9ce7cb93a0b7eb17fe9515115bae"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_color.html#afb7b9ce7cb93a0b7eb17fe9515115bae">getHex</a></td></tr>
-<tr class="separator:afb7b9ce7cb93a0b7eb17fe9515115bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada95d30d66dbefd2eee16858f604d1d"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_color.html#aada95d30d66dbefd2eee16858f604d1d">getARGB</a></td></tr>
+<tr class="separator:aada95d30d66dbefd2eee16858f604d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6db4bfa47939ab1d5d7c8b921a01cd2"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_color.html#af6db4bfa47939ab1d5d7c8b921a01cd2">toString</a></td></tr>
 <tr class="separator:af6db4bfa47939ab1d5d7c8b921a01cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -199,6 +199,24 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aada95d30d66dbefd2eee16858f604d1d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int) getARGB </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Encodes this map color into 32-bit integer value (ARGB format).<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>The encoded 32-bit integer representation of this map color. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a876e20385579abb85bc69473868f0790"></a>
 <div class="memitem">
 <div class="memproto">
@@ -232,24 +250,6 @@ Instance Methods</h2></td></tr>
 <p>Returns the green component of this map color.<br/>
  </p>
 <dl class="section return"><dt>Returns</dt><dd>The green component in the [0..255] range. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="afb7b9ce7cb93a0b7eb17fe9515115bae"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (int) getHex </td>
-          <td></td>
-          <td class="paramname"></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Encodes this map color into 32-bit integer value.<br/>
- </p>
-<dl class="section return"><dt>Returns</dt><dd>The encoded 32-bit integer representation of this map color. </dd></dl>
 
 </div>
 </div>
@@ -384,8 +384,8 @@ Instance Methods</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>generated/proxies/<a class="el" href="_color__proxy_8h_source.html">Color_proxy.h</a></li>
-<li>generated/proxies/Color_proxy.mm</li>
+<li>tmp-doxygen/<a class="el" href="_color__proxy_8h_source.html">Color_proxy.h</a></li>
+<li>tmp-doxygen/Color_proxy.mm</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -393,7 +393,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_color.html">NTColor</a></li>
-    <li class="footer">Generated on Sat Oct 4 2014 14:21:05 for Nutiteq Maps SDK iOs by
+    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

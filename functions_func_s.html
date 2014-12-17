@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK iOs: Class Members - Functions</title>
+<title>Nutiteq Maps SDK 3 iOs: Class Members - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK iOs
-   &#160;<span id="projectnumber">3.0.0 beta</span>
+   <div id="projectname">Nutiteq Maps SDK 3 iOs
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -92,8 +92,8 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 &#160;
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
-<li>screenToWorld:
-: <a class="el" href="interface_n_t_base_map_view.html#a2216f275a611934a540d81f035829a6e">NTBaseMapView</a>
+<li>screenToMap:
+: <a class="el" href="interface_n_t_base_map_view.html#a7eff99c63c20dbc2dd30f82b48883a2a">NTBaseMapView</a>
 </li>
 <li>setAmbientLight:
 : <a class="el" href="interface_n_t_options.html#a280897aa99ea43c6a51776915b2fb519">NTOptions</a>
@@ -115,20 +115,15 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <li>setBaseProjection:
 : <a class="el" href="interface_n_t_options.html#ab2bbe316f4e8d8c10a19efc124b11e40">NTOptions</a>
 </li>
-<li>setBillboardScale:
-: <a class="el" href="interface_n_t_m_b_vector_tile_decoder.html#aa6be07bfe40e69a710edeaa336f28bbb">NTMBVectorTileDecoder</a>
-</li>
 <li>setBitmap:
 : <a class="el" href="interface_n_t_line_style_builder.html#a53de6efad5649db69f5d803f7e726cca">NTLineStyleBuilder</a>
 , <a class="el" href="interface_n_t_marker_style_builder.html#a9cb9ef1c7f72dd498e7a13b66d6a766a">NTMarkerStyleBuilder</a>
 , <a class="el" href="interface_n_t_point_style_builder.html#a8bcb17a44dd504b4f960732ec870dbec">NTPointStyleBuilder</a>
 </li>
-<li>setBounds:max:
-: <a class="el" href="interface_n_t_map_bounds.html#a18686f9a928ca2614f207647aeaabeea">NTMapBounds</a>
-</li>
 <li>setCapacity:
-: <a class="el" href="interface_n_t_compressed_cache_raster_tile_data_source.html#ad30d7677be95c876172de0b278a1f978">NTCompressedCacheRasterTileDataSource</a>
-, <a class="el" href="interface_n_t_persistent_cache_raster_tile_data_source.html#ab77666835c1087860ea1eb4640d88a53">NTPersistentCacheRasterTileDataSource</a>
+: <a class="el" href="interface_n_t_cache_tile_data_source.html#adcc6e16c0dcf3469be74202ad9ea57f7">NTCacheTileDataSource</a>
+, <a class="el" href="interface_n_t_compressed_cache_tile_data_source.html#a5f45d6939b25408513465bd5eeeb48b9">NTCompressedCacheTileDataSource</a>
+, <a class="el" href="interface_n_t_persistent_cache_tile_data_source.html#a4a94a1dd697d60bfe5e1d61c66fbffae">NTPersistentCacheTileDataSource</a>
 </li>
 <li>setCausesOverlap:
 : <a class="el" href="interface_n_t_billboard_style_builder.html#aa5dd8032e3bdef2a1a80a77ae4af6682">NTBillboardStyleBuilder</a>
@@ -145,14 +140,14 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <li>setColor:
 : <a class="el" href="interface_n_t_style_builder.html#a28a2deba1a0668acebc234155aa68bc5">NTStyleBuilder</a>
 </li>
-<li>setCoordsWithX:y:
-: <a class="el" href="interface_n_t_tuple3_d.html#a9cea60671761c39769e5f9f4295587f9">NTTuple3D</a>
-</li>
-<li>setCoordsWithX:y:z:
-: <a class="el" href="interface_n_t_tuple3_d.html#a374ea6982e44954532b82039b0467290">NTTuple3D</a>
+<li>setCoords:y:
+: <a class="el" href="interface_n_t_screen_pos.html#a3a7519e5788bf649fd683398fab1cdab">NTScreenPos</a>
 </li>
 <li>setCornerRadius:
 : <a class="el" href="interface_n_t_balloon_popup_style_builder.html#a2b0f188a1e5032d697103a07f22b9363">NTBalloonPopupStyleBuilder</a>
+</li>
+<li>setCurrentStyle:
+: <a class="el" href="interface_n_t_m_b_vector_tile_decoder.html#a54be5159b6bf411ede45166593f9bbe5">NTMBVectorTileDecoder</a>
 </li>
 <li>setDescription:
 : <a class="el" href="interface_n_t_balloon_popup.html#abfad7da3f98499607c6db8d2c88b7fa6">NTBalloonPopup</a>
@@ -200,15 +195,15 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 : <a class="el" href="interface_n_t_raster_tile_layer.html#a4b4dbce6dfc6c7320ec4c8379c1c3ce5">NTRasterTileLayer</a>
 </li>
 <li>setGeometry:
-: <a class="el" href="interface_n_t_billboard.html#af7357c96d09d90c7cc5630f18523d510">NTBillboard</a>
+: <a class="el" href="interface_n_t_billboard.html#a974acf400d9ba0d91b433e7cce1b9320">NTBillboard</a>
 , <a class="el" href="interface_n_t_line.html#a960073ff52979290592a7f97dd0284dd">NTLine</a>
-, <a class="el" href="interface_n_t_n_m_l_model.html#a80f910a1f8d17b47a799788892c2a0b5">NTNMLModel</a>
+, <a class="el" href="interface_n_t_n_m_l_model.html#a770380b89ba7b4f670ced097342a347d">NTNMLModel</a>
 , <a class="el" href="interface_n_t_point.html#a6f45ba672adca1e20c6b31bfc340b60b">NTPoint</a>
 , <a class="el" href="interface_n_t_polygon.html#ab85b8aed5d6c105b60421e32325f76a2">NTPolygon</a>
 , <a class="el" href="interface_n_t_polygon3_d.html#a30e67c9ea617f66a9d6cc0ed2ded0c5d">NTPolygon3D</a>
 </li>
-<li>setGeometryScale:
-: <a class="el" href="interface_n_t_m_b_vector_tile_decoder.html#a70e6c776cfdc09440c9f6f2b8fd2e48b">NTMBVectorTileDecoder</a>
+<li>setGeometrySimplifier:
+: <a class="el" href="interface_n_t_local_vector_data_source.html#aadda66ea616b4518c8d2ff50e03676fb">NTLocalVectorDataSource</a>
 </li>
 <li>setHeight:
 : <a class="el" href="interface_n_t_polygon3_d.html#a90b0b264aa21df6d265ce4210ff9889c">NTPolygon3D</a>
@@ -256,22 +251,16 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 : <a class="el" href="interface_n_t_options.html#aefc57527abba5e5c440cc800539a3b65">NTOptions</a>
 </li>
 <li>setMapEventListener:
-: <a class="el" href="interface_n_t_options.html#ab122316359b17f52c9f54e19c09feffe">NTOptions</a>
-</li>
-<li>setMax:
-: <a class="el" href="interface_n_t_map_range.html#ae08b2fcfe9da7a5e8025efa85e82fbb2">NTMapRange</a>
+: <a class="el" href="interface_n_t_base_map_view.html#a537d86c51a08f39d2bef2c41af658528">NTBaseMapView</a>
 </li>
 <li>setMaxMemorySize:
 : <a class="el" href="interface_n_t_n_m_l_model_l_o_d_tree_layer.html#a586576d95ae5fc7b6fc5d6f11ff39962">NTNMLModelLODTreeLayer</a>
 </li>
 <li>setMetaData:
-: <a class="el" href="interface_n_t_vector_element.html#a9b0aea9f3546327310f1d3bd98195a94">NTVectorElement</a>
+: <a class="el" href="interface_n_t_vector_element.html#a5aec3cf7a153748f8c39188e7114a677">NTVectorElement</a>
 </li>
 <li>setMetaDataElement:element:
 : <a class="el" href="interface_n_t_vector_element.html#ac1129e843cbb88471be4d844858734af">NTVectorElement</a>
-</li>
-<li>setMin:
-: <a class="el" href="interface_n_t_map_range.html#a746bbcb9b5b0cec9f8176034f86d6c29">NTMapRange</a>
 </li>
 <li>setOrientationMode:
 : <a class="el" href="interface_n_t_label_style_builder.html#a1c9a9e1f15d5e18cd41b7824e2fbdfec">NTLabelStyleBuilder</a>
@@ -283,6 +272,9 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <li>setPanningMode:
 : <a class="el" href="interface_n_t_options.html#a8af8ef0af5d23375ad4870caf6902861">NTOptions</a>
 </li>
+<li>setParentTileReplacement:
+: <a class="el" href="interface_n_t_tile_layer.html#a5c711ede701e727a0038d576f9bcb570">NTTileLayer</a>
+</li>
 <li>setPlacementPriority:
 : <a class="el" href="interface_n_t_billboard_style_builder.html#aa1e852d7ccf503e91e2beb32fbc0dff5">NTBillboardStyleBuilder</a>
 </li>
@@ -292,13 +284,13 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 , <a class="el" href="interface_n_t_point.html#a4f56af487f908303586b6ae791e883f9">NTPoint</a>
 </li>
 <li>setPoses:
-: <a class="el" href="interface_n_t_line.html#a537e37d9508c434a6d437f5ed22f03f5">NTLine</a>
-, <a class="el" href="interface_n_t_polygon.html#aaccaa9afa782ad9c18351bf2673379ba">NTPolygon</a>
-, <a class="el" href="interface_n_t_polygon3_d.html#aaf39e3ac09c2d6bb5468a1aeb8290c5a">NTPolygon3D</a>
+: <a class="el" href="interface_n_t_line.html#a0421dbba84410abcca266b9915f1d4ce">NTLine</a>
+, <a class="el" href="interface_n_t_polygon.html#a39e3d3a98f716efae88ec6bf8342e340">NTPolygon</a>
+, <a class="el" href="interface_n_t_polygon3_d.html#ace0b4754803c53f2e5f2fcc5d318edb4">NTPolygon3D</a>
 </li>
 <li>setPoses:holes:
-: <a class="el" href="interface_n_t_polygon.html#a8bf96cbce4d969316d66847105f5bbb9">NTPolygon</a>
-, <a class="el" href="interface_n_t_polygon3_d.html#a914256fdb60923c0d3da8af17c15ff0e">NTPolygon3D</a>
+: <a class="el" href="interface_n_t_polygon.html#a540d526e3fc8023b3495ec83ed2ca441">NTPolygon</a>
+, <a class="el" href="interface_n_t_polygon3_d.html#ad5be53fec00c198927488549697c91fa">NTPolygon3D</a>
 </li>
 <li>setPreloading:
 : <a class="el" href="interface_n_t_tile_layer.html#a1b4ca7d180fb0629ed645eb37c16c017">NTTileLayer</a>
@@ -307,10 +299,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 : <a class="el" href="interface_n_t_layer.html#a2bae210e8bb58843d8a279dc1c93c5fe">NTLayer</a>
 </li>
 <li>setProjectionMode:
-: <a class="el" href="interface_n_t_options.html#aa25e8608edd0d32e766e69f88d521f2f">NTOptions</a>
-</li>
-<li>setRange:max:
-: <a class="el" href="interface_n_t_map_range.html#a3212379d199d4f341384fb76654282d7">NTMapRange</a>
+: <a class="el" href="interface_n_t_options.html#a9aed93b3dbc730e4c51ef26791e9e27c">NTOptions</a>
 </li>
 <li>setRightColor:
 : <a class="el" href="interface_n_t_balloon_popup_style_builder.html#acefa54a2798c280888f8d9c5fcf277e0">NTBalloonPopupStyleBuilder</a>
@@ -349,6 +338,18 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <li>setSeamlessPanning:
 : <a class="el" href="interface_n_t_options.html#a70d65a3506d328fe7c86e3be4726fe2d">NTOptions</a>
 </li>
+<li>SetShowDebug:
+: <a class="el" href="interface_n_t_log.html#a294488880a69f9ed5bb88762941c838e">NTLog</a>
+</li>
+<li>SetShowError:
+: <a class="el" href="interface_n_t_log.html#a725895f556739e6cfa0a161e96a22af8">NTLog</a>
+</li>
+<li>SetShowInfo:
+: <a class="el" href="interface_n_t_log.html#adbbcb777e0a8d861e08ed15f414c5188">NTLog</a>
+</li>
+<li>SetShowWarn:
+: <a class="el" href="interface_n_t_log.html#aa31321c46d7d3f11d2aa9696b9dbee12">NTLog</a>
+</li>
 <li>setSize:
 : <a class="el" href="interface_n_t_marker_style_builder.html#aa0291ac00f129068e185f1e086517b7b">NTMarkerStyleBuilder</a>
 , <a class="el" href="interface_n_t_point_style_builder.html#a91f1454bee6c25274eb07021b65b8b9f">NTPointStyleBuilder</a>
@@ -377,6 +378,18 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 , <a class="el" href="interface_n_t_polygon3_d.html#a0b9ee2ee0ba046e07716b3f5085e2290">NTPolygon3D</a>
 , <a class="el" href="interface_n_t_popup.html#aa451b9f8e94baee686e9e1bce1dadab5">NTPopup</a>
 , <a class="el" href="interface_n_t_text.html#adff0d4e128197375e384c305d2b1dfbc">NTText</a>
+</li>
+<li>setStyleBoolParameter:value:
+: <a class="el" href="interface_n_t_m_b_vector_tile_decoder.html#ad5a0d32474df7b3695e4ba7474f0d77a">NTMBVectorTileDecoder</a>
+</li>
+<li>setStyleFloatParameter:value:
+: <a class="el" href="interface_n_t_m_b_vector_tile_decoder.html#acb4f17eb44a910208d7986f870eb46f6">NTMBVectorTileDecoder</a>
+</li>
+<li>setStyleIntParameter:value:
+: <a class="el" href="interface_n_t_m_b_vector_tile_decoder.html#aef278833659006a67115eab34d99ee1a">NTMBVectorTileDecoder</a>
+</li>
+<li>setStyleStringParameter:value:
+: <a class="el" href="interface_n_t_m_b_vector_tile_decoder.html#a8fbec9663d6aaeb1cec6ce5dc9087196">NTMBVectorTileDecoder</a>
 </li>
 <li>setSynchronizedRefresh:
 : <a class="el" href="interface_n_t_raster_tile_layer.html#afd98e15d1ffd2974c9cde1570a2c97eb">NTRasterTileLayer</a>
@@ -451,17 +464,17 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <li>setWatermarkPaddingX:paddingY:
 : <a class="el" href="interface_n_t_options.html#afd66870321947c0db17f24e98080d3a3">NTOptions</a>
 </li>
+<li>setWatermarkScale:
+: <a class="el" href="interface_n_t_options.html#ae9c93e209fdd4cabb3d352f70a2f70e8">NTOptions</a>
+</li>
 <li>setWidth:
 : <a class="el" href="interface_n_t_line_style_builder.html#ae018cad8d4de19b3c88c6f83a1cdb75c">NTLineStyleBuilder</a>
 </li>
 <li>setX:
-: <a class="el" href="interface_n_t_tuple3_d.html#aefa57126aed8fd45012f2db583932238">NTTuple3D</a>
+: <a class="el" href="interface_n_t_screen_pos.html#a6cef99e27f10901d196c4b0c6f67d7ba">NTScreenPos</a>
 </li>
 <li>setY:
-: <a class="el" href="interface_n_t_tuple3_d.html#ac9f8e727833ddcdf13be265409fc37f6">NTTuple3D</a>
-</li>
-<li>setZ:
-: <a class="el" href="interface_n_t_tuple3_d.html#ad46c4b4646177fe3f8394f258a8bb634">NTTuple3D</a>
+: <a class="el" href="interface_n_t_screen_pos.html#a82619ef90f5084834b7464a44167de63">NTScreenPos</a>
 </li>
 <li>setZoom:durationSeconds:
 : <a class="el" href="interface_n_t_base_map_view.html#a86559f7ceb3281c2afb8538181563523">NTBaseMapView</a>
@@ -469,8 +482,15 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <li>setZoom:targetPos:durationSeconds:
 : <a class="el" href="interface_n_t_base_map_view.html#aa040a809aec4e7ef7b4a143ab17a05e1">NTBaseMapView</a>
 </li>
+<li>setZoomLevelBias:
+: <a class="el" href="interface_n_t_tile_layer.html#a6d4f0fb9e51e82f6af2f0c78bba63914">NTTileLayer</a>
+</li>
 <li>setZoomRange:
 : <a class="el" href="interface_n_t_options.html#aafcf7a7b86048747f8c165f2dc09bbe9">NTOptions</a>
+</li>
+<li>simplify:scale:
+: <a class="el" href="interface_n_t_douglas_peucker_geometry_simplifier.html#af9f5e626962ff2cd5a2a3e2062b0fcf0">NTDouglasPeuckerGeometrySimplifier</a>
+, <a class="el" href="interface_n_t_geometry_simplifier.html#a3eab7e4b587b0bfe050f8a73f591f977">NTGeometrySimplifier</a>
 </li>
 <li>sphereIntersects:radius:
 : <a class="el" href="interface_n_t_frustum.html#a25a34cb56cbd14fa536975fc24f6b3c9">NTFrustum</a>
@@ -484,10 +504,6 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <li>subPos:
 : <a class="el" href="interface_n_t_map_pos.html#a825979d6358149cf13467424ee352df1">NTMapPos</a>
 </li>
-<li>subThis:
-: <a class="el" href="interface_n_t_map_pos.html#ab0b227a6ae042d2ecf3c9a187adfe861">NTMapPos</a>
-, <a class="el" href="interface_n_t_map_vec.html#a2d6c384256e115c142a4a81a2df4eb1b">NTMapVec</a>
-</li>
 <li>subVec:
 : <a class="el" href="interface_n_t_map_pos.html#a98c5ebeecf40e092e48aa8398b89cd13">NTMapPos</a>
 </li>
@@ -497,7 +513,7 @@ $(document).ready(function(){initNavTree('functions_func_s.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Oct 4 2014 14:21:06 for Nutiteq Maps SDK iOs by
+    <li class="footer">Generated on Wed Dec 17 2014 18:21:39 for Nutiteq Maps SDK 3 iOs by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
