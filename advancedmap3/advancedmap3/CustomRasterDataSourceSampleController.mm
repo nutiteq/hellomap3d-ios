@@ -1,7 +1,7 @@
-#import <Nuti/Nuti.h>
+#import "MapSampleBaseController.h"
 #import "MyMergedRasterTileDataSource.h"
 
-@interface CustomRasterDataSourceSampleController : NTMapViewController
+@interface CustomRasterDataSourceSampleController : MapSampleBaseController
 
 @end
 
@@ -34,11 +34,6 @@
 	//[rasterLayer setPreloading:NO];
 	// Add the previous raster layer to the map
 	[[self getLayers] add:rasterLayer];
-}
-
-- (void)didReceiveMemoryWarning
-{
-	[super didReceiveMemoryWarning];
 }
 
 @end

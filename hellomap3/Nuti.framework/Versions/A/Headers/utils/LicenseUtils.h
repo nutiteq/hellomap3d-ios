@@ -8,6 +8,7 @@
 #define _NUTI_LICENSEUTILS_H_
 
 #include <string>
+#include <mutex>
 
 namespace Nuti {
     
@@ -35,6 +36,7 @@ namespace Nuti {
         static WatermarkType::WatermarkType CheckLicense(const std::string& licenseString,
                                                          PlatformType::PlatformType platformType,
                                                          const std::string& appIdentifier);
+		static std::string GetUserKey();
         
     private:
         static const std::string LICENSE_PREFIX;
@@ -42,6 +44,10 @@ namespace Nuti {
         static const std::string PUBLIC_KEY;
         
         static const std::string PRODUCT_VERSION;
+		
+		static std::mutex _Mutex;
+		
+		static std::string _UserKey;
     };
     
 }

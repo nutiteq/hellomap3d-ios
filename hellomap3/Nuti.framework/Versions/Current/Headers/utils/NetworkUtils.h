@@ -16,7 +16,7 @@ namespace Nuti {
 
     class NetworkUtils {
     public:
-        static std::shared_ptr<std::vector<unsigned char> > LoadBytes(const std::string& url);
+        static std::shared_ptr<std::vector<unsigned char> > LoadBytes(const std::string& url, bool log);
     
         static std::string URLEncode(const std::string& value);
     

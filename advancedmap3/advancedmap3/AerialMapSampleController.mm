@@ -1,6 +1,6 @@
-#import <Nuti/Nuti.h>
+#import "MapSampleBaseController.h"
 
-@interface AerialMapSampleController : NTMapViewController
+@interface AerialMapSampleController : MapSampleBaseController
 
 @end
 
@@ -27,11 +27,6 @@
 	//[rasterLayer setPreloading:NO];
 	// Add the previous raster layer to the map
 	[[self getLayers] add:rasterLayer];
-}
-
-- (void)didReceiveMemoryWarning
-{
-	[super didReceiveMemoryWarning];
 }
 
 @end

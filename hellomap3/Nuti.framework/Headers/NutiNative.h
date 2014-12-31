@@ -16,6 +16,7 @@
 #include "datasources/AssetTileDataSource.h"
 #include "datasources/HTTPTileDataSource.h"
 #include "datasources/MBTilesTileDataSource.h"
+#include "datasources/NutiteqOnlineTileDataSource.h"
 #include "datasources/OnlineNMLModelLODTreeDataSource.h"
 #include "datasources/SqliteNMLModelLODTreeDataSource.h"
 #include "datasources/PersistentCacheTileDataSource.h"

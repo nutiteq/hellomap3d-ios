@@ -17,6 +17,7 @@
 #import "CompressedCacheTileDataSource_proxy.h"
 #import "HTTPTileDataSource_proxy.h"
 #import "MBTilesTileDataSource_proxy.h"
+#import "NutiteqOnlineTileDataSource_proxy.h"
 #import "OnlineNMLModelLODTreeDataSource_proxy.h"
 #import "SqliteNMLModelLODTreeDataSource_proxy.h"
 #import "PersistentCacheTileDataSource_proxy.h"

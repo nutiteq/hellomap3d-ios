@@ -17,16 +17,15 @@ namespace Nuti {
     class NutiteqOnlineVectorTileLayer : public VectorTileLayer {
     public:
         /**
-         * Constructs a NutiteqOnlineVectorTileLayer object from a registered API key and a style asset name.
+         * Constructs a NutiteqOnlineVectorTileLayer object from a style asset name.
          * Style asset must be included in the project, style asset defines visual style of the map.
-         * @param apiKey The registered API key for the app.
          * @param styleAssetName The name of the style asset that defines visual style of the map.
          */
-        NutiteqOnlineVectorTileLayer(const std::string& apiKey, const std::string& styleAssetName);
+        NutiteqOnlineVectorTileLayer(const std::string& styleAssetName);
         virtual ~NutiteqOnlineVectorTileLayer();
         
     private:
-        static std::shared_ptr<TileDataSource> createDataSource(const std::string& apiKey);
+        static std::shared_ptr<TileDataSource> createDataSource();
         static std::shared_ptr<VectorTileDecoder> createTileDecoder(const std::string& syleAssetName);
     };
     

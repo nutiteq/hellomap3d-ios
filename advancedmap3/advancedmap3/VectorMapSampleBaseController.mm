@@ -14,7 +14,7 @@
 
 @implementation VectorMapSampleBaseController
 
--(NSDictionary*) languages
+-(NSDictionary*)languages
 {
 	return @{
 			 @"English": @"en",
@@ -24,7 +24,7 @@
 			 };
 }
 
--(NSDictionary*) styles
+-(NSDictionary*)styles
 {
 	return @{
 			 @"Basic":		   @"basic",
@@ -79,10 +79,10 @@
 	[[self getLayers] add:self.baseLayer];
 }
 
-- (NTTileDataSource*) createTileDataSource
+- (NTTileDataSource*)createTileDataSource
 {
 	// Create global online vector tile data source, use Nutiteq test account
-	NTTileDataSource *vectorTileDataSource = [[NTHTTPTileDataSource alloc] initWithMinZoom:0 maxZoom:14 baseURL:@"http://api.nutiteq.com/v1/nutiteq.mbstreets/{zoom}/{x}/{y}.vt?user_key=15cd9131072d6df68b8a54feda5b0496"];
+	NTTileDataSource *vectorTileDataSource = [[NTNutiteqOnlineTileDataSource alloc] initWithSource:@"nutiteq.mbstreets"];
 
 	// We don't use vectorTileDataSource directly (this would be also option),
 	// but via caching to cache data locally non-persistently
@@ -110,12 +110,6 @@
 
 	// Create menu
 	[self createMenu];
-}
-
-- (void)didReceiveMemoryWarning
-{
-	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
 }
 
 @end
