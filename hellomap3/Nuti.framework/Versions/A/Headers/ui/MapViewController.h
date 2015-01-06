@@ -228,17 +228,17 @@ __attribute__ ((visibility("default"))) @interface NTMapViewController : GLKView
 -(void)setMapEventListener: (NTMapEventListener*)mapEventListener;
 
 /**
- * Calculates the world map position corresponding to a screen position, using the current view parameters.
+ * Calculates the map position in base projection coordinate system corresponding to a screen position, using the current view parameters.
  * @param screenPos The screen position.
- * @return The calculated world map position.
+ * @return The calculated map position in base projection coordinate system.
  */
--(NTMapPos*)screenToWorld: (NTMapPos*)screenPos;
+-(NTMapPos*)screenToMap: (NTScreenPos*)screenPos;
 /**
- * Calculates the screen position corresponding to a world map position, using the current view parameters.
- * @param worldPos The world map position.
+ * Calculates the screen position corresponding to a map position in base projection coordinate system, using the current view parameters.
+ * @param mapPos The map position in base projection coordinate system.
  * @return The calculated screen position.
  */
--(NTMapPos*)worldToScreen: (NTMapPos*)worldPos;
+-(NTScreenPos*)mapToScreen: (NTMapPos*)mapPos;
 
 /**
  * Cancels all qued tasks such as tile and vector data fetches. Tasks that have already started
