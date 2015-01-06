@@ -20,7 +20,9 @@
 			 @"English": @"en",
 			 @"German":  @"de",
 			 @"French":  @"fr",
-			 @"Russian": @"ru",
+			 @"Italian": @"it",
+       @"Russian": @"ru",
+       @"Chinese": @"zh",
 			 };
 }
 
@@ -30,6 +32,7 @@
 			 @"Basic":		   @"basic",
 			 @"OSM Bright 2D": @"osmbright",
 			 @"OSM Bright 3D": @"osmbright3d",
+       @"OSM Bright Chinese": @"osmbright-heilight",
 			 @"Loose Leaf":	   @"looseleaf",
 			 };
 }
@@ -93,7 +96,10 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	
+
+  [NTLog SetShowDebug:true];
+  [NTLog SetShowInfo:true];
+ 
 	// Set the base projection, that will be used for most MapView, MapEventListener and Options methods
 	NTEPSG3857* proj = [[NTEPSG3857 alloc] init];
 	[[self getOptions] setBaseProjection:proj];

@@ -27,11 +27,9 @@
 	// Create a map event listener
 	MyMapEventListener* mapListener = [[MyMapEventListener alloc] init];
 	[self setMapEventListener:mapListener];
-	mapListener = [[MyMapEventListener alloc] init];
-	[self setMapEventListener:mapListener];
 	// MapEventListener needs the data source and the layer to display balloons
 	// over the clicked vector elements
-	[mapListener setMapView:self vectorDataSource:vectorDataSource1 vectorLayer:vectorLayer1];
+	[mapListener setMapView:self vectorDataSource:vectorDataSource1];
 	
 	// Initialize a second vector data source and vector layer.
 	// This secondary vector layer will be used for drawing borders for

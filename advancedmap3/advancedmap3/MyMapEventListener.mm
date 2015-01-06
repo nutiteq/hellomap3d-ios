@@ -6,7 +6,6 @@
 @property (strong, nonatomic) NTMapViewController* mapView;
 
 @property (strong, nonatomic) NTLocalVectorDataSource* vectorDataSource;
-@property (strong, nonatomic) NTVectorLayer* vectorLayer;
 
 @property (strong, nonatomic) NTBalloonPopup* oldClickLabel;
 
@@ -14,20 +13,26 @@
 
 @implementation MyMapEventListener
 
--(void)setMapView:(NTMapViewController*)mapView vectorDataSource:(NTLocalVectorDataSource*)vectorDataSource vectorLayer:(NTVectorLayer*)vectorLayer
+-(void)setMapView:(NTMapViewController*)mapView vectorDataSource:(NTLocalVectorDataSource*)vectorDataSource
 {
     _mapView = mapView;
     _vectorDataSource = vectorDataSource;
-    _vectorLayer = vectorLayer;
 }
 
 -(void)onMapMoved
 {
+ // called very often, even just console logging can lag map movement animation
+ // print new map bounding box:
+    NTMapPos* topLeft = [[[_mapView getOptions] getBaseProjection] toWgs84:[_mapView screenToMap: [[NTMapPos alloc] initWithX:0 y:0]]];
+  
+    int w =_mapView.view.frame.size.width * [[UIScreen mainScreen] scale];
+    int h =_mapView.view.frame.size.height * [[UIScreen mainScreen] scale];
+    NTMapPos* bottomRight = [[[_mapView getOptions] getBaseProjection] toWgs84:[_mapView screenToMap:  [[NTMapPos alloc] initWithX:w y:h]]];
+    NSLog(@"Map moved to (screen %d %d) topLeft %f %f bottomRight %f %f", w, h, [topLeft getX], [topLeft getY], [bottomRight getX], [bottomRight getY]);
 }
 
 -(void)onMapClicked:(NTMapClickInfo*)mapClickInfo
 {
-    NSLog(@"Map click!");
     // Remove old click label
     if (_oldClickLabel)
     {
@@ -45,7 +50,6 @@
     if ([mapClickInfo getClickType] == NT_CLICK_TYPE_SINGLE)
     {
         clickMsg = @"Single map click!";
-        return;
     }
     else if ([mapClickInfo getClickType] == NT_CLICK_TYPE_LONG)
     {
@@ -69,12 +73,13 @@
                                                 desc:[NSString stringWithFormat:@"%f, %f", [wgs84Clickpos getY], [wgs84Clickpos getX]]];
     [_vectorDataSource add:clickPopup];
     _oldClickLabel = clickPopup;
+  
+  NSLog(@"%@ Location: %@", clickMsg, [NSString stringWithFormat:@"%f, %f", [wgs84Clickpos getY], [wgs84Clickpos getX]]);
 
 }
 
 -(void)onVectorElementClicked:(NTVectorElementsClickInfo*)vectorElementsClickInfo
 {
-    NSLog(@"Vector element click!");
     // Remove old click label
     if (_oldClickLabel)
     {
@@ -121,6 +126,10 @@
     }
     [_vectorDataSource add:clickPopup];
     _oldClickLabel = clickPopup;
+
+  NSLog(@"Vector element clicked, metadata : '%@'", clickText);
+
+  
 }
 
 @end
