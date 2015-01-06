@@ -1,6 +1,6 @@
-#import <Nuti/Nuti.h>
+#import "MapSampleBaseController.h"
 
-@interface VectorMapSampleBaseController : NTMapViewController
+@interface VectorMapSampleBaseController : MapSampleBaseController
 
 - (NSDictionary*)languages;
 - (NSDictionary*)styles;

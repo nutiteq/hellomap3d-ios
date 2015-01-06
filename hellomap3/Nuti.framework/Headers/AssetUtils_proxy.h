@@ -33,7 +33,7 @@ __attribute__ ((visibility("default"))) @interface NTAssetUtils : NSObject
  * @param path The path of the resource to load. The path is relative to application root folder.<br>
  * @return The loaded resource as a byte vector or null if the resource was not found or could not be loaded.
  */
-+(UnsignedCharVector*)loadBytes: (NSString*)path;
++(NTUnsignedCharVector*)loadBytes: (NSString*)path;
 /**
  * Calculates path for the bundled resource.<br>
  * @param resourceName The name of the resource.<br>

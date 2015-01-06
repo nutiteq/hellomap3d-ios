@@ -26,12 +26,11 @@ __attribute__ ((visibility("default"))) @interface NTNutiteqOnlineVectorTileLaye
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
- * Constructs a NutiteqOnlineVectorTileLayer object from a registered API key and a style asset name.<br>
+ * Constructs a NutiteqOnlineVectorTileLayer object from a style asset name.<br>
  * Style asset must be included in the project, style asset defines visual style of the map.<br>
- * @param apiKey The registered API key for the app.<br>
  * @param styleAssetName The name of the style asset that defines visual style of the map.
  */
--(id)initWithApiKey: (NSString*)apiKey styleAssetName: (NSString*)styleAssetName;
+-(id)initWithStyleAssetName: (NSString*)styleAssetName;
 
 -(void)dealloc;
 

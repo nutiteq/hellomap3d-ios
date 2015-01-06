@@ -18,7 +18,7 @@ extern "C" {
 
 #import "VectorElement_proxy.h"
 
-__attribute__ ((visibility("default"))) @interface VectorElementVector : NSObject
+__attribute__ ((visibility("default"))) @interface NTVectorElementVector : NSObject
 {
 	void *swigCPtr;
 	BOOL swigCMemOwn;

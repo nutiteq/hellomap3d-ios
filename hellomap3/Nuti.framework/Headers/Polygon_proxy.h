@@ -38,14 +38,14 @@ __attribute__ ((visibility("default"))) @interface NTPolygon : NTVectorElement
  * @param poses The vector of map positions that defines the location of this polygon.<br>
  * @param style The style that defines what this polygon looks like.
  */
--(id)initWithPoses: (MapPosVector*)poses style: (NTPolygonStyle*)style;
+-(id)initWithPoses: (NTMapPosVector*)poses style: (NTPolygonStyle*)style;
 /**
  * Constructs a Polygon object from a vector of map positions, a vector of holes and a style.<br>
  * @param poses The vector of map positions that defines the location of this polygon.<br>
  * @param holes The vector of holes that defines the locations of holes of this polygon.<br>
  * @param style The style that defines what this polygon looks like.
  */
--(id)initWithPoses: (MapPosVector*)poses holes: (MapPosVectorVector*)holes style: (NTPolygonStyle*)style;
+-(id)initWithPoses: (NTMapPosVector*)poses holes: (NTMapPosVectorVector*)holes style: (NTPolygonStyle*)style;
 -(NTPolygonGeometry*)getGeometry;
 /**
  * Sets the location for this polygon.<br>
@@ -56,13 +56,13 @@ __attribute__ ((visibility("default"))) @interface NTPolygon : NTVectorElement
  * Sets the location for this polygon.<br>
  * @param poses The new vector of map positions that define the location of this polygon.
  */
--(void)setPoses: (MapPosVector*)poses;
+-(void)setPoses: (NTMapPosVector*)poses;
 /**
  * Sets the location and holes for this polygon.<br>
  * @param poses The new vector of map positions that defines the location of this polygon.<br>
  * @param holes The new vector of holes that defines the locations of holes of this polygon.
  */
--(void)setPoses: (MapPosVector*)poses holes: (MapPosVectorVector*)holes;
+-(void)setPoses: (NTMapPosVector*)poses holes: (NTMapPosVectorVector*)holes;
 /**
  * Returns the style of this polygon.<br>
  * @return The style that defines what this polygon looks like.

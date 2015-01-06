@@ -40,7 +40,7 @@ __attribute__ ((visibility("default"))) @interface NTPolygon3D : NTVectorElement
  * @param style The style that defines what this 3d polygon looks like.<br>
  * @param height The height of this 3d polygon in meters.
  */
--(id)initWithPoses: (MapPosVector*)poses style: (NTPolygon3DStyle*)style height: (float)height;
+-(id)initWithPoses: (NTMapPosVector*)poses style: (NTPolygon3DStyle*)style height: (float)height;
 /**
  * Constructs a Polygon3D object from a vector of map positions, a vector of holes and a style.<br>
  * @param poses The vector of map positions that defines the location of this 3d polygon.<br>
@@ -48,7 +48,7 @@ __attribute__ ((visibility("default"))) @interface NTPolygon3D : NTVectorElement
  * @param style The style that defines what this 3d polygon looks like.<br>
  * @param height The height of this 3d polygon in meters.
  */
--(id)initWithPoses: (MapPosVector*)poses holes: (MapPosVectorVector*)holes style: (NTPolygon3DStyle*)style height: (float)height;
+-(id)initWithPoses: (NTMapPosVector*)poses holes: (NTMapPosVectorVector*)holes style: (NTPolygon3DStyle*)style height: (float)height;
 -(NTPolygonGeometry*)getGeometry;
 /**
  * Sets the location for this 3d polygon.<br>
@@ -59,13 +59,13 @@ __attribute__ ((visibility("default"))) @interface NTPolygon3D : NTVectorElement
  * Sets the location for this 3d polygon.<br>
  * @param poses The new vector of map positions that define the location of this 3d polygon.
  */
--(void)setPoses: (MapPosVector*)poses;
+-(void)setPoses: (NTMapPosVector*)poses;
 /**
  * Sets the location and holes for this 3d polygon.<br>
  * @param poses The new vector of map positions that defines the location of this 3d polygon.<br>
  * @param holes The new vector of holes that defines the locations of holes of this 3d polygon.
  */
--(void)setPoses: (MapPosVector*)poses holes: (MapPosVectorVector*)holes;
+-(void)setPoses: (NTMapPosVector*)poses holes: (NTMapPosVectorVector*)holes;
 /**
  * Returns the height of this 3d polygon.<br>
  * @return The height of this 3d polygon in meters.

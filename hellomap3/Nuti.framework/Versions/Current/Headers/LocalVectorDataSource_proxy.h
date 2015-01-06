@@ -56,12 +56,12 @@ __attribute__ ((visibility("default"))) @interface NTLocalVectorDataSource : NTV
  * @param spatialIndexType The spatial index type to use.
  */
 -(id)initWithProjection: (NTProjection*)projection spatialIndexType: (enum NTLocalSpatialIndexType)spatialIndexType;
--(VectorElementVector*)loadElements: (NTCullState*)cullState;
+-(NTVectorElementVector*)loadElements: (NTCullState*)cullState;
 /**
  * Returns all vector elements added to this data source using add() and addAll() methods.<br>
  * @return A vector containing all the vector elements in this data source.
  */
--(VectorElementVector*)getAll;
+-(NTVectorElementVector*)getAll;
 /**
  * Adds a vector element to the data source. The vector element's coordinates are expected to be<br>
  * in the data source's projection's coordinate system. The order in which the elements are added has<br>
@@ -75,7 +75,7 @@ __attribute__ ((visibility("default"))) @interface NTLocalVectorDataSource : NTV
  * no effect on the order they get rendered.<br>
  * @param elements A vector of vector elements to be added.
  */
--(void)addAll: (VectorElementVector*)elements;
+-(void)addAll: (NTVectorElementVector*)elements;
 /**
  * Removes a vector element from the data source.<br>
  * @param elementToRemove The vector element to be removed.<br>
@@ -86,7 +86,7 @@ __attribute__ ((visibility("default"))) @interface NTLocalVectorDataSource : NTV
  * Removes all vector elements from the data source.<br>
  * @return The removed vector elements.
  */
--(VectorElementVector*)removeAll;
+-(NTVectorElementVector*)removeAll;
 /**
  * Returns the active geometry simplifier of the data source.<br>
  * @return The current geometry simplifier (can be null)

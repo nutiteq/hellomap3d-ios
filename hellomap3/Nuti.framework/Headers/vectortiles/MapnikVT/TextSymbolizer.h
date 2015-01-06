@@ -27,6 +27,7 @@ namespace Nuti { namespace MapnikVT {
 
 	protected:
 		std::shared_ptr<Mapnik::Expression> getTextExpression() const;
+		std::shared_ptr<VT::Font> getFont(const TileSymbolizerContext& symbolizerContext) const;
 		VT::TextFormatter::Options getFormatterOptions(const TileSymbolizerContext& symbolizerContext) const;
 
 		const std::shared_ptr<Mapnik::Expression> _textExpression;

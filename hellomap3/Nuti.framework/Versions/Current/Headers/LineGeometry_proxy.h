@@ -28,13 +28,13 @@ __attribute__ ((visibility("default"))) @interface NTLineGeometry : NTGeometry
 /**
  * Constructs a new LineGeometry object from a map position list.
  */
--(id)initWithPoses: (MapPosVector*)poses;
+-(id)initWithPoses: (NTMapPosVector*)poses;
 -(NTMapPos*)getCenterPos;
 /**
  * Returns the list of of map positions defining the line.<br>
  * @return The list of of map positions defining the line.
  */
--(MapPosVector*)getPoses;
+-(NTMapPosVector*)getPoses;
 
 -(void)dealloc;
 

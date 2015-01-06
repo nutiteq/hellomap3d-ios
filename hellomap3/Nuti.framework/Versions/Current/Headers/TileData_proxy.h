@@ -32,12 +32,12 @@ __attribute__ ((visibility("default"))) @interface NTTileData : NSObject
  * Constructs a VectorTileData object from a data blob.<br>
  * @param data The source tile data.
  */
--(id)initWithData: (UnsignedCharVector*)data;
+-(id)initWithData: (NTUnsignedCharVector*)data;
 /**
  * Returns tile data as a byte vector.<br>
  * @return Tile data as a byte vector.
  */
--(UnsignedCharVector*)getData;
+-(NTUnsignedCharVector*)getData;
 
 -(void)dealloc;
 

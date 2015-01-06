@@ -15,7 +15,7 @@
 extern "C" {
 #endif
 
-__attribute__ ((visibility("default"))) @interface StringMap : NSObject
+__attribute__ ((visibility("default"))) @interface NTStringMap : NSObject
 {
 	void *swigCPtr;
 	BOOL swigCMemOwn;
@@ -23,7 +23,7 @@ __attribute__ ((visibility("default"))) @interface StringMap : NSObject
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 -(id)init;
--(id)initWithArg0: (StringMap*)arg0;
+-(id)initWithArg0: (NTStringMap*)arg0;
 -(unsigned int)size;
 -(BOOL)empty;
 -(void)clear;
@@ -31,6 +31,7 @@ __attribute__ ((visibility("default"))) @interface StringMap : NSObject
 -(void)set: (NSString*)key x: (NSString*)x;
 -(void)del: (NSString*)key;
 -(BOOL)has_key: (NSString*)key;
+-(NSString*)get_key: (unsigned int)idx;
 
 -(void)dealloc;
 

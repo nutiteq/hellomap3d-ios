@@ -61,7 +61,7 @@
 	[lineStyleBuilder setLineJointType:NT_LINE_JOINT_TYPE_ROUND];
 	[lineStyleBuilder setStretchFactor:2];
 	[lineStyleBuilder setWidth:8];
-	MapPosVector* linePoses = [[MapPosVector alloc] init];
+	NTMapPosVector* linePoses = [[NTMapPosVector alloc] init];
 	[linePoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.645565 y:59.422074]]];
 	[linePoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.643076 y:59.420502]]];
 	[linePoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.645351 y:59.419149]]];
@@ -88,7 +88,7 @@
 	[lineStyleBuilder setColor:[[NTColor alloc] initWithColor:0xFF000000]];
 	[lineStyleBuilder setWidth:1.0f];
 	[polygonStyleBuilder setLineStyle:[lineStyleBuilder buildStyle]];
-	MapPosVector* polygonPoses = [[MapPosVector alloc] init];
+	NTMapPosVector* polygonPoses = [[NTMapPosVector alloc] init];
 	[polygonPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.650930 y:59.421659]]];
 	[polygonPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.657453 y:59.416354]]];
 	[polygonPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.661187 y:59.414607]]];
@@ -99,14 +99,14 @@
 	[polygonPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.656552 y:59.420175]]];
 	[polygonPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.654010 y:59.421472]]];
 	// Create polygon holes poses
-	MapPosVectorVector* holes = [[MapPosVectorVector alloc] init];
-	[holes add:[[MapPosVector alloc] init]];
+	NTMapPosVectorVector* holes = [[NTMapPosVectorVector alloc] init];
+	[holes add:[[NTMapPosVector alloc] init]];
 	[[holes get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.658409 y:59.420522]]];
 	[[holes get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.662207 y:59.418896]]];
 	[[holes get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.662207 y:59.417411]]];
 	[[holes get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.659524 y:59.417171]]];
 	[[holes get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.657615 y:59.419834]]];
-	[holes add:[[MapPosVector alloc] init]];
+	[holes add:[[NTMapPosVector alloc] init]];
 	[[holes get:1] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.665640 y:59.421243]]];
 	[[holes get:1] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.668923 y:59.419463]]];
 	[[holes get:1] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.662893 y:59.419365]]];

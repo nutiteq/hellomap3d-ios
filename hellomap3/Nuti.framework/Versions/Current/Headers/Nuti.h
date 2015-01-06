@@ -1,5 +1,5 @@
-#ifndef NUTI_H_
-#define NUTI_H_
+#ifndef _NUTI_H_
+#define _NUTI_H_
 
 #import "Options_proxy.h"
 
@@ -7,6 +7,7 @@
 #import "MapEnvelope_proxy.h"
 #import "MapPos_proxy.h"
 #import "ScreenPos_proxy.h"
+#import "ScreenBounds_proxy.h"
 #import "MapRange_proxy.h"
 #import "MapTile_proxy.h"
 #import "MapVec_proxy.h"
@@ -16,6 +17,7 @@
 #import "CompressedCacheTileDataSource_proxy.h"
 #import "HTTPTileDataSource_proxy.h"
 #import "MBTilesTileDataSource_proxy.h"
+#import "NutiteqOnlineTileDataSource_proxy.h"
 #import "OnlineNMLModelLODTreeDataSource_proxy.h"
 #import "SqliteNMLModelLODTreeDataSource_proxy.h"
 #import "PersistentCacheTileDataSource_proxy.h"
@@ -90,5 +92,7 @@
 
 #import "MBVectorTileDecoder_proxy.h"
 #import "MBVectorTileStyleSet_proxy.h"
+
+#import "wrappedcommons/LegacyWrappers.h"
 
 #endif

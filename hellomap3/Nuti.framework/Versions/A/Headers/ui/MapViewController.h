@@ -4,6 +4,8 @@
 @class NTMapBounds;
 @class NTMapPos;
 @class NTMapVec;
+@class NTScreenPos;
+@class NTScreenBounds;
 @class NTMapEventListener;
 @class NTOptions;
 
@@ -195,24 +197,24 @@ __attribute__ ((visibility("default"))) @interface NTMapViewController : GLKView
 /**
  * Animate the view parameters (focus position, tilt, rotation, zoom) so that the specified bounding box becomes fully visible.
  * This method does not work before the screen size is set.
- * @param bounds The bounding box to be made visible in the base projection's coordinate system.
- * @param screenPadding The amount of padding to add to the edges of the screen in screen density independent pixels (dp).
+ * @param mapBounds The bounding box on the map to be made visible in the base projection's coordinate system.
+ * @param screenBounds The screen bounding box where to fit the map bounding box.
  * @param integerZoom If true, then closest integer zoom level will be used. If false, exact fractional zoom level will be used.
  * @param durationSeconds The duration in which the operation will be completed in seconds.
  */
--(void)moveToFitBounds: (NTMapBounds*)bounds screenPadding: (float)screenPadding integerZoom: (BOOL)integerZoom durationSeconds: (float)durationSeconds;
+-(void)moveToFitBounds: (NTMapBounds*)mapBounds screenBounds: (NTScreenBounds*)screenBounds integerZoom: (BOOL)integerZoom durationSeconds: (float)durationSeconds;
 /**
  * Animate the view parameters (focus position, tilt, rotation, zoom) so that the specified bounding box becomes fully visible.
  * Also supports resetting the tilt and rotation angles over the course of the animation.
  * This method does not work before the screen size is set.
- * @param bounds The bounding box to be made visible in the base projection's coordinate system.
- * @param screenPadding The amount of padding to add to the edges of the screen in screen density independent pixels (dp).
+ * @param mapBounds The bounding box on the map to be made visible in the base projection's coordinate system.
+ * @param screenBounds The screen bounding box where to fit the map bounding box.
  * @param integerZoom If true, then closest integer zoom level will be used. If false, exact fractional zoom level will be used.
  * @param resetTilt If true, view will be untilted. If false, current tilt will be kept.
  * @param resetRotation If true, rotation will be reset. If false, current rotation will be kept.
  * @param durationSeconds The duration in which the operation will be completed in seconds.
  */
--(void)moveToFitBounds: (NTMapBounds*)bounds screenPadding: (float)screenPadding integerZoom: (BOOL)integerZoom resetRotation: (BOOL)resetRotation resetTilt: (BOOL)resetTilt durationSeconds: (float)durationSeconds;
+-(void)moveToFitBounds: (NTMapBounds*)mapBounds screenBounds: (NTScreenBounds*)screenBounds integerZoom: (BOOL)integerZoom resetRotation: (BOOL)resetRotation resetTilt: (BOOL)resetTilt durationSeconds: (float)durationSeconds;
 /**
  * Returns the map event listener. May be null.
  * @return The map event listener.

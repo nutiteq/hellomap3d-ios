@@ -44,7 +44,7 @@ __attribute__ ((visibility("default"))) @interface NTVectorElementsClickInfo : N
  * @return The list of VectorElementClickInfo objects sorted by their distance to the camera and <br>
  *         their draw order. The first element in the vector is the top-most element on the screen.
  */
--(VectorElementClickInfoVector*)getVectorElementClickInfos;
+-(NTVectorElementClickInfoVector*)getVectorElementClickInfos;
 
 -(void)dealloc;
 

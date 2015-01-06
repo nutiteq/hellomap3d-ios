@@ -18,7 +18,7 @@ extern "C" {
 
 #import "Layer_proxy.h"
 
-__attribute__ ((visibility("default"))) @interface LayerVector : NSObject
+__attribute__ ((visibility("default"))) @interface NTLayerVector : NSObject
 {
 	void *swigCPtr;
 	BOOL swigCMemOwn;

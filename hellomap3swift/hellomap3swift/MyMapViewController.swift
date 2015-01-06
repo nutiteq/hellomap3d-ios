@@ -4,6 +4,11 @@ import UIKit
 class MyMapViewController: NTMapViewController {
 
 	override func viewDidLoad() {
+		// The initial step: register your license. This must be done before using MapView and before calling super.viewDidLoad()!
+		// You can get your free/commercial license from: http://developer.nutiteq.com
+		// The license string used here is intended only for Nutiteq demos and WILL NOT WORK with other apps!
+		NTMapViewController.RegisterLicense("XTUN3Q0ZBd2NtcmFxbUJtT1h4QnlIZ2F2ZXR0Mi9TY2JBaFJoZDNtTjUvSjJLay9aNUdSVjdnMnJwVXduQnc9PQoKcHJvZHVjdHM9c2RrLWlvcy0zLiosc2RrLWFuZHJvaWQtMy4qCnBhY2thZ2VOYW1lPWNvbS5udXRpdGVxLioKYnVuZGxlSWRlbnRpZmllcj1jb20ubnV0aXRlcS4qCndhdGVybWFyaz1ldmFsdWF0aW9uCnVzZXJLZXk9MTVjZDkxMzEwNzJkNmRmNjhiOGE1NGZlZGE1YjA0OTYK")
+
 		super.viewDidLoad()
 		
 		// Set the base projection, that will be used for most MapView, MapEventListener and Options methods
@@ -19,8 +24,8 @@ class MyMapViewController: NTMapViewController {
 		setZoom(14, durationSeconds:0)
 		setRotation(0, durationSeconds:0)
 		
-		// Create online vector tile layer, connect to with demo key and use style asset embedded in the project
-		let vectorTileLayer = NTNutiteqOnlineVectorTileLayer(apiKey:"15cd9131072d6df68b8a54feda5b0496", styleAssetName:"osmbright.zip")
+		// Create online vector tile layer, use style asset embedded in the project
+		let vectorTileLayer = NTNutiteqOnlineVectorTileLayer(styleAssetName:"osmbright.zip")
 		
 		// Add vector tile layer
 		getLayers().add(vectorTileLayer)

@@ -18,7 +18,7 @@ extern "C" {
 
 #import "MapPos_proxy.h"
 
-__attribute__ ((visibility("default"))) @interface MapPosVector : NSObject
+__attribute__ ((visibility("default"))) @interface NTMapPosVector : NSObject
 {
 	void *swigCPtr;
 	BOOL swigCMemOwn;
@@ -42,7 +42,7 @@ __attribute__ ((visibility("default"))) @interface MapPosVector : NSObject
 
 #import "MapPos_proxy.h"
 
-__attribute__ ((visibility("default"))) @interface MapPosVectorVector : NSObject
+__attribute__ ((visibility("default"))) @interface NTMapPosVectorVector : NSObject
 {
 	void *swigCPtr;
 	BOOL swigCMemOwn;
@@ -55,9 +55,9 @@ __attribute__ ((visibility("default"))) @interface MapPosVectorVector : NSObject
 -(void)reserve: (unsigned long)n;
 -(BOOL)isEmpty;
 -(void)clear;
--(void)add: (MapPosVector*)x;
--(MapPosVector*)get: (int)i;
--(void)set: (int)i val: (MapPosVector*)val;
+-(void)add: (NTMapPosVector*)x;
+-(NTMapPosVector*)get: (int)i;
+-(void)set: (int)i val: (NTMapPosVector*)val;
 
 -(void)dealloc;
 

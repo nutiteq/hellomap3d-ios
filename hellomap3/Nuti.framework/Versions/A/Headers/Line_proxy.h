@@ -37,7 +37,7 @@ __attribute__ ((visibility("default"))) @interface NTLine : NTVectorElement
  * @param poses The vector of map positions that defines the location of this line.<br>
  * @param style The style that defines what this line looks like.
  */
--(id)initWithPoses: (MapPosVector*)poses style: (NTLineStyle*)style;
+-(id)initWithPoses: (NTMapPosVector*)poses style: (NTLineStyle*)style;
 -(NTLineGeometry*)getGeometry;
 /**
  * Sets the location for this line.<br>
@@ -48,7 +48,7 @@ __attribute__ ((visibility("default"))) @interface NTLine : NTVectorElement
  * Sets the location for this line.<br>
  * @param poses The new vector of map positions that defines the location of this line.
  */
--(void)setPoses: (MapPosVector*)poses;
+-(void)setPoses: (NTMapPosVector*)poses;
 /**
  * Returns the style of this line.<br>
  * @return The style that defines what this line looks like.

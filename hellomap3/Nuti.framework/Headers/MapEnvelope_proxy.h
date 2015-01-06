@@ -42,7 +42,7 @@ __attribute__ ((visibility("default"))) @interface NTMapEnvelope : NSObject
 /**
  * Constructs a MapEnvelope object from a convex bounding polygon.
  */
--(id)initWithConvexHull: (MapPosVector*)convexHull;
+-(id)initWithConvexHull: (NTMapPosVector*)convexHull;
 /**
  * Checks for equality between this and another envelope.<br>
  * @param envelope The other map envelope object.<br>
@@ -64,7 +64,7 @@ __attribute__ ((visibility("default"))) @interface NTMapEnvelope : NSObject
  * Returns the convex hull of this map envelope.<br>
  * @return The convex hull of this map envelope.
  */
--(MapPosVector*)getConvexHull;
+-(NTMapPosVector*)getConvexHull;
 /**
  * Tests whether this map envelope contains another map envelope.<br>
  * @param envelope The other map envelope.<br>

@@ -57,14 +57,6 @@ __attribute__ ((visibility("default"))) @interface NTMapBounds : NSObject
  */
 -(BOOL)differs: (NTMapBounds*)mapBounds;
 /**
- * Sets the minimum and maximum map positions of this map bounds object. If a coordinate of the<br>
- * minimum map positon is larger than the same coordinate of the maximum map position then those<br>
- * coordinates will be swapped.<br>
- * @param min The minimum map position.<br>
- * @param max The maximum map position.
- */
--(void)setBounds: (NTMapPos*)min max: (NTMapPos*)max;
-/**
  * Calculates the center map position of this map envelope object.<br>
  * @return The center postion if this map envelope object.
  */
@@ -75,13 +67,13 @@ __attribute__ ((visibility("default"))) @interface NTMapBounds : NSObject
  */
 -(NTMapVec*)getDelta;
 /**
- * Returns the modifiable minimum map position of this map envelope object.<br>
- * @return The modifiable minimum map position of this map envelope object.
+ * Returns the minimum map position of this map envelope object.<br>
+ * @return The minimum map position of this map envelope object.
  */
 -(NTMapPos*)getMin;
 /**
- * Returns the modifiable maximum map position of this map envelope object.<br>
- * @return The modifiable maximum map position of this map envelope object.
+ * Returns the maximum map position of this map envelope object.<br>
+ * @return The maximum map position of this map envelope object.
  */
 -(NTMapPos*)getMax;
 /**
@@ -89,13 +81,13 @@ __attribute__ ((visibility("default"))) @interface NTMapBounds : NSObject
  * @param pos The map position.<br>
  * @return True if this map bounds object contains the map position.
  */
--(BOOL)containtsMapPos: (NTMapPos*)pos;
+-(BOOL)containsPos: (NTMapPos*)pos;
 /**
  * Tests whether this map bounds object contains a another map bounds object.<br>
  * @param bounds The other map bounds object.<br>
  * @return True if this map bounds object contains the other map bounds object.
  */
--(BOOL)containtsMapBounds: (NTMapBounds*)bounds;
+-(BOOL)containsBounds: (NTMapBounds*)bounds;
 /**
  * Tests whether this map bounds object intersects with a another map bounds object.<br>
  * @param bounds The other map bounds object.<br>
