@@ -18,9 +18,10 @@
 {
 	return @{
 			 @"English": @"en",
+ 			 @"Estonian": @"et",
 			 @"German":  @"de",
+ 			 @"Spanish": @"es",
 			 @"French":  @"fr",
-			 @"Italian": @"it",
        @"Russian": @"ru",
        @"Chinese": @"zh",
 			 };
@@ -32,7 +33,7 @@
 			 @"Basic":		   @"basic",
 			 @"OSM Bright 2D": @"osmbright",
 			 @"OSM Bright 3D": @"osmbright3d",
-       @"OSM Bright Chinese": @"osmbright-unifont",
+       @"OSM Bright Chinese": @"osmbright-heilight",
 			 @"Loose Leaf":	   @"looseleaf",
 			 };
 }
