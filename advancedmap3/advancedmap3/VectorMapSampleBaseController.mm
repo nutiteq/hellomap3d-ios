@@ -66,9 +66,9 @@
 	// Create vector tile decoder using the styleset and update style parameters
 	self.vectorTileDecoder = [[NTMBVectorTileDecoder alloc] initWithStyleSet:vectorTileStyleSet];
 	[self.vectorTileDecoder setStyleStringParameter:@"lang" value:self.vectorStyleLanguage];
-	if ([styleAssetName isEqualToString:@"osmbright.zip"]) { // only OSM Bright style supports this currently
-		[self.vectorTileDecoder setStyleBoolParameter:@"buildings3d" value:styleBuildings3D];
-    [self.vectorTileDecoder setStyleStringParameter:@"markers3d" value:@"nutibillboard"];
+	if ([styleAssetName isEqualToString:@"osmbright.zip"] && styleBuildings3D) { // only OSM Bright style supports this currently
+		[self.vectorTileDecoder setStyleBoolParameter:@"buildings3d" value:YES];
+    [self.vectorTileDecoder setStyleStringParameter:@"markers3d" value:@"1"];
 	}
 	
 	// Create tile data source

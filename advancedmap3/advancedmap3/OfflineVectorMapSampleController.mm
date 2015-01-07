@@ -9,8 +9,8 @@
 - (NTTileDataSource*)createTileDataSource
 {
 	// file-based local offline datasource
-	NSString* fullpathVT = [[NSBundle mainBundle] pathForResource:@"berlin_ntvt" ofType:@"mbtiles"];
-	NTTileDataSource* vectorTileDataSource = [[NTMBTilesTileDataSource alloc] initWithMinZoom:0 maxZoom:12 path:fullpathVT scheme:MBTILES_SCHEME_XYZ];
+	NSString* fullpathVT = [[NSBundle mainBundle] pathForResource:@"rome_ntvt" ofType:@"mbtiles"];
+	NTTileDataSource* vectorTileDataSource = [[NTMBTilesTileDataSource alloc] initWithMinZoom:0 maxZoom:14 path:fullpathVT];
 	return vectorTileDataSource;
 }
 
@@ -21,8 +21,8 @@
 	// Get the base projection set in the base class
 	NTProjection* proj = [[self getOptions] getBaseProjection];
 	
-	// Zoom to Berlin
-	[self setFocusPos:[proj fromWgs84:[[NTMapPos alloc] initWithX:13.38933 y:52.51704]]  durationSeconds:0];
+	// Zoom to Rome
+	[self setFocusPos:[proj fromWgs84:[[NTMapPos alloc] initWithX:12.4807 y: 41.8962]]  durationSeconds:0];
 	[self setZoom:13 durationSeconds:0];
 }
 
