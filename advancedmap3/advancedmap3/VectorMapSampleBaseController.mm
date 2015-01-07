@@ -32,7 +32,7 @@
 			 @"Basic":		   @"basic",
 			 @"OSM Bright 2D": @"osmbright",
 			 @"OSM Bright 3D": @"osmbright3d",
-       @"OSM Bright Chinese": @"osmbright-heilight",
+       @"OSM Bright Chinese": @"osmbright-unifont",
 			 @"Loose Leaf":	   @"looseleaf",
 			 };
 }
@@ -67,6 +67,7 @@
 	[self.vectorTileDecoder setStyleStringParameter:@"lang" value:self.vectorStyleLanguage];
 	if ([styleAssetName isEqualToString:@"osmbright.zip"]) { // only OSM Bright style supports this currently
 		[self.vectorTileDecoder setStyleBoolParameter:@"buildings3d" value:styleBuildings3D];
+    [self.vectorTileDecoder setStyleStringParameter:@"markers3d" value:@"nutibillboard"];
 	}
 	
 	// Create tile data source

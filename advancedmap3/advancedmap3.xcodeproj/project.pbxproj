@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C1FFD7719E414C1006E9AF2 /* berlin_ntvt.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 0C1FFD7619E414C1006E9AF2 /* berlin_ntvt.mbtiles */; };
 		0C3C369819E66E0A007573FD /* fcd_auto.nml in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C369719E66E0A007573FD /* fcd_auto.nml */; };
+		0CED8F211A5D1C2F00116863 /* osmbright-unifont.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0CED8F201A5D1C2F00116863 /* osmbright-unifont.zip */; };
 		2A319B43187C4F8F0004A3CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B42187C4F8F0004A3CB /* Foundation.framework */; };
 		2A319B45187C4F8F0004A3CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B44187C4F8F0004A3CB /* CoreGraphics.framework */; };
 		2A319B47187C4F8F0004A3CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B46187C4F8F0004A3CB /* UIKit.framework */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		0C1FFD7619E414C1006E9AF2 /* berlin_ntvt.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = berlin_ntvt.mbtiles; sourceTree = "<group>"; };
 		0C3C369719E66E0A007573FD /* fcd_auto.nml */ = {isa = PBXFileReference; lastKnownFileType = file; path = fcd_auto.nml; sourceTree = "<group>"; };
+		0CED8F201A5D1C2F00116863 /* osmbright-unifont.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "osmbright-unifont.zip"; sourceTree = "<group>"; };
 		2A319B3F187C4F8F0004A3CB /* advancedmap3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = advancedmap3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A319B42187C4F8F0004A3CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2A319B44187C4F8F0004A3CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +133,7 @@
 				4DB60F381A1770E500A6AF18 /* basic.zip */,
 				4DB60EC91A155FF500A6AF18 /* osmbright.zip */,
 				4DB60F361A1770DE00A6AF18 /* looseleaf.zip */,
+				0CED8F201A5D1C2F00116863 /* osmbright-unifont.zip */,
 				4DEB06DE1A10D8B3003D111C /* README.md */,
 				0C3C369719E66E0A007573FD /* fcd_auto.nml */,
 				0C1FFD7619E414C1006E9AF2 /* berlin_ntvt.mbtiles */,
@@ -316,6 +319,7 @@
 				4DB60ED71A16615A00A6AF18 /* UITableContract.png in Resources */,
 				4DB60F341A16AE1600A6AF18 /* menu.png in Resources */,
 				2AB2803418EB150400666197 /* marker.png in Resources */,
+				0CED8F211A5D1C2F00116863 /* osmbright-unifont.zip in Resources */,
 				4DB60F351A16AE1600A6AF18 /* menu@2x.png in Resources */,
 				2AEA4FA61913F38C002ED69F /* info.png in Resources */,
 				4DB60ECA1A155FF500A6AF18 /* osmbright.zip in Resources */,
