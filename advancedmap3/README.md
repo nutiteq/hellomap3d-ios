@@ -23,10 +23,13 @@ This is sample for Nutiteq SDK (http://www.nutiteq.com), demonstrating several k
    - Two offline datasets: building in NMLDB (3D city) format, and simple 3D car in NML (3D model) format. You can reposition, rotate etc NML models via code easily.
 
 ## Running
-The project requires Nutiteq SDK what you can get from the hellomap3 project. Just copy Nuti.framework folder to your application project. In your app folder run:
+The project requires Nutiteq SDK what you can get from the hellomap3 project. Just copy Nuti.framework folder to your application project. 
 
-    cp -r ../Nuti.framework ./
+Hellomap3 runs out of the box. Advancedmap3 or your own app needs link to Nutiteq SDK framework.
 
+In advancedmap3 folder run:
+
+    ln -sf ../hellomap3/Nuti.framework
 
 The app works on iOS 7 or newer.
 
