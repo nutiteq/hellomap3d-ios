@@ -1,6 +1,11 @@
 #import "VectorMapSampleBaseController.h"
 #import "MyMapEventListener.h"
 
+/*
+ * A sample displaying how to set custom MapListener
+ * to detect clicks on map and on map vector elements.
+ * Actual vector elements are added in Overlays2DActivity, as this class extends it.
+ */
 @interface MapListenerSampleController : VectorMapSampleBaseController
 
 @end

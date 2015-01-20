@@ -1,5 +1,8 @@
 #import "MapSampleBaseController.h"
 
+/*
+ * A sample demonstrating how to use raster layers with external tile data sources.
+ */
 @interface AerialMapSampleController : MapSampleBaseController
 
 @end
