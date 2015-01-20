@@ -18,9 +18,12 @@
 {
 	return @{
 			 @"English": @"en",
+ 			 @"Estonian": @"et",
 			 @"German":  @"de",
+ 			 @"Spanish": @"es",
 			 @"French":  @"fr",
-			 @"Russian": @"ru",
+       @"Russian": @"ru",
+       @"Chinese": @"zh",
 			 };
 }
 
@@ -30,6 +33,7 @@
 			 @"Basic":		   @"basic",
 			 @"OSM Bright 2D": @"osmbright",
 			 @"OSM Bright 3D": @"osmbright3d",
+       @"OSM Bright Chinese": @"osmbright-heilight",
 			 @"Loose Leaf":	   @"looseleaf",
 			 };
 }
@@ -62,8 +66,9 @@
 	// Create vector tile decoder using the styleset and update style parameters
 	self.vectorTileDecoder = [[NTMBVectorTileDecoder alloc] initWithStyleSet:vectorTileStyleSet];
 	[self.vectorTileDecoder setStyleStringParameter:@"lang" value:self.vectorStyleLanguage];
-	if ([styleAssetName isEqualToString:@"osmbright.zip"]) { // only OSM Bright style supports this currently
-		[self.vectorTileDecoder setStyleBoolParameter:@"buildings3d" value:styleBuildings3D];
+	if ([styleAssetName isEqualToString:@"osmbright.zip"] && styleBuildings3D) { // only OSM Bright style supports this currently
+		[self.vectorTileDecoder setStyleBoolParameter:@"buildings3d" value:YES];
+    [self.vectorTileDecoder setStyleStringParameter:@"markers3d" value:@"1"];
 	}
 	
 	// Create tile data source
@@ -93,7 +98,10 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	
+
+  [NTLog SetShowDebug:true];
+  [NTLog SetShowInfo:true];
+ 
 	// Set the base projection, that will be used for most MapView, MapEventListener and Options methods
 	NTEPSG3857* proj = [[NTEPSG3857 alloc] init];
 	[[self getOptions] setBaseProjection:proj];
