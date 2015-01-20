@@ -15,6 +15,7 @@
 			@{ @"name": @"Offline Vector Map Sample", @"controller": @"OfflineVectorMapSampleController" },
 			@{ @"name": @"Aerial Map Sample", @"controller": @"AerialMapSampleController" },
 			@{ @"name": @"Custom Raster Data Source Sample", @"controller": @"CustomRasterDataSourceSampleController" },
+			@{ @"name": @"Custom Popup Sample", @"controller": @"CustomPopupSampleController" },
 		];
 }
 

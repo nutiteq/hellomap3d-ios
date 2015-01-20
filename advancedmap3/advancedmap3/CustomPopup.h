@@ -1,13 +1,12 @@
-//
-//  CustomPopup.h
-//  advancedmap3
-//
-//  Created by Mark Tehver on 20/01/15.
-//  Copyright (c) 2015 Nutiteq. All rights reserved.
-//
+#import <Nuti/Nuti.h>
 
-#ifndef advancedmap3_CustomPopup_h
-#define advancedmap3_CustomPopup_h
+/**
+ * A custom popup class
+ */
+@interface CustomPopup : NTPopup
 
+-(id)initWithBaseBillboard: (NTBillboard*)baseBillboard text: (NSString*)text;
 
-#endif
+-(NTBitmap*)drawBitmap: (NTScreenPos*)anchorScreenPos screenWidth: (float)screenWidth screenHeight: (float)screenHeight dpToPX: (float)dpToPX;
+
+@end
