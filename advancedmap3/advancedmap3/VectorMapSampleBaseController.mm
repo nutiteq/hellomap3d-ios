@@ -21,6 +21,7 @@
  			 @"Estonian": @"et",
 			 @"German":  @"de",
  			 @"Spanish": @"es",
+       @"Italian": @"it",
 			 @"French":  @"fr",
        @"Russian": @"ru",
        @"Chinese": @"zh",
