@@ -121,7 +121,7 @@
 	
 	// Load bitmaps for custom markers
 	UIImage* markerImage = [UIImage imageNamed:@"marker.png"];
-	NTBitmap* markerBitmap = [NTBitmapUtils createBitmapFromUIImage:markerImage];
+	NTBitmap* markerBitmap = [NTBitmapUtils CreateBitmapFromUIImage:markerImage];
 	
 	// Create text style
 	NTTextStyleBuilder* textStyleBuilder = [[NTTextStyleBuilder alloc] init];

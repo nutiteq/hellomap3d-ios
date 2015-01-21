@@ -23,16 +23,21 @@ namespace Nuti { namespace Mapnik {
 		struct Converter {
 			static V convert(const Value& val) {
 				switch (val.getType()) {
-				case Value::Type::BOOL_VALUE:
-					return static_cast<V>(val.getBool());
-				case Value::Type::LONG_VALUE:
-					return static_cast<V>(val.getLong());
-				case Value::Type::DOUBLE_VALUE:
-					return static_cast<V>(val.getDouble());
-				case Value::Type::STRING_VALUE:
-					return boost::lexical_cast<V>(val.getString());
-				default:
-					return V();
+					case Value::Type::BOOL_VALUE:
+						return static_cast<V>(val.getBool());
+					case Value::Type::LONG_VALUE:
+						return static_cast<V>(val.getLong());
+					case Value::Type::DOUBLE_VALUE:
+						return static_cast<V>(val.getDouble());
+					case Value::Type::STRING_VALUE:
+						try {
+							return boost::lexical_cast<V>(val.getString());
+						}
+						catch (const boost::bad_lexical_cast&) {
+							return V();
+						}
+					default:
+						return V();
 				}
 			}
 		};
@@ -48,7 +53,12 @@ namespace Nuti { namespace Mapnik {
 				case Value::Type::DOUBLE_VALUE:
 					return val.getDouble() != 0;
 				case Value::Type::STRING_VALUE:
-					return boost::lexical_cast<bool>(val.getString());
+					try {
+						return boost::lexical_cast<bool>(val.getString());
+					}
+					catch (const boost::bad_lexical_cast&) {
+						return false;
+					}
 				default:
 					return false;
 				}
@@ -58,16 +68,21 @@ namespace Nuti { namespace Mapnik {
 		template <>
 		struct Converter<std::string> {
 			static std::string convert(const Value& val) {
-				switch (val.getType()) {
-				case Value::Type::BOOL_VALUE:
-					return boost::lexical_cast<std::string>(val.getBool());
-				case Value::Type::LONG_VALUE:
-					return boost::lexical_cast<std::string>(val.getLong());
-				case Value::Type::DOUBLE_VALUE:
-					return boost::lexical_cast<std::string>(val.getDouble());
-				case Value::Type::STRING_VALUE:
-					return val.getString();
-				default:
+				try {
+					switch (val.getType()) {
+					case Value::Type::BOOL_VALUE:
+						return boost::lexical_cast<std::string>(val.getBool());
+					case Value::Type::LONG_VALUE:
+						return boost::lexical_cast<std::string>(val.getLong());
+					case Value::Type::DOUBLE_VALUE:
+						return boost::lexical_cast<std::string>(val.getDouble());
+					case Value::Type::STRING_VALUE:
+						return val.getString();
+					default:
+						return std::string();
+					}
+				}
+				catch (const boost::bad_lexical_cast&) {
 					return std::string();
 				}
 			}

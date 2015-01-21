@@ -36,13 +36,32 @@ __attribute__ ((visibility("default"))) @interface NTLayers : NSObject
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
- * Adds a new layer to the layer stack.<br>
+ * Returns the current layer count.<br>
+ * @return The layer count.
+ */
+-(int)count;
+/**
+ * Returns the layer at the specified index.<br>
+ * @param index The layer index to return. Must be between 0 and count (exclusive).<br>
+ * @return The layer at the specified index.
+ */
+-(NTLayer*)get: (int)index;
+/**
+ * Inserts a new layer at the specified position.<br>
+ * All previous layers starting from this index will be moved to the next position.<br>
+ * @param index The layer index. Must be between 0 and count (inclusive).<br>
+ * @param layer The new layer.
+ */
+-(void)insert: (int)index layer: (NTLayer*)layer;
+/**
+ * Adds a new layer to the layer stack. The new layer will be the last (and topmost) layer.<br>
  * @param layer The layer to be added.
  */
 -(void)add: (NTLayer*)layer;
 /**
  * Removes a layer to the layer stack.<br>
- * @param layer The layer to be removed.
+ * @param layer The layer to be removed.<br>
+ * @return True if the layer was removed. False otherwise (layer was not found).
  */
 -(BOOL)remove: (NTLayer*)layer;
 /**

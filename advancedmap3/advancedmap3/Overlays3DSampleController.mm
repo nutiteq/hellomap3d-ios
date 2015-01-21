@@ -58,7 +58,7 @@
 	[[self getLayers] add:nmlLayer];
 	
 	// Add a single 3D model to map
-	NTUnsignedCharVector* modelData = [NTAssetUtils loadBytes:@"fcd_auto.nml"];
+	NTUnsignedCharVector* modelData = [NTAssetUtils LoadBytes:@"fcd_auto.nml"];
 	NTMapPos* pos = [proj fromWgs84:[[NTMapPos alloc] initWithX:24.646469 y:59.424939]];
 	NTNMLModel* model = [[NTNMLModel alloc] initWithPos:pos sourceModelData:modelData];
 	[model setMetaDataElement:@"ClickText" element:@"My nice car"];

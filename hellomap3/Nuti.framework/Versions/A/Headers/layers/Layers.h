@@ -32,18 +32,39 @@ namespace Nuti {
                const std::shared_ptr<CancelableThreadPool>& tileThreadPool,
                const std::weak_ptr<Options>& options);
         virtual ~Layers();
-    
+		
+		/**
+		 * Returns the current layer count.
+		 * @return The layer count.
+		 */
+		int count() const;
+		
+		/**
+		 * Returns the layer at the specified index.
+		 * @param index The layer index to return. Must be between 0 and count (exclusive).
+		 * @return The layer at the specified index.
+		 */
+		std::shared_ptr<Layer> get(int index) const;
+
+		/**
+		 * Inserts a new layer at the specified position.
+		 * All previous layers starting from this index will be moved to the next position.
+		 * @param index The layer index. Must be between 0 and count (inclusive).
+		 * @param layer The new layer.
+		 */
+		void insert(int index, const std::shared_ptr<Layer>& layer);
         /**
-         * Adds a new layer to the layer stack.
+         * Adds a new layer to the layer stack. The new layer will be the last (and topmost) layer.
          * @param layer The layer to be added.
          */
         void add(const std::shared_ptr<Layer>& layer);
         /**
          * Removes a layer to the layer stack.
          * @param layer The layer to be removed.
+		 * @return True if the layer was removed. False otherwise (layer was not found).
          */
         bool remove(const std::shared_ptr<Layer>& layer);
-    
+		
         /**
          * Returns a list of layers. The layers are in the order in which they were added.
          * @return A vector of all previously added layers.

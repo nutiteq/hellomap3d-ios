@@ -157,11 +157,11 @@ static const int BACKGROUND_COLOR = 0xffffffff;
 	if (![_style isScaleWithDPI] || ([_style isScaleWithDPI] && dpToPX >= 1)) {
 		// The bitmap doesnt have to be power of two if the generated texture will never be
 		// downscaled and thus doesn't need mipmaps
-		return [NTBitmapUtils createBitmapFromUIImage:image pow2Padding:false];
+		return [NTBitmapUtils CreateBitmapFromUIImage:image pow2Padding:false];
 	} else {
 		// Bitmap needs to be power of two, because it needs mipmaps and
 		// texture rectangle isn't supported
-		return [NTBitmapUtils createBitmapFromUIImage:image pow2Padding:true];
+		return [NTBitmapUtils CreateBitmapFromUIImage:image pow2Padding:true];
 	}
 }
 

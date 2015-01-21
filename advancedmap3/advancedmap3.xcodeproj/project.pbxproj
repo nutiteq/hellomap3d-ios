@@ -182,10 +182,10 @@
 		2A319B48187C4F8F0004A3CB /* advancedmap3 */ = {
 			isa = PBXGroup;
 			children = (
-				4D13E2811A6EB7E300FA74DC /* Vector Elements */,
 				4DB60ECD1A16614A00A6AF18 /* VPPDropDown */,
 				4DEB06D61A10CD88003D111C /* Data Sources */,
 				4DEB06D51A10C94E003D111C /* Listeners */,
+				4D13E2811A6EB7E300FA74DC /* Vector Elements */,
 				2AD24F7D18FEDAE0000969F4 /* Supporting Files */,
 				2AD24F8418FEDB89000969F4 /* Images.xcassets */,
 				2AD24F6918FEDAA6000969F4 /* AppDelegate.h */,
