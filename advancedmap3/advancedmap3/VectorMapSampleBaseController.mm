@@ -18,7 +18,6 @@
 {
 	return @{
 			 @"English": @"en",
- 			 @"Estonian": @"et",
 			 @"German":  @"de",
  			 @"Spanish": @"es",
        @"Italian": @"it",
