@@ -105,7 +105,6 @@ namespace Nuti {
     
         void drawLayers(float deltaSeconds, const ViewState& viewState);
     
-        static const int CULL_TASK_DELAY = 400;
         static const int BILLBOARD_PLACEMENT_TASK_DELAY = 200;
         
         std::chrono::time_point<std::chrono::system_clock> _lastFrameTime;

@@ -1,5 +1,11 @@
 #import "VectorMapSampleBaseController.h"
 
+/*
+ * A sample demonstrating how to use markers on the map. This involves creating
+ * a data source for the markers, creating a layer using the data source, loading
+ * marker bitmaps, creating style for the marker and finally adding the marker to the data source.
+ * For multiple markers, the same data source, layer and style should be reused if possible.
+ */
 @interface PinSampleController : VectorMapSampleBaseController
 
 @end
@@ -20,9 +26,9 @@
 		
 	// Load bitmaps for custom markers
 	UIImage* markerImage = [UIImage imageNamed:@"marker.png"];
-	NTBitmap* markerBitmap = [NTBitmapUtils createBitmapFromUIImage:markerImage];
+	NTBitmap* markerBitmap = [NTBitmapUtils CreateBitmapFromUIImage:markerImage];
 	
-	// Create a marker style, use it for both markers, because they should look the same
+	// Create a marker style
 	NTMarkerStyleBuilder* markerStyleBuilder = [[NTMarkerStyleBuilder alloc] init];
 	[markerStyleBuilder setBitmap:markerBitmap];
 	[markerStyleBuilder setSize:30];

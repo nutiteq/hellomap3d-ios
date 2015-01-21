@@ -129,7 +129,9 @@ namespace Nuti {
         mutable std::recursive_mutex _mutex;
     
     private:
-        bool _surfaceCreated;
+		static const int CULL_DELAY = 400;
+
+		bool _surfaceCreated;
     };
     
 }

@@ -55,7 +55,7 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
   
-    NTBitmap* tileBitmap = [NTBitmapUtils createBitmapFromUIImage:image];
+    NTBitmap* tileBitmap = [NTBitmapUtils CreateBitmapFromUIImage:image];
 
     return [[NTTileData alloc] initWithData: tileBitmap.compressToInternal];
 }

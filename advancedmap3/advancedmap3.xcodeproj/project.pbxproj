@@ -28,6 +28,8 @@
 		2AD24F8518FEDB89000969F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AD24F8418FEDB89000969F4 /* Images.xcassets */; };
 		2AEA4FA61913F38C002ED69F /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEA4FA51913F38C002ED69F /* info.png */; };
 		2AEA4FAC19140909002ED69F /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEA4FAB19140909002ED69F /* arrow.png */; };
+		4D13E2801A6EB72600FA74DC /* CustomPopupSampleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D13E27F1A6EB72600FA74DC /* CustomPopupSampleController.mm */; };
+		4D13E2831A6EB80200FA74DC /* CustomPopup.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D13E2821A6EB80200FA74DC /* CustomPopup.mm */; };
 		4D2BE7091A52F86F0013ABB3 /* MapSampleBaseController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D2BE7081A52F86F0013ABB3 /* MapSampleBaseController.mm */; };
 		4DB60ECA1A155FF500A6AF18 /* osmbright.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60EC91A155FF500A6AF18 /* osmbright.zip */; };
 		4DB60ED71A16615A00A6AF18 /* UITableContract.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60ECE1A16615A00A6AF18 /* UITableContract.png */; };
@@ -80,6 +82,9 @@
 		2AD24F8418FEDB89000969F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = advancedmap3/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		2AEA4FA51913F38C002ED69F /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		2AEA4FAB19140909002ED69F /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		4D13E27F1A6EB72600FA74DC /* CustomPopupSampleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CustomPopupSampleController.mm; path = advancedmap3/CustomPopupSampleController.mm; sourceTree = SOURCE_ROOT; };
+		4D13E2821A6EB80200FA74DC /* CustomPopup.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CustomPopup.mm; path = advancedmap3/CustomPopup.mm; sourceTree = SOURCE_ROOT; };
+		4D13E2841A6EB82600FA74DC /* CustomPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomPopup.h; path = advancedmap3/CustomPopup.h; sourceTree = SOURCE_ROOT; };
 		4D2BE7081A52F86F0013ABB3 /* MapSampleBaseController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MapSampleBaseController.mm; path = advancedmap3/MapSampleBaseController.mm; sourceTree = SOURCE_ROOT; };
 		4D2BE70A1A52F89C0013ABB3 /* MapSampleBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapSampleBaseController.h; path = advancedmap3/MapSampleBaseController.h; sourceTree = SOURCE_ROOT; };
 		4DB60EC91A155FF500A6AF18 /* osmbright.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright.zip; sourceTree = "<group>"; };
@@ -180,8 +185,9 @@
 				4DB60ECD1A16614A00A6AF18 /* VPPDropDown */,
 				4DEB06D61A10CD88003D111C /* Data Sources */,
 				4DEB06D51A10C94E003D111C /* Listeners */,
-				2AD24F8418FEDB89000969F4 /* Images.xcassets */,
+				4D13E2811A6EB7E300FA74DC /* Vector Elements */,
 				2AD24F7D18FEDAE0000969F4 /* Supporting Files */,
+				2AD24F8418FEDB89000969F4 /* Images.xcassets */,
 				2AD24F6918FEDAA6000969F4 /* AppDelegate.h */,
 				2AD24F6A18FEDAA6000969F4 /* AppDelegate.m */,
 				4DEB06DF1A10DF0F003D111C /* LauncherListController.h */,
@@ -197,6 +203,7 @@
 				4DEB06D31A10C904003D111C /* MapListenerSampleController.mm */,
 				4DEB06D71A10CDC0003D111C /* OfflineVectorMapSampleController.mm */,
 				4DEB06D91A10D3D1003D111C /* AerialMapSampleController.mm */,
+				4D13E27F1A6EB72600FA74DC /* CustomPopupSampleController.mm */,
 			);
 			name = advancedmap3;
 			path = sdk_3d_ios_app;
@@ -210,6 +217,15 @@
 				2AD24F7318FEDAA6000969F4 /* advancedmap3-Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4D13E2811A6EB7E300FA74DC /* Vector Elements */ = {
+			isa = PBXGroup;
+			children = (
+				4D13E2821A6EB80200FA74DC /* CustomPopup.mm */,
+				4D13E2841A6EB82600FA74DC /* CustomPopup.h */,
+			);
+			name = "Vector Elements";
 			sourceTree = "<group>";
 		};
 		4DB60ECD1A16614A00A6AF18 /* VPPDropDown */ = {
@@ -338,12 +354,14 @@
 				2AD24F7918FEDAA6000969F4 /* main.m in Sources */,
 				4D2BE7091A52F86F0013ABB3 /* MapSampleBaseController.mm in Sources */,
 				2AC270581941EFF9000CA859 /* MyMergedRasterTileDataSource.mm in Sources */,
+				4D13E2831A6EB80200FA74DC /* CustomPopup.mm in Sources */,
 				4DB60EDB1A16615A00A6AF18 /* VPPDropDown.m in Sources */,
 				4DC850121A0E7DC500C5124F /* CustomRasterDataSourceSampleController.mm in Sources */,
 				4DC8500C1A0E77CA00C5124F /* VectorMapSampleBaseController.mm in Sources */,
 				4DEB06D81A10CDC0003D111C /* OfflineVectorMapSampleController.mm in Sources */,
 				4DEB06DA1A10D3D1003D111C /* AerialMapSampleController.mm in Sources */,
 				4DC850081A0E718100C5124F /* LauncherListController.mm in Sources */,
+				4D13E2801A6EB72600FA74DC /* CustomPopupSampleController.mm in Sources */,
 				4DEB06D41A10C904003D111C /* MapListenerSampleController.mm in Sources */,
 				2AD24F7A18FEDAA6000969F4 /* MyMapEventListener.mm in Sources */,
 				4DEB06D21A10C103003D111C /* Overlays3DSampleController.mm in Sources */,

@@ -1,5 +1,9 @@
 #import "VectorMapSampleBaseController.h"
 
+/*
+ * A sample demonstrating how to add basic 2D objects to the map:
+ * lines, points, polygon with hole, texts and pop-ups.
+ */
 @interface Overlays2DSampleController : VectorMapSampleBaseController
 
 @end
@@ -117,7 +121,7 @@
 	
 	// Load bitmaps for custom markers
 	UIImage* markerImage = [UIImage imageNamed:@"marker.png"];
-	NTBitmap* markerBitmap = [NTBitmapUtils createBitmapFromUIImage:markerImage];
+	NTBitmap* markerBitmap = [NTBitmapUtils CreateBitmapFromUIImage:markerImage];
 	
 	// Create text style
 	NTTextStyleBuilder* textStyleBuilder = [[NTTextStyleBuilder alloc] init];
