@@ -237,4 +237,14 @@
 	[vectorDataSource1 add:popup3 ];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+	// Check if the view is closing
+	if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
+		[self setMapEventListener:nil];
+	}
+	
+	[super viewWillDisappear:animated];
+}
+
 @end
