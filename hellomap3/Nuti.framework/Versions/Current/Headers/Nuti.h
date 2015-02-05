@@ -50,6 +50,7 @@
 #import "PackageTileMask_proxy.h"
 #import "PackageManager_proxy.h"
 #import "NutiteqPackageManager_proxy.h"
+#import "PackageManagerTileDataSource_proxy.h"
 
 #import "CullState_proxy.h"
 

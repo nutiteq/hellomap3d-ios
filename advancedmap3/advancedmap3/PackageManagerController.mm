@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <Nuti/Nuti.h>
+#import "PackageMapController.h"
 
 /*
  * A sample demonstrating how to use offline package manager of the Nutiteq SDK.
@@ -240,9 +241,14 @@ static NSString* _language = @"en"; // the language for the package names
 		if (pkg.packageStatus) {
 			if ([pkg.packageStatus getAction] == NTPackageStatus_READY) {
 				status = @"ready";
-				action = @"RM";
+				action = @"GO";
 				cell.customActionBlock = ^ {
-					[_packageManager startPackageRemove:[pkg.packageInfo getPackageId]];
+//					[_packageManager startPackageRemove:[pkg.packageInfo getPackageId]];
+          
+          PackageMapController *map = [[PackageMapController alloc] init];
+          map.dataSource = [[NTPackageManagerTileDataSource alloc] initWithPackageManager:_packageManager];
+          [self.navigationController pushViewController:map animated:YES];
+          
 				};
 			} else if ([pkg.packageStatus getAction] == NTPackageStatus_WAITING) {
 				status = @"queued";
