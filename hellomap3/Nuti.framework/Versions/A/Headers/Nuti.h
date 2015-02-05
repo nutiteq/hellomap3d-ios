@@ -99,6 +99,4 @@
 #import "MBVectorTileDecoder_proxy.h"
 #import "MBVectorTileStyleSet_proxy.h"
 
-#import "wrappedcommons/LegacyWrappers.h"
-
 #endif
