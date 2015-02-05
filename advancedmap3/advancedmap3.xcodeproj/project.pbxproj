@@ -192,7 +192,6 @@
 				2AD24F8418FEDB89000969F4 /* Images.xcassets */,
 				2AD24F6918FEDAA6000969F4 /* AppDelegate.h */,
 				2AD24F6A18FEDAA6000969F4 /* AppDelegate.m */,
-				4D94545D1A80E48D00D37B3B /* PackageManagerController.mm */,
 				4DEB06DF1A10DF0F003D111C /* LauncherListController.h */,
 				4DC850071A0E718100C5124F /* LauncherListController.mm */,
 				4DC8500A1A0E778900C5124F /* VectorMapSampleBaseController.h */,
@@ -207,6 +206,7 @@
 				4DEB06D71A10CDC0003D111C /* OfflineVectorMapSampleController.mm */,
 				4DEB06D91A10D3D1003D111C /* AerialMapSampleController.mm */,
 				4D13E27F1A6EB72600FA74DC /* CustomPopupSampleController.mm */,
+				4D94545D1A80E48D00D37B3B /* PackageManagerController.mm */,
 			);
 			name = advancedmap3;
 			path = sdk_3d_ios_app;

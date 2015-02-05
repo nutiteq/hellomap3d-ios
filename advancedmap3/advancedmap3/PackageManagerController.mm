@@ -12,6 +12,8 @@
  * that will automatically display all imported or downloaded packages. 
  */
 
+static NSString* _language = @"en"; // the language for the package names
+
 /*
  * Controller for package list manipulation.
  */
@@ -304,29 +306,32 @@
 		NSMutableDictionary* packages = [[NSMutableDictionary alloc] init];
 		for (int i = 0; i < [packageInfoVector size]; i++) {
 			NTPackageInfo* packageInfo = [packageInfoVector get:i];
-			NSString* packageName = [packageInfo getName];
-			if ([packageName length] < [_currentFolder length]) {
-				continue;
-			}
-			if ([[packageName substringToIndex:[_currentFolder length]] compare:_currentFolder] != NSOrderedSame) {
-				continue;
-			}
-			packageName = [packageName substringFromIndex:[_currentFolder length]];
-			NSRange range = [packageName rangeOfString:@"/"];
-			Package* pkg = nil;
-			if (range.location == NSNotFound) {
-				// This is actual package
-				NTPackageStatus* packageStatus = [_packageManager getLocalPackageStatus:[packageInfo getPackageId] version:-1];
-				pkg = [[Package alloc] initWithPackageName:packageName packageInfo:packageInfo packageStatus:packageStatus];
-			} else {
-				// Package group
-				packageName = [packageName substringToIndex:range.location];
-				if ([packages valueForKey:packageName]) {
+			NTStringVector* packageNames = [packageInfo getNames:_language];
+			for (int j = 0; j < [packageNames size]; j++) {
+				NSString* packageName = [packageNames get:j];
+				if ([packageName length] < [_currentFolder length]) {
 					continue;
 				}
-				pkg = [[Package alloc] initWithPackageName:packageName packageInfo:nil packageStatus:nil];
+				if ([[packageName substringToIndex:[_currentFolder length]] compare:_currentFolder] != NSOrderedSame) {
+					continue;
+				}
+				packageName = [packageName substringFromIndex:[_currentFolder length]];
+				NSRange range = [packageName rangeOfString:@"/"];
+				Package* pkg = nil;
+				if (range.location == NSNotFound) {
+					// This is actual package
+					NTPackageStatus* packageStatus = [_packageManager getLocalPackageStatus:[packageInfo getPackageId] version:-1];
+					pkg = [[Package alloc] initWithPackageName:packageName packageInfo:packageInfo packageStatus:packageStatus];
+				} else {
+					// Package group
+					packageName = [packageName substringToIndex:range.location];
+					if ([packages valueForKey:packageName]) {
+						continue;
+					}
+					pkg = [[Package alloc] initWithPackageName:packageName packageInfo:nil packageStatus:nil];
+				}
+				[packages setValue:pkg forKey:packageName];
 			}
-			[packages setValue:pkg forKey:packageName];
 		}
 
 		_currentPackages = [packages allValues];
