@@ -16,6 +16,7 @@
 			@{ @"name": @"Aerial Map Sample", @"controller": @"AerialMapSampleController" },
 			@{ @"name": @"Custom Raster Data Source Sample", @"controller": @"CustomRasterDataSourceSampleController" },
 			@{ @"name": @"Custom Popup Sample", @"controller": @"CustomPopupSampleController" },
+			@{ @"name": @"Package Manager Sample", @"controller": @"PackageManagerController" },
 		];
 }
 
@@ -41,7 +42,7 @@
 	self.navigationItem.title = @"Samples";
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
 	// Launch selected sample, use basic reflection to convert class name to class instance
 	NSDictionary* sample = [[self samples] objectAtIndex:indexPath.row];
@@ -50,12 +51,7 @@
 	[self.navigationController pushViewController: subViewController animated:YES];
 }
 
-- (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-	return UITableViewCellAccessoryDisclosureIndicator;
-}
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath*)indexPath
 {
 	[self tableView:tableView didSelectRowAtIndexPath:indexPath];
 }
@@ -70,7 +66,7 @@
 	return [[self samples] count];
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
 	static NSString* cellIdentifier = @"sampleId";
 	UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
