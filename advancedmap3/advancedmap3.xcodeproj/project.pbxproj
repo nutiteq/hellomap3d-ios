@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0C0E589C1A83CD540072D7E8 /* PackageMapController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C0E589B1A83CD540072D7E8 /* PackageMapController.mm */; };
+		0C0E58A11A84BC2D0072D7E8 /* 852-map-toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C0E589E1A84BC2D0072D7E8 /* 852-map-toolbar.png */; };
+		0C0E58A21A84BC2D0072D7E8 /* 852-map-toolbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C0E589F1A84BC2D0072D7E8 /* 852-map-toolbar@2x.png */; };
+		0C0E58A31A84BC2D0072D7E8 /* 852-map-toolbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C0E58A01A84BC2D0072D7E8 /* 852-map-toolbar@3x.png */; };
 		0C3C369819E66E0A007573FD /* fcd_auto.nml in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C369719E66E0A007573FD /* fcd_auto.nml */; };
 		0C60B8251A601A820058C740 /* Nuti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABFB6B71947460E00A64571 /* Nuti.framework */; };
 		0CED8F211A5D1C2F00116863 /* osmbright-unifont.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0CED8F201A5D1C2F00116863 /* osmbright-unifont.zip */; };
@@ -58,6 +61,9 @@
 /* Begin PBXFileReference section */
 		0C0E589B1A83CD540072D7E8 /* PackageMapController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PackageMapController.mm; path = advancedmap3/PackageMapController.mm; sourceTree = SOURCE_ROOT; };
 		0C0E589D1A83CFD30072D7E8 /* PackageMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PackageMapController.h; path = advancedmap3/PackageMapController.h; sourceTree = SOURCE_ROOT; };
+		0C0E589E1A84BC2D0072D7E8 /* 852-map-toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "852-map-toolbar.png"; sourceTree = "<group>"; };
+		0C0E589F1A84BC2D0072D7E8 /* 852-map-toolbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "852-map-toolbar@2x.png"; sourceTree = "<group>"; };
+		0C0E58A01A84BC2D0072D7E8 /* 852-map-toolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "852-map-toolbar@3x.png"; sourceTree = "<group>"; };
 		0C3C369719E66E0A007573FD /* fcd_auto.nml */ = {isa = PBXFileReference; lastKnownFileType = file; path = fcd_auto.nml; sourceTree = "<group>"; };
 		0CED8F201A5D1C2F00116863 /* osmbright-unifont.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "osmbright-unifont.zip"; sourceTree = "<group>"; };
 		0CED8F221A5D2BEA00116863 /* osmbright-heilight.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "osmbright-heilight.zip"; sourceTree = "<group>"; };
@@ -155,6 +161,9 @@
 				0CED8F221A5D2BEA00116863 /* osmbright-heilight.zip */,
 				0CED8F241A5D334E00116863 /* rome_ntvt.mbtiles */,
 				4DB60F321A16AE1600A6AF18 /* menu.png */,
+				0C0E589E1A84BC2D0072D7E8 /* 852-map-toolbar.png */,
+				0C0E589F1A84BC2D0072D7E8 /* 852-map-toolbar@2x.png */,
+				0C0E58A01A84BC2D0072D7E8 /* 852-map-toolbar@3x.png */,
 				4DB60F331A16AE1600A6AF18 /* menu@2x.png */,
 				2A319B48187C4F8F0004A3CB /* advancedmap3 */,
 				2A319B41187C4F8F0004A3CB /* Frameworks */,
@@ -204,14 +213,14 @@
 				4DC8500F1A0E7A5100C5124F /* PinSampleController.mm */,
 				4DC850111A0E7DC500C5124F /* CustomRasterDataSourceSampleController.mm */,
 				4DEB06CF1A10BDB7003D111C /* Overlays2DSampleController.mm */,
-				0C0E589D1A83CFD30072D7E8 /* PackageMapController.h */,
-				0C0E589B1A83CD540072D7E8 /* PackageMapController.mm */,
 				4DEB06D11A10C103003D111C /* Overlays3DSampleController.mm */,
 				4DEB06D31A10C904003D111C /* MapListenerSampleController.mm */,
 				4DEB06D71A10CDC0003D111C /* OfflineVectorMapSampleController.mm */,
 				4DEB06D91A10D3D1003D111C /* AerialMapSampleController.mm */,
 				4D13E27F1A6EB72600FA74DC /* CustomPopupSampleController.mm */,
 				4D94545D1A80E48D00D37B3B /* PackageManagerController.mm */,
+				0C0E589D1A83CFD30072D7E8 /* PackageMapController.h */,
+				0C0E589B1A83CD540072D7E8 /* PackageMapController.mm */,
 			);
 			name = advancedmap3;
 			path = sdk_3d_ios_app;
@@ -327,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C0E58A31A84BC2D0072D7E8 /* 852-map-toolbar@3x.png in Resources */,
 				0CED8F251A5D334E00116863 /* rome_ntvt.mbtiles in Resources */,
 				4DB60F391A1770E500A6AF18 /* basic.zip in Resources */,
 				2AD24F6818FED992000969F4 /* saku_ios_4bpp.nmldb in Resources */,
@@ -336,6 +346,7 @@
 				0CED8F231A5D2BEA00116863 /* osmbright-heilight.zip in Resources */,
 				4DB60ED81A16615A00A6AF18 /* UITableContract@2x.png in Resources */,
 				2A710BC019196AD100647B81 /* arrow@2x.png in Resources */,
+				0C0E58A11A84BC2D0072D7E8 /* 852-map-toolbar.png in Resources */,
 				0C3C369819E66E0A007573FD /* fcd_auto.nml in Resources */,
 				2AD24F8518FEDB89000969F4 /* Images.xcassets in Resources */,
 				4DB60F371A1770DE00A6AF18 /* looseleaf.zip in Resources */,
@@ -347,6 +358,7 @@
 				4DB60F351A16AE1600A6AF18 /* menu@2x.png in Resources */,
 				2AEA4FA61913F38C002ED69F /* info.png in Resources */,
 				4DB60ECA1A155FF500A6AF18 /* osmbright.zip in Resources */,
+				0C0E58A21A84BC2D0072D7E8 /* 852-map-toolbar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -109,6 +109,9 @@ static NSString* _language = @"en"; // the language for the package names
 	[_packageManager setPackageManagerListener:_packageManagerListener];
 	
 	_currentFolder = @"";
+  
+  [self createMenu];
+  
 	return [super init];
 }
 
@@ -121,6 +124,9 @@ static NSString* _language = @"en"; // the language for the package names
 	[_packageManagerListener addPackageManagerController:self];
 
 	_currentFolder = folder;
+  
+  [self createMenu];
+
 	return [super init];
 }
 
@@ -241,13 +247,9 @@ static NSString* _language = @"en"; // the language for the package names
 		if (pkg.packageStatus) {
 			if ([pkg.packageStatus getAction] == NTPackageStatus_READY) {
 				status = @"ready";
-				action = @"GO";
+				action = @"RM";
 				cell.customActionBlock = ^ {
-//					[_packageManager startPackageRemove:[pkg.packageInfo getPackageId]];
-          
-          PackageMapController *map = [[PackageMapController alloc] init];
-          map.dataSource = [[NTPackageManagerTileDataSource alloc] initWithPackageManager:_packageManager];
-          [self.navigationController pushViewController:map animated:YES];
+					[_packageManager startPackageRemove:[pkg.packageInfo getPackageId]];
           
 				};
 			} else if ([pkg.packageStatus getAction] == NTPackageStatus_WAITING) {
@@ -394,6 +396,24 @@ static NSString* _language = @"en"; // the language for the package names
 		];
 	}];
 }
+
+
+- (void)createMenu
+{
+  UIImage* menuImage = [UIImage imageNamed:@"852-map-toolbar.png"];
+  UIBarButtonItem *menuButton = [[UIBarButtonItem alloc] initWithImage:menuImage style:UIBarButtonItemStylePlain target: self action: @selector(showMap)];
+  [self.navigationItem setRightBarButtonItem: menuButton];
+}
+
+- (void)showMap
+{
+  PackageMapController *map = [[PackageMapController alloc] init];
+  map.dataSource = [[NTPackageManagerTileDataSource alloc] initWithPackageManager:_packageManager];
+  [self.navigationController pushViewController:map animated:YES];
+
+}
+
+
 
 @end
 
