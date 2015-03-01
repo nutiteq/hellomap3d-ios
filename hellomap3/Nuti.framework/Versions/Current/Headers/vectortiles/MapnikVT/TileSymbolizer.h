@@ -19,6 +19,7 @@
 #include "Map.h"
 
 #include <memory>
+#include <mutex>
 
 #include <cglib/mat.h>
 
@@ -54,6 +55,8 @@ namespace Nuti { namespace MapnikVT {
 		void updateBindings(const Mapnik::ExpressionContext& exprContext) {
 			_binder.evaluate(exprContext);
 		}
+
+		mutable std::mutex _mutex; // guards internal state as bindings may update it
 
 		std::shared_ptr<Mapnik::Logger> _logger;
 
