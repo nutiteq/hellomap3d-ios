@@ -20,11 +20,23 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTScreenPos : NSObject
 {
-	void *swigCPtr;
-	BOOL swigCMemOwn;
+  void *swigCPtr;
+  BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
+ */
+-(BOOL)isEqual:(id)object;
+
+/**
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
+ */
+-(NSUInteger)hash;
 /**
  * Constructs a ScreenPos object. All coordinates will be 0.
  */
@@ -66,13 +78,12 @@ __attribute__ ((visibility("default"))) @interface NTScreenPos : NSObject
  * @param p The other screen position.<br>
  * @return True if equal.
  */
--(BOOL)equals: (NTScreenPos*)p;
+-(BOOL)isEqualInternal: (NTScreenPos*)p;
 /**
- * Checks for inequality between this and another screen position.<br>
- * @param p The other screen position.<br>
- * @return True if not equal.
+ * Returns the hash value of this object.<br>
+ * @return The hash value of this object.
  */
--(BOOL)differs: (NTScreenPos*)p;
+-(int)hashInternal;
 /**
  * Creates a string representation of this screen position, useful for logging.<br>
  * @return The string representation of this screen position.

@@ -170,7 +170,7 @@ namespace Nuti {
 			mutable std::mutex _mutex;
 		};
 		
-        TileLayer();
+		TileLayer(const std::string& className);
 		
         void loadData(const std::shared_ptr<CullState>& cullState);
 		

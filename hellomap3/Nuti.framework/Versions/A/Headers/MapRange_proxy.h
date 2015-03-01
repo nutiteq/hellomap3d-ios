@@ -20,11 +20,23 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTMapRange : NSObject
 {
-	void *swigCPtr;
-	BOOL swigCMemOwn;
+  void *swigCPtr;
+  BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
+ */
+-(BOOL)isEqual:(id)object;
+
+/**
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
+ */
+-(NSUInteger)hash;
 /**
  * Constructs a MapRange object. The minimum value will be set to positive infinity<br>
  * and the maximum value to negative infinity.
@@ -42,13 +54,7 @@ __attribute__ ((visibility("default"))) @interface NTMapRange : NSObject
  * @param mapRange The other map range.<br>
  * @return True if equal.
  */
--(BOOL)equals: (NTMapRange*)mapRange;
-/**
- * Checks for inequality between this and another map tile.<br>
- * @param mapRange The other map range.<br>
- * @return True if not equal.
- */
--(BOOL)differs: (NTMapRange*)mapRange;
+-(BOOL)isEqualInternal: (NTMapRange*)mapRange;
 /**
  * Returns the min value of this map range.<br>
  * @return The min value of this map range.
@@ -70,6 +76,11 @@ __attribute__ ((visibility("default"))) @interface NTMapRange : NSObject
  * @return The length of this map range.
  */
 -(float)length;
+/**
+ * Returns the hash value of this object.<br>
+ * @return The hash value of this object.
+ */
+-(int)hashInternal;
 /**
  * Creates a string representation of this map range, useful for logging.<br>
  * @return The string representation of this map range.

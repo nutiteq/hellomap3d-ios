@@ -25,11 +25,23 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTMapBounds : NSObject
 {
-	void *swigCPtr;
-	BOOL swigCMemOwn;
+  void *swigCPtr;
+  BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
+ */
+-(BOOL)isEqual:(id)object;
+
+/**
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
+ */
+-(NSUInteger)hash;
 /**
  * Constructs an empty MapBounds object. The coordinates of the minimum map position will be <br>
  * set to positive infinity and the coordinates of the maximum map position will be<br>
@@ -49,13 +61,7 @@ __attribute__ ((visibility("default"))) @interface NTMapBounds : NSObject
  * @param mapBounds The other map bounds object.<br>
  * @return True if equal.
  */
--(BOOL)equals: (NTMapBounds*)mapBounds;
-/**
- * Checks for inequality between this and another map bounds object.<br>
- * @param mapBounds The other map bounds object.<br>
- * @return True if not equal.
- */
--(BOOL)differs: (NTMapBounds*)mapBounds;
+-(BOOL)isEqualInternal: (NTMapBounds*)mapBounds;
 /**
  * Calculates the center map position of this map envelope object.<br>
  * @return The center postion if this map envelope object.
@@ -94,6 +100,11 @@ __attribute__ ((visibility("default"))) @interface NTMapBounds : NSObject
  * @return True if this map bounds object intersects with the other map bounds object.
  */
 -(BOOL)intersects: (NTMapBounds*)bounds;
+/**
+ * Returns the hash value of this object.<br>
+ * @return The hash value of this object.
+ */
+-(int)hashInternal;
 /**
  * Creates a string representation of this map bounds object, useful for logging.<br>
  * @return The string representation of this map bounds object.

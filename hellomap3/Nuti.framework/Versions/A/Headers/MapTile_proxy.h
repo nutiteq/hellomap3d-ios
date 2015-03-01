@@ -20,24 +20,30 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTMapTile : NSObject
 {
-	void *swigCPtr;
-	BOOL swigCMemOwn;
+  void *swigCPtr;
+  BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
+ */
+-(BOOL)isEqual:(id)object;
+
+/**
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
+ */
+-(NSUInteger)hash;
 -(id)initWithX: (int)x y: (int)y zoom: (int)zoom frameNr: (int)frameNr;
 /**
  * Checks for equality between this and another map tile.<br>
  * @param tile The other map tile.<br>
  * @return True if equal.
  */
--(BOOL)equals: (NTMapTile*)tile;
-/**
- * Checks for inequality between this and another map tile.<br>
- * @param tile The other map tile.<br>
- * @return True if not equal.
- */
--(BOOL)differs: (NTMapTile*)tile;
+-(BOOL)isEqualInternal: (NTMapTile*)tile;
 /**
  * Returns the x coordinate of this map tile.<br>
  * @return The x coordinate of this map tile.
@@ -63,6 +69,11 @@ __attribute__ ((visibility("default"))) @interface NTMapTile : NSObject
  * @return The internal tile id of this map tile.
  */
 -(long long)getTileId;
+/**
+ * Returns the hash value of this object.<br>
+ * @return The hash value of this object.
+ */
+-(int)hashInternal;
 /**
  * Creates a string representation of this map tile, useful for logging.<br>
  * @return The string representation of this map tile.

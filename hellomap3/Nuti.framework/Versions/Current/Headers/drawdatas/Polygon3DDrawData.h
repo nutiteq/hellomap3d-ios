@@ -12,6 +12,7 @@
 
 #include <memory>
 #include <vector>
+#include <cglib/vec.h>
 
 namespace Nuti {
     class MapPos;
@@ -21,21 +22,6 @@ namespace Nuti {
     
     class Polygon3DDrawData : public VectorElementDrawData {
     public:
-        // Saves a little space compared to MapPos
-        class Vector3F {
-        public:
-            Vector3F(float x, float y, float z);
-            Vector3F(const Tuple3D& mapPos);
-            float getX() const;
-            float getY() const;
-            float getZ() const;
-            
-        private:
-            float _x;
-            float _y;
-            float _z;
-        };
-        
         Polygon3DDrawData(const Polygon3D& polygon3D, const Polygon3DStyle& style, const Projection& projection);
         Polygon3DDrawData(const Polygon3DDrawData& drawData);
         virtual ~Polygon3DDrawData();
@@ -44,7 +30,7 @@ namespace Nuti {
     
         const std::vector<MapPos>& getCoords() const;
     
-        const std::vector<Vector3F>& getNormals() const;
+		const std::vector<cglib::vec3<float> >& getNormals() const;
     
         void offsetHorizontally(double offset);
     
@@ -55,7 +41,7 @@ namespace Nuti {
     
         std::vector<MapPos> _coords;
         
-        std::vector<Vector3F> _normals;
+        std::vector<cglib::vec3<float> > _normals;
     };
     
 }

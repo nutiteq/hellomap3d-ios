@@ -149,8 +149,8 @@ namespace Nuti {
         void updateTextures(const NMLModelLODTree* modelLODTree, int nodeId, std::shared_ptr<nmlGL::Model> glModel, TextureMap& textureMap);
         void updateDrawLists(const ViewState& viewState, MeshMap& meshMap, TextureMap& textureMap, NodeDrawDataMap& nodeDrawDataMap);
     
-        static const int MODELLODTREE_LOADING_PRIORITY_OFFSET = 2;
-        static const int MESH_LOADING_PRIORITY_OFFSET = 1;
+        static const int MODELLODTREE_LOADING_PRIORITY_OFFSET = 1;
+        static const int MESH_LOADING_PRIORITY_OFFSET = 0;
         static const int TEXTURE_LOADING_PRIORITY_OFFSET = 0;
     
         size_t _maxMemorySize;

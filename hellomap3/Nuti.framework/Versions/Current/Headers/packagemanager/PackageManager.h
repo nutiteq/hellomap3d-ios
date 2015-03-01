@@ -44,21 +44,21 @@ namespace Nuti {
 		class Logger {
 		public:
 			virtual ~Logger() = default;
-
+			
 			virtual void info(const std::string& msg) = 0;
 			virtual void error(const std::string& msg) = 0;
 		};
-
+		
 		/**
 		 * Listener interface for package change events.
 		 */
 		class OnChangeListener {
 		public:
 			virtual ~OnChangeListener() = default;
-
+			
 			virtual void onTilesChanged() = 0;
 		};
-
+		
 		/**
 		 * Constructs a new package manager, given URL for package list and data folder.
 		 * The data folder must exist before creating a new package manager and it is assumed to be persistent.
@@ -71,7 +71,7 @@ namespace Nuti {
 		 */
 		PackageManager(const std::string& packageListUrl, const std::string& dataFolder, const std::string& serverEncKey, const std::string& localEncKey, const std::shared_ptr<Logger>& logger);
 		virtual ~PackageManager();
-
+		
 		/**
 		 * Returns the current listener for package manager events.
 		 * @return The current listener or null if none is set.
@@ -82,7 +82,7 @@ namespace Nuti {
 		 * @param listener The new package manager listener to use.
 		 */
 		void setPackageManagerListener(const std::shared_ptr<PackageManagerListener>& listener);
-
+		
 		/**
 		 * Registers listener for package data change events.
 		 * @param listener The listener for change events.
@@ -93,7 +93,7 @@ namespace Nuti {
 		 * @param listener The previously added listener.
 		 */
 		void unregisterOnChangeListener(const std::shared_ptr<OnChangeListener>& listener);
-
+		
 		/**
 		 * Starts the package manager. All previous tasks will be resumed after this.
 		 * @return True if package manager was successfully started. False otherwise (can not create/access database).
@@ -104,7 +104,7 @@ namespace Nuti {
 		 * @param wait If set to true, then synchronous stopping is performed and the operation may take a while.
 		 */
 		void stop(bool wait);
-
+		
 		/**
 		 * Returns the tile at specified coordinates.
 		 * @param zoom The zoom value of the tile to return.
@@ -113,9 +113,10 @@ namespace Nuti {
 		 * @return The corresponding tile data or null if tile was not found.
 		 */
 		std::shared_ptr<std::vector<unsigned char> > loadTile(int zoom, int x, int y) const;
-
+		
 		/**
 		 * Returns the list of available server packages.
+		 * Note that the list must be retrieved from the server first, using startPackageListDownload.
 		 * @return The list of available server packages.
 		 */
 		std::vector<std::shared_ptr<PackageInfo> > getServerPackages() const;
@@ -134,7 +135,18 @@ namespace Nuti {
 		 * @return The age of server package list in seconds.
 		 */
 		int getServerPackageListAge() const;
-
+		
+		/**
+		 * Returns the specified server package.
+		 * Note that the list must be retrieved from the server first, using startPackageListDownload.
+		 * @return The specified server package or null if it is not in the server package list.
+		 */
+		std::shared_ptr<PackageInfo> getServerPackage(const std::string& packageId) const;
+		/**
+		 * Returns the specified local package.
+		 * @return The specified local package or null if it can not be found in the package list.
+		 */
+		std::shared_ptr<PackageInfo> getLocalPackage(const std::string& packageId) const;
 		/**
 		 * Returns the status of the specified package.
 		 * @param packageId The id of the package.
@@ -142,7 +154,7 @@ namespace Nuti {
 		 * @return The status of the package or null if it is not yet downloaded or downloading.
 		 */
 		std::shared_ptr<PackageStatus> getLocalPackageStatus(const std::string& packageId, int version) const;
-
+		
 		/**
 		 * Starts downloading package list asynchronously. When this task finishes, listener is called and server package list is updated.
 		 * @return True if the package list will be downloaded and listener will be notified (if set). False if it can not be downloaded.
@@ -171,13 +183,13 @@ namespace Nuti {
 		 * @return True is the package was found and will be removed. False if the package was not found.
 		 */
 		bool startPackageRemove(const std::string& packageId);
-
+		
 		/**
 		 * Cancels the current/pending tasks involving of the specified package.
 		 * @param packageId The id of the package to cancel
 		 */
 		void cancelPackageTasks(const std::string& packageId);
-
+		
 		/**
 		 * Sets the priority of the specific package.
 		 * If the given priority is higher than priority of any other package, other operations will be paused and this package is processed immediately.
@@ -191,7 +203,9 @@ namespace Nuti {
 		virtual std::string createLocalFilePath(const std::string& name) const;
 		virtual std::string createPackageFileName(const std::string& packageId, int version) const;
 		virtual std::string createPackageListUrl(const std::string& baseUrl) const;
-		virtual std::string createPackageUrl(const std::string& baseUrl, bool downloaded) const;
+		virtual std::string createPackageUrl(const std::string& packageId, int version, const std::string& baseUrl, bool downloaded) const;
+		
+		virtual std::shared_ptr<PackageInfo> getCustomPackage(const std::string& packageId, int version) const;
 		
 	private:
 		struct Task {
@@ -202,7 +216,7 @@ namespace Nuti {
 				IMPORT_PACKAGE = 3,
 				REMOVE_PACKAGE = 4
 			};
-
+			
 			Command command = NOP;
 			int priority = 0;
 			PackageStatus::Action action = PackageStatus::WAITING;
@@ -211,43 +225,43 @@ namespace Nuti {
 			int packageVersion = 0;
 			std::string packageLocation;
 		};
-
+		
 		struct PackageDatabase {
 			std::string packageId;
 			std::shared_ptr<sqlite3pp::database> packageDb;
 			std::shared_ptr<sqlite3pp::ext::function> decryptFunc;
 		};
-
+		
 		class PersistentTaskQueue {
 		public:
 			PersistentTaskQueue(const std::string& dbFileName);
-
+			
 			int getActiveTaskId(int currentActiveTaskId = -1) const;
 			std::vector<int> getTaskIds() const;
 			Task getTask(int taskId) const;
-
+			
 			int scheduleTask(const Task& task);
 			bool isTaskCancelled(int taskId) const;
 			void cancelTask(int taskId);
 			void setTaskPriority(int taskId, int priority);
 			void updateTaskStatus(int taskId, PackageStatus::Action action, float progress);
 			void deleteTask(int taskId);
-
+			
 		private:
 			std::shared_ptr<sqlite3pp::database> _localDb;
 			mutable std::recursive_mutex _mutex;
 		};
-
+		
 		struct PauseException : std::exception {
 			PauseException() { }
 		};
-
+		
 		struct CancelException : std::exception {
 			CancelException() { }
 		};
-
+		
 		void run();
-
+		
 		bool downloadPackageList(int taskId);
 		bool importPackage(int taskId);
 		bool downloadPackage(int taskId);
@@ -257,7 +271,7 @@ namespace Nuti {
 		std::shared_ptr<sqlite3pp::database> getLocalPackageDb(const std::shared_ptr<PackageInfo>& packageInfo) const;
 		void importLocalPackage(int id, const std::string& packageId, const std::string& packageFileName);
 		void deleteLocalPackage(int id);
-
+		
 		bool isTaskCancelled(int taskId) const;
 		bool isTaskPaused(int taskId) const;
 		void updateTaskStatus(int taskId, PackageStatus::Action action, float progress);
@@ -265,22 +279,22 @@ namespace Nuti {
 		void setTaskPaused(int taskId);
 		void setTaskCancelled(int taskId);
 		void setTaskFailed(int taskId);
-
+		
 		std::string loadPackageListJson(const std::string& jsonFileName) const;
 		void savePackageListJson(const std::string& jsonFileName, const std::string& json) const;
-
+		
 		static void initializeDb(sqlite3pp::database& db, const std::string& encKey);
 		static bool checkDbEncryption(sqlite3pp::database& db, const std::string& encKey);
 		static void updateDbEncryption(sqlite3pp::database& db, const std::string& encKey);
 		static std::string calculateDbKeyHash(const std::string& encKey);
-
+		
 		static void encryptTile(std::vector<unsigned char>& data, int zoom, int x, int y, const std::string& encKey);
 		static void decryptTile(std::vector<unsigned char>& data, int zoom, int x, int y, const std::string& encKey);
 		static void setCipherKeyIV(unsigned char* k, unsigned char* iv, int zoom, int x, int y, const std::string& encKey);
-
+		
 		static bool downloadFile(const std::string& url, std::function<bool(const unsigned char*, std::size_t)> handler, std::uint64_t offset = 0);
 		static bool inflateData(const std::vector<unsigned char>& in, std::vector<unsigned char>& out);
-
+		
 		const std::string _packageListUrl;
 		const std::string _packageListFileName;
 		const std::string _dataFolder;
@@ -294,13 +308,15 @@ namespace Nuti {
 		std::shared_ptr<PersistentTaskQueue> _taskQueue;
 		std::condition_variable_any _taskQueueCondition; // notified when new tasks are available
 		std::shared_ptr<std::thread> _packageManagerThread;
-		std::shared_ptr<PackageManagerListener> _packageManagerListener;
 		std::vector<std::shared_ptr<OnChangeListener> > _onChangeListeners;
 		bool _stopped = true;
 		int _prevTaskId = -1;
 		PackageStatus::Action _prevAction = PackageStatus::WAITING;
 		int _prevRoundedProgress = 0;
-
+		
+		std::shared_ptr<PackageManagerListener> _packageManagerListener;
+		mutable std::recursive_mutex _packageManagerListenerMutex;
+		
 		mutable std::recursive_mutex _mutex; // guards all state
 	};
 }

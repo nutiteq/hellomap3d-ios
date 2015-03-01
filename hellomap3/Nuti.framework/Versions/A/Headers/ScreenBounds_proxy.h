@@ -23,11 +23,23 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTScreenBounds : NSObject
 {
-	void *swigCPtr;
-	BOOL swigCMemOwn;
+  void *swigCPtr;
+  BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
+ */
+-(BOOL)isEqual:(id)object;
+
+/**
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
+ */
+-(NSUInteger)hash;
 /**
  * Constructs an empty ScreenBounds object. The coordinates of the minimum position will be<br>
  * set to positive infinity and the coordinates of the maximum position will be<br>
@@ -47,13 +59,7 @@ __attribute__ ((visibility("default"))) @interface NTScreenBounds : NSObject
  * @param ScreenBounds The other screen bounds object.<br>
  * @return True if equal.
  */
--(BOOL)equals: (NTScreenBounds*)ScreenBounds;
-/**
- * Checks for inequality between this and another screen bounds object.<br>
- * @param ScreenBounds The other screen bounds object.<br>
- * @return True if not equal.
- */
--(BOOL)differs: (NTScreenBounds*)ScreenBounds;
+-(BOOL)isEqualInternal: (NTScreenBounds*)ScreenBounds;
 /**
  * Calculates the center screen position of this screen envelope object.<br>
  * @return The center postion if this screen envelope object.
@@ -87,6 +93,11 @@ __attribute__ ((visibility("default"))) @interface NTScreenBounds : NSObject
  * @return True if this screen bounds object intersects with the other screen bounds object.
  */
 -(BOOL)intersects: (NTScreenBounds*)bounds;
+/**
+ * Returns the hash value of this object.<br>
+ * @return The hash value of this object.
+ */
+-(int)hashInternal;
 /**
  * Creates a string representation of this screen bounds object, useful for logging.<br>
  * @return The string representation of this screen bounds object.

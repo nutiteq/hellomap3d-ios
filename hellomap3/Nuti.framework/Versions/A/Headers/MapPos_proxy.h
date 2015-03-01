@@ -17,16 +17,31 @@ extern "C" {
 
 
 #import "MapVec_proxy.h"
-#import "Tuple3D_proxy.h"
 
 /**
  * A double precision map position defined using three coordinates. X and y coordinates denote positions on the map,<br>
  * while z coordinate is height from the ground plane. Actual units for x, y and z depend on map projection.<br>
  * For example, in EPSG:4326 x is used for latitude, y for longitude and z for height in meters.
  */
-__attribute__ ((visibility("default"))) @interface NTMapPos : NTTuple3D
+__attribute__ ((visibility("default"))) @interface NTMapPos : NSObject
+{
+  void *swigCPtr;
+  BOOL swigCMemOwn;
+}
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
+ */
+-(BOOL)isEqual:(id)object;
+
+/**
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
+ */
+-(NSUInteger)hash;
 /**
  * Constructs a MapPos object. All coordinates will be 0.
  */
@@ -44,6 +59,21 @@ __attribute__ ((visibility("default"))) @interface NTMapPos : NTTuple3D
  * @param z The z coordinate.
  */
 -(id)initWithX: (double)x y: (double)y z: (double)z;
+/**
+ * Returns the x coordinate of this map position.<br>
+ * @return The x coordinate of this map position.
+ */
+-(double)getX;
+/**
+ * Returns the y coordinate of this map position.<br>
+ * @return The y coordinate of this map position.
+ */
+-(double)getY;
+/**
+ * Returns the z coordinate of this map position.<br>
+ * @return The z coordinate of this map position.
+ */
+-(double)getZ;
 /**
  * Creates a new map position by adding a map vector to this map position.<br>
  * @param v The map vector to be added.<br>
@@ -67,13 +97,7 @@ __attribute__ ((visibility("default"))) @interface NTMapPos : NTTuple3D
  * @param p The other map position.<br>
  * @return True if equal.
  */
--(BOOL)equals: (NTMapPos*)p;
-/**
- * Checks for inequality between this and another map position.<br>
- * @param p The other map position.<br>
- * @return True if not equal.
- */
--(BOOL)differs: (NTMapPos*)p;
+-(BOOL)isEqualInternal: (NTMapPos*)p;
 /**
  * Calculates the distance between this and another map position.<br>
  * @param p The other map position.<br>
@@ -128,6 +152,11 @@ __attribute__ ((visibility("default"))) @interface NTMapPos : NTTuple3D
  * @return The new rotated map position.
  */
 -(NTMapPos*)getRotated2D: (double)sin cos: (double)cos;
+/**
+ * Returns the hash value of this object.<br>
+ * @return The hash value of this object.
+ */
+-(int)hashInternal;
 /**
  * Creates a string representation of this map position, useful for logging.<br>
  * @return The string representation of this map position.

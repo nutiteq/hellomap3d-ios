@@ -27,10 +27,15 @@ namespace Nuti {
 		NutiteqPackageManagerBase(const std::string& source, const std::string& dataFolder, const std::string& deviceId);
 		
 	protected:
-		std::string createPackageUrl(const std::string& baseUrl, bool downloaded) const;
+		virtual std::string createPackageUrl(const std::string& packageId, int version, const std::string& baseUrl, bool downloaded) const;
+
+		virtual std::shared_ptr<PackageInfo> getCustomPackage(const std::string& packageId, int version) const;
 		
 	private:
 		static const std::string PACKAGE_LIST_URL;
+		static const std::string CUSTOM_BBOX_PACKAGE_URL;
+
+		std::string _source;
 	};
 }
 

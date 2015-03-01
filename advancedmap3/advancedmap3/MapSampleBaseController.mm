@@ -4,8 +4,8 @@
 
 - (void)viewDidLoad
 {
-	[NTLog SetShowDebug:true];
-	[NTLog SetShowInfo:true];
+	[NTLog SetShowDebug:YES];
+	[NTLog SetShowInfo:YES];
 
 	// The initial step: register your license. This must be done before using MapView and before calling [super viewDidLoad]!
 	// You can get your free/commercial license from: http://developer.nutiteq.com

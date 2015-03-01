@@ -77,7 +77,13 @@ namespace Nuti {
          */
         int getARGB() const;
     
-        /**
+		/**
+		 * Returns the hash value of this object.
+		 * @return The hash value of this object.
+		 */
+		int hash() const;
+
+		/**
          * Creates a string representation of this map color, useful for logging.
          * @return The string representation of this map color.
          */

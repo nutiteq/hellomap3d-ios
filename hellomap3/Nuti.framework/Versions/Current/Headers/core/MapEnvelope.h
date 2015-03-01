@@ -75,7 +75,13 @@ namespace Nuti {
          */
         bool intersects(const MapEnvelope& envelope) const;
     
-        /**
+		/**
+		 * Returns the hash value of this object.
+		 * @return The hash value of this object.
+		 */
+		int hash() const;
+
+		/**
          * Creates a string representation of this map envelope, useful for logging.
          * @return The string representation of this map envelope.
          */

@@ -18,6 +18,7 @@
 #import "HTTPTileDataSource_proxy.h"
 #import "MBTilesTileDataSource_proxy.h"
 #import "NutiteqOnlineTileDataSource_proxy.h"
+#import "PackageManagerTileDataSource_proxy.h"
 #import "OnlineNMLModelLODTreeDataSource_proxy.h"
 #import "SqliteNMLModelLODTreeDataSource_proxy.h"
 #import "PersistentCacheTileDataSource_proxy.h"
@@ -50,7 +51,6 @@
 #import "PackageTileMask_proxy.h"
 #import "PackageManager_proxy.h"
 #import "NutiteqPackageManager_proxy.h"
-#import "PackageManagerTileDataSource_proxy.h"
 
 #import "CullState_proxy.h"
 

@@ -108,9 +108,8 @@ namespace Nuti {
         
         void attachToDataSource(const std::weak_ptr<VectorDataSource>& dataSource);
         void detachFromDataSource();
-        
-        // This is used by swig to generate correct proxy object
-        std::string _className;
+		
+        std::string _className; // This is used by swig to generate correct proxy object
     
         std::weak_ptr<VectorDataSource> _dataSource;
     

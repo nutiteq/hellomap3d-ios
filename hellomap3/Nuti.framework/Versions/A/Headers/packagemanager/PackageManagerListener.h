@@ -8,6 +8,7 @@
 #define _NUTI_PACKAGEMANAGERLISTENER_H_
 
 #include <string>
+#include <memory>
 
 #include "PackageStatus.h"
 
@@ -19,7 +20,7 @@ namespace Nuti {
 	class PackageManagerListener {
 	public:
 		virtual ~PackageManagerListener() = default;
-
+		
 		/**
 		 * Listener method that is called when server package list has been successfully updated.
 		 */
@@ -28,7 +29,7 @@ namespace Nuti {
 		 * Listener method that is called when server package could not be downloaded or updated.
 		 */
 		virtual void onPackageListFailed() = 0;
-
+		
 		/**
 		 * Listener method that is called when a package status has changed.
 		 * Information about the status of the package (current action, progress, etc) is explictly given with this event.
@@ -36,7 +37,7 @@ namespace Nuti {
 		 * @param version The version of the package whose status has changed
 		 * @param status The current status of the package
 		 */
-		virtual void onPackageStatusChanged(const std::string& id, int version, const PackageStatus& status) = 0;
+		virtual void onPackageStatusChanged(const std::string& id, int version, const std::shared_ptr<PackageStatus>& status) = 0;
 		/**
 		 * Listener method that is called when a package download has been cancelled.
 		 * @param id The id of the package that has been cancelled

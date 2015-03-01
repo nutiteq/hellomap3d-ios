@@ -20,11 +20,23 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTColor : NSObject
 {
-	void *swigCPtr;
-	BOOL swigCMemOwn;
+  void *swigCPtr;
+  BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
+ */
+-(BOOL)isEqual:(id)object;
+
+/**
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
+ */
+-(NSUInteger)hash;
 /**
  * Constructs a completely opaque black color object.
  */
@@ -49,13 +61,7 @@ __attribute__ ((visibility("default"))) @interface NTColor : NSObject
  * @param color The other map vector.<br>
  * @return True if equal.
  */
--(BOOL)equals: (NTColor*)color;
-/**
- * Checks for inequality between this and another map color.<br>
- * @param color The other map color.<br>
- * @return True if not equal.
- */
--(BOOL)differs: (NTColor*)color;
+-(BOOL)isEqualInternal: (NTColor*)color;
 /**
  * Returns the red component of this map color.<br>
  * @return The red component in the [0..255] range.
@@ -81,6 +87,11 @@ __attribute__ ((visibility("default"))) @interface NTColor : NSObject
  * @return The encoded 32-bit integer representation of this map color.
  */
 -(int)getARGB;
+/**
+ * Returns the hash value of this object.<br>
+ * @return The hash value of this object.
+ */
+-(int)hashInternal;
 /**
  * Creates a string representation of this map color, useful for logging.<br>
  * @return The string representation of this map color.

@@ -25,11 +25,23 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTMapEnvelope : NSObject
 {
-	void *swigCPtr;
-	BOOL swigCMemOwn;
+  void *swigCPtr;
+  BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
+ */
+-(BOOL)isEqual:(id)object;
+
+/**
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
+ */
+-(NSUInteger)hash;
 /**
  * Constructs an empty MapEnvelope object. Nothing is contained within<br>
  * this envelope.
@@ -48,13 +60,7 @@ __attribute__ ((visibility("default"))) @interface NTMapEnvelope : NSObject
  * @param envelope The other map envelope object.<br>
  * @return True if equal.
  */
--(BOOL)equals: (NTMapEnvelope*)envelope;
-/**
- * Checks for inequality between this and another map envelope.<br>
- * @param envelope The other map envelope object.<br>
- * @return True if not equal.
- */
--(BOOL)differs: (NTMapEnvelope*)envelope;
+-(BOOL)isEqualInternal: (NTMapEnvelope*)envelope;
 /**
  * Returns the map bounds of this map envelope.<br>
  * @return The map bounds of this map envelope.
@@ -77,6 +83,11 @@ __attribute__ ((visibility("default"))) @interface NTMapEnvelope : NSObject
  * @return True if this map envelope intersects the other map envelope.
  */
 -(BOOL)intersects: (NTMapEnvelope*)envelope;
+/**
+ * Returns the hash value of this object.<br>
+ * @return The hash value of this object.
+ */
+-(int)hashInternal;
 /**
  * Creates a string representation of this map envelope, useful for logging.<br>
  * @return The string representation of this map envelope.

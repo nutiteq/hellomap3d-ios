@@ -15,15 +15,28 @@
 extern "C" {
 #endif
 
-
-#import "Tuple3D_proxy.h"
-
 /**
  * A double precision map vector defined by 3 coordinates.
  */
-__attribute__ ((visibility("default"))) @interface NTMapVec : NTTuple3D
+__attribute__ ((visibility("default"))) @interface NTMapVec : NSObject
+{
+  void *swigCPtr;
+  BOOL swigCMemOwn;
+}
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
+ */
+-(BOOL)isEqual:(id)object;
+
+/**
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
+ */
+-(NSUInteger)hash;
 /**
  * Constructs a MapVec object. All coordinates will be 0.
  */
@@ -41,6 +54,21 @@ __attribute__ ((visibility("default"))) @interface NTMapVec : NTTuple3D
  * @param z The z coordinate.
  */
 -(id)initWithX: (double)x y: (double)y z: (double)z;
+/**
+ * Returns the x coordinate of this map vector.<br>
+ * @return The x coordinate of this map vector.
+ */
+-(double)getX;
+/**
+ * Returns the y coordinate of this map vector.<br>
+ * @return The y coordinate of this map vector.
+ */
+-(double)getY;
+/**
+ * Returns the z coordinate of this map vector.<br>
+ * @return The z coordinate of this map vector.
+ */
+-(double)getZ;
 /**
  * Creates a new map vector by adding a map vector to this map vector.<br>
  * @param v The map vector to be added.<br>
@@ -70,13 +98,7 @@ __attribute__ ((visibility("default"))) @interface NTMapVec : NTTuple3D
  * @param v The other map vector.<br>
  * @return True if equal.
  */
--(BOOL)equals: (NTMapVec*)v;
-/**
- * Checks for inequality between this and another map vector.<br>
- * @param v The other map vector.<br>
- * @return True if not equal.
- */
--(BOOL)differs: (NTMapVec*)v;
+-(BOOL)isEqualInternal: (NTMapVec*)v;
 /**
  * Calculates the length of this map vector.<br>
  * @return The length of this map vector.
@@ -117,6 +139,11 @@ __attribute__ ((visibility("default"))) @interface NTMapVec : NTTuple3D
  * @return The dot product between this and another map vector.
  */
 -(double)dotProduct: (NTMapVec*)v;
+/**
+ * Returns the hash value of this object.<br>
+ * @return The hash value of this object.
+ */
+-(int)hashInternal;
 /**
  * Creates a string representation of this map vector, useful for logging.<br>
  * @return The string representation of this map vector.

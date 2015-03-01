@@ -58,6 +58,7 @@ __attribute__ ((visibility("default"))) @interface NTPackageManager : NSObject
 -(void)stop: (BOOL)wait;
 /**
  * Returns the list of available server packages.<br>
+ * Note that the list must be retrieved from the server first, using startPackageListDownload.<br>
  * @return The list of available server packages.
  */
 -(NTPackageInfoVector*)getServerPackages;
@@ -76,6 +77,17 @@ __attribute__ ((visibility("default"))) @interface NTPackageManager : NSObject
  * @return The age of server package list in seconds.
  */
 -(int)getServerPackageListAge;
+/**
+ * Returns the specified server package.<br>
+ * Note that the list must be retrieved from the server first, using startPackageListDownload.<br>
+ * @return The specified server package or null if it is not in the server package list.
+ */
+-(NTPackageInfo*)getServerPackage: (NSString*)packageId;
+/**
+ * Returns the specified local package.<br>
+ * @return The specified local package or null if it can not be found in the package list.
+ */
+-(NTPackageInfo*)getLocalPackage: (NSString*)packageId;
 /**
  * Returns the status of the specified package.<br>
  * @param packageId The id of the package.<br>

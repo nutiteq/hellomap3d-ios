@@ -83,7 +83,13 @@ namespace Nuti {
          */
         float length() const;
     
-        /**
+		/**
+		 * Returns the hash value of this object.
+		 * @return The hash value of this object.
+		 */
+		int hash() const;
+
+		/**
          * Creates a string representation of this map range, useful for logging.
          * @return The string representation of this map range.
          */
