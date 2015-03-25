@@ -16,7 +16,6 @@ extern "C" {
 #endif
 
 
-#import "BillboardStyle_proxy.h"
 #import "StyleBuilder_proxy.h"
 
 /**
@@ -35,10 +34,22 @@ __attribute__ ((visibility("default"))) @interface NTBillboardStyleBuilder : NTS
  */
 -(float)getAttachAnchorPointX;
 /**
+ * Sets the horizontal attaching anchor point of the billoard.<br>
+ * @param attachAnchorPointX The new horizontal attaching anchor point for the billoard. -1 means the left side,<br>
+ * 0 the center and 1 the right side. The default is 0.
+ */
+-(void)setAttachAnchorPointX: (float)attachAnchorPointX;
+/**
  * Returns the vertical attaching anchor point of the billoard.<br>
  * @return The vertical attaching anchor point of the billoard.
  */
 -(float)getAttachAnchorPointY;
+/**
+ * Sets the vertical attaching anchor point of the billoard.<br>
+ * @param attachAnchorPointY The new vertical attaching anchor point for the billoard. -1 means the bottom,<br>
+ * 0 the center and 1 the top. The default is 1.
+ */
+-(void)setAttachAnchorPointY: (float)attachAnchorPointY;
 /**
  * Sets the attaching anchor point for the billoard. The attaching anchor point is<br>
  * only used if the billboard is attached to another (base) billboard. It defines the point<br>

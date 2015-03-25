@@ -16,8 +16,8 @@ extern "C" {
 #endif
 
 
-#import "Geometry_proxy.h"
 #import "MapPos_proxy.h"
+#import "Geometry_proxy.h"
 
 /**
  * Point geometry. Geometry is defined by a single map position.

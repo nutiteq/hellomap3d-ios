@@ -38,16 +38,18 @@ namespace Nuti {
     class ScreenBounds;
     class MapVec;
     class MapEventListener;
+    class MapRenderListener;
     class RedrawRequestListener;
     class Options;
     class VectorElementClickInfo;
     class ThreadWorker;
+    class TouchHandler;
     
     class MapRenderer : public std::enable_shared_from_this<MapRenderer> {
     public:
         MapRenderer(const std::shared_ptr<Layers>& layers,
                     const std::shared_ptr<Options>& options,
-                    const WatermarkType::WatermarkType& licenseType);
+                    const LicenseType::LicenseType& licenseType);
         virtual ~MapRenderer();
 
 		void init();
@@ -75,6 +77,8 @@ namespace Nuti {
         
         void requestRedraw() const;
     
+        void captureRendering(const std::shared_ptr<MapRenderListener>& listener, bool waitWhileUpdating);
+        
         void calculateCameraEvent(CameraPanEvent& cameraEvent, float durationSeconds, bool updateKinetic);
         void calculateCameraEvent(CameraRotationEvent& cameraEvent, float durationSeconds, bool updateKinetic);
         void calculateCameraEvent(CameraTiltEvent& cameraEvent, float durationSeconds, bool updateKinetic);
@@ -98,7 +102,7 @@ namespace Nuti {
         void viewChanged(bool delay);
     
         void addGlThreadCallback(const std::shared_ptr<ThreadWorker>& glCallback);
-    
+        
     private:
 		class OptionsListener : public Options::OnChangeListener {
 		public:
@@ -110,11 +114,16 @@ namespace Nuti {
 			std::weak_ptr<MapRenderer> _mapRenderer;
 		};
 
+		friend TouchHandler;
+
 		static bool DistanceComparator(const VectorElementClickInfo& element1, const VectorElementClickInfo& element2);
     
         void setUpGlState() const;
     
         void drawLayers(float deltaSeconds, const ViewState& viewState);
+        
+        void handleGlThreadCallbacks();
+        void handleRenderCaptureCallbacks();
     
         static const int BILLBOARD_PLACEMENT_TASK_DELAY = 200;
         
@@ -144,9 +153,15 @@ namespace Nuti {
         KineticEventHandler _kineticEventHandler;
         
         std::shared_ptr<MapEventListener> _mapEventListener;
+        mutable std::recursive_mutex _mapEventListenerMutex;
+
+        mutable std::atomic<bool> _redrawPending;
         std::shared_ptr<RedrawRequestListener> _redrawRequestListener;
-        mutable std::recursive_mutex _redrawRequestMutex;
-        
+        mutable std::recursive_mutex _redrawRequestListenerMutex;
+
+        std::vector<std::pair<std::shared_ptr<MapRenderListener>, bool> > _mapRenderListeners;
+        mutable std::recursive_mutex _mapRenderListenersMutex;
+
         bool _surfaceChanged;
     
         std::shared_ptr<Layers> _layers;

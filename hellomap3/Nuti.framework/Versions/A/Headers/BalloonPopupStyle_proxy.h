@@ -16,9 +16,13 @@ extern "C" {
 #endif
 
 
+#import "Color_proxy.h"
+#import "Bitmap_proxy.h"
 #import "PopupStyle_proxy.h"
-#import <UIKit/UIKit.h>
 
+/**
+ * Margins info for balloon popup.
+ */
 __attribute__ ((visibility("default"))) @interface NTBalloonPopupMargins : NSObject
 {
 	void *swigCPtr;
@@ -37,8 +41,9 @@ __attribute__ ((visibility("default"))) @interface NTBalloonPopupMargins : NSObj
 @end
 
 
+#import "Color_proxy.h"
+#import "Bitmap_proxy.h"
 #import "PopupStyle_proxy.h"
-#import <UIKit/UIKit.h>
 
 /**
  * A style for balloon popups. Contains attributes for configuring how the balloon popup is drawn on the screen.
@@ -80,7 +85,7 @@ __attribute__ ((visibility("default"))) @interface NTBalloonPopupStyle : NTPopup
  * @param triangleWidth The width of the triangle at the bottom of the popup in dp.<br>
  * @param triangleHeight The height of the triangle at the bottom of the popup in dp.
  */
--(id)initWithColor: (NTColor*)color attachAnchorPointX: (float)attachAnchorPointX attachAnchorPointY: (float)attachAnchorPointY causesOverlap: (BOOL)causesOverlap hideIfOverlapped: (BOOL)hideIfOverlapped horizontalOffset: (float)horizontalOffset verticalOffset: (float)verticalOffset placementPriority: (int)placementPriority scaleWithDPI: (BOOL)scaleWithDPI cornerRadius: (int)cornerRadius leftColor: (NTColor*)leftColor leftImage: (UIImage*)leftImage leftMargins: (NTBalloonPopupMargins*)leftMargins rightColor: (NTColor*)rightColor rightImage: (UIImage*)rightImage rightMargins: (NTBalloonPopupMargins*)rightMargins titleColor: (NTColor*)titleColor titleFontName: (NSString*)titleFontName titleFontSize: (int)titleFontSize titleMargins: (NTBalloonPopupMargins*)titleMargins titleWrap: (BOOL)titleWrap descColor: (NTColor*)descColor descFontName: (NSString*)descFontName descFontSize: (int)descFontSize descMargins: (NTBalloonPopupMargins*)descMargins descWrap: (BOOL)descWrap strokeColor: (NTColor*)strokeColor strokeWidth: (int)strokeWidth triangleWidth: (int)triangleWidth triangleHeight: (int)triangleHeight;
+-(id)initWithColor: (NTColor*)color attachAnchorPointX: (float)attachAnchorPointX attachAnchorPointY: (float)attachAnchorPointY causesOverlap: (BOOL)causesOverlap hideIfOverlapped: (BOOL)hideIfOverlapped horizontalOffset: (float)horizontalOffset verticalOffset: (float)verticalOffset placementPriority: (int)placementPriority scaleWithDPI: (BOOL)scaleWithDPI cornerRadius: (int)cornerRadius leftColor: (NTColor*)leftColor leftImage: (NTBitmap*)leftImage leftMargins: (NTBalloonPopupMargins*)leftMargins rightColor: (NTColor*)rightColor rightImage: (NTBitmap*)rightImage rightMargins: (NTBalloonPopupMargins*)rightMargins titleColor: (NTColor*)titleColor titleFontName: (NSString*)titleFontName titleFontSize: (int)titleFontSize titleMargins: (NTBalloonPopupMargins*)titleMargins titleWrap: (BOOL)titleWrap descColor: (NTColor*)descColor descFontName: (NSString*)descFontName descFontSize: (int)descFontSize descMargins: (NTBalloonPopupMargins*)descMargins descWrap: (BOOL)descWrap strokeColor: (NTColor*)strokeColor strokeWidth: (int)strokeWidth triangleWidth: (int)triangleWidth triangleHeight: (int)triangleHeight;
 /**
  * Returns the background color of the popup.<br>
  * @return The background color of the popup.
@@ -100,7 +105,7 @@ __attribute__ ((visibility("default"))) @interface NTBalloonPopupStyle : NTPopup
  * Returns the image of the left part of the popup.<br>
  * @return The image of the left part of the popup.
  */
--(UIImage*)getLeftImage;
+-(NTBitmap*)getLeftImage;
 /**
  * Returns the margins of the left part of the popup.<br>
  * @return The margins of the left part of the popup.
@@ -115,7 +120,7 @@ __attribute__ ((visibility("default"))) @interface NTBalloonPopupStyle : NTPopup
  * Returns the image of the right part of the popup.<br>
  * @return The image of the right part of the popup.
  */
--(UIImage*)getRightImage;
+-(NTBitmap*)getRightImage;
 /**
  * Returns the margins of the right part of the popup.<br>
  * @return The margins of the right part of the popup.

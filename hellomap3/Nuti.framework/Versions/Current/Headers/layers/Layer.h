@@ -34,15 +34,15 @@ namespace Nuti {
     public:
         virtual ~Layer();
     
-		/**
-		 * Returns the actual class name of this layer. This is used
-		 * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically
-		 * generate child proxy classes from a base class pointer.
-		 * @return The class name of this layer.
-		 */
-		const std::string& getClassName() const;
+        /**
+         * Returns the actual class name of this layer. This is used
+         * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically
+         * generate child proxy classes from a base class pointer.
+         * @return The class name of this layer.
+         */
+        const std::string& getClassName() const;
 
-		/**
+        /**
          * Returns the layer task priority of this layer.
          * @return The priority level for the tasks of this layer.
          */
@@ -78,6 +78,12 @@ namespace Nuti {
          */
         void setVisibleZoomRange(const MapRange& range);
         
+        /**
+         * Tests whether this layer is being currently updated.
+         * @return True when the layer is being updated or false when the layer is in steady state.
+         */
+        virtual bool isUpdateInProgress() const = 0;
+
         /**
          * Updates the layer using new visibility information. This method is periodically called when the map view moves.
          * The visibilty info is saved, so the data can be refreshed later.
@@ -121,8 +127,6 @@ namespace Nuti {
         virtual void registerDataSourceListener() = 0;
         virtual void unregisterDataSourceListener() = 0;
     
-		std::string _className; // This is used by swig to generate correct proxy object
-		
         std::shared_ptr<CancelableThreadPool> _envelopeThreadPool;
         std::shared_ptr<CancelableThreadPool> _tileThreadPool;
         std::weak_ptr<Options> _options;
@@ -136,12 +140,14 @@ namespace Nuti {
         
         MapRange _visibleZoomRange;
 		
-		mutable std::recursive_mutex _mutex;
+        mutable std::recursive_mutex _mutex;
     
     private:
-		static const int CULL_DELAY = 400;
+        static const int CULL_DELAY = 400;
 
-		bool _surfaceCreated;
+        bool _surfaceCreated;
+
+        std::string _className; // This is used by swig to generate correct proxy object
     };
     
 }

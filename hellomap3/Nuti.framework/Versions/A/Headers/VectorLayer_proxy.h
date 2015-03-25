@@ -16,8 +16,8 @@ extern "C" {
 #endif
 
 
-#import "Layer_proxy.h"
 #import "VectorDataSource_proxy.h"
+#import "Layer_proxy.h"
 
 /**
  * A vector layer that loads data using an envelope. Should be used together with corresponding data source.
@@ -34,7 +34,8 @@ __attribute__ ((visibility("default"))) @interface NTVectorLayer : NTLayer
  * Returns the vector data source of this vector layer.<br>
  * @return The vector data source that was bound to this vector layer on construction.
  */
--(NTVectorDataSource*)getDataSource;
+-(NTVectorDataSource *)getDataSource;
+-(BOOL)isUpdateInProgress;
 
 -(void)dealloc;
 

@@ -9,10 +9,16 @@
 
 namespace Nuti {
 
+    /**
+     * An internal listener class for notifying about screen redraw requests.
+     */
     class RedrawRequestListener {
     public:
-        virtual ~RedrawRequestListener() {}
+        virtual ~RedrawRequestListener() { }
     
+        /**
+         * Called when the screen needs to be redrawn.
+         */
         virtual void onRedrawRequested() const = 0;
     };
     

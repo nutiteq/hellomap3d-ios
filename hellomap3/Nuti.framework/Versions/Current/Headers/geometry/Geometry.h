@@ -10,6 +10,8 @@
 #include "core/MapPos.h"
 #include "core/MapBounds.h"
 
+#include <string>
+
 namespace Nuti {
 
     /**
@@ -19,6 +21,14 @@ namespace Nuti {
     public:
         virtual ~Geometry() {}
         
+        /**
+         * Returns the actual class name of this geometry. This is used
+         * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically
+         * generate child proxy classes from a base class pointer.
+         * @return The class name of this layer.
+         */
+        const std::string& getClassName() const { return _className; }
+
         /**
          * Returns the center point of the geometry.
          * @return The center point of the geometry.
@@ -34,9 +44,12 @@ namespace Nuti {
         }
     
     protected:
-        Geometry() : _bounds() {}
+        Geometry(const std::string& className) : _bounds(), _className(className) {}
     
         MapBounds _bounds;
+
+    private:
+        std::string _className; // This is used by swig to generate correct proxy object
     };
     
 }

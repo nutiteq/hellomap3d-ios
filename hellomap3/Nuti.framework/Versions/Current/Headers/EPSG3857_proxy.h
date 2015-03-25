@@ -16,6 +16,8 @@ extern "C" {
 #endif
 
 
+#import "MapBounds_proxy.h"
+#import "MapPos_proxy.h"
 #import "Projection_proxy.h"
 
 /**

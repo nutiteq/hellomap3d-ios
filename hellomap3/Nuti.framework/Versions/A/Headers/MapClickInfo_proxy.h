@@ -15,9 +15,30 @@
 extern "C" {
 #endif
 
+/**
+ * Possible click types.
+ */
+enum NTClickType {
+/**
+ * A click caused by pressing down and then releasing the screen.
+ */
+  NT_CLICK_TYPE_SINGLE,
+/**
+ * A click caused by pressing down but not releasing the screen.
+ */
+  NT_CLICK_TYPE_LONG,
+/**
+ * A click caused by two fast consecutive taps on the screen.
+ */
+  NT_CLICK_TYPE_DOUBLE,
+/**
+ * A click caused by two simultaneous taps on the screen.
+ */
+  NT_CLICK_TYPE_DUAL
+};
+
 
 #import "MapPos_proxy.h"
-#import "MapEventListener_proxy.h"
 
 /**
  * A container class that provies information about a click performed on<br>

@@ -16,12 +16,12 @@ extern "C" {
 #endif
 
 
-#import "Frustum_proxy.h"
 #import "MapPos_proxy.h"
 #import "ScreenPos_proxy.h"
 #import "MapVec_proxy.h"
-#import "Matrices_proxy.h"
 #import "Options_proxy.h"
+#import "Frustum_proxy.h"
+#import "Projection_proxy.h"
 
 /**
  * A class containing various view parameters for a view state.
@@ -174,34 +174,6 @@ __attribute__ ((visibility("default"))) @interface NTViewState : NSObject
  * @return The projection mode.
  */
 -(enum NTProjectionMode)getProjectionMode;
-/**
- * Returns the projection matrix.<br>
- * @return The projection matrix.
- */
--(NTMatrix4D*)getProjectionMat;
-/**
- * Returns the modelview matrix.<br>
- * @return The modelview matrix.
- */
--(NTMatrix4D*)getModelviewMat;
-/**
- * Returns the modelview-projection matrix. This is equivalent to the the projeciton matrix multiplied with the<br>
- * modelview matrix.<br>
- * @return The modelview-projection matrix.
- */
--(NTMatrix4D*)getModelviewProjectionMat;
-/**
- * Returns the relative-to-eye modelview matrix. This equivalent to the modelview matrix with the first<br>
- * three elements of the last column set to 0.<br>
- * @return The relative-to-eye modelview matrix.
- */
--(NTMatrix4F*)getRTEModelviewMat;
-/**
- * Returns the relative-to-eye modelview-projection matrix. This is equivalent to the projection matrix <br>
- * multiplied with the relative-to-eye modelview matrix.<br>
- * @return The relative-to-eye modelview-projection matrix.
- */
--(NTMatrix4F*)getRTEModelviewProjectionMat;
 /**
  * Returns the view frustum.<br>
  * @return The view frustum.

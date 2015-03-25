@@ -30,6 +30,13 @@ __attribute__ ((visibility("default"))) @interface NTProjection : NSObject
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
+ * Returns the actual class name of this vector element. This is used<br>
+ * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically<br>
+ * generate child proxy classes from a base class pointer.<br>
+ * @return The class name of this vector element.
+ */
+-(NSString*)getClassName;
+/**
  * Returns the bounds of this projection.<br>
  * @return The bounds of this projection.
  */

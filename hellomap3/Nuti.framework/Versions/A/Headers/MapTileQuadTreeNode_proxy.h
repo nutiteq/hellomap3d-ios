@@ -15,18 +15,18 @@
 extern "C" {
 #endif
 
-enum QuadTreeRootType {
-  LEFT = -1,
-  CENTER = 0,
-  RIGHT = 1
+enum NTQuadTreeRootType {
+  NT_LEFT = -1,
+  NT_CENTER = 0,
+  NT_RIGHT = 1
 };
 
-enum QuadTreeNodeType {
-  ROOT = 0,
-  TOP_LEFT = 0,
-  TOP_RIGHT = 1,
-  BOTTOM_LEFT = 2,
-  BOTTOM_RIGHT = 3
+enum NTQuadTreeNodeType {
+  NT_ROOT = 0,
+  NT_TOP_LEFT = 0,
+  NT_TOP_RIGHT = 1,
+  NT_BOTTOM_LEFT = 2,
+  NT_BOTTOM_RIGHT = 3
 };
 
 
@@ -38,8 +38,8 @@ __attribute__ ((visibility("default"))) @interface NTMapTileQuadTreeNode : NTMap
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 -(id)initWithX: (int)x y: (int)y zoom: (int)zoom frameNr: (int)frameNr;
--(id)initWithRootType: (enum QuadTreeRootType)rootType frameNr: (int)frameNr;
--(id)initWithParent: (NTMapTileQuadTreeNode*)parent nodeType: (enum QuadTreeNodeType)nodeType;
+-(id)initWithRootType: (enum NTQuadTreeRootType)rootType frameNr: (int)frameNr;
+-(id)initWithParent: (NTMapTileQuadTreeNode*)parent nodeType: (enum NTQuadTreeNodeType)nodeType;
 -(void)setFrameNr: (int)frameNr;
 -(NTMapPos*)getCenter;
 -(NTMapBounds*)getTileBounds;

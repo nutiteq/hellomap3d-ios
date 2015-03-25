@@ -12,44 +12,33 @@
 
 namespace Nuti {
     
-    namespace PlatformType {
-        enum PlatformType {
-            PLATFORM_TYPE_ANDROID,
-            PLATFORM_TYPE_IOS,
-            PLATFORM_TYPE_MAC_OS,
-            PLATFORM_TYPE_WINDOWS,
-            PLATFORM_TYPE_WINDOWS_PHONE,
-            PLATFORM_TYPE_XAMARIN_IOS,
-			PLATFORM_TYPE_XAMARIN_ANDROID
-        };
-    };
-        
-    namespace WatermarkType {
-        enum WatermarkType {
-            WATERMARK_TYPE_EVALUATION,
-            WATERMARK_TYPE_EXPIRED,
-            WATERMARK_TYPE_NUTITEQ,
-            WATERMARK_TYPE_CUSTOM
+    namespace LicenseType {
+        enum LicenseType {
+            LICENSE_TYPE_EVALUATION,
+            LICENSE_TYPE_EXPIRED,
+            LICENSE_TYPE_NUTITEQ,
+            LICENSE_TYPE_CUSTOM
         };
     };
     
     class LicenseUtils {
     public:
-        static WatermarkType::WatermarkType CheckLicense(const std::string& licenseString,
-                                                         PlatformType::PlatformType platformType,
-                                                         const std::string& appIdentifier);
-		static std::string GetUserKey();
+        static LicenseType::LicenseType RegisterLicense(const std::string& licenseString);
+
+        static std::string GetUserKey();
         
     private:
+        LicenseUtils();
+
         static const std::string LICENSE_PREFIX;
         
         static const std::string PUBLIC_KEY;
         
         static const std::string PRODUCT_VERSION;
-		
-		static std::mutex _Mutex;
-		
-		static std::string _UserKey;
+
+        static std::string _UserKey;
+
+        static std::mutex _Mutex;
     };
     
 }

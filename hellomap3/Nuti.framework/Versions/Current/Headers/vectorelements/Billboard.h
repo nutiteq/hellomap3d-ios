@@ -47,8 +47,7 @@ namespace Nuti {
          * this method is equavalent to the Billboard::getGeometry method. If this billboard is attached 
          * to another billboard, the hierarchy is traveled recursively and the location of the root 
          * billboard is returned. 
-         * @return The geometry object that defines the location of the root billboard. 
-                    Null if there's no root billboard.
+         * @return The geometry object that defines the location of the root billboard. Null if there's no root billboard.
          */
         std::shared_ptr<Geometry> getRootGeometry() const;
         /**

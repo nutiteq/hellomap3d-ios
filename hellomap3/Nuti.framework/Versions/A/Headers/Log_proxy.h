@@ -26,26 +26,84 @@ __attribute__ ((visibility("default"))) @interface NTLog : NSObject
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
+ * Returns the state of error logging.<br>
+ * @return True if errors are shown in the log.
+ */
++(BOOL)isShowError;
+/**
  * Enables or disables writing error messages to the log.<br>
  * @param showError If true, then error messages will be written to the log.
  */
-+(void)SetShowError: (BOOL)showError;
++(void)SetShowError: (BOOL)show __attribute((deprecated));
++(void)setShowError: (BOOL)showError;
+/**
+ * Returns the state of warning logging.<br>
+ * @return True if warnings are shown in the log.
+ */
++(BOOL)isShowWarn;
 /**
  * Enables or disables writing warning messages to the log.<br>
  * @param showWarn If true, then warning messages will be written to the log.
  */
-+(void)SetShowWarn: (BOOL)showWarn;
++(void)SetShowWarn: (BOOL)show __attribute((deprecated));
++(void)setShowWarn: (BOOL)showWarn;
+/**
+ * Returns the state of general info logging.<br>
+ * @return True if general info is shown in the log.
+ */
++(BOOL)isShowInfo;
 /**
  * Enables or disables writing info messages to the log.<br>
  * @param showInfo If true, then info messages will be written to the log.
  */
-+(void)SetShowInfo: (BOOL)showInfo;
++(void)SetShowInfo: (BOOL)show __attribute((deprecated));
++(void)setShowInfo: (BOOL)showInfo;
+/**
+ * Returns the state of internal debug message logging.<br>
+ * @return True if debug messages are shown in the log.
+ */
++(BOOL)isShowDebug;
 /**
  * Enables or disables writing internal debug messages to the log.<br>
  * @param showDebug If true, then debug messages will be written to the log.
  */
-+(void)SetShowDebug: (BOOL)showDebug;
--(id)init;
++(void)SetShowDebug: (BOOL)show __attribute((deprecated));
++(void)setShowDebug: (BOOL)showDebug;
+/**
+ * Returns the tag for the log events.<br>
+ * @return The current tag for the log events.
+ */
++(NSString*)getTag;
+/**
+ * Sets the tag for the log events. The tag will be visible in the log and log messages can be filtered by the tag.<br>
+ * @param tag The tag to use in the log events.
+ */
++(void)setTag: (NSString*)tag;
+/**
+ * Logs specified fatal error message and terminates.<br>
+ * @param text The text to log.
+ */
++(void)fatal: (NSString *)text;
+/**
+ * Logs specified error message (if error logging is enabled).<br>
+ * @param text The text to log.
+ */
++(void)error: (NSString *)text;
+/**
+ * Logs specified warning message (if warning logging is enabled).<br>
+ * @param text The text to log.
+ */
++(void)warn: (NSString *)text;
+/**
+ * Logs specified info message (if info logging is enabled).<br>
+ * @param text The text to log.
+ */
++(void)info: (NSString *)text;
+/**
+ * Logs specified debug message (if debug logging is enabled).<br>
+ * @param text The text to log.
+ */
++(void)debug: (NSString *)text;
 
 -(void)dealloc;
 

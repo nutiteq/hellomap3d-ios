@@ -16,9 +16,12 @@ extern "C" {
 #endif
 
 
+#import "MapPos_proxy.h"
 #import "Bitmap_proxy.h"
-#import "Billboard_proxy.h"
+#import "Geometry_proxy.h"
+#import "PointGeometry_proxy.h"
 #import "LabelStyle_proxy.h"
+#import "Billboard_proxy.h"
 
 /**
  * An abstract billboard element with a dynamically drawn bitmap that can be displayed on the map.

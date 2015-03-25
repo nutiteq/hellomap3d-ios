@@ -16,6 +16,7 @@ extern "C" {
 #endif
 
 
+#import "TileData_proxy.h"
 #import "Color_proxy.h"
 
 /**
@@ -28,11 +29,6 @@ __attribute__ ((visibility("default"))) @interface NTVectorTileDecoder : NSObjec
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
-/**
- * Returns background color for tiles.<br>
- * @return Background color for tiles.
- */
--(NTColor*)getBackgroundColor;
 /**
  * Returns minimum zoom level supported for by the decoder (or style).<br>
  * @return Minimum supported zoom level.

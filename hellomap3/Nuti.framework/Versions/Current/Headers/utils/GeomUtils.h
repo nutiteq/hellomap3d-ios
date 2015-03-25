@@ -36,6 +36,8 @@ namespace Nuti {
         static bool RayBoundingBoxIntersect(const MapPos& rayOrig, const MapVec& rayDir, const MapBounds& bbox);
     
     private:
+        GeomUtils();
+
         static bool LexicalComparator(const MapPos& mapPos1, const MapPos& mapPos2);
     
         static bool PointsInsidePolygonEdges(const std::vector<MapPos>& polygon, const std::vector<MapPos>& points);

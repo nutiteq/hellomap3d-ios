@@ -17,8 +17,8 @@ extern "C" {
 
 
 #import "MapTile_proxy.h"
-#import "TileData_proxy.h"
 #import "TileDataSource_proxy.h"
+#import "TileData_proxy.h"
 
 /**
  * A tile data source that combines two data sources (usually offline and online) and selects tiles<br>

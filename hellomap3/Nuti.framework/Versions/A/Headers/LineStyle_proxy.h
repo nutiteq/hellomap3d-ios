@@ -51,6 +51,7 @@ enum NTLineJointType {
 
 
 #import "Bitmap_proxy.h"
+#import "Color_proxy.h"
 #import "Style_proxy.h"
 
 /**

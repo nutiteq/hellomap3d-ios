@@ -16,8 +16,10 @@ extern "C" {
 #endif
 
 
+#import "MapPos_proxy.h"
 #import "Geometry_proxy.h"
-#import "MapPosVectors_proxy.h"
+#import "MapPosVector_proxy.h"
+#import "MapPosVectorVector_proxy.h"
 
 /**
  * Polygon geometry defined by an outer ring and optional multiple inner rings (holes).

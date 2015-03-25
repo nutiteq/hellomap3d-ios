@@ -108,8 +108,6 @@ namespace Nuti {
         
         void attachToDataSource(const std::weak_ptr<VectorDataSource>& dataSource);
         void detachFromDataSource();
-		
-        std::string _className; // This is used by swig to generate correct proxy object
     
         std::weak_ptr<VectorDataSource> _dataSource;
     
@@ -117,6 +115,8 @@ namespace Nuti {
     
         mutable std::mutex _mutex;
     
+        std::string _className; // This is used by swig to generate correct proxy object
+
     private:
         long long _id;
     

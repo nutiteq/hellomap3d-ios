@@ -18,27 +18,27 @@ extern "C" {
 /**
  * The current action that describes the operation being performed with the package.
  */
-enum NTPackageStatus_Action {
+enum NTPackageAction {
 /**
  * Package is ready.
  */
-  NTPackageStatus_READY = 0,
+  NT_PACKAGE_ACTION_READY = 0,
 /**
  * Package is waiting in the task queue.
  */
-  NTPackageStatus_WAITING = 1,
+  NT_PACKAGE_ACTION_WAITING = 1,
 /**
  * Package is being downloaded.
  */
-  NTPackageStatus_DOWNLOADING = 2,
+  NT_PACKAGE_ACTION_DOWNLOADING = 2,
 /**
  * Package data is being copied.
  */
-  NTPackageStatus_COPYING = 3,
+  NT_PACKAGE_ACTION_COPYING = 3,
 /**
  * Package is being removed.
  */
-  NTPackageStatus_REMOVING = 4
+  NT_PACKAGE_ACTION_REMOVING = 4
 };
 
 /**
@@ -54,16 +54,16 @@ __attribute__ ((visibility("default"))) @interface NTPackageStatus : NSObject
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
  * Constructs a new status.<br>
- * @param action The current action being performed with the package.<br>
+ * @param currentAction The current action being performed with the package.<br>
  * @param paused True if the action is paused.<br>
  * @param progress The progress of the operation (in the range 0..100)
  */
--(id)initWithAction: (enum NTPackageStatus_Action)action paused: (BOOL)paused progress: (float)progress;
+-(id)initWithCurrentAction: (enum NTPackageAction)currentAction paused: (BOOL)paused progress: (float)progress;
 /**
  * Returns the current action being performed.<br>
  * @return The current action being performed.
  */
--(enum NTPackageStatus_Action)getAction;
+-(enum NTPackageAction)getCurrentAction;
 /**
  * Returns the paused state of the action.<br>
  * @return True when the action is paused, false if the action is active.

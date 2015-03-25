@@ -1,3 +1,9 @@
+/*
+ * Copyright 2014 Nutiteq Llc. All rights reserved.
+ * Copying and using this code is allowed only according
+ * to license terms, as given in https://www.nutiteq.com/license/
+ */
+
 #import <GLKit/GLKit.h>
 
 @class NTLayers;
@@ -7,9 +13,10 @@
 @class NTScreenPos;
 @class NTScreenBounds;
 @class NTMapEventListener;
+@class NTMapRenderListener;
 @class NTOptions;
 
-__attribute__ ((visibility("default"))) @interface NTMapViewController : GLKViewController
+__attribute__ ((visibility("default"))) __attribute__ ((deprecated)) @interface NTMapViewController : GLKViewController
 
 @property (readonly, assign, nonatomic) void* nativeMapView;
 
@@ -18,7 +25,13 @@ __attribute__ ((visibility("default"))) @interface NTMapViewController : GLKView
  * creating any actual MapView instances.<br>
  * @param licenseKey The license string provided for this application.
  */
-+(BOOL)RegisterLicense: (NSString*)licenseKey;
++(BOOL)RegisterLicense: (NSString*)licenseKey __attribute__((deprecated));
+/**
+ * Registers the SDK license. This is class method and must be called before <br>
+ * creating any actual MapView instances.<br>
+ * @param licenseKey The license string provided for this application.
+ */
++(BOOL)registerLicense: (NSString*)licenseKey;
 /**
  * Returns the Layers object, that can be used for adding and removing map layers.
  * @return The Layer object.
@@ -258,5 +271,12 @@ __attribute__ ((visibility("default"))) @interface NTMapViewController : GLKView
  * including the visible area.
  */
 -(void)clearAllCaches;
+
+/**
+ * Captures map rendering as a bitmap. This operation is asynchronous and the result is returned via listener callback.
+ * @param listener The listener interface that will receive the callback once rendering is available.
+ * @param waitWhileUpdating If true, delay the capture until all asynchronous processes are finished (for example, until all tiles are loaded).
+ */
+-(void)captureRendering: (NTMapRenderListener*)listener waitWhileUpdating: (BOOL)waitWhileUpdating;
 
 @end

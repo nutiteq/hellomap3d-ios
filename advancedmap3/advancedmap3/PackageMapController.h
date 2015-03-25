@@ -1,11 +1,11 @@
 #import "VectorMapSampleBaseController.h"
 
 /*
- * A sample that uses bundled asset for offline base map.
- * As MBTilesDataSource can be used only with files residing in file system,
- * the assets needs to be copied first to the SDCard.
+ * A sample that uses PackageManager service for offline base map.
+ * This controller is used as launched from PackageManagerController.
  */
 @interface PackageMapController : VectorMapSampleBaseController
-@property (nonatomic,strong) NTTileDataSource *dataSource;
+
+@property (nonatomic,strong) NTPackageManager* packageManager;
 
 @end

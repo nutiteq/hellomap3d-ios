@@ -1,3 +1,9 @@
+/*
+ * Copyright 2014 Nutiteq Llc. All rights reserved.
+ * Copying and using this code is allowed only according
+ * to license terms, as given in https://www.nutiteq.com/license/
+ */
+
 #ifndef _NUTINATIVE_H_
 #define _NUTINATIVE_H_
 
@@ -78,9 +84,11 @@
 #include "styles/StyleSelectorExpression.h"
 
 #include "ui/BaseMapView.h"
+#include "ui/MapView.h"
 #include "ui/MapViewController.h"
 #include "ui/MapClickInfo.h"
 #include "ui/MapEventListener.h"
+#include "ui/MapRenderListener.h"
 #include "ui/VectorElementClickInfo.h"
 #include "ui/VectorElementsClickInfo.h"
 

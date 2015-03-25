@@ -16,8 +16,10 @@ extern "C" {
 #endif
 
 
+#import "MapTile_proxy.h"
 #import "TileDataSource_proxy.h"
 #import "PackageManager_proxy.h"
+#import "TileData_proxy.h"
 
 /**
  * A tile data source that loads tiles from package manager.

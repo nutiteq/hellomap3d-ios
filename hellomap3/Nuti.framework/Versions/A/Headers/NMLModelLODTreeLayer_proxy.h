@@ -46,6 +46,7 @@ __attribute__ ((visibility("default"))) @interface NTNMLModelLODTreeLayer : NTLa
  * @param factor The relative LOD resolution factor.
  */
 -(void)setLODResolutionFactor: (float)factor;
+-(BOOL)isUpdateInProgress;
 
 -(void)dealloc;
 

@@ -29,7 +29,6 @@ __attribute__ ((visibility("default"))) @interface NTGLUtils : NSObject
 +(BOOL)isTextureFilterAnisotropic;
 +(BOOL)isTextureNPOTRepeat;
 +(BOOL)isTextureNPOTMipmaps;
--(id)init;
 
 -(void)dealloc;
 

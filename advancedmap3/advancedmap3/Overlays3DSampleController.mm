@@ -15,14 +15,14 @@
 	[super viewDidLoad];
 	
 	// Get the base projection set in the base class
-	NTProjection* proj = [[self getOptions] getBaseProjection];
+	NTProjection* proj = [[self.mapView getOptions] getBaseProjection];
 	
 	// Initialize a local vector data source
 	NTLocalVectorDataSource* vectorDataSource = [[NTLocalVectorDataSource alloc] initWithProjection:proj];
 	// Initialize a vector layer with the previous data source
 	NTVectorLayer* vectorLayer = [[NTVectorLayer alloc] initWithDataSource:vectorDataSource];
 	// Add the previous vector layer to the map
-	[[self getLayers] add:vectorLayer];
+	[[self.mapView getLayers] add:vectorLayer];
 	// Set visible zoom range for the vector layer
 	[vectorLayer setVisibleZoomRange:[[NTMapRange alloc] initWithMin:10 max:24]];
 	
@@ -55,10 +55,10 @@
 	NTSqliteNMLModelLODTreeDataSource* nmlDataSource = [[NTSqliteNMLModelLODTreeDataSource alloc] initWithProjection:proj fileName:fullpath];
 	NTNMLModelLODTreeLayer* nmlLayer = [[NTNMLModelLODTreeLayer alloc] initWithDataSource:nmlDataSource];
 	[nmlLayer setVisibleZoomRange:[[NTMapRange alloc] initWithMin:12 max:25]];
-	[[self getLayers] add:nmlLayer];
+	[[self.mapView getLayers] add:nmlLayer];
 	
 	// Add a single 3D model to map
-	NTUnsignedCharVector* modelData = [NTAssetUtils LoadBytes:@"fcd_auto.nml"];
+	NTUnsignedCharVector* modelData = [NTAssetUtils loadBytes:@"fcd_auto.nml"];
 	NTMapPos* pos = [proj fromWgs84:[[NTMapPos alloc] initWithX:24.646469 y:59.424939]];
 	NTNMLModel* model = [[NTNMLModel alloc] initWithPos:pos sourceModelData:modelData];
 	[model setMetaDataElement:@"ClickText" element:@"My nice car"];

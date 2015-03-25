@@ -30,6 +30,9 @@ namespace Nuti {
         static std::vector<std::string>& Split(const std::string& s, char delim, std::vector<std::string>& elems);
         
         static std::vector<std::string> Split(const std::string& s, char delim);
+
+    private:
+        GeneralUtils();
     };
     
 }

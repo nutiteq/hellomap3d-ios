@@ -19,12 +19,12 @@
 	
 	// Set the base projection, that will be used for most MapView, MapEventListener and Options methods
 	NTEPSG3857* proj = [[NTEPSG3857 alloc] init];
-	[[self getOptions] setBaseProjection:proj];
+	[[self.mapView getOptions] setBaseProjection:proj];
 
 	// Set initial location and other parameters, don't animate
-	[self setFocusPos:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.650415 y:59.428773]]  durationSeconds:0];
-	[self setZoom:5 durationSeconds:0];
-	[self setRotation:0 durationSeconds:0];
+	[self.mapView setFocusPos:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.650415 y:59.428773]]  durationSeconds:0];
+	[self.mapView setZoom:5 durationSeconds:0];
+	[self.mapView setRotation:0 durationSeconds:0];
 	
 	// Initialize a OSM raster data source
 	NTHTTPTileDataSource* baseRasterTileDataSource = [[NTHTTPTileDataSource alloc] initWithMinZoom:0 maxZoom:24 baseURL:@"http://api.tiles.mapbox.com/v3/nutiteq.map-j6a1wkx0/{zoom}/{x}/{y}.png"];
@@ -39,7 +39,7 @@
 	NTRasterTileLayer* rasterLayer = [[NTRasterTileLayer alloc] initWithDataSource:cachedRasterTileDataSource];
 	//[rasterLayer setPreloading:NO];
 	// Add the previous raster layer to the map
-	[[self getLayers] add:rasterLayer];
+	[[self.mapView getLayers] add:rasterLayer];
 }
 
 @end

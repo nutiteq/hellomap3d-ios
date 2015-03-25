@@ -16,9 +16,10 @@ extern "C" {
 #endif
 
 
-#import "UnsignedCharVector_proxy.h"
-#import "VectorTileDecoder_proxy.h"
+#import "Color_proxy.h"
 #import "MBVectorTileStyleSet_proxy.h"
+#import "VectorTileDecoder_proxy.h"
+#import "UnsignedCharVector_proxy.h"
 
 /**
  * Decoder for vector tiles in MapBox format.
@@ -79,7 +80,6 @@ __attribute__ ((visibility("default"))) @interface NTMBVectorTileDecoder : NTVec
  * @param value The value for the parameter.
  */
 -(void)setStyleStringParameter: (NSString*)param value: (NSString*)value;
--(NTColor*)getBackgroundColor;
 -(int)getMinZoom;
 -(int)getMaxZoom;
 

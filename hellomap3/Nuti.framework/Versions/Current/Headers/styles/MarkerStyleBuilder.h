@@ -32,10 +32,22 @@ namespace Nuti {
          */
         float getAnchorPointX() const;
         /**
+         * Sets the horizontal anchor point of the marker.
+         * @param anchorPointX The new horizontal anchor point for the marker. -1 means the left side,
+         * 0 the center and 1 the right side of the marker. The default is 0.
+         */
+        void setAnchorPointX(float anchorPointX);
+        /**
          * Returns the vertical anchor point of the marker.
          * @return The vertical anchor point of the marker.
          */
         float getAnchorPointY() const;
+        /**
+         * Sets the vertical anchor point of the marker.
+         * @param anchorPointY The vertical anchor point for the marker. -1 means the bottom,
+         * 0 the center and 1 the top of the marker. The default is -1.
+         */
+        void setAnchorPointY(float anchorPointY);
         /**
          * Sets the anchor point for the marker. Values will be clamped to [-1, 1] range.
          * @param anchorPointX The new horizontal anchor point for the marker. -1 means the left side,

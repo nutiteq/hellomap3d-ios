@@ -31,42 +31,24 @@ __attribute__ ((visibility("default"))) @interface NTBitmapUtils : NSObject
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
  * Creates a new Bitmap object from an existing UIImage.<br>
- * @param image The reference UIImage.<br>
- * @deprecated Use CreateBitmapFromUIImage instead.
- */
-+(NTBitmap*)createBitmapFromUIImage: (UIImage*)image;
-/**
- * Creates a new Bitmap object from an existing UIImage.<br>
  * @param image The reference UIImage.
  */
-+(NTBitmap*)CreateBitmapFromUIImage: (UIImage*)image;
-/**
- * Creates a new Bitmap object from an existing UIImage. If the power of two conversion flag is set,<br>
- * additional padding will be added to the image to make it's dimensions power of two.<br>
- * @param image The reference UIImage.<br>
- * @param pow2Padding The power of two conversion flag.<br>
- * @deprecated Use CreateBitmapFromUIImage instead.
- */
-+(NTBitmap*)createBitmapFromUIImage: (UIImage*)image pow2Padding: (BOOL)pow2Padding;
++(NTBitmap*)CreateBitmapFromUIImage: (UIImage*)image __attribute((deprecated));
++(NTBitmap*)createBitmapFromUIImage: (UIImage*)image;
 /**
  * Creates a new Bitmap object from an existing UIImage. If the power of two conversion flag is set,<br>
  * additional padding will be added to the image to make it's dimensions power of two.<br>
  * @param image The reference UIImage.<br>
  * @param pow2Padding The power of two conversion flag.
  */
-+(NTBitmap*)CreateBitmapFromUIImage: (UIImage*)image pow2Padding: (BOOL)pow2Padding;
-/**
- * Creates a new UIImage object from an existing Bitmap.<br>
- * @return The UIImage.<br>
- * @deprecated Use CreateUIImageFromBitmap instead.
- */
-+(UIImage*)createUIImageFromBitmap: (NTBitmap*)bitmap;
++(NTBitmap*)CreateBitmapFromUIImage: (UIImage*)image pow2Padding: (BOOL)pow2Padding __attribute((deprecated));
++(NTBitmap*)createBitmapFromUIImage: (UIImage*)image pow2Padding: (BOOL)pow2Padding;
 /**
  * Creates a new UIImage object from an existing Bitmap.<br>
  * @return The UIImage.
  */
-+(UIImage*)CreateUIImageFromBitmap: (NTBitmap*)bitmap;
--(id)init;
++(UIImage*)CreateUIImageFromBitmap: (NTBitmap*)bitmap __attribute((deprecated));
++(UIImage*)createUIImageFromBitmap: (NTBitmap*)bitmap;
 
 -(void)dealloc;
 

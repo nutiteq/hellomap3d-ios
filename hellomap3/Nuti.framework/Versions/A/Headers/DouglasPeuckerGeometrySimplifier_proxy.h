@@ -16,6 +16,7 @@ extern "C" {
 #endif
 
 
+#import "Geometry_proxy.h"
 #import "GeometrySimplifier_proxy.h"
 
 /**

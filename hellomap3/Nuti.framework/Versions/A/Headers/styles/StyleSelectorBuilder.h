@@ -8,6 +8,7 @@
 #define _NUTI_STYLESELECTORBUILDER_H_
 
 #include <memory>
+#include <string>
 #include <vector>
 
 namespace Nuti {
@@ -30,7 +31,7 @@ namespace Nuti {
          * @param rule The rule to add
          * @return Self.
          */
-        StyleSelectorBuilder& addRule(const std::shared_ptr<StyleSelectorRule>& rule);
+        void addRule(const std::shared_ptr<StyleSelectorRule>& rule);
 
         /**
          * Adds new rule to the builder rule set. The rules are defined by a filter expression and corresponding style.
@@ -43,14 +44,14 @@ namespace Nuti {
          * @param style The style for this rule.
          * @return Self.
          */
-        StyleSelectorBuilder& addRule(const std::string& expr, const std::shared_ptr<Style>& style);
+        void addRule(const std::string& expr, const std::shared_ptr<Style>& style);
 
         /**
          * Adds new rule to the builder rule set. This method should be used to add the 'default' style, if no filter needs to be applied.
          * @param style The style for this rule.
          * @return Self.
          */
-        StyleSelectorBuilder& addRule(const std::shared_ptr<Style>& style);
+        void addRule(const std::shared_ptr<Style>& style);
         
         /**
          * Builds a new style selector from the added rule list.

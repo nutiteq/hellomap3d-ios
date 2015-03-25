@@ -64,6 +64,8 @@ namespace Nuti {
          */
         std::shared_ptr<VectorDataSource> getDataSource() const;
         
+        virtual bool isUpdateInProgress() const;
+        
     protected:
         virtual void setComponents(const std::shared_ptr<CancelableThreadPool>& envelopeThreadPool,
                                    const std::shared_ptr<CancelableThreadPool>& tileThreadPool,
@@ -104,10 +106,13 @@ namespace Nuti {
         class FetchTask : public CancelableTask {
         public:
             FetchTask(const std::weak_ptr<VectorLayer>& layer);
+            virtual void cancel();
             virtual void run();
-    
+            
         private:
             std::weak_ptr<VectorLayer> _layer;
+
+            bool _started;
         };
         
         void updateElement(const std::shared_ptr<VectorElement>& element, bool remove);
@@ -122,7 +127,7 @@ namespace Nuti {
         std::shared_ptr<Polygon3DRenderer> _polygon3DRenderer;
         std::shared_ptr<NMLModelRenderer> _nmlModelRenderer;
     
-        std::shared_ptr<CancelableTask> _lastTask;
+        std::shared_ptr<FetchTask> _lastTask;
     };
     
 }

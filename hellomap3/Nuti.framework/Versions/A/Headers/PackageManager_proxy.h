@@ -20,7 +20,7 @@ extern "C" {
 #import "PackageMetaInfo_proxy.h"
 #import "PackageStatus_proxy.h"
 #import "PackageManagerListener_proxy.h"
-#import "PackageInfoVectors_proxy.h"
+#import "PackageInfoVector_proxy.h"
 
 /**
  * Base class for offline map package manager. Package manager supports downloading/removing packages.<br>
@@ -40,7 +40,7 @@ __attribute__ ((visibility("default"))) @interface NTPackageManager : NSObject
  * Returns the current listener for package manager events.<br>
  * @return The current listener or null if none is set.
  */
--(NTPackageManagerListener*)getPackageManagerListener;
+-(NTPackageManagerListener *)getPackageManagerListener;
 /**
  * Sets the package manager listener.<br>
  * @param listener The new package manager listener to use.

@@ -39,8 +39,6 @@ namespace Nuti {
         VectorTileLayer(const std::shared_ptr<TileDataSource>& dataSource, const std::shared_ptr<VectorTileDecoder>& decoder);
         virtual ~VectorTileLayer();
     
-        virtual std::shared_ptr<TileDataSource> getDataSource();
-        
         /**
          * Returns the tile decoder assigned to this layer.
          * @return The tile decoder assigned to this layer.
@@ -129,7 +127,6 @@ namespace Nuti {
         static const int CULL_DELAY_TIME = 200;
         static const int PRELOADING_PRIORITY_OFFSET = -2;
     
-        std::shared_ptr<TileDataSource> _dataSource;
         std::shared_ptr<VectorTileDecoder> _tileDecoder;
         std::shared_ptr<VectorTileRenderer> _renderer;
         std::shared_ptr<CancelableThreadPool> _labelCullThreadPool;

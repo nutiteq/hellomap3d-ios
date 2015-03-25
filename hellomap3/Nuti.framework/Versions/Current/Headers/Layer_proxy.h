@@ -16,31 +16,19 @@ extern "C" {
 #endif
 
 
-#import "CullState_proxy.h"
 #import "MapRange_proxy.h"
+#import "CullState_proxy.h"
 
 /**
  * An abstract base class for all layers.
  */
 __attribute__ ((visibility("default"))) @interface NTLayer : NSObject
 {
-  void *swigCPtr;
-  BOOL swigCMemOwn;
+	void *swigCPtr;
+	BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
-
-/**
- * Checks if this object is equal to the specified object.
- * @return True when objects are equal, false otherwise.
- */
--(BOOL)isEqual:(id)object;
-
-/**
- * Returns the hash value of this object.
- * @return The hash value of this object.
- */
--(NSUInteger)hash;
 /**
  * Returns the actual class name of this layer. This is used<br>
  * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically<br>
@@ -81,6 +69,11 @@ __attribute__ ((visibility("default"))) @interface NTLayer : NSObject
  * @param range new visible zoom range
  */
 -(void)setVisibleZoomRange: (NTMapRange*)range;
+/**
+ * Tests whether this layer is being currently updated.<br>
+ * @return True when the layer is being updated or false when the layer is in steady state.
+ */
+-(BOOL)isUpdateInProgress;
 /**
  * Updates the layer using new visibility information. This method is periodically called when the map view moves.<br>
  * The visibilty info is saved, so the data can be refreshed later.<br>

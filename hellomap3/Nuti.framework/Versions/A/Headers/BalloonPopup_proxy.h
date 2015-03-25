@@ -16,8 +16,11 @@ extern "C" {
 #endif
 
 
-#import "BalloonPopupStyle_proxy.h"
+#import "MapPos_proxy.h"
+#import "ScreenPos_proxy.h"
 #import "Bitmap_proxy.h"
+#import "Geometry_proxy.h"
+#import "BalloonPopupStyle_proxy.h"
 #import "Popup_proxy.h"
 
 /**

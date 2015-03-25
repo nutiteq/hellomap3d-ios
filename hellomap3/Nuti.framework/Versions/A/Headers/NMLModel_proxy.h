@@ -16,10 +16,12 @@ extern "C" {
 #endif
 
 
-#import "Matrices_proxy.h"
-#import "PointGeometry_proxy.h"
-#import "UnsignedCharVector_proxy.h"
+#import "MapBounds_proxy.h"
+#import "MapPos_proxy.h"
+#import "MapVec_proxy.h"
+#import "Geometry_proxy.h"
 #import "VectorElement_proxy.h"
+#import "UnsignedCharVector_proxy.h"
 
 /**
  * A 3D model that can be displayed on the map.<br>
@@ -53,11 +55,6 @@ __attribute__ ((visibility("default"))) @interface NTNMLModel : NTVectorElement
  * @param pos The new map position that defines the location of this model.
  */
 -(void)setPos: (NTMapPos*)pos;
-/**
- * Returns a local transformation matrix. Includes rotation and scaling transformation.<br>
- * @return A 4x4 transformation matrix.
- */
--(NTMatrix4F*)getLocalMat;
 /**
  * Returns the rotation axis of this model. If rotation angle is 0, then the axis is irrelevant.<br>
  * @return The rotation axis vector.

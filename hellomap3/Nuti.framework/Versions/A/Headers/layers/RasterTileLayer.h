@@ -36,8 +36,6 @@ namespace Nuti {
         RasterTileLayer(const std::shared_ptr<TileDataSource>& dataSource);
         virtual ~RasterTileLayer();
     
-        virtual std::shared_ptr<TileDataSource> getDataSource();
-        
         /**
          * Returns the current frame number.
          * @return The current frame number.
@@ -78,7 +76,7 @@ namespace Nuti {
          * Returns the tile texture cache capacity.
          * @return The tile texture cache capacity in bytes.
          */
-        int getTextureCacheCapacity() const;
+        unsigned int getTextureCacheCapacity() const;
     
         /**
          * Sets the tile texture cache capacity. Texture cache is the primary storage for raster data,
@@ -139,9 +137,8 @@ namespace Nuti {
         std::atomic<bool> _synchronizedRefresh;
     
         std::shared_ptr<TileLoadListener> _tileLoadListener;
-        mutable std::mutex _tileLoadListenerMutex;
+        mutable std::recursive_mutex _tileLoadListenerMutex;
     
-        std::shared_ptr<TileDataSource> _dataSource;
         std::shared_ptr<RasterTileRenderer> _renderer;
         
         TextureCache<long long> _visibleCache;

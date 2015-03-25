@@ -18,7 +18,6 @@ extern "C" {
 
 #import "MapBounds_proxy.h"
 #import "MapPos_proxy.h"
-#import "Matrices_proxy.h"
 
 /**
  * A 3D frustum defined by 6 clipping planes.
@@ -34,11 +33,6 @@ __attribute__ ((visibility("default"))) @interface NTFrustum : NSObject
  * Constructs an empty frustum where all corners coordinate are 0.
  */
 -(id)init;
-/**
- * Constructs a frustum from a modelview projection matrix.<br>
- * @param mvpMatrix The modelview projection matrix.
- */
--(id)initWithMvpMatrix: (NTMatrix4D*)mvpMatrix;
 /**
  * Tests if a point is inside with the frustum.<br>
  * @param point The point to be tested.<br>

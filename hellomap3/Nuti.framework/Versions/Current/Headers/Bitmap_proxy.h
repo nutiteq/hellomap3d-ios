@@ -60,7 +60,6 @@ enum NTColorFormat {
 
 
 #import "UnsignedCharVector_proxy.h"
-#include <OpenGLES/ES2/gl.h>
 
 /**
  * A class that provides the functionality to store, compress, uncompress and resize basic image formats.<br>
@@ -154,7 +153,7 @@ __attribute__ ((visibility("default"))) @interface NTBitmap : NSObject
  * @param pow2Padding The power of two conversion flag.<br>
  * @return The resized bitmap instance or null in case of error (wrong dimensions).
  */
--(NTBitmap*)getResizedBitmap: (int)width height: (int)height pow2Padding: (BOOL)pow2Padding;
+-(NTBitmap*)getResizedBitmap: (unsigned int)width height: (unsigned int)height pow2Padding: (BOOL)pow2Padding;
 /**
  * Returns sub-bitmap with specified offsets and dimensions.<br>
  * @param xOffset X coordinate offset in the bitmap.<br>
@@ -165,6 +164,17 @@ __attribute__ ((visibility("default"))) @interface NTBitmap : NSObject
  * @return Sub-bitmap instance or null in case of error (wrong dimensions).
  */
 -(NTBitmap*)getSubBitmap: (int)xOffset yOffset: (int)yOffset width: (int)width height: (int)height pow2Padding: (BOOL)pow2Padding;
+/**
+ * Returns copy of the bitmap converted to RGBA format.<br>
+ * @param pow2Padding The power of two conversion flag.<br>
+ * @return The bitmap with identical dimensions but converted to RGBA format.
+ */
+-(NTBitmap*)getRGBABitmap: (BOOL)pow2Padding;
+/**
+ * Returns copy of the bitmap with padding removed.<br>
+ * @return The bitmap with original dimensions.
+ */
+-(NTBitmap*)getUnpaddedBitmap;
 
 -(void)dealloc;
 

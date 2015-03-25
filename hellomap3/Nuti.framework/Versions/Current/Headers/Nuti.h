@@ -1,3 +1,9 @@
+/*
+ * Copyright 2014 Nutiteq Llc. All rights reserved.
+ * Copying and using this code is allowed only according
+ * to license terms, as given in https://www.nutiteq.com/license/
+ */
+
 #ifndef _NUTI_H_
 #define _NUTI_H_
 
@@ -75,9 +81,11 @@
 #import "StyleSelector_proxy.h"
 #import "StyleSelectorBuilder_proxy.h"
 
+#import "ui/MapView.h"
 #import "ui/MapViewController.h"
 #import "MapClickInfo_proxy.h"
 #import "MapEventListener_proxy.h"
+#import "MapRenderListener_proxy.h"
 #import "VectorElementClickInfo_proxy.h"
 #import "VectorElementsClickInfo_proxy.h"
 

@@ -18,16 +18,16 @@
 	[super viewDidLoad];
 	
 	// Initialize a local vector data source
-	NTProjection* proj = [[self getOptions] getBaseProjection];
+	NTProjection* proj = [[self.mapView getOptions] getBaseProjection];
 	NTLocalVectorDataSource* vectorDataSource = [[NTLocalVectorDataSource alloc] initWithProjection:proj];
 	// Initialize a vector layer with the previous data source
 	NTVectorLayer* vectorLayer = [[NTVectorLayer alloc] initWithDataSource:vectorDataSource];
 	// Add the previous vector layer to the map
-	[[self getLayers] add:vectorLayer];
+	[[self.mapView getLayers] add:vectorLayer];
 	
 	// Load bitmaps for custom markers
 	UIImage* markerImage = [UIImage imageNamed:@"marker.png"];
-	NTBitmap* markerBitmap = [NTBitmapUtils CreateBitmapFromUIImage:markerImage];
+	NTBitmap* markerBitmap = [NTBitmapUtils createBitmapFromUIImage:markerImage];
 	
 	// Create a marker style, set anchor attachment point to the left
 	NTMarkerStyleBuilder* markerStyleBuilder = [[NTMarkerStyleBuilder alloc] init];

@@ -16,6 +16,7 @@ extern "C" {
 #endif
 
 
+#import "MapBounds_proxy.h"
 #import "Geometry_proxy.h"
 #import "StringMap_proxy.h"
 
@@ -24,23 +25,11 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTVectorElement : NSObject
 {
-  void *swigCPtr;
-  BOOL swigCMemOwn;
+	void *swigCPtr;
+	BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
-
-/**
- * Checks if this object is equal to the specified object.
- * @return True when objects are equal, false otherwise.
- */
--(BOOL)isEqual:(id)object;
-
-/**
- * Returns the hash value of this object.
- * @return The hash value of this object.
- */
--(NSUInteger)hash;
 /**
  * Returns the actual class name of this vector element. This is used<br>
  * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically<br>

@@ -60,7 +60,7 @@
 		styleAssetName = @"osmbright.zip";
 		styleBuildings3D = YES;
 	}
-	NTUnsignedCharVector *vectorTileStyleSetData = [NTAssetUtils LoadBytes:styleAssetName];
+	NTUnsignedCharVector *vectorTileStyleSetData = [NTAssetUtils loadBytes:styleAssetName];
 	NTMBVectorTileStyleSet *vectorTileStyleSet = [[NTMBVectorTileStyleSet alloc] initWithData:vectorTileStyleSetData];
 
 	// Create vector tile decoder using the styleset and update style parameters
@@ -76,12 +76,12 @@
 	
 	// Create vector tile layer, using previously created data source and decoder
 	if (self.baseLayer) {
-		[[self getLayers] remove:self.baseLayer];
+		[[self.mapView getLayers] remove:self.baseLayer];
 	}
 	self.baseLayer = [[NTVectorTileLayer alloc] initWithDataSource:vectorTileDataSource decoder:self.vectorTileDecoder];
 
 	// Add vector tile layer
-	[[self getLayers] insert:0 layer:self.baseLayer];
+	[[self.mapView getLayers] insert:0 layer:self.baseLayer];
 }
 
 - (NTTileDataSource*)createTileDataSource
@@ -99,17 +99,17 @@
 {
 	[super viewDidLoad];
 
-  [NTLog SetShowDebug:true];
-  [NTLog SetShowInfo:true];
+    [NTLog setShowDebug:true];
+    [NTLog setShowInfo:true];
  
 	// Set the base projection, that will be used for most MapView, MapEventListener and Options methods
 	NTEPSG3857* proj = [[NTEPSG3857 alloc] init];
-	[[self getOptions] setBaseProjection:proj];
+	[[self.mapView getOptions] setBaseProjection:proj];
 	
 	// Set initial location and other parameters, don't animate
-	[self setFocusPos:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.650415 y:59.428773]]  durationSeconds:0];
-	[self setZoom:14 durationSeconds:0];
-	[self setRotation:0 durationSeconds:0];
+	[self.mapView setFocusPos:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.650415 y:59.428773]]  durationSeconds:0];
+	[self.mapView setZoom:14 durationSeconds:0];
+	[self.mapView setRotation:0 durationSeconds:0];
 	
 	// Set default style parameters and create base layer
 	self.vectorStyleName = @"osmbright";

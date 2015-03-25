@@ -45,7 +45,7 @@ static NSString* _language = @"en"; // the language for the package names
 - (void)onPackageListFailed;
 - (void)onPackageUpdated:(NSString*)packageId version:(int)version;
 - (void)onPackageCancelled:(NSString*)packageId version:(int)version;
-- (void)onPackageFailed:(NSString*)packageId version:(int)version;
+- (void)onPackageFailed:(NSString*)packageId version:(int)version errorType:(enum NTPackageErrorType)errorType;
 - (void)onPackageStatusChanged:(NSString*)packageId version:(int)version status:(NTPackageStatus*)status;
 
 @property(readonly, atomic) NSHashTable* packageManagerControllers;
@@ -89,7 +89,7 @@ static NSString* _language = @"en"; // the language for the package names
 - (id)init
 {
 	// License registration. Must be done before package manager can be used.
-	[NTMapViewController RegisterLicense:@"XTUN3Q0ZBd2NtcmFxbUJtT1h4QnlIZ2F2ZXR0Mi9TY2JBaFJoZDNtTjUvSjJLay9aNUdSVjdnMnJwVXduQnc9PQoKcHJvZHVjdHM9c2RrLWlvcy0zLiosc2RrLWFuZHJvaWQtMy4qCnBhY2thZ2VOYW1lPWNvbS5udXRpdGVxLioKYnVuZGxlSWRlbnRpZmllcj1jb20ubnV0aXRlcS4qCndhdGVybWFyaz1ldmFsdWF0aW9uCnVzZXJLZXk9MTVjZDkxMzEwNzJkNmRmNjhiOGE1NGZlZGE1YjA0OTYK"];
+	[NTMapView registerLicense:@"XTUN3Q0ZBd2NtcmFxbUJtT1h4QnlIZ2F2ZXR0Mi9TY2JBaFJoZDNtTjUvSjJLay9aNUdSVjdnMnJwVXduQnc9PQoKcHJvZHVjdHM9c2RrLWlvcy0zLiosc2RrLWFuZHJvaWQtMy4qCnBhY2thZ2VOYW1lPWNvbS5udXRpdGVxLioKYnVuZGxlSWRlbnRpZmllcj1jb20ubnV0aXRlcS4qCndhdGVybWFyaz1ldmFsdWF0aW9uCnVzZXJLZXk9MTVjZDkxMzEwNzJkNmRmNjhiOGE1NGZlZGE1YjA0OTYK"];
 	
 	// Create folder for package manager. Package manager needs persistent writable folder.
 	NSArray* paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask,YES);
@@ -245,25 +245,25 @@ static NSString* _language = @"en"; // the language for the package names
 		
 		NSString* action = @"DL";
 		if (pkg.packageStatus) {
-			if ([pkg.packageStatus getAction] == NTPackageStatus_READY) {
+			if ([pkg.packageStatus getCurrentAction] == NT_PACKAGE_ACTION_READY) {
 				status = @"ready";
 				action = @"RM";
 				cell.customActionBlock = ^ {
 					[_packageManager startPackageRemove:[pkg.packageInfo getPackageId]];
           
 				};
-			} else if ([pkg.packageStatus getAction] == NTPackageStatus_WAITING) {
+			} else if ([pkg.packageStatus getCurrentAction] == NT_PACKAGE_ACTION_WAITING) {
 				status = @"queued";
 				action = @"C";
 				cell.customActionBlock = ^ {
 					[_packageManager cancelPackageTasks:[pkg.packageInfo getPackageId]];
 				};
 			} else {
-				if ([pkg.packageStatus getAction] == NTPackageStatus_COPYING) {
+				if ([pkg.packageStatus getCurrentAction] == NT_PACKAGE_ACTION_COPYING) {
 					status = @"copying";
-				} else if ([pkg.packageStatus getAction] == NTPackageStatus_DOWNLOADING) {
+				} else if ([pkg.packageStatus getCurrentAction] == NT_PACKAGE_ACTION_DOWNLOADING) {
 					status = @"downloading";
-				} else if ([pkg.packageStatus getAction] == NTPackageStatus_REMOVING) {
+				} else if ([pkg.packageStatus getCurrentAction] == NT_PACKAGE_ACTION_REMOVING) {
 					status = @"removing";
 				}
 				status = [NSString stringWithFormat: @"%@ %d%%", status, (int) [pkg.packageStatus getProgress]];
@@ -407,13 +407,10 @@ static NSString* _language = @"en"; // the language for the package names
 
 - (void)showMap
 {
-  PackageMapController *map = [[PackageMapController alloc] init];
-  map.dataSource = [[NTPackageManagerTileDataSource alloc] initWithPackageManager:_packageManager];
-  [self.navigationController pushViewController:map animated:YES];
-
+  PackageMapController* mapController = [[PackageMapController alloc] init];
+  mapController.packageManager = _packageManager;
+  [self.navigationController pushViewController:mapController animated:YES];
 }
-
-
 
 @end
 
@@ -476,7 +473,7 @@ static NSString* _language = @"en"; // the language for the package names
 	}
 }
 
-- (void)onPackageFailed:(NSString*)packageId version:(int)version
+- (void)onPackageFailed:(NSString*)packageId version:(int)version errorType:(enum NTPackageErrorType)errorType
 {
 	@synchronized(self) {
 		for (PackageManagerController* controller in _packageManagerControllers) {

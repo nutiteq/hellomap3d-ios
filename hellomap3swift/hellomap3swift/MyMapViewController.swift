@@ -1,34 +1,45 @@
 import UIKit
+import GLKit
 
-// NOTE: NTMapViewController is imported through 'bridging header' (hellomap3swift-Bridging-Header.h)
-class MyMapViewController: NTMapViewController {
+// NOTE: NTMapView is imported through 'bridging header' (hellomap3swift-Bridging-Header.h)
+class MyMapViewController: GLKViewController {
+    
+    override func loadView() {
+        // The initial step: register your license.
+        // You can get your free/commercial license from: http://developer.nutiteq.com
+        // The license string used here is intended only for Nutiteq demos and WILL NOT WORK with other apps!
+        NTMapView.registerLicense("XTUN3Q0ZBd2NtcmFxbUJtT1h4QnlIZ2F2ZXR0Mi9TY2JBaFJoZDNtTjUvSjJLay9aNUdSVjdnMnJwVXduQnc9PQoKcHJvZHVjdHM9c2RrLWlvcy0zLiosc2RrLWFuZHJvaWQtMy4qCnBhY2thZ2VOYW1lPWNvbS5udXRpdGVxLioKYnVuZGxlSWRlbnRpZmllcj1jb20ubnV0aXRlcS4qCndhdGVybWFyaz1ldmFsdWF0aW9uCnVzZXJLZXk9MTVjZDkxMzEwNzJkNmRmNjhiOGE1NGZlZGE1YjA0OTYK")
+        
+        super.loadView();
+    }
 
 	override func viewDidLoad() {
-		// The initial step: register your license. This must be done before using MapView and before calling super.viewDidLoad()!
-		// You can get your free/commercial license from: http://developer.nutiteq.com
-		// The license string used here is intended only for Nutiteq demos and WILL NOT WORK with other apps!
-		NTMapViewController.RegisterLicense("XTUN3Q0ZBd2NtcmFxbUJtT1h4QnlIZ2F2ZXR0Mi9TY2JBaFJoZDNtTjUvSjJLay9aNUdSVjdnMnJwVXduQnc9PQoKcHJvZHVjdHM9c2RrLWlvcy0zLiosc2RrLWFuZHJvaWQtMy4qCnBhY2thZ2VOYW1lPWNvbS5udXRpdGVxLioKYnVuZGxlSWRlbnRpZmllcj1jb20ubnV0aXRlcS4qCndhdGVybWFyaz1ldmFsdWF0aW9uCnVzZXJLZXk9MTVjZDkxMzEwNzJkNmRmNjhiOGE1NGZlZGE1YjA0OTYK")
-
 		super.viewDidLoad()
+        
+        // GLKViewController-specific parameters for smoother animations
+        resumeOnDidBecomeActive = false
+        preferredFramesPerSecond = 60
+        
+        let mapView = view as NTMapView
 		
 		// Set the base projection, that will be used for most MapView, MapEventListener and Options methods
 		let proj = NTEPSG3857()
-		getOptions().setBaseProjection(proj) // EPSG3857 is actually the default base projection, so this is actually not needed
+		mapView.getOptions().setBaseProjection(proj) // EPSG3857 is actually the default base projection, so this is actually not needed
 		
 		// General options
-		getOptions().setRotatable(true) // make map rotatable (this is actually the default)
-		getOptions().setTileThreadPoolSize(2) // use 2 threads to download tiles
+		mapView.getOptions().setRotatable(true) // make map rotatable (this is actually the default)
+		mapView.getOptions().setTileThreadPoolSize(2) // use 2 threads to download tiles
 		
 		// Set initial location and other parameters, don't animate
-		setFocusPos(proj.fromWgs84(NTMapPos(x:24.650415, y:59.428773)), durationSeconds:0)
-		setZoom(14, durationSeconds:0)
-		setRotation(0, durationSeconds:0)
+		mapView.setFocusPos(proj.fromWgs84(NTMapPos(x:24.650415, y:59.428773)), durationSeconds:0)
+		mapView.setZoom(14, durationSeconds:0)
+		mapView.setRotation(0, durationSeconds:0)
 		
 		// Create online vector tile layer, use style asset embedded in the project
 		let vectorTileLayer = NTNutiteqOnlineVectorTileLayer(styleAssetName:"osmbright.zip")
 		
 		// Add vector tile layer
-		getLayers().add(vectorTileLayer)
+		mapView.getLayers().add(vectorTileLayer)
 		
 		// Load bitmaps for custom markers
 		let markerImage = UIImage(named:"marker.png")
@@ -52,8 +63,16 @@ class MyMapViewController: NTMapViewController {
 		let vectorLayer = NTVectorLayer(dataSource:vectorDataSource)
 		
 		// Add the previous vector layer to the map
-		getLayers().add(vectorLayer)
+		mapView.getLayers().add(vectorLayer)
 	}
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        // GLKViewController-specific, do on-demand rendering instead of constant redrawing
+        // This is VERY IMPORTANT as it stops battery drain when nothing changes on the screen!
+        paused = true;
+    }
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()

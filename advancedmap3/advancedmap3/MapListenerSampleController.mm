@@ -18,23 +18,23 @@
 	[super viewDidLoad];
 	
 	// Get the base projection set in the base class
-	NTProjection* proj = [[self getOptions] getBaseProjection];
+	NTProjection* proj = [[self.mapView getOptions] getBaseProjection];
 	
 	// Initialize a local vector data source
 	NTLocalVectorDataSource* vectorDataSource1 = [[NTLocalVectorDataSource alloc] initWithProjection:proj];
 	// Initialize a vector layer with the previous data source
 	NTVectorLayer* vectorLayer1 = [[NTVectorLayer alloc] initWithDataSource:vectorDataSource1];
 	// Add the previous vector layer to the map
-	[[self getLayers] add:vectorLayer1];
+	[[self.mapView getLayers] add:vectorLayer1];
 	// Set visible zoom range for the vector layer
 	[vectorLayer1 setVisibleZoomRange:[[NTMapRange alloc] initWithMin:10 max:24]];
 	
 	// Create a map event listener
 	MyMapEventListener* mapListener = [[MyMapEventListener alloc] init];
-	[self setMapEventListener:mapListener];
+	[self.mapView setMapEventListener:mapListener];
 	// MapEventListener needs the data source and the layer to display balloons
 	// over the clicked vector elements
-	[mapListener setMapView:self vectorDataSource:vectorDataSource1];
+	[mapListener setMapView:self.mapView vectorDataSource:vectorDataSource1];
 	
 	// Initialize a second vector data source and vector layer.
 	// This secondary vector layer will be used for drawing borders for
@@ -44,7 +44,7 @@
 	// that point, line and polygon elements are drawn in a specific order.
 	NTLocalVectorDataSource* vectorDataSource2 = [[NTLocalVectorDataSource alloc] initWithProjection:proj];
 	NTVectorLayer* vectorLayer2 = [[NTVectorLayer alloc] initWithDataSource:vectorDataSource2];
-	[[self getLayers] add:vectorLayer2];
+	[[self.mapView getLayers] add:vectorLayer2];
 	[vectorLayer2 setVisibleZoomRange:[[NTMapRange alloc] initWithMin:10 max:24]];
 	
 	// Add vector elements. All vector elements need a position, which defines the location
@@ -131,7 +131,7 @@
 	
 	// Load bitmaps for custom markers
 	UIImage* markerImage = [UIImage imageNamed:@"marker.png"];
-	NTBitmap* markerBitmap = [NTBitmapUtils CreateBitmapFromUIImage:markerImage];
+	NTBitmap* markerBitmap = [NTBitmapUtils createBitmapFromUIImage:markerImage];
 	
 	// Create text style
 	NTTextStyleBuilder* textStyleBuilder = [[NTTextStyleBuilder alloc] init];
@@ -191,8 +191,8 @@
 	NTBalloonPopupStyleBuilder* balloonPopupStyleBuilder = [[NTBalloonPopupStyleBuilder alloc] init];
 	[balloonPopupStyleBuilder setCornerRadius:20];
 	[balloonPopupStyleBuilder setLeftMargins:[[NTBalloonPopupMargins alloc] initWithLeft:6 top:6 right:6 bottom:6]];
-	[balloonPopupStyleBuilder setLeftImage:infoImage];
-	[balloonPopupStyleBuilder setRightImage:arrowImage];
+	[balloonPopupStyleBuilder setLeftImage:[NTBitmapUtils createBitmapFromUIImage:infoImage]];
+	[balloonPopupStyleBuilder setRightImage:[NTBitmapUtils createBitmapFromUIImage:arrowImage]];
 	[balloonPopupStyleBuilder setRightMargins:[[NTBalloonPopupMargins alloc] initWithLeft:2 top:6 right:12 bottom:6]];
 	[balloonPopupStyleBuilder setPlacementPriority:1];
 	pos = [proj fromWgs84:[[NTMapPos alloc] initWithX:24.655662 y:59.425521]];
@@ -241,7 +241,7 @@
 {
 	// Check if the view is closing
 	if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
-		[self setMapEventListener:nil];
+		[self.mapView setMapEventListener:nil];
 	}
 	
 	[super viewWillDisappear:animated];

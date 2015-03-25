@@ -19,9 +19,7 @@ namespace Nuti { namespace MapnikVT {
 		virtual void build(const Feature& feature, const TileSymbolizerContext& symbolizerContext, const Mapnik::ExpressionContext& exprContext, VT::TileLayerBuilder& layerBuilder) override;
 
 	protected:
-		static std::shared_ptr<VT::BitmapPattern> createDashBitmapPattern(int dashSize, const std::vector<float>& strokeDashArray);
-
-		const int DASH_SIZE = 8;
+		static std::shared_ptr<VT::BitmapPattern> createDashBitmapPattern(const std::vector<float>& strokeDashArray);
 
 		unsigned int _stroke = 0xff000000;
 		float _strokeWidth = 1.0f;

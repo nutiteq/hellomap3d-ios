@@ -16,7 +16,7 @@ extern "C" {
 #endif
 
 
-#import "Bitmap_proxy.h"
+#import "Color_proxy.h"
 #import "BillboardStyle_proxy.h"
 
 /**

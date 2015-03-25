@@ -16,7 +16,9 @@ extern "C" {
 #endif
 
 
+#import "MapTile_proxy.h"
 #import "TileDataSource_proxy.h"
+#import "TileData_proxy.h"
 
 /**
  * A tile data source where each map tile is a seperate image file bundled with the application.<br>

@@ -29,6 +29,13 @@ __attribute__ ((visibility("default"))) @interface NTGeometrySimplifier : NSObje
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
+ * Returns the actual class name of this geometry. This is used<br>
+ * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically<br>
+ * generate child proxy classes from a base class pointer.<br>
+ * @return The class name of this layer.
+ */
+-(NSString*)getClassName;
+/**
  * Perform the simplification of the given geometry, given relative scale.<br>
  * @param geometry The geometry to simplify.<br>
  * @param scale Relative scale for simplification, this is proportional to 2^zoom.<br>

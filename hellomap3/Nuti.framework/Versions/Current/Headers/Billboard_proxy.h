@@ -16,8 +16,10 @@ extern "C" {
 #endif
 
 
+#import "MapBounds_proxy.h"
+#import "MapPos_proxy.h"
+#import "Geometry_proxy.h"
 #import "BillboardStyle_proxy.h"
-#import "PointGeometry_proxy.h"
 #import "VectorElement_proxy.h"
 
 /**
@@ -49,8 +51,7 @@ __attribute__ ((visibility("default"))) @interface NTBillboard : NTVectorElement
  * this method is equavalent to the Billboard::getGeometry method. If this billboard is attached <br>
  * to another billboard, the hierarchy is traveled recursively and the location of the root <br>
  * billboard is returned. <br>
- * @return The geometry object that defines the location of the root billboard. <br>
- * Null if there's no root billboard.
+ * @return The geometry object that defines the location of the root billboard. Null if there's no root billboard.
  */
 -(NTGeometry*)getRootGeometry;
 /**

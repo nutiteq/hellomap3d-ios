@@ -31,10 +31,22 @@ namespace Nuti {
          */
         float getAnchorPointX() const;
         /**
+         * Sets the horizontal anchor point of the label.
+         * @param anchorPointX The new horizontal anchor point for the label. -1 means the left side,
+         * 0 the center and 1 the right side of the label. The default is 0.
+         */
+        void setAnchorPointX(float anchorPointX);
+        /**
          * Returns the vertical anchor point of the label.
          * @return The vertical anchor point of the label.
          */
         float getAnchorPointY() const;
+        /**
+         * Sets the vertical anchor point of the label.
+         * @param anchorPointY The vertical anchor point for the label. -1 means the bottom,
+         * 0 the center and 1 the top of the label. The default is -1.
+         */
+        void setAnchorPointY(float anchorPointY);
         /**
          * Sets the anchor point for the label. Values will be clamped to [-1, 1] range.
          * @param anchorPointX The new horizontal anchor point for the label. -1 means the left side,

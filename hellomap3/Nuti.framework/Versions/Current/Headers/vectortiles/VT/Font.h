@@ -17,9 +17,11 @@
 namespace Nuti { namespace VT {
 	class Font {
 	public:
+		using GlyphCode = unsigned int;
+		
 		struct Glyph {
-			unsigned int code;
-			unsigned int id;
+			GlyphCode code;
+			unsigned int index;
 			int x;
 			int y;
 			int width;
@@ -28,7 +30,7 @@ namespace Nuti { namespace VT {
 			cglib::vec2<float> offset;
 			cglib::vec2<float> advance;
 
-			Glyph(unsigned int code, unsigned int id, int x, int y, int width, int height, const cglib::vec2<float>& size, const cglib::vec2<float>& offset, const cglib::vec2<float>& advance) : code(code), id(id), x(x), y(y), width(width), height(height), size(size), offset(offset), advance(advance) { }
+			Glyph(GlyphCode code, unsigned int index, int x, int y, int width, int height, const cglib::vec2<float>& size, const cglib::vec2<float>& offset, const cglib::vec2<float>& advance) : code(code), index(index), x(x), y(y), width(width), height(height), size(size), offset(offset), advance(advance) { }
 		};
 
 		struct Metrics {
@@ -42,8 +44,8 @@ namespace Nuti { namespace VT {
 		virtual ~Font() = default;
 
 		virtual const Metrics& getMetrics() const = 0;
-		virtual const std::unique_ptr<Glyph>& getGlyph(unsigned int code) const = 0;
-		virtual unsigned int loadBitmapGlyph(const std::shared_ptr<Bitmap>& bitmap) = 0;
+		virtual const std::unique_ptr<Glyph>& getGlyph(GlyphCode code) const = 0;
+		virtual GlyphCode loadBitmapGlyph(const std::shared_ptr<Bitmap>& bitmap) = 0;
 		virtual std::shared_ptr<Bitmap> getBitmap() const = 0;
 	};
 } }

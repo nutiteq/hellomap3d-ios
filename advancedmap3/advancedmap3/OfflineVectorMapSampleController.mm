@@ -24,11 +24,11 @@
 	[super viewDidLoad];
 	
 	// Get the base projection set in the base class
-	NTProjection* proj = [[self getOptions] getBaseProjection];
+	NTProjection* proj = [[self.mapView getOptions] getBaseProjection];
 	
 	// Zoom to Rome
-	[self setFocusPos:[proj fromWgs84:[[NTMapPos alloc] initWithX:12.4807 y: 41.8962]]  durationSeconds:0];
-	[self setZoom:13 durationSeconds:0];
+	[self.mapView setFocusPos:[proj fromWgs84:[[NTMapPos alloc] initWithX:12.4807 y: 41.8962]]  durationSeconds:0];
+	[self.mapView setZoom:13 durationSeconds:0];
 }
 
 @end

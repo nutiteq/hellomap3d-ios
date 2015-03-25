@@ -20,23 +20,11 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTScreenPos : NSObject
 {
-  void *swigCPtr;
-  BOOL swigCMemOwn;
+	void *swigCPtr;
+	BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
-
-/**  
- * Checks if this object is equal to the specified object.
- * @return True when objects are equal, false otherwise.
- */
--(BOOL)isEqual:(id)object;
-
-/**
- * Returns the hash value of this object.
- * @return The hash value of this object.
- */
--(NSUInteger)hash;
 /**
  * Constructs a ScreenPos object. All coordinates will be 0.
  */
@@ -53,26 +41,10 @@ __attribute__ ((visibility("default"))) @interface NTScreenPos : NSObject
  */
 -(float)getX;
 /**
- * Sets the x coordinate of this tuple.<br>
- * @param x The new x coordinate of this tuple.
- */
--(void)setX: (float)x;
-/**
  * Returns the y coordinate of this position.<br>
  * @return The y coordinate of this position.
  */
 -(float)getY;
-/**
- * Sets the y coordinate of this position.<br>
- * @param y The new y coordinate of this position.
- */
--(void)setY: (float)y;
-/**
- * Sets the x and y coordinates of this position.<br>
- * @param x The new x coordinate of this position.<br>
- * @param y The new y coordinate of this position.
- */
--(void)setCoords: (float)x y: (float)y;
 /**
  * Checks for equality between this and another screen position.<br>
  * @param p The other screen position.<br>

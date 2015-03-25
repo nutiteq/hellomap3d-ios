@@ -15,14 +15,14 @@
 	[super viewDidLoad];
 	
 	// Get the base projection set in the base class
-	NTProjection* proj = [[self getOptions] getBaseProjection];
+	NTProjection* proj = [[self.mapView getOptions] getBaseProjection];
 	
 	// Initialize a local vector data source
 	NTLocalVectorDataSource* vectorDataSource1 = [[NTLocalVectorDataSource alloc] initWithProjection:proj];
 	// Initialize a vector layer with the previous data source
 	NTVectorLayer* vectorLayer1 = [[NTVectorLayer alloc] initWithDataSource:vectorDataSource1];
 	// Add the previous vector layer to the map
-	[[self getLayers] add:vectorLayer1];
+	[[self.mapView getLayers] add:vectorLayer1];
 	// Set visible zoom range for the vector layer
 	[vectorLayer1 setVisibleZoomRange:[[NTMapRange alloc] initWithMin:10 max:24]];
 	
@@ -34,7 +34,7 @@
 	// that point, line and polygon elements are drawn in a specific order.
 	NTLocalVectorDataSource* vectorDataSource2 = [[NTLocalVectorDataSource alloc] initWithProjection:proj];
 	NTVectorLayer* vectorLayer2 = [[NTVectorLayer alloc] initWithDataSource:vectorDataSource2];
-	[[self getLayers] add:vectorLayer2];
+	[[self.mapView getLayers] add:vectorLayer2];
 	[vectorLayer2 setVisibleZoomRange:[[NTMapRange alloc] initWithMin:10 max:24]];
 	
 	// Add vector elements. All vector elements need a position, which defines the location
@@ -128,7 +128,7 @@
 	[textStyleBuilder setColor:[[NTColor alloc] initWithColor:0xFFFF0000]];
 	[textStyleBuilder setOrientationMode:NT_BILLBOARD_ORIENTATION_FACE_CAMERA];
 	// This enables higher resolution texts for retina devices  but consumes more memory and is slower
-	[textStyleBuilder setScaleWithDPI:false];
+	[textStyleBuilder setScaleWithDPI:NO];
 	// Add text
 	pos = [proj fromWgs84:[[NTMapPos alloc] initWithX:24.653302 y:59.422269]];
 	NTText* text1 = [[NTText alloc] initWithPos:pos
@@ -181,8 +181,8 @@
 	NTBalloonPopupStyleBuilder* balloonPopupStyleBuilder = [[NTBalloonPopupStyleBuilder alloc] init];
 	[balloonPopupStyleBuilder setCornerRadius:20];
 	[balloonPopupStyleBuilder setLeftMargins:[[NTBalloonPopupMargins alloc] initWithLeft:6 top:6 right:6 bottom:6]];
-	[balloonPopupStyleBuilder setLeftImage:infoImage];
-	[balloonPopupStyleBuilder setRightImage:arrowImage];
+	[balloonPopupStyleBuilder setLeftImage:[NTBitmapUtils CreateBitmapFromUIImage:infoImage]];
+	[balloonPopupStyleBuilder setRightImage:[NTBitmapUtils CreateBitmapFromUIImage:arrowImage]];
 	[balloonPopupStyleBuilder setRightMargins:[[NTBalloonPopupMargins alloc] initWithLeft:2 top:6 right:12 bottom:6]];
 	[balloonPopupStyleBuilder setPlacementPriority:1];
 	pos = [proj fromWgs84:[[NTMapPos alloc] initWithX:24.655662 y:59.425521]];

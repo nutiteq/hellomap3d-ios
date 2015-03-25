@@ -24,6 +24,7 @@ namespace Nuti {
     class MapVec;
     class Options;
     class MapEventListener;
+    class MapRenderListener;
     class RedrawRequestListener;
     class TouchHandler;
     
@@ -37,13 +38,9 @@ namespace Nuti {
          * Registers the SDK license. This class method and must be called before
          * creating any actual MapView instances.
          * @param licenseKey The license string provided for this application.
-         * @param platformType The platform type.
-         * @param appIdentifier The application bundle identifier for iOS or the package name for Android.
          * @return True if license is valid, false if not.
          */
-        static bool RegisterLicense(const std::string& licenseKey,
-                                    PlatformType::PlatformType platformType,
-                                    const std::string& appIdentifier);
+        static bool RegisterLicense(const std::string& licenseKey);
         
         BaseMapView();
         virtual ~BaseMapView();
@@ -331,8 +328,15 @@ namespace Nuti {
          */
         void clearAllCaches();
     
+        /**
+         * Captures map rendering as a bitmap. This operation is asynchronous and the result is returned via listener callback.
+         * @param listener The listener interface that will receive the callback once rendering is available.
+         * @param waitWhileUpdating If true, delay the capture until all asynchronous processes are finished (for example, until all tiles are loaded).
+         */
+        void captureRendering(const std::shared_ptr<MapRenderListener>& listener, bool waitWhileUpdating);
+
     private:
-        static WatermarkType::WatermarkType _WatermarkType;
+        static LicenseType::LicenseType _LicenseType;
         
         std::shared_ptr<CancelableThreadPool> _envelopeThreadPool;
         std::shared_ptr<CancelableThreadPool> _tileThreadPool;

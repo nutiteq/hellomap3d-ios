@@ -9,6 +9,7 @@
 
 #include "Bitmap.h"
 #include "Font.h"
+#include "StrokeSet.h"
 #include "TextFormatter.h"
 
 #include <memory>
@@ -36,10 +37,11 @@ namespace Nuti { namespace VT {
 		LineCapMode capMode;
 		unsigned int color;
 		float width;
-		std::shared_ptr<BitmapPattern> pattern;
+		std::shared_ptr<BitmapPattern> strokePattern;
+		std::shared_ptr<StrokeSet> strokeSet;
 		boost::optional<cglib::mat3x3<float>> transform;
 
-		LineStyle(LineJoinMode joinMode, LineCapMode capMode, unsigned int color, float width, const std::shared_ptr<BitmapPattern>& pattern, const boost::optional<cglib::mat3x3<float>>& transform) : joinMode(joinMode), capMode(capMode), color(color), width(width), pattern(pattern), transform(transform) { }
+		LineStyle(LineJoinMode joinMode, LineCapMode capMode, unsigned int color, float width, const std::shared_ptr<BitmapPattern>& strokePattern, const std::shared_ptr<StrokeSet>& strokeSet, const boost::optional<cglib::mat3x3<float>>& transform) : joinMode(joinMode), capMode(capMode), color(color), width(width), strokePattern(strokePattern), strokeSet(strokeSet), transform(transform) { }
 	};
 
 	struct PolygonStyle {

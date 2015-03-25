@@ -16,6 +16,7 @@ extern "C" {
 #endif
 
 
+#import "Bitmap_proxy.h"
 #import "PointStyle_proxy.h"
 #import "StyleBuilder_proxy.h"
 

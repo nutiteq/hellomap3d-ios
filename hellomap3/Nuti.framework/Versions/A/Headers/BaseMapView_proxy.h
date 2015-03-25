@@ -16,14 +16,16 @@ extern "C" {
 #endif
 
 
-#import "Layers_proxy.h"
-#import "LicenseUtils_proxy.h"
+#import "Options_proxy.h"
 #import "MapPos_proxy.h"
+#import "MapVec_proxy.h"
 #import "MapBounds_proxy.h"
 #import "ScreenPos_proxy.h"
 #import "ScreenBounds_proxy.h"
-#import "MapVec_proxy.h"
-#import "Options_proxy.h"
+#import "Layers_proxy.h"
+#import "MapEventListener_proxy.h"
+#import "MapRenderListener_proxy.h"
+#import "RedrawRequestListener_proxy.h"
 
 /**
  * A platform independent main view class for all mapping operations.<br>
@@ -40,11 +42,9 @@ __attribute__ ((visibility("default"))) @interface NTBaseMapView : NSObject
  * Registers the SDK license. This class method and must be called before<br>
  * creating any actual MapView instances.<br>
  * @param licenseKey The license string provided for this application.<br>
- * @param platformType The platform type.<br>
- * @param appIdentifier The application bundle identifier for iOS or the package name for Android.<br>
  * @return True if license is valid, false if not.
  */
-+(BOOL)RegisterLicense: (NSString*)licenseKey platformType: (enum NTPlatformType)platformType appIdentifier: (NSString*)appIdentifier;
++(BOOL)registerLicense: (NSString*)licenseKey;
 -(id)init;
 /**
  * Prepares renderers for drawing. Has to be called again if the graphics context was lost.
@@ -270,12 +270,22 @@ __attribute__ ((visibility("default"))) @interface NTBaseMapView : NSObject
  * Returns the map event listener. May be null.<br>
  * @return The map event listener.
  */
--(NTMapEventListener*)getMapEventListener;
+-(NTMapEventListener *)getMapEventListener;
 /**
  * Sets the map event listener. If a null pointer is passed no map events will be generated. The default is null.<br>
  * @param mapEventListener The new map event listener.
  */
 -(void)setMapEventListener: (NTMapEventListener*)mapEventListener;
+/**
+ * Returns the redraw request listener.<br>
+ * @return The redraw request listener.
+ */
+-(NTRedrawRequestListener *)getRedrawRequestListener;
+/**
+ * Sets the listener which will notified when the map needs to be redrawn<br>
+ * @param listener The redraw listener.
+ */
+-(void)setRedrawRequestListener: (NTRedrawRequestListener*)listener;
 /**
  * Calculates the map position corresponding to a screen position, using the current view parameters.<br>
  * @param screenPos The screen position.<br>
@@ -304,6 +314,12 @@ __attribute__ ((visibility("default"))) @interface NTBaseMapView : NSObject
  * including the visible area.
  */
 -(void)clearAllCaches;
+/**
+ * Captures map rendering as a bitmap. This operation is asynchronous and the result is returned via listener callback.<br>
+ * @param listener The listener interface that will receive the callback once rendering is available.<br>
+ * @param waitWhileUpdating If true, delay the capture until all asynchronous processes are finished (for example, until all tiles are loaded).
+ */
+-(void)captureRendering: (NTMapRenderListener*)listener waitWhileUpdating: (BOOL)waitWhileUpdating;
 
 -(void)dealloc;
 

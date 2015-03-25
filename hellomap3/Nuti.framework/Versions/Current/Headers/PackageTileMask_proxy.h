@@ -18,19 +18,19 @@ extern "C" {
 /**
  * Tile status.
  */
-enum NTPackageTileMask_TileStatus {
+enum NTPackageTileStatus {
 /**
  * Tile is not part of the package.
  */
-  NTPackageTileMask_NO_TILE,
+  NT_PACKAGE_TILE_STATUS_MISSING,
 /**
  * Tile is part of the package, but package does not fully cover it.
  */
-  NTPackageTileMask_PARTIAL_TILE,
+  NT_PACKAGE_TILE_STATUS_PARTIAL,
 /**
  * Tile if part of the package and package fully covers it.
  */
-  NTPackageTileMask_FULL_TILE
+  NT_PACKAGE_TILE_STATUS_FULL
 };
 
 /**
@@ -55,7 +55,7 @@ __attribute__ ((visibility("default"))) @interface NTPackageTileMask : NSObject
  * @param y The y coordinate of the tile.<br>
  * @return The status of the specified tile.
  */
--(enum NTPackageTileMask_TileStatus)getTileStatus: (int)zoom x: (int)x y: (int)y;
+-(enum NTPackageTileStatus)getTileStatus: (int)zoom x: (int)x y: (int)y;
 
 -(void)dealloc;
 

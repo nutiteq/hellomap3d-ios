@@ -16,6 +16,7 @@ extern "C" {
 #endif
 
 
+#import "Style_proxy.h"
 #import "StyleSelector_proxy.h"
 
 /**
@@ -43,13 +44,13 @@ __attribute__ ((visibility("default"))) @interface NTStyleSelectorBuilder : NSOb
  * @param style The style for this rule.<br>
  * @return Self.
  */
--(NTStyleSelectorBuilder*)addFilterRule: (NSString*)expr style: (NTStyle*)style;
+-(void)addFilterRule: (NSString*)expr style: (NTStyle*)style;
 /**
  * Adds new rule to the builder rule set. This method should be used to add the 'default' style, if no filter needs to be applied.<br>
  * @param style The style for this rule.<br>
  * @return Self.
  */
--(NTStyleSelectorBuilder*)addRule: (NTStyle*)style;
+-(void)addRule: (NTStyle*)style;
 /**
  * Builds a new style selector from the added rule list.<br>
  * @return Style selector with all the added rules.

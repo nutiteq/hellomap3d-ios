@@ -41,8 +41,8 @@
     NTBitmap * tileBitmap2 = [[NTBitmap alloc] initWithCompressedData: tileData2.getData pow2Padding: NO];
   
     // Combine the bitmaps
-    CGImageRef cgImage1 = [NTBitmapUtils createUIImageFromBitmap: tileBitmap1].CGImage;
-    CGImageRef cgImage2 = [NTBitmapUtils createUIImageFromBitmap: tileBitmap2].CGImage;
+    CGImageRef cgImage1 = [NTBitmapUtils CreateUIImageFromBitmap: tileBitmap1].CGImage;
+    CGImageRef cgImage2 = [NTBitmapUtils CreateUIImageFromBitmap: tileBitmap2].CGImage;
     
     CGSize imageSize = CGSizeMake(CGImageGetWidth(cgImage1), CGImageGetHeight(cgImage1));
     UIGraphicsBeginImageContext(imageSize);

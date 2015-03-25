@@ -32,7 +32,7 @@ namespace Nuti {
          * Returns the data source assigned to this layer.
          * @return The tile data source assigned to this layer.
          */
-        virtual std::shared_ptr<TileDataSource> getDataSource() = 0;
+        std::shared_ptr<TileDataSource> getDataSource() const;
     
         /**
          * Returns the state of the preloading flag of this layer.
@@ -52,19 +52,6 @@ namespace Nuti {
         void setPreloading(bool preloading);
         
         /**
-         * Returns the state of parent tile replacement flag of this layer.
-         * @return True if replacement is enabled.
-         */
-        bool isParentTileReplacement() const;
-        
-        /**
-         * Sets the parent tile replacement flag for this layer. This flag applies only to missing tiles -
-         * if replacement is enabled, missing/bad tiles are replaced by parent tiles. The default is true.
-         * @param parentTileReplacement The new parent tile replacement state of the layer.
-         */
-        void setParentTileReplacement(bool parentTileReplacement);
-    
-        /**
          * Gets the current zoom level bias for this layer.
          * @return The current zoom level bias for this layer.
          */
@@ -82,6 +69,8 @@ namespace Nuti {
          * @param all True if all tiles should be released, otherwise only preloading (invisible) tiles are released.
          */
         virtual void clearTileCaches(bool all) = 0;
+        
+        virtual bool isUpdateInProgress() const;
         
     protected:
         class DataSourceListener : public TileDataSource::OnChangeListener {
@@ -115,9 +104,9 @@ namespace Nuti {
 			bool _invalidated;
         };
         
-		class FetchingTiles {
+		class FetchingTileTasks {
 		public:
-			FetchingTiles() : _fetchingTiles(), _mutex() {}
+			FetchingTileTasks() : _fetchingTiles(), _mutex() {}
 			
 			void add(long long tileId, const std::shared_ptr<FetchTaskBase>& task) {
 				std::lock_guard<std::mutex> lock(_mutex);
@@ -170,7 +159,7 @@ namespace Nuti {
 			mutable std::mutex _mutex;
 		};
 		
-		TileLayer(const std::string& className);
+        TileLayer(const std::string& className, const std::shared_ptr<TileDataSource>& dataSource);
 		
         void loadData(const std::shared_ptr<CullState>& cullState);
 		
@@ -189,15 +178,15 @@ namespace Nuti {
         std::atomic<bool> _calculatingTiles;
         std::atomic<bool> _refreshedTiles;
 		
+        std::shared_ptr<TileDataSource> _dataSource;
         std::shared_ptr<DataSourceListener> _dataSourceListener;
         
-        FetchingTiles _fetchingTiles;
+        FetchingTileTasks _fetchingTiles;
         
         int _frameNr;
         int _lastFrameNr;
     
         bool _preloading;
-        bool _parentTileReplacement;
     
         float _zoomLevelBias;
     

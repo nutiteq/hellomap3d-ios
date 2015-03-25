@@ -19,6 +19,7 @@ extern "C" {
 #import "LineGeometry_proxy.h"
 #import "LineStyle_proxy.h"
 #import "VectorElement_proxy.h"
+#import "MapPosVector_proxy.h"
 
 /**
  * A geometric line string that can be displayed on the map.

@@ -16,25 +16,17 @@ extern "C" {
 #endif
 
 
-#import "PackageInfo_proxy.h"
-#import "PackageMetaInfo_proxy.h"
-#import "PackageStatus_proxy.h"
-#import "PackageManagerListener_proxy.h"
-#import "PackageInfoVectors_proxy.h"
-#import "NutiteqPackageManagerBase_proxy.h"
+#import "PackageManager_proxy.h"
 
 /**
- * Offline map package manager. Package manager supports downloading/removing packages.<br>
- * It can be queried about available packages and status of the packages. It works asynchronously in<br>
- * the background and can inform app when packages have been updated.<br>
- * It works persistently. If a package download is started and app is closed, the download will resume<br>
- * when the package manager is started next time.
+ * Offline map package manager that uses Nutiteq online service for map package downloads.<br>
+ * After packages are downloaded, they can be used offline without any connection to the server.
  */
-__attribute__ ((visibility("default"))) @interface NTNutiteqPackageManager : NTNutiteqPackageManagerBase
+__attribute__ ((visibility("default"))) @interface NTNutiteqPackageManager : NTPackageManager
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
- * Constructs a PackageManager object, given application context and data folder.<br>
+ * Constructs a NutiteqPackageManager object, given application context and data folder.<br>
  * The data folder must exist before creating a new package manager and it is assumed to be persistent.<br>
  * Note: the package manager must be explicitly started using start() method!<br>
  * @param source Name of the package source. Currently "nutiteq.mbstreets" source is available<br>

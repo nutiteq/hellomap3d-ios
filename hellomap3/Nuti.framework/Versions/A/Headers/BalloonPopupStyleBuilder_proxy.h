@@ -16,10 +16,10 @@ extern "C" {
 #endif
 
 
-#import "BalloonPopupStyle_proxy.h"
 #import "Color_proxy.h"
+#import "Bitmap_proxy.h"
 #import "PopupStyleBuilder_proxy.h"
-#import <UIKit/UIKit.h>
+#import "BalloonPopupStyle_proxy.h"
 
 /**
  * A builder class for BalloonPopupStyle.
@@ -57,13 +57,13 @@ __attribute__ ((visibility("default"))) @interface NTBalloonPopupStyleBuilder : 
  * Returns the image of the left part of the popup.<br>
  * @return The image of the left part of the popup.
  */
--(UIImage*)getLeftImage;
+-(NTBitmap*)getLeftImage;
 /**
  * Sets the image for the left part of the popup. If null is passed no image will be drawn.<br>
  * The default is null.<br>
  * @param leftImage The new image for the left part of the popup.
  */
--(void)setLeftImage: (UIImage*)leftImage;
+-(void)setLeftImage: (NTBitmap*)leftImage;
 /**
  * Returns the margins of the left part of the popup.<br>
  * @return The margins of the left part of the popup.
@@ -90,13 +90,13 @@ __attribute__ ((visibility("default"))) @interface NTBalloonPopupStyleBuilder : 
  * Returns the image of the right part of the popup.<br>
  * @return The image of the right part of the popup.
  */
--(UIImage*)getRightImage;
+-(NTBitmap*)getRightImage;
 /**
  * Sets the image for the right part of the popup. If null is passed no image will be drawn.<br>
  * The default is null.<br>
  * @param rightImage The new image for the right part of the popup.
  */
--(void)setRightImage: (UIImage*)rightImage;
+-(void)setRightImage: (NTBitmap*)rightImage;
 /**
  * Returns the margins of the right part of the popup.<br>
  * @return The margins of the right part of the popup.

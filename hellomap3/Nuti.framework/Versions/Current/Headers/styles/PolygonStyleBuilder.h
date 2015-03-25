@@ -61,7 +61,7 @@ namespace Nuti {
         static std::shared_ptr<Bitmap> GetDefaultBitmap();
     
         static std::shared_ptr<Bitmap> _DefaultBitmap;
-		static std::mutex _DefaultBitmapMutex;
+        static std::mutex _DefaultBitmapMutex;
 		
         std::shared_ptr<Bitmap> _bitmap;
     

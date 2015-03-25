@@ -42,21 +42,28 @@ namespace Nuti { namespace VT {
 		std::shared_ptr<TileLayer> build(int layerIdx, float opacity);
 
 	private:
+		struct StyleBuilderParameters : TileGeometry::StyleParameters {
+			TileGeometry::Type type;
+			std::array<StrokeSet::StrokeId, MAX_PARAMETERS> lineStrokeIds;
+			std::shared_ptr<StrokeSet> strokeSet;
+
+			StyleBuilderParameters() : StyleParameters(), type(TileGeometry::Type::NONE), lineStrokeIds(), strokeSet() { }
+		};
+
 		void appendGeometry();
 		void appendGeometry(float verticesScale, float binormalsScale, float texCoordsScale, const VertexArray<cglib::vec2<float>>& vertices, const VertexArray<cglib::vec2<float>>& texCoords, const VertexArray<cglib::vec2<float>>& binormals, const VertexArray<float>& heights, const VertexArray<cglib::vec4<char>>& attribs, const VertexArray<unsigned int>& indices, std::size_t offset, std::size_t count);
 		float calculateScale(VertexArray<cglib::vec2<float>>& values) const;
 
 		bool tesselatePolygon(const VerticesList& verticesList, char styleIndex, const PolygonStyle& style);
 		bool tesselatePolygon3D(const VerticesList& verticesList, float height, char styleIndex, const Polygon3DStyle& style);
-		bool tesselateLine(const Vertices& points, char styleIndex, const LineStyle& style);
-		bool tesselateLineEndPoint(const Vertex& p0, float u0, int i0, const cglib::vec2<float>& tangent, const cglib::vec2<float>& binormal, char styleIndex, const LineStyle& style);
+		bool tesselateLine(const Vertices& points, char styleIndex, const StrokeSet::Stroke& stroke, const LineStyle& style);
+		bool tesselateLineEndPoint(const Vertex& p0, float u0, float v0, float v1, int i0, const cglib::vec2<float>& tangent, const cglib::vec2<float>& binormal, char styleIndex, const LineStyle& style);
 
 		const std::size_t RESERVED_VERTICES = 4096;
 		const float MIN_MITER_DOT = -0.8f;
 
 		float _tileSize;
-		TileGeometry::Type _type = TileGeometry::Type::NONE;
-		TileGeometry::StyleParameters _styleParameters;
+		StyleBuilderParameters _styleParameters;
 
 		VertexArray<cglib::vec2<float>> _vertices;
 		VertexArray<cglib::vec2<float>> _texCoords;

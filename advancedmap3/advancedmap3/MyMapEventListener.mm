@@ -3,7 +3,7 @@
 @interface  MyMapEventListener() {
 }
 
-@property (strong, nonatomic) NTMapViewController* mapView;
+@property (strong, nonatomic) NTMapView* mapView;
 
 @property (strong, nonatomic) NTLocalVectorDataSource* vectorDataSource;
 
@@ -13,7 +13,7 @@
 
 @implementation MyMapEventListener
 
--(void)setMapView:(NTMapViewController*)mapView vectorDataSource:(NTLocalVectorDataSource*)vectorDataSource
+-(void)setMapView:(NTMapView*)mapView vectorDataSource:(NTLocalVectorDataSource*)vectorDataSource
 {
     _mapView = mapView;
     _vectorDataSource = vectorDataSource;
@@ -25,8 +25,8 @@
  // print new map bounding box:
     NTMapPos* topLeft = [[[_mapView getOptions] getBaseProjection] toWgs84:[_mapView screenToMap: [[NTScreenPos alloc] initWithX:0 y:0]]];
   
-    int w =_mapView.view.frame.size.width * [[UIScreen mainScreen] scale];
-    int h =_mapView.view.frame.size.height * [[UIScreen mainScreen] scale];
+    int w = _mapView.frame.size.width * [[UIScreen mainScreen] scale];
+    int h = _mapView.frame.size.height * [[UIScreen mainScreen] scale];
     NTMapPos* bottomRight = [[[_mapView getOptions] getBaseProjection] toWgs84:[_mapView screenToMap:  [[NTScreenPos alloc] initWithX:w y:h]]];
     NSLog(@"Map moved to (screen %d %d) topLeft %f %f bottomRight %f %f", w, h, [topLeft getX], [topLeft getY], [bottomRight getX], [bottomRight getY]);
 }

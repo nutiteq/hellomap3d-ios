@@ -30,7 +30,7 @@ namespace Nuti {
          * Constructs a NMLModelLODTreeLayer object from a data source.
          * @param dataSource The data source from which this layer loads data.
          */
-        NMLModelLODTreeLayer(std::shared_ptr<NMLModelLODTreeDataSource> dataSource);
+        NMLModelLODTreeLayer(const std::shared_ptr<NMLModelLODTreeDataSource>& dataSource);
         virtual ~NMLModelLODTreeLayer();
     
         /**
@@ -50,6 +50,8 @@ namespace Nuti {
          */
         void setLODResolutionFactor(float factor);
     
+        virtual bool isUpdateInProgress() const;
+
     protected:
         virtual void offsetLayerHorizontally(double offset) ;
     
@@ -77,6 +79,11 @@ namespace Nuti {
         class FetchingTasks {
         public:
             FetchingTasks() : _fetchingTasks(), _mutex() {}
+            
+            int getTaskCount() const {
+                std::lock_guard<std::mutex> lock(_mutex);
+                return static_cast<int>(_fetchingTasks.size());
+            }
             
             void add(long long taskId) {
                 std::lock_guard<std::mutex> lock(_mutex);

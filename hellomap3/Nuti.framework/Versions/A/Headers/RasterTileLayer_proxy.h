@@ -17,8 +17,8 @@ extern "C" {
 
 
 #import "TileDataSource_proxy.h"
-#import "TileLayer_proxy.h"
 #import "TileLoadListener_proxy.h"
+#import "TileLayer_proxy.h"
 
 /**
  * A tile layer where each tile is a bitmap. Should be used together with corresponding data source.
@@ -31,7 +31,6 @@ __attribute__ ((visibility("default"))) @interface NTRasterTileLayer : NTTileLay
  * @param dataSource The data source from which this layer loads data.
  */
 -(id)initWithDataSource: (NTTileDataSource*)dataSource;
--(NTTileDataSource*)getDataSource;
 /**
  * Returns the current frame number.<br>
  * @return The current frame number.
@@ -59,7 +58,7 @@ __attribute__ ((visibility("default"))) @interface NTRasterTileLayer : NTTileLay
  * Returns the tile load listener.<br>
  * @return The tile load listener.
  */
--(NTTileLoadListener*)getTileLoadListener;
+-(NTTileLoadListener *)getTileLoadListener;
 /**
  * Sets the tile load listener.<br>
  * @param tileLoadListener The tile load listener.
@@ -69,7 +68,7 @@ __attribute__ ((visibility("default"))) @interface NTRasterTileLayer : NTTileLay
  * Returns the tile texture cache capacity.<br>
  * @return The tile texture cache capacity in bytes.
  */
--(int)getTextureCacheCapacity;
+-(unsigned int)getTextureCacheCapacity;
 /**
  * Sets the tile texture cache capacity. Texture cache is the primary storage for raster data,<br>
  * all tiles contained within the texture cache are stored as uncompressed openGL textures and can immediately be<br>

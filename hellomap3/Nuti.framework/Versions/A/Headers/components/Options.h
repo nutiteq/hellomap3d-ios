@@ -73,20 +73,20 @@ namespace Nuti {
      */
     class Options {
     public:
-		/**
-		 * Interface for monitoring options change events.
-		 */
-		struct OnChangeListener {
-			virtual ~OnChangeListener() { }
-			
-			/**
-			 * Listener method that gets called when an option has changed.
-			 * @param optionName The name of the option that has changed.
-			 */
-			virtual void onOptionChanged(const std::string& optionName) = 0;
-		};
+        /**
+         * Interface for monitoring options change events.
+         */
+        struct OnChangeListener {
+            virtual ~OnChangeListener() { }
+            
+            /**
+             * Listener method that gets called when an option has changed.
+             * @param optionName The name of the option that has changed.
+             */
+            virtual void onOptionChanged(const std::string& optionName) = 0;
+        };
 
-		/**
+        /**
          * Constructs an Options object with all parameters set to defaults.
          * @param envelopeThreadPool The thread pool used for envelope tasks.
          * @param tileThreadPool The thread pool used for tile tasks.
@@ -470,19 +470,19 @@ namespace Nuti {
          */
         void setBaseProjection(const std::shared_ptr<Projection>& baseProjection);
 		
-		Options& operator = (const Options& options);
-    
-		/**
-		 * Registers listener for options change events.
-		 * @param listener The listener for change events.
-		 */
-		void registerOnChangeListener(const std::shared_ptr<OnChangeListener>& listener);
-		
-		/**
-		 * Unregisters listener from options change events.
-		 * @param listener The previously added listener.
-		 */
-		void unregisterOnChangeListener(const std::shared_ptr<OnChangeListener>& listener);
+        Options& operator = (const Options& options);
+
+        /**
+         * Registers listener for options change events.
+         * @param listener The listener for change events.
+         */
+        void registerOnChangeListener(const std::shared_ptr<OnChangeListener>& listener);
+        
+        /**
+         * Unregisters listener from options change events.
+         * @param listener The previously added listener.
+         */
+        void unregisterOnChangeListener(const std::shared_ptr<OnChangeListener>& listener);
 
 	private:
         static std::shared_ptr<Bitmap> GetDefaultBackgroundBitmap();
@@ -493,9 +493,9 @@ namespace Nuti {
         static std::shared_ptr<Bitmap> _DefaultSkyBitmap;
         static std::shared_ptr<Bitmap> _DefaultWatermarkBitmap;
 		
-		static std::mutex _Mutex;
-		
-		void notifyOptionChanged(const std::string& optionName);
+        static std::mutex _Mutex;
+        
+        void notifyOptionChanged(const std::string& optionName);
         
         Color _ambientLightColor;
         Color _mainLightColor;
@@ -547,9 +547,9 @@ namespace Nuti {
     
         mutable std::mutex _mutex;
 
-		std::vector<std::shared_ptr<OnChangeListener> > _onChangeListeners;
-		mutable std::mutex _onChangeListenersMutex;
-	};
+        std::vector<std::shared_ptr<OnChangeListener> > _onChangeListeners;
+        mutable std::mutex _onChangeListenersMutex;
+    };
 	
 }
 

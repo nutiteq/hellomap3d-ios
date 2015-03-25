@@ -16,7 +16,7 @@ extern "C" {
 #endif
 
 
-#import "MapEventListener_proxy.h"
+#import "MapClickInfo_proxy.h"
 #import "VectorElementClickInfoVector_proxy.h"
 
 /**

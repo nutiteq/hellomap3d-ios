@@ -18,35 +18,35 @@ extern "C" {
 /**
  * Meta info type.
  */
-enum NTPackageMetaInfo_Type {
+enum NTPackageMetaInfoType {
 /**
  * Null element.
  */
-  NTPackageMetaInfo_NULL_TYPE,
+  NT_PACKAGE_META_INFO_TYPE_NULL,
 /**
  * String element.
  */
-  NTPackageMetaInfo_STRING_TYPE,
+  NT_PACKAGE_META_INFO_TYPE_STRING,
 /**
  * Boolean element.
  */
-  NTPackageMetaInfo_BOOL_TYPE,
+  NT_PACKAGE_META_INFO_TYPE_BOOL,
 /**
  * Integer element.
  */
-  NTPackageMetaInfo_INTEGER_TYPE,
+  NT_PACKAGE_META_INFO_TYPE_INTEGER,
 /**
  * Double-precision floating point element.
  */
-  NTPackageMetaInfo_DOUBLE_TYPE,
+  NT_PACKAGE_META_INFO_TYPE_DOUBLE,
 /**
  * Array element.
  */
-  NTPackageMetaInfo_ARRAY_TYPE,
+  NT_PACKAGE_META_INFO_TYPE_ARRAY,
 /**
  * Map (dictionary) element.
  */
-  NTPackageMetaInfo_MAP_TYPE
+  NT_PACKAGE_META_INFO_TYPE_MAP
 };
 
 
@@ -71,7 +71,7 @@ __attribute__ ((visibility("default"))) @interface NTPackageMetaInfo : NSObject
  * Returns the type of this meta info element.<br>
  * @return The type of this element.
  */
--(enum NTPackageMetaInfo_Type)getType;
+-(enum NTPackageMetaInfoType)getType;
 /**
  * Returns the string value of this element.<br>
  * @return The string value of the element. If the element is not string, empty string will be returned.

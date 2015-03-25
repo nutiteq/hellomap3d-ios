@@ -16,6 +16,7 @@ extern "C" {
 #endif
 
 
+#import "MapPos_proxy.h"
 #import "PointGeometry_proxy.h"
 #import "PointStyle_proxy.h"
 #import "VectorElement_proxy.h"

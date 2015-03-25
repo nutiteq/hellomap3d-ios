@@ -16,6 +16,7 @@ extern "C" {
 #endif
 
 
+#import "MapPos_proxy.h"
 #import "MapBounds_proxy.h"
 
 /**
@@ -23,23 +24,18 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTGeometry : NSObject
 {
-  void *swigCPtr;
-  BOOL swigCMemOwn;
+	void *swigCPtr;
+	BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
-
 /**
- * Checks if this object is equal to the specified object.
- * @return True when objects are equal, false otherwise.
+ * Returns the actual class name of this geometry. This is used<br>
+ * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically<br>
+ * generate child proxy classes from a base class pointer.<br>
+ * @return The class name of this layer.
  */
--(BOOL)isEqual:(id)object;
-
-/**
- * Returns the hash value of this object.
- * @return The hash value of this object.
- */
--(NSUInteger)hash;
+-(NSString*)getClassName;
 /**
  * Returns the center point of the geometry.<br>
  * @return The center point of the geometry.

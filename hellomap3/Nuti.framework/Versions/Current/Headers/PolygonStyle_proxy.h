@@ -16,8 +16,9 @@ extern "C" {
 #endif
 
 
+#import "Bitmap_proxy.h"
+#import "Color_proxy.h"
 #import "LineStyle_proxy.h"
-#import "Style_proxy.h"
 
 /**
  * A style for polygons. Contains attributes for configuring how the polygon is drawn on the screen.

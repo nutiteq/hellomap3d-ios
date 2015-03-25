@@ -61,6 +61,16 @@ namespace Nuti {
          * @return The center postion if this screen envelope object.
          */
         ScreenPos getCenter() const;
+        /**
+         * Returns the width of the bounds object.
+         * @return The width on the bounds object.
+         */
+        float getWidth() const;
+        /**
+         * Returns the height of the bounds object.
+         * @return The height on the bounds object.
+         */
+        float getHeight() const;
         
         /**
          * Returns the minimum screen position.
@@ -114,13 +124,13 @@ namespace Nuti {
          */
         void expandToContain(const ScreenBounds& bounds);
         
-		/**
-		 * Returns the hash value of this object.
-		 * @return The hash value of this object.
-		 */
-		int hash() const;
+        /**
+         * Returns the hash value of this object.
+         * @return The hash value of this object.
+         */
+        int hash() const;
 
-		/**
+        /**
          * Creates a string representation of this screen bounds object, useful for logging.
          * @return The string representation of this screen bounds object.
          */

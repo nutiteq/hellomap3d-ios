@@ -16,8 +16,9 @@ extern "C" {
 #endif
 
 
+#import "MapPos_proxy.h"
 #import "Geometry_proxy.h"
-#import "MapPosVectors_proxy.h"
+#import "MapPosVector_proxy.h"
 
 /**
  * Line geometry defined by a list of map positions.

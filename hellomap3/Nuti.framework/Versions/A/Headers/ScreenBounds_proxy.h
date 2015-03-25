@@ -23,23 +23,11 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTScreenBounds : NSObject
 {
-  void *swigCPtr;
-  BOOL swigCMemOwn;
+	void *swigCPtr;
+	BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
-
-/**  
- * Checks if this object is equal to the specified object.
- * @return True when objects are equal, false otherwise.
- */
--(BOOL)isEqual:(id)object;
-
-/**
- * Returns the hash value of this object.
- * @return The hash value of this object.
- */
--(NSUInteger)hash;
 /**
  * Constructs an empty ScreenBounds object. The coordinates of the minimum position will be<br>
  * set to positive infinity and the coordinates of the maximum position will be<br>
@@ -65,6 +53,16 @@ __attribute__ ((visibility("default"))) @interface NTScreenBounds : NSObject
  * @return The center postion if this screen envelope object.
  */
 -(NTScreenPos*)getCenter;
+/**
+ * Returns the width of the bounds object.<br>
+ * @return The width on the bounds object.
+ */
+-(float)getWidth;
+/**
+ * Returns the height of the bounds object.<br>
+ * @return The height on the bounds object.
+ */
+-(float)getHeight;
 /**
  * Returns the minimum screen position.<br>
  * @return The minimum screen position.

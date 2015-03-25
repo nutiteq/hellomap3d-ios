@@ -16,9 +16,9 @@ extern "C" {
 #endif
 
 
-#import "CullState_proxy.h"
 #import "Projection_proxy.h"
-#import "VectorElementVectors_proxy.h"
+#import "CullState_proxy.h"
+#import "VectorElementVector_proxy.h"
 
 /**
  * Abstract base class for envelope based vector data sources. It provides default implementation<br>

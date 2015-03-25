@@ -35,12 +35,12 @@ namespace Nuti {
         void init(const std::shared_ptr<Layer>& layer, int delayTime);
         
         void stop();
+        
+        bool isIdle() const;
     
         void operator()();
     
     private:
-        typedef std::map<std::shared_ptr<Layer>, std::chrono::time_point<std::chrono::system_clock> > LayerWakeupMap;
-    
         static const float PRELOADING_FRUSTUM_SCALE;
         static const float PRELOADING_MIN_TILT_ANGLE;
         static const float PRELOADING_TILT_COEF;
@@ -49,12 +49,9 @@ namespace Nuti {
     
         void calculateCullState();
         void calculateEnvelope();
-        void updateLayers();
+        void updateLayers(const std::vector<std::shared_ptr<Layer> >& layers);
     
-        LayerWakeupMap _layerWakeupMap;
-        mutable std::mutex _layerWakeupMapMutex;
-    
-        std::vector<std::shared_ptr<Layer> > _layers;
+        std::map<std::shared_ptr<Layer>, std::chrono::time_point<std::chrono::system_clock> > _layerWakeupMap;
         
         bool _firstCull;
         
@@ -70,6 +67,7 @@ namespace Nuti {
         std::shared_ptr<CullWorker> _worker;
     
         bool _stop;
+        bool _idle;
         std::condition_variable _condition;
         mutable std::mutex _mutex;
     };

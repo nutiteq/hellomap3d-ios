@@ -16,11 +16,11 @@ namespace Nuti {
 
     class NetworkUtils {
     public:
-		static bool GetHTTP(const std::string& url, std::shared_ptr<std::vector<unsigned char> >& responseData, bool log);
+        static bool GetHTTP(const std::string& url, std::shared_ptr<std::vector<unsigned char> >& responseData, bool log);
 
-		static bool GetHTTP(const std::string& url, const std::map<std::string, std::string>& requestHeaders, std::map<std::string, std::string>& responseHeaders, std::shared_ptr<std::vector<unsigned char> >& responseData, bool log);
-		
-		static int GetMaxAgeHTTPHeader(const std::map<std::string, std::string>& headers);
+        static bool GetHTTP(const std::string& url, const std::map<std::string, std::string>& requestHeaders, std::map<std::string, std::string>& responseHeaders, std::shared_ptr<std::vector<unsigned char> >& responseData, bool log);
+        
+        static int GetMaxAgeHTTPHeader(const std::map<std::string, std::string>& headers);
     
         static std::string URLEncode(const std::string& value);
     
@@ -39,6 +39,8 @@ namespace Nuti {
         static std::string ParseURLPath(std::string url);
     
     private:
+        NetworkUtils();
+
         static const int BUFFER_SIZE = 1024;
     };
     

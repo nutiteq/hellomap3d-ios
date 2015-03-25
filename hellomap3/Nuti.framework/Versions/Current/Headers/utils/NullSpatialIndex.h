@@ -61,12 +61,15 @@ namespace Nuti {
     
     template<typename T>
     bool NullSpatialIndex<T>::remove(const T& object) {
-        auto it = std::find(_objects.begin(), _objects.end(), object);
-        if (it == _objects.end()) {
-            return false;
+        size_t count = _objects.size();
+        while (true) {
+            auto it = std::find(_objects.begin(), _objects.end(), object);
+            if (it == _objects.end()) {
+                break;
+            }
+            _objects.erase(it);
         }
-        _objects.erase(it);
-        return true;
+        return count != _objects.size();
     }
     
     template<typename T>

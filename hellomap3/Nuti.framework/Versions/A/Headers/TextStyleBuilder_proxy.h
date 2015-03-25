@@ -17,6 +17,7 @@ extern "C" {
 
 
 #import "Color_proxy.h"
+#import "Bitmap_proxy.h"
 #import "LabelStyleBuilder_proxy.h"
 #import "TextStyle_proxy.h"
 
@@ -31,20 +32,40 @@ __attribute__ ((visibility("default"))) @interface NTTextStyleBuilder : NTLabelS
  */
 -(id)init;
 /**
+ * Returns the font name for the text label.<br>
+ * @return The platform dependent font name for the text label.
+ */
+-(NSString*)getFontName;
+/**
  * Sets the font name for the text label.<br>
  * @param fontName The new platform dependent font name for the text label.
  */
 -(void)setFontName: (NSString*)fontName;
+/**
+ * Returns the font size for the text label.<br>
+ * @return The font size for the text label in points.
+ */
+-(int)getFontSize;
 /**
  * Sets the font size for the text label.<br>
  * @param size The new font size for the text label in points.
  */
 -(void)setFontSize: (int)size;
 /**
+ * Returns the stroke color for the text label.<br>
+ * @return The stroke color for the text label.
+ */
+-(NTColor*)getStrokeColor;
+/**
  * Sets the stroke color for the text label.<br>
  * @param strokeColor The new stroke color for the text label.
  */
 -(void)setStrokeColor: (NTColor*)strokeColor;
+/**
+ * Returns the stroke width for the text label.<br>
+ * @return The stroke width for the text label in screen density independent pixels.
+ */
+-(float)getStrokeWidth;
 /**
  * Sets the stroke width for the text label.<br>
  * @param strokeWidth The new stroke width for the text label in screen density independent pixels.

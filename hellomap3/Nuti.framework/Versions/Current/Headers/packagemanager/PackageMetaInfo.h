@@ -22,45 +22,47 @@ namespace rapidjson {
 }
 
 namespace Nuti {
+    namespace PackageMetaInfoType {
+        /**
+         * Meta info type.
+         */
+        enum PackageMetaInfoType {
+            /**
+             * Null element.
+             */
+            PACKAGE_META_INFO_TYPE_NULL,
+            /**
+             * String element.
+             */
+            PACKAGE_META_INFO_TYPE_STRING,
+            /**
+             * Boolean element.
+             */
+            PACKAGE_META_INFO_TYPE_BOOL,
+            /**
+             * Integer element.
+             */
+            PACKAGE_META_INFO_TYPE_INTEGER,
+            /**
+             * Double-precision floating point element.
+             */
+            PACKAGE_META_INFO_TYPE_DOUBLE,
+            /**
+             * Array element.
+             */
+            PACKAGE_META_INFO_TYPE_ARRAY,
+            /**
+             * Map (dictionary) element.
+             */
+            PACKAGE_META_INFO_TYPE_MAP
+        };
+    }
+    
 	/**
 	 * Package meta info element. Can contain JSON-style structured data, including objects and arrays.
 	 */
 	class PackageMetaInfo {
 	public:
-		/**
-		 * Meta info type.
-		 */
-		enum Type {
-			/**
-			 * Null element.
-			 */
-			NULL_TYPE,
-			/**
-			 * String element.
-			 */
-			STRING_TYPE,
-			/**
-			 * Boolean element.
-			 */
-			BOOL_TYPE,
-			/**
-			 * Integer element.
-			 */
-			INTEGER_TYPE,
-			/**
-			 * Double-precision floating point element.
-			 */
-			DOUBLE_TYPE,
-			/**
-			 * Array element.
-			 */
-			ARRAY_TYPE,
-			/**
-			 * Map (dictionary) element.
-			 */
-			MAP_TYPE
-		};
-
 		/**
 		 * Constructs a new PackageMetaInfo object from existing JSON value.
 		 * @param jsonValue The JSON representation to use as a base for this meta info element. The value is reset after construction.
@@ -83,7 +85,7 @@ namespace Nuti {
 		 * Returns the type of this meta info element.
 		 * @return The type of this element.
 		 */
-		Type getType() const;
+		PackageMetaInfoType::PackageMetaInfoType getType() const;
 
 		/**
 		 * Returns the string value of this element.

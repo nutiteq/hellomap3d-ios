@@ -1,24 +1,17 @@
-#ifndef MAPREDRAWREQUESTLISTENER_H_
-#define MAPREDRAWREQUESTLISTENER_H_
+/*
+ * Copyright 2014 Nutiteq Llc. All rights reserved.
+ * Copying and using this code is allowed only according
+ * to license terms, as given in https://www.nutiteq.com/license/
+ */
 
-#import "ui/RedrawRequestListener.h"
+#import "RedrawRequestListener_proxy.h"
 
-@class NTMapViewController;
+@class GLKView;
 
-namespace Nuti {
+@interface NTMapRedrawRequestListener : NTRedrawRequestListener
 
-class MapRedrawRequestListener : public RedrawRequestListener {
-public:
-    MapRedrawRequestListener(NTMapViewController* mapViewController);
-    virtual ~MapRedrawRequestListener();
-    
-    virtual void onRedrawRequested() const;
-    
-private:
-    __weak NTMapViewController* _mapViewController;
-    
-};
-    
-}
+@property (weak, nonatomic) GLKView* view;
 
-#endif
+-(id)initWithView:(GLKView*)view;
+
+@end

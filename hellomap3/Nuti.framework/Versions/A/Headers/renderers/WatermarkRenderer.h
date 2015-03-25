@@ -24,7 +24,7 @@ namespace Nuti {
     
     class WatermarkRenderer {
     public:
-        WatermarkRenderer(const Options& options, const WatermarkType::WatermarkType& licenseType);
+        WatermarkRenderer(const Options& options, const LicenseType::LicenseType& licenseType);
         virtual ~WatermarkRenderer();
     
         void onSurfaceCreated(ShaderManager& shaderManager);
@@ -49,7 +49,7 @@ namespace Nuti {
         
         void drawWatermark(const ViewState& viewState);
         
-        const WatermarkType::WatermarkType& _licenseType;
+        const LicenseType::LicenseType& _licenseType;
         
         float _randomAlignmentX;
         float _randomAlignmentY;

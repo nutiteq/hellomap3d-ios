@@ -16,9 +16,11 @@ extern "C" {
 #endif
 
 
+#import "MapPos_proxy.h"
 #import "Bitmap_proxy.h"
-#import "Label_proxy.h"
+#import "Geometry_proxy.h"
 #import "TextStyle_proxy.h"
+#import "Label_proxy.h"
 
 /**
  * A text element that can be displayed on the map.
@@ -62,7 +64,7 @@ __attribute__ ((visibility("default"))) @interface NTText : NTLabel
  * Returns the style of this text label.<br>
  * @return The style that defines what this text label looks like.
  */
--(NTBillboardStyle*)getStyle;
+-(NTTextStyle*)getStyle;
 /**
  * Sets the style for this text label.<br>
  * @return The new style that defines what this text label looks like.

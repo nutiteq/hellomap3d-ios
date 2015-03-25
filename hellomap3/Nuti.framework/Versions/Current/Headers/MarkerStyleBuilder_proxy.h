@@ -16,6 +16,7 @@ extern "C" {
 #endif
 
 
+#import "Bitmap_proxy.h"
 #import "BillboardStyleBuilder_proxy.h"
 #import "MarkerStyle_proxy.h"
 
@@ -35,10 +36,22 @@ __attribute__ ((visibility("default"))) @interface NTMarkerStyleBuilder : NTBill
  */
 -(float)getAnchorPointX;
 /**
+ * Sets the horizontal anchor point of the marker.<br>
+ * @param anchorPointX The new horizontal anchor point for the marker. -1 means the left side,<br>
+ * 0 the center and 1 the right side of the marker. The default is 0.
+ */
+-(void)setAnchorPointX: (float)anchorPointX;
+/**
  * Returns the vertical anchor point of the marker.<br>
  * @return The vertical anchor point of the marker.
  */
 -(float)getAnchorPointY;
+/**
+ * Sets the vertical anchor point of the marker.<br>
+ * @param anchorPointY The vertical anchor point for the marker. -1 means the bottom,<br>
+ * 0 the center and 1 the top of the marker. The default is -1.
+ */
+-(void)setAnchorPointY: (float)anchorPointY;
 /**
  * Sets the anchor point for the marker. Values will be clamped to [-1, 1] range.<br>
  * @param anchorPointX The new horizontal anchor point for the marker. -1 means the left side,<br>

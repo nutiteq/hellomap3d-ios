@@ -15,9 +15,6 @@
 extern "C" {
 #endif
 
-
-#import "Style_proxy.h"
-
 /**
  * A collection of style rules.
  */

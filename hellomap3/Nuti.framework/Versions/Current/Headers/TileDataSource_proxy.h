@@ -17,6 +17,7 @@ extern "C" {
 
 
 #import "MapTile_proxy.h"
+#import "TileDataSource_proxy.h"
 #import "TileData_proxy.h"
 
 /**

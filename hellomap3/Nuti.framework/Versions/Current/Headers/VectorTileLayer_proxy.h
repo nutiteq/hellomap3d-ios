@@ -16,9 +16,10 @@ extern "C" {
 #endif
 
 
-#import "VectorTileDecoder_proxy.h"
+#import "TileData_proxy.h"
 #import "TileDataSource_proxy.h"
 #import "TileLayer_proxy.h"
+#import "VectorTileDecoder_proxy.h"
 
 /**
  * A tile layer where each tile is a bitmap. Should be used together with corresponding data source.
@@ -32,7 +33,6 @@ __attribute__ ((visibility("default"))) @interface NTVectorTileLayer : NTTileLay
  * @param decoder The tile decoder that decoder loaded tiles and applies styles.
  */
 -(id)initWithDataSource: (NTTileDataSource*)dataSource decoder: (NTVectorTileDecoder*)decoder;
--(NTTileDataSource*)getDataSource;
 /**
  * Returns the tile decoder assigned to this layer.<br>
  * @return The tile decoder assigned to this layer.

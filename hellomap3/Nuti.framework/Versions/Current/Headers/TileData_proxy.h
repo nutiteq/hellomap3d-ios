@@ -44,6 +44,16 @@ __attribute__ ((visibility("default"))) @interface NTTileData : NSObject
  */
 -(void)setMaxAge: (long long)age;
 /**
+ * Returns true if the tile should be replaced with parent tile.<br>
+ * @return True if the tile should be replaced with parent. False otherwise.
+ */
+-(BOOL)isReplaceWithParent;
+/**
+ * Set the parent replacement flag.<br>
+ * @param flag True when the tile should be replaced with the parent, false otherwise.
+ */
+-(void)setReplaceWithParent: (BOOL)flag;
+/**
  * Returns tile data as a byte vector.<br>
  * @return Tile data as a byte vector.
  */

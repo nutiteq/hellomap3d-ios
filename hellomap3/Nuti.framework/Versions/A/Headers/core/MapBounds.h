@@ -122,11 +122,11 @@ namespace Nuti {
          */
         void expandToContain(const MapBounds& bounds);
 		
-		/**
-		 * Returns the hash value of this object.
-		 * @return The hash value of this object.
-		 */
-		int hash() const;
+        /**
+         * Returns the hash value of this object.
+         * @return The hash value of this object.
+         */
+        int hash() const;
 		
         /**
          * Creates a string representation of this map bounds object, useful for logging.

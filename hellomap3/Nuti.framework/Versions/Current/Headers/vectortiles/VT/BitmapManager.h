@@ -35,6 +35,7 @@ namespace Nuti { namespace VT {
 		std::shared_ptr<BitmapPattern> loadBitmapPattern(const std::string& fileName, float widthScale, float heightScale);
 		void storeBitmapPattern(const std::string& fileName, const std::shared_ptr<BitmapPattern>& bitmapPattern);
 
+		static std::shared_ptr<const Bitmap> scale(const std::shared_ptr<const Bitmap>& bitmap, int width, int height);
 		static std::shared_ptr<const Bitmap> scaleToPOT(const std::shared_ptr<const Bitmap>& bitmap);
 
 	protected:

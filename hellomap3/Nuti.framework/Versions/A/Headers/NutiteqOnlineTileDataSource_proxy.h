@@ -16,7 +16,9 @@ extern "C" {
 #endif
 
 
+#import "MapTile_proxy.h"
 #import "TileDataSource_proxy.h"
+#import "TileData_proxy.h"
 
 /**
  * An online tile data source that connects to Nutiteq tile server.<br>

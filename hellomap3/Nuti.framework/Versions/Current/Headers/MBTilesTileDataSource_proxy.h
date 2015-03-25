@@ -18,21 +18,21 @@ extern "C" {
 /**
  * MBTiles tile schemes.
  */
-enum MBTilesScheme {
+enum NTMBTilesScheme {
 /**
  * The default scheme. Vertical coordinate is not flipped.
  */
-  MBTILES_SCHEME_TMS,
+  NT_MBTILES_SCHEME_TMS,
 /**
  * Alternative to TMS scheme. Vertical coordinate is flipped.
  */
-  MBTILES_SCHEME_XYZ
+  NT_MBTILES_SCHEME_XYZ
 };
 
 
 #import "MapTile_proxy.h"
-#import "TileData_proxy.h"
 #import "TileDataSource_proxy.h"
+#import "TileData_proxy.h"
 #import "StringMap_proxy.h"
 
 /**
@@ -64,7 +64,7 @@ __attribute__ ((visibility("default"))) @interface NTMBTilesTileDataSource : NTT
  * @param path The path to the local Sqlite database file.<br>
  * @param scheme Tile scheme to use.
  */
--(id)initWithMinZoom: (int)minZoom maxZoom: (int)maxZoom path: (NSString*)path scheme: (enum MBTilesScheme)scheme;
+-(id)initWithMinZoom: (int)minZoom maxZoom: (int)maxZoom path: (NSString*)path scheme: (enum NTMBTilesScheme)scheme;
 /**
  * Get data source metadata information.<br>
  * Possible parameters can be found in MBTiles specification.<br>

@@ -15,31 +15,9 @@
 extern "C" {
 #endif
 
-/**
- * Possible click types.
- */
-enum NTClickType {
-/**
- * A click caused by pressing down and then releasing the screen.
- */
-  NT_CLICK_TYPE_SINGLE,
-/**
- * A click caused by pressing down but not releasing the screen.
- */
-  NT_CLICK_TYPE_LONG,
-/**
- * A click caused by two fast consecutive taps on the screen.
- */
-  NT_CLICK_TYPE_DOUBLE,
-/**
- * A click caused by two simultaneous taps on the screen.
- */
-  NT_CLICK_TYPE_DUAL
-};
 
-
-@class NTMapClickInfo;
-@class NTVectorElementsClickInfo;
+#import "MapClickInfo_proxy.h"
+#import "VectorElementsClickInfo_proxy.h"
 
 /**
  * Listener for events like map and vector element clicks etc.

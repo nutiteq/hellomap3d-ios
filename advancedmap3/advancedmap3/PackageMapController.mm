@@ -1,19 +1,19 @@
 #import "PackageMapController.h"
 
-
 @implementation PackageMapController
-@synthesize dataSource = _dataSource;
+
+@synthesize packageManager = _packageManager;
 
 - (NTTileDataSource*)createTileDataSource
 {
-	return _dataSource;
+	return [[NTPackageManagerTileDataSource alloc] initWithPackageManager:_packageManager];
 }
 
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-  [self setZoom:2.0f durationSeconds:0.2f];
-  [self setTilt:90.0f durationSeconds:0.2f];
+	[self.mapView setZoom:2.0f durationSeconds:0.2f];
+	[self.mapView setTilt:90.0f durationSeconds:0.2f];
 }
 
 @end

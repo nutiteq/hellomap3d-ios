@@ -37,6 +37,18 @@ namespace Nuti {
 		 * @param maxAge Tile data maximum age in milliseconds, or -1 if the data does not expire.
 		 */
 		void setMaxAge(long long age);
+        
+        /**
+         * Returns true if the tile should be replaced with parent tile.
+         * @return True if the tile should be replaced with parent. False otherwise.
+         */
+        bool isReplaceWithParent() const;
+        
+        /**
+         * Set the parent replacement flag.
+         * @param flag True when the tile should be replaced with the parent, false otherwise.
+         */
+        void setReplaceWithParent(bool flag);
 		
         /**
          * Returns tile data as a byte vector.
@@ -47,6 +59,7 @@ namespace Nuti {
     private:
         std::shared_ptr<std::vector<unsigned char> > _data;
 		std::shared_ptr<std::chrono::system_clock::time_point> _expirationTime;
+        bool _replaceWithParent;
 		mutable std::mutex _mutex;
     };
 

@@ -7,8 +7,6 @@
 #ifndef _NUTI_BITMAP_H_
 #define _NUTI_BITMAP_H_
 
-#include "utils/GLES2.h"
-
 #include <memory>
 #include <string>
 #include <vector>
@@ -190,18 +188,31 @@ namespace Nuti {
          * @param pow2Padding The power of two conversion flag.
 		 * @return The resized bitmap instance or null in case of error (wrong dimensions).
          */
-		std::shared_ptr<Bitmap> getResizedBitmap(int width, int height, bool pow2Padding) const;
+         std::shared_ptr<Bitmap> getResizedBitmap(unsigned int width, unsigned int height, bool pow2Padding) const;
+         
+         /**
+          * Returns sub-bitmap with specified offsets and dimensions.
+          * @param xOffset X coordinate offset in the bitmap.
+          * @param yOffset Y coordinate offset in the bitmap.
+          * @param width Width of the sub-bitmap.
+          * @param height Height of the sub-bitmap.
+          * @param pow2Padding The power of two conversion flag.
+          * @return Sub-bitmap instance or null in case of error (wrong dimensions).
+          */
+         std::shared_ptr<Bitmap> getSubBitmap(int xOffset, int yOffset, int width, int height, bool pow2Padding) const;
 		
 		/**
-		 * Returns sub-bitmap with specified offsets and dimensions.
-		 * @param xOffset X coordinate offset in the bitmap.
-		 * @param yOffset Y coordinate offset in the bitmap.
-		 * @param width Width of the sub-bitmap.
-		 * @param height Height of the sub-bitmap.
-		 * @param pow2Padding The power of two conversion flag.
-		 * @return Sub-bitmap instance or null in case of error (wrong dimensions).
+		 * Returns copy of the bitmap converted to RGBA format.
+         * @param pow2Padding The power of two conversion flag.
+		 * @return The bitmap with identical dimensions but converted to RGBA format.
 		 */
-		std::shared_ptr<Bitmap> getSubBitmap(int xOffset, int yOffset, int width, int height, bool pow2Padding) const;
+		std::shared_ptr<Bitmap> getRGBABitmap(bool pow2Padding) const;
+        
+        /**
+         * Returns copy of the bitmap with padding removed.
+         * @return The bitmap with original dimensions.
+         */
+        std::shared_ptr<Bitmap> getUnpaddedBitmap() const;
 		
     protected:
         Bitmap();

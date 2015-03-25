@@ -7,7 +7,7 @@
 #ifndef _NUTI_VECTORELEMENTSCLICKINFO_H_
 #define _NUTI_VECTORELEMENTSCLICKINFO_H_
 
-#include "ui/MapEventListener.h"
+#include "ui/MapClickInfo.h"
 #include "ui/VectorElementClickInfo.h"
 
 #include <memory>

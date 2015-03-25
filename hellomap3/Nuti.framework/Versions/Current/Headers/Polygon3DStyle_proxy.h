@@ -16,6 +16,7 @@ extern "C" {
 #endif
 
 
+#import "Color_proxy.h"
 #import "Style_proxy.h"
 
 /**

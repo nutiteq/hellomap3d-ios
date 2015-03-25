@@ -19,6 +19,8 @@ extern "C" {
 #import "PolygonGeometry_proxy.h"
 #import "Polygon3DStyle_proxy.h"
 #import "VectorElement_proxy.h"
+#import "MapPosVector_proxy.h"
+#import "MapPosVectorVector_proxy.h"
 
 /**
  * A geometric 3d polygon that can be displayed on the map.<br>

@@ -11,17 +11,17 @@
 
 namespace Nuti {
 
-	class Task : public std::enable_shared_from_this<Task> {
-	public:
-		virtual ~Task() {}
-    
-		virtual void run() = 0;
+    class Task : public std::enable_shared_from_this<Task> {
+    public:
+        virtual ~Task() {}
 
-		void operator()();
-    
-	protected:
-		Task() {}
-	};
+        virtual void run() = 0;
+
+        void operator()();
+
+    protected:
+        Task() {}
+    };
 
 }
 

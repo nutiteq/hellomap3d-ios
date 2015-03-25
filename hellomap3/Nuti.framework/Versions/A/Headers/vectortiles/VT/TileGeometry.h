@@ -8,6 +8,7 @@
 #define _NUTI_VT_TILEGEOMETRY_H_
 
 #include "Bitmap.h"
+#include "StrokeSet.h"
 #include "VertexArray.h"
 
 #include <memory>
@@ -26,7 +27,7 @@ namespace Nuti { namespace VT {
 		};
 
 		struct StyleParameters {
-			enum { MAX_PARAMETERS = 32 };
+			enum { MAX_PARAMETERS = 16 };
 			int parameterCount;
 			std::array<unsigned int, MAX_PARAMETERS> colorTable;
 			std::array<float, MAX_PARAMETERS> lineWidthTable;

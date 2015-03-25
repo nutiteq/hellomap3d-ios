@@ -15,6 +15,29 @@
 extern "C" {
 #endif
 
+/**
+ * Possible error types for failed package downloads.
+ */
+enum NTPackageErrorType {
+/**
+ * Internal or system error.
+ */
+  NT_PACKAGE_ERROR_TYPE_SYSTEM,
+/**
+ * Connection or network error.
+ */
+  NT_PACKAGE_ERROR_TYPE_CONNECTION,
+/**
+ * The number of downloaded packages exceeded subscription limit.
+ */
+  NT_PACKAGE_ERROR_TYPE_DOWNLOAD_LIMIT_EXCEEDED,
+/**
+ * The bounding box of the package contains too many tiles.<br>
+ * This error is only returned for custom bounding box packages.
+ */
+  NT_PACKAGE_ERROR_TYPE_PACKAGE_TOO_BIG
+};
+
 
 #import "PackageStatus_proxy.h"
 
@@ -60,9 +83,10 @@ __attribute__ ((visibility("default"))) @interface NTPackageManagerListener : NS
 /**
  * Listener method that is called when updating a package failed (network error, etc).<br>
  * @param id The id of the package that failed<br>
- * @param version The version of the package that failed
+ * @param version The version of the package that failed<br>
+ * @param errorType Reason or type of the failure
  */
--(void)onPackageFailed: (NSString*)arg1 version: (int)version;
+-(void)onPackageFailed: (NSString*)arg1 version: (int)version errorType: (enum NTPackageErrorType)errorType;
 -(id)init;
 
 -(void)dealloc;

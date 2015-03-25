@@ -29,6 +29,8 @@ namespace Nuti {
         static bool isTextureNPOTMipmaps();
     
     private:
+        GLUtils();
+
         typedef std::unordered_set<std::string> ExtensionCache;
     
         static ExtensionCache _extensionCache;

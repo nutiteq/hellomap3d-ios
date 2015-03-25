@@ -30,6 +30,8 @@ namespace Nuti {
         void init(int delayTime);
         
         void stop();
+        
+        bool isIdle() const;
     
         void operator()();
     
@@ -40,12 +42,14 @@ namespace Nuti {
         
         bool overlapComparator(const std::shared_ptr<Billboard>& billboard1, const std::shared_ptr<Billboard>& billboard2) const;
         
-        volatile bool _stop;
+        bool _stop;
+        bool _idle;
         
         KDTreeSpatialIndex<MapEnvelope> _kdTree;
         
         bool _sort3D;
     
+        bool _pendingWakeup;
         std::chrono::time_point<std::chrono::system_clock> _wakeupTime;
         
         std::weak_ptr<MapRenderer> _mapRenderer;

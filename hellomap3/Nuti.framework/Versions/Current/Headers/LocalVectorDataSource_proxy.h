@@ -31,8 +31,11 @@ enum NTLocalSpatialIndexType {
 
 
 #import "VectorDataSource_proxy.h"
-#import "VectorElement_proxy.h"
 #import "GeometrySimplifier_proxy.h"
+#import "Projection_proxy.h"
+#import "CullState_proxy.h"
+#import "VectorElement_proxy.h"
+#import "VectorElementVector_proxy.h"
 
 /**
  * A modifiable vector data source that keeps all the elements in the local memory.<br>

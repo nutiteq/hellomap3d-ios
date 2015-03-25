@@ -60,12 +60,11 @@ enum NTPanningMode {
 };
 
 
-#import "Bitmap_proxy.h"
-#import "Color_proxy.h"
 #import "MapBounds_proxy.h"
-#import "MapEventListener_proxy.h"
 #import "MapRange_proxy.h"
 #import "MapVec_proxy.h"
+#import "Bitmap_proxy.h"
+#import "Color_proxy.h"
 #import "Projection_proxy.h"
 
 /**
