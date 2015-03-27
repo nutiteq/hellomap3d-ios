@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['differs_3a',['differs:',['../interface_n_t_color.html#a865814f9baaa19214b82306a56b09ff0',1,'NTColor::differs:()'],['../interface_n_t_map_bounds.html#a53a19ace9a5cedf4132059ac8fe59c58',1,'NTMapBounds::differs:()'],['../interface_n_t_map_envelope.html#a045b6b47504113c32d7563aa57a86dee',1,'NTMapEnvelope::differs:()'],['../interface_n_t_map_pos.html#a7947923a49ea475e09550a9973c6c60c',1,'NTMapPos::differs:()'],['../interface_n_t_map_range.html#ae8183e6f24849af04a0d310b5351932d',1,'NTMapRange::differs:()'],['../interface_n_t_map_tile.html#a9ae82b0e008419d291d6c30c8a1103c0',1,'NTMapTile::differs:()'],['../interface_n_t_map_vec.html#af02e60deddb578d41f34a90d3311ed29',1,'NTMapVec::differs:()'],['../interface_n_t_screen_bounds.html#ab0317ff74e6f315aa5a85b33c55f2bc3',1,'NTScreenBounds::differs:()'],['../interface_n_t_screen_pos.html#a3c3568265cce3353ff1612a4ff4a5acc',1,'NTScreenPos::differs:()']]],
+  ['debug_3a',['debug:',['../interface_n_t_log.html#a8935e0a071e8a7005c540c60f77a5f03',1,'NTLog']]],
   ['distancefromline_3ab_3a',['distanceFromLine:b:',['../interface_n_t_map_pos.html#a9b2c1d7f96aca57d14f44cd180b38b27',1,'NTMapPos']]],
   ['distancefromlinesegment_3ab_3a',['distanceFromLineSegment:b:',['../interface_n_t_map_pos.html#ae4b05b6d11e8fa29cb3629c52f525178',1,'NTMapPos']]],
   ['distancefrompoint_3a',['distanceFromPoint:',['../interface_n_t_map_pos.html#acb6f0573c40fc717f04388fe5b63b1a4',1,'NTMapPos']]],

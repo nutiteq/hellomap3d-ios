@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: tmp-doxygen/LineStyle_proxy.h Source File</title>
+<title>Nutiteq Maps SDK iOS: tmp-doxygen/LineStyle_proxy.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -123,36 +123,37 @@ $(document).ready(function(){initNavTree('_line_style__proxy_8h_source.html','')
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#import &quot;Bitmap_proxy.h&quot;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#import &quot;Style_proxy.h&quot;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="interface_n_t_line_style.html">   59</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_line_style.html">NTLineStyle</a> : <a class="code" href="interface_n_t_style.html">NTStyle</a></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;-(void*)getCptr;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;-(id)initWithColor: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)color bitmap: (<a class="code" href="interface_n_t_bitmap.html">NTBitmap</a>*)bitmap clickWidth: (<span class="keywordtype">float</span>)clickWidth lineEndType: (enum NTLineEndType)lineEndType lineJointType: (enum NTLineJointType)lineJointType stretchFactor: (<span class="keywordtype">float</span>)stretchFactor width: (<span class="keywordtype">float</span>)width;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;-(<a class="code" href="interface_n_t_bitmap.html">NTBitmap</a>*)<a class="code" href="interface_n_t_line_style.html#aba765c71a39229c12dd53f95f29a0419">getBitmap</a>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;-(float)<a class="code" href="interface_n_t_line_style.html#ac0ec7efb3e42f24af22bb524c281ddc9">getClickWidth</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;-(enum NTLineEndType)<a class="code" href="interface_n_t_line_style.html#a403a956e5ad7c6ed9092aaae90bb8f28">getLineEndType</a>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;-(enum NTLineJointType)<a class="code" href="interface_n_t_line_style.html#a323fc7dd44c4036ad63344cd9540291d">getLineJointType</a>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;-(float)<a class="code" href="interface_n_t_line_style.html#aad76f7fb6c7530f59e7a24093bceab1d">getStretchFactor</a>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;-(float)<a class="code" href="interface_n_t_line_style.html#a6ebb23ec7e170ea5606ac343a8a21da7">getWidth</a>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;-(void)dealloc;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#import &quot;Color_proxy.h&quot;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#import &quot;Style_proxy.h&quot;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="interface_n_t_line_style.html">   60</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_line_style.html">NTLineStyle</a> : <a class="code" href="interface_n_t_style.html">NTStyle</a></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;-(void*)getCptr;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;-(id)initWithColor: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)color bitmap: (<a class="code" href="interface_n_t_bitmap.html">NTBitmap</a>*)bitmap clickWidth: (<span class="keywordtype">float</span>)clickWidth lineEndType: (enum NTLineEndType)lineEndType lineJointType: (enum NTLineJointType)lineJointType stretchFactor: (<span class="keywordtype">float</span>)stretchFactor width: (<span class="keywordtype">float</span>)width;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;-(<a class="code" href="interface_n_t_bitmap.html">NTBitmap</a>*)<a class="code" href="interface_n_t_line_style.html#aba765c71a39229c12dd53f95f29a0419">getBitmap</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;-(float)<a class="code" href="interface_n_t_line_style.html#ac0ec7efb3e42f24af22bb524c281ddc9">getClickWidth</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;-(enum NTLineEndType)<a class="code" href="interface_n_t_line_style.html#a403a956e5ad7c6ed9092aaae90bb8f28">getLineEndType</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;-(enum NTLineJointType)<a class="code" href="interface_n_t_line_style.html#a323fc7dd44c4036ad63344cd9540291d">getLineJointType</a>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;-(float)<a class="code" href="interface_n_t_line_style.html#aad76f7fb6c7530f59e7a24093bceab1d">getStretchFactor</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;-(float)<a class="code" href="interface_n_t_line_style.html#a6ebb23ec7e170ea5606ac343a8a21da7">getWidth</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;-(void)dealloc;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">@end</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="interface_n_t_color_html"><div class="ttname"><a href="interface_n_t_color.html">NTColor</a></div><div class="ttdef"><b>Definition:</b> Color_proxy.h:21</div></div>
 <div class="ttc" id="interface_n_t_line_style_html_a403a956e5ad7c6ed9092aaae90bb8f28"><div class="ttname"><a href="interface_n_t_line_style.html#a403a956e5ad7c6ed9092aaae90bb8f28">-[NTLineStyle getLineEndType]</a></div><div class="ttdeci">enum NTLineEndType getLineEndType()</div><div class="ttdef"><b>Definition:</b> LineStyle_proxy.mm:46</div></div>
 <div class="ttc" id="interface_n_t_style_html"><div class="ttname"><a href="interface_n_t_style.html">NTStyle</a></div><div class="ttdef"><b>Definition:</b> Style_proxy.h:24</div></div>
 <div class="ttc" id="interface_n_t_line_style_html_a6ebb23ec7e170ea5606ac343a8a21da7"><div class="ttname"><a href="interface_n_t_line_style.html#a6ebb23ec7e170ea5606ac343a8a21da7">-[NTLineStyle getWidth]</a></div><div class="ttdeci">float getWidth()</div><div class="ttdef"><b>Definition:</b> LineStyle_proxy.mm:61</div></div>
 <div class="ttc" id="interface_n_t_line_style_html_aad76f7fb6c7530f59e7a24093bceab1d"><div class="ttname"><a href="interface_n_t_line_style.html#aad76f7fb6c7530f59e7a24093bceab1d">-[NTLineStyle getStretchFactor]</a></div><div class="ttdeci">float getStretchFactor()</div><div class="ttdef"><b>Definition:</b> LineStyle_proxy.mm:56</div></div>
 <div class="ttc" id="interface_n_t_line_style_html_aba765c71a39229c12dd53f95f29a0419"><div class="ttname"><a href="interface_n_t_line_style.html#aba765c71a39229c12dd53f95f29a0419">-[NTLineStyle getBitmap]</a></div><div class="ttdeci">NTBitmap * getBitmap()</div><div class="ttdef"><b>Definition:</b> LineStyle_proxy.mm:31</div></div>
-<div class="ttc" id="interface_n_t_line_style_html"><div class="ttname"><a href="interface_n_t_line_style.html">NTLineStyle</a></div><div class="ttdef"><b>Definition:</b> LineStyle_proxy.h:59</div></div>
-<div class="ttc" id="interface_n_t_bitmap_html"><div class="ttname"><a href="interface_n_t_bitmap.html">NTBitmap</a></div><div class="ttdef"><b>Definition:</b> Bitmap_proxy.h:70</div></div>
+<div class="ttc" id="interface_n_t_line_style_html"><div class="ttname"><a href="interface_n_t_line_style.html">NTLineStyle</a></div><div class="ttdef"><b>Definition:</b> LineStyle_proxy.h:60</div></div>
+<div class="ttc" id="interface_n_t_bitmap_html"><div class="ttname"><a href="interface_n_t_bitmap.html">NTBitmap</a></div><div class="ttdef"><b>Definition:</b> Bitmap_proxy.h:69</div></div>
 <div class="ttc" id="interface_n_t_line_style_html_ac0ec7efb3e42f24af22bb524c281ddc9"><div class="ttname"><a href="interface_n_t_line_style.html#ac0ec7efb3e42f24af22bb524c281ddc9">-[NTLineStyle getClickWidth]</a></div><div class="ttdeci">float getClickWidth()</div><div class="ttdef"><b>Definition:</b> LineStyle_proxy.mm:41</div></div>
 <div class="ttc" id="interface_n_t_line_style_html_a323fc7dd44c4036ad63344cd9540291d"><div class="ttname"><a href="interface_n_t_line_style.html#a323fc7dd44c4036ad63344cd9540291d">-[NTLineStyle getLineJointType]</a></div><div class="ttdeci">enum NTLineJointType getLineJointType()</div><div class="ttdef"><b>Definition:</b> LineStyle_proxy.mm:51</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -161,7 +162,7 @@ $(document).ready(function(){initNavTree('_line_style__proxy_8h_source.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_39407a35a676e69a760fd4862d1e3e08.html">tmp-doxygen</a></li><li class="navelem"><b>LineStyle_proxy.h</b></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:42 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

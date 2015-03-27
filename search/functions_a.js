@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['nearestpointonlinesegment_3ab_3a',['nearestPointOnLineSegment:b:',['../interface_n_t_map_pos.html#a02321c1e3da65618f4acae48852dd523',1,'NTMapPos']]],
-  ['notifydecoderchanged',['notifyDecoderChanged',['../interface_n_t_vector_tile_decoder.html#a51c8ce2ece7cf1ad1ddbac20e4cda0e8',1,'NTVectorTileDecoder']]],
-  ['notifyelementchanged',['notifyElementChanged',['../interface_n_t_vector_element.html#a8cd8f7fe85fe8ab573954b744481a981',1,'NTVectorElement']]],
-  ['notifyelementschanged',['notifyElementsChanged',['../interface_n_t_vector_data_source.html#a6304f3c44f7b30dbafdea2c7a32ef8da',1,'NTVectorDataSource']]],
-  ['notifytileschanged_3a',['notifyTilesChanged:',['../interface_n_t_cache_tile_data_source.html#af6a219b2911556340362e90048080dad',1,'NTCacheTileDataSource::notifyTilesChanged:()'],['../interface_n_t_tile_data_source.html#a84abbc725a042776ddbc92cab95d4f4f',1,'NTTileDataSource::notifyTilesChanged:()']]]
+  ['maptoscreen_3a',['mapToScreen:',['../interface_n_t_base_map_view.html#a0aa180b95d005415298151f28dd5f2ff',1,'NTBaseMapView']]],
+  ['movetofitbounds_3ascreenbounds_3aintegerzoom_3adurationseconds_3a',['moveToFitBounds:screenBounds:integerZoom:durationSeconds:',['../interface_n_t_base_map_view.html#a43a6f1e01d13e4fc50596254c8191409',1,'NTBaseMapView']]],
+  ['movetofitbounds_3ascreenbounds_3aintegerzoom_3aresetrotation_3aresettilt_3adurationseconds_3a',['moveToFitBounds:screenBounds:integerZoom:resetRotation:resetTilt:durationSeconds:',['../interface_n_t_base_map_view.html#af35040aa95e74e4553c2641dee5a92f9',1,'NTBaseMapView']]],
+  ['mul_3a',['mul:',['../interface_n_t_map_vec.html#a92e439f09ce86ae694219b32e264ebaa',1,'NTMapVec']]]
 ];

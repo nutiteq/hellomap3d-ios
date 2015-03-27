@@ -1,6 +1,5 @@
 var interface_n_t_m_b_vector_tile_decoder =
 [
-    [ "getBackgroundColor", "interface_n_t_m_b_vector_tile_decoder.html#acdbe370dd6e480cf31d8c5aa13fa609e", null ],
     [ "getCurrentStyleName", "interface_n_t_m_b_vector_tile_decoder.html#a049a5774b0bd557ac1ca4735b309c261", null ],
     [ "getMaxZoom", "interface_n_t_m_b_vector_tile_decoder.html#a4ea6e3301d9c17cb9874ca224cc95602", null ],
     [ "getMinZoom", "interface_n_t_m_b_vector_tile_decoder.html#a17067457cd6f04e54cbb338198f64b48", null ],

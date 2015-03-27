@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: tmp-doxygen/VectorTileDecoder_proxy.h Source File</title>
+<title>Nutiteq Maps SDK iOS: tmp-doxygen/VectorTileDecoder_proxy.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -111,38 +111,37 @@ $(document).ready(function(){initNavTree('_vector_tile_decoder__proxy_8h_source.
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;Color_proxy.h&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="interface_n_t_vector_tile_decoder.html">   24</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_vector_tile_decoder.html">NTVectorTileDecoder</a> : NSObject</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> *swigCPtr;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    BOOL swigCMemOwn;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;-(void*)getCptr;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;-(<a class="code" href="interface_n_t_color.html">NTColor</a>*)getBackgroundColor;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;-(int)getMinZoom;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;-(int)getMaxZoom;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;-(void)notifyDecoderChanged;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;TileData_proxy.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;Color_proxy.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="interface_n_t_vector_tile_decoder.html">   25</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_vector_tile_decoder.html">NTVectorTileDecoder</a> : NSObject</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> *swigCPtr;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    BOOL swigCMemOwn;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;-(void*)getCptr;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;-(int)getMinZoom;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;-(int)getMaxZoom;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;-(void)notifyDecoderChanged;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;-(void)dealloc;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">@end</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;-(void)dealloc;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor"></span></div>
-<div class="ttc" id="interface_n_t_color_html"><div class="ttname"><a href="interface_n_t_color.html">NTColor</a></div><div class="ttdef"><b>Definition:</b> Color_proxy.h:21</div></div>
-<div class="ttc" id="interface_n_t_vector_tile_decoder_html"><div class="ttname"><a href="interface_n_t_vector_tile_decoder.html">NTVectorTileDecoder</a></div><div class="ttdef"><b>Definition:</b> VectorTileDecoder_proxy.h:24</div></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="interface_n_t_vector_tile_decoder_html"><div class="ttname"><a href="interface_n_t_vector_tile_decoder.html">NTVectorTileDecoder</a></div><div class="ttdef"><b>Definition:</b> VectorTileDecoder_proxy.h:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_39407a35a676e69a760fd4862d1e3e08.html">tmp-doxygen</a></li><li class="navelem"><b>VectorTileDecoder_proxy.h</b></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:42 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

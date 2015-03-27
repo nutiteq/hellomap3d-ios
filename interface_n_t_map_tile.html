@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: NTMapTile Class Reference</title>
+<title>Nutiteq Maps SDK iOS: NTMapTile Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -105,10 +105,8 @@ $(document).ready(function(){initNavTree('interface_n_t_map_tile.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
-<tr class="memitem:a4c02baf16fe97147640d46878a739201"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_tile.html#a4c02baf16fe97147640d46878a739201">equals:</a></td></tr>
-<tr class="separator:a4c02baf16fe97147640d46878a739201"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ae82b0e008419d291d6c30c8a1103c0"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_tile.html#a9ae82b0e008419d291d6c30c8a1103c0">differs:</a></td></tr>
-<tr class="separator:a9ae82b0e008419d291d6c30c8a1103c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a387f2ce7c06b1c2efb88fded66f25de8"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_tile.html#a387f2ce7c06b1c2efb88fded66f25de8">isEqualInternal:</a></td></tr>
+<tr class="separator:a387f2ce7c06b1c2efb88fded66f25de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a046bb1db4f25a2285bc2f67c8e0f34d2"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_tile.html#a046bb1db4f25a2285bc2f67c8e0f34d2">getX</a></td></tr>
 <tr class="separator:a046bb1db4f25a2285bc2f67c8e0f34d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a63fa331a08082724147ced7a8abcdc"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_tile.html#a0a63fa331a08082724147ced7a8abcdc">getY</a></td></tr>
@@ -119,64 +117,14 @@ Instance Methods</h2></td></tr>
 <tr class="separator:ae0652ae64ef07b938b03b5b55ad9973d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a507aa7ed03cac7034a066d8d5c48778f"><td class="memItemLeft" align="right" valign="top">(long long)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_tile.html#a507aa7ed03cac7034a066d8d5c48778f">getTileId</a></td></tr>
 <tr class="separator:a507aa7ed03cac7034a066d8d5c48778f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3853c66c1e05215cc7cb87ebbf01912f"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_tile.html#a3853c66c1e05215cc7cb87ebbf01912f">hashInternal</a></td></tr>
+<tr class="separator:a3853c66c1e05215cc7cb87ebbf01912f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f1827f66b968b2542dea7a0ef5a2fa7"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_tile.html#a4f1827f66b968b2542dea7a0ef5a2fa7">toString</a></td></tr>
 <tr class="separator:a4f1827f66b968b2542dea7a0ef5a2fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An immutable map tile, used by tile layers for representing small pieces of map at different zoom levels and coordinates. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
-<a class="anchor" id="a9ae82b0e008419d291d6c30c8a1103c0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) differs: </td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_n_t_map_tile.html">NTMapTile</a>*)&#160;</td>
-          <td class="paramname"><em>tile</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Checks for inequality between this and another map tile.<br/>
- </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tile</td><td>The other map tile.<br/>
- </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if not equal. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a4c02baf16fe97147640d46878a739201"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) equals: </td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_n_t_map_tile.html">NTMapTile</a>*)&#160;</td>
-          <td class="paramname"><em>tile</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Checks for equality between this and another map tile.<br/>
- </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tile</td><td>The other map tile.<br/>
- </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if equal. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ae0652ae64ef07b938b03b5b55ad9973d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -267,6 +215,50 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3853c66c1e05215cc7cb87ebbf01912f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int) hashInternal </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the hash value of this object.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>The hash value of this object. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a387f2ce7c06b1c2efb88fded66f25de8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isEqualInternal: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_n_t_map_tile.html">NTMapTile</a>*)&#160;</td>
+          <td class="paramname"><em>tile</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Checks for equality between this and another map tile.<br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tile</td><td>The other map tile.<br/>
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if equal. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a4f1827f66b968b2542dea7a0ef5a2fa7"></a>
 <div class="memitem">
 <div class="memproto">
@@ -295,7 +287,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_map_tile.html">NTMapTile</a></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:43 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

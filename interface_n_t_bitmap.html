@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: NTBitmap Class Reference</title>
+<title>Nutiteq Maps SDK iOS: NTBitmap Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -107,6 +107,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a1d4085df64a731b8139a47ad33323836"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83b958686103aa69d2c19f3c42e77755"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_bitmap.html#a83b958686103aa69d2c19f3c42e77755">initWithCompressedData:pow2Padding:</a></td></tr>
 <tr class="separator:a83b958686103aa69d2c19f3c42e77755"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735f3d8c37b24ae9e754f0b549dcd9a9"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_bitmap.html#a735f3d8c37b24ae9e754f0b549dcd9a9">initWithUncompressedData:width:height:colorFormat:bytesPerRow:pow2Padding:</a></td></tr>
+<tr class="separator:a735f3d8c37b24ae9e754f0b549dcd9a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2828a10ed1c7d13238e8d07590640c6e"><td class="memItemLeft" align="right" valign="top">(unsigned int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_bitmap.html#a2828a10ed1c7d13238e8d07590640c6e">getWidth</a></td></tr>
 <tr class="separator:a2828a10ed1c7d13238e8d07590640c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade409cd8a3d8ba78f79d395384e2182d"><td class="memItemLeft" align="right" valign="top">(unsigned int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_bitmap.html#ade409cd8a3d8ba78f79d395384e2182d">getHeight</a></td></tr>
@@ -123,8 +125,14 @@ Instance Methods</h2></td></tr>
 <tr class="separator:aeb6c0af49d874caf51abae5c97378bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b68396359049d18163d5f649bd058e6"><td class="memItemLeft" align="right" valign="top">(NTUnsignedCharVector *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_bitmap.html#a1b68396359049d18163d5f649bd058e6">compressToInternal</a></td></tr>
 <tr class="separator:a1b68396359049d18163d5f649bd058e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac49b68a75392db9743d02bc203582c07"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_bitmap.html#ac49b68a75392db9743d02bc203582c07">resize:height:pow2Padding:</a></td></tr>
-<tr class="separator:ac49b68a75392db9743d02bc203582c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accf2d2eab765a8d5e579748e2dc1fca4"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_bitmap.html">NTBitmap</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_bitmap.html#accf2d2eab765a8d5e579748e2dc1fca4">getResizedBitmap:height:pow2Padding:</a></td></tr>
+<tr class="separator:accf2d2eab765a8d5e579748e2dc1fca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad550967680ed87c8d4a98565cafc62ce"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_bitmap.html">NTBitmap</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_bitmap.html#ad550967680ed87c8d4a98565cafc62ce">getSubBitmap:yOffset:width:height:pow2Padding:</a></td></tr>
+<tr class="separator:ad550967680ed87c8d4a98565cafc62ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9a9a3b4b98e88342404b6f6c9d2ea16"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_bitmap.html">NTBitmap</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_bitmap.html#aa9a9a3b4b98e88342404b6f6c9d2ea16">getRGBABitmap:</a></td></tr>
+<tr class="separator:aa9a9a3b4b98e88342404b6f6c9d2ea16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae82ec36b9101b55e32660b4a6d4b2c9e"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_bitmap.html">NTBitmap</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_bitmap.html#ae82ec36b9101b55e32660b4a6d4b2c9e">getUnpaddedBitmap</a></td></tr>
+<tr class="separator:ae82ec36b9101b55e32660b4a6d4b2c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class that provides the functionality to store, compress, uncompress and resize basic image formats.<br/>
@@ -260,6 +268,160 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="accf2d2eab765a8d5e579748e2dc1fca4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_n_t_bitmap.html">NTBitmap</a> *) getResizedBitmap: </td>
+          <td></td>
+          <td class="paramtype">(unsigned int)&#160;</td>
+          <td class="paramname"><em>width</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">height:</td>
+          <td></td>
+          <td class="paramtype">(unsigned int)&#160;</td>
+          <td class="paramname"><em>height</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">pow2Padding:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>pow2Padding</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns resized version of the bitmap. The power of two padding added during the construction of this bitmap<br/>
+ will be removed prior to resizing. If the power of two conversion flag is set, new padding will be added to the image <br/>
+ after resizing to make it's dimensions power of two.<br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>The new width of this bitmap.<br/>
+ </td></tr>
+    <tr><td class="paramname">height</td><td>The new height of this bitmap.<br/>
+ </td></tr>
+    <tr><td class="paramname">pow2Padding</td><td>The power of two conversion flag.<br/>
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The resized bitmap instance or null in case of error (wrong dimensions). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa9a9a3b4b98e88342404b6f6c9d2ea16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_n_t_bitmap.html">NTBitmap</a> *) getRGBABitmap: </td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>pow2Padding</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns copy of the bitmap converted to RGBA format.<br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pow2Padding</td><td>The power of two conversion flag.<br/>
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The bitmap with identical dimensions but converted to RGBA format. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad550967680ed87c8d4a98565cafc62ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_n_t_bitmap.html">NTBitmap</a> *) getSubBitmap: </td>
+          <td></td>
+          <td class="paramtype">(int)&#160;</td>
+          <td class="paramname"><em>xOffset</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">yOffset:</td>
+          <td></td>
+          <td class="paramtype">(int)&#160;</td>
+          <td class="paramname"><em>yOffset</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">width:</td>
+          <td></td>
+          <td class="paramtype">(int)&#160;</td>
+          <td class="paramname"><em>width</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">height:</td>
+          <td></td>
+          <td class="paramtype">(int)&#160;</td>
+          <td class="paramname"><em>height</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">pow2Padding:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>pow2Padding</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns sub-bitmap with specified offsets and dimensions.<br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xOffset</td><td>X coordinate offset in the bitmap.<br/>
+ </td></tr>
+    <tr><td class="paramname">yOffset</td><td>Y coordinate offset in the bitmap.<br/>
+ </td></tr>
+    <tr><td class="paramname">width</td><td>Width of the sub-bitmap.<br/>
+ </td></tr>
+    <tr><td class="paramname">height</td><td>Height of the sub-bitmap.<br/>
+ </td></tr>
+    <tr><td class="paramname">pow2Padding</td><td>The power of two conversion flag.<br/>
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Sub-bitmap instance or null in case of error (wrong dimensions). </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae82ec36b9101b55e32660b4a6d4b2c9e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_n_t_bitmap.html">NTBitmap</a> *) getUnpaddedBitmap </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns copy of the bitmap with padding removed.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>The bitmap with original dimensions. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a2828a10ed1c7d13238e8d07590640c6e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -354,12 +516,18 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac49b68a75392db9743d02bc203582c07"></a>
+<a class="anchor" id="a735f3d8c37b24ae9e754f0b549dcd9a9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (void) resize: </td>
+          <td class="memname">- (id) initWithUncompressedData: </td>
+          <td></td>
+          <td class="paramtype">(NTUnsignedCharVector*)&#160;</td>
+          <td class="paramname"><em>uncompressedData</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">width:</td>
           <td></td>
           <td class="paramtype">(unsigned int)&#160;</td>
           <td class="paramname"><em>width</em></td>
@@ -369,6 +537,18 @@ Instance Methods</h2></td></tr>
           <td></td>
           <td class="paramtype">(unsigned int)&#160;</td>
           <td class="paramname"><em>height</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">colorFormat:</td>
+          <td></td>
+          <td class="paramtype">(enum NTColorFormat)&#160;</td>
+          <td class="paramname"><em>colorFormat</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">bytesPerRow:</td>
+          <td></td>
+          <td class="paramtype">(int)&#160;</td>
+          <td class="paramname"><em>bytesPerRow</em></td>
         </tr>
         <tr>
           <td class="paramkey">pow2Padding:</td>
@@ -383,15 +563,21 @@ Instance Methods</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Resizes the bitmap to the desired dimensions. The power of two padding added during the construction of this bitmap<br/>
- will be removed prior to resizing. If the power of two conversion flag is set, new padding will be added to the image <br/>
- after resizing to make it's dimensions power of two.<br/>
+<p>Constructs a bitmap from an already decoded vector of bytes. The bitmap data is expected to be alpha premultiplied.<br/>
+ If the power of two conversion flag is set, additional padding will be added to the image to make it's dimensions power of two.<br/>
+ This can be useful when creating OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.<br/>
  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">width</td><td>The new width of this bitmap.<br/>
+    <tr><td class="paramname">uncompressedData</td><td>A vector of decoded, premultiplied bitmap bytes.<br/>
  </td></tr>
-    <tr><td class="paramname">height</td><td>The new height of this bitmap.<br/>
+    <tr><td class="paramname">width</td><td>The width of the bitmap.<br/>
+ </td></tr>
+    <tr><td class="paramname">height</td><td>The height of the bitmap.<br/>
+ </td></tr>
+    <tr><td class="paramname">colorFormat</td><td>The color format of the bitmap.<br/>
+ </td></tr>
+    <tr><td class="paramname">bytesPerRow</td><td>The total number of bytes per row. Some bitmaps have additional padding at the end of each row. If the value is negative, then bitmap is assumed to be vertically flipped. In this case absolute value of the bytesPerRow value is used.<br/>
  </td></tr>
     <tr><td class="paramname">pow2Padding</td><td>The power of two conversion flag. </td></tr>
   </table>
@@ -410,7 +596,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_bitmap.html">NTBitmap</a></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:42 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

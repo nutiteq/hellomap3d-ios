@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: NTTileData Class Reference</title>
+<title>Nutiteq Maps SDK iOS: NTTileData Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -105,6 +105,14 @@ $(document).ready(function(){initNavTree('interface_n_t_tile_data.html','');});
 Instance Methods</h2></td></tr>
 <tr class="memitem:ad50c516156f9b1868c5f83d781afb82e"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_data.html#ad50c516156f9b1868c5f83d781afb82e">initWithData:</a></td></tr>
 <tr class="separator:ad50c516156f9b1868c5f83d781afb82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ca96d60c7e4e74e62aa0f18b3cbebb2"><td class="memItemLeft" align="right" valign="top">(long long)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_data.html#a0ca96d60c7e4e74e62aa0f18b3cbebb2">getMaxAge</a></td></tr>
+<tr class="separator:a0ca96d60c7e4e74e62aa0f18b3cbebb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b5f00fb5d2601dc55c903cc89961a92"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_data.html#a3b5f00fb5d2601dc55c903cc89961a92">setMaxAge:</a></td></tr>
+<tr class="separator:a3b5f00fb5d2601dc55c903cc89961a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2de3f72c4de816cadea9ab8d6802488"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_data.html#ac2de3f72c4de816cadea9ab8d6802488">isReplaceWithParent</a></td></tr>
+<tr class="separator:ac2de3f72c4de816cadea9ab8d6802488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4936cc7c3cd652f4017872da2239c27c"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_data.html#a4936cc7c3cd652f4017872da2239c27c">setReplaceWithParent:</a></td></tr>
+<tr class="separator:a4936cc7c3cd652f4017872da2239c27c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9eb27a68ac8f8a786cfc778685f4402f"><td class="memItemLeft" align="right" valign="top">(NTUnsignedCharVector *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_data.html#a9eb27a68ac8f8a786cfc778685f4402f">getData</a></td></tr>
 <tr class="separator:a9eb27a68ac8f8a786cfc778685f4402f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -129,6 +137,24 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a0ca96d60c7e4e74e62aa0f18b3cbebb2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (long long) getMaxAge </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the maximum age of the tile data, tile data will expire after that point.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>Tile data maximum age in milliseconds, or -1 if the data does not expire. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ad50c516156f9b1868c5f83d781afb82e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -142,11 +168,71 @@ Instance Methods</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructs a VectorTileData object from a data blob.<br/>
+<p>Constructs a TileData object from a data blob.<br/>
  </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>The source tile data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac2de3f72c4de816cadea9ab8d6802488"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isReplaceWithParent </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns true if the tile should be replaced with parent tile.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the tile should be replaced with parent. False otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3b5f00fb5d2601dc55c903cc89961a92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) setMaxAge: </td>
+          <td></td>
+          <td class="paramtype">(long long)&#160;</td>
+          <td class="paramname"><em>age</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the maximum age of tile data, tile data will expire after that point.<br/>
+ </p>
+
+</div>
+</div>
+<a class="anchor" id="a4936cc7c3cd652f4017872da2239c27c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) setReplaceWithParent: </td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>flag</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the parent replacement flag.<br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flag</td><td>True when the tile should be replaced with the parent, false otherwise. </td></tr>
   </table>
   </dd>
 </dl>
@@ -163,7 +249,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_tile_data.html">NTTileData</a></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:44 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

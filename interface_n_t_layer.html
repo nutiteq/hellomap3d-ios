@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: NTLayer Class Reference</title>
+<title>Nutiteq Maps SDK iOS: NTLayer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -115,6 +115,8 @@ Inheritance diagram for NTLayer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
+<tr class="memitem:afd551c335b1c328b09c3bca63147590b"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_layer.html#afd551c335b1c328b09c3bca63147590b">getClassName</a></td></tr>
+<tr class="separator:afd551c335b1c328b09c3bca63147590b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac37fe5d793015c72e670df05ad1cbfe6"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_layer.html#ac37fe5d793015c72e670df05ad1cbfe6">getPriority</a></td></tr>
 <tr class="separator:ac37fe5d793015c72e670df05ad1cbfe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bae210e8bb58843d8a279dc1c93c5fe"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_layer.html#a2bae210e8bb58843d8a279dc1c93c5fe">setPriority:</a></td></tr>
@@ -127,6 +129,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:ab887e7026f95b0ef651d9e20a6e911ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32c97c75c58694b831a36f1d106c2f43"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_layer.html#a32c97c75c58694b831a36f1d106c2f43">setVisibleZoomRange:</a></td></tr>
 <tr class="separator:a32c97c75c58694b831a36f1d106c2f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc314a87ba82df62ef280e49687d1b58"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_layer.html#abc314a87ba82df62ef280e49687d1b58">isUpdateInProgress</a></td></tr>
+<tr class="separator:abc314a87ba82df62ef280e49687d1b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b16de576bd3810be705a12444178f41"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_layer.html#a5b16de576bd3810be705a12444178f41">update:</a></td></tr>
 <tr class="separator:a5b16de576bd3810be705a12444178f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa95d478a451d07606b148a858a2f1d9b"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_layer.html#aa95d478a451d07606b148a858a2f1d9b">refresh</a></td></tr>
@@ -135,6 +139,26 @@ Instance Methods</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An abstract base class for all layers. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="afd551c335b1c328b09c3bca63147590b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) getClassName </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the actual class name of this layer. This is used<br/>
+ for dynamically creating Java and ObjC proxy classes, because Swig can't automatically<br/>
+ generate child proxy classes from a base class pointer.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>The class name of this layer. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ac37fe5d793015c72e670df05ad1cbfe6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -168,6 +192,26 @@ Instance Methods</h2></td></tr>
 <p>Returns the visible zoom range of this layer.<br/>
  </p>
 <dl class="section return"><dt>Returns</dt><dd>The visible zoom range of this layer. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abc314a87ba82df62ef280e49687d1b58"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isUpdateInProgress </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tests whether this layer is being currently updated.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>True when the layer is being updated or false when the layer is in steady state. </dd></dl>
+
+<p>Reimplemented in <a class="el" href="interface_n_t_tile_layer.html#aef2f81db70976983f1869b183fbb99f4">NTTileLayer</a>, <a class="el" href="interface_n_t_n_m_l_model_l_o_d_tree_layer.html#ad78281ec877654e988790dc24bad8cff">NTNMLModelLODTreeLayer</a>, and <a class="el" href="interface_n_t_vector_layer.html#a7e60c8a4ff130b14f7ae44ccd90e3305">NTVectorLayer</a>.</p>
 
 </div>
 </div>
@@ -316,7 +360,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_layer.html">NTLayer</a></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:43 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

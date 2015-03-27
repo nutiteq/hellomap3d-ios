@@ -1,12 +1,14 @@
 var interface_n_t_base_map_view =
 [
     [ "cancelAllTasks", "interface_n_t_base_map_view.html#ae33f7ab1a982ca708ca71cba9d83c2f8", null ],
+    [ "captureRendering:waitWhileUpdating:", "interface_n_t_base_map_view.html#a14921c57b8116b7e70c0c7978d99bd27", null ],
     [ "clearAllCaches", "interface_n_t_base_map_view.html#a908a7a4fe1ffa6ad7326c7ef61403b5c", null ],
     [ "clearPreloadingCaches", "interface_n_t_base_map_view.html#a0d33cdf5a196bce627cd5eaedee05138", null ],
     [ "getFocusPos", "interface_n_t_base_map_view.html#a4e1dec077861e0e787c36b707f89df29", null ],
     [ "getLayers", "interface_n_t_base_map_view.html#a0cd6937a40991f3aa50b9c5efc32c51c", null ],
     [ "getMapEventListener", "interface_n_t_base_map_view.html#adc8b290501d94354db53e85b0bb7719e", null ],
     [ "getOptions", "interface_n_t_base_map_view.html#a1aa6f4a39cb46a7060956f90186b86d7", null ],
+    [ "getRedrawRequestListener", "interface_n_t_base_map_view.html#ac97fb4b66f7a594a3630af6d386387f3", null ],
     [ "getRotation", "interface_n_t_base_map_view.html#abbcaa3bd754ab4d273afcf262b082ab0", null ],
     [ "getTilt", "interface_n_t_base_map_view.html#aaf1708f3c488ef9a07e82c3cfae207be", null ],
     [ "getZoom", "interface_n_t_base_map_view.html#a7220f06dade3528ad5f9bacf7bcfcec6", null ],
@@ -23,6 +25,7 @@ var interface_n_t_base_map_view =
     [ "screenToMap:", "interface_n_t_base_map_view.html#a7eff99c63c20dbc2dd30f82b48883a2a", null ],
     [ "setFocusPos:durationSeconds:", "interface_n_t_base_map_view.html#a3df1f775770ff9cd97ca8d7a516282c9", null ],
     [ "setMapEventListener:", "interface_n_t_base_map_view.html#a537d86c51a08f39d2bef2c41af658528", null ],
+    [ "setRedrawRequestListener:", "interface_n_t_base_map_view.html#adb39c6d433ff25b8905f71e0915ffd2f", null ],
     [ "setRotation:durationSeconds:", "interface_n_t_base_map_view.html#ad6e9c6e25cba98348b8fb6dfef2be553", null ],
     [ "setRotation:targetPos:durationSeconds:", "interface_n_t_base_map_view.html#a3d00d219372d63d2b3e069d41d1d88dc", null ],
     [ "setTilt:durationSeconds:", "interface_n_t_base_map_view.html#af39ed457ad261fc1af8065542f6c006c", null ],

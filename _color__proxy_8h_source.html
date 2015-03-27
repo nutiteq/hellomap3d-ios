@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: tmp-doxygen/Color_proxy.h Source File</title>
+<title>Nutiteq Maps SDK iOS: tmp-doxygen/Color_proxy.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -120,24 +120,24 @@ $(document).ready(function(){initNavTree('_color__proxy_8h_source.html','');});
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;-(id)init;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;-(id)initWithR: (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)r g: (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)g b: (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)b a: (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)a;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;-(id)initWithColor: (<span class="keywordtype">int</span>)color;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;-(BOOL)equals: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)color;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;-(BOOL)differs: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)color;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;-(<span class="keywordtype">unsigned</span> char)getR;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;-(<span class="keywordtype">unsigned</span> char)getG;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;-(<span class="keywordtype">unsigned</span> char)getB;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;-(<span class="keywordtype">unsigned</span> char)getA;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;-(int)getARGB;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;-(NSString*)toString;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;-(void)dealloc;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;-(BOOL)isEqualInternal: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)color;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;-(<span class="keywordtype">unsigned</span> char)getR;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;-(<span class="keywordtype">unsigned</span> char)getG;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;-(<span class="keywordtype">unsigned</span> char)getB;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;-(<span class="keywordtype">unsigned</span> char)getA;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;-(int)getARGB;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;-(int)hashInternal;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;-(NSString*)toString;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;-(void)dealloc;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="interface_n_t_color_html"><div class="ttname"><a href="interface_n_t_color.html">NTColor</a></div><div class="ttdef"><b>Definition:</b> Color_proxy.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('_color__proxy_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_39407a35a676e69a760fd4862d1e3e08.html">tmp-doxygen</a></li><li class="navelem"><b>Color_proxy.h</b></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:42 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

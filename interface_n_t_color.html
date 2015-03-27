@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: NTColor Class Reference</title>
+<title>Nutiteq Maps SDK iOS: NTColor Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -109,10 +109,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a0ca727eb8ecee7fb8f27cf5c6aff9fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad57865ace78b6bff6cb604f5962fd13b"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_color.html#ad57865ace78b6bff6cb604f5962fd13b">initWithColor:</a></td></tr>
 <tr class="separator:ad57865ace78b6bff6cb604f5962fd13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ed193a70a3ca89940cf859607c9358e"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_color.html#a8ed193a70a3ca89940cf859607c9358e">equals:</a></td></tr>
-<tr class="separator:a8ed193a70a3ca89940cf859607c9358e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a865814f9baaa19214b82306a56b09ff0"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_color.html#a865814f9baaa19214b82306a56b09ff0">differs:</a></td></tr>
-<tr class="separator:a865814f9baaa19214b82306a56b09ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d4950f2af8eb4744b95c72d970c3142"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_color.html#a3d4950f2af8eb4744b95c72d970c3142">isEqualInternal:</a></td></tr>
+<tr class="separator:a3d4950f2af8eb4744b95c72d970c3142"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0074439aa6b0e5c55360994c1e23933"><td class="memItemLeft" align="right" valign="top">(unsigned char)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_color.html#ad0074439aa6b0e5c55360994c1e23933">getR</a></td></tr>
 <tr class="separator:ad0074439aa6b0e5c55360994c1e23933"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a394e41cba5b68818ad0518833e2c701f"><td class="memItemLeft" align="right" valign="top">(unsigned char)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_color.html#a394e41cba5b68818ad0518833e2c701f">getG</a></td></tr>
@@ -123,64 +121,14 @@ Instance Methods</h2></td></tr>
 <tr class="separator:af74e866767c85df5da10d8420279c895"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aada95d30d66dbefd2eee16858f604d1d"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_color.html#aada95d30d66dbefd2eee16858f604d1d">getARGB</a></td></tr>
 <tr class="separator:aada95d30d66dbefd2eee16858f604d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae20d55d4407bffbe4609b666b9999440"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_color.html#ae20d55d4407bffbe4609b666b9999440">hashInternal</a></td></tr>
+<tr class="separator:ae20d55d4407bffbe4609b666b9999440"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6db4bfa47939ab1d5d7c8b921a01cd2"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_color.html#af6db4bfa47939ab1d5d7c8b921a01cd2">toString</a></td></tr>
 <tr class="separator:af6db4bfa47939ab1d5d7c8b921a01cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A color represented in RGBA space, alpha is expected to be non-premultiplied. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
-<a class="anchor" id="a865814f9baaa19214b82306a56b09ff0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) differs: </td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_n_t_color.html">NTColor</a>*)&#160;</td>
-          <td class="paramname"><em>color</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Checks for inequality between this and another map color.<br/>
- </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">color</td><td>The other map color.<br/>
- </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if not equal. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a8ed193a70a3ca89940cf859607c9358e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) equals: </td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_n_t_color.html">NTColor</a>*)&#160;</td>
-          <td class="paramname"><em>color</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Checks for equality between this and another map color.<br/>
- </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">color</td><td>The other map vector.<br/>
- </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if equal. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="af74e866767c85df5da10d8420279c895"></a>
 <div class="memitem">
 <div class="memproto">
@@ -268,6 +216,24 @@ Instance Methods</h2></td></tr>
 <p>Returns the red component of this map color.<br/>
  </p>
 <dl class="section return"><dt>Returns</dt><dd>The red component in the [0..255] range. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae20d55d4407bffbe4609b666b9999440"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int) hashInternal </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the hash value of this object.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>The hash value of this object. </dd></dl>
 
 </div>
 </div>
@@ -365,6 +331,32 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3d4950f2af8eb4744b95c72d970c3142"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isEqualInternal: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_n_t_color.html">NTColor</a>*)&#160;</td>
+          <td class="paramname"><em>color</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Checks for equality between this and another map color.<br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>The other map vector.<br/>
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if equal. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="af6db4bfa47939ab1d5d7c8b921a01cd2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -393,7 +385,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_color.html">NTColor</a></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:43 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: tmp-doxygen/MapVec_proxy.h Source File</title>
+<title>Nutiteq Maps SDK iOS: tmp-doxygen/MapVec_proxy.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -110,53 +110,51 @@ $(document).ready(function(){initNavTree('_map_vec__proxy_8h_source.html','');})
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;Tuple3D_proxy.h&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="interface_n_t_map_vec.html">   24</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_map_vec.html">NTMapVec</a> : <a class="code" href="interface_n_t_tuple3_d.html">NTTuple3D</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;-(void*)getCptr;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;-(id)<a class="code" href="interface_n_t_map_vec.html#a6c35d1207f353bb689b6f1ce8c67c361">init</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;-(id)initWithX: (<span class="keywordtype">double</span>)x y: (<span class="keywordtype">double</span>)y;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;-(id)initWithX: (<span class="keywordtype">double</span>)x y: (<span class="keywordtype">double</span>)y z: (<span class="keywordtype">double</span>)z;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;-(<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)add: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)v;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;-(<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)sub: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)v;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;-(<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)mul: (<span class="keywordtype">double</span>)multiplier;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;-(<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)div: (<span class="keywordtype">double</span>)divider;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;-(BOOL)equals: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)v;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;-(BOOL)differs: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)v;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;-(double)<a class="code" href="interface_n_t_map_vec.html#a60e637f1a371c7feae7739047eb64e78">length</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;-(double)<a class="code" href="interface_n_t_map_vec.html#afc25bd94a04696893ce4f229f15415e6">lengthSqr</a>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;-(<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)<a class="code" href="interface_n_t_map_vec.html#ac7b18f3eb6cf3aaf82c102714739e737">getNormalized</a>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;-(<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)getRotated2D: (<span class="keywordtype">double</span>)sin cos: (<span class="keywordtype">double</span>)cos;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;-(double)crossProduct2D: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)v;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;-(<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)crossProduct3D: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)v;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;-(double)dotProduct: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)v;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;-(NSString*)<a class="code" href="interface_n_t_map_vec.html#a2b2e012bf821cdbc1adca93ace84c5fe">toString</a>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;-(void)dealloc;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor"></span></div>
-<div class="ttc" id="interface_n_t_tuple3_d_html"><div class="ttname"><a href="interface_n_t_tuple3_d.html">NTTuple3D</a></div><div class="ttdef"><b>Definition:</b> Tuple3D_proxy.h:21</div></div>
-<div class="ttc" id="interface_n_t_map_vec_html_a2b2e012bf821cdbc1adca93ace84c5fe"><div class="ttname"><a href="interface_n_t_map_vec.html#a2b2e012bf821cdbc1adca93ace84c5fe">-[NTMapVec toString]</a></div><div class="ttdeci">NSString * toString()</div><div class="ttdef"><b>Definition:</b> MapVec_proxy.mm:141</div></div>
-<div class="ttc" id="interface_n_t_map_vec_html_a60e637f1a371c7feae7739047eb64e78"><div class="ttname"><a href="interface_n_t_map_vec.html#a60e637f1a371c7feae7739047eb64e78">-[NTMapVec length]</a></div><div class="ttdeci">double length()</div><div class="ttdef"><b>Definition:</b> MapVec_proxy.mm:91</div></div>
-<div class="ttc" id="interface_n_t_map_vec_html"><div class="ttname"><a href="interface_n_t_map_vec.html">NTMapVec</a></div><div class="ttdef"><b>Definition:</b> MapVec_proxy.h:24</div></div>
-<div class="ttc" id="interface_n_t_map_vec_html_ac7b18f3eb6cf3aaf82c102714739e737"><div class="ttname"><a href="interface_n_t_map_vec.html#ac7b18f3eb6cf3aaf82c102714739e737">-[NTMapVec getNormalized]</a></div><div class="ttdeci">NTMapVec * getNormalized()</div><div class="ttdef"><b>Definition:</b> MapVec_proxy.mm:101</div></div>
-<div class="ttc" id="interface_n_t_map_vec_html_a6c35d1207f353bb689b6f1ce8c67c361"><div class="ttname"><a href="interface_n_t_map_vec.html#a6c35d1207f353bb689b6f1ce8c67c361">-[NTMapVec init]</a></div><div class="ttdeci">id init()</div><div class="ttdef"><b>Definition:</b> MapVec_proxy.mm:26</div></div>
-<div class="ttc" id="interface_n_t_map_vec_html_afc25bd94a04696893ce4f229f15415e6"><div class="ttname"><a href="interface_n_t_map_vec.html#afc25bd94a04696893ce4f229f15415e6">-[NTMapVec lengthSqr]</a></div><div class="ttdeci">double lengthSqr()</div><div class="ttdef"><b>Definition:</b> MapVec_proxy.mm:96</div></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="interface_n_t_map_vec.html">   21</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_map_vec.html">NTMapVec</a> : NSObject</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> *swigCPtr;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    BOOL swigCMemOwn;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;-(void*)getCptr;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;-(id)init;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;-(id)initWithX: (<span class="keywordtype">double</span>)x y: (<span class="keywordtype">double</span>)y;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;-(id)initWithX: (<span class="keywordtype">double</span>)x y: (<span class="keywordtype">double</span>)y z: (<span class="keywordtype">double</span>)z;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;-(double)getX;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;-(double)getY;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;-(double)getZ;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;-(<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)add: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)v;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;-(<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)sub: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)v;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;-(<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)mul: (<span class="keywordtype">double</span>)multiplier;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;-(<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)div: (<span class="keywordtype">double</span>)divider;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;-(BOOL)isEqualInternal: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)v;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;-(double)length;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;-(double)lengthSqr;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;-(<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)getNormalized;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;-(<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)getRotated2D: (<span class="keywordtype">double</span>)sin cos: (<span class="keywordtype">double</span>)cos;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;-(double)crossProduct2D: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)v;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;-(<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)crossProduct3D: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)v;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;-(double)dotProduct: (<a class="code" href="interface_n_t_map_vec.html">NTMapVec</a>*)v;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;-(int)hashInternal;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;-(NSString*)toString;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;-(void)dealloc;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="interface_n_t_map_vec_html"><div class="ttname"><a href="interface_n_t_map_vec.html">NTMapVec</a></div><div class="ttdef"><b>Definition:</b> MapVec_proxy.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_39407a35a676e69a760fd4862d1e3e08.html">tmp-doxygen</a></li><li class="navelem"><b>MapVec_proxy.h</b></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:42 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

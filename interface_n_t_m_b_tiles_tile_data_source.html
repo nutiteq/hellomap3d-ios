@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: NTMBTilesTileDataSource Class Reference</title>
+<title>Nutiteq Maps SDK iOS: NTMBTilesTileDataSource Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -110,10 +110,14 @@ Inheritance diagram for NTMBTilesTileDataSource:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
+<tr class="memitem:a655c0693ffb34c53d050522dbc7c1425"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_m_b_tiles_tile_data_source.html#a655c0693ffb34c53d050522dbc7c1425">initWithPath:</a></td></tr>
+<tr class="separator:a655c0693ffb34c53d050522dbc7c1425"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a458905086235974e0bd5306484176b"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_m_b_tiles_tile_data_source.html#a0a458905086235974e0bd5306484176b">initWithMinZoom:maxZoom:path:</a></td></tr>
 <tr class="separator:a0a458905086235974e0bd5306484176b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42d82451fa56153f8ac38d4af27f5743"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_m_b_tiles_tile_data_source.html#a42d82451fa56153f8ac38d4af27f5743">initWithMinZoom:maxZoom:path:scheme:</a></td></tr>
-<tr class="separator:a42d82451fa56153f8ac38d4af27f5743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77d0953095aadbaed8de58e72b1eb26a"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_m_b_tiles_tile_data_source.html#a77d0953095aadbaed8de58e72b1eb26a">initWithMinZoom:maxZoom:path:scheme:</a></td></tr>
+<tr class="separator:a77d0953095aadbaed8de58e72b1eb26a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22efc66b3baf5c6d988e92d4b8663161"><td class="memItemLeft" align="right" valign="top">(NTStringMap *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_m_b_tiles_tile_data_source.html#a22efc66b3baf5c6d988e92d4b8663161">getMetaData</a></td></tr>
+<tr class="separator:a22efc66b3baf5c6d988e92d4b8663161"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adab6cfff07c6c6e700f7dedd3ace8ac0"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_tile_data.html">NTTileData</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_m_b_tiles_tile_data_source.html#adab6cfff07c6c6e700f7dedd3ace8ac0">loadTile:</a></td></tr>
 <tr class="separator:adab6cfff07c6c6e700f7dedd3ace8ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interface_n_t_tile_data_source"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_interface_n_t_tile_data_source')"><img src="closed.png" alt="-"/>&#160;Instance Methods inherited from <a class="el" href="interface_n_t_tile_data_source.html">NTTileDataSource</a></td></tr>
@@ -132,6 +136,25 @@ Instance Methods</h2></td></tr>
  "zoom_level" (tile zoom level), "tile_column" (tile x coordinate),<br/>
  "tile_row" (tile y coordinate), "tile_data" (compressed tile image). </p>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="a22efc66b3baf5c6d988e92d4b8663161"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NTStringMap *) getMetaData </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get data source metadata information.<br/>
+ Possible parameters can be found in MBTiles specification.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>Map containing meta data information (parameter names mapped to parameter values). </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a0a458905086235974e0bd5306484176b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -176,7 +199,7 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a42d82451fa56153f8ac38d4af27f5743"></a>
+<a class="anchor" id="a77d0953095aadbaed8de58e72b1eb26a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -201,7 +224,7 @@ Instance Methods</h2></td></tr>
         <tr>
           <td class="paramkey">scheme:</td>
           <td></td>
-          <td class="paramtype">(enum MBTilesScheme)&#160;</td>
+          <td class="paramtype">(enum NTMBTilesScheme)&#160;</td>
           <td class="paramname"><em>scheme</em>&#160;</td>
         </tr>
         <tr>
@@ -222,6 +245,31 @@ Instance Methods</h2></td></tr>
     <tr><td class="paramname">path</td><td>The path to the local Sqlite database file.<br/>
  </td></tr>
     <tr><td class="paramname">scheme</td><td>Tile scheme to use. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a655c0693ffb34c53d050522dbc7c1425"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) initWithPath: </td>
+          <td></td>
+          <td class="paramtype">(NSString*)&#160;</td>
+          <td class="paramname"><em>path</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructs a MBTilesTileDataSource object. TMS tile scheme is used,<br/>
+ min and max zoom levels are automatically detected.<br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The path to the local Sqlite database file. </td></tr>
   </table>
   </dd>
 </dl>
@@ -266,7 +314,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_m_b_tiles_tile_data_source.html">NTMBTilesTileDataSource</a></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:43 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

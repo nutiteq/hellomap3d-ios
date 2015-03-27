@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: tmp-doxygen/Label_proxy.h Source File</title>
+<title>Nutiteq Maps SDK iOS: tmp-doxygen/Label_proxy.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -111,43 +111,46 @@ $(document).ready(function(){initNavTree('_label__proxy_8h_source.html','');});
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;Bitmap_proxy.h&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;Billboard_proxy.h&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#import &quot;LabelStyle_proxy.h&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="interface_n_t_label.html">   26</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_label.html">NTLabel</a> : <a class="code" href="interface_n_t_billboard.html">NTBillboard</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;-(void*)getCptr;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;-(id)initWithBaseBillboard: (<a class="code" href="interface_n_t_billboard.html">NTBillboard</a>*)baseBillboard style: (<a class="code" href="interface_n_t_label_style.html">NTLabelStyle</a>*)style;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;-(id)initWithGeometry: (<a class="code" href="interface_n_t_geometry.html">NTGeometry</a>*)geometry style: (<a class="code" href="interface_n_t_label_style.html">NTLabelStyle</a>*)style;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;-(id)initWithPos: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)pos style: (<a class="code" href="interface_n_t_label_style.html">NTLabelStyle</a>*)style;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;-(<a class="code" href="interface_n_t_bitmap.html">NTBitmap</a>*)drawBitmap: (<span class="keywordtype">float</span>)dpToPX;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;-(<a class="code" href="interface_n_t_label_style.html">NTLabelStyle</a>*)<a class="code" href="interface_n_t_label.html#aa41116c5cf9e19cc1c430747945a6601">getStyle</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;-(void)setStyle: (<a class="code" href="interface_n_t_label_style.html">NTLabelStyle</a>*)style;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;-(void)dealloc;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;MapPos_proxy.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;Bitmap_proxy.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#import &quot;Geometry_proxy.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#import &quot;PointGeometry_proxy.h&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#import &quot;LabelStyle_proxy.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#import &quot;Billboard_proxy.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="interface_n_t_label.html">   29</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_label.html">NTLabel</a> : <a class="code" href="interface_n_t_billboard.html">NTBillboard</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;-(void*)getCptr;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;-(id)initWithBaseBillboard: (<a class="code" href="interface_n_t_billboard.html">NTBillboard</a>*)baseBillboard style: (<a class="code" href="interface_n_t_label_style.html">NTLabelStyle</a>*)style;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;-(id)initWithGeometry: (<a class="code" href="interface_n_t_geometry.html">NTGeometry</a>*)geometry style: (<a class="code" href="interface_n_t_label_style.html">NTLabelStyle</a>*)style;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;-(id)initWithPos: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)pos style: (<a class="code" href="interface_n_t_label_style.html">NTLabelStyle</a>*)style;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;-(<a class="code" href="interface_n_t_bitmap.html">NTBitmap</a>*)drawBitmap: (<span class="keywordtype">float</span>)dpToPX;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;-(<a class="code" href="interface_n_t_label_style.html">NTLabelStyle</a>*)<a class="code" href="interface_n_t_label.html#aa41116c5cf9e19cc1c430747945a6601">getStyle</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;-(void)setStyle: (<a class="code" href="interface_n_t_label_style.html">NTLabelStyle</a>*)style;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;-(void)dealloc;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span></div>
-<div class="ttc" id="interface_n_t_map_pos_html"><div class="ttname"><a href="interface_n_t_map_pos.html">NTMapPos</a></div><div class="ttdef"><b>Definition:</b> MapPos_proxy.h:27</div></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="interface_n_t_map_pos_html"><div class="ttname"><a href="interface_n_t_map_pos.html">NTMapPos</a></div><div class="ttdef"><b>Definition:</b> MapPos_proxy.h:26</div></div>
 <div class="ttc" id="interface_n_t_label_style_html"><div class="ttname"><a href="interface_n_t_label_style.html">NTLabelStyle</a></div><div class="ttdef"><b>Definition:</b> LabelStyle_proxy.h:25</div></div>
 <div class="ttc" id="interface_n_t_label_html_aa41116c5cf9e19cc1c430747945a6601"><div class="ttname"><a href="interface_n_t_label.html#aa41116c5cf9e19cc1c430747945a6601">-[NTLabel getStyle]</a></div><div class="ttdeci">NTLabelStyle * getStyle()</div></div>
-<div class="ttc" id="interface_n_t_bitmap_html"><div class="ttname"><a href="interface_n_t_bitmap.html">NTBitmap</a></div><div class="ttdef"><b>Definition:</b> Bitmap_proxy.h:70</div></div>
-<div class="ttc" id="interface_n_t_billboard_html"><div class="ttname"><a href="interface_n_t_billboard.html">NTBillboard</a></div><div class="ttdef"><b>Definition:</b> Billboard_proxy.h:28</div></div>
-<div class="ttc" id="interface_n_t_geometry_html"><div class="ttname"><a href="interface_n_t_geometry.html">NTGeometry</a></div><div class="ttdef"><b>Definition:</b> Geometry_proxy.h:24</div></div>
-<div class="ttc" id="interface_n_t_label_html"><div class="ttname"><a href="interface_n_t_label.html">NTLabel</a></div><div class="ttdef"><b>Definition:</b> Label_proxy.h:26</div></div>
+<div class="ttc" id="interface_n_t_bitmap_html"><div class="ttname"><a href="interface_n_t_bitmap.html">NTBitmap</a></div><div class="ttdef"><b>Definition:</b> Bitmap_proxy.h:69</div></div>
+<div class="ttc" id="interface_n_t_billboard_html"><div class="ttname"><a href="interface_n_t_billboard.html">NTBillboard</a></div><div class="ttdef"><b>Definition:</b> Billboard_proxy.h:30</div></div>
+<div class="ttc" id="interface_n_t_geometry_html"><div class="ttname"><a href="interface_n_t_geometry.html">NTGeometry</a></div><div class="ttdef"><b>Definition:</b> Geometry_proxy.h:25</div></div>
+<div class="ttc" id="interface_n_t_label_html"><div class="ttname"><a href="interface_n_t_label.html">NTLabel</a></div><div class="ttdef"><b>Definition:</b> Label_proxy.h:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_39407a35a676e69a760fd4862d1e3e08.html">tmp-doxygen</a></li><li class="navelem"><b>Label_proxy.h</b></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:42 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: tmp-doxygen/PointStyleBuilder_proxy.h Source File</title>
+<title>Nutiteq Maps SDK iOS: tmp-doxygen/PointStyleBuilder_proxy.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -111,37 +111,38 @@ $(document).ready(function(){initNavTree('_point_style_builder__proxy_8h_source.
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;PointStyle_proxy.h&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;StyleBuilder_proxy.h&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="interface_n_t_point_style_builder.html">   25</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_point_style_builder.html">NTPointStyleBuilder</a> : <a class="code" href="interface_n_t_style_builder.html">NTStyleBuilder</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;-(void*)getCptr;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;-(id)<a class="code" href="interface_n_t_point_style_builder.html#a32dbe33f37e57b1f2e06b3c0a4d56ba8">init</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;-(<a class="code" href="interface_n_t_bitmap.html">NTBitmap</a>*)<a class="code" href="interface_n_t_point_style_builder.html#ab55a7fd9b36d1bb71b236672bcd77402">getBitmap</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;-(void)setBitmap: (<a class="code" href="interface_n_t_bitmap.html">NTBitmap</a>*)bitmap;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;-(float)<a class="code" href="interface_n_t_point_style_builder.html#a8aedfb1e91f507834761aa4a30e81047">getClickSize</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;-(void)setClickSize: (<span class="keywordtype">float</span>)size;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;-(float)<a class="code" href="interface_n_t_point_style_builder.html#a2f0916441dd4499013a3d4d3a1f9b39d">getSize</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;-(void)setSize: (<span class="keywordtype">float</span>)size;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;-(<a class="code" href="interface_n_t_point_style.html">NTPointStyle</a>*)<a class="code" href="interface_n_t_point_style_builder.html#a0cfc4e5618c369965dc56a281d5cb205">buildStyle</a>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;-(void)dealloc;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;Bitmap_proxy.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;PointStyle_proxy.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#import &quot;StyleBuilder_proxy.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="interface_n_t_point_style_builder.html">   26</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_point_style_builder.html">NTPointStyleBuilder</a> : <a class="code" href="interface_n_t_style_builder.html">NTStyleBuilder</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;-(void*)getCptr;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;-(id)<a class="code" href="interface_n_t_point_style_builder.html#a32dbe33f37e57b1f2e06b3c0a4d56ba8">init</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;-(<a class="code" href="interface_n_t_bitmap.html">NTBitmap</a>*)<a class="code" href="interface_n_t_point_style_builder.html#ab55a7fd9b36d1bb71b236672bcd77402">getBitmap</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;-(void)setBitmap: (<a class="code" href="interface_n_t_bitmap.html">NTBitmap</a>*)bitmap;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;-(float)<a class="code" href="interface_n_t_point_style_builder.html#a8aedfb1e91f507834761aa4a30e81047">getClickSize</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;-(void)setClickSize: (<span class="keywordtype">float</span>)size;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;-(float)<a class="code" href="interface_n_t_point_style_builder.html#a2f0916441dd4499013a3d4d3a1f9b39d">getSize</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;-(void)setSize: (<span class="keywordtype">float</span>)size;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;-(<a class="code" href="interface_n_t_point_style.html">NTPointStyle</a>*)<a class="code" href="interface_n_t_point_style_builder.html#a0cfc4e5618c369965dc56a281d5cb205">buildStyle</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;-(void)dealloc;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">@end</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor"></span></div>
-<div class="ttc" id="interface_n_t_point_style_builder_html"><div class="ttname"><a href="interface_n_t_point_style_builder.html">NTPointStyleBuilder</a></div><div class="ttdef"><b>Definition:</b> PointStyleBuilder_proxy.h:25</div></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="interface_n_t_point_style_builder_html"><div class="ttname"><a href="interface_n_t_point_style_builder.html">NTPointStyleBuilder</a></div><div class="ttdef"><b>Definition:</b> PointStyleBuilder_proxy.h:26</div></div>
 <div class="ttc" id="interface_n_t_point_style_builder_html_a8aedfb1e91f507834761aa4a30e81047"><div class="ttname"><a href="interface_n_t_point_style_builder.html#a8aedfb1e91f507834761aa4a30e81047">-[NTPointStyleBuilder getClickSize]</a></div><div class="ttdeci">float getClickSize()</div><div class="ttdef"><b>Definition:</b> PointStyleBuilder_proxy.mm:46</div></div>
 <div class="ttc" id="interface_n_t_style_builder_html"><div class="ttname"><a href="interface_n_t_style_builder.html">NTStyleBuilder</a></div><div class="ttdef"><b>Definition:</b> StyleBuilder_proxy.h:24</div></div>
-<div class="ttc" id="interface_n_t_point_style_html"><div class="ttname"><a href="interface_n_t_point_style.html">NTPointStyle</a></div><div class="ttdef"><b>Definition:</b> PointStyle_proxy.h:25</div></div>
+<div class="ttc" id="interface_n_t_point_style_html"><div class="ttname"><a href="interface_n_t_point_style.html">NTPointStyle</a></div><div class="ttdef"><b>Definition:</b> PointStyle_proxy.h:26</div></div>
 <div class="ttc" id="interface_n_t_point_style_builder_html_a2f0916441dd4499013a3d4d3a1f9b39d"><div class="ttname"><a href="interface_n_t_point_style_builder.html#a2f0916441dd4499013a3d4d3a1f9b39d">-[NTPointStyleBuilder getSize]</a></div><div class="ttdeci">float getSize()</div><div class="ttdef"><b>Definition:</b> PointStyleBuilder_proxy.mm:56</div></div>
 <div class="ttc" id="interface_n_t_point_style_builder_html_ab55a7fd9b36d1bb71b236672bcd77402"><div class="ttname"><a href="interface_n_t_point_style_builder.html#ab55a7fd9b36d1bb71b236672bcd77402">-[NTPointStyleBuilder getBitmap]</a></div><div class="ttdeci">NTBitmap * getBitmap()</div><div class="ttdef"><b>Definition:</b> PointStyleBuilder_proxy.mm:31</div></div>
-<div class="ttc" id="interface_n_t_bitmap_html"><div class="ttname"><a href="interface_n_t_bitmap.html">NTBitmap</a></div><div class="ttdef"><b>Definition:</b> Bitmap_proxy.h:70</div></div>
+<div class="ttc" id="interface_n_t_bitmap_html"><div class="ttname"><a href="interface_n_t_bitmap.html">NTBitmap</a></div><div class="ttdef"><b>Definition:</b> Bitmap_proxy.h:69</div></div>
 <div class="ttc" id="interface_n_t_point_style_builder_html_a0cfc4e5618c369965dc56a281d5cb205"><div class="ttname"><a href="interface_n_t_point_style_builder.html#a0cfc4e5618c369965dc56a281d5cb205">-[NTPointStyleBuilder buildStyle]</a></div><div class="ttdeci">NTPointStyle * buildStyle()</div><div class="ttdef"><b>Definition:</b> PointStyleBuilder_proxy.mm:66</div></div>
 <div class="ttc" id="interface_n_t_point_style_builder_html_a32dbe33f37e57b1f2e06b3c0a4d56ba8"><div class="ttname"><a href="interface_n_t_point_style_builder.html#a32dbe33f37e57b1f2e06b3c0a4d56ba8">-[NTPointStyleBuilder init]</a></div><div class="ttdeci">id init()</div><div class="ttdef"><b>Definition:</b> PointStyleBuilder_proxy.mm:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -150,7 +151,7 @@ $(document).ready(function(){initNavTree('_point_style_builder__proxy_8h_source.
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_39407a35a676e69a760fd4862d1e3e08.html">tmp-doxygen</a></li><li class="navelem"><b>PointStyleBuilder_proxy.h</b></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:42 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: NTMapBounds Class Reference</title>
+<title>Nutiteq Maps SDK iOS: NTMapBounds Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -107,10 +107,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a4b316ec59897beb51487036ce00a100c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad368d61ed4ec64a42c194a467bceee11"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_bounds.html#ad368d61ed4ec64a42c194a467bceee11">initWithMin:max:</a></td></tr>
 <tr class="separator:ad368d61ed4ec64a42c194a467bceee11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f7c08c25d8be1b31cbfa1f33baa922e"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_bounds.html#a8f7c08c25d8be1b31cbfa1f33baa922e">equals:</a></td></tr>
-<tr class="separator:a8f7c08c25d8be1b31cbfa1f33baa922e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53a19ace9a5cedf4132059ac8fe59c58"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_bounds.html#a53a19ace9a5cedf4132059ac8fe59c58">differs:</a></td></tr>
-<tr class="separator:a53a19ace9a5cedf4132059ac8fe59c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef7b72ef864f99b7c5e422258baa71e"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_bounds.html#acef7b72ef864f99b7c5e422258baa71e">isEqualInternal:</a></td></tr>
+<tr class="separator:acef7b72ef864f99b7c5e422258baa71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a597dbc27a6bebc6864a6f5d7b7c72123"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_map_pos.html">NTMapPos</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_bounds.html#a597dbc27a6bebc6864a6f5d7b7c72123">getCenter</a></td></tr>
 <tr class="separator:a597dbc27a6bebc6864a6f5d7b7c72123"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81c5846eca596d40efa02772bdf721b4"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_map_vec.html">NTMapVec</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_bounds.html#a81c5846eca596d40efa02772bdf721b4">getDelta</a></td></tr>
@@ -125,6 +123,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a3afcefe4885983324fd8dcc7a440a42f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a563fa83b7d977ecd87e3880d7cf179c1"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_bounds.html#a563fa83b7d977ecd87e3880d7cf179c1">intersects:</a></td></tr>
 <tr class="separator:a563fa83b7d977ecd87e3880d7cf179c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9921e09fff52ab8bd9792ab552b051b2"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_bounds.html#a9921e09fff52ab8bd9792ab552b051b2">hashInternal</a></td></tr>
+<tr class="separator:a9921e09fff52ab8bd9792ab552b051b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a786f4e3f462460a953a45e2f5191aaf2"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_bounds.html#a786f4e3f462460a953a45e2f5191aaf2">toString</a></td></tr>
 <tr class="separator:a786f4e3f462460a953a45e2f5191aaf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -181,58 +181,6 @@ Instance Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if this map bounds object contains the map position. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a53a19ace9a5cedf4132059ac8fe59c58"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) differs: </td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_n_t_map_bounds.html">NTMapBounds</a>*)&#160;</td>
-          <td class="paramname"><em>mapBounds</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Checks for inequality between this and another map bounds object.<br/>
- </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mapBounds</td><td>The other map bounds object.<br/>
- </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if not equal. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a8f7c08c25d8be1b31cbfa1f33baa922e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) equals: </td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_n_t_map_bounds.html">NTMapBounds</a>*)&#160;</td>
-          <td class="paramname"><em>mapBounds</em></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Checks for equality between this and another map bounds object.<br/>
- </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mapBounds</td><td>The other map bounds object.<br/>
- </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if equal. </dd></dl>
 
 </div>
 </div>
@@ -305,6 +253,24 @@ Instance Methods</h2></td></tr>
 <p>Returns the minimum map position of this map envelope object.<br/>
  </p>
 <dl class="section return"><dt>Returns</dt><dd>The minimum map position of this map envelope object. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9921e09fff52ab8bd9792ab552b051b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int) hashInternal </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the hash value of this object.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>The hash value of this object. </dd></dl>
 
 </div>
 </div>
@@ -390,6 +356,32 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="acef7b72ef864f99b7c5e422258baa71e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isEqualInternal: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_n_t_map_bounds.html">NTMapBounds</a>*)&#160;</td>
+          <td class="paramname"><em>mapBounds</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Checks for equality between this and another map bounds object.<br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mapBounds</td><td>The other map bounds object.<br/>
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if equal. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a786f4e3f462460a953a45e2f5191aaf2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -418,7 +410,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_map_bounds.html">NTMapBounds</a></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:43 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

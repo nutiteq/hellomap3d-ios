@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: tmp-doxygen/ViewState_proxy.h Source File</title>
+<title>Nutiteq Maps SDK iOS: tmp-doxygen/ViewState_proxy.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -111,12 +111,12 @@ $(document).ready(function(){initNavTree('_view_state__proxy_8h_source.html','')
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;Frustum_proxy.h&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;MapPos_proxy.h&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#import &quot;ScreenPos_proxy.h&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#import &quot;MapVec_proxy.h&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#import &quot;Matrices_proxy.h&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#import &quot;Options_proxy.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;MapPos_proxy.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;ScreenPos_proxy.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#import &quot;MapVec_proxy.h&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#import &quot;Options_proxy.h&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#import &quot;Frustum_proxy.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#import &quot;Projection_proxy.h&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="interface_n_t_view_state.html">   29</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_view_state.html">NTViewState</a> : NSObject</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
@@ -152,30 +152,25 @@ $(document).ready(function(){initNavTree('_view_state__proxy_8h_source.html','')
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;-(float)getUnitToPXCoef;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;-(float)getUnitToDPCoef;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;-(enum NTProjectionMode)getProjectionMode;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;-(NTMatrix4D*)getProjectionMat;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;-(NTMatrix4D*)getModelviewMat;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;-(NTMatrix4D*)getModelviewProjectionMat;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;-(NTMatrix4F*)getRTEModelviewMat;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;-(NTMatrix4F*)getRTEModelviewProjectionMat;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;-(<a class="code" href="interface_n_t_frustum.html">NTFrustum</a>*)getFrustum;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;-(int)getScreenWidth;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;-(int)getScreenHeight;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;-(<a class="code" href="interface_n_t_screen_pos.html">NTScreenPos</a>*)worldToScreen: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)worldPos options: (<a class="code" href="interface_n_t_options.html">NTOptions</a>*)options;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;-(void)dealloc;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;-(<a class="code" href="interface_n_t_frustum.html">NTFrustum</a>*)getFrustum;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;-(int)getScreenWidth;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;-(int)getScreenHeight;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;-(<a class="code" href="interface_n_t_screen_pos.html">NTScreenPos</a>*)worldToScreen: (<a class="code" href="interface_n_t_map_pos.html">NTMapPos</a>*)worldPos options: (<a class="code" href="interface_n_t_options.html">NTOptions</a>*)options;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;-(void)dealloc;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="interface_n_t_screen_pos_html"><div class="ttname"><a href="interface_n_t_screen_pos.html">NTScreenPos</a></div><div class="ttdef"><b>Definition:</b> ScreenPos_proxy.h:21</div></div>
-<div class="ttc" id="interface_n_t_map_vec_html"><div class="ttname"><a href="interface_n_t_map_vec.html">NTMapVec</a></div><div class="ttdef"><b>Definition:</b> MapVec_proxy.h:24</div></div>
-<div class="ttc" id="interface_n_t_map_pos_html"><div class="ttname"><a href="interface_n_t_map_pos.html">NTMapPos</a></div><div class="ttdef"><b>Definition:</b> MapPos_proxy.h:27</div></div>
-<div class="ttc" id="interface_n_t_frustum_html"><div class="ttname"><a href="interface_n_t_frustum.html">NTFrustum</a></div><div class="ttdef"><b>Definition:</b> Frustum_proxy.h:26</div></div>
-<div class="ttc" id="interface_n_t_options_html"><div class="ttname"><a href="interface_n_t_options.html">NTOptions</a></div><div class="ttdef"><b>Definition:</b> Options_proxy.h:74</div></div>
+<div class="ttc" id="interface_n_t_map_vec_html"><div class="ttname"><a href="interface_n_t_map_vec.html">NTMapVec</a></div><div class="ttdef"><b>Definition:</b> MapVec_proxy.h:21</div></div>
+<div class="ttc" id="interface_n_t_map_pos_html"><div class="ttname"><a href="interface_n_t_map_pos.html">NTMapPos</a></div><div class="ttdef"><b>Definition:</b> MapPos_proxy.h:26</div></div>
+<div class="ttc" id="interface_n_t_frustum_html"><div class="ttname"><a href="interface_n_t_frustum.html">NTFrustum</a></div><div class="ttdef"><b>Definition:</b> Frustum_proxy.h:25</div></div>
+<div class="ttc" id="interface_n_t_options_html"><div class="ttname"><a href="interface_n_t_options.html">NTOptions</a></div><div class="ttdef"><b>Definition:</b> Options_proxy.h:73</div></div>
 <div class="ttc" id="interface_n_t_view_state_html"><div class="ttname"><a href="interface_n_t_view_state.html">NTViewState</a></div><div class="ttdef"><b>Definition:</b> ViewState_proxy.h:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -183,7 +178,7 @@ $(document).ready(function(){initNavTree('_view_state__proxy_8h_source.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_39407a35a676e69a760fd4862d1e3e08.html">tmp-doxygen</a></li><li class="navelem"><b>ViewState_proxy.h</b></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:42 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

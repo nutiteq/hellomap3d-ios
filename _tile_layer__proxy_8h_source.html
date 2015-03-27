@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: tmp-doxygen/TileLayer_proxy.h Source File</title>
+<title>Nutiteq Maps SDK iOS: tmp-doxygen/TileLayer_proxy.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -111,36 +111,35 @@ $(document).ready(function(){initNavTree('_tile_layer__proxy_8h_source.html','')
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;Layer_proxy.h&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;TileDataSource_proxy.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#import &quot;TileDataSource_proxy.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#import &quot;Layer_proxy.h&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="interface_n_t_tile_layer.html">   25</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_tile_layer.html">NTTileLayer</a> : <a class="code" href="interface_n_t_layer.html">NTLayer</a></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;-(void*)getCptr;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;-(<a class="code" href="interface_n_t_tile_data_source.html">NTTileDataSource</a>*)<a class="code" href="interface_n_t_tile_layer.html#a80305e14b06fd10b2c836d149356be96">getDataSource</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;-(<a class="code" href="interface_n_t_tile_data_source.html">NTTileDataSource</a> *)<a class="code" href="interface_n_t_tile_layer.html#a80305e14b06fd10b2c836d149356be96">getDataSource</a>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;-(BOOL)<a class="code" href="interface_n_t_tile_layer.html#a9ac1fca026d09d3c613a71a179dc6bd5">isPreloading</a>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;-(void)setPreloading: (BOOL)preloading;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;-(BOOL)<a class="code" href="interface_n_t_tile_layer.html#a1f35a0d22cf13633250afbe76a6b4d39">isParentTileReplacement</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;-(void)setParentTileReplacement: (BOOL)parentTileReplacement;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;-(float)<a class="code" href="interface_n_t_tile_layer.html#a08df2bde530f28ee1d554ad34ee1e428">getZoomLevelBias</a>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;-(void)setZoomLevelBias: (<span class="keywordtype">float</span>)bias;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;-(void)clearTileCaches: (BOOL)all;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;-(void)dealloc;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor"></span></div>
-<div class="ttc" id="interface_n_t_tile_data_source_html"><div class="ttname"><a href="interface_n_t_tile_data_source.html">NTTileDataSource</a></div><div class="ttdef"><b>Definition:</b> TileDataSource_proxy.h:26</div></div>
-<div class="ttc" id="interface_n_t_tile_layer_html_a08df2bde530f28ee1d554ad34ee1e428"><div class="ttname"><a href="interface_n_t_tile_layer.html#a08df2bde530f28ee1d554ad34ee1e428">-[NTTileLayer getZoomLevelBias]</a></div><div class="ttdeci">float getZoomLevelBias()</div><div class="ttdef"><b>Definition:</b> TileLayer_proxy.mm:56</div></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;-(float)<a class="code" href="interface_n_t_tile_layer.html#a08df2bde530f28ee1d554ad34ee1e428">getZoomLevelBias</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;-(void)setZoomLevelBias: (<span class="keywordtype">float</span>)bias;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;-(void)clearTileCaches: (BOOL)all;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;-(BOOL)<a class="code" href="interface_n_t_tile_layer.html#aef2f81db70976983f1869b183fbb99f4">isUpdateInProgress</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;-(void)dealloc;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="interface_n_t_tile_data_source_html"><div class="ttname"><a href="interface_n_t_tile_data_source.html">NTTileDataSource</a></div><div class="ttdef"><b>Definition:</b> TileDataSource_proxy.h:27</div></div>
+<div class="ttc" id="interface_n_t_tile_layer_html_a08df2bde530f28ee1d554ad34ee1e428"><div class="ttname"><a href="interface_n_t_tile_layer.html#a08df2bde530f28ee1d554ad34ee1e428">-[NTTileLayer getZoomLevelBias]</a></div><div class="ttdeci">float getZoomLevelBias()</div><div class="ttdef"><b>Definition:</b> TileLayer_proxy.mm:43</div></div>
 <div class="ttc" id="interface_n_t_tile_layer_html_a80305e14b06fd10b2c836d149356be96"><div class="ttname"><a href="interface_n_t_tile_layer.html#a80305e14b06fd10b2c836d149356be96">-[NTTileLayer getDataSource]</a></div><div class="ttdeci">NTTileDataSource * getDataSource()</div><div class="ttdef"><b>Definition:</b> TileLayer_proxy.mm:26</div></div>
 <div class="ttc" id="interface_n_t_tile_layer_html"><div class="ttname"><a href="interface_n_t_tile_layer.html">NTTileLayer</a></div><div class="ttdef"><b>Definition:</b> TileLayer_proxy.h:25</div></div>
-<div class="ttc" id="interface_n_t_tile_layer_html_a9ac1fca026d09d3c613a71a179dc6bd5"><div class="ttname"><a href="interface_n_t_tile_layer.html#a9ac1fca026d09d3c613a71a179dc6bd5">-[NTTileLayer isPreloading]</a></div><div class="ttdeci">BOOL isPreloading()</div><div class="ttdef"><b>Definition:</b> TileLayer_proxy.mm:36</div></div>
-<div class="ttc" id="interface_n_t_tile_layer_html_a1f35a0d22cf13633250afbe76a6b4d39"><div class="ttname"><a href="interface_n_t_tile_layer.html#a1f35a0d22cf13633250afbe76a6b4d39">-[NTTileLayer isParentTileReplacement]</a></div><div class="ttdeci">BOOL isParentTileReplacement()</div><div class="ttdef"><b>Definition:</b> TileLayer_proxy.mm:46</div></div>
+<div class="ttc" id="interface_n_t_tile_layer_html_a9ac1fca026d09d3c613a71a179dc6bd5"><div class="ttname"><a href="interface_n_t_tile_layer.html#a9ac1fca026d09d3c613a71a179dc6bd5">-[NTTileLayer isPreloading]</a></div><div class="ttdeci">BOOL isPreloading()</div><div class="ttdef"><b>Definition:</b> TileLayer_proxy.mm:33</div></div>
+<div class="ttc" id="interface_n_t_tile_layer_html_aef2f81db70976983f1869b183fbb99f4"><div class="ttname"><a href="interface_n_t_tile_layer.html#aef2f81db70976983f1869b183fbb99f4">-[NTTileLayer isUpdateInProgress]</a></div><div class="ttdeci">BOOL isUpdateInProgress()</div><div class="ttdef"><b>Definition:</b> TileLayer_proxy.mm:58</div></div>
 <div class="ttc" id="interface_n_t_layer_html"><div class="ttname"><a href="interface_n_t_layer.html">NTLayer</a></div><div class="ttdef"><b>Definition:</b> Layer_proxy.h:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -148,7 +147,7 @@ $(document).ready(function(){initNavTree('_tile_layer__proxy_8h_source.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_39407a35a676e69a760fd4862d1e3e08.html">tmp-doxygen</a></li><li class="navelem"><b>TileLayer_proxy.h</b></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:42 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

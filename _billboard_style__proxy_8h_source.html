@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK 3 iOs: tmp-doxygen/BillboardStyle_proxy.h Source File</title>
+<title>Nutiteq Maps SDK iOS: tmp-doxygen/BillboardStyle_proxy.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK 3 iOs
-   &#160;<span id="projectnumber">3.0</span>
+   <div id="projectname">Nutiteq Maps SDK iOS
+   &#160;<span id="projectnumber">3.1</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -123,30 +123,31 @@ $(document).ready(function(){initNavTree('_billboard_style__proxy_8h_source.html
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#import &quot;Style_proxy.h&quot;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="interface_n_t_billboard_style.html">   66</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_billboard_style.html">NTBillboardStyle</a> : <a class="code" href="interface_n_t_style.html">NTStyle</a></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;-(void*)getCptr;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;-(id)initWithColor: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)color attachAnchorPointX: (<span class="keywordtype">float</span>)attachAnchorPointX attachAnchorPointY: (<span class="keywordtype">float</span>)attachAnchorPointY causesOverlap: (BOOL)causesOverlap hideIfOverlapped: (BOOL)hideIfOverlapped horizontalOffset: (<span class="keywordtype">float</span>)horizontalOffset verticalOffset: (<span class="keywordtype">float</span>)verticalOffset placementPriority: (<span class="keywordtype">int</span>)placementPriority scaleWithDPI: (BOOL)scaleWithDPI;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;-(float)<a class="code" href="interface_n_t_billboard_style.html#a9dc23e6f2c28044b38ab89cfcb15a50f">getAttachAnchorPointX</a>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;-(float)<a class="code" href="interface_n_t_billboard_style.html#af7dae5d93fb1b18eac8a8f1e569a4c9e">getAttachAnchorPointY</a>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;-(BOOL)<a class="code" href="interface_n_t_billboard_style.html#a707c0b7aee451d783fdc42fc68d801cc">isCausesOverlap</a>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;-(BOOL)<a class="code" href="interface_n_t_billboard_style.html#ac9410369ea8fe200b8c8cb143b21cff0">isHideIfOverlapped</a>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;-(float)<a class="code" href="interface_n_t_billboard_style.html#af5dc637aa2057e026ad3e0054fa16a02">getHorizontalOffset</a>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;-(float)<a class="code" href="interface_n_t_billboard_style.html#a7a445ab1ccfb3aab6344d826121ab952">getVerticalOffset</a>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;-(int)<a class="code" href="interface_n_t_billboard_style.html#a37b5697ea817a2c91bbd3d0b880e98db">getPlacementPriority</a>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;-(BOOL)<a class="code" href="interface_n_t_billboard_style.html#a6e7ade0aa734ca9b382a22792368e904">isScaleWithDPI</a>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;-(void)dealloc;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#import &quot;Color_proxy.h&quot;</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#import &quot;Style_proxy.h&quot;</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="interface_n_t_billboard_style.html">   67</a></span>&#160; <span class="keyword">@interface </span><a class="code" href="interface_n_t_billboard_style.html">NTBillboardStyle</a> : <a class="code" href="interface_n_t_style.html">NTStyle</a></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;-(void*)getCptr;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;-(id)initWithCptr: (<span class="keywordtype">void</span>*)cptr swigOwnCObject: (BOOL)ownCObject;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;-(id)initWithColor: (<a class="code" href="interface_n_t_color.html">NTColor</a>*)color attachAnchorPointX: (<span class="keywordtype">float</span>)attachAnchorPointX attachAnchorPointY: (<span class="keywordtype">float</span>)attachAnchorPointY causesOverlap: (BOOL)causesOverlap hideIfOverlapped: (BOOL)hideIfOverlapped horizontalOffset: (<span class="keywordtype">float</span>)horizontalOffset verticalOffset: (<span class="keywordtype">float</span>)verticalOffset placementPriority: (<span class="keywordtype">int</span>)placementPriority scaleWithDPI: (BOOL)scaleWithDPI;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;-(float)<a class="code" href="interface_n_t_billboard_style.html#a9dc23e6f2c28044b38ab89cfcb15a50f">getAttachAnchorPointX</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;-(float)<a class="code" href="interface_n_t_billboard_style.html#af7dae5d93fb1b18eac8a8f1e569a4c9e">getAttachAnchorPointY</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;-(BOOL)<a class="code" href="interface_n_t_billboard_style.html#a707c0b7aee451d783fdc42fc68d801cc">isCausesOverlap</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;-(BOOL)<a class="code" href="interface_n_t_billboard_style.html#ac9410369ea8fe200b8c8cb143b21cff0">isHideIfOverlapped</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;-(float)<a class="code" href="interface_n_t_billboard_style.html#af5dc637aa2057e026ad3e0054fa16a02">getHorizontalOffset</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;-(float)<a class="code" href="interface_n_t_billboard_style.html#a7a445ab1ccfb3aab6344d826121ab952">getVerticalOffset</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;-(int)<a class="code" href="interface_n_t_billboard_style.html#a37b5697ea817a2c91bbd3d0b880e98db">getPlacementPriority</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;-(BOOL)<a class="code" href="interface_n_t_billboard_style.html#a6e7ade0aa734ca9b382a22792368e904">isScaleWithDPI</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;-(void)dealloc;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">@end</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="interface_n_t_color_html"><div class="ttname"><a href="interface_n_t_color.html">NTColor</a></div><div class="ttdef"><b>Definition:</b> Color_proxy.h:21</div></div>
 <div class="ttc" id="interface_n_t_billboard_style_html_af7dae5d93fb1b18eac8a8f1e569a4c9e"><div class="ttname"><a href="interface_n_t_billboard_style.html#af7dae5d93fb1b18eac8a8f1e569a4c9e">-[NTBillboardStyle getAttachAnchorPointY]</a></div><div class="ttdeci">float getAttachAnchorPointY()</div><div class="ttdef"><b>Definition:</b> BillboardStyle_proxy.mm:36</div></div>
 <div class="ttc" id="interface_n_t_billboard_style_html_a707c0b7aee451d783fdc42fc68d801cc"><div class="ttname"><a href="interface_n_t_billboard_style.html#a707c0b7aee451d783fdc42fc68d801cc">-[NTBillboardStyle isCausesOverlap]</a></div><div class="ttdeci">BOOL isCausesOverlap()</div><div class="ttdef"><b>Definition:</b> BillboardStyle_proxy.mm:41</div></div>
@@ -155,7 +156,7 @@ $(document).ready(function(){initNavTree('_billboard_style__proxy_8h_source.html
 <div class="ttc" id="interface_n_t_style_html"><div class="ttname"><a href="interface_n_t_style.html">NTStyle</a></div><div class="ttdef"><b>Definition:</b> Style_proxy.h:24</div></div>
 <div class="ttc" id="interface_n_t_billboard_style_html_a6e7ade0aa734ca9b382a22792368e904"><div class="ttname"><a href="interface_n_t_billboard_style.html#a6e7ade0aa734ca9b382a22792368e904">-[NTBillboardStyle isScaleWithDPI]</a></div><div class="ttdeci">BOOL isScaleWithDPI()</div><div class="ttdef"><b>Definition:</b> BillboardStyle_proxy.mm:66</div></div>
 <div class="ttc" id="interface_n_t_billboard_style_html_a9dc23e6f2c28044b38ab89cfcb15a50f"><div class="ttname"><a href="interface_n_t_billboard_style.html#a9dc23e6f2c28044b38ab89cfcb15a50f">-[NTBillboardStyle getAttachAnchorPointX]</a></div><div class="ttdeci">float getAttachAnchorPointX()</div><div class="ttdef"><b>Definition:</b> BillboardStyle_proxy.mm:31</div></div>
-<div class="ttc" id="interface_n_t_billboard_style_html"><div class="ttname"><a href="interface_n_t_billboard_style.html">NTBillboardStyle</a></div><div class="ttdef"><b>Definition:</b> BillboardStyle_proxy.h:66</div></div>
+<div class="ttc" id="interface_n_t_billboard_style_html"><div class="ttname"><a href="interface_n_t_billboard_style.html">NTBillboardStyle</a></div><div class="ttdef"><b>Definition:</b> BillboardStyle_proxy.h:67</div></div>
 <div class="ttc" id="interface_n_t_billboard_style_html_a37b5697ea817a2c91bbd3d0b880e98db"><div class="ttname"><a href="interface_n_t_billboard_style.html#a37b5697ea817a2c91bbd3d0b880e98db">-[NTBillboardStyle getPlacementPriority]</a></div><div class="ttdeci">int getPlacementPriority()</div><div class="ttdef"><b>Definition:</b> BillboardStyle_proxy.mm:61</div></div>
 <div class="ttc" id="interface_n_t_billboard_style_html_ac9410369ea8fe200b8c8cb143b21cff0"><div class="ttname"><a href="interface_n_t_billboard_style.html#ac9410369ea8fe200b8c8cb143b21cff0">-[NTBillboardStyle isHideIfOverlapped]</a></div><div class="ttdeci">BOOL isHideIfOverlapped()</div><div class="ttdef"><b>Definition:</b> BillboardStyle_proxy.mm:46</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -164,7 +165,7 @@ $(document).ready(function(){initNavTree('_billboard_style__proxy_8h_source.html
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_39407a35a676e69a760fd4862d1e3e08.html">tmp-doxygen</a></li><li class="navelem"><b>BillboardStyle_proxy.h</b></li>
-    <li class="footer">Generated on Wed Dec 17 2014 18:21:38 for Nutiteq Maps SDK 3 iOs by
+    <li class="footer">Generated on Fri Mar 27 2015 18:00:42 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
