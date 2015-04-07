@@ -66,6 +66,7 @@ namespace Nuti {
         
 		std::shared_ptr<Texture> get(const T& id);
 		std::shared_ptr<Texture> getNoMod(const T& id) const;
+        std::unordered_set<T> getKeys() const;
         std::list<CacheKeyInfo> getKeyInfos() const;
     
 		void invalidate(const T& id, std::chrono::system_clock::time_point expirationTime = std::chrono::system_clock::now());
@@ -332,6 +333,17 @@ namespace Nuti {
         }
     }
         
+    template <typename T>
+    std::unordered_set<T> LRUTextureCache<T>::getKeys() const {
+        std::lock_guard<std::mutex> lock(_mutex);
+        
+        std::unordered_set<T> keys;
+        for (typename CacheElementItMap::const_iterator it = _mappedElements.begin(); it != _mappedElements.end(); it++) {
+            keys.insert(it->first);
+        }
+        return keys;
+    }
+    
     template <typename T>
     std::list<typename LRUTextureCache<T>::CacheKeyInfo> LRUTextureCache<T>::getKeyInfos() const {
         std::list<CacheKeyInfo> keyInfos;

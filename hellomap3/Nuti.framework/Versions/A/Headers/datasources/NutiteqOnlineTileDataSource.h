@@ -8,7 +8,7 @@
 #define _NUTI_NUTITEQONLINETILEDATASOURCE_H_
 
 #include "TileDataSource.h"
-#include "Utils/LRUCache.h"
+#include "utils/LRUCache.h"
 
 namespace Nuti {
 	

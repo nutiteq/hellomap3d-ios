@@ -15,6 +15,25 @@
 extern "C" {
 #endif
 
+/**
+ * The policy to use when looking for tiles that are not available.
+ */
+enum NTTileSubstitutionPolicy {
+/**
+ * Consider all cached/loaded tiles.
+ */
+  NT_TILE_SUBSTITUTION_POLICY_ALL,
+/**
+ * Consider only tiles that are currently visible.<br>
+ * This is recommended for low-latency data sources, like offline sources.
+ */
+  NT_TILE_SUBSTITUTION_POLICY_VISIBLE,
+/**
+ * Never substitute tiles.
+ */
+  NT_TILE_SUBSTITUTION_POLICY_NONE
+};
+
 
 #import "TileDataSource_proxy.h"
 #import "Layer_proxy.h"
@@ -45,6 +64,16 @@ __attribute__ ((visibility("default"))) @interface NTTileLayer : NTLayer
  * @param preloading The new preloading state of the layer.
  */
 -(void)setPreloading: (BOOL)preloading;
+/**
+ * Returns the current tile substitution policy.<br>
+ * @return The current substitution policy. Default is TILE_SUBSTITUTION_POLICY_ALL.
+ */
+-(enum NTTileSubstitutionPolicy)getTileSubstitutionPolicy;
+/**
+ * Sets the current tile substitution policy.<br>
+ * @param policy The new substitution policy. Default is TILE_SUBSTITUTION_POLICY_ALL.
+ */
+-(void)setTileSubstitutionPolicy: (enum NTTileSubstitutionPolicy)policy;
 /**
  * Gets the current zoom level bias for this layer.<br>
  * @return The current zoom level bias for this layer.

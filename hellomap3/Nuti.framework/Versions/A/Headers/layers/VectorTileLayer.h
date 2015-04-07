@@ -19,6 +19,7 @@
 #include <unordered_set>
 
 namespace Nuti {
+    class TileDrawData;
     class VectorTileRenderer;
         
     namespace VT {
@@ -67,8 +68,8 @@ namespace Nuti {
     protected:
         virtual int getCullDelay() const;
     
-        virtual bool tileExists(const MapTile& mapTile, bool preloadingTile);
-        virtual bool tileIsValid(const MapTile& mapTile, bool preloadingTile) const;
+        virtual bool tileExists(const MapTile& mapTile, bool preloadingCache);
+        virtual bool tileIsValid(const MapTile& mapTile) const;
         virtual void fetchTile(const MapTileQuadTreeNode& mapTile, bool preloadingTile, bool invalidated);
     
         virtual void calculateDrawData(const MapTileQuadTreeNode& requestedTile, const MapTileQuadTreeNode& closestTile, bool preloadingTile);
@@ -133,6 +134,7 @@ namespace Nuti {
     
         std::shared_ptr<TileDecoderListener> _tileDecoderListener;
     
+        std::vector<std::shared_ptr<TileDrawData> > _tempDrawDatas;
         std::map<VT::TileId, std::shared_ptr<VT::Tile> > _visibleTileMap, _prevVisibleTileMap;
         
         LRUCache<long long, std::shared_ptr<VT::Tile> > _visibleCache;

@@ -54,7 +54,7 @@ namespace Nuti {
         void setMapRenderer(std::shared_ptr<MapRenderer> mapRenderer);
     
     private:
-        double calculateRotatingScalingFactor(const cglib::vec2<float>& deltaPos1, const cglib::vec2<float>& deltaPos2);
+        double calculateRotatingScalingFactor(const ScreenPos& screenPos1, const ScreenPos& screenPos2) const;
     
         void singlePointerPan(const ScreenPos& screenPos);
         void dualPointerGuess(const ScreenPos& screenPos1, const ScreenPos& screenPos2);
@@ -70,7 +70,6 @@ namespace Nuti {
         static const int DUAL_POINTER_SCALE = 6;
         static const int DUAL_POINTER_FREE = 7;
     
-    
         static const float GUESS_MAX_DELTA_Y_INCHES;
         static const float GUESS_MIN_SWIPE_LENGTH_SAME_INCHES;
         static const float GUESS_MIN_SWIPE_LENGTH_OPPOSITE_INCHES;
@@ -80,7 +79,9 @@ namespace Nuti {
     
         // Determines when to switch between scalign and rotating when google style
         // panning is enabled
-        static const float ROTATION_SCALING_FACTOR_THRESHOLD;
+        static const float ROTATION_FACTOR_THRESHOLD;
+        static const float SCALING_FACTOR_THRESHOLD;
+        static const float ROTATION_SCALING_FACTOR_THRESHOLD_STICKY;
     
         // Determines how the finger sliding distance will be converted to tilt angle
         static const float INCHES_TO_VIEW_ANGLE;

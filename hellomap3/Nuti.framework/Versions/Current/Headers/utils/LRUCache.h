@@ -28,10 +28,12 @@ namespace Nuti {
     
         bool exists(const K& id);
         bool existsNoMod(const K& id) const;
+
         const V get(const K& id);
         const V getNoMod(const K& id) const;
         bool get(const K& id, V& value);
         bool getNoMod(const K& id, V& value) const;
+        std::unordered_set<K> getKeys() const;
     
 		void invalidate(const K& id, std::chrono::system_clock::time_point expirationTime = std::chrono::system_clock::now());
         void invalidateAll();
@@ -198,7 +200,17 @@ namespace Nuti {
             return true;
         }
     }
+
+    template <typename K, typename V>
+    std::unordered_set<K> LRUCache<K, V>::getKeys() const {
+        std::lock_guard<std::mutex> lock(_mutex);
         
+        std::unordered_set<K> keys;
+        for (typename CacheElementItMap::const_iterator it = _mappedElements.begin(); it != _mappedElements.end(); it++) {
+            keys.insert(it->first);
+        }
+        return keys;
+    }
     
     template <typename K, typename V>
 	void LRUCache<K, V>::invalidate(const K& id, std::chrono::system_clock::time_point expirationTime) {

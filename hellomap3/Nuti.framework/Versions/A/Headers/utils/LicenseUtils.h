@@ -29,6 +29,8 @@ namespace Nuti {
         
     private:
         LicenseUtils();
+        
+        static bool matchProduct(const std::string& productTemplate, const std::string& product);
 
         static const std::string LICENSE_PREFIX;
         

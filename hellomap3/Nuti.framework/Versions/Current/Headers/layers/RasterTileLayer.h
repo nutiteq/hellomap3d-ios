@@ -15,7 +15,6 @@
 #include "renderers/RasterTileRenderer.h"
 #include "utils/LRUCache.h"
 #include "utils/LRUTextureCache.h"
-#include "utils/TextureCache.h"
 
 #include <atomic>
 #include <memory>
@@ -95,8 +94,8 @@ namespace Nuti {
         virtual void clearTileCaches(bool all);
     
     protected:
-        virtual bool tileExists(const MapTile& mapTile, bool preloadingTile);
-        virtual bool tileIsValid(const MapTile& mapTile, bool preloadingTile) const;
+        virtual bool tileExists(const MapTile& mapTile, bool preloadingCache);
+        virtual bool tileIsValid(const MapTile& mapTile) const;
         virtual void fetchTile(const MapTileQuadTreeNode& mapTile, bool preloadingTile,bool invalidated);
     
         virtual void calculateDrawData(const MapTileQuadTreeNode& requestedTile, const MapTileQuadTreeNode& closestTile, bool preloadingTile);
@@ -141,7 +140,7 @@ namespace Nuti {
     
         std::shared_ptr<RasterTileRenderer> _renderer;
         
-        TextureCache<long long> _visibleCache;
+        LRUTextureCache<long long> _visibleCache;
         LRUTextureCache<long long> _preloadingCache;
     };
     

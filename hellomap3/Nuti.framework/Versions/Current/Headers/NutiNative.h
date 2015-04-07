@@ -20,6 +20,7 @@
 #include "core/TileData.h"
 
 #include "datasources/AssetTileDataSource.h"
+#include "datasources/BitmapOverlayRasterTileDataSource.h"
 #include "datasources/HTTPTileDataSource.h"
 #include "datasources/MBTilesTileDataSource.h"
 #include "datasources/NutiteqOnlineTileDataSource.h"
@@ -29,6 +30,7 @@
 #include "datasources/PersistentCacheTileDataSource.h"
 #include "datasources/LocalVectorDataSource.h"
 #include "datasources/OGRVectorDataSource.h"
+#include "datasources/GDALRasterTileDataSource.h"
 
 #include "geometry/LineGeometry.h"
 #include "geometry/PointGeometry.h"

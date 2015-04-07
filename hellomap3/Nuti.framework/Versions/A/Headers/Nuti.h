@@ -20,6 +20,7 @@
 #import "TileData_proxy.h"
 
 #import "AssetTileDataSource_proxy.h"
+#import "BitmapOverlayRasterTileDataSource_proxy.h"
 #import "CompressedCacheTileDataSource_proxy.h"
 #import "HTTPTileDataSource_proxy.h"
 #import "MBTilesTileDataSource_proxy.h"
@@ -30,6 +31,7 @@
 #import "PersistentCacheTileDataSource_proxy.h"
 #import "LocalVectorDataSource_proxy.h"
 #import "OGRVectorDataSource_proxy.h"
+#import "GDALRasterTileDataSource_proxy.h"
 
 #import "LineGeometry_proxy.h"
 #import "PointGeometry_proxy.h"

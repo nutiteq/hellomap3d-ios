@@ -20,6 +20,27 @@ namespace Nuti {
     class CullState;
     class MapTile;
     class MapTileQuadTreeNode;
+    
+    namespace TileSubstitutionPolicy {
+        /**
+         * The policy to use when looking for tiles that are not available.
+         */
+        enum TileSubstitutionPolicy {
+            /**
+             * Consider all cached/loaded tiles.
+             */
+            TILE_SUBSTITUTION_POLICY_ALL,
+            /**
+             * Consider only tiles that are currently visible.
+             * This is recommended for low-latency data sources, like offline sources.
+             */
+            TILE_SUBSTITUTION_POLICY_VISIBLE,
+            /**
+             * Never substitute tiles.
+             */
+            TILE_SUBSTITUTION_POLICY_NONE
+        };
+    }
         
     /**
      * An abstract base class for all tile layers.
@@ -52,11 +73,21 @@ namespace Nuti {
         void setPreloading(bool preloading);
         
         /**
+         * Returns the current tile substitution policy.
+         * @return The current substitution policy. Default is TILE_SUBSTITUTION_POLICY_ALL.
+         */
+        TileSubstitutionPolicy::TileSubstitutionPolicy getTileSubstitutionPolicy() const;
+        /**
+         * Sets the current tile substitution policy.
+         * @param policy The new substitution policy. Default is TILE_SUBSTITUTION_POLICY_ALL.
+         */
+        void setTileSubstitutionPolicy(TileSubstitutionPolicy::TileSubstitutionPolicy policy);
+        
+        /**
          * Gets the current zoom level bias for this layer.
          * @return The current zoom level bias for this layer.
          */
         float getZoomLevelBias() const;
-    
         /**
          * Sets the zoom level bias for this layer. Higher zoom level bias forces SDK to use more detailed tiles for given view compared to lower zoom bias.
          * The default bias is 0.
@@ -163,8 +194,8 @@ namespace Nuti {
 		
         void loadData(const std::shared_ptr<CullState>& cullState);
 		
-        virtual bool tileExists(const MapTile& tile, bool preloadingTile) = 0;
-        virtual bool tileIsValid(const MapTile& tile, bool preloadingTile) const = 0;
+        virtual bool tileExists(const MapTile& tile, bool preloadingCache) = 0;
+        virtual bool tileIsValid(const MapTile& tile) const = 0;
         virtual void fetchTile(const MapTileQuadTreeNode& tile, bool preloadingTile, bool invalidated) = 0;
     
         virtual void calculateDrawData(const MapTileQuadTreeNode& requestedTile, const MapTileQuadTreeNode& closestTile, bool preloadingTile) = 0;
@@ -187,6 +218,8 @@ namespace Nuti {
         int _lastFrameNr;
     
         bool _preloading;
+        
+        TileSubstitutionPolicy::TileSubstitutionPolicy _substitutionPolicy;
     
         float _zoomLevelBias;
     
@@ -200,8 +233,8 @@ namespace Nuti {
                                             const MapPos& preloadingCameraPos);
         
         void findTiles(const std::vector<MapTileQuadTreeNode*>& tile, bool preloadingTiles);
-        bool findParentTile(const MapTileQuadTreeNode& requestedTile, const MapTileQuadTreeNode* parentTile, int depth, bool preloadingTile);
-        int findChildTiles(MapTileQuadTreeNode& requestedTile, int depth, bool preloadingTile);
+        bool findParentTile(const MapTileQuadTreeNode& requestedTile, const MapTileQuadTreeNode* parentTile, int depth, bool preloadingCache, bool preloadingTile);
+        int findChildTiles(MapTileQuadTreeNode& requestedTile, int depth, bool preloadingCache, bool preloadingTile);
     
         static const int MAX_PARENT_SEARCH_DEPTH = 6;
         static const int MAX_CHILD_SEARCH_DEPTH = 3;

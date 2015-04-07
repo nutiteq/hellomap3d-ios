@@ -37,6 +37,9 @@
 		4D2BE7091A52F86F0013ABB3 /* MapSampleBaseController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D2BE7081A52F86F0013ABB3 /* MapSampleBaseController.mm */; };
 		4D94545E1A80E48D00D37B3B /* PackageManagerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D94545D1A80E48D00D37B3B /* PackageManagerController.mm */; };
 		4D9454991A94AF4600D37B3B /* osmbright.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4D9454981A94AF4600D37B3B /* osmbright.zip */; };
+		4DAF41AF1AD3C307004E7092 /* GroundOverlaySampleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAF41AE1AD3C307004E7092 /* GroundOverlaySampleController.m */; };
+		4DAF41B11AD3C542004E7092 /* jefferson-building-ground-floor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DAF41B01AD3C542004E7092 /* jefferson-building-ground-floor.jpg */; };
+		4DAF41B31AD3FFE9004E7092 /* looseleaf.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4DAF41B21AD3FFE9004E7092 /* looseleaf.zip */; };
 		4DB60ED71A16615A00A6AF18 /* UITableContract.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60ECE1A16615A00A6AF18 /* UITableContract.png */; };
 		4DB60ED81A16615A00A6AF18 /* UITableContract@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60ECF1A16615A00A6AF18 /* UITableContract@2x.png */; };
 		4DB60ED91A16615A00A6AF18 /* UITableExpand.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60ED01A16615A00A6AF18 /* UITableExpand.png */; };
@@ -45,7 +48,6 @@
 		4DB60EDC1A16615A00A6AF18 /* VPPDropDownElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB60ED61A16615A00A6AF18 /* VPPDropDownElement.m */; };
 		4DB60F341A16AE1600A6AF18 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60F321A16AE1600A6AF18 /* menu.png */; };
 		4DB60F351A16AE1600A6AF18 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60F331A16AE1600A6AF18 /* menu@2x.png */; };
-		4DB60F371A1770DE00A6AF18 /* looseleaf.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60F361A1770DE00A6AF18 /* looseleaf.zip */; };
 		4DB60F391A1770E500A6AF18 /* basic.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60F381A1770E500A6AF18 /* basic.zip */; };
 		4DC850081A0E718100C5124F /* LauncherListController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DC850071A0E718100C5124F /* LauncherListController.mm */; };
 		4DC8500C1A0E77CA00C5124F /* VectorMapSampleBaseController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DC8500B1A0E77CA00C5124F /* VectorMapSampleBaseController.mm */; };
@@ -99,6 +101,9 @@
 		4D2BE70A1A52F89C0013ABB3 /* MapSampleBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapSampleBaseController.h; path = advancedmap3/MapSampleBaseController.h; sourceTree = SOURCE_ROOT; };
 		4D94545D1A80E48D00D37B3B /* PackageManagerController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PackageManagerController.mm; path = advancedmap3/PackageManagerController.mm; sourceTree = SOURCE_ROOT; };
 		4D9454981A94AF4600D37B3B /* osmbright.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright.zip; sourceTree = "<group>"; };
+		4DAF41AE1AD3C307004E7092 /* GroundOverlaySampleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroundOverlaySampleController.m; path = advancedmap3/GroundOverlaySampleController.m; sourceTree = SOURCE_ROOT; };
+		4DAF41B01AD3C542004E7092 /* jefferson-building-ground-floor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "jefferson-building-ground-floor.jpg"; sourceTree = "<group>"; };
+		4DAF41B21AD3FFE9004E7092 /* looseleaf.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = looseleaf.zip; sourceTree = "<group>"; };
 		4DB60ECE1A16615A00A6AF18 /* UITableContract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UITableContract.png; path = VPPDropDown/UITableContract.png; sourceTree = SOURCE_ROOT; };
 		4DB60ECF1A16615A00A6AF18 /* UITableContract@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UITableContract@2x.png"; path = "VPPDropDown/UITableContract@2x.png"; sourceTree = SOURCE_ROOT; };
 		4DB60ED01A16615A00A6AF18 /* UITableExpand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UITableExpand.png; path = VPPDropDown/UITableExpand.png; sourceTree = SOURCE_ROOT; };
@@ -110,7 +115,6 @@
 		4DB60ED61A16615A00A6AF18 /* VPPDropDownElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VPPDropDownElement.m; path = VPPDropDown/VPPDropDownElement.m; sourceTree = SOURCE_ROOT; };
 		4DB60F321A16AE1600A6AF18 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		4DB60F331A16AE1600A6AF18 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
-		4DB60F361A1770DE00A6AF18 /* looseleaf.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = looseleaf.zip; sourceTree = "<group>"; };
 		4DB60F381A1770E500A6AF18 /* basic.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = basic.zip; sourceTree = "<group>"; };
 		4DC850071A0E718100C5124F /* LauncherListController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LauncherListController.mm; path = advancedmap3/LauncherListController.mm; sourceTree = SOURCE_ROOT; };
 		4DC8500A1A0E778900C5124F /* VectorMapSampleBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VectorMapSampleBaseController.h; path = advancedmap3/VectorMapSampleBaseController.h; sourceTree = SOURCE_ROOT; };
@@ -146,9 +150,10 @@
 		2A319B36187C4F8F0004A3CB = {
 			isa = PBXGroup;
 			children = (
+				4DAF41B21AD3FFE9004E7092 /* looseleaf.zip */,
+				4DAF41B01AD3C542004E7092 /* jefferson-building-ground-floor.jpg */,
 				4D9454981A94AF4600D37B3B /* osmbright.zip */,
 				4DB60F381A1770E500A6AF18 /* basic.zip */,
-				4DB60F361A1770DE00A6AF18 /* looseleaf.zip */,
 				0CED8F201A5D1C2F00116863 /* osmbright-unifont.zip */,
 				4DEB06DE1A10D8B3003D111C /* README.md */,
 				0C3C369719E66E0A007573FD /* fcd_auto.nml */,
@@ -221,6 +226,7 @@
 				4D94545D1A80E48D00D37B3B /* PackageManagerController.mm */,
 				0C0E589D1A83CFD30072D7E8 /* PackageMapController.h */,
 				0C0E589B1A83CD540072D7E8 /* PackageMapController.mm */,
+				4DAF41AE1AD3C307004E7092 /* GroundOverlaySampleController.m */,
 			);
 			name = advancedmap3;
 			path = sdk_3d_ios_app;
@@ -338,6 +344,7 @@
 			files = (
 				0C0E58A31A84BC2D0072D7E8 /* 852-map-toolbar@3x.png in Resources */,
 				0CED8F251A5D334E00116863 /* rome_ntvt.mbtiles in Resources */,
+				4DAF41B11AD3C542004E7092 /* jefferson-building-ground-floor.jpg in Resources */,
 				4DB60F391A1770E500A6AF18 /* basic.zip in Resources */,
 				4D9454991A94AF4600D37B3B /* osmbright.zip in Resources */,
 				2AD24F6818FED992000969F4 /* saku_ios_4bpp.nmldb in Resources */,
@@ -350,8 +357,8 @@
 				0C0E58A11A84BC2D0072D7E8 /* 852-map-toolbar.png in Resources */,
 				0C3C369819E66E0A007573FD /* fcd_auto.nml in Resources */,
 				2AD24F8518FEDB89000969F4 /* Images.xcassets in Resources */,
-				4DB60F371A1770DE00A6AF18 /* looseleaf.zip in Resources */,
 				2AEA4FAC19140909002ED69F /* arrow.png in Resources */,
+				4DAF41B31AD3FFE9004E7092 /* looseleaf.zip in Resources */,
 				4DB60ED71A16615A00A6AF18 /* UITableContract.png in Resources */,
 				4DB60F341A16AE1600A6AF18 /* menu.png in Resources */,
 				2AB2803418EB150400666197 /* marker.png in Resources */,
@@ -372,6 +379,7 @@
 				4DB60EDC1A16615A00A6AF18 /* VPPDropDownElement.m in Sources */,
 				4DEB06D01A10BDB7003D111C /* Overlays2DSampleController.mm in Sources */,
 				2AD24F7918FEDAA6000969F4 /* main.m in Sources */,
+				4DAF41AF1AD3C307004E7092 /* GroundOverlaySampleController.m in Sources */,
 				4D2BE7091A52F86F0013ABB3 /* MapSampleBaseController.mm in Sources */,
 				2AC270581941EFF9000CA859 /* MyMergedRasterTileDataSource.mm in Sources */,
 				4D13E2831A6EB80200FA74DC /* CustomPopup.mm in Sources */,
