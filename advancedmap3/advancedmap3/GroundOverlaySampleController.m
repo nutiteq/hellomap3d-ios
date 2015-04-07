@@ -20,8 +20,7 @@
     NTProjection* proj = [[self.mapView getOptions] getBaseProjection];
 
     // Load ground overlay bitmap
-    UIImage* overlayImage = [UIImage imageNamed:@"jefferson-building-ground-floor.jpg"];
-    NTBitmap* overlayBitmap = [NTBitmapUtils createBitmapFromUIImage:overlayImage pow2Padding:NO];
+    NTBitmap* overlayBitmap = [[NTBitmap alloc] initWithCompressedData:[NTAssetUtils loadBytes:@"jefferson-building-ground-floor.jpg"] pow2Padding:NO];
     
     // Create two vector containing geographical positions and corresponding raster image pixel coordinates
     NTMapPos* pos = [proj fromWgs84:[[NTMapPos alloc] initWithX:-77.004590 y:38.888702]];
@@ -33,17 +32,23 @@
     [mapPoses add:[[NTMapPos alloc] initWithX:[pos getX]+sizeWE y:[pos getY]-sizeNS]];
     [mapPoses add:[[NTMapPos alloc] initWithX:[pos getX]-sizeWE y:[pos getY]-sizeNS]];
     
-    NTScreenPosVector* screenPoses = [[NTScreenPosVector alloc] init];
-    [screenPoses add:[[NTScreenPos alloc] initWithX:0 y:0]];
-    [screenPoses add:[[NTScreenPos alloc] initWithX:0 y:[overlayBitmap getHeight]]];
-    [screenPoses add:[[NTScreenPos alloc] initWithX:[overlayBitmap getWidth] y:[overlayBitmap getHeight]]];
-    [screenPoses add:[[NTScreenPos alloc] initWithX:[overlayBitmap getWidth] y:0]];
+    NTScreenPosVector* bitmapPoses = [[NTScreenPosVector alloc] init];
+    [bitmapPoses add:[[NTScreenPos alloc] initWithX:0 y:0]];
+    [bitmapPoses add:[[NTScreenPos alloc] initWithX:0 y:[overlayBitmap getOrigHeight]]];
+    [bitmapPoses add:[[NTScreenPos alloc] initWithX:[overlayBitmap getOrigWidth] y:[overlayBitmap getOrigHeight]]];
+    [bitmapPoses add:[[NTScreenPos alloc] initWithX:[overlayBitmap getOrigWidth] y:0]];
     
-    NTBitmapOverlayRasterTileDataSource* rasterDataSource = [[NTBitmapOverlayRasterTileDataSource alloc] initWithMinZoom:0 maxZoom:24 bitmap:overlayBitmap projection:proj mapPoses:mapPoses bitmapPoses:screenPoses];
+    // Create bitmap overlay raster tile data source
+    NTBitmapOverlayRasterTileDataSource* rasterDataSource = [[NTBitmapOverlayRasterTileDataSource alloc] initWithMinZoom:0 maxZoom:20 bitmap:overlayBitmap projection:proj mapPoses:mapPoses bitmapPoses:bitmapPoses];
     NTRasterTileLayer* rasterLayer = [[NTRasterTileLayer alloc] initWithDataSource:rasterDataSource];
-    [rasterLayer setTileSubstitutionPolicy:NT_TILE_SUBSTITUTION_POLICY_VISIBLE];
-    [rasterLayer setZoomLevelBias:0.75f];
     [[self.mapView getLayers] add:rasterLayer];
+    
+    // Apply zoom level bias to the raster layer.
+    // By default, bitmaps are upsampled on high-DPI screens.
+    // We will correct this by applying appropriate bias
+    float zoomLevelBias = log([[self.mapView getOptions] getDPI] / 160.0f) / log(2);
+    [rasterLayer setZoomLevelBias:zoomLevelBias * 0.75f];
+    [rasterLayer setTileSubstitutionPolicy:NT_TILE_SUBSTITUTION_POLICY_VISIBLE];
     
     [self.mapView setFocusPos:pos durationSeconds:0];
     [self.mapView setZoom:15.5f durationSeconds:0];
