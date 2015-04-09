@@ -22,7 +22,8 @@
     // Load ground overlay bitmap
     NTBitmap* overlayBitmap = [[NTBitmap alloc] initWithCompressedData:[NTAssetUtils loadBytes:@"jefferson-building-ground-floor.jpg"] pow2Padding:NO];
     
-    // Create two vector containing geographical positions and corresponding raster image pixel coordinates
+    // Create two vectors containing geographical positions and corresponding raster image pixel coordinates.
+    // 2, 3 or 4 points may be specified. Usually 2 points are enough (for conformal mapping).
     NTMapPos* pos = [proj fromWgs84:[[NTMapPos alloc] initWithX:-77.004590 y:38.888702]];
     double sizeNS = 110, sizeWE = 100;
 
