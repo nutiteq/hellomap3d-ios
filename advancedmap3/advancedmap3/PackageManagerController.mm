@@ -488,6 +488,7 @@ static NSString* _language = @"en"; // the language for the package names
 	@synchronized(self) {
 		for (PackageManagerController* controller in _packageManagerControllers) {
 			[controller updatePackage:packageId];
+      NSLog(@"onPackageStatusChanged progress: %f", [status getProgress]);
 		}
 	}
 }
