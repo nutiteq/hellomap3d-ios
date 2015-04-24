@@ -40,8 +40,14 @@ namespace Nuti {
          * @param geometry The new geometry object that defines the location of this point.
          */
         void setGeometry(const std::shared_ptr<PointGeometry>& geometry);
+
         /**
-         * Sets the location for this point.
+         * Returns the location of this point.
+         * @return The map position that defines the location of this point.
+         */
+        const MapPos& getPos() const;
+        /**
+         * Sets the location of this point.
          * @param pos The new map position that defines the location of this point.
          */
         void setPos(const MapPos& pos);

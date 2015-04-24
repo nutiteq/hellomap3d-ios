@@ -18,8 +18,8 @@ namespace Nuti {
     class Projection;
 
     /**
-     * Tile data source that uses given bitmap with three or four control points define a raster overlay.
-     * Note: if three points are given, affine transformation is calculated. In case of four points, perspective transformation is used.
+     * Tile data source that uses given bitmap with two, three or four control points define a raster overlay.
+     * Note: if two points are given, conformal transformation is calculated. If three points are given, affine transformation is calculated. In case of four points, perspective transformation is used.
      */
     class BitmapOverlayRasterTileDataSource : public TileDataSource {
     public:
@@ -29,7 +29,7 @@ namespace Nuti {
          * @param maxZoom The maximum zoom for generated tiles.
          * @param bitmap The bitmap to use as an overlay.
          * @param projection The projection definining coordinate system of the control points.
-         * @param mapPoses The geographical control points. The list must contain either 3 or 4 points.
+         * @param mapPoses The geographical control points. The list must contain either 2, 3 or 4 points.
          * @param bitmapPoses The pixel coordinates in the bitmap corresponding to geographical control points. The number of coordinates must be equal to the number of control points in mapPoses list.
          */
         BitmapOverlayRasterTileDataSource(int minZoom, int maxZoom, const std::shared_ptr<Bitmap>& bitmap, const std::shared_ptr<Projection>& projection, const std::vector<MapPos>& mapPoses, const std::vector<ScreenPos>& bitmapPoses);

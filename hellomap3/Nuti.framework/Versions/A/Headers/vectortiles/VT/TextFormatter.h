@@ -13,6 +13,9 @@
 #include <string>
 #include <vector>
 
+#include <cglib/vec.h>
+#include <cglib/bbox.h>
+
 namespace Nuti { namespace VT {
 	class TextFormatter {
 	public:
@@ -32,7 +35,14 @@ namespace Nuti { namespace VT {
 		std::vector<Font::Glyph> format(const std::string& text, const Options& options) const;
 
 	private:
-		std::vector<std::vector<unsigned int>> splitLines(const std::string& text, const Options& options) const;
+		struct Line {
+			cglib::bounding_box<float, 2> bbox;
+			std::vector<Font::Glyph> glyphs;
+
+			Line() : bbox(), glyphs() { }
+		};
+
+		std::vector<Line> splitLines(const std::string& text, const Options& options) const;
 
 		std::shared_ptr<Font> _font;
 	};

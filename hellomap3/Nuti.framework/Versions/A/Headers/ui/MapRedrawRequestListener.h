@@ -4,7 +4,7 @@
  * to license terms, as given in https://www.nutiteq.com/license/
  */
 
-#import "RedrawRequestListener_proxy.h"
+#import "NTRedrawRequestListener.h"
 
 @class GLKView;
 
