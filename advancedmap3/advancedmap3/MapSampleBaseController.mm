@@ -14,6 +14,8 @@
 
     self.mapView = [[NTMapView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     self.view = self.mapView;
+  
+  [self.mapView.getOptions setPanningMode:NTPanningMode::NT_PANNING_MODE_STICKY_FINAL];
 }
 
 - (void)viewDidLoad
@@ -23,6 +25,8 @@
     // GLKViewController-specific parameters for smoother animations
     [self setResumeOnDidBecomeActive:NO];
     [self setPreferredFramesPerSecond:60];
+  
+  
 }
 
 - (void)didReceiveMemoryWarning
