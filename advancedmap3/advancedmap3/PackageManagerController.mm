@@ -238,9 +238,9 @@ static NSString* _language = @"en"; // the language for the package names
 	if (pkg.packageInfo) {
 		NSString* status;
 		if ([pkg.packageInfo getSize] < 1024 * 1024) {
-			status = [NSString stringWithFormat: @"available (<1MB)"];
+			status = [NSString stringWithFormat: @"version %d available (<1MB)", [pkg.packageInfo getVersion]];
 		} else {
-			status = [NSString stringWithFormat: @"available (%lluMB)", [pkg.packageInfo getSize] / 1024 / 1024];
+			status = [NSString stringWithFormat: @"version %d  available (%lluMB)", [pkg.packageInfo getVersion], [pkg.packageInfo getSize] / 1024 / 1024];
 		}
 		
 		NSString* action = @"DL";
