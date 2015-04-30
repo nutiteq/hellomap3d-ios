@@ -33,7 +33,7 @@
 	// Initialize a custom datasource that will combine those two datasources into one
 	MyMergedRasterTileDataSource* mergedRasterTileDataSource = [[MyMergedRasterTileDataSource alloc] initWithDataSource1:baseRasterTileDataSource dataSource2:hillsRasterTileDataSource];
 	// Initialize offline raster tile cache with the previous datasource and a sqlite database
-	NTPersistentCacheTileDataSource* cachedRasterTileDataSource = [[NTPersistentCacheTileDataSource alloc] initWithDataSource:mergedRasterTileDataSource databasePath:[NTAssetUtils CalculateWritablePath:@"cache4.db"]];
+	NTPersistentCacheTileDataSource* cachedRasterTileDataSource = [[NTPersistentCacheTileDataSource alloc] initWithDataSource:mergedRasterTileDataSource databasePath:[NTAssetUtils calculateWritablePath:@"cache4.db"]];
 		
 	// Initialize a raster layer with the previous data source
 	NTRasterTileLayer* rasterLayer = [[NTRasterTileLayer alloc] initWithDataSource:cachedRasterTileDataSource];
