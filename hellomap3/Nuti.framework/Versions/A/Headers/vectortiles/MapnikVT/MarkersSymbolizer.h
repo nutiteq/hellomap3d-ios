@@ -22,7 +22,6 @@ namespace Nuti { namespace MapnikVT {
 		static std::shared_ptr<VT::Bitmap> makeEllipseBitmap(int width, int height);
 		static std::shared_ptr<VT::Bitmap> makeArrowBitmap(int width, int height);
 
-		const int DEFAULT_MARKER_SIZE = 10;
 		const int DEFAULT_CIRCLE_SIZE = 10;
 		const int DEFAULT_ARROW_WIDTH = 28, DEFAULT_ARROW_HEIGHT = 14;
 

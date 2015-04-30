@@ -42,9 +42,15 @@ namespace Nuti {
          * @param geometry The new geometry object that defines the location of this line.
          */
         void setGeometry(const std::shared_ptr<LineGeometry>& geometry);
+
         /**
-         * Sets the location for this line.
-         * @param poses The new vector of map positions that defines the location of this line.
+         * Returns the vertices that define this line.
+         * @return The vector of map positions that defines this line.
+         */
+        const std::vector<MapPos>& getPoses() const;
+        /**
+         * Sets the vertices that define this line.
+         * @param poses The new vector of map positions that defines this line.
          */
         void setPoses(const std::vector<MapPos>& poses);
     
