@@ -14,6 +14,7 @@
 @property NSString* vectorStyleLanguage;
 
 @property NTVectorTileLayer* baseLayer;
+@property NTTileDataSource* vectorTileDataSource;
 @property NTMBVectorTileDecoder* vectorTileDecoder;
 
 @end

@@ -20,10 +20,10 @@
 			 @"English": @"en",
 			 @"German":  @"de",
  			 @"Spanish": @"es",
-       @"Italian": @"it",
+             @"Italian": @"it",
 			 @"French":  @"fr",
-       @"Russian": @"ru",
-       @"Chinese": @"zh",
+             @"Russian": @"ru",
+             @"Chinese": @"zh",
 			 };
 }
 
@@ -33,7 +33,7 @@
 			 @"Basic":		   @"basic",
 			 @"OSM Bright 2D": @"osmbright",
 			 @"OSM Bright 3D": @"osmbright3d",
-       @"OSM Bright Chinese": @"osmbright-heilight",
+             @"OSM Bright Chinese": @"osmbright-heilight",
 			 @"Loose Leaf":	   @"looseleaf",
 			 };
 }
@@ -72,13 +72,15 @@
 	}
 	
 	// Create tile data source
-	NTTileDataSource* vectorTileDataSource = [self createTileDataSource];
+    if (!self.vectorTileDataSource) {
+        self.vectorTileDataSource = [self createTileDataSource];
+    }
 	
 	// Create vector tile layer, using previously created data source and decoder
 	if (self.baseLayer) {
 		[[self.mapView getLayers] remove:self.baseLayer];
 	}
-	self.baseLayer = [[NTVectorTileLayer alloc] initWithDataSource:vectorTileDataSource decoder:self.vectorTileDecoder];
+	self.baseLayer = [[NTVectorTileLayer alloc] initWithDataSource:self.vectorTileDataSource decoder:self.vectorTileDecoder];
 
 	// Add vector tile layer
 	[[self.mapView getLayers] insert:0 layer:self.baseLayer];
@@ -131,20 +133,20 @@
 		self.sampleController = sampleController;
 
 		// Custom initialization
-		int selectedLanguage = [[[sampleController languages] allValues] indexOfObject:sampleController.vectorStyleLanguage];
+		NSInteger selectedLanguage = [[[sampleController languages] allValues] indexOfObject:sampleController.vectorStyleLanguage];
 		_dropDownLanguage = [[VPPDropDown alloc] initSelectionWithTitle:@"Language"
 															tableView:self.tableView
 															indexPath:[NSIndexPath indexPathForRow:0 inSection:0]
 															delegate:self
-															selectedIndex:selectedLanguage
+															selectedIndex:(int)selectedLanguage
 															elementTitles:[[sampleController languages] allKeys]];
 		
-		int selectedStyle = [[[sampleController styles] allValues] indexOfObject:sampleController.vectorStyleName];
+		NSInteger selectedStyle = [[[sampleController styles] allValues] indexOfObject:sampleController.vectorStyleName];
 		_dropDownStyle = [[VPPDropDown alloc] initSelectionWithTitle:@"Style"
 															tableView:self.tableView
 															indexPath:[NSIndexPath indexPathForRow:1 inSection:0]
 															delegate:self
-															selectedIndex:selectedStyle
+															selectedIndex:(int)selectedStyle
 															elementTitles:[[sampleController styles] allKeys]];
 	}
 	return self;
@@ -159,7 +161,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	// Return the number of rows in the section.
-	int rows = [VPPDropDown tableView:tableView numberOfExpandedRowsInSection:section];
+	NSInteger rows = [VPPDropDown tableView:tableView numberOfExpandedRowsInSection:section];
 	rows += 2; // 2 sections: language, style
 	return rows;
 }
