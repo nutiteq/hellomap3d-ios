@@ -121,7 +121,7 @@
 	
 	// Load bitmaps for custom markers
 	UIImage* markerImage = [UIImage imageNamed:@"marker.png"];
-	NTBitmap* markerBitmap = [NTBitmapUtils CreateBitmapFromUIImage:markerImage];
+	NTBitmap* markerBitmap = [NTBitmapUtils createBitmapFromUIImage:markerImage];
 	
 	// Create text style
 	NTTextStyleBuilder* textStyleBuilder = [[NTTextStyleBuilder alloc] init];
@@ -181,8 +181,8 @@
 	NTBalloonPopupStyleBuilder* balloonPopupStyleBuilder = [[NTBalloonPopupStyleBuilder alloc] init];
 	[balloonPopupStyleBuilder setCornerRadius:20];
 	[balloonPopupStyleBuilder setLeftMargins:[[NTBalloonPopupMargins alloc] initWithLeft:6 top:6 right:6 bottom:6]];
-	[balloonPopupStyleBuilder setLeftImage:[NTBitmapUtils CreateBitmapFromUIImage:infoImage]];
-	[balloonPopupStyleBuilder setRightImage:[NTBitmapUtils CreateBitmapFromUIImage:arrowImage]];
+	[balloonPopupStyleBuilder setLeftImage:[NTBitmapUtils createBitmapFromUIImage:infoImage]];
+	[balloonPopupStyleBuilder setRightImage:[NTBitmapUtils createBitmapFromUIImage:arrowImage]];
 	[balloonPopupStyleBuilder setRightMargins:[[NTBalloonPopupMargins alloc] initWithLeft:2 top:6 right:12 bottom:6]];
 	[balloonPopupStyleBuilder setPlacementPriority:1];
 	pos = [proj fromWgs84:[[NTMapPos alloc] initWithX:24.655662 y:59.425521]];
