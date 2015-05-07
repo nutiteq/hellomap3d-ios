@@ -94,9 +94,9 @@ static NSString* _language = @"en"; // the language for the package names
 	// Create folder for package manager. Package manager needs persistent writable folder.
 	NSArray* paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask,YES);
 	NSString* appSupportDir = [paths objectAtIndex: 0];
-	NSString* packagesDir = [appSupportDir stringByAppendingString:@"packages"];
+	NSString* packagesDir = [appSupportDir stringByAppendingString:@"/packages"];
 	NSError *error;
-	[[NSFileManager defaultManager] createDirectoryAtPath:packagesDir withIntermediateDirectories:NO attributes:nil error:&error];
+	[[NSFileManager defaultManager] createDirectoryAtPath:packagesDir withIntermediateDirectories:YES attributes:nil error:&error];
 	
 	// Create package manager and package manager listener
 	_packageManager = [[NTNutiteqPackageManager alloc] initWithSource:@"nutiteq.mbstreets" dataFolder:packagesDir];
