@@ -14,8 +14,7 @@
 {
     self = [super initWithMinZoom:MIN([dataSource1 getMinZoom], [dataSource2 getMinZoom])
                           maxZoom:MAX([dataSource1 getMaxZoom], [dataSource2 getMaxZoom])];
-    if (self != nil)
-    {
+    if (self != nil) {
         _dataSource1 = dataSource1;
         _dataSource2 = dataSource2;
     }
@@ -36,23 +35,22 @@
     }
   
     // Create bitmaps
-
-    NTBitmap * tileBitmap1 = [[NTBitmap alloc] initWithCompressedData: tileData1.getData pow2Padding: NO];
-    NTBitmap * tileBitmap2 = [[NTBitmap alloc] initWithCompressedData: tileData2.getData pow2Padding: NO];
+    NTBitmap* tileBitmap1 = [[NTBitmap alloc] initWithCompressedData: tileData1.getData pow2Padding: NO];
+    NTBitmap* tileBitmap2 = [[NTBitmap alloc] initWithCompressedData: tileData2.getData pow2Padding: NO];
   
     // Combine the bitmaps
-    CGImageRef cgImage1 = [NTBitmapUtils createUIImageFromBitmap: tileBitmap1].CGImage;
-    CGImageRef cgImage2 = [NTBitmapUtils createUIImageFromBitmap: tileBitmap2].CGImage;
+    UIImage* image1 = [NTBitmapUtils createUIImageFromBitmap: tileBitmap1];
+    UIImage* image2 = [NTBitmapUtils createUIImageFromBitmap: tileBitmap2];
     
-    CGSize imageSize = CGSizeMake(CGImageGetWidth(cgImage1), CGImageGetHeight(cgImage1));
+    CGSize imageSize = CGSizeMake(CGImageGetWidth(image1.CGImage), CGImageGetHeight(image2.CGImage));
+    
     UIGraphicsBeginImageContext(imageSize);
-    CGContextRef context = UIGraphicsGetCurrentContext();
 
-    CGContextDrawImage(context, CGRectMake(0, 0, imageSize.width, imageSize.height), cgImage1);
-    CGContextDrawImage(context, CGRectMake(0, 0, imageSize.width, imageSize.height), cgImage2);
+    [image1 drawInRect:CGRectMake(0, 0, imageSize.width, imageSize.height)];
+    [image2 drawInRect:CGRectMake(0, 0, imageSize.width, imageSize.height)];
     
     // Extract image
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
   
     NTBitmap* tileBitmap = [NTBitmapUtils createBitmapFromUIImage:image];
