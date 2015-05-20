@@ -29,6 +29,8 @@ var interface_n_t_view_state =
     [ "getWidth", "interface_n_t_view_state.html#a1cb985ca306e7ece24a192ee319fc5b1", null ],
     [ "getZoom", "interface_n_t_view_state.html#a19ddaf2960540a21f156e26fd7713ccb", null ],
     [ "getZoom0Distance", "interface_n_t_view_state.html#afd324b55469dd69fee93a1b41d189c63", null ],
+    [ "hash", "interface_n_t_view_state.html#ac889c7fbcf56a9a8a79d7bfe442d6a98", null ],
     [ "isCameraChanged", "interface_n_t_view_state.html#a4fe74c4db77176e6d3779183a482e22d", null ],
+    [ "isEqual:", "interface_n_t_view_state.html#ad8165a21281e51db2ab431779681962b", null ],
     [ "worldToScreen:options:", "interface_n_t_view_state.html#a9d0b844853026e55407147c0d42218c8", null ]
 ];

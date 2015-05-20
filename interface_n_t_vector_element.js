@@ -6,6 +6,8 @@ var interface_n_t_vector_element =
     [ "getId", "interface_n_t_vector_element.html#a7a8a3766f177ea07a981beaeba1fb1ed", null ],
     [ "getMetaData", "interface_n_t_vector_element.html#aa4e9b68b8da00289c3b27d9a7edf730d", null ],
     [ "getMetaDataElement:", "interface_n_t_vector_element.html#af2b3349c6053cafe7498cb46553d14de", null ],
+    [ "hash", "interface_n_t_vector_element.html#a9ccacdc3290cfea886f6eb8bc46f464d", null ],
+    [ "isEqual:", "interface_n_t_vector_element.html#a4934127d8d2946b1f718d17c0f31b462", null ],
     [ "isVisible", "interface_n_t_vector_element.html#a823949754862a6114914718ea96ccb87", null ],
     [ "notifyElementChanged", "interface_n_t_vector_element.html#a8cd8f7fe85fe8ab573954b744481a981", null ],
     [ "setId:", "interface_n_t_vector_element.html#a009fa46d5d1263a8f88aae7090bd2824", null ],

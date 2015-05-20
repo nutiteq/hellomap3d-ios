@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK iOS: NTTileLayer Class Reference</title>
+<title>Nutiteq Maps SDK 3 iOS: NTTileLayer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK iOS
-   &#160;<span id="projectnumber">3.1</span>
+   <div id="projectname">Nutiteq Maps SDK 3 iOS
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('interface_n_t_tile_layer.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><code>#import &lt;<a class="el" href="_tile_layer__proxy_8h_source.html">TileLayer_proxy.h</a>&gt;</code></p>
+<p><code>#import &lt;<a class="el" href="_n_t_tile_layer_8h_source.html">NTTileLayer.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for NTTileLayer:</div>
 <div class="dyncontent">
@@ -119,15 +119,27 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a9ac1fca026d09d3c613a71a179dc6bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b4ca7d180fb0629ed645eb37c16c017"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_layer.html#a1b4ca7d180fb0629ed645eb37c16c017">setPreloading:</a></td></tr>
 <tr class="separator:a1b4ca7d180fb0629ed645eb37c16c017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8153764b16d7f2ff26d6ff753dfbbeb"><td class="memItemLeft" align="right" valign="top">(enum NTTileSubstitutionPolicy)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_layer.html#ab8153764b16d7f2ff26d6ff753dfbbeb">getTileSubstitutionPolicy</a></td></tr>
+<tr class="separator:ab8153764b16d7f2ff26d6ff753dfbbeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5f67370d1ebf6daea0b119faf144cd8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_layer.html#ac5f67370d1ebf6daea0b119faf144cd8">setTileSubstitutionPolicy:</a></td></tr>
+<tr class="separator:ac5f67370d1ebf6daea0b119faf144cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08df2bde530f28ee1d554ad34ee1e428"><td class="memItemLeft" align="right" valign="top">(float)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_layer.html#a08df2bde530f28ee1d554ad34ee1e428">getZoomLevelBias</a></td></tr>
 <tr class="separator:a08df2bde530f28ee1d554ad34ee1e428"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d4f0fb9e51e82f6af2f0c78bba63914"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_layer.html#a6d4f0fb9e51e82f6af2f0c78bba63914">setZoomLevelBias:</a></td></tr>
 <tr class="separator:a6d4f0fb9e51e82f6af2f0c78bba63914"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad69bfd60468c68c0e2c7eb550c41f093"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_map_tile.html">NTMapTile</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_layer.html#ad69bfd60468c68c0e2c7eb550c41f093">calculateMapTile:zoom:</a></td></tr>
+<tr class="separator:ad69bfd60468c68c0e2c7eb550c41f093"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc3b4da2c56c6a798ac4ccca3281c637"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_map_pos.html">NTMapPos</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_layer.html#acc3b4da2c56c6a798ac4ccca3281c637">calculateMapTileOrigin:</a></td></tr>
+<tr class="separator:acc3b4da2c56c6a798ac4ccca3281c637"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7476325bcd6c99cca2b0f4a50ffbb0d2"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_layer.html#a7476325bcd6c99cca2b0f4a50ffbb0d2">clearTileCaches:</a></td></tr>
 <tr class="separator:a7476325bcd6c99cca2b0f4a50ffbb0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef2f81db70976983f1869b183fbb99f4"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_tile_layer.html#aef2f81db70976983f1869b183fbb99f4">isUpdateInProgress</a></td></tr>
 <tr class="separator:aef2f81db70976983f1869b183fbb99f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interface_n_t_layer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_interface_n_t_layer')"><img src="closed.png" alt="-"/>&#160;Instance Methods inherited from <a class="el" href="interface_n_t_layer.html">NTLayer</a></td></tr>
+<tr class="memitem:a8b7d42711ba9fa35c942b85f947fabd1 inherit pub_methods_interface_n_t_layer"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_layer.html#a8b7d42711ba9fa35c942b85f947fabd1">isEqual:</a></td></tr>
+<tr class="separator:a8b7d42711ba9fa35c942b85f947fabd1 inherit pub_methods_interface_n_t_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02c1d5d0c29efc44404ed7ca5087f7ab inherit pub_methods_interface_n_t_layer"><td class="memItemLeft" align="right" valign="top">(NSUInteger)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_layer.html#a02c1d5d0c29efc44404ed7ca5087f7ab">hash</a></td></tr>
+<tr class="separator:a02c1d5d0c29efc44404ed7ca5087f7ab inherit pub_methods_interface_n_t_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd551c335b1c328b09c3bca63147590b inherit pub_methods_interface_n_t_layer"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_layer.html#afd551c335b1c328b09c3bca63147590b">getClassName</a></td></tr>
 <tr class="separator:afd551c335b1c328b09c3bca63147590b inherit pub_methods_interface_n_t_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac37fe5d793015c72e670df05ad1cbfe6 inherit pub_methods_interface_n_t_layer"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_layer.html#ac37fe5d793015c72e670df05ad1cbfe6">getPriority</a></td></tr>
@@ -150,6 +162,71 @@ Instance Methods</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An abstract base class for all tile layers. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="ad69bfd60468c68c0e2c7eb550c41f093"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_n_t_map_tile.html">NTMapTile</a> *) calculateMapTile: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_n_t_map_pos.html">NTMapPos</a>*)&#160;</td>
+          <td class="paramname"><em>mapPos</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">zoom:</td>
+          <td></td>
+          <td class="paramtype">(int)&#160;</td>
+          <td class="paramname"><em>zoom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculate tile corresponding to given geographical coordinates and zoom level.<br/>
+ Note: zoom level bias is NOT applied, only discrete zoom level is used.<br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mapPos</td><td>Coordinates of the point in data source projection coordinate system.<br/>
+ </td></tr>
+    <tr><td class="paramname">zoom</td><td>Zoom level to use for the tile.<br/>
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>corresponding map tile. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acc3b4da2c56c6a798ac4ccca3281c637"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_n_t_map_pos.html">NTMapPos</a> *) calculateMapTileOrigin: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_n_t_map_tile.html">NTMapTile</a>*)&#160;</td>
+          <td class="paramname"><em>mapTile</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculate origin map coordinates of given map tile.<br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mapTile</td><td>The map tile to use.<br/>
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>corresponding coordinates of the tile origin in data source projection coordinate system. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a7476325bcd6c99cca2b0f4a50ffbb0d2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -172,7 +249,7 @@ Instance Methods</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="interface_n_t_raster_tile_layer.html#af646d38c86eebd5b257d8fc4da41fa99">NTRasterTileLayer</a>, and <a class="el" href="interface_n_t_vector_tile_layer.html#a9765f55a6e763081cc90b3f454e57eb5">NTVectorTileLayer</a>.</p>
+<p>Reimplemented in <a class="el" href="interface_n_t_vector_tile_layer.html#a9765f55a6e763081cc90b3f454e57eb5">NTVectorTileLayer</a>, and <a class="el" href="interface_n_t_raster_tile_layer.html#af646d38c86eebd5b257d8fc4da41fa99">NTRasterTileLayer</a>.</p>
 
 </div>
 </div>
@@ -191,6 +268,24 @@ Instance Methods</h2></td></tr>
 <p>Returns the data source assigned to this layer.<br/>
  </p>
 <dl class="section return"><dt>Returns</dt><dd>The tile data source assigned to this layer. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab8153764b16d7f2ff26d6ff753dfbbeb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (enum NTTileSubstitutionPolicy) getTileSubstitutionPolicy </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the current tile substitution policy.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>The current substitution policy. Default is TILE_SUBSTITUTION_POLICY_ALL. </dd></dl>
 
 </div>
 </div>
@@ -279,6 +374,30 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac5f67370d1ebf6daea0b119faf144cd8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) setTileSubstitutionPolicy: </td>
+          <td></td>
+          <td class="paramtype">(enum NTTileSubstitutionPolicy)&#160;</td>
+          <td class="paramname"><em>policy</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the current tile substitution policy.<br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">policy</td><td>The new substitution policy. Default is TILE_SUBSTITUTION_POLICY_ALL. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a6d4f0fb9e51e82f6af2f0c78bba63914"></a>
 <div class="memitem">
 <div class="memproto">
@@ -305,8 +424,8 @@ Instance Methods</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>tmp-doxygen/<a class="el" href="_tile_layer__proxy_8h_source.html">TileLayer_proxy.h</a></li>
-<li>tmp-doxygen/TileLayer_proxy.mm</li>
+<li>tmp-doxygen/<a class="el" href="_n_t_tile_layer_8h_source.html">NTTileLayer.h</a></li>
+<li>tmp-doxygen/NTTileLayer.mm</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -314,7 +433,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_tile_layer.html">NTTileLayer</a></li>
-    <li class="footer">Generated on Fri Mar 27 2015 18:00:44 for Nutiteq Maps SDK iOS by
+    <li class="footer">Generated on Wed May 20 2015 08:53:14 for Nutiteq Maps SDK 3 iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

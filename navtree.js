@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "Nutiteq Maps SDK iOS", "index.html", [
+  [ "Nutiteq Maps SDK 3 iOS", "index.html", [
     [ "Nutiteq SDK for iOS", "index.html", [
       [ "Introduction", "index.html#intro_sec", null ],
       [ "Getting started", "index.html#install_sec", null ]
@@ -21,9 +21,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"interface_n_t_cull_state.html",
-"interface_n_t_marker_style.html#a92d6fe957fc2af83aa74e2fabd585d6e",
-"interface_n_t_popup_style_builder.html"
+"interface_n_t_compressed_cache_tile_data_source.html",
+"interface_n_t_map_tile.html#af69541011e2976932a51117c46fe0f83",
+"interface_n_t_polygon.html#a99068582ebdc67415c9a39533ea170cc",
+"interface_n_t_view_state.html#a9bf10e0f66e83f54ae196dedd750f5e2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

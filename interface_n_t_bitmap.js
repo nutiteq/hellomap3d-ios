@@ -12,7 +12,9 @@ var interface_n_t_bitmap =
     [ "getSubBitmap:yOffset:width:height:pow2Padding:", "interface_n_t_bitmap.html#ad550967680ed87c8d4a98565cafc62ce", null ],
     [ "getUnpaddedBitmap", "interface_n_t_bitmap.html#ae82ec36b9101b55e32660b4a6d4b2c9e", null ],
     [ "getWidth", "interface_n_t_bitmap.html#a2828a10ed1c7d13238e8d07590640c6e", null ],
+    [ "hash", "interface_n_t_bitmap.html#a4d43587b5d439f94f8fc4a1ebd5d6574", null ],
     [ "initWithAssetPath:pow2Padding:", "interface_n_t_bitmap.html#a1d4085df64a731b8139a47ad33323836", null ],
     [ "initWithCompressedData:pow2Padding:", "interface_n_t_bitmap.html#a83b958686103aa69d2c19f3c42e77755", null ],
-    [ "initWithUncompressedData:width:height:colorFormat:bytesPerRow:pow2Padding:", "interface_n_t_bitmap.html#a735f3d8c37b24ae9e754f0b549dcd9a9", null ]
+    [ "initWithUncompressedData:width:height:colorFormat:bytesPerRow:pow2Padding:", "interface_n_t_bitmap.html#a735f3d8c37b24ae9e754f0b549dcd9a9", null ],
+    [ "isEqual:", "interface_n_t_bitmap.html#a483273c8bb218d931833bd2f929d7107", null ]
 ];

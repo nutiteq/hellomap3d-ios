@@ -9,5 +9,7 @@ var interface_n_t_package_meta_info =
     [ "getMapElement:", "interface_n_t_package_meta_info.html#ab31559827d85e435f7cc3e38948ee930", null ],
     [ "getMapKeys", "interface_n_t_package_meta_info.html#a8a7c059e732481033809dba4d4543e2a", null ],
     [ "getString", "interface_n_t_package_meta_info.html#a2f04e4d979d77be817ea2e9601182885", null ],
-    [ "getType", "interface_n_t_package_meta_info.html#a03bd7fa83d088cacf3e1c9741e48bcc8", null ]
+    [ "getType", "interface_n_t_package_meta_info.html#a03bd7fa83d088cacf3e1c9741e48bcc8", null ],
+    [ "hash", "interface_n_t_package_meta_info.html#a7212b9d1ead0ae7d6a22bb0720d5d169", null ],
+    [ "isEqual:", "interface_n_t_package_meta_info.html#a5cd6225e70bce2fb95fbe82bbfd9285c", null ]
 ];

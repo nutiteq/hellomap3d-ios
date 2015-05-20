@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK iOS: NTStyle Class Reference</title>
+<title>Nutiteq Maps SDK 3 iOS: NTStyle Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK iOS
-   &#160;<span id="projectnumber">3.1</span>
+   <div id="projectname">Nutiteq Maps SDK 3 iOS
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('interface_n_t_style.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><code>#import &lt;<a class="el" href="_style__proxy_8h_source.html">Style_proxy.h</a>&gt;</code></p>
+<p><code>#import &lt;<a class="el" href="_n_t_style_8h_source.html">NTStyle.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for NTStyle:</div>
 <div class="dyncontent">
@@ -119,12 +119,38 @@ Inheritance diagram for NTStyle:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
+<tr class="memitem:a2c21c2381d2cda343d87a05bd927a873"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_style.html#a2c21c2381d2cda343d87a05bd927a873">isEqual:</a></td></tr>
+<tr class="separator:a2c21c2381d2cda343d87a05bd927a873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81ffb77b11d7c6a60b7cfe95e28b0bd5"><td class="memItemLeft" align="right" valign="top">(NSUInteger)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_style.html#a81ffb77b11d7c6a60b7cfe95e28b0bd5">hash</a></td></tr>
+<tr class="separator:a81ffb77b11d7c6a60b7cfe95e28b0bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78edf60cabfa65d4f3a5965bf91e50c0"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_style.html#a78edf60cabfa65d4f3a5965bf91e50c0">getClassName</a></td></tr>
+<tr class="separator:a78edf60cabfa65d4f3a5965bf91e50c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9e51af8d5be31e748324cc97f544cf9"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_n_t_color.html">NTColor</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_style.html#aa9e51af8d5be31e748324cc97f544cf9">getColor</a></td></tr>
 <tr class="separator:aa9e51af8d5be31e748324cc97f544cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A base class for other Style objects. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="a78edf60cabfa65d4f3a5965bf91e50c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) getClassName </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the actual class name of this style. This is used<br/>
+ for dynamically creating Java and ObjC proxy classes, because Swig can't automatically<br/>
+ generate child proxy classes from a base class pointer.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>The class name of this style. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="aa9e51af8d5be31e748324cc97f544cf9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -143,9 +169,44 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a81ffb77b11d7c6a60b7cfe95e28b0bd5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSUInteger) hash </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the hash value of this object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The hash value of this object. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2c21c2381d2cda343d87a05bd927a873"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isEqual: </td>
+          <td></td>
+          <td class="paramtype">(id)&#160;</td>
+          <td class="paramname"><em>object</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Checks if this object is equal to the specified object. </p>
+<dl class="section return"><dt>Returns</dt><dd>True when objects are equal, false otherwise. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>tmp-doxygen/<a class="el" href="_style__proxy_8h_source.html">Style_proxy.h</a></li>
-<li>tmp-doxygen/Style_proxy.mm</li>
+<li>tmp-doxygen/<a class="el" href="_n_t_style_8h_source.html">NTStyle.h</a></li>
+<li>tmp-doxygen/NTStyle.mm</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -153,7 +214,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_style.html">NTStyle</a></li>
-    <li class="footer">Generated on Fri Mar 27 2015 18:00:44 for Nutiteq Maps SDK iOS by
+    <li class="footer">Generated on Wed May 20 2015 08:53:14 for Nutiteq Maps SDK 3 iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

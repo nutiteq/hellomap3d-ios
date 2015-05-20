@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK iOS: Class Members - Functions</title>
+<title>Nutiteq Maps SDK 3 iOS: Class Members - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK iOS
-   &#160;<span id="projectnumber">3.1</span>
+   <div id="projectname">Nutiteq Maps SDK 3 iOS
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -202,6 +202,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 , <a class="el" href="interface_n_t_geometry_simplifier.html#a5b08a299798b0bd7cde357a2deda2378">NTGeometrySimplifier</a>
 , <a class="el" href="interface_n_t_layer.html#afd551c335b1c328b09c3bca63147590b">NTLayer</a>
 , <a class="el" href="interface_n_t_projection.html#ae68243cb24a53656d21a75a4ff60ffc1">NTProjection</a>
+, <a class="el" href="interface_n_t_style.html#a78edf60cabfa65d4f3a5965bf91e50c0">NTStyle</a>
 , <a class="el" href="interface_n_t_vector_element.html#a534eaf481b502722ba5a7a88cbf9ca67">NTVectorElement</a>
 </li>
 <li>getClickPos
@@ -361,7 +362,9 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 , <a class="el" href="interface_n_t_view_state.html#ae6135f7103d739303f5e61e94ef8ca03">NTViewState</a>
 </li>
 <li>getHoles
-: <a class="el" href="interface_n_t_polygon_geometry.html#a418b0c15724d5f8ea2a7603e56b40076">NTPolygonGeometry</a>
+: <a class="el" href="interface_n_t_polygon.html#aa289aafeca3b9efd60e49208f7f05eaf">NTPolygon</a>
+, <a class="el" href="interface_n_t_polygon3_d.html#ae653e3390bc5b00db680f58ad85928bc">NTPolygon3D</a>
+, <a class="el" href="interface_n_t_polygon_geometry.html#a418b0c15724d5f8ea2a7603e56b40076">NTPolygonGeometry</a>
 </li>
 <li>getHorizontalOffset
 : <a class="el" href="interface_n_t_billboard_style.html#af5dc637aa2057e026ad3e0054fa16a02">NTBillboardStyle</a>
@@ -516,10 +519,14 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 , <a class="el" href="interface_n_t_billboard_style_builder.html#a6a07f1389e06d0cc4c24582d625f16d6">NTBillboardStyleBuilder</a>
 </li>
 <li>getPos
-: <a class="el" href="interface_n_t_point_geometry.html#a7f3b3b63348afca318043f5fa88a8f96">NTPointGeometry</a>
+: <a class="el" href="interface_n_t_point.html#a430a8b76afbf1babd938ec4a9c850c89">NTPoint</a>
+, <a class="el" href="interface_n_t_point_geometry.html#a7f3b3b63348afca318043f5fa88a8f96">NTPointGeometry</a>
 </li>
 <li>getPoses
-: <a class="el" href="interface_n_t_line_geometry.html#ac126c7cffab28100c36446de54a07c4f">NTLineGeometry</a>
+: <a class="el" href="interface_n_t_line.html#a1ab757f322a40e87e9c8dcde106c3f68">NTLine</a>
+, <a class="el" href="interface_n_t_line_geometry.html#ac126c7cffab28100c36446de54a07c4f">NTLineGeometry</a>
+, <a class="el" href="interface_n_t_polygon.html#ab037bf7f747bd6b4d3a94fa0d8753fb4">NTPolygon</a>
+, <a class="el" href="interface_n_t_polygon3_d.html#a71d96374c405560c3b8f98c379cd77bc">NTPolygon3D</a>
 , <a class="el" href="interface_n_t_polygon_geometry.html#a92cd72602cfc19f1ea1c3a228f2c28e3">NTPolygonGeometry</a>
 </li>
 <li>getPreloadingCameraPos
@@ -536,7 +543,11 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 </li>
 <li>getProjection
 : <a class="el" href="interface_n_t_n_m_l_model_l_o_d_tree_data_source.html#a07641c865367ae0737c858d4f98275a5">NTNMLModelLODTreeDataSource</a>
+, <a class="el" href="interface_n_t_tile_data_source.html#a998217f66a4625b6eba39316729dca10">NTTileDataSource</a>
 , <a class="el" href="interface_n_t_vector_data_source.html#ad9a192b42c917e69cf2d5dc82350a170">NTVectorDataSource</a>
+</li>
+<li>getProjectionEnvelope:
+: <a class="el" href="interface_n_t_cull_state.html#a7e4e71137bbdad784fa232d368147432">NTCullState</a>
 </li>
 <li>getProjectionMode
 : <a class="el" href="interface_n_t_options.html#a891135f9a7d4f9ea4d8dc5bac5549d28">NTOptions</a>
@@ -693,6 +704,9 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 <li>getTileStatus:x:y:
 : <a class="el" href="interface_n_t_package_tile_mask.html#ad0f0523f0e789d94639465441359523d">NTPackageTileMask</a>
 </li>
+<li>getTileSubstitutionPolicy
+: <a class="el" href="interface_n_t_tile_layer.html#ab8153764b16d7f2ff26d6ff753dfbbeb">NTTileLayer</a>
+</li>
 <li>getTileThreadPoolSize
 : <a class="el" href="interface_n_t_options.html#a61cba59b01038419ec0a2ccfd2d86c11">NTOptions</a>
 </li>
@@ -825,7 +839,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Mar 27 2015 18:00:44 for Nutiteq Maps SDK iOS by
+    <li class="footer">Generated on Wed May 20 2015 08:53:14 for Nutiteq Maps SDK 3 iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

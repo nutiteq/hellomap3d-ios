@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK iOS: NTMapPos Class Reference</title>
+<title>Nutiteq Maps SDK 3 iOS: NTMapPos Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK iOS
-   &#160;<span id="projectnumber">3.1</span>
+   <div id="projectname">Nutiteq Maps SDK 3 iOS
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -97,12 +97,16 @@ $(document).ready(function(){initNavTree('interface_n_t_map_pos.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><code>#import &lt;<a class="el" href="_map_pos__proxy_8h_source.html">MapPos_proxy.h</a>&gt;</code></p>
+<p><code>#import &lt;<a class="el" href="_n_t_map_pos_8h_source.html">NTMapPos.h</a>&gt;</code></p>
 
 <p>Inherits NSObject.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
+<tr class="memitem:aa757d8054c908be394c5bce632a2aa32"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_pos.html#aa757d8054c908be394c5bce632a2aa32">isEqual:</a></td></tr>
+<tr class="separator:aa757d8054c908be394c5bce632a2aa32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fa1c4312893fbece9def461f2c37f74"><td class="memItemLeft" align="right" valign="top">(NSUInteger)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_pos.html#a6fa1c4312893fbece9def461f2c37f74">hash</a></td></tr>
+<tr class="separator:a6fa1c4312893fbece9def461f2c37f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50d0b4af554d4aedd6469a7b9d52cccf"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_pos.html#a50d0b4af554d4aedd6469a7b9d52cccf">init</a></td></tr>
 <tr class="separator:a50d0b4af554d4aedd6469a7b9d52cccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5560847b9575025648443356e162e0b"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_pos.html#aa5560847b9575025648443356e162e0b">initWithX:y:</a></td></tr>
@@ -141,8 +145,8 @@ Instance Methods</h2></td></tr>
 <tr class="separator:adea37efdd3850dbc0448a1f5cffbb6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7962c6518429ff8ff7b83828d6b75264"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_pos.html#a7962c6518429ff8ff7b83828d6b75264">hashInternal</a></td></tr>
 <tr class="separator:a7962c6518429ff8ff7b83828d6b75264"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb4b291cd5b490fad02495a0d889652f"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_pos.html#abb4b291cd5b490fad02495a0d889652f">toString</a></td></tr>
-<tr class="separator:abb4b291cd5b490fad02495a0d889652f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace95f82f7c1a7d28f589a405fc4223aa"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_map_pos.html#ace95f82f7c1a7d28f589a405fc4223aa">description</a></td></tr>
+<tr class="separator:ace95f82f7c1a7d28f589a405fc4223aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A double precision map position defined using three coordinates. X and y coordinates denote positions on the map,<br/>
@@ -172,6 +176,24 @@ Instance Methods</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The new map position. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ace95f82f7c1a7d28f589a405fc4223aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) description </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a string representation of this map position, useful for logging.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>The string representation of this map position. </dd></dl>
 
 </div>
 </div>
@@ -471,6 +493,23 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a6fa1c4312893fbece9def461f2c37f74"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSUInteger) hash </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the hash value of this object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The hash value of this object. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a7962c6518429ff8ff7b83828d6b75264"></a>
 <div class="memitem">
 <div class="memproto">
@@ -582,6 +621,24 @@ Instance Methods</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="aa757d8054c908be394c5bce632a2aa32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isEqual: </td>
+          <td></td>
+          <td class="paramtype">(id)&#160;</td>
+          <td class="paramname"><em>object</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Checks if this object is equal to the specified object. </p>
+<dl class="section return"><dt>Returns</dt><dd>True when objects are equal, false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -701,27 +758,9 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abb4b291cd5b490fad02495a0d889652f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (NSString *) toString </td>
-          <td></td>
-          <td class="paramname"></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Creates a string representation of this map position, useful for logging.<br/>
- </p>
-<dl class="section return"><dt>Returns</dt><dd>The string representation of this map position. </dd></dl>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>tmp-doxygen/<a class="el" href="_map_pos__proxy_8h_source.html">MapPos_proxy.h</a></li>
-<li>tmp-doxygen/MapPos_proxy.mm</li>
+<li>tmp-doxygen/<a class="el" href="_n_t_map_pos_8h_source.html">NTMapPos.h</a></li>
+<li>tmp-doxygen/NTMapPos.mm</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -729,7 +768,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_map_pos.html">NTMapPos</a></li>
-    <li class="footer">Generated on Fri Mar 27 2015 18:00:43 for Nutiteq Maps SDK iOS by
+    <li class="footer">Generated on Wed May 20 2015 08:53:14 for Nutiteq Maps SDK 3 iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

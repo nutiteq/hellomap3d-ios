@@ -93,6 +93,7 @@ var hierarchy =
     [ "NTTileData", "interface_n_t_tile_data.html", null ],
     [ "NTTileDataSource", "interface_n_t_tile_data_source.html", [
       [ "NTAssetTileDataSource", "interface_n_t_asset_tile_data_source.html", null ],
+      [ "NTBitmapOverlayRasterTileDataSource", "interface_n_t_bitmap_overlay_raster_tile_data_source.html", null ],
       [ "NTCacheTileDataSource", "interface_n_t_cache_tile_data_source.html", [
         [ "NTCompressedCacheTileDataSource", "interface_n_t_compressed_cache_tile_data_source.html", null ],
         [ "NTPersistentCacheTileDataSource", "interface_n_t_persistent_cache_tile_data_source.html", null ]

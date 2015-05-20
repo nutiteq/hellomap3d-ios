@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['calculatemaptile_3azoom_3a',['calculateMapTile:zoom:',['../interface_n_t_tile_layer.html#ad69bfd60468c68c0e2c7eb550c41f093',1,'NTTileLayer']]],
+  ['calculatemaptileorigin_3a',['calculateMapTileOrigin:',['../interface_n_t_tile_layer.html#acc3b4da2c56c6a798ac4ccca3281c637',1,'NTTileLayer']]],
   ['calculateresourcepath_3a',['CalculateResourcePath:',['../interface_n_t_asset_utils.html#a7ca1cf1fbb75c453476b3e6963154dc0',1,'NTAssetUtils']]],
   ['calculatewritablepath_3a',['CalculateWritablePath:',['../interface_n_t_asset_utils.html#a814cb9beb898b6ba033f783d2383528c',1,'NTAssetUtils']]],
   ['cancelalltasks',['cancelAllTasks',['../interface_n_t_base_map_view.html#ae33f7ab1a982ca708ca71cba9d83c2f8',1,'NTBaseMapView']]],

@@ -11,6 +11,7 @@ var searchData=
   ['ntbillboardstyle',['NTBillboardStyle',['../interface_n_t_billboard_style.html',1,'']]],
   ['ntbillboardstylebuilder',['NTBillboardStyleBuilder',['../interface_n_t_billboard_style_builder.html',1,'']]],
   ['ntbitmap',['NTBitmap',['../interface_n_t_bitmap.html',1,'']]],
+  ['ntbitmapoverlayrastertiledatasource',['NTBitmapOverlayRasterTileDataSource',['../interface_n_t_bitmap_overlay_raster_tile_data_source.html',1,'']]],
   ['ntbitmaputils',['NTBitmapUtils',['../interface_n_t_bitmap_utils.html',1,'']]],
   ['ntcachetiledatasource',['NTCacheTileDataSource',['../interface_n_t_cache_tile_data_source.html',1,'']]],
   ['ntcolor',['NTColor',['../interface_n_t_color.html',1,'']]],

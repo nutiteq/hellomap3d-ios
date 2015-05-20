@@ -7,5 +7,7 @@ var interface_n_t_package_info =
     [ "getSize", "interface_n_t_package_info.html#a8b4ee59fbe58bbf50b23b5affec2fea0", null ],
     [ "getTileMask", "interface_n_t_package_info.html#ad883a1e72e15db419d37d4c1ba74bf80", null ],
     [ "getVersion", "interface_n_t_package_info.html#a751729d307b68a94d07fc75eece56f39", null ],
-    [ "initWithPackageId:version:size:serverUrl:tileMask:metaInfo:", "interface_n_t_package_info.html#a2f510c6c6c15b8884cbe0142b54763d3", null ]
+    [ "hash", "interface_n_t_package_info.html#adf5835363814374893bd8c659a9c47d1", null ],
+    [ "initWithPackageId:version:size:serverUrl:tileMask:metaInfo:", "interface_n_t_package_info.html#a2f510c6c6c15b8884cbe0142b54763d3", null ],
+    [ "isEqual:", "interface_n_t_package_info.html#a6a6cb02bc4754b686e4337d7dcfb0e7e", null ]
 ];

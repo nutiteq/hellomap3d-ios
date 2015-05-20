@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Nutiteq Maps SDK iOS: NTScreenPos Class Reference</title>
+<title>Nutiteq Maps SDK 3 iOS: NTScreenPos Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,8 +30,8 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="nutiteq_transparent.png"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Nutiteq Maps SDK iOS
-   &#160;<span id="projectnumber">3.1</span>
+   <div id="projectname">Nutiteq Maps SDK 3 iOS
+   &#160;<span id="projectnumber">3.0</span>
    </div>
    <div id="projectbrief">Objective C API</div>
   </td>
@@ -97,12 +97,16 @@ $(document).ready(function(){initNavTree('interface_n_t_screen_pos.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><code>#import &lt;<a class="el" href="_screen_pos__proxy_8h_source.html">ScreenPos_proxy.h</a>&gt;</code></p>
+<p><code>#import &lt;<a class="el" href="_n_t_screen_pos_8h_source.html">NTScreenPos.h</a>&gt;</code></p>
 
 <p>Inherits NSObject.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
+<tr class="memitem:a4fe387d7277cec8b5ae80197f5f736da"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_screen_pos.html#a4fe387d7277cec8b5ae80197f5f736da">isEqual:</a></td></tr>
+<tr class="separator:a4fe387d7277cec8b5ae80197f5f736da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2e56c582c8c6d1646f999dedc628e1e"><td class="memItemLeft" align="right" valign="top">(NSUInteger)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_screen_pos.html#aa2e56c582c8c6d1646f999dedc628e1e">hash</a></td></tr>
+<tr class="separator:aa2e56c582c8c6d1646f999dedc628e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd89fb6525a5a915927e3eb31845d157"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_screen_pos.html#acd89fb6525a5a915927e3eb31845d157">init</a></td></tr>
 <tr class="separator:acd89fb6525a5a915927e3eb31845d157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b5c7e58a76949a9034b3970763a565b"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_screen_pos.html#a4b5c7e58a76949a9034b3970763a565b">initWithX:y:</a></td></tr>
@@ -115,12 +119,30 @@ Instance Methods</h2></td></tr>
 <tr class="separator:abe772af5b2d8dccfffa8cd2a8fb2648b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af062af6f0d13b3077aedf602201b6bf3"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_screen_pos.html#af062af6f0d13b3077aedf602201b6bf3">hashInternal</a></td></tr>
 <tr class="separator:af062af6f0d13b3077aedf602201b6bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35b8652e94a7529ff152bb6c84886363"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_screen_pos.html#a35b8652e94a7529ff152bb6c84886363">toString</a></td></tr>
-<tr class="separator:a35b8652e94a7529ff152bb6c84886363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf2a7e5599478bfc9aa53cafa26d0525"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_t_screen_pos.html#acf2a7e5599478bfc9aa53cafa26d0525">description</a></td></tr>
+<tr class="separator:acf2a7e5599478bfc9aa53cafa26d0525"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A screen position defined by x,y floating point numbers. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="acf2a7e5599478bfc9aa53cafa26d0525"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) description </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a string representation of this screen position, useful for logging.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>The string representation of this screen position. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="adeed21594b427ed42d0f2f5a7cc0539b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -154,6 +176,23 @@ Instance Methods</h2></td></tr>
 <p>Returns the y coordinate of this position.<br/>
  </p>
 <dl class="section return"><dt>Returns</dt><dd>The y coordinate of this position. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa2e56c582c8c6d1646f999dedc628e1e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSUInteger) hash </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the hash value of this object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The hash value of this object. </dd></dl>
 
 </div>
 </div>
@@ -227,6 +266,24 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a4fe387d7277cec8b5ae80197f5f736da"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isEqual: </td>
+          <td></td>
+          <td class="paramtype">(id)&#160;</td>
+          <td class="paramname"><em>object</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Checks if this object is equal to the specified object. </p>
+<dl class="section return"><dt>Returns</dt><dd>True when objects are equal, false otherwise. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="abe772af5b2d8dccfffa8cd2a8fb2648b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -253,27 +310,9 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a35b8652e94a7529ff152bb6c84886363"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (NSString *) toString </td>
-          <td></td>
-          <td class="paramname"></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Creates a string representation of this screen position, useful for logging.<br/>
- </p>
-<dl class="section return"><dt>Returns</dt><dd>The string representation of this screen position. </dd></dl>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>tmp-doxygen/<a class="el" href="_screen_pos__proxy_8h_source.html">ScreenPos_proxy.h</a></li>
-<li>tmp-doxygen/ScreenPos_proxy.mm</li>
+<li>tmp-doxygen/<a class="el" href="_n_t_screen_pos_8h_source.html">NTScreenPos.h</a></li>
+<li>tmp-doxygen/NTScreenPos.mm</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -281,7 +320,7 @@ Instance Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="interface_n_t_screen_pos.html">NTScreenPos</a></li>
-    <li class="footer">Generated on Fri Mar 27 2015 18:00:44 for Nutiteq Maps SDK iOS by
+    <li class="footer">Generated on Wed May 20 2015 08:53:14 for Nutiteq Maps SDK 3 iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
