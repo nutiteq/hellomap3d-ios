@@ -62,28 +62,6 @@ namespace Nuti {
      */
     class BillboardStyle : public Style {
     public:
-        /**
-         * Constructs a BillboardStyle object from various parameters. Instantiating the object directly is
-         * not recommended, BillboardStyleBuilder should be used instead.
-         * @param color The color for the billboard.
-         * @param attachAnchorPointX The horizontal attaching anchor point for the billboard.
-         * @param attachAnchorPointY The vertical attaching anchor point for the billboard.
-         * @param causesOverlap The causes overlap flag for the billboard.
-         * @param hideIfOverlapped The hide if overlapped flag for the billboard.
-         * @param horizontalOffset The horizontal offset for the billboard.
-         * @param verticalOffset The vertical offset for the billboard.
-         * @param placementPriority The placement priority for the billboard.
-         * @param scaleWithDPI The scale with DPI flag for the billboard.
-         */
-        BillboardStyle(const Color& color,
-                       float attachAnchorPointX,
-                       float attachAnchorPointY,
-                       bool causesOverlap,
-                       bool hideIfOverlapped,
-                       float horizontalOffset,
-                       float verticalOffset,
-                       int placementPriority,
-                       bool scaleWithDPI);
         virtual ~BillboardStyle();
     
         /**
@@ -132,6 +110,17 @@ namespace Nuti {
         bool isScaleWithDPI() const;
         
     protected:
+        BillboardStyle(const std::string& className,
+                       const Color& color,
+                       float attachAnchorPointX,
+                       float attachAnchorPointY,
+                       bool causesOverlap,
+                       bool hideIfOverlapped,
+                       float horizontalOffset,
+                       float verticalOffset,
+                       int placementPriority,
+                       bool scaleWithDPI);
+
         float _attachAnchorPointX;
         float _attachAnchorPointY;
         

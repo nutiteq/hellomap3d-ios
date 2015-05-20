@@ -102,6 +102,9 @@ namespace Nuti {
          */
         void setGeometrySimplifier(const std::shared_ptr<GeometrySimplifier>& simplifier);
         
+    protected:
+        virtual void notifyElementChanged(const std::shared_ptr<VectorElement>& element);
+
     private:
         std::shared_ptr<GeometrySimplifier> _geometrySimplifier;
         std::shared_ptr<SpatialIndex<std::shared_ptr<VectorElement> > > _spatialIndex;

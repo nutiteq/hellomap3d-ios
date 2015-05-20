@@ -17,8 +17,8 @@ extern "C" {
 
 
 #import "NTMapTile.h"
-#import "NTTileDataSource.h"
 #import "NTTileData.h"
+#import "NTProjection.h"
 
 /**
  * Abstract base class for tile data sources. It provides default implementation <br>
@@ -33,6 +33,7 @@ __attribute__ ((visibility("default"))) @interface NTTileDataSource : NSObject
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
  * Constructs an abstract TileDataSource object.<br>
+ * Note: EPSG3857 projection is used.<br>
  * @param minZoom The minimum zoom level supported by this data source.<br>
  * @param maxZoom The maximum zoom level supported by this data source.
  */
@@ -47,6 +48,11 @@ __attribute__ ((visibility("default"))) @interface NTTileDataSource : NSObject
  * @return The maximum zoom level supported (exclusive).
  */
 -(int)getMaxZoom;
+/**
+ * Returns the projection of this tile source.<br>
+ * @return The projection of this tile source.
+ */
+-(NTProjection*)getProjection;
 /**
  * Loads the specified tile.<br>
  * @param tile The tile to load.<br>

@@ -68,11 +68,24 @@ typedef NS_ENUM(NSInteger, NTColorFormat) {
  */
 __attribute__ ((visibility("default"))) @interface NTBitmap : NSObject
 {
-	void *swigCPtr;
-	BOOL swigCMemOwn;
+  void *swigCPtr;
+  BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
+ */
+-(BOOL)isEqual:(id)object;
+
+/**
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
+ */
+-(NSUInteger)hash;
+
 /**
  * Constructs a bitmap by loading a compressed image bundled with the application. If the power of two conversion flag<br>
  * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating<br>

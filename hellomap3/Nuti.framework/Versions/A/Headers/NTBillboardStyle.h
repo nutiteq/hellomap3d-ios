@@ -68,20 +68,6 @@ __attribute__ ((visibility("default"))) @interface NTBillboardStyle : NTStyle
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 /**
- * Constructs a BillboardStyle object from various parameters. Instantiating the object directly is<br>
- * not recommended, BillboardStyleBuilder should be used instead.<br>
- * @param color The color for the billboard.<br>
- * @param attachAnchorPointX The horizontal attaching anchor point for the billboard.<br>
- * @param attachAnchorPointY The vertical attaching anchor point for the billboard.<br>
- * @param causesOverlap The causes overlap flag for the billboard.<br>
- * @param hideIfOverlapped The hide if overlapped flag for the billboard.<br>
- * @param horizontalOffset The horizontal offset for the billboard.<br>
- * @param verticalOffset The vertical offset for the billboard.<br>
- * @param placementPriority The placement priority for the billboard.<br>
- * @param scaleWithDPI The scale with DPI flag for the billboard.
- */
--(id)initWithColor: (NTColor*)color attachAnchorPointX: (float)attachAnchorPointX attachAnchorPointY: (float)attachAnchorPointY causesOverlap: (BOOL)causesOverlap hideIfOverlapped: (BOOL)hideIfOverlapped horizontalOffset: (float)horizontalOffset verticalOffset: (float)verticalOffset placementPriority: (int)placementPriority scaleWithDPI: (BOOL)scaleWithDPI;
-/**
  * Returns the horizontal attaching anchor point of the billoard.<br>
  * @return The horizontal attaching anchor point of the billoard.
  */

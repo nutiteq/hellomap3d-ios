@@ -40,6 +40,7 @@ namespace Nuti {
     private:
         int _tileSize;
 
+        cglib::vec2<double> _origin;
         cglib::mat3x3<double> _transform;
         cglib::mat3x3<double> _invTransform;
         std::shared_ptr<Bitmap> _bitmap;

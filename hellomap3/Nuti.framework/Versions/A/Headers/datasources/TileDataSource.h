@@ -15,6 +15,7 @@
 #include "core/TileData.h"
 
 namespace Nuti {
+    class Projection;
 
     /**
      * Abstract base class for tile data sources. It provides default implementation 
@@ -38,6 +39,7 @@ namespace Nuti {
         
         /**
          * Constructs an abstract TileDataSource object.
+         * Note: EPSG3857 projection is used.
          * @param minZoom The minimum zoom level supported by this data source.
          * @param maxZoom The maximum zoom level supported by this data source.
          */
@@ -55,6 +57,11 @@ namespace Nuti {
          * @return The maximum zoom level supported (exclusive).
          */
         int getMaxZoom() const;
+        /**
+         * Returns the projection of this tile source.
+         * @return The projection of this tile source.
+         */
+        const std::shared_ptr<Projection>& getProjection() const;
         
         /**
          * Loads the specified tile.
@@ -86,6 +93,7 @@ namespace Nuti {
     protected:
         int _minZoom;
         int _maxZoom;
+        std::shared_ptr<Projection> _projection;
     
     private:
         std::vector<std::shared_ptr<OnChangeListener> > _onChangeListeners;

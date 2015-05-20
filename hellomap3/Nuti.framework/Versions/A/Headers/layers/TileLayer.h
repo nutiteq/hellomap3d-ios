@@ -96,6 +96,21 @@ namespace Nuti {
         void setZoomLevelBias(float bias);
         
         /**
+         * Calculate tile corresponding to given geographical coordinates and zoom level.
+         * Note: zoom level bias is NOT applied, only discrete zoom level is used.
+         * @param mapPos Coordinates of the point in data source projection coordinate system.
+         * @param zoom Zoom level to use for the tile.
+         * @return corresponding map tile.
+         */
+        MapTile calculateMapTile(const MapPos& mapPos, int zoom) const;
+        /**
+         * Calculate origin map coordinates of given map tile.
+         * @param mapTile The map tile to use.
+         * @return corresponding coordinates of the tile origin in data source projection coordinate system.
+         */
+        MapPos calculateMapTileOrigin(const MapTile& mapTile) const;
+        
+        /**
          * Clear layer tile caches. This will release memory allocated to tiles.
          * @param all True if all tiles should be released, otherwise only preloading (invisible) tiles are released.
          */

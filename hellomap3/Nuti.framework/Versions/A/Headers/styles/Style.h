@@ -19,17 +19,27 @@ namespace Nuti {
         virtual ~Style();
     
         /**
+         * Returns the actual class name of this style. This is used
+         * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically
+         * generate child proxy classes from a base class pointer.
+         * @return The class name of this style.
+         */
+        const std::string& getClassName() const;
+
+        /**
          * Returns the color of the vector element.
          * @return The color of the vector element.
          */
         const Color& getColor() const;
     
     protected:
-        Style(const Color& color);
+        Style(const std::string& className, const Color& color);
     
         Color _color;
+
+        std::string _className; // This is used by swig to generate correct proxy object
     };
-    
+
 }
 
 #endif

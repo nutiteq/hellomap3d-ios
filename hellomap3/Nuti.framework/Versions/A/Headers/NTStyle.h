@@ -23,11 +23,34 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTStyle : NSObject
 {
-	void *swigCPtr;
-	BOOL swigCMemOwn;
+  void *swigCPtr;
+  BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
+ */
+-(BOOL)isEqual:(id)object;
+
+/**
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
+ */
+-(NSUInteger)hash;
+
+
++(NTStyle*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
+/**
+ * Returns the actual class name of this style. This is used<br>
+ * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically<br>
+ * generate child proxy classes from a base class pointer.<br>
+ * @return The class name of this style.
+ */
+-(NSString*)getClassName;
 /**
  * Returns the color of the vector element.<br>
  * @return The color of the vector element.

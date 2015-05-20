@@ -35,6 +35,8 @@ typedef NS_ENUM(NSInteger, NTTileSubstitutionPolicy) {
 };
 
 
+#import "NTMapPos.h"
+#import "NTMapTile.h"
 #import "NTTileDataSource.h"
 #import "NTLayer.h"
 
@@ -85,6 +87,20 @@ __attribute__ ((visibility("default"))) @interface NTTileLayer : NTLayer
  * @param bias The new bias value, both positive and negative fractional values are supported.
  */
 -(void)setZoomLevelBias: (float)bias;
+/**
+ * Calculate tile corresponding to given geographical coordinates and zoom level.<br>
+ * Note: zoom level bias is NOT applied, only discrete zoom level is used.<br>
+ * @param mapPos Coordinates of the point in data source projection coordinate system.<br>
+ * @param zoom Zoom level to use for the tile.<br>
+ * @return corresponding map tile.
+ */
+-(NTMapTile*)calculateMapTile: (NTMapPos*)mapPos zoom: (int)zoom;
+/**
+ * Calculate origin map coordinates of given map tile.<br>
+ * @param mapTile The map tile to use.<br>
+ * @return corresponding coordinates of the tile origin in data source projection coordinate system.
+ */
+-(NTMapPos*)calculateMapTileOrigin: (NTMapTile*)mapTile;
 /**
  * Clear layer tile caches. This will release memory allocated to tiles.<br>
  * @param all True if all tiles should be released, otherwise only preloading (invisible) tiles are released.

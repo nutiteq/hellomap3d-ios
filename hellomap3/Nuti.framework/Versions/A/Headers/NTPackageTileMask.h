@@ -38,11 +38,24 @@ typedef NS_ENUM(NSInteger, NTPackageTileStatus) {
  */
 __attribute__ ((visibility("default"))) @interface NTPackageTileMask : NSObject
 {
-	void *swigCPtr;
-	BOOL swigCMemOwn;
+  void *swigCPtr;
+  BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
+ */
+-(BOOL)isEqual:(id)object;
+
+/**
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
+ */
+-(NSUInteger)hash;
+
 /**
  * Returns the encoded tile mask value. This should not be displayed to the user.<br>
  * @return The tile mask of the package

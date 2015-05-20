@@ -25,11 +25,24 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTMapEnvelope : NSObject
 {
-	void *swigCPtr;
-	BOOL swigCMemOwn;
+  void *swigCPtr;
+  BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
+ */
+-(BOOL)isEqual:(id)object;
+
+/**
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
+ */
+-(NSUInteger)hash;
+
 /**
  * Constructs an empty MapEnvelope object. Nothing is contained within<br>
  * this envelope.

@@ -44,6 +44,7 @@ namespace Nuti {
                 const ViewState& viewState);
         void onSurfaceDestroyed();
     
+        size_t getElementCount() const;
         void addElement(const std::shared_ptr<Billboard>& element);
         void refreshElements();
         void updateElement(const std::shared_ptr<Billboard>& element);

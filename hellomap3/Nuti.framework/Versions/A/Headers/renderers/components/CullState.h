@@ -16,6 +16,7 @@
 #include <vector>
 
 namespace Nuti {
+    class Projection;
 
     /**
      * View specific state determined by the culling process. This includes 
@@ -35,6 +36,12 @@ namespace Nuti {
                   const MapPos& preloadingCameraPos, const ViewState& viewState);
         virtual ~CullState();
     
+        /**
+         * Returns an envelope for the visible area in given projection coordinates.
+         * @param proj The projection for the envelope
+         * @return The envelope for the visible area in the coordinate system of the given projection.
+         */
+        MapEnvelope getProjectionEnvelope(const std::shared_ptr<Projection>& proj) const;
         /**
          * Returns an envelope for the visible area.
          * @return The envelope for the visible area in the internal coordiante system.

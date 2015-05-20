@@ -20,6 +20,7 @@ extern "C" {
 #import "NTMapPos.h"
 #import "NTFrustum.h"
 #import "NTViewState.h"
+#import "NTProjection.h"
 
 /**
  * View specific state determined by the culling process. This includes <br>
@@ -27,11 +28,24 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTCullState : NSObject
 {
-	void *swigCPtr;
-	BOOL swigCMemOwn;
+  void *swigCPtr;
+  BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
+ */
+-(BOOL)isEqual:(id)object;
+
+/**
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
+ */
+-(NSUInteger)hash;
+
 /**
  * Constructs a CullState object from an envelope, visible and preloading frustums, a preloading camera<br>
  * position and a viewstate.<br>
@@ -41,6 +55,12 @@ __attribute__ ((visibility("default"))) @interface NTCullState : NSObject
  * @param viewState The view state.
  */
 -(id)initWithEnvelope: (NTMapEnvelope*)envelope preloadingFrustum: (NTFrustum*)preloadingFrustum preloadingCameraPos: (NTMapPos*)preloadingCameraPos viewState: (NTViewState*)viewState;
+/**
+ * Returns an envelope for the visible area in given projection coordinates.<br>
+ * @param proj The projection for the envelope<br>
+ * @return The envelope for the visible area in the coordinate system of the given projection.
+ */
+-(NTMapEnvelope*)getProjectionEnvelope: (NTProjection*)proj;
 /**
  * Returns an envelope for the visible area.<br>
  * @return The envelope for the visible area in the internal coordiante system.
