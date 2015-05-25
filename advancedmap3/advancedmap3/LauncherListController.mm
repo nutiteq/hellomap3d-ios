@@ -14,6 +14,7 @@
 			@{ @"name": @"3D Overlays Sample", @"controller": @"Overlays3DSampleController" },
 			@{ @"name": @"Offline Vector Map Sample", @"controller": @"OfflineVectorMapSampleController" },
 			@{ @"name": @"Aerial Map Sample", @"controller": @"AerialMapSampleController" },
+      @{ @"name": @"Hillshade Topo Map Sample", @"controller": @"HillshadeSampleController" },
 			@{ @"name": @"Custom Raster Data Source Sample", @"controller": @"CustomRasterDataSourceSampleController" },
             @{ @"name": @"Ground Overlay Sample", @"controller": @"GroundOverlaySampleController" },
 			@{ @"name": @"Custom Popup Sample", @"controller": @"CustomPopupSampleController" },

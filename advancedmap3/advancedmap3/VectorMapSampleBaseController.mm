@@ -17,13 +17,15 @@
 -(NSDictionary*)languages
 {
 	return @{
+			 @"local": @"",
 			 @"English": @"en",
 			 @"German":  @"de",
  			 @"Spanish": @"es",
-             @"Italian": @"it",
+       @"Italian": @"it",
 			 @"French":  @"fr",
-             @"Russian": @"ru",
-             @"Chinese": @"zh",
+       @"Russian": @"ru",
+       @"Chinese": @"zh",
+       @"Estonian": @"et",
 			 };
 }
 
@@ -31,10 +33,10 @@
 {
 	return @{
 			 @"Basic":		   @"basic",
-			 @"OSM Bright 2D": @"osmbright",
-			 @"OSM Bright 3D": @"osmbright3d",
+			 @"NutiBright 2D": @"nutibright",
+			 @"NutiBright 3D": @"nutibright3d",
              @"OSM Bright Chinese": @"osmbright-heilight",
-			 @"Loose Leaf":	   @"looseleaf",
+			 @"Loose Leaf":	   @"looseleaf"
 			 };
 }
 
@@ -56,8 +58,8 @@
 	// Load vector tile styleset
 	NSString* styleAssetName = [self.vectorStyleName stringByAppendingString: @".zip"];
 	BOOL styleBuildings3D = NO;
-	if ([self.vectorStyleName isEqualToString:@"osmbright3d"]) {
-		styleAssetName = @"osmbright.zip";
+	if ([self.vectorStyleName isEqualToString:@"nutibright3d"]) {
+		styleAssetName = @"nutibright.zip";
 		styleBuildings3D = YES;
 	}
 	NTUnsignedCharVector *vectorTileStyleSetData = [NTAssetUtils loadBytes:styleAssetName];
@@ -66,10 +68,16 @@
 	// Create vector tile decoder using the styleset and update style parameters
 	self.vectorTileDecoder = [[NTMBVectorTileDecoder alloc] initWithStyleSet:vectorTileStyleSet];
 	[self.vectorTileDecoder setStyleStringParameter:@"lang" value:self.vectorStyleLanguage];
-	if ([styleAssetName isEqualToString:@"osmbright.zip"] && styleBuildings3D) { // only OSM Bright style supports this currently
+	if ([styleAssetName isEqualToString:@"nutibright.zip"] && styleBuildings3D) { // only OSM Bright style supports this currently
 		[self.vectorTileDecoder setStyleBoolParameter:@"buildings3d" value:YES];
-    [self.vectorTileDecoder setStyleStringParameter:@"markers3d" value:@"1"];
 	}
+  
+  [self.vectorTileDecoder setStyleStringParameter:@"markers3d" value:@"1"];
+  [self.vectorTileDecoder setStyleStringParameter:@"texts3d" value:@"1"];
+
+  
+    [self.vectorTileDecoder setStyleStringParameter:@"contour_stroke" value:@"rgba(217, 166, 140, 0.53)"];
+    [self.vectorTileDecoder setStyleFloatParameter:@"contour_width" value:0.8];
 	
 	// Create tile data source
     if (!self.vectorTileDataSource) {
@@ -89,7 +97,7 @@
 - (NTTileDataSource*)createTileDataSource
 {
 	// Create global online vector tile data source, use Nutiteq test account
-	NTTileDataSource *vectorTileDataSource = [[NTNutiteqOnlineTileDataSource alloc] initWithSource:@"nutiteq.mbstreets"];
+	NTTileDataSource *vectorTileDataSource = [[NTNutiteqOnlineTileDataSource alloc] initWithSource:@"nutiteq.osm"];
 
 	// We don't use vectorTileDataSource directly (this would be also option),
 	// but via caching to cache data locally non-persistently
@@ -114,8 +122,8 @@
 	[self.mapView setRotation:0 durationSeconds:0];
 	
 	// Set default style parameters and create base layer
-	self.vectorStyleName = @"osmbright";
-	self.vectorStyleLanguage = @"en";
+	self.vectorStyleName = @"nutibright";
+	self.vectorStyleLanguage = @"";
 	[self updateBaseLayer];
 
 	// Create menu
