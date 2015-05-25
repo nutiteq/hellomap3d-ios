@@ -79,7 +79,7 @@ class MyMapViewController: GLKViewController {
 		// Add the previous vector layer to the map
 		mapView.getLayers().add(vectorLayer)
     
-    let listener = MapListener()
+    let listener = MapListener(mapView_:mapView)
     mapView.setMapEventListener(listener)
     
 	}
