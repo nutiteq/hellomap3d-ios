@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1CF0611B1308CD001A64AD /* MapListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1CF0601B1308CD001A64AD /* MapListener.swift */; };
 		4D301AF81A1E2D4D00F4CCD0 /* Nuti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D301AF71A1E2D4D00F4CCD0 /* Nuti.framework */; };
 		4D79D1EB1A1A756F000709E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D79D1EA1A1A756F000709E8 /* UIKit.framework */; };
 		4D79D1ED1A1A758B000709E8 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D79D1EC1A1A758B000709E8 /* GLKit.framework */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C1CF0601B1308CD001A64AD /* MapListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListener.swift; sourceTree = "<group>"; };
 		4D301AF71A1E2D4D00F4CCD0 /* Nuti.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuti.framework; path = ../../hellomap3/Nuti.framework; sourceTree = "<group>"; };
 		4D498DAA1A1A82200062BD5C /* hellomap3swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hellomap3swift-Bridging-Header.h"; path = "hellomap3swift/hellomap3swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D79D1EA1A1A756F000709E8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -106,6 +108,7 @@
 				4DB60F4C1A1A6C1500A6AF18 /* MyMapViewController.swift */,
 				4DB60F511A1A6C1500A6AF18 /* Images.xcassets */,
 				4DB60F481A1A6C1500A6AF18 /* Supporting Files */,
+				0C1CF0601B1308CD001A64AD /* MapListener.swift */,
 			);
 			path = hellomap3swift;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			files = (
 				4DB60F4D1A1A6C1500A6AF18 /* MyMapViewController.swift in Sources */,
 				4DB60F4B1A1A6C1500A6AF18 /* AppDelegate.swift in Sources */,
+				0C1CF0611B1308CD001A64AD /* MapListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

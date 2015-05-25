@@ -20,7 +20,7 @@ class MyMapViewController: GLKViewController {
         resumeOnDidBecomeActive = false
         preferredFramesPerSecond = 60
         
-        let mapView = view as NTMapView
+        let mapView = view as! NTMapView
 		
 		// Set the base projection, that will be used for most MapView, MapEventListener and Options methods
 		let proj = NTEPSG3857()
@@ -59,11 +59,29 @@ class MyMapViewController: GLKViewController {
 		let marker = NTMarker(pos:pos, style:sharedMarkerStyle)
 		vectorDataSource.add(marker)
 		
-		// Initialize a vector layer with the previous data source
+    
+    // Create line with positions and style, add to data source
+    let pos1 = proj.fromWgs84(NTMapPos(x:24.646469, y:59.426939)) // Tallinn
+    let pos2 = proj.fromWgs84(NTMapPos(x:0, y:51.426939)) // London
+    let posArray = NTMapPosVector();
+    posArray.add(pos1);
+    posArray.add(pos2);
+    let lineStyleBuilder = NTLineStyleBuilder()
+    lineStyleBuilder.setColor(NTColor(r: 0xff, g: 0x00, b: 0x00, a: 0xff))
+    lineStyleBuilder.setWidth(1.0);
+    
+    let line = NTLine(poses: posArray, style: lineStyleBuilder.buildStyle())
+    vectorDataSource.add(line)
+
+    // Initialize a vector layer with the previous data source
 		let vectorLayer = NTVectorLayer(dataSource:vectorDataSource)
 		
 		// Add the previous vector layer to the map
 		mapView.getLayers().add(vectorLayer)
+    
+    let listener = MapListener()
+    mapView.setMapEventListener(listener)
+    
 	}
     
     override func viewWillAppear(animated: Bool) {
