@@ -14,38 +14,42 @@
 
 namespace Nuti {
 
-    namespace PackageErrorType {
-        /**
-         * Possible error types for failed package downloads.
-         */
-        enum PackageErrorType {
+	namespace PackageErrorType {
+		/**
+		 * Possible error types for failed package downloads.
+		 */
+		enum PackageErrorType {
+			/**
+			 * Internal or system error.
+			 */
+			PACKAGE_ERROR_TYPE_SYSTEM,
+			/**
+			 * Connection or network error.
+			 */
+			PACKAGE_ERROR_TYPE_CONNECTION,
+			/**
+			 * The number of downloaded packages exceeded subscription limit.
+			 */
+			PACKAGE_ERROR_TYPE_DOWNLOAD_LIMIT_EXCEEDED,
+			/**
+			 * The bounding box of the package contains too many tiles.
+			 * This error is only returned for custom bounding box packages.
+			 */
+			PACKAGE_ERROR_TYPE_PACKAGE_TOO_BIG,
             /**
-             * Internal or system error.
+             * The license does not allow downloading offline packages.
              */
-            PACKAGE_ERROR_TYPE_SYSTEM,
-            /**
-             * Connection or network error.
-             */
-            PACKAGE_ERROR_TYPE_CONNECTION,
-            /**
-             * The number of downloaded packages exceeded subscription limit.
-             */
-            PACKAGE_ERROR_TYPE_DOWNLOAD_LIMIT_EXCEEDED,
-            /**
-             * The bounding box of the package contains too many tiles.
-             * This error is only returned for custom bounding box packages.
-             */
-            PACKAGE_ERROR_TYPE_PACKAGE_TOO_BIG
-        };
-    }
+            PACKAGE_ERROR_TYPE_NO_OFFLINE_PLAN
+		};
+	}
 
-    /**
+	/**
 	 * Base class for map package manager event listeners.
 	 * Includes callbacks for package list events and individual package events.
 	 */
 	class PackageManagerListener {
 	public:
-        virtual ~PackageManagerListener() { }
+		virtual ~PackageManagerListener() { }
 
 		/**
 		 * Listener method that is called when server package list has been successfully updated.
@@ -80,10 +84,11 @@ namespace Nuti {
 		 * Listener method that is called when updating a package failed (network error, etc).
 		 * @param id The id of the package that failed
 		 * @param version The version of the package that failed
-         * @param errorType Reason or type of the failure
+		 * @param errorType Reason or type of the failure
 		 */
-        virtual void onPackageFailed(const std::string& id, int version, PackageErrorType::PackageErrorType errorType) = 0;
+		virtual void onPackageFailed(const std::string& id, int version, PackageErrorType::PackageErrorType errorType) = 0;
 	};
+
 }
 
 #endif

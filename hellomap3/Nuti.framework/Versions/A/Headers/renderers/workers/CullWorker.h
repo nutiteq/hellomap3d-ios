@@ -41,25 +41,19 @@ namespace Nuti {
         void operator()();
     
     private:
-        static const float PRELOADING_FRUSTUM_SCALE;
-        static const float PRELOADING_MIN_TILT_ANGLE;
-        static const float PRELOADING_TILT_COEF;
-        
         void run();
     
         void calculateCullState();
         void calculateEnvelope();
         void updateLayers(const std::vector<std::shared_ptr<Layer> >& layers);
     
+        static const float VIEWPORT_SCALE;
+
         std::map<std::shared_ptr<Layer>, std::chrono::time_point<std::chrono::system_clock> > _layerWakeupMap;
         
         bool _firstCull;
         
         MapEnvelope _envelope;
-        
-        Frustum _preloadingFrustum;
-        
-        MapPos _preloadingCameraPos;
         
         ViewState _viewState;
     

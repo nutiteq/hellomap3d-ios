@@ -27,6 +27,8 @@ namespace Nuti {
         const cglib::mat4x4<double>& getLocalMat() const;
         const std::shared_ptr<nmlGL::Model>& getGLModel() const;
         const std::shared_ptr<NMLModelLODTree::ProxyMap> getProxyMap() const;
+        
+        virtual void offsetHorizontally(double offset);
     
     private:
         std::shared_ptr<NMLModelLODTree> _modelLODTree;

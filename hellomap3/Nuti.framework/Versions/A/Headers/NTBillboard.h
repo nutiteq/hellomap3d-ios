@@ -30,6 +30,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTBillboard : NTVectorElement
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTBillboard*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Returns the base billboard this billboard is attached to.<br>
  * @return The base billboard this billboard is attached to. Null if not attached to a billboard.
@@ -54,6 +57,11 @@ __attribute__ ((visibility("default"))) @interface NTBillboard : NTVectorElement
  * @return The geometry object that defines the location of the root billboard. Null if there's no root billboard.
  */
 -(NTGeometry*)getRootGeometry;
+/**
+ * Returns the geometry object that defines the location of this billboard.<br>
+ * @return The geometry object of this billboard.
+ */
+-(NTGeometry*)getGeometry;
 /**
  * Sets the location for this billboard. If this billboard is attached<br>
  * to another billboard, it will first be detached.<br>
@@ -80,6 +88,11 @@ __attribute__ ((visibility("default"))) @interface NTBillboard : NTVectorElement
  * @return The new rotation angle of this billboard in degrees.
  */
 -(void)setRotation: (float)rotation;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

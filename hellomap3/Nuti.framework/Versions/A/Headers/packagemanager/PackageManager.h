@@ -29,7 +29,8 @@ namespace sqlite3pp {
 }
 
 namespace Nuti {
-	/**
+
+    /**
 	 * Base class for offline map package manager. Package manager supports downloading/removing packages.
 	 * It can be queried about available packages and status of the packages. It works asynchronously in
 	 * the background and can inform app when packages have been updated.
@@ -38,16 +39,6 @@ namespace Nuti {
 	 */
 	class PackageManager {
 	public:
-		/**
-		 * Logger interface.
-		 */
-		class Logger {
-		public:
-			virtual ~Logger() = default;
-
-			virtual void info(const std::string& msg) = 0;
-			virtual void error(const std::string& msg) = 0;
-		};
 
 		/**
 		 * Listener interface for package change events.
@@ -67,9 +58,8 @@ namespace Nuti {
 		 * @param dataFolder The folder where downloaded packages are kept. It must exist and must be writable.
 		 * @param serverEncKey Encryption key for server packages
 		 * @param localEncKey Encryption key for local packages
-		 * @param logger The logger instance to use for reporting events.
 		 */
-		PackageManager(const std::string& packageListUrl, const std::string& dataFolder, const std::string& serverEncKey, const std::string& localEncKey, const std::shared_ptr<Logger>& logger);
+		PackageManager(const std::string& packageListUrl, const std::string& dataFolder, const std::string& serverEncKey, const std::string& localEncKey);
 		virtual ~PackageManager();
 
 		/**
@@ -259,14 +249,14 @@ namespace Nuti {
 		struct CancelException : std::exception {
 			CancelException() { }
 		};
-        
-        struct PackageException : std::runtime_error {
-            PackageException(PackageErrorType::PackageErrorType errorType, const std::string& msg) : runtime_error(msg), _errorType(errorType) { }
-            PackageErrorType::PackageErrorType getErrorType() const { return _errorType; }
-            
-        private:
-            PackageErrorType::PackageErrorType _errorType;
-        };
+		
+		struct PackageException : std::runtime_error {
+			PackageException(PackageErrorType::PackageErrorType errorType, const std::string& msg) : runtime_error(msg), _errorType(errorType) { }
+			PackageErrorType::PackageErrorType getErrorType() const { return _errorType; }
+			
+		private:
+			PackageErrorType::PackageErrorType _errorType;
+		};
 
 		void run();
 
@@ -286,7 +276,7 @@ namespace Nuti {
 		void setTaskFinished(int taskId);
 		void setTaskPaused(int taskId);
 		void setTaskCancelled(int taskId);
-        void setTaskFailed(int taskId, PackageErrorType::PackageErrorType errorType);
+		void setTaskFailed(int taskId, PackageErrorType::PackageErrorType errorType);
 
 		std::string loadPackageListJson(const std::string& jsonFileName) const;
 		void savePackageListJson(const std::string& jsonFileName, const std::string& json) const;
@@ -308,7 +298,6 @@ namespace Nuti {
 		const std::string _dataFolder;
 		const std::string _serverEncKey;
 		const std::string _localEncKey;
-		const std::shared_ptr<Logger> _logger;
 		mutable std::vector<PackageDatabase> _localPackageDbCache;
 		mutable std::vector<std::shared_ptr<PackageInfo> > _serverPackageCache;
 		std::vector<std::shared_ptr<PackageInfo> > _localPackages;
@@ -327,6 +316,7 @@ namespace Nuti {
 
 		mutable std::recursive_mutex _mutex; // guards all state
 	};
+
 }
 
 #endif

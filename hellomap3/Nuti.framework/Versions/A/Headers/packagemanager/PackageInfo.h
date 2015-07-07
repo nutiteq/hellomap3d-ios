@@ -103,6 +103,7 @@ namespace Nuti {
 		std::shared_ptr<PackageTileMask> _tileMask;
 		std::shared_ptr<PackageMetaInfo> _metaInfo;
 	};
+
 }
 
 #endif

@@ -18,25 +18,15 @@ namespace Nuti {
     class Bitmap;
     class Line;
     class LineDrawData;
-    class Projection;
     class Shader;
     class ShaderManager;
+    class VectorElement;
     class VectorElementClickInfo;
+    class VectorLayer;
     class ViewState;
     
     class LineRenderer {
     public:
-        static void BuildAndDrawBuffers(GLuint a_color,
-                                        GLuint a_coord,
-                                        GLuint a_texCoord,
-                                        std::vector<unsigned char>& colorBuf,
-                                        std::vector<float>& coordBuf,
-                                        std::vector<unsigned short>& indexBuf,
-                                        std::vector<float>& texCoordBuf,
-                                        std::vector<const LineDrawData*>& drawDataBuffer,
-                                        LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache,
-                                        const ViewState& viewState);
-        
         LineRenderer();
         virtual ~LineRenderer();
     
@@ -51,10 +41,36 @@ namespace Nuti {
         void updateElement(const std::shared_ptr<Line>& element);
         void removeElement(const std::shared_ptr<Line>& element);
     
-        void calculateRayIntersectedElements(const Projection& projection, const MapPos& rayOrig, const MapVec& rayDir,
-                                             const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
+        void calculateRayIntersectedElements(const std::shared_ptr<VectorLayer>& layer, const MapPos& rayOrig, const MapVec& rayDir, const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
     
+    protected:
+        friend class PolygonRenderer;
+        friend class GeometryCollectionRenderer;
+
     private:
+        static void BuildAndDrawBuffers(GLuint a_color,
+                                        GLuint a_coord,
+                                        GLuint a_texCoord,
+                                        std::vector<unsigned char>& colorBuf,
+                                        std::vector<float>& coordBuf,
+                                        std::vector<unsigned short>& indexBuf,
+                                        std::vector<float>& texCoordBuf,
+                                        std::vector<const LineDrawData*>& drawDataBuffer,
+                                        LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache,
+                                        const ViewState& viewState);
+
+        static bool FindElementRayIntersection(const std::shared_ptr<VectorElement>& element,
+                                               const std::shared_ptr<LineDrawData>& drawData,
+                                               const std::shared_ptr<VectorLayer>& layer,
+                                               const MapPos& rayOrig, const MapVec& rayDir,
+                                               const ViewState& viewState,
+                                               std::vector<VectorElementClickInfo>& results);
+
+        void bind(const ViewState& viewState);
+        void unbind();
+        
+        bool isEmptyBatch() const;
+        void addToBatch(const std::shared_ptr<LineDrawData>& drawData, LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache, const ViewState& viewState);
         void drawBatch(LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache, const ViewState& viewState);
     
         std::vector<std::shared_ptr<Line> > _elements;
@@ -62,6 +78,7 @@ namespace Nuti {
         
         std::vector<std::shared_ptr<LineDrawData> > _drawDataBuffer; // this buffer is used to keep objects alive
         std::vector<const LineDrawData*> _lineDrawDataBuffer;
+        const Bitmap* _prevBitmap;
     
         std::vector<unsigned char> _colorBuf;
         std::vector<float> _coordBuf;

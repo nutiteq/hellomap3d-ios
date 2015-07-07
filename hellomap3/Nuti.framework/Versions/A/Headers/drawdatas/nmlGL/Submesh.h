@@ -31,7 +31,7 @@ namespace Nuti { namespace nmlGL {
 
         void draw(const std::shared_ptr<GLContext>& gl);
 
-        void calculateRayIntersections(const cglib::vec3<double>& origin, const cglib::vec3<double>& dir, std::vector<RayIntersection>& intersections) const;
+        void calculateRayIntersections(const Ray& ray, std::vector<RayIntersection>& intersections) const;
 
         const std::string& getMaterialId() const;
 
@@ -40,6 +40,8 @@ namespace Nuti { namespace nmlGL {
 
     private:
         void uploadSubmesh(const std::shared_ptr<GLContext>& gl);
+        
+        static bool findRayTriangleIntersection(const cglib::vec3<float>* points, const Ray& ray, cglib::vec3<float>& p, cglib::vec3<float>& n);
 
         static GLint convertType(int type);
         static void convertToFloatBuffer(const std::string& str, std::vector<float>& buf);

@@ -135,7 +135,7 @@ namespace Nuti {
         std::shared_ptr<TileDecoderListener> _tileDecoderListener;
     
         std::vector<std::shared_ptr<TileDrawData> > _tempDrawDatas;
-        std::map<VT::TileId, std::shared_ptr<VT::Tile> > _visibleTileMap, _prevVisibleTileMap;
+        std::map<VT::TileId, std::shared_ptr<VT::Tile> > _visibleTileMap;
         
         LRUCache<long long, std::shared_ptr<VT::Tile> > _visibleCache;
         LRUCache<long long, std::shared_ptr<VT::Tile> > _preloadingCache;

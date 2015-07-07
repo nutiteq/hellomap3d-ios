@@ -113,12 +113,12 @@ namespace Nuti {
          */
         std::shared_ptr<nml::Model> getSourceModel() const;
         
-    protected:
+		std::shared_ptr<NMLModelDrawData> getDrawData() const;
+		void setDrawData(const std::shared_ptr<NMLModelDrawData>& drawData);
+
+	protected:
         friend class NMLModelRenderer;
         friend class VectorLayer;
-        
-        std::shared_ptr<NMLModelDrawData> getDrawData() const;
-        void setDrawData(const std::shared_ptr<NMLModelDrawData>& drawData);
         
     private:
         MapBounds _bounds;

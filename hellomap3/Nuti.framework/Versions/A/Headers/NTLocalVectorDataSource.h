@@ -22,17 +22,20 @@ typedef NS_ENUM(NSInteger, NTLocalSpatialIndexType) {
 /**
  * Null index, fastest if few elements are used. No element culling is performed.
  */
-  NT_NULL_SPATIAL_INDEX,
+  NT_LOCAL_SPATIAL_INDEX_TYPE_NULL,
 /**
  * K-d tree index, element culling is exact and fast.
  */
-  NT_KDTREE_SPATIAL_INDEX
+  NT_LOCAL_SPATIAL_INDEX_TYPE_KDTREE
+,NT_NULL_SPATIAL_INDEX __attribute((deprecated)) = NT_LOCAL_SPATIAL_INDEX_TYPE_NULL
+,NT_KDTREE_SPATIAL_INDEX __attribute((deprecated)) = NT_LOCAL_SPATIAL_INDEX_TYPE_KDTREE
 };
 
 
 #import "NTVectorDataSource.h"
 #import "NTGeometrySimplifier.h"
 #import "NTProjection.h"
+#import "NTMapBounds.h"
 #import "NTCullState.h"
 #import "NTVectorElement.h"
 #import "NTVectorElementVector.h"
@@ -100,6 +103,11 @@ __attribute__ ((visibility("default"))) @interface NTLocalVectorDataSource : NTV
  * @param simplifier The new geometry simplifier to use (can be null).
  */
 -(void)setGeometrySimplifier: (NTGeometrySimplifier*)simplifier;
+/**
+ * Returns the extent of this data source. Extent is the minimal bounding box encompassing all the elements.<br>
+ * @return The minimal bounding box for the elements.
+ */
+-(NTMapBounds*)getDataExtent;
 
 -(void)dealloc;
 

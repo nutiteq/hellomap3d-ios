@@ -47,11 +47,11 @@ namespace Nuti {
         float _texCoordBuf[8];
     
         const Shader* _shader;
-        GLuint _a_color;
         GLuint _a_coord;
         GLuint _a_texCoord;
         GLuint _u_mvpMat;
         GLuint _u_tex;
+        GLuint _u_color;
     
         mutable std::mutex _mutex;
     };

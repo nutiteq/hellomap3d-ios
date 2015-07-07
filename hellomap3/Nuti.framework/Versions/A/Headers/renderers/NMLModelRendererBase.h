@@ -24,7 +24,7 @@ namespace Nuti {
     public:
         virtual ~NMLModelRendererBase();
     
-        virtual void offsetLayerHorizontally(double offset);
+        virtual void offsetLayerHorizontally(double offset) = 0;
     
         virtual void onSurfaceCreated(ShaderManager& shaderManager);
         virtual bool onDrawFrame(float deltaSeconds, const ViewState& viewState);

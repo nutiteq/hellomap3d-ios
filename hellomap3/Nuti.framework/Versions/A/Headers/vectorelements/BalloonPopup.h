@@ -96,7 +96,6 @@ namespace Nuti {
         
         std::string _title;
         std::string _desc;
-        
     };
 
 }

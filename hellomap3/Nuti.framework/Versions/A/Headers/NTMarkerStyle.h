@@ -26,6 +26,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTMarkerStyle : NTBillboardStyle
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTMarkerStyle*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a MarkerStyle object from various parameters. Instantiating the object directly is<br>
  * not recommended, MarkerStyleBuilder should be used instead.<br>
@@ -76,6 +79,11 @@ __attribute__ ((visibility("default"))) @interface NTMarkerStyle : NTBillboardSt
  * @return The size of the marker, units depend on the scaling mode.
  */
 -(float)getSize;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

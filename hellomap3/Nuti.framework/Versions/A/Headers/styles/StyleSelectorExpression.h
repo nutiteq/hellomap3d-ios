@@ -17,7 +17,7 @@ namespace Nuti {
      */
     class StyleSelectorExpression {
     public:
-        virtual ~StyleSelectorExpression() = default;
+		virtual ~StyleSelectorExpression() { }
 
         /**
          * Evaluates filter expression given context.

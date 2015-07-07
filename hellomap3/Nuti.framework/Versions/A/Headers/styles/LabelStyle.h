@@ -81,7 +81,7 @@ namespace Nuti {
          * @return The scaling mode of the label.
          */
         BillboardScaling::BillboardScaling getScalingMode() const;
-        
+
     protected:
         float _anchorPointX;
         float _anchorPointY;

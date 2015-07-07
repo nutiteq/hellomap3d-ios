@@ -31,6 +31,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTPopup : NTBillboard
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTPopup*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs an abstract Popup object with the specified style and attaches it to a billboard element.<br>
  * @param baseBillboard The billboard this popup will be attached to.<br>
@@ -89,6 +92,11 @@ __attribute__ ((visibility("default"))) @interface NTPopup : NTBillboard
  * @return The new style that defines what this popup looks like.
  */
 -(void)setStyle: (NTPopupStyle*)style;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

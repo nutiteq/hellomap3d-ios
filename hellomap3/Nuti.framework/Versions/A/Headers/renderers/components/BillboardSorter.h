@@ -15,7 +15,7 @@ namespace Nuti {
     class BillboardDrawData;
     class ViewState;
     
-    class BillboardSorter{
+    class BillboardSorter {
     public:
         BillboardSorter();
         virtual ~BillboardSorter();

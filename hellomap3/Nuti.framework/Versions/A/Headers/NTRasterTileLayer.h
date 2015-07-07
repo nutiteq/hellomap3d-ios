@@ -26,11 +26,24 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTRasterTileLayer : NTTileLayer
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTRasterTileLayer*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a RasterTileLayer object from a data source.<br>
  * @param dataSource The data source from which this layer loads data.
  */
 -(id)initWithDataSource: (NTTileDataSource*)dataSource;
+/**
+ * Returns the opacity of the layer.<br>
+ * @return The opacity of the layer. Default is 1 (fully opaque).
+ */
+-(float)getOpacity;
+/**
+ * Sets the opacity attribute of the layer.<br>
+ * @param opacity The relative opacity. Use 0 for fully transparent layer, 1 for fully opaque layer. Default is 1.
+ */
+-(void)setOpacity: (float)opacity;
 /**
  * Returns the current frame number.<br>
  * @return The current frame number.
@@ -83,6 +96,11 @@ __attribute__ ((visibility("default"))) @interface NTRasterTileLayer : NTTileLay
  */
 -(void)setTextureCacheCapacity: (unsigned int)capacityInBytes;
 -(void)clearTileCaches: (BOOL)all;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

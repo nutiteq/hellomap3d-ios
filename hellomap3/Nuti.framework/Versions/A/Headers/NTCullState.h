@@ -47,14 +47,11 @@ __attribute__ ((visibility("default"))) @interface NTCullState : NSObject
 -(NSUInteger)hash;
 
 /**
- * Constructs a CullState object from an envelope, visible and preloading frustums, a preloading camera<br>
- * position and a viewstate.<br>
+ * Constructs a CullState object from an envelope and a viewstate.<br>
  * @param envelope The envelope.<br>
- * @param preloadingFrustum The preloading frustum.<br>
- * @param preloadingCameraPos The preloading camera position.<br>
  * @param viewState The view state.
  */
--(id)initWithEnvelope: (NTMapEnvelope*)envelope preloadingFrustum: (NTFrustum*)preloadingFrustum preloadingCameraPos: (NTMapPos*)preloadingCameraPos viewState: (NTViewState*)viewState;
+-(id)initWithEnvelope: (NTMapEnvelope*)envelope viewState: (NTViewState*)viewState;
 /**
  * Returns an envelope for the visible area in given projection coordinates.<br>
  * @param proj The projection for the envelope<br>
@@ -66,16 +63,6 @@ __attribute__ ((visibility("default"))) @interface NTCullState : NSObject
  * @return The envelope for the visible area in the internal coordiante system.
  */
 -(NTMapEnvelope*)getEnvelope;
-/**
- * Returns a frustum for the area that is not visible, but should still be drawn.<br>
- * @return The frustum for the preloading area in the internal coordiante system.
- */
--(NTFrustum*)getPreloadingFrustum;
-/**
- * Returns a modified camera pos, that was used for calculating the preloading frustum.<br>
- * @return The modified preloading camera position in the internal coordinate system.
- */
--(NTMapPos*)getPreloadingCameraPos;
 /**
  * Returns a view state.<br>
  * @return The view state.

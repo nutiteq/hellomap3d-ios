@@ -10,6 +10,7 @@
 #include "core/MapPos.h"
 
 #include <vector>
+#include <memory>
 
 namespace Nuti {
     class MapClickInfo;
@@ -33,7 +34,7 @@ namespace Nuti {
          * This method will NOT be called from the main thread.
          * @param mapClickInfo A container that provides information about the click.
          */
-        virtual void onMapClicked(const MapClickInfo& mapClickInfo) = 0;
+        virtual void onMapClicked(const std::shared_ptr<MapClickInfo>& mapClickInfo) = 0;
     
         /**
          * Listener method that gets called when a click is performed on a vector element.
@@ -42,7 +43,7 @@ namespace Nuti {
          * in the list. This method will NOT be called from the main thread.
          * @param vectorElementsClickInfo A container that provides information about the click.
          */
-        virtual void onVectorElementClicked(const VectorElementsClickInfo& vectorElementsClickInfo) = 0;
+        virtual void onVectorElementClicked(const std::shared_ptr<VectorElementsClickInfo>& vectorElementsClickInfo) = 0;
     };
     
 }

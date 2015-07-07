@@ -26,6 +26,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTPointStyle : NTStyle
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTPointStyle*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a PointStyle object from various parameters. Instantiating the object directly is<br>
  * not recommended, PointStyleBuilder should be used instead.<br>
@@ -50,6 +53,11 @@ __attribute__ ((visibility("default"))) @interface NTPointStyle : NTStyle
  * @return The size of the point.
  */
 -(float)getSize;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

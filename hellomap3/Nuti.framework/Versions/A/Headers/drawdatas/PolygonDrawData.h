@@ -17,13 +17,13 @@
 namespace Nuti {
     class LineDrawData;
     class MapPos;
-    class Polygon;
+    class PolygonGeometry;
     class PolygonStyle;
     class Projection;
     
     class PolygonDrawData : public VectorElementDrawData {
     public:
-        PolygonDrawData(const Polygon& polygon, const PolygonStyle& style, const Projection& projection);
+        PolygonDrawData(const PolygonGeometry& geometry, const PolygonStyle& style, const Projection& projection);
         PolygonDrawData(const PolygonDrawData& drawData);
         virtual ~PolygonDrawData();
     
@@ -37,7 +37,7 @@ namespace Nuti {
     
         const std::vector<LineDrawData>& getLineDrawDatas() const;
     
-        void offsetHorizontally(double offset);
+        virtual void offsetHorizontally(double offset);
     
     private:
         static const int MAX_INDICES_PER_ELEMENT = 3;
@@ -47,7 +47,7 @@ namespace Nuti {
         MapBounds _boundingBox;
     
         std::vector<std::vector<MapPos> > _coords;
-    
+
         std::vector<std::vector<unsigned int> > _indices;
     
         std::vector<LineDrawData> _lineDrawDatas;

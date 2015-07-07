@@ -13,6 +13,7 @@
 #include <chrono>
 #include <condition_variable>
 #include <thread>
+#include <memory>
 
 namespace Nuti {
     class Options;

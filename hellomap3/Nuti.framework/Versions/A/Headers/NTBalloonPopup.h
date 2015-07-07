@@ -29,6 +29,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTBalloonPopup : NTPopup
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTBalloonPopup*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a BalloonPopup object with the specified style and attaches it to a billboard element.<br>
  * If an empty string is passed for the title, it will not be drawn. The same applies to the description.<br>
@@ -89,6 +92,11 @@ __attribute__ ((visibility("default"))) @interface NTBalloonPopup : NTPopup
  * @return The new style that defines what this balloon popup looks like.
  */
 -(void)setStyle: (NTBalloonPopupStyle*)style;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

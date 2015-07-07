@@ -28,6 +28,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTText : NTLabel
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTText*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a Text object with the specified style and attaches it to a billboard element.<br>
  * @param baseBillboard The billboard this text label will be attached to.<br>
@@ -70,6 +73,11 @@ __attribute__ ((visibility("default"))) @interface NTText : NTLabel
  * @return The new style that defines what this text label looks like.
  */
 -(void)setStyle: (NTTextStyle*)style;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

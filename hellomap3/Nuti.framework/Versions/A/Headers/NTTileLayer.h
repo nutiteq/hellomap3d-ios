@@ -46,6 +46,9 @@ typedef NS_ENUM(NSInteger, NTTileSubstitutionPolicy) {
 __attribute__ ((visibility("default"))) @interface NTTileLayer : NTLayer
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTTileLayer*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Returns the data source assigned to this layer.<br>
  * @return The tile data source assigned to this layer.
@@ -107,6 +110,11 @@ __attribute__ ((visibility("default"))) @interface NTTileLayer : NTLayer
  */
 -(void)clearTileCaches: (BOOL)all;
 -(BOOL)isUpdateInProgress;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

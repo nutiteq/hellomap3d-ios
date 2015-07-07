@@ -42,9 +42,7 @@ namespace Nuti { namespace Mapnik {
 			_nutiParameterMap.insert({ param.getName(), param });
 		}
 		
-		const std::map<std::string, NutiParameter>& getNutiParameterMap() const {
-			return _nutiParameterMap;
-		}
+		const std::map<std::string, NutiParameter>& getNutiParameterMap() const { return _nutiParameterMap; }
 
 		void clearParameters() {
 			_parameterMap.clear();

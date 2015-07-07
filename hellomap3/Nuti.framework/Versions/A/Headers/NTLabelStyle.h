@@ -25,6 +25,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTLabelStyle : NTBillboardStyle
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTLabelStyle*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a LabelStyle object from various parameters. Instantiating the object directly is<br>
  * not recommended, LabelStyleBuilder should be used instead.<br>
@@ -69,6 +72,11 @@ __attribute__ ((visibility("default"))) @interface NTLabelStyle : NTBillboardSty
  * @return The scaling mode of the label.
  */
 -(enum NTBillboardScaling)getScalingMode;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

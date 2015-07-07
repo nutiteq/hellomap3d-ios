@@ -13,18 +13,23 @@
 
 #include <cglib/mat.h>
 
+namespace nml {
+    class Model;
+}
+
 namespace Nuti {
-    class NMLModel;
 
     class NMLModelDrawData : public VectorElementDrawData {
     public:
-        NMLModelDrawData(const std::shared_ptr<NMLModel>& model, const cglib::mat4x4<double>& localMat);
+        NMLModelDrawData(const std::shared_ptr<nml::Model>& sourceModel, const cglib::mat4x4<double>& localMat);
     
-        std::shared_ptr<NMLModel> getModel() const;
+        std::shared_ptr<nml::Model> getSourceModel() const;
         const cglib::mat4x4<double>& getLocalMat() const;
+        
+        virtual void offsetHorizontally(double offset);
     
     private:
-        std::shared_ptr<NMLModel> _model;
+        std::shared_ptr<nml::Model> _sourceModel;
         cglib::mat4x4<double> _localMat;
     };
     

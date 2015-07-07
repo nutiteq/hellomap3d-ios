@@ -7,6 +7,7 @@
 #ifndef _NUTI_MBTILESTILEDATASOURCE_H_
 #define _NUTI_MBTILESTILEDATASOURCE_H_
 
+#include "core/MapBounds.h"
 #include "datasources/TileDataSource.h"
 
 #include <map>
@@ -75,6 +76,12 @@ namespace Nuti {
 		 */
 		std::map<std::string, std::string> getMetaData() const;
 		
+        /**
+         * Returns the extent of this data source. Extent is the minimal bounding box encompassing all the tiles at maximum zoom level.
+         * @return The minimal bounding box for the tiles.
+         */
+        MapBounds getDataExtent() const;
+
         virtual std::shared_ptr<TileData> loadTile(const MapTile& mapTile);
     
     private:

@@ -34,7 +34,9 @@ namespace Nuti {
         void setColor(const Color& color);
         void setStrokeWidth(float width);
         void setFont(const std::string& name, float size);
-        void setClipRect(const ScreenBounds* clipRect);
+
+        void pushClipRect(const ScreenBounds& clipRect);
+        void popClipRect();
 
         void drawText(std::string text, const ScreenPos& pos, int maxWidth, bool breakLines);
         void drawPolygon(const std::vector<ScreenPos>& poses);

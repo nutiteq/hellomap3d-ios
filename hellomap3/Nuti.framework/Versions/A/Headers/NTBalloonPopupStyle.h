@@ -51,6 +51,9 @@ __attribute__ ((visibility("default"))) @interface NTBalloonPopupMargins : NSObj
 __attribute__ ((visibility("default"))) @interface NTBalloonPopupStyle : NTPopupStyle
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTBalloonPopupStyle*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a BalloonPopupStyle object from various parameters. Instantiating the object directly is<br>
  * not recommended, BalloonPopupStyleBuilder should be used instead.<br>
@@ -196,6 +199,11 @@ __attribute__ ((visibility("default"))) @interface NTBalloonPopupStyle : NTPopup
  * @return The height of the triangle at the bottom of the popup in dp.
  */
 -(int)getTriangleHeight;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

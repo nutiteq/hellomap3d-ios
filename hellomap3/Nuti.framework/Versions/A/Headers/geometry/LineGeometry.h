@@ -34,7 +34,6 @@ namespace Nuti {
     
     private:
         std::vector<MapPos> _poses;
-    
     };
     
 }

@@ -22,42 +22,43 @@ namespace rapidjson {
 }
 
 namespace Nuti {
-    namespace PackageMetaInfoType {
-        /**
-         * Meta info type.
-         */
-        enum PackageMetaInfoType {
-            /**
-             * Null element.
-             */
-            PACKAGE_META_INFO_TYPE_NULL,
-            /**
-             * String element.
-             */
-            PACKAGE_META_INFO_TYPE_STRING,
-            /**
-             * Boolean element.
-             */
-            PACKAGE_META_INFO_TYPE_BOOL,
-            /**
-             * Integer element.
-             */
-            PACKAGE_META_INFO_TYPE_INTEGER,
-            /**
-             * Double-precision floating point element.
-             */
-            PACKAGE_META_INFO_TYPE_DOUBLE,
-            /**
-             * Array element.
-             */
-            PACKAGE_META_INFO_TYPE_ARRAY,
-            /**
-             * Map (dictionary) element.
-             */
-            PACKAGE_META_INFO_TYPE_MAP
-        };
-    }
-    
+
+	namespace PackageMetaInfoType {
+		/**
+		 * Meta info type.
+		 */
+		enum PackageMetaInfoType {
+			/**
+			 * Null element.
+			 */
+			PACKAGE_META_INFO_TYPE_NULL,
+			/**
+			 * String element.
+			 */
+			PACKAGE_META_INFO_TYPE_STRING,
+			/**
+			 * Boolean element.
+			 */
+			PACKAGE_META_INFO_TYPE_BOOL,
+			/**
+			 * Integer element.
+			 */
+			PACKAGE_META_INFO_TYPE_INTEGER,
+			/**
+			 * Double-precision floating point element.
+			 */
+			PACKAGE_META_INFO_TYPE_DOUBLE,
+			/**
+			 * Array element.
+			 */
+			PACKAGE_META_INFO_TYPE_ARRAY,
+			/**
+			 * Map (dictionary) element.
+			 */
+			PACKAGE_META_INFO_TYPE_MAP
+		};
+	}
+	
 	/**
 	 * Package meta info element. Can contain JSON-style structured data, including objects and arrays.
 	 */

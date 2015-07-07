@@ -67,6 +67,9 @@ typedef NS_ENUM(NSInteger, NTBillboardScaling) {
 __attribute__ ((visibility("default"))) @interface NTBillboardStyle : NTStyle
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTBillboardStyle*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Returns the horizontal attaching anchor point of the billoard.<br>
  * @return The horizontal attaching anchor point of the billoard.
@@ -107,6 +110,11 @@ __attribute__ ((visibility("default"))) @interface NTBillboardStyle : NTStyle
  * @return True if this billboard's size will be scaled using the screen dot's per inch parameter.
  */
 -(BOOL)isScaleWithDPI;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

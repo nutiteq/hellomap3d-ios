@@ -28,7 +28,6 @@ namespace Nuti {
          * @param max The max value.
          */
         MapRange(float min, float max);
-        virtual ~MapRange();
     
         /**
          * Checks for equality between this and another map tile.

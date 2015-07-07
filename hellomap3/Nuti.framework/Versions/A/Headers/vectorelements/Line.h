@@ -65,13 +65,13 @@ namespace Nuti {
          */
         void setStyle(const std::shared_ptr<LineStyle>& style);
         
+		std::shared_ptr<LineDrawData> getDrawData() const;
+		void setDrawData(const std::shared_ptr<LineDrawData>& drawData);
+
     protected:
         friend class LineRenderer;
         friend class VectorLayer;
     
-        std::shared_ptr<LineDrawData> getDrawData() const;
-        void setDrawData(const std::shared_ptr<LineDrawData>& drawData);
-        
     private:
         std::shared_ptr<LineDrawData> _drawData;
         

@@ -115,7 +115,7 @@ namespace Nuti {
          * @param all True if all tiles should be released, otherwise only preloading (invisible) tiles are released.
          */
         virtual void clearTileCaches(bool all) = 0;
-        
+
         virtual bool isUpdateInProgress() const;
         
     protected:
@@ -205,9 +205,9 @@ namespace Nuti {
 			mutable std::mutex _mutex;
 		};
 		
-        TileLayer(const std::string& className, const std::shared_ptr<TileDataSource>& dataSource);
+        TileLayer(const std::shared_ptr<TileDataSource>& dataSource);
 		
-        void loadData(const std::shared_ptr<CullState>& cullState);
+        virtual void loadData(const std::shared_ptr<CullState>& cullState);
 		
         virtual bool tileExists(const MapTile& tile, bool preloadingCache) = 0;
         virtual bool tileIsValid(const MapTile& tile) const = 0;
@@ -242,10 +242,7 @@ namespace Nuti {
         static bool DistanceComparator(const MapTileQuadTreeNode* tile1, const MapTileQuadTreeNode* tile2);
         
         void calculateVisibleTiles(const std::shared_ptr<CullState>& cullState);
-        void calculateVisibleTilesRecursive(const std::shared_ptr<CullState>& cullState,
-                                            MapTileQuadTreeNode& mapTile,
-                                            const Frustum& preloadingFrustum,
-                                            const MapPos& preloadingCameraPos);
+        void calculateVisibleTilesRecursive(const std::shared_ptr<CullState>& cullState, MapTileQuadTreeNode& mapTile);
         
         void findTiles(const std::vector<MapTileQuadTreeNode*>& tile, bool preloadingTiles);
         bool findParentTile(const MapTileQuadTreeNode& requestedTile, const MapTileQuadTreeNode* parentTile, int depth, bool preloadingCache, bool preloadingTile);
@@ -254,6 +251,7 @@ namespace Nuti {
         static const int MAX_PARENT_SEARCH_DEPTH = 6;
         static const int MAX_CHILD_SEARCH_DEPTH = 3;
         
+        static const float PRELOADING_TILE_SCALE;
         static const float SUBDIVISION_THRESHOLD;
         static const float SQRT_2;
         

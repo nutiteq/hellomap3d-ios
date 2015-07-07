@@ -25,6 +25,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTPopupStyleBuilder : NTBillboardStyleBuilder
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTPopupStyleBuilder*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a PopupStyleBuilder object with all parameters set to defaults.
  */
@@ -34,6 +37,11 @@ __attribute__ ((visibility("default"))) @interface NTPopupStyleBuilder : NTBillb
  * @return A new PopupStyle object.
  */
 -(NTPopupStyle*)buildStyle;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

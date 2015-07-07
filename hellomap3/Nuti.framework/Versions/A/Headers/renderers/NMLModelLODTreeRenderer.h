@@ -17,6 +17,7 @@
 
 namespace Nuti {
     class NMLModelLODTreeDataSource;
+    class NMLModelLODTreeLayer;
     
     class NMLModelLODTreeRenderer : public NMLModelRendererBase {
     public:
@@ -25,13 +26,12 @@ namespace Nuti {
     
         void addDrawData(const std::shared_ptr<NMLModelLODTreeDrawData>& drawData);
         void refreshDrawData();
+        
+        virtual void offsetLayerHorizontally(double offset);
     
-        virtual void calculateRayIntersectedElements(const Projection& projection, const MapPos& rayOrig, const MapVec& rayDir,
-                        const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
+        virtual void calculateRayIntersectedElements(const std::shared_ptr<NMLModelLODTreeLayer>& layer, const MapPos& rayOrig, const MapVec& rayDir, const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
     
     protected:
-        typedef std::vector<std::shared_ptr<NMLModelLODTreeDrawData> > DrawDataVector;
-    
         struct ModelNodeDrawRecord {
             NMLModelLODTreeDrawData drawData;
             ModelNodeDrawRecord* parent;
@@ -42,10 +42,8 @@ namespace Nuti {
             ModelNodeDrawRecord(const NMLModelLODTreeDrawData& drawData) : drawData(drawData), parent(0), children(), used(false), created(false) { }
         };
     
-        typedef std::map<long long, std::shared_ptr<ModelNodeDrawRecord> > ModelNodeDrawRecordMap;
-    
-        DrawDataVector _tempDrawDatas;
-        ModelNodeDrawRecordMap _drawRecordMap;
+        std::vector<std::shared_ptr<NMLModelLODTreeDrawData> > _tempDrawDatas;
+        std::map<long long, std::shared_ptr<ModelNodeDrawRecord> > _drawRecordMap;
     
         virtual bool drawModels(const ViewState& viewState);
     };

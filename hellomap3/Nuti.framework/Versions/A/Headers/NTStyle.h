@@ -45,17 +45,15 @@ __attribute__ ((visibility("default"))) @interface NTStyle : NSObject
 +(NTStyle*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
 
 /**
- * Returns the actual class name of this style. This is used<br>
- * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically<br>
- * generate child proxy classes from a base class pointer.<br>
- * @return The class name of this style.
- */
--(NSString*)getClassName;
-/**
  * Returns the color of the vector element.<br>
  * @return The color of the vector element.
  */
 -(NTColor*)getColor;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

@@ -25,12 +25,20 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTPolygon3DStyle : NTStyle
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTPolygon3DStyle*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a Polygon3DStyle object from various parameters. Instantiating the object directly is<br>
  * not recommended, Polygon3DStyleBuilder should be used instead.<br>
  * @param color The color for the 3d polygon.
  */
 -(id)initWithColor: (NTColor*)color;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

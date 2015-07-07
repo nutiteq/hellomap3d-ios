@@ -25,6 +25,7 @@ namespace Nuti {
          * @param style The style of the rule.
          */
         StyleSelectorRule(const std::shared_ptr<StyleSelectorExpression>& expr, const std::shared_ptr<Style>& style);
+		virtual ~StyleSelectorRule();
 
         /**
          * Returns filter expression of this rule. Result can be null pointer.

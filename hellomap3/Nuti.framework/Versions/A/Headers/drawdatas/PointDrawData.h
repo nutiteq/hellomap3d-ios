@@ -15,13 +15,13 @@
 
 namespace Nuti {
     class Bitmap;
-    class Point;
+    class PointGeometry;
     class PointStyle;
     class Projection;
     
     class PointDrawData : public VectorElementDrawData {
     public:
-        PointDrawData(const Point& point, const PointStyle& style, const Projection& projection);
+        PointDrawData(const PointGeometry& geometry, const PointStyle& style, const Projection& projection);
         virtual ~PointDrawData();
     
         const std::shared_ptr<Bitmap> getBitmap() const;
@@ -32,7 +32,7 @@ namespace Nuti {
     
         float getSize() const;
     
-        void offsetHorizontally(double offset);
+        virtual void offsetHorizontally(double offset);
     
     private:
         static const int IDEAL_CLICK_SIZE = 64;

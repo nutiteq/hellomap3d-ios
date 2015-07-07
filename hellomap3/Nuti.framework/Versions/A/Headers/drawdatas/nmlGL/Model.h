@@ -38,7 +38,9 @@ namespace Nuti { namespace nmlGL {
 
         void draw(const std::shared_ptr<GLContext>& gl);
 
-        void calculateRayIntersections(const cglib::vec3<double>& origin, const cglib::vec3<double>& dir, std::vector<RayIntersection>& intersections) const;
+        void calculateRayIntersections(const Ray& ray, std::vector<RayIntersection>& intersections) const;
+
+        const cglib::bounding_box<float, 3>& getBounds() const;
 
         int getDrawCallCount() const;
         int getTotalGeometrySize() const;

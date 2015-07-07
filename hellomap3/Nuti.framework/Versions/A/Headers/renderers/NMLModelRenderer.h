@@ -15,7 +15,7 @@
 #include <vector>
 
 namespace Nuti {
-    class Projection;
+    class VectorLayer;
     
     namespace nmlGL {
         class Model;
@@ -25,14 +25,15 @@ namespace Nuti {
     public:
         NMLModelRenderer();
         virtual ~NMLModelRenderer();
-    
+        
         void addElement(const std::shared_ptr<NMLModel>& element);
         void refreshElements();
         void updateElement(const std::shared_ptr<NMLModel>& element);
         void removeElement(const std::shared_ptr<NMLModel>& element);
     
-        virtual void calculateRayIntersectedElements(const Projection& projection, const MapPos& rayOrig, const MapVec& rayDir,
-                        const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
+        virtual void offsetLayerHorizontally(double offset);
+        
+        virtual void calculateRayIntersectedElements(const std::shared_ptr<VectorLayer>& layer, const MapPos& rayOrig, const MapVec& rayDir, const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
     
     protected:
         virtual bool drawModels(const ViewState& viewState);

@@ -87,33 +87,35 @@ __attribute__ ((visibility("default"))) @interface NTBitmap : NSObject
 -(NSUInteger)hash;
 
 /**
+ * Deprecated: use BitmapUtils.LoadFromAssets instead.<br>
  * Constructs a bitmap by loading a compressed image bundled with the application. If the power of two conversion flag<br>
  * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating<br>
  * OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.<br>
  * @param assetPath The path to the image to be loaded.<br>
  * @param pow2Padding The power of two conversion flag.
  */
--(id)initWithAssetPath: (NSString*)assetPath pow2Padding: (BOOL)pow2Padding;
+-(id)initWithAssetPath: (NSString*)assetPath pow2Padding: (BOOL)pow2Padding __attribute((deprecated));
 /**
+ * Deprecated: use Bitmap.CreateFromCompressed instead.<br>
  * Constructs a bitmap by decoding a vector of compressed image bytes. If the power of two conversion flag<br>
  * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating<br>
  * OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.<br>
  * @param compressedData A vector of compressed image bytes.<br>
  * @param pow2Padding The power of two conversion flag.
  */
--(id)initWithCompressedData: (NTUnsignedCharVector*)compressedData pow2Padding: (BOOL)pow2Padding;
+-(id)initWithCompressedData: (NTUnsignedCharVector*)compressedData pow2Padding: (BOOL)pow2Padding __attribute((deprecated));
 /**
- * Constructs a bitmap from an already decoded vector of bytes. The bitmap data is expected to be alpha premultiplied.<br>
+ * Constructs a bitmap from an already decoded vector of bytes. The bitmap data is expected to be alpha premultiplied, if alpha channel is used.<br>
  * If the power of two conversion flag is set, additional padding will be added to the image to make it's dimensions power of two.<br>
  * This can be useful when creating OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.<br>
- * @param uncompressedData A vector of decoded, premultiplied bitmap bytes.<br>
+ * @param pixelData A vector of decoded, premultiplied bitmap bytes.<br>
  * @param width The width of the bitmap.<br>
  * @param height The height of the bitmap.<br>
  * @param colorFormat The color format of the bitmap.<br>
  * @param bytesPerRow The total number of bytes per row. Some bitmaps have additional padding at the end of each row. If the value is negative, then bitmap is assumed to be vertically flipped. In this case absolute value of the bytesPerRow value is used.<br>
  * @param pow2Padding The power of two conversion flag.
  */
--(id)initWithUncompressedData: (NTUnsignedCharVector*)uncompressedData width: (unsigned int)width height: (unsigned int)height colorFormat: (enum NTColorFormat)colorFormat bytesPerRow: (int)bytesPerRow pow2Padding: (BOOL)pow2Padding;
+-(id)initWithPixelData: (NTUnsignedCharVector*)pixelData width: (unsigned int)width height: (unsigned int)height colorFormat: (enum NTColorFormat)colorFormat bytesPerRow: (int)bytesPerRow pow2Padding: (BOOL)pow2Padding;
 /**
  * Returns the width of the bitmap.<br>
  * @return The width of the bitmap.
@@ -146,6 +148,11 @@ __attribute__ ((visibility("default"))) @interface NTBitmap : NSObject
  * @return The bytes per pixel parameter of this bitmap.
  */
 -(unsigned int)getBytesPerPixel;
+/**
+ * Returns a copy of the pixel data of this bitmap.<br>
+ * @return A byte vector of the bitmap's pixel data.
+ */
+-(NTUnsignedCharVector*)getPixelDataCopy;
 /**
  * Compresses this bitmap to a png.<br>
  * @return A byte vector of the png's data.
@@ -188,6 +195,14 @@ __attribute__ ((visibility("default"))) @interface NTBitmap : NSObject
  * @return The bitmap with original dimensions.
  */
 -(NTBitmap*)getUnpaddedBitmap;
+/**
+ * Creates a new bitmap from compressed byte vector.<br>
+ * If the power of two conversion flag is set, additional padding will be added to the image to make it's dimensions power of two.<br>
+ * @param compressedData The compressed bitmap data.<br>
+ * @param pow2Padding The power of two conversion flag.<br>
+ * @return The bitmap created from the compressed data. If the decompression fails, null is returned.
+ */
++(NTBitmap*)createFromCompressed: (NTUnsignedCharVector*)compressedData pow2Padding: (BOOL)pow2Padding;
 
 -(void)dealloc;
 

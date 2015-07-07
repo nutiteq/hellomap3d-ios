@@ -13,6 +13,7 @@
 
 namespace Nuti {
     class VectorElement;
+    class Layer;
     
     /**
      * A container class that provies information about a click performed on
@@ -31,8 +32,9 @@ namespace Nuti {
          * @param distance The distance from the vector element to the camera in the internal coordiante system.
          * @param order The draw order of this element relative to others.
          * @param vectorElement The vector element on which the click was performed.
+         * @param layer The layer of the vector element on which the click was performed.
          */
-        VectorElementClickInfo(const MapPos& clickPos, const MapPos& elementClickPos, double distance, unsigned int order, const std::shared_ptr<VectorElement>& vectorElement);
+        VectorElementClickInfo(const MapPos& clickPos, const MapPos& elementClickPos, double distance, unsigned int order, const std::shared_ptr<VectorElement>& vectorElement, const std::shared_ptr<Layer>& vectorLayer);
         virtual ~VectorElementClickInfo();
     
         /**
@@ -62,12 +64,17 @@ namespace Nuti {
          *         which where also clicked.
          */
         unsigned int getOrder() const;
-    
+        
         /**
          * Returns the clicked vector element.
          * @return The vector element on which the click was performed.
          */
         std::shared_ptr<VectorElement> getVectorElement() const;
+        /**
+         * Returns the layer of the clicked vector element.
+         * @return The layer of the vector element on which the click was performed.
+         */
+        std::shared_ptr<Layer> getLayer() const;
     
     private:
         MapPos _clickPos;
@@ -78,6 +85,7 @@ namespace Nuti {
         unsigned int _order;
     
         std::shared_ptr<VectorElement> _vectorElement;
+        std::shared_ptr<Layer> _layer;
     };
     
 }

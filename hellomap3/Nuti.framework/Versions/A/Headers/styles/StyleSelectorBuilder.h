@@ -25,6 +25,7 @@ namespace Nuti {
          * Constructs a new empty builder.
          */
         StyleSelectorBuilder();
+		virtual ~StyleSelectorBuilder();
 
         /**
          * Adds new rule to the builder rule set.

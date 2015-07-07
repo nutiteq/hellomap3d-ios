@@ -35,8 +35,18 @@
 #include "geometry/LineGeometry.h"
 #include "geometry/PointGeometry.h"
 #include "geometry/PolygonGeometry.h"
+#include "geometry/MultiGeometry.h"
+#include "geometry/MultiLineGeometry.h"
+#include "geometry/MultiPointGeometry.h"
+#include "geometry/MultiPolygonGeometry.h"
 #include "geometry/GeometrySimplifier.h"
 #include "geometry/DouglasPeuckerGeometrySimplifier.h"
+#include "geometry/GeoJSONGeometryReader.h"
+#include "geometry/GeoJSONGeometryWriter.h"
+#include "geometry/WKBGeometryReader.h"
+#include "geometry/WKBGeometryWriter.h"
+#include "geometry/WKTGeometryReader.h"
+#include "geometry/WKTGeometryWriter.h"
 
 #include "graphics/Frustum.h"
 #include "graphics/Bitmap.h"
@@ -51,6 +61,9 @@
 #include "layers/VectorLayer.h"
 #include "layers/VectorTileLayer.h"
 #include "layers/NutiteqOnlineVectorTileLayer.h"
+#include "layers/EditableVectorLayer.h"
+#include "layers/ClusteredVectorLayer.h"
+#include "layers/ClusterElementBuilder.h"
 
 #include "projections/EPSG3857.h"
 
@@ -80,10 +93,13 @@
 #include "styles/PopupStyle.h"
 #include "styles/TextStyleBuilder.h"
 #include "styles/TextStyle.h"
+#include "styles/GeometryCollectionStyle.h"
+#include "styles/GeometryCollectionStyleBuilder.h"
 #include "styles/StyleSelector.h"
 #include "styles/StyleSelectorBuilder.h"
 #include "styles/StyleSelectorRule.h"
 #include "styles/StyleSelectorExpression.h"
+#include "styles/CartoCSSParser.h"
 
 #include "ui/BaseMapView.h"
 #include "ui/MapView.h"
@@ -93,6 +109,7 @@
 #include "ui/MapRenderListener.h"
 #include "ui/VectorElementClickInfo.h"
 #include "ui/VectorElementsClickInfo.h"
+#include "ui/VectorEditEventListener.h"
 
 #include "utils/AssetUtils.h"
 #include "utils/BitmapUtils.h"
@@ -110,6 +127,7 @@
 #include "vectorelements/Polygon.h"
 #include "vectorelements/Popup.h"
 #include "vectorelements/Text.h"
+#include "vectorelements/GeometryCollection.h"
 
 #include "vectortiles/MBVectorTileStyleSet.h"
 #include "vectortiles/MBVectorTileDecoder.h"

@@ -29,6 +29,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTLabel : NTBillboard
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTLabel*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs an abstract Label object with the specified style and attaches it to a billboard element.<br>
  * @param baseBillboard The billboard this label will be attached to.<br>
@@ -64,6 +67,11 @@ __attribute__ ((visibility("default"))) @interface NTLabel : NTBillboard
  * @return The new style that defines what this marker looks like.
  */
 -(void)setStyle: (NTLabelStyle*)style;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

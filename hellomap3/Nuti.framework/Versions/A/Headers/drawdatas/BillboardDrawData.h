@@ -78,7 +78,7 @@ namespace Nuti {
         BillboardRenderer* getRenderer() const;
         void setRenderer(BillboardRenderer& renderer);
     
-        void offsetHorizontally(double offset);
+        virtual void offsetHorizontally(double offset);
     
     protected:
         BillboardDrawData(const Billboard& billboard,

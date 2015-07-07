@@ -110,8 +110,7 @@ namespace Nuti {
         bool isScaleWithDPI() const;
         
     protected:
-        BillboardStyle(const std::string& className,
-                       const Color& color,
+        BillboardStyle(const Color& color,
                        float attachAnchorPointX,
                        float attachAnchorPointY,
                        bool causesOverlap,

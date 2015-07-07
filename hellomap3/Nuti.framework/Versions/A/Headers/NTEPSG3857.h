@@ -27,11 +27,19 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTEPSG3857 : NTProjection
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTEPSG3857*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 -(id)init;
 -(double)fromInternalScale: (double)size;
 -(NTMapPos*)fromWgs84: (NTMapPos*)wgs84Pos;
 -(NTMapPos*)toWgs84: (NTMapPos*)mapPos;
 -(NSString*)getName;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

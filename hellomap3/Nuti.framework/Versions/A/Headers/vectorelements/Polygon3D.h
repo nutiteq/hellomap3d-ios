@@ -70,7 +70,7 @@ namespace Nuti {
          * Returns the holes of the 3d polygon.
          * @return The list of holes of the 3d polygon.
          */
-        const std::vector<std::vector<MapPos> >& getHoles() const;
+        std::vector<std::vector<MapPos> > getHoles() const;
         /**
          * Sets the holes of the 3d polygon.
          * @param holes The list of holes of the 3d polygon.
@@ -99,12 +99,12 @@ namespace Nuti {
          */
         void setStyle(const std::shared_ptr<Polygon3DStyle>& style);
     
-    protected:
+		std::shared_ptr<Polygon3DDrawData> getDrawData() const;
+		void setDrawData(const std::shared_ptr<Polygon3DDrawData>& drawData);
+
+	protected:
         friend class Polygon3DRenderer;
         friend class VectorLayer;
-        
-        std::shared_ptr<Polygon3DDrawData> getDrawData() const;
-        void setDrawData(const std::shared_ptr<Polygon3DDrawData>& drawData);
         
     private:
         std::shared_ptr<Polygon3DDrawData> _drawData;

@@ -28,14 +28,6 @@ namespace Nuti {
         virtual ~VectorElement();
         
         /**
-         * Returns the actual class name of this vector element. This is used
-         * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically
-         * generate child proxy classes from a base class pointer.
-         * @return The class name of this vector element.
-         */
-        const std::string& getClassName() const;
-        
-        /**
          * Returns the bounds of this vector element.
          * @return The bounds of this vector element.
          */
@@ -104,7 +96,7 @@ namespace Nuti {
     protected:
         friend class VectorDataSource;
         
-        VectorElement(const std::string& className, const std::shared_ptr<Geometry>& geometry);
+        VectorElement(const std::shared_ptr<Geometry>& geometry);
         
         void attachToDataSource(const std::weak_ptr<VectorDataSource>& dataSource);
         void detachFromDataSource();
@@ -114,8 +106,6 @@ namespace Nuti {
         std::shared_ptr<Geometry> _geometry;
     
         mutable std::mutex _mutex;
-    
-        std::string _className; // This is used by swig to generate correct proxy object
 
     private:
         long long _id;

@@ -1,7 +1,7 @@
-#ifndef DIFFUSELIGHTINGSHADERSOURCE_H_
-#define DIFFUSELIGHTINGSHADERSOURCE_H_
+#ifndef _NUTI_DIFFUSELIGHTINGSHADERSOURCE_H_
+#define _NUTI_DIFFUSELIGHTINGSHADERSOURCE_H_
 
-#include <assets/ShaderSource.h>
+#include "ShaderSource.h"
 
 #include <string>
 
@@ -41,12 +41,6 @@ static std::string diffuse_lighting_frag_glsl =
     "	gl_FragColor = color;"
     "}";
 
-static unsigned char diffuse_lighting_prog_data[] = {
-    0x89, 0x50, 0x4e};
-
-static unsigned int diffuse_lighting_prog_data_len = 3;
-
-static Nuti::ShaderSource diffuse_lighting_shader_source("diffuse-lighting", &diffuse_lighting_vert_glsl, &diffuse_lighting_frag_glsl,
-                                                         diffuse_lighting_prog_data, diffuse_lighting_prog_data_len);
+static Nuti::ShaderSource diffuse_lighting_shader_source("diffuse-lighting", &diffuse_lighting_vert_glsl, &diffuse_lighting_frag_glsl);
 
 #endif

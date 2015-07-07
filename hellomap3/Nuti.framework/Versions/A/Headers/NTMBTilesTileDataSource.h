@@ -33,6 +33,7 @@ typedef NS_ENUM(NSInteger, NTMBTilesScheme) {
 #import "NTMapTile.h"
 #import "NTTileDataSource.h"
 #import "NTTileData.h"
+#import "NTMapBounds.h"
 #import "NTStringMap.h"
 
 /**
@@ -71,6 +72,11 @@ __attribute__ ((visibility("default"))) @interface NTMBTilesTileDataSource : NTT
  * @return Map containing meta data information (parameter names mapped to parameter values).
  */
 -(NTStringMap*)getMetaData;
+/**
+ * Returns the extent of this data source. Extent is the minimal bounding box encompassing all the tiles at maximum zoom level.<br>
+ * @return The minimal bounding box for the tiles.
+ */
+-(NTMapBounds*)getDataExtent;
 -(NTTileData*)loadTile: (NTMapTile*)mapTile;
 
 -(void)dealloc;

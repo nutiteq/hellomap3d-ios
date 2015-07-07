@@ -7,6 +7,7 @@
 #ifndef _NUTI_LOCALVECTORDATASOURCE_H_
 #define _NUTI_LOCALVECTORDATASOURCE_H_
 
+#include "core/MapBounds.h"
 #include "datasources/VectorDataSource.h"
 #include "utils/SpatialIndex.h"
 
@@ -22,12 +23,12 @@ namespace Nuti {
             /**
              * Null index, fastest if few elements are used. No element culling is performed.
              */
-            NULL_SPATIAL_INDEX,
+            LOCAL_SPATIAL_INDEX_TYPE_NULL,
             
             /**
              * K-d tree index, element culling is exact and fast.
              */
-            KDTREE_SPATIAL_INDEX
+            LOCAL_SPATIAL_INDEX_TYPE_KDTREE
         };
     }
 
@@ -83,7 +84,6 @@ namespace Nuti {
          * @param elementToRemove The vector element to be removed.
          * @return True if the vector element existed in the data source.
          */
-        
         bool remove(const std::shared_ptr<VectorElement>& elementToRemove);
         /**
          * Removes all vector elements from the data source.
@@ -101,6 +101,12 @@ namespace Nuti {
          * @param simplifier The new geometry simplifier to use (can be null).
          */
         void setGeometrySimplifier(const std::shared_ptr<GeometrySimplifier>& simplifier);
+        
+        /**
+         * Returns the extent of this data source. Extent is the minimal bounding box encompassing all the elements.
+         * @return The minimal bounding box for the elements.
+         */
+        MapBounds getDataExtent() const;
         
     protected:
         virtual void notifyElementChanged(const std::shared_ptr<VectorElement>& element);

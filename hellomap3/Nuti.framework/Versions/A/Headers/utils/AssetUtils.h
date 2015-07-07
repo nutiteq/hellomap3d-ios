@@ -37,6 +37,9 @@ namespace Nuti {
          * @return The full path for the given file name.
          */
         static std::string CalculateWritablePath(const std::string& fileName);
+
+    private:
+        AssetUtils();
     };
 
 }

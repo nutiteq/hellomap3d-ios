@@ -29,6 +29,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTPolygon : NTVectorElement
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTPolygon*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a Polygon object from a geometry object and a style.<br>
  * @param geometry The geometry object that defines the location and holes of this polygon.<br>
@@ -85,6 +88,11 @@ __attribute__ ((visibility("default"))) @interface NTPolygon : NTVectorElement
  * @param style The new style that defines what this polygon looks like.
  */
 -(void)setStyle: (NTPolygonStyle*)style;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

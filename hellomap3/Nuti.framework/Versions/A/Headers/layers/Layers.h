@@ -15,6 +15,7 @@ namespace Nuti {
     class Options;
     class Layer;
     class MapRenderer;
+	class TouchHandler;
     class CancelableThreadPool;
     
     /**
@@ -74,7 +75,7 @@ namespace Nuti {
     protected:
         friend class BaseMapView;
         
-        void setMapRenderer(const std::shared_ptr<MapRenderer>& mapRenderer);
+        void setComponents(const std::weak_ptr<MapRenderer>& mapRenderer, const std::weak_ptr<TouchHandler>& touchHandler);
     
     private:
         std::vector<std::shared_ptr<Layer> > _layers;
@@ -84,6 +85,7 @@ namespace Nuti {
         std::weak_ptr<Options> _options;
         
         std::weak_ptr<MapRenderer> _mapRenderer;
+		std::weak_ptr<TouchHandler> _touchHandler;
     
         mutable std::mutex _mutex;
     };

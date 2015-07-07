@@ -23,22 +23,27 @@ extern "C" {
  */
 __attribute__ ((visibility("default"))) @interface NTStyleBuilder : NSObject
 {
-	void *swigCPtr;
-	BOOL swigCMemOwn;
+  void *swigCPtr;
+  BOOL swigCMemOwn;
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
-/**
- * Copy constructs style builder from another style builder.<br>
- * @param styleBuilder The other style builder.
+
+/**  
+ * Checks if this object is equal to the specified object.
+ * @return True when objects are equal, false otherwise.
  */
--(id)initWithStyleBuilder: (NTStyleBuilder*)styleBuilder;
+-(BOOL)isEqual:(id)object;
+
 /**
- * Copies the other style builder's parameters to this one.<br>
- * @param styleBuilder The other style builder.<br>
- * @return This style builder.
+ * Returns the hash value of this object.
+ * @return The hash value of this object.
  */
--(NTStyleBuilder*)clone: (NTStyleBuilder*)styleBuilder;
+-(NSUInteger)hash;
+
+
++(NTStyleBuilder*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Returns the color of the vector element.<br>
  * @return The color of the vector element.
@@ -51,6 +56,11 @@ __attribute__ ((visibility("default"))) @interface NTStyleBuilder : NSObject
  * @param color The new color for the vector element.
  */
 -(void)setColor: (NTColor*)color;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

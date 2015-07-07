@@ -37,14 +37,14 @@ namespace Nuti {
          */
         const ViewState& getViewState() const;
         /**
-        * Returns the geometry associated with the context.
-        * @return The geometry of the context
-        */
+         * Returns the geometry associated with the context.
+         * @return The geometry of the context
+         */
         const std::shared_ptr<Geometry>& getGeometry() const;
         /**
-        * Returns the meta data associated with the context.
-        * @return The meta data of the context
-        */
+         * Returns the meta data associated with the context.
+         * @return The meta data of the context
+         */
         const std::map<std::string, std::string>& getMetaData() const;
 
         /**
@@ -56,6 +56,9 @@ namespace Nuti {
         bool getVariable(const std::string& name, boost::variant<double, std::string>& value) const;
 
     private:
+        static std::string GetGeometryType(const std::shared_ptr<Geometry>& geometry);
+        static size_t GetGeometryVerticesCount(const std::shared_ptr<Geometry>& geometry);
+
         const ViewState& _viewState;
         const std::shared_ptr<Geometry>& _geometry;
         const std::map<std::string, std::string>& _metaData;

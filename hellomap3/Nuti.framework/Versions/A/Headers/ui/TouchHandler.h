@@ -33,6 +33,12 @@ namespace Nuti {
             ACTION_POINTER_1_UP = 4,
             ACTION_POINTER_2_UP = 5
         };
+
+		struct TouchHandlerListener {
+			virtual ~TouchHandlerListener() { }
+
+			virtual bool onTouchEvent(int action, const ScreenPos& screenPos1, const ScreenPos& screenPos2) = 0;
+		};
     
         TouchHandler(const std::shared_ptr<MapRenderer>& mapRenderer, const std::shared_ptr<Options>& options);
         void init();
@@ -47,15 +53,16 @@ namespace Nuti {
         void dualClick(const ScreenPos& screenPos1, const ScreenPos& screenPos2) const;
         void startSinglePointer(const ScreenPos& screenPos);
         void startDualPointer(const ScreenPos& screenPos1, const ScreenPos& screenPos2);
+
+		void registerTouchHandlerListener(const std::shared_ptr<TouchHandlerListener>& listener);
+		void unregisterTouchHandlerListener(const std::shared_ptr<TouchHandlerListener>& listener);
         
     protected:
         friend class BaseMapView;
-        
-        void setMapRenderer(std::shared_ptr<MapRenderer> mapRenderer);
     
     private:
-        double calculateRotatingScalingFactor(const ScreenPos& screenPos1, const ScreenPos& screenPos2) const;
-    
+        float calculateRotatingScalingFactor(const ScreenPos& screenPos1, const ScreenPos& screenPos2) const;    
+
         void singlePointerPan(const ScreenPos& screenPos);
         void dualPointerGuess(const ScreenPos& screenPos1, const ScreenPos& screenPos2);
         void dualPointerTilt(const ScreenPos& screenPos);
@@ -112,7 +119,10 @@ namespace Nuti {
         std::shared_ptr<MapRenderer> _mapRenderer;
     
         mutable std::mutex _mutex;
-    };
+
+		std::shared_ptr<std::vector<std::shared_ptr<TouchHandlerListener> > > _touchHandlerListeners;
+		mutable std::mutex _touchHandlerListenersMutex;
+	};
     
 }
 

@@ -8,8 +8,6 @@
 #define _NUTI_CULLSTATE_H_
 
 #include "core/MapEnvelope.h"
-#include "graphics/Frustum.h"
-#include "graphics/MapTileQuadTreeNode.h"
 #include "graphics/ViewState.h"
 
 #include <memory>
@@ -25,15 +23,11 @@ namespace Nuti {
     class CullState {
     public:
         /** 
-         * Constructs a CullState object from an envelope, visible and preloading frustums, a preloading camera
-         * position and a viewstate.
+         * Constructs a CullState object from an envelope and a viewstate.
          * @param envelope The envelope.
-         * @param preloadingFrustum The preloading frustum.
-         * @param preloadingCameraPos The preloading camera position.
          * @param viewState The view state.
          */
-        CullState(const MapEnvelope& envelope, const Frustum& preloadingFrustum,
-                  const MapPos& preloadingCameraPos, const ViewState& viewState);
+        CullState(const MapEnvelope& envelope, const ViewState& viewState);
         virtual ~CullState();
     
         /**
@@ -47,17 +41,6 @@ namespace Nuti {
          * @return The envelope for the visible area in the internal coordiante system.
          */
         const MapEnvelope& getEnvelope() const;
-        /**
-         * Returns a frustum for the area that is not visible, but should still be drawn.
-         * @return The frustum for the preloading area in the internal coordiante system.
-         */
-        const Frustum& getPreloadingFrustum() const;
-        
-        /**
-         * Returns a modified camera pos, that was used for calculating the preloading frustum.
-         * @return The modified preloading camera position in the internal coordinate system.
-         */
-        const MapPos& getPreloadingCameraPos() const;
     
         /**
          * Returns a view state.
@@ -68,10 +51,6 @@ namespace Nuti {
     private:
         MapEnvelope _envelope;
         
-        Frustum _preloadingFrustum;
-        
-        MapPos _preloadingCameraPos;
-    
         ViewState _viewState;
     };
     

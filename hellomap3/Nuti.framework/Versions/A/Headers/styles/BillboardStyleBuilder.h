@@ -19,10 +19,6 @@ namespace Nuti {
      */
     class BillboardStyleBuilder : public StyleBuilder {
     public:
-        /**
-         * Constructs a BillboardStyleBuilder object with all parameters set to defaults.
-         */
-        BillboardStyleBuilder();
         virtual ~BillboardStyleBuilder();
     
         /**
@@ -143,6 +139,8 @@ namespace Nuti {
         void setScaleWithDPI(bool scaleWithDPI);
     
     protected:
+        BillboardStyleBuilder();
+
         float _attachAnchorPointX;
         float _attachAnchorPointY;
         

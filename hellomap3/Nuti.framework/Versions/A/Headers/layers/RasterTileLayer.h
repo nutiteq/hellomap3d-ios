@@ -34,6 +34,17 @@ namespace Nuti {
          */
         RasterTileLayer(const std::shared_ptr<TileDataSource>& dataSource);
         virtual ~RasterTileLayer();
+        
+        /**
+         * Returns the opacity of the layer.
+         * @return The opacity of the layer. Default is 1 (fully opaque).
+         */
+        float getOpacity() const;
+        /**
+         * Sets the opacity attribute of the layer.
+         * @param opacity The relative opacity. Use 0 for fully transparent layer, 1 for fully opaque layer. Default is 1.
+         */
+        void setOpacity(float opacity);
     
         /**
          * Returns the current frame number.
@@ -132,6 +143,8 @@ namespace Nuti {
     
         static const int PRELOADING_PRIORITY_OFFSET = -2;
         static const int TILE_TEXTURES_PER_FRAME = 1;
+        
+        float _opacity;
     
         std::atomic<bool> _synchronizedRefresh;
     

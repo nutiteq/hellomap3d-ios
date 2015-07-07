@@ -32,7 +32,7 @@ namespace Nuti {
     
 		const std::vector<cglib::vec3<float> >& getNormals() const;
     
-        void offsetHorizontally(double offset);
+        virtual void offsetHorizontally(double offset);
     
     private:
         static const int MAX_INDICES_PER_ELEMENT = 3;
@@ -40,7 +40,7 @@ namespace Nuti {
         MapBounds _boundingBox;
     
         std::vector<MapPos> _coords;
-        
+
         std::vector<cglib::vec3<float> > _normals;
     };
     

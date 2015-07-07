@@ -11,6 +11,8 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <functional>
+#include <cstdint>
 
 namespace Nuti {
 
@@ -19,29 +21,31 @@ namespace Nuti {
         static bool GetHTTP(const std::string& url, std::shared_ptr<std::vector<unsigned char> >& responseData, bool log);
 
         static bool GetHTTP(const std::string& url, const std::map<std::string, std::string>& requestHeaders, std::map<std::string, std::string>& responseHeaders, std::shared_ptr<std::vector<unsigned char> >& responseData, bool log);
-        
+
+        static int GetHTTP(const std::string& url, const std::map<std::string, std::string>& requestHeaders, std::map<std::string, std::string>& responseHeaders, std::function<bool(const unsigned char*, size_t)> handler, std::uint64_t offset, bool log);
+
         static int GetMaxAgeHTTPHeader(const std::map<std::string, std::string>& headers);
-    
+
         static std::string URLEncode(const std::string& value);
-    
+
         static std::string URLEncodeMap(const std::map<std::string, std::string>& valueMap);
-    
+
         static std::string URLDecode(const std::string& encValue);
-    
+
         static std::map<std::string, std::string> URLDecodeMap(const std::string& encValueMap);
-    
+
         static std::string BuildURLFromParameters(const std::string& baseUrl, const std::map<std::string, std::string>& params);
-    
+
         static std::string ParseURLHostName(std::string url);
-    
+
         static int ParseURLPort(std::string url);
-    
+
         static std::string ParseURLPath(std::string url);
-    
+
     private:
         NetworkUtils();
 
-        static const int BUFFER_SIZE = 1024;
+        static const int BUFFER_SIZE = 4096;
     };
     
 }

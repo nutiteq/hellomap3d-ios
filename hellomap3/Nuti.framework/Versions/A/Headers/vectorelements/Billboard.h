@@ -51,6 +51,11 @@ namespace Nuti {
          */
         std::shared_ptr<Geometry> getRootGeometry() const;
         /**
+         * Returns the geometry object that defines the location of this billboard.
+         * @return The geometry object of this billboard.
+         */
+        std::shared_ptr<Geometry> getGeometry() const;
+        /**
          * Sets the location for this billboard. If this billboard is attached
          * to another billboard, it will first be detached.
          * @param geometry The new geometry object that defines the location of this billboard.
@@ -78,19 +83,19 @@ namespace Nuti {
          */
         void setRotation(float rotation);
     
-    protected:
+        std::shared_ptr<BillboardDrawData> getDrawData() const;
+		void setDrawData(const std::shared_ptr<BillboardDrawData>& drawData);
+
+	protected:
         friend class BillboardPlacementWorker;
         friend class BillboardRenderer;
         friend class BillboardSorter;
         friend class MapRenderer;
         friend class VectorLayer;
         
-        Billboard(const std::string& className, const std::shared_ptr<Billboard>& baseBillboard);
-        Billboard(const std::string& className, const std::shared_ptr<Geometry>& geometry);
-        Billboard(const std::string& className, const MapPos& pos);
-        
-        std::shared_ptr<BillboardDrawData> getDrawData() const;
-        void setDrawData(const std::shared_ptr<BillboardDrawData>& drawData);
+        Billboard(const std::shared_ptr<Billboard>& baseBillboard);
+        Billboard(const std::shared_ptr<Geometry>& geometry);
+        Billboard(const MapPos& pos);
         
     private:
         std::shared_ptr<Billboard> _baseBillboard;

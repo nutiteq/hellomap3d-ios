@@ -29,6 +29,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTPolygon3D : NTVectorElement
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTPolygon3D*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a Polygon3D object from a geometry object and a style.<br>
  * @param geometry The geometry object that defines the location and holes of this 3d polygon.<br>
@@ -98,6 +101,11 @@ __attribute__ ((visibility("default"))) @interface NTPolygon3D : NTVectorElement
  * @param style The new style that defines what this 3d polygon looks like.
  */
 -(void)setStyle: (NTPolygon3DStyle*)style;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

@@ -21,14 +21,6 @@ namespace Nuti {
         virtual ~GeometrySimplifier() { }
 
         /**
-         * Returns the actual class name of this geometry. This is used
-         * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically
-         * generate child proxy classes from a base class pointer.
-         * @return The class name of this layer.
-         */
-        const std::string& getClassName() const { return _className; }
-
-        /**
          * Perform the simplification of the given geometry, given relative scale.
          * @param geometry The geometry to simplify.
          * @param scale Relative scale for simplification, this is proportional to 2^zoom.
@@ -38,10 +30,7 @@ namespace Nuti {
         virtual std::shared_ptr<Geometry> simplify(const std::shared_ptr<Geometry>& geometry, float scale) const = 0;
         
     protected:
-        GeometrySimplifier(const std::string& className) : _className(className) { }
-        
-    private:
-        std::string _className; // This is used by swig to generate correct proxy object
+        GeometrySimplifier() { }
     };
 }
 

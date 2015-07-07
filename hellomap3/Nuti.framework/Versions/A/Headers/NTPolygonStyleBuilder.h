@@ -25,6 +25,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTPolygonStyleBuilder : NTStyleBuilder
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTPolygonStyleBuilder*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a PolygonStyleBuilder object with all parameters set to defaults.
  */
@@ -45,6 +48,11 @@ __attribute__ ((visibility("default"))) @interface NTPolygonStyleBuilder : NTSty
  * @return A new PolygonStyle object.
  */
 -(NTPolygonStyle*)buildStyle;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

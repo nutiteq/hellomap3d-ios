@@ -17,6 +17,7 @@ extern "C" {
 
 
 #import "NTMapPos.h"
+#import "NTMapBounds.h"
 #import "NTScreenPos.h"
 #import "NTMapTile.h"
 #import "NTTileData.h"
@@ -45,6 +46,11 @@ __attribute__ ((visibility("default"))) @interface NTBitmapOverlayRasterTileData
  * @param bitmapPoses The pixel coordinates in the bitmap corresponding to geographical control points. The number of coordinates must be equal to the number of control points in mapPoses list.
  */
 -(id)initWithMinZoom: (int)minZoom maxZoom: (int)maxZoom bitmap: (NTBitmap*)bitmap projection: (NTProjection*)projection mapPoses: (NTMapPosVector*)mapPoses bitmapPoses: (NTScreenPosVector*)bitmapPoses;
+/**
+ * Returns the extent of this data source. Extent is the minimal bounding box encompassing all the raster data.<br>
+ * @return The minimal bounding box for the data.
+ */
+-(NTMapBounds*)getDataExtent;
 -(NTTileData*)loadTile: (NTMapTile*)mapTile;
 
 -(void)dealloc;

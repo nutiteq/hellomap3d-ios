@@ -25,6 +25,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTVectorLayer : NTLayer
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTVectorLayer*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a VectorLayer object from a data source.<br>
  * @param dataSource The data source from which this layer loads data.
@@ -36,6 +39,11 @@ __attribute__ ((visibility("default"))) @interface NTVectorLayer : NTLayer
  */
 -(NTVectorDataSource *)getDataSource;
 -(BOOL)isUpdateInProgress;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

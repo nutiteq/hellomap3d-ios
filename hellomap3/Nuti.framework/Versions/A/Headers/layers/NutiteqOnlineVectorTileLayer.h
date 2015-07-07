@@ -12,21 +12,30 @@
 namespace Nuti {
     /**
      * Specialized online vector tile layer that connects to Nutiteq online tile server.
-     * This layer is intended as a 'shortcut' to make using Nutiteq online service and vector tiles as simple as possible.
+     * This layer is intended as a 'shortcut' to make using Nutiteq online service and
+     * vector tiles as simple as possible.
      */
     class NutiteqOnlineVectorTileLayer : public VectorTileLayer {
     public:
         /**
          * Constructs a NutiteqOnlineVectorTileLayer object from a style asset name.
+         * Uses "nutiteq.mbstreets" as a source.
          * Style asset must be included in the project, style asset defines visual style of the map.
          * @param styleAssetName The name of the style asset that defines visual style of the map.
          */
         NutiteqOnlineVectorTileLayer(const std::string& styleAssetName);
+        /**
+         * Constructs a NutiteqOnlineVectorTileLayer object from a source name and style asset name.
+         * Style asset must be included in the project, style asset defines visual style of the map.
+         * @param source The tile source name. Currently only "nutiteq.mbstreets" is supported.
+         * @param styleAssetName The name of the style asset that defines visual style of the map.
+         */
+        NutiteqOnlineVectorTileLayer(const std::string& source, const std::string& styleAssetName);
         virtual ~NutiteqOnlineVectorTileLayer();
         
     private:
-        static std::shared_ptr<TileDataSource> createDataSource();
-        static std::shared_ptr<VectorTileDecoder> createTileDecoder(const std::string& syleAssetName);
+        static std::shared_ptr<TileDataSource> CreateDataSource(const std::string& source);
+        static std::shared_ptr<VectorTileDecoder> CreateTileDecoder(const std::string& syleAssetName);
     };
     
 }

@@ -25,6 +25,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTLabelStyleBuilder : NTBillboardStyleBuilder
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTLabelStyleBuilder*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a LabelStyleBuilder object with all parameters set to defaults.
  */
@@ -96,6 +99,11 @@ __attribute__ ((visibility("default"))) @interface NTLabelStyleBuilder : NTBillb
  * @return A new LabelStyle object.
  */
 -(NTLabelStyle*)buildStyle;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

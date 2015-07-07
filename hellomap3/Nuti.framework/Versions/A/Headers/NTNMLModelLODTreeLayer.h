@@ -26,11 +26,19 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTNMLModelLODTreeLayer : NTLayer
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTNMLModelLODTreeLayer*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a NMLModelLODTreeLayer object from a data source.<br>
  * @param dataSource The data source from which this layer loads data.
  */
 -(id)initWithDataSource: (NTNMLModelLODTreeDataSource*)dataSource;
+/**
+ * Returns the data source of this layer.<br>
+ * @return The data source that was bound to this vector layer on construction.
+ */
+-(NTNMLModelLODTreeDataSource*)getDataSource;
 /**
  * Set memory usage constraints for the layer. The specified limit is not exact, <br>
  * but should be relatively close to the actual memory usage of the layer.<br>
@@ -47,6 +55,11 @@ __attribute__ ((visibility("default"))) @interface NTNMLModelLODTreeLayer : NTLa
  */
 -(void)setLODResolutionFactor: (float)factor;
 -(BOOL)isUpdateInProgress;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

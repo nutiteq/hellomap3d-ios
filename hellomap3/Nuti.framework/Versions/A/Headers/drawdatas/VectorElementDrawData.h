@@ -19,12 +19,18 @@ namespace Nuti {
         virtual ~VectorElementDrawData();
     
         const Color& getColor() const;
+        
+        virtual bool isOffset() const;
+        virtual void offsetHorizontally(double offset) = 0;
     
     protected:
         VectorElementDrawData(const Color& color);
-    
+
+        void setIsOffset(bool isOffset);
+
     private:
         Color _color;
+        bool _isOffset;
     };
     
 }

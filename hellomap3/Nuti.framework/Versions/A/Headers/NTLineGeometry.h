@@ -26,6 +26,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTLineGeometry : NTGeometry
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTLineGeometry*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a new LineGeometry object from a map position list.
  */
@@ -36,6 +39,11 @@ __attribute__ ((visibility("default"))) @interface NTLineGeometry : NTGeometry
  * @return The list of of map positions defining the line.
  */
 -(NTMapPosVector*)getPoses;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

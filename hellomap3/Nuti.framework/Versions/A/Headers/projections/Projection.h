@@ -20,14 +20,6 @@ namespace Nuti {
         virtual ~Projection();
     
         /**
-         * Returns the actual class name of this vector element. This is used
-         * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically
-         * generate child proxy classes from a base class pointer.
-         * @return The class name of this vector element.
-         */
-        const std::string& getClassName() const;
-
-        /**
          * Returns the bounds of this projection.
          * @return The bounds of this projection.
          */
@@ -96,11 +88,9 @@ namespace Nuti {
         virtual std::string getName() const = 0;
     
     protected:
-        Projection(const std::string& className, const MapBounds& bounds);
+        Projection(const MapBounds& bounds);
     
         MapBounds _bounds;
-        
-        std::string _className; // This is used by swig to generate correct proxy object
 
     private:
         static const int EARTH_RADIUS = 6371000;

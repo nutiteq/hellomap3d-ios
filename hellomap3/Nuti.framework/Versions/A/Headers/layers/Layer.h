@@ -21,6 +21,7 @@ namespace Nuti {
     class Layers;
     class MapPos;
     class MapRenderer;
+	class TouchHandler;
     class MapVec;
     class ShaderManager;
     class CancelableThreadPool;
@@ -34,14 +35,6 @@ namespace Nuti {
     public:
         virtual ~Layer();
     
-        /**
-         * Returns the actual class name of this layer. This is used
-         * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically
-         * generate child proxy classes from a base class pointer.
-         * @return The class name of this layer.
-         */
-        const std::string& getClassName() const;
-
         /**
          * Returns the layer task priority of this layer.
          * @return The priority level for the tasks of this layer.
@@ -94,18 +87,19 @@ namespace Nuti {
          * Refreshes the layer using old stored visibility information. This method might be called if some of the layer data
          * changes.
          */
-        void refresh();
+        virtual void refresh();
     
     protected:
         friend class Layers;
         friend class MapRenderer;
     
-		Layer(const std::string& className);
+		Layer();
 		
         virtual void setComponents(const std::shared_ptr<CancelableThreadPool>& envelopeThreadPool,
                                    const std::shared_ptr<CancelableThreadPool>& tileThreadPool,
                                    const std::weak_ptr<Options>& options,
-                                   const std::weak_ptr<MapRenderer>& mapRenderer);
+                                   const std::weak_ptr<MapRenderer>& mapRenderer,
+								   const std::weak_ptr<TouchHandler>& touchHandler);
     
         std::shared_ptr<CullState> getLastCullState() const;
     
@@ -131,6 +125,7 @@ namespace Nuti {
         std::shared_ptr<CancelableThreadPool> _tileThreadPool;
         std::weak_ptr<Options> _options;
         std::weak_ptr<MapRenderer> _mapRenderer;
+		std::weak_ptr<TouchHandler> _touchHandler;
         
         std::shared_ptr<CullState> _lastCullState;
        
@@ -141,13 +136,11 @@ namespace Nuti {
         MapRange _visibleZoomRange;
 		
         mutable std::recursive_mutex _mutex;
-    
+
     private:
         static const int CULL_DELAY = 400;
 
         bool _surfaceCreated;
-
-        std::string _className; // This is used by swig to generate correct proxy object
     };
     
 }

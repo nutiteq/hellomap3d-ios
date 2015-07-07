@@ -27,6 +27,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTBalloonPopupStyleBuilder : NTPopupStyleBuilder
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTBalloonPopupStyleBuilder*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a BalloonPopupStyleBuilder object with all parameters set to defaults.
  */
@@ -261,6 +264,11 @@ __attribute__ ((visibility("default"))) @interface NTBalloonPopupStyleBuilder : 
  * @return A new BalloonPopupStyle object.
  */
 -(NTBalloonPopupStyle*)buildStyle;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

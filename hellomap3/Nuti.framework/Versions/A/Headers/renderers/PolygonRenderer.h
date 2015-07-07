@@ -18,10 +18,11 @@ namespace Nuti {
     class LineDrawData;
     class Polygon;
     class PolygonDrawData;
-    class Projection;
     class Shader;
     class ShaderManager;
+    class VectorElement;
     class VectorElementClickInfo;
+    class VectorLayer;
     class ViewState;
     
     class PolygonRenderer {
@@ -40,9 +41,11 @@ namespace Nuti {
         void updateElement(const std::shared_ptr<Polygon>& element);
         void removeElement(const std::shared_ptr<Polygon>& element);
         
-        void calculateRayIntersectedElements(const Projection& projection, const MapPos& rayOrig, const MapVec& rayDir,
-                                             const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
+        void calculateRayIntersectedElements(const std::shared_ptr<VectorLayer>& layer, const MapPos& rayOrig, const MapVec& rayDir, const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
     
+    protected:
+        friend class GeometryCollectionRenderer;
+
     private:
         static void BuildAndDrawBuffers(GLuint a_color,
                                         GLuint a_coord,
@@ -53,6 +56,18 @@ namespace Nuti {
                                         LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache,
                                         const ViewState& viewState);
         
+        static bool FindElementRayIntersection(const std::shared_ptr<VectorElement>& element,
+                                               const std::shared_ptr<PolygonDrawData>& drawData,
+                                               const std::shared_ptr<VectorLayer>& layer,
+                                               const MapPos& rayOrig, const MapVec& rayDir,
+                                               const ViewState& viewState,
+                                               std::vector<VectorElementClickInfo>& results);
+
+        void bind(const ViewState& viewState);
+        void unbind();
+        
+        bool isEmptyBatch() const;
+        void addToBatch(const std::shared_ptr<PolygonDrawData>& drawData, LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache, const ViewState& viewState);
         void drawBatch(LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache, const ViewState& viewState);
     
         std::vector<std::shared_ptr<Polygon> > _elements;
@@ -60,6 +75,7 @@ namespace Nuti {
         
         std::vector<std::shared_ptr<PolygonDrawData> > _drawDataBuffer;
         std::vector<const LineDrawData*> _lineDrawDataBuffer;
+        const Bitmap* _prevBitmap;
     
         std::vector<unsigned char> _colorBuf;
         std::vector<float> _coordBuf;

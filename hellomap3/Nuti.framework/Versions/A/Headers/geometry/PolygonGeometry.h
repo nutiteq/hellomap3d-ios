@@ -29,6 +29,12 @@ namespace Nuti {
          * @param holes The list of map position lists defining the inner rings.
          */
         PolygonGeometry(const std::vector<MapPos>& poses, const std::vector<std::vector<MapPos> >& holes);
+        /**
+         * Constructs a PolygonGeometry objects from a list of rings.
+         * It is assumed the the first ring is outer ring and all other rings are inner rings.
+         * @param rings The list of map position lists defining the rings
+         */
+        PolygonGeometry(const std::vector<std::vector<MapPos> >& rings);
         virtual ~PolygonGeometry();
         
         virtual MapPos getCenterPos() const;
@@ -43,12 +49,16 @@ namespace Nuti {
          * Returns the list of map position lists defining the inner rings of the polygon (holes).
          * @returns The list of map position lists defining the inner rings of the polygon (holes).
          */
-        const std::vector<std::vector<MapPos> >& getHoles() const;
+        std::vector<std::vector<MapPos> > getHoles() const;
     
+        /**
+         * Returns the list of map position lists defining the rings of the polygon.
+         * @returns The list of map position lists defining the rings of the polygon.
+         */
+        const std::vector<std::vector<MapPos> >& getRings() const;
+
     private:
-        std::vector<MapPos> _poses;
-    
-        std::vector<std::vector<MapPos> > _holes;
+        std::vector<std::vector<MapPos> > _rings;
     };
     
 }

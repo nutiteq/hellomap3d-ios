@@ -24,10 +24,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTBillboardStyleBuilder : NTStyleBuilder
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
-/**
- * Constructs a BillboardStyleBuilder object with all parameters set to defaults.
- */
--(id)init;
+
++(NTBillboardStyleBuilder*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Returns the horizontal attaching anchor point of the billoard.<br>
  * @return The horizontal attaching anchor point of the billoard.
@@ -140,6 +139,11 @@ __attribute__ ((visibility("default"))) @interface NTBillboardStyleBuilder : NTS
  * @param scaleWithDPI The new state of the scale with DPI flag.
  */
 -(void)setScaleWithDPI: (BOOL)scaleWithDPI;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

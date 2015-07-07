@@ -46,13 +46,6 @@ __attribute__ ((visibility("default"))) @interface NTGeometry : NSObject
 +(NTGeometry*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
 
 /**
- * Returns the actual class name of this geometry. This is used<br>
- * for dynamically creating Java and ObjC proxy classes, because Swig can't automatically<br>
- * generate child proxy classes from a base class pointer.<br>
- * @return The class name of this layer.
- */
--(NSString*)getClassName;
-/**
  * Returns the center point of the geometry.<br>
  * @return The center point of the geometry.
  */
@@ -62,6 +55,11 @@ __attribute__ ((visibility("default"))) @interface NTGeometry : NSObject
  * @return The bounds for the geometry.
  */
 -(NTMapBounds*)getBounds;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

@@ -18,6 +18,7 @@ extern "C" {
 
 #import "NTProjection.h"
 #import "NTCullState.h"
+#import "NTVectorElement.h"
 #import "NTVectorElementVector.h"
 
 /**

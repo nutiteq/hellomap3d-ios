@@ -29,7 +29,7 @@ namespace Nuti { namespace VT {
 		void setLightDir(const cglib::vec3<float>& lightDir);
 		void setBackgroundColor(unsigned int backgroundColor);
 		void setBackgroundPattern(const std::shared_ptr<BitmapPattern>& pattern);
-		void setVisibleTiles(const std::map<TileId, std::shared_ptr<Tile>>& tiles);
+		void setVisibleTiles(const std::map<TileId, std::shared_ptr<Tile>>& tiles, bool blend);
 		std::vector<std::shared_ptr<TileLabel>> getVisibleLabels() const;
 
 		void initialize();

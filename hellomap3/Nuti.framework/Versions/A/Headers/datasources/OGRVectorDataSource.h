@@ -10,12 +10,15 @@
 #ifdef _NUTI_GDAL_SUPPORT
 
 #include "VectorDataSource.h"
+#include "OGRVectorDataBase.h"
 #include "core/MapBounds.h"
 
+#include <map>
 #include <vector>
 
+class OGRGeometry;
+class OGRFeature;
 class OGRLayer;
-class OGRDataSource;
 class OGRSpatialReference;
 class OGRCoordinateTransformation;
 
@@ -23,6 +26,42 @@ namespace Nuti {
     class StyleSelector;
     class ViewState;
     class GeometrySimplifier;
+    
+    namespace OGRFieldType {
+        /**
+         * Supported types of OGR data source fields.
+         */
+        enum OGRFieldType {
+            /**
+             * Unknown/unsupported field type.
+             */
+            OGR_FIELD_TYPE_UNKNOWN,
+            /**
+             * Integer field.
+             */
+            OGR_FIELD_TYPE_INTEGER,
+            /**
+             * Real-valued or floating point field.
+             */
+            OGR_FIELD_TYPE_REAL,
+            /**
+             * String field.
+             */
+            OGR_FIELD_TYPE_STRING,
+            /**
+             * Date field.
+             */
+            OGR_FIELD_TYPE_DATE,
+            /**
+             * Time field.
+             */
+            OGR_FIELD_TYPE_TIME,
+            /**
+             * Date/Time field.
+             */
+            OGR_FIELD_TYPE_DATETIME
+        };
+    }
 
     /**
      * High-level vector element data source that supports various OGR data formats.
@@ -32,7 +71,7 @@ namespace Nuti {
     public:
         /**
          * Constructs a new OGR data source given style selector and OGR supported data file.
-         * If data file contains multiple layers, all layers will be used.
+         * If the file contains multiple layers, only the first layer is used. Note: data source is opened in read-only mode.
          * @param projection The projection to use for data coordinates. Note that if actual data is in different coordinates, coordinates will be re-projected.
          * @param styleSelector The style selector to use when loading geometry from OGR file.
          * @param fileName The full path of the data file
@@ -40,13 +79,14 @@ namespace Nuti {
         OGRVectorDataSource(const std::shared_ptr<Projection>& projection, const std::shared_ptr<StyleSelector>& styleSelector, const std::string& fileName);
 
         /**
-         * Constructs a new OGR data source given style selector, data file and layer name.
+         * Constructs a new OGR data source given style selector, OGR database and layer index in database.
+         * Note: if the database is opened in writable mode, the layer can be modified.
          * @param projection The projection to use for data coordinates. Note that if actual data is in different coordinates, coordinates will be re-projected.
          * @param styleSelector The style selector to use when loading geometry from OGR file.
-         * @param fileName The full path of the data file
-         * @param layerName The name of the layer to use.
+         * @param dataBase The database for this data source
+         * @param layerIndex The layer to use (layer names are available from database)
          */
-        OGRVectorDataSource(const std::shared_ptr<Projection>& projection, const std::shared_ptr<StyleSelector>& styleSelector, const std::string& fileName, const std::string& layerName);
+        OGRVectorDataSource(const std::shared_ptr<Projection>& projection, const std::shared_ptr<StyleSelector>& styleSelector, const std::shared_ptr<OGRVectorDataBase>& dataBase, int layerIndex);
         virtual ~OGRVectorDataSource();
 
         /**
@@ -78,25 +118,77 @@ namespace Nuti {
         MapBounds getDataExtent() const;
         
         /**
-         * Finds the total feature count for this data source. For simple geometry, this corresponds to element count. In case of multigeometry, each feature is divided into multiple elements.
+         * Returns the total feature count for this data source.
          * @return The feature count for the data source.
          */
         int getFeatureCount() const;
         
         /**
-         * Returns the names of active layers.
-         * @return The names of the used layers from the data source.
+         * Returns the geometry type of the data source.
+         * @return The geometry type of the data source (layer).
          */
-        std::vector<std::string> getActiveLayerNames() const;
+        OGRGeometryType::OGRGeometryType getGeometryType() const;
         
         /**
-         * Returns the names of all layers in the data source. This list may contain layers that are not used.
-         * @return The names of the layers contained in the data source.
+         * Adds a vector element to the data source. The vector element's coordinates are expected to be
+         * in the data source's projection's coordinate system. The vector element is not stored in actual
+         * data source persistently until commited.
+         * @param element The vector element to be added.
          */
-        std::vector<std::string> getAvailableLayerNames() const;
+        void add(const std::shared_ptr<VectorElement>& element);
+        /**
+         * Removes a vector element from the data source. The vector element is not removed persistently from actual
+         * data source until commited.
+         * @param elementToRemove The vector element to be removed.
+         * @return True if the vector element existed in the data source.
+         */
+        bool remove(const std::shared_ptr<VectorElement>& elementToRemove);
+
+        /**
+         * Returns whether all changes to data source elements have been committed.
+         * @return true if all changes have been committed, false otherwise.
+         */
+        bool isCommitted() const;
+        /**
+         * Commits all changes to actual persistent data source.
+         * @return The committed vector elements.
+         */
+        std::vector<std::shared_ptr<VectorElement> > commit();
+        /**
+         * Rolls back all local changes to the data source.
+         * @return The rolled back vector elements.
+         */
+        std::vector<std::shared_ptr<VectorElement> > rollback();
+        
+        /**
+         * Returns the list of existing fields of the data source.
+         * @return The names of the fields.
+         */
+        std::vector<std::string> getFieldNames() const;
+        /**
+         * Creates a new field with specified name and type.
+         * @param name The name of the field (must be unique)
+         * @param type The type of the field.
+         * @param width The maximum formatting width (in characters) for string fields. Can be 0 for other field types.
+         * @return True if the field was successfully created, false otherwise.
+         */
+        bool createField(const std::string& name, OGRFieldType::OGRFieldType type, int width);
+        /**
+         * Deletes an existing field at specified index.
+         * @param index The index of the field to delete (starting from 0).
+         * @return True if the field was successfully created, false otherwise.
+         */
+        bool deleteField(int index);
         
         virtual std::vector<std::shared_ptr<VectorElement> > loadElements(const std::shared_ptr<CullState>& cullState);
-        
+
+        /**
+         * Tests the data source capability.
+         * @param capability The name of the capability (for example, "CreateFeature", "DeleteFeature", etc)
+         * @return True when the capability exists, false otherwise.
+         */
+        bool testCapability(const std::string& capability);
+
         /**
          * Sets global OGR configuration option. This method can be used to redefine default locale, for example.
          * @param name The name of the option parameter to set ("SHAPE_ENCODING", for example)
@@ -110,21 +202,30 @@ namespace Nuti {
          */
         static std::string GetConfigOption(const std::string& name);
         
+    protected:
+        virtual void notifyElementChanged(const std::shared_ptr<VectorElement>& element);        
+        
     private:
         struct LayerSpatialReference;
+        
+        std::shared_ptr<Geometry> createGeometry(const OGRGeometry* poGeometry) const;
+        
+        std::shared_ptr<VectorElement> createVectorElement(const ViewState& viewState, const std::shared_ptr<Geometry>& geometry, const std::map<std::string, std::string>& metaData) const;
+        
+        std::shared_ptr<OGRGeometry> createOGRGeometry(const std::shared_ptr<Geometry>& geometry) const;
 
-        void createFeatures(const ViewState& viewState, long long id, const std::shared_ptr<Geometry>& geometry, const std::map<std::string, std::string>& metaData, std::vector<std::shared_ptr<VectorElement> >& elements) const;
+        std::shared_ptr<OGRFeature> createOGRFeature(const std::shared_ptr<VectorElement>& element) const;
 
         std::string _codePage;
         std::shared_ptr<StyleSelector> _styleSelector;
         std::shared_ptr<GeometrySimplifier> _geometrySimplifier;
-        std::vector<std::string> _activeLayerNames;
-        std::vector<std::string> _availableLayerNames;
-        OGRDataSource* _poDS;
-        std::vector<OGRLayer*> _poLayers;
-        std::map<OGRLayer*, std::shared_ptr<LayerSpatialReference> > _poLayerSpatialReferenceMap;
-        
-        mutable std::mutex _mutex;
+
+        long long _localElementId;
+        std::map<long long, std::shared_ptr<VectorElement> > _localElements;
+
+        std::shared_ptr<OGRVectorDataBase> _dataBase;
+        OGRLayer* _poLayer;
+        std::shared_ptr<LayerSpatialReference> _poLayerSpatialRef;
     };
 }
 

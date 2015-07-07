@@ -18,6 +18,7 @@ extern "C" {
 
 #import "NTMapPos.h"
 #import "NTVectorElement.h"
+#import "NTLayer.h"
 
 /**
  * A container class that provies information about a click performed on<br>
@@ -72,6 +73,11 @@ __attribute__ ((visibility("default"))) @interface NTVectorElementClickInfo : NS
  * @return The vector element on which the click was performed.
  */
 -(NTVectorElement*)getVectorElement;
+/**
+ * Returns the layer of the clicked vector element.<br>
+ * @return The layer of the vector element on which the click was performed.
+ */
+-(NTLayer*)getLayer;
 
 -(void)dealloc;
 

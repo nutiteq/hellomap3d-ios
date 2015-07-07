@@ -15,7 +15,7 @@ namespace Nuti {
     
     class RasterTileDrawData : public TileDrawData {
     public:
-        RasterTileDrawData(const MapTileQuadTreeNode& requestedTile, const MapTileQuadTreeNode& closestTile, bool preloadingTile);
+        RasterTileDrawData(const MapTileQuadTreeNode& requestedTile, const MapTileQuadTreeNode& closestTile, float opacity, bool preloadingTile);
         virtual ~RasterTileDrawData();
     
         const MapBounds& getCoordBounds() const;
@@ -23,12 +23,15 @@ namespace Nuti {
     
         const MapBounds& getTexCoordBounds() const;
         MapBounds& getTexCoordBounds();
+        
+        float getOpacity() const;
     
         void offsetHorizontally(double offset);
     
     private:
         MapBounds _coordBounds;
         MapBounds _texCoordBounds;
+        float _opacity;
     };
     
 }

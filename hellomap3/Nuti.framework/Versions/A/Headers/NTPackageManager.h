@@ -50,6 +50,16 @@ __attribute__ ((visibility("default"))) @interface NTPackageManager : NSObject
 -(NSUInteger)hash;
 
 /**
+ * Constructs a new package manager, given URL for package list and data folder.<br>
+ * The data folder must exist before creating a new package manager and it is assumed to be persistent.<br>
+ * Note: the package manager must be explicitly started using start() method!<br>
+ * @param packageListUrl The URL that defines all packages.<br>
+ * @param dataFolder The folder where downloaded packages are kept. It must exist and must be writable.<br>
+ * @param serverEncKey Encryption key for server packages<br>
+ * @param localEncKey Encryption key for local packages
+ */
+-(id)initWithPackageListUrl: (NSString*)packageListUrl dataFolder: (NSString*)dataFolder serverEncKey: (NSString*)serverEncKey localEncKey: (NSString*)localEncKey;
+/**
  * Returns the current listener for package manager events.<br>
  * @return The current listener or null if none is set.
  */

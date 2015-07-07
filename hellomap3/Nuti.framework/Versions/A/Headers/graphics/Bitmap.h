@@ -66,6 +66,7 @@ namespace Nuti {
     class Bitmap {
     public:
         /**
+         * Deprecated: use BitmapUtils.LoadFromAssets instead.
          * Constructs a bitmap by loading a compressed image bundled with the application. If the power of two conversion flag
          * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating
          * OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.
@@ -74,14 +75,7 @@ namespace Nuti {
          */
         Bitmap(const std::string& assetPath, bool pow2Padding);
         /**
-         * Constructs a bitmap by decoding a vector of compressed image bytes. If the power of two conversion flag
-         * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating
-         * OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.
-         * @param compressedData A vector of compressed image bytes.
-         * @param pow2Padding The power of two conversion flag.
-         */
-        Bitmap(const std::vector<unsigned char>& compressedData, bool pow2Padding);
-        /**
+         * Deprecated: use Bitmap.CreateFromCompressed instead.
          * Constructs a bitmap by decoding a vector of compressed image bytes. If the power of two conversion flag
          * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating
          * OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.
@@ -90,39 +84,30 @@ namespace Nuti {
          */
         Bitmap(const std::shared_ptr<std::vector<unsigned char> >& compressedData, bool pow2Padding);
         /**
-         * Constructs a bitmap by decoding an array of compressed image bytes. If the power of two conversion flag
-         * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating
-         * OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.
-         * @param compressedData The pointer to the beginning of an array containing the compressed image bytes.
-         * @param dataSize The number of bytes in the given byte array.
-         * @param pow2Padding The power of two conversion flag.
-         */
-        Bitmap(const unsigned char* compressedData, int dataSize, bool pow2Padding);
-        /**
-         * Constructs a bitmap from an already decoded vector of bytes. The bitmap data is expected to be alpha premultiplied.
+         * Constructs a bitmap from an already decoded vector of bytes. The bitmap data is expected to be alpha premultiplied, if alpha channel is used.
          * If the power of two conversion flag is set, additional padding will be added to the image to make it's dimensions power of two.
          * This can be useful when creating OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.
-         * @param uncompressedData A vector of decoded, premultiplied bitmap bytes.
+         * @param pixelData A vector of decoded, premultiplied bitmap bytes.
          * @param width The width of the bitmap.
          * @param height The height of the bitmap.
          * @param colorFormat The color format of the bitmap.
          * @param bytesPerRow The total number of bytes per row. Some bitmaps have additional padding at the end of each row. If the value is negative, then bitmap is assumed to be vertically flipped. In this case absolute value of the bytesPerRow value is used.
          * @param pow2Padding The power of two conversion flag.
          */
-        Bitmap(const std::vector<unsigned char>& uncompressedData, unsigned int width, unsigned int height,
+        Bitmap(const std::shared_ptr<std::vector<unsigned char> >& pixelData, unsigned int width, unsigned int height,
                    ColorFormat::ColorFormat colorFormat, int bytesPerRow, bool pow2Padding);
         /**
          * Constructs a bitmap from an already decoded array of bytes. The bitmap data is expected to be alpha premultiplied.
          * If the power of two conversion flag is set, additional padding will be added to the image to make it's dimensions power of two.
          * This can be useful when creating OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.
-         * @param uncompressedData The pointer to the beginning of an array containing the decoded, premultiplied bitmap bytes.
+         * @param pixelData The pointer to the beginning of an array containing the decoded, premultiplied bitmap bytes.
          * @param width The width of the bitmap.
          * @param height The height of the bitmap.
          * @param colorFormat The color format of the bitmap.
          * @param bytesPerRow The total number of bytes per row. Some bitmaps have additional padding at the end of each row.
          * @param pow2Padding The power of two conversion flag.
          */
-        Bitmap(const unsigned char* uncompressedData, unsigned int width, unsigned int height,
+        Bitmap(const unsigned char* pixelData, unsigned int width, unsigned int height,
                    ColorFormat::ColorFormat colorFormat, unsigned int bytesPerRow, bool pow2Padding);
         virtual ~Bitmap();
     
@@ -165,7 +150,13 @@ namespace Nuti {
          * @return A byte vector of the bitmap's pixel data.
          */
         const std::vector<unsigned char>& getPixelData() const;
-    
+        
+        /**
+         * Returns a copy of the pixel data of this bitmap.
+         * @return A byte vector of the bitmap's pixel data.
+         */
+        std::shared_ptr<std::vector<unsigned char> > getPixelDataCopy() const;
+        
         /**
          * Compresses this bitmap to a png.
          * @return A byte vector of the png's data.
@@ -188,7 +179,7 @@ namespace Nuti {
          * @param pow2Padding The power of two conversion flag.
 		 * @return The resized bitmap instance or null in case of error (wrong dimensions).
          */
-         std::shared_ptr<Bitmap> getResizedBitmap(unsigned int width, unsigned int height, bool pow2Padding) const;
+        std::shared_ptr<Bitmap> getResizedBitmap(unsigned int width, unsigned int height, bool pow2Padding) const;
          
          /**
           * Returns sub-bitmap with specified offsets and dimensions.
@@ -199,7 +190,7 @@ namespace Nuti {
           * @param pow2Padding The power of two conversion flag.
           * @return Sub-bitmap instance or null in case of error (wrong dimensions).
           */
-         std::shared_ptr<Bitmap> getSubBitmap(int xOffset, int yOffset, int width, int height, bool pow2Padding) const;
+        std::shared_ptr<Bitmap> getSubBitmap(int xOffset, int yOffset, int width, int height, bool pow2Padding) const;
 		
 		/**
 		 * Returns copy of the bitmap converted to RGBA format.
@@ -213,24 +204,42 @@ namespace Nuti {
          * @return The bitmap with original dimensions.
          */
         std::shared_ptr<Bitmap> getUnpaddedBitmap() const;
-		
+
+        /**
+         * Creates a new bitmap from compressed byte vector.
+         * If the power of two conversion flag is set, additional padding will be added to the image to make it's dimensions power of two.
+         * @param compressedData The compressed bitmap data.
+         * @param pow2Padding The power of two conversion flag.
+         * @return The bitmap created from the compressed data. If the decompression fails, null is returned.
+         */
+        static std::shared_ptr<Bitmap> CreateFromCompressed(const std::shared_ptr<std::vector<unsigned char> >& compressedData, bool pow2Padding);
+        /**
+         * Creates a new bitmap from compressed byte data.
+         * If the power of two conversion flag is set, additional padding will be added to the image to make it's dimensions power of two.
+         * @param compressedData The compressed bitmap data.
+         * @param dataSize size of the compressed data.
+         * @param pow2Padding The power of two conversion flag.
+         * @return The bitmap created from the compressed data. If the decompression fails, null is returned.
+         */
+        static std::shared_ptr<Bitmap> CreateFromCompressed(const unsigned char* compressedData, size_t dataSize, bool pow2Padding);
+        
     protected:
         Bitmap();
         
         bool loadFromAssets(const std::string& path, bool makePow2);
-        bool loadFromCompressedBytes(const unsigned char* compressedData, int dataSize, bool makePow2);
-        bool loadFromUncompressedBytes(const unsigned char* uncompressedData, unsigned int width, unsigned int height,
+        bool loadFromCompressedBytes(const unsigned char* compressedData, size_t dataSize, bool makePow2);
+        bool loadFromUncompressedBytes(const unsigned char* pixelData, unsigned int width, unsigned int height,
                                        ColorFormat::ColorFormat colorFormat, int bytesPerRow, bool makePow2);
     
-        bool isJPEG(const unsigned char* compressedData, int dataSize);
-        bool isPNG(const unsigned char* compressedData, int dataSize);
-        bool isWEBP(const unsigned char* compressedData, int dataSize);
-        bool isNUTI(const unsigned char* compressedData, int dataSize);
+        static bool IsJPEG(const unsigned char* compressedData, size_t dataSize);
+        static bool IsPNG(const unsigned char* compressedData, size_t dataSize);
+        static bool IsWEBP(const unsigned char* compressedData, size_t dataSize);
+        static bool IsNUTI(const unsigned char* compressedData, size_t dataSize);
     
-        bool loadJPEG(const unsigned char* compressedData, int dataSize, bool makePow2);
-        bool loadPNG(const unsigned char* compressedData, int dataSize, bool makePow2);
-        bool loadWEBP(const unsigned char* compressedData, int dataSize, bool makePow2);
-        bool loadNUTI(const unsigned char* compressedData, int dataSize, bool makePow2);
+        bool loadJPEG(const unsigned char* compressedData, size_t dataSize, bool makePow2);
+        bool loadPNG(const unsigned char* compressedData, size_t dataSize, bool makePow2);
+        bool loadWEBP(const unsigned char* compressedData, size_t dataSize, bool makePow2);
+        bool loadNUTI(const unsigned char* compressedData, size_t dataSize, bool makePow2);
         
         static const unsigned int PNG_SIGNATURE_LENGTH = 8;
     

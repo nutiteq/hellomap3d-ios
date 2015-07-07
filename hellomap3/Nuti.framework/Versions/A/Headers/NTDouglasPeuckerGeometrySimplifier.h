@@ -28,12 +28,20 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTDouglasPeuckerGeometrySimplifier : NTGeometrySimplifier
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTDouglasPeuckerGeometrySimplifier*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a new simplifier, given tolerance.<br>
  * @param tolerance The maximum error for simplification. The tolerance value multiplied by view size (either height or width) gives maximum error in pixels.
  */
 -(id)initWithTolerance: (float)tolerance;
 -(NTGeometry*)simplify: (NTGeometry*)geometry scale: (float)scale;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

@@ -35,7 +35,11 @@ typedef NS_ENUM(NSInteger, NTPackageErrorType) {
  * The bounding box of the package contains too many tiles.<br>
  * This error is only returned for custom bounding box packages.
  */
-  NT_PACKAGE_ERROR_TYPE_PACKAGE_TOO_BIG
+  NT_PACKAGE_ERROR_TYPE_PACKAGE_TOO_BIG,
+/**
+ * The license does not allow downloading offline packages.
+ */
+  NT_PACKAGE_ERROR_TYPE_NO_OFFLINE_PLAN
 };
 
 

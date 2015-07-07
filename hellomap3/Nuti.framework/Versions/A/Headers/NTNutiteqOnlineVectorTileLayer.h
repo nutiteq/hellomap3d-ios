@@ -20,17 +20,34 @@ extern "C" {
 
 /**
  * Specialized online vector tile layer that connects to Nutiteq online tile server.<br>
- * This layer is intended as a 'shortcut' to make using Nutiteq online service and vector tiles as simple as possible.
+ * This layer is intended as a 'shortcut' to make using Nutiteq online service and<br>
+ * vector tiles as simple as possible.
  */
 __attribute__ ((visibility("default"))) @interface NTNutiteqOnlineVectorTileLayer : NTVectorTileLayer
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTNutiteqOnlineVectorTileLayer*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a NutiteqOnlineVectorTileLayer object from a style asset name.<br>
+ * Uses "nutiteq.mbstreets" as a source.<br>
  * Style asset must be included in the project, style asset defines visual style of the map.<br>
  * @param styleAssetName The name of the style asset that defines visual style of the map.
  */
 -(id)initWithStyleAssetName: (NSString*)styleAssetName;
+/**
+ * Constructs a NutiteqOnlineVectorTileLayer object from a source name and style asset name.<br>
+ * Style asset must be included in the project, style asset defines visual style of the map.<br>
+ * @param source The tile source name. Currently only "nutiteq.mbstreets" is supported.<br>
+ * @param styleAssetName The name of the style asset that defines visual style of the map.
+ */
+-(id)initWithSource: (NSString*)source styleAssetName: (NSString*)styleAssetName;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

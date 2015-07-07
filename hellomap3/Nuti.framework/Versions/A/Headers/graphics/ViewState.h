@@ -331,8 +331,8 @@ namespace Nuti {
         void setHorizontalLayerOffsetDir(int horizontalLayerOffsetDir);
     
     private:
-        double calculateNearPlanePersp(const MapPos& cameraPos, float tilt, float halfFOVY) const;
-        double calculateFarPlanePersp(const MapPos& cameraPos, float tilt, float halfFOVY, const Options& options) const;
+        float calculateNearPlanePersp(const MapPos& cameraPos, float tilt, float halfFOVY) const;
+        float calculateFarPlanePersp(const MapPos& cameraPos, float tilt, float halfFOVY, const Options& options) const;
     
         static const int DEFAULT_CAMERA_POS_X = 0;
         static const int DEFAULT_CAMERA_POS_Y = 0;

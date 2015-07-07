@@ -26,6 +26,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTLineStyleBuilder : NTStyleBuilder
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTLineStyleBuilder*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a LineStyleBuilder object with all parameters set to defaults.
  */
@@ -102,6 +105,11 @@ __attribute__ ((visibility("default"))) @interface NTLineStyleBuilder : NTStyleB
  * @return A new LineStyle object.
  */
 -(NTLineStyle*)buildStyle;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

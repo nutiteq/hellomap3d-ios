@@ -32,6 +32,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTNMLModel : NTVectorElement
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTNMLModel*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a NMLModel object from a geometry object and serialized model data.<br>
  * @param geometry The geometry object that defines the location of this model.<br>
@@ -81,6 +84,11 @@ __attribute__ ((visibility("default"))) @interface NTNMLModel : NTVectorElement
  * @param scale The relative scale of this model.
  */
 -(void)setScale: (float)scale;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

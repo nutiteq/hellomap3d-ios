@@ -25,6 +25,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTTextStyle : NTLabelStyle
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTTextStyle*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a TextStyle object from various parameters. Instantiating the object directly is<br>
  * not recommended, TextStyleBuilder should be used instead.<br>
@@ -73,6 +76,11 @@ __attribute__ ((visibility("default"))) @interface NTTextStyle : NTLabelStyle
  * @return The width of the stroke around the text.
  */
 -(float)getStrokeWidth;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

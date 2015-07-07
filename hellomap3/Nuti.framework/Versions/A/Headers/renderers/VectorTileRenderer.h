@@ -42,12 +42,15 @@ namespace Nuti {
         void setBackgroundColor(const Color& color);
         void setBackgroundPattern(const std::shared_ptr<VT::BitmapPattern>& pattern);
         bool cullLabels(const ViewState& viewState);
-        void refreshTiles(const std::map<VT::TileId, std::shared_ptr<VT::Tile> >& tiles);
+        bool refreshTiles(const std::map<VT::TileId, std::shared_ptr<VT::Tile> >& tiles);
     
     private:
         std::weak_ptr<MapRenderer> _mapRenderer;
 		std::shared_ptr<VT::GLTileRenderer> _glRenderer;
         double _horizontalLayerOffset;
+        std::map<VT::TileId, std::shared_ptr<VT::Tile> > _tiles;
+
+        mutable std::mutex _mutex;
     };
     
 }

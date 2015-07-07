@@ -26,6 +26,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTMarkerStyleBuilder : NTBillboardStyleBuilder
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTMarkerStyleBuilder*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a MarkerStyleBuilder object with all parameters set to defaults.
  */
@@ -109,6 +112,11 @@ __attribute__ ((visibility("default"))) @interface NTMarkerStyleBuilder : NTBill
  * @return A new MarkerStyle object.
  */
 -(NTMarkerStyle*)buildStyle;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

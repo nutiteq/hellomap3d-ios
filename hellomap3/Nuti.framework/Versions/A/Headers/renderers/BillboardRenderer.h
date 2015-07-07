@@ -20,10 +20,10 @@ namespace Nuti {
     class Billboard;
     class BillboardDrawData;
     class Bitmap;
-    class Projection;
     class Shader;
     class ShaderManager;
     class VectorElementClickInfo;
+    class VectorLayer;
     class ViewState;
     
     class BillboardRenderer {
@@ -38,10 +38,7 @@ namespace Nuti {
     
         void onSurfaceCreated(ShaderManager& shaderManager);
         void onDrawFrame(float deltaSeconds, BillboardSorter& billboardSorter, LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache, const ViewState& viewState);
-        void onDrawFrameSorted(float deltaSeconds,
-                               const std::vector<std::shared_ptr<Billboard> >& billboardsBuffer,
-                               LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache,
-                const ViewState& viewState);
+        void onDrawFrameSorted(float deltaSeconds, const std::vector<std::shared_ptr<Billboard> >& billboardsBuffer, LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache, const ViewState& viewState);
         void onSurfaceDestroyed();
     
         size_t getElementCount() const;
@@ -49,10 +46,11 @@ namespace Nuti {
         void refreshElements();
         void updateElement(const std::shared_ptr<Billboard>& element);
         void removeElement(const std::shared_ptr<Billboard>& element);
+        
+        void setLayer(const std::shared_ptr<VectorLayer>& layer);
+        std::shared_ptr<VectorLayer> getLayer() const;
     
-        virtual void calculateRayIntersectedElements(const std::vector<std::shared_ptr<Billboard> >& billboardsBuffer,
-                                                     const Projection& projection, const MapPos& rayOrig, const MapVec& rayDir,
-                                                     const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
+        virtual void calculateRayIntersectedElements(const std::vector<std::shared_ptr<Billboard> >& billboardsBuffer, const std::shared_ptr<VectorLayer>& layer, const MapPos& rayOrig, const MapVec& rayDir, const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
     
     private:
         static void BuildAndDrawBuffers(GLuint a_color,
@@ -70,6 +68,8 @@ namespace Nuti {
         bool calculateBaseBillboardDrawData(const std::shared_ptr<BillboardDrawData>& drawData, const ViewState& viewState);
         
         void drawBatch(LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache, const ViewState& viewState);
+        
+        std::weak_ptr<VectorLayer> _layer;
     
         std::vector<std::shared_ptr<Billboard> > _elements;
         std::vector<std::shared_ptr<Billboard> > _tempElements;

@@ -49,7 +49,6 @@ __attribute__ ((visibility("default"))) @interface NTAssetUtils : NSObject
  */
 +(NSString*)CalculateWritablePath: (NSString*)name __attribute((deprecated));
 +(NSString*)calculateWritablePath: (NSString*)fileName;
--(id)init;
 
 -(void)dealloc;
 

@@ -9,6 +9,7 @@
 
 #include "TileDataSource.h"
 #include "core/MapPos.h"
+#include "core/MapBounds.h"
 #include "core/ScreenPos.h"
 
 #include <cglib/mat.h>
@@ -34,6 +35,12 @@ namespace Nuti {
          */
         BitmapOverlayRasterTileDataSource(int minZoom, int maxZoom, const std::shared_ptr<Bitmap>& bitmap, const std::shared_ptr<Projection>& projection, const std::vector<MapPos>& mapPoses, const std::vector<ScreenPos>& bitmapPoses);
         virtual ~BitmapOverlayRasterTileDataSource();
+
+        /**
+         * Returns the extent of this data source. Extent is the minimal bounding box encompassing all the raster data.
+         * @return The minimal bounding box for the data.
+         */
+        MapBounds getDataExtent() const;
 
         virtual std::shared_ptr<TileData> loadTile(const MapTile& mapTile);
         

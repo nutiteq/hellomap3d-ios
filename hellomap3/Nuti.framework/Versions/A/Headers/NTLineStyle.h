@@ -60,6 +60,9 @@ typedef NS_ENUM(NSInteger, NTLineJointType) {
 __attribute__ ((visibility("default"))) @interface NTLineStyle : NTStyle
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTLineStyle*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a LineStyle object from various parameters. Instantiating the object directly is<br>
  * not recommended, LineStyleBuilder should be used instead.<br>
@@ -102,6 +105,11 @@ __attribute__ ((visibility("default"))) @interface NTLineStyle : NTStyle
  * @return The width of the line.
  */
 -(float)getWidth;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

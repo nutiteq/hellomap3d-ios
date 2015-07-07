@@ -27,6 +27,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTMBVectorTileDecoder : NTVectorTileDecoder
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTMBVectorTileDecoder*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs decoder for MapBox vector tiles based on specified style set.<br>
  * If the style set contains multiple styles, the first one (based on lexicographical order) from the root folder is chosen as the current style.<br>
@@ -82,6 +85,11 @@ __attribute__ ((visibility("default"))) @interface NTMBVectorTileDecoder : NTVec
 -(void)setStyleStringParameter: (NSString*)param value: (NSString*)value;
 -(int)getMinZoom;
 -(int)getMaxZoom;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

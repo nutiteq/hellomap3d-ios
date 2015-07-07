@@ -16,6 +16,7 @@
 #include <cglib/mat.h>
 
 class GDALDataset;
+class OGRSpatialReference;
 
 namespace Nuti {
     class Projection;
@@ -28,12 +29,19 @@ namespace Nuti {
     public:
         /**
          * Constructs a new GDAL raster data source.
-         * If data file contains multiple layers, all layers will be used.
          * @param minZoom The minimum zoom level supported by this data source.
          * @param maxZoom The maximum zoom level supported by this data source.
          * @param fileName The full path of the data file
          */
         GDALRasterTileDataSource(int minZoom, int maxZoom, const std::string& fileName);
+        /**
+         * Constructs a new GDAL raster data source with explicit reference to SRS.
+         * @param minZoom The minimum zoom level supported by this data source.
+         * @param maxZoom The maximum zoom level supported by this data source.
+         * @param fileName The full path of the data file
+         * @param srs The spatial reference of the data ("EPSG:34326", for example)
+         */
+        GDALRasterTileDataSource(int minZoom, int maxZoom, const std::string& fileName, const std::string& srs);
         virtual ~GDALRasterTileDataSource();
 
         /**
@@ -45,6 +53,8 @@ namespace Nuti {
         virtual std::shared_ptr<TileData> loadTile(const MapTile& mapTile);
         
     private:
+        void initializeTransform(const std::shared_ptr<OGRSpatialReference>& poDatasetSpatialRef);
+
         GDALDataset* _poDataset;
         int _width;
         int _height;

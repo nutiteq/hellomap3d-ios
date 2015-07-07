@@ -27,6 +27,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTLine : NTVectorElement
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTLine*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a Line object from a geometry object and a style.<br>
  * @param geometry The geometry object that defines the location of this line.<br>
@@ -65,6 +68,11 @@ __attribute__ ((visibility("default"))) @interface NTLine : NTVectorElement
  * @return The new style that defines what this line looks like.
  */
 -(void)setStyle: (NTLineStyle*)style;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

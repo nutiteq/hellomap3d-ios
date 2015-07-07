@@ -34,6 +34,12 @@ namespace Nuti {
         virtual ~NMLModelLODTreeLayer();
     
         /**
+         * Returns the data source of this layer.
+         * @return The data source that was bound to this vector layer on construction.
+         */
+        std::shared_ptr<NMLModelLODTreeDataSource> getDataSource() const;
+
+        /**
          * Set memory usage constraints for the layer. The specified limit is not exact, 
          * but should be relatively close to the actual memory usage of the layer.
          * If specific view requires more data than specified limit, then lower LOD levels

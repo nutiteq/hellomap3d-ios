@@ -15,27 +15,27 @@
 
 namespace Nuti {
 
-    namespace PackageTileStatus {
-        /**
-         * Tile status.
-         */
-        enum PackageTileStatus {
-            /**
-             * Tile is not part of the package.
-             */
-            PACKAGE_TILE_STATUS_MISSING,
-            /**
-             * Tile is part of the package, but package does not fully cover it.
-             */
-            PACKAGE_TILE_STATUS_PARTIAL,
-            /**
-             * Tile if part of the package and package fully covers it.
-             */
-            PACKAGE_TILE_STATUS_FULL
-        };
-    }
+	namespace PackageTileStatus {
+		/**
+		 * Tile status.
+		 */
+		enum PackageTileStatus {
+			/**
+			 * Tile is not part of the package.
+			 */
+			PACKAGE_TILE_STATUS_MISSING,
+			/**
+			 * Tile is part of the package, but package does not fully cover it.
+			 */
+			PACKAGE_TILE_STATUS_PARTIAL,
+			/**
+			 * Tile if part of the package and package fully covers it.
+			 */
+			PACKAGE_TILE_STATUS_FULL
+		};
+	}
 
-    /**
+	/**
 	 * Information about map package. This includes id, version, name, description and size.
 	 */
 	class PackageTileMask {
@@ -77,7 +77,7 @@ namespace Nuti {
 		 * @param y The y coordinate of the tile.
 		 * @return The status of the specified tile.
 		 */
-        PackageTileStatus::PackageTileStatus getTileStatus(int zoom, int x, int y) const;
+		PackageTileStatus::PackageTileStatus getTileStatus(int zoom, int x, int y) const;
 
 	private:
 		struct TileNode {

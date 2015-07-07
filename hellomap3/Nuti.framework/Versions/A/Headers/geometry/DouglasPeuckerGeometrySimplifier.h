@@ -29,7 +29,8 @@ namespace Nuti {
         explicit DouglasPeuckerGeometrySimplifier(float tolerance);
 
         virtual std::shared_ptr<Geometry> simplify(const std::shared_ptr<Geometry>& geometry, float scale) const;
-    private:
+
+	private:
         std::vector<MapPos> simplifyRing(const std::vector<MapPos>& ring, float scale) const;
         std::vector<MapPos> simplifyRingRD(const std::vector<MapPos>& ring, float scale) const;
         std::vector<MapPos> simplifyRingDP(const std::vector<MapPos>& ring, float scale) const;

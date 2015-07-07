@@ -27,6 +27,9 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTVectorTileLayer : NTTileLayer
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
++(NTVectorTileLayer*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a VectorTileLayer object from a data source and tile decoder.<br>
  * @param dataSource The data source from which this layer loads data.<br>
@@ -54,6 +57,11 @@ __attribute__ ((visibility("default"))) @interface NTVectorTileLayer : NTTileLay
  */
 -(void)setTileCacheCapacity: (unsigned int)capacityInBytes;
 -(void)clearTileCaches: (BOOL)all;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
 
 -(void)dealloc;
 

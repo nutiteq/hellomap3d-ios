@@ -25,6 +25,7 @@ namespace Nuti {
          * @param rules The list of rules to use.
          */
         StyleSelector(const std::vector<std::shared_ptr<StyleSelectorRule> >& rules);
+		virtual ~StyleSelector();
 
         /**
          * Get matching style for given context.

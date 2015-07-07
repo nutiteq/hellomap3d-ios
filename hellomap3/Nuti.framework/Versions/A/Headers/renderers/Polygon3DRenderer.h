@@ -17,10 +17,10 @@ namespace Nuti {
     class Options;
     class Polygon3D;
     class Polygon3DDrawData;
-    class Projection;
     class Shader;
     class ShaderManager;
     class VectorElementClickInfo;
+    class VectorLayer;
     class ViewState;
     
     class Polygon3DRenderer {
@@ -41,8 +41,7 @@ namespace Nuti {
         void updateElement(const std::shared_ptr<Polygon3D>& element);
         void removeElement(const std::shared_ptr<Polygon3D>& element);
         
-        void calculateRayIntersectedElements(const Projection& projection, const MapPos& rayOrig, const MapVec& rayDir,
-                const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
+        void calculateRayIntersectedElements(const std::shared_ptr<VectorLayer>& layer, const MapPos& rayOrig, const MapVec& rayDir, const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
     
     private:
         static void BuildAndDrawBuffers(GLuint a_color,

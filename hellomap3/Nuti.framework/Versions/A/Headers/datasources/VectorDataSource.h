@@ -103,11 +103,14 @@ namespace Nuti {
     protected:
         friend class VectorElement;
     
-        void notifyElementAdded(const std::shared_ptr<VectorElement>& element);
+        virtual void notifyElementAdded(const std::shared_ptr<VectorElement>& element);
         virtual void notifyElementChanged(const std::shared_ptr<VectorElement>& element);
-        void notifyElementRemoved(const std::shared_ptr<VectorElement>& element);
-        void notifyElementsAdded(const std::vector<std::shared_ptr<VectorElement> >& elements);
-        void notifyElementsRemoved(const std::vector<std::shared_ptr<VectorElement> >& elements);
+        virtual void notifyElementRemoved(const std::shared_ptr<VectorElement>& element);
+        virtual void notifyElementsAdded(const std::vector<std::shared_ptr<VectorElement> >& elements);
+        virtual void notifyElementsRemoved(const std::vector<std::shared_ptr<VectorElement> >& elements);
+
+        virtual void attachElement(const std::shared_ptr<VectorElement>& element);
+        virtual void detachElement(const std::shared_ptr<VectorElement>& element);
         
         std::shared_ptr<Projection> _projection;
     

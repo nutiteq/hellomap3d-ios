@@ -16,6 +16,13 @@
 
 namespace Nuti { namespace nmlGL {
     
+    struct Ray {
+        cglib::vec3<double> origin;
+        cglib::vec3<double> dir;
+        
+        Ray(const cglib::vec3<double>& origin, const cglib::vec3<double>& dir) : origin(origin), dir(dir) { }
+    };
+    
     struct RayIntersection {
         unsigned int vertexId;
         cglib::vec3<double> pos;

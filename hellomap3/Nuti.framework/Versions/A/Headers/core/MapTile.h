@@ -17,7 +17,7 @@ namespace Nuti {
     class MapTile {
     public:
         MapTile(int x, int y, int zoom, int frameNr);
-        virtual ~MapTile() {};
+        virtual ~MapTile() {}
     
         /**
          * Checks for equality between this and another map tile.

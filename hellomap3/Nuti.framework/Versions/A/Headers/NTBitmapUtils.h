@@ -20,7 +20,7 @@ extern "C" {
 #import <UIKit/UIKit.h>
 
 /**
- * A helper class for converting Bitmaps to UIImages an vice versa.
+ * A helper class for loading bitmaps and converting Bitmaps to UIImages an vice versa.
  */
 __attribute__ ((visibility("default"))) @interface NTBitmapUtils : NSObject
 {
@@ -29,6 +29,30 @@ __attribute__ ((visibility("default"))) @interface NTBitmapUtils : NSObject
 }
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+/**
+ * Loads the specified bitmap asset bundled with the application.<br>
+ * @param assetPath The asset path to the image to be loaded.
+ */
++(NTBitmap*)loadBitmapFromAssets: (NSString*)assetPath;
+/**
+ * Loads the specified bitmap asset bundled with the application. If the power of two conversion flag is set,<br>
+ * additional padding will be added to the image to make it's dimensions power of two.<br>
+ * @param assetPath The asset path to the image to be loaded.<br>
+ * @param pow2Padding The power of two conversion flag.
+ */
++(NTBitmap*)loadBitmapFromAssets: (NSString*)assetPath pow2Padding: (BOOL)pow2Padding;
+/**
+ * Loads bitmap from specified file.<br>
+ * @param filePath The path to the image to be loaded.
+ */
++(NTBitmap*)loadBitmapFromFile: (NSString*)filePath;
+/**
+ * Loads bitmap from specified file. If the power of two conversion flag is set,<br>
+ * additional padding will be added to the image to make it's dimensions power of two.<br>
+ * @param filePath The path to the image to be loaded.<br>
+ * @param pow2Padding The power of two conversion flag.
+ */
++(NTBitmap*)loadBitmapFromFile: (NSString*)filePath pow2Padding: (BOOL)pow2Padding;
 /**
  * Creates a new Bitmap object from an existing UIImage.<br>
  * @param image The reference UIImage.

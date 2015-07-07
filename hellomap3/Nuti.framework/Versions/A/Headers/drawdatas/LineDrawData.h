@@ -16,19 +16,19 @@
 
 namespace Nuti {
     class Bitmap;
-    class Line;
+    class LineGeometry;
     class LineStyle;
     class MapPos;
     class MapVec;
-    class Polygon;
+    class PolygonGeometry;
     class Projection;
     class Tuple3D;
     
     class LineDrawData : public VectorElementDrawData {
     public:
         // Saves a little space compared to MapPos
-        LineDrawData(const Line& line, const LineStyle& style, const Projection& projection);
-        LineDrawData(const Polygon& polygon, const std::vector<MapPos>& internalPoses, const LineStyle& style, const Projection& projection);
+        LineDrawData(const LineGeometry& geometry, const LineStyle& style, const Projection& projection);
+        LineDrawData(const PolygonGeometry& geometry, const std::vector<MapPos>& internalPoses, const LineStyle& style, const Projection& projection);
         LineDrawData(const LineDrawData& lineDrawData);
         virtual ~LineDrawData();
     
@@ -44,7 +44,7 @@ namespace Nuti {
     
         const std::vector<std::vector<unsigned int> >& getIndices() const;
     
-        void offsetHorizontally(double offset);
+        virtual void offsetHorizontally(double offset);
     
     private:
         static const float LINE_ENDPOINT_TESSELATION_FACTOR;
