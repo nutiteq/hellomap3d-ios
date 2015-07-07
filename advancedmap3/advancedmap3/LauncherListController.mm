@@ -19,6 +19,7 @@
             @{ @"name": @"Ground Overlay Sample", @"controller": @"GroundOverlaySampleController" },
 			@{ @"name": @"Custom Popup Sample", @"controller": @"CustomPopupSampleController" },
 			@{ @"name": @"Package Manager Sample", @"controller": @"PackageManagerController" },
+      @{ @"name": @"Clustered GeoJSON points", @"controller": @"ClusteredGeoJsonController" },
 		];
 }
 
