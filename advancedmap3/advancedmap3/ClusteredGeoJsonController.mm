@@ -1,4 +1,6 @@
 #import "VectorMapSampleBaseController.h"
+#import "MyMapEventListener.h"
+
 
 /*
  * A sample demonstrating how to read data from GeoJSON and add clustered Markers to map.
@@ -42,6 +44,17 @@
   
   // load geoJSON data to the vectorDataSource
   [self readGeoJosnData: @"capitals_3857" forMapView:self.mapView intoDataSource:vectorDataSource];
+  
+  
+  
+  
+  // Create a map event listener
+  MyMapEventListener* mapListener = [[MyMapEventListener alloc] init];
+  [self.mapView setMapEventListener:mapListener];
+  // MapEventListener needs the data source and the layer to display balloons
+  // over the clicked vector elements
+  [mapListener setMapView:self.mapView vectorDataSource:vectorDataSource];
+  
 }
 
 
@@ -124,19 +137,35 @@
   // Create Popup
   int numElements = (int)[elements size];
   NSString* title;
+  NSString* desc;
+  NTBalloonPopupStyle* style;
   
   // show cluster size as number in Balloon
   // special case when elements = 1, happens when zooming in
   if(numElements == 1){
+    
+    // Option A - show cluster during zoom in (temporarily) - a bit more smooth
     title = @"…";
+    desc = @"";
+    style = [balloonPopupStyleBuilder buildStyle];
+    
+    // Option B - show the only element during zoom in. Deep copy object. A bit less smooth
+    title = [(NTBalloonPopup *)[elements get:0] getTitle];
+    desc = [(NTBalloonPopup *)[elements get:0] getDescription];
+    style =  [(NTBalloonPopup *)[elements get:0] getStyle];
+    
   }else{
     title = [NSString stringWithFormat:@"%d",(int)[elements size]];
+    desc = @"";
+    style = [balloonPopupStyleBuilder buildStyle];
   }
   
   NTBalloonPopup* clusterPopup = [[NTBalloonPopup alloc] initWithPos:mapPos
-                                                              style:[balloonPopupStyleBuilder buildStyle]
+                                                              style:style
                                                               title:title
-                                                              desc:@""];
+                                                              desc:desc];
+  // set ClickText to enable zoom in for marker
+  [clusterPopup setMetaDataElement:@"ClickText" element:@"cluster"];
   return clusterPopup;
 }
 
