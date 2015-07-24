@@ -21,12 +21,13 @@
 		4DB60F4B1A1A6C1500A6AF18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB60F4A1A1A6C1500A6AF18 /* AppDelegate.swift */; };
 		4DB60F4D1A1A6C1500A6AF18 /* MyMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB60F4C1A1A6C1500A6AF18 /* MyMapViewController.swift */; };
 		4DB60F521A1A6C1500A6AF18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60F511A1A6C1500A6AF18 /* Images.xcassets */; };
+		4DC42AB11B622FA60022CA0C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 4DC42AB01B622FA60022CA0C /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C1CF0601B1308CD001A64AD /* MapListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListener.swift; sourceTree = "<group>"; };
 		4D301AF71A1E2D4D00F4CCD0 /* Nuti.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuti.framework; path = ../../hellomap3/Nuti.framework; sourceTree = "<group>"; };
-		4D498DAA1A1A82200062BD5C /* hellomap3swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "hellomap3swift-Bridging-Header.h"; path = "hellomap3swift/hellomap3swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		4D498DAA1A1A82200062BD5C /* hellomap3swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "hellomap3swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D79D1EA1A1A756F000709E8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4D79D1EC1A1A758B000709E8 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		4D79D1EE1A1A7591000709E8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -43,6 +44,7 @@
 		4DB60F4A1A1A6C1500A6AF18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DB60F4C1A1A6C1500A6AF18 /* MyMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapViewController.swift; sourceTree = "<group>"; };
 		4DB60F511A1A6C1500A6AF18 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4DC42AB01B622FA60022CA0C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +85,11 @@
 		4DB60F3C1A1A6C1500A6AF18 = {
 			isa = PBXGroup;
 			children = (
-				4D498DAA1A1A82200062BD5C /* hellomap3swift-Bridging-Header.h */,
-				4D79D2031A1A8089000709E8 /* osmbright.zip */,
-				4D79D2011A1A8083000709E8 /* marker.png */,
+				4DC42AAF1B622F810022CA0C /* Assets */,
 				4D79D2001A1A8029000709E8 /* Frameworks */,
 				4DB60F471A1A6C1500A6AF18 /* hellomap3swift */,
 				4DB60F461A1A6C1500A6AF18 /* Products */,
+				4DC42AB01B622FA60022CA0C /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +104,7 @@
 		4DB60F471A1A6C1500A6AF18 /* hellomap3swift */ = {
 			isa = PBXGroup;
 			children = (
+				4D498DAA1A1A82200062BD5C /* hellomap3swift-Bridging-Header.h */,
 				4D79D1FD1A1A7CCE000709E8 /* Main.storyboard */,
 				4DB60F4A1A1A6C1500A6AF18 /* AppDelegate.swift */,
 				4DB60F4C1A1A6C1500A6AF18 /* MyMapViewController.swift */,
@@ -119,6 +121,15 @@
 				4DB60F491A1A6C1500A6AF18 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4DC42AAF1B622F810022CA0C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4D79D2031A1A8089000709E8 /* osmbright.zip */,
+				4D79D2011A1A8083000709E8 /* marker.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +205,7 @@
 			files = (
 				4DB60F4D1A1A6C1500A6AF18 /* MyMapViewController.swift in Sources */,
 				4DB60F4B1A1A6C1500A6AF18 /* AppDelegate.swift in Sources */,
+				4DC42AB11B622FA60022CA0C /* README.md in Sources */,
 				0C1CF0611B1308CD001A64AD /* MapListener.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +304,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = hellomap3swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -312,6 +325,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = hellomap3swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

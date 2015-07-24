@@ -7,6 +7,8 @@
 #ifndef _NUTI_WKTGEOMETRYREADER_H_
 #define _NUTI_WKTGEOMETRYREADER_H_
 
+#ifdef _NUTI_WKBT_SUPPORT
+
 #include <memory>
 #include <string>
 
@@ -32,5 +34,7 @@ namespace Nuti {
     };
 
 }
+
+#endif
 
 #endif

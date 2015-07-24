@@ -7,6 +7,7 @@
 #ifndef _NUTI_MAPRENDERER_H_
 #define _NUTI_MAPRENDERER_H_
 
+#include "components/DirectorPtr.h"
 #include "graphics/ShaderManager.h"
 #include "graphics/ViewState.h"
 #include "renderers/BackgroundRenderer.h"
@@ -152,14 +153,14 @@ namespace Nuti {
         AnimationHandler _animationHandler;
         KineticEventHandler _kineticEventHandler;
         
-        std::shared_ptr<MapEventListener> _mapEventListener;
+        DirectorPtr<MapEventListener> _mapEventListener;
         mutable std::recursive_mutex _mapEventListenerMutex;
 
         mutable std::atomic<bool> _redrawPending;
-        std::shared_ptr<RedrawRequestListener> _redrawRequestListener;
+        DirectorPtr<RedrawRequestListener> _redrawRequestListener;
         mutable std::recursive_mutex _redrawRequestListenerMutex;
 
-        std::vector<std::pair<std::shared_ptr<MapRenderListener>, bool> > _mapRenderListeners;
+        std::vector<std::pair<DirectorPtr<MapRenderListener>, bool> > _mapRenderListeners;
         mutable std::recursive_mutex _mapRenderListenersMutex;
 
         bool _surfaceChanged;

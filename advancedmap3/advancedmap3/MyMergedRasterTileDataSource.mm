@@ -21,11 +21,10 @@
     return self;
 }
 
--(NTTileData*)loadTile: (NTMapTile*)tile
+-(NTTileData *)loadTile: (NTMapTile*)tile
 {
     NTTileData* tileData1 = [_dataSource1 loadTile:tile];
     NTTileData* tileData2 = [_dataSource2 loadTile:tile];
-
     if (!tileData1) {
         return tileData2;
     }
@@ -33,10 +32,10 @@
     if (!tileData2) {
         return tileData1;
     }
-  
+    
     // Create bitmaps
-    NTBitmap* tileBitmap1 = [[NTBitmap alloc] initWithCompressedData: tileData1.getData pow2Padding: NO];
-    NTBitmap* tileBitmap2 = [[NTBitmap alloc] initWithCompressedData: tileData2.getData pow2Padding: NO];
+    NTBitmap* tileBitmap1 = [NTBitmap createFromCompressed: tileData1.getData pow2Padding: NO];
+    NTBitmap* tileBitmap2 = [NTBitmap createFromCompressed: tileData2.getData pow2Padding: NO];
   
     // Combine the bitmaps
     UIImage* image1 = [NTBitmapUtils createUIImageFromBitmap: tileBitmap1];

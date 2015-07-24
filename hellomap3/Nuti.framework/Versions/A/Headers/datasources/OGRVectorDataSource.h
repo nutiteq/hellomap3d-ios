@@ -11,6 +11,7 @@
 
 #include "VectorDataSource.h"
 #include "OGRVectorDataBase.h"
+#include "components/DirectorPtr.h"
 #include "core/MapBounds.h"
 
 #include <map>
@@ -221,7 +222,7 @@ namespace Nuti {
         std::shared_ptr<GeometrySimplifier> _geometrySimplifier;
 
         long long _localElementId;
-        std::map<long long, std::shared_ptr<VectorElement> > _localElements;
+        std::map<long long, DirectorPtr<VectorElement> > _localElements;
 
         std::shared_ptr<OGRVectorDataBase> _dataBase;
         OGRLayer* _poLayer;

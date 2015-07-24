@@ -7,6 +7,9 @@
 #ifndef _NUTI_EDITABLEVECTORLAYER_H_
 #define _NUTI_EDITABLEVECTORLAYER_H_
 
+#ifdef _NUTI_EDITABLE_SUPPORT
+
+#include "components/DirectorPtr.h"
 #include "layers/VectorLayer.h"
 #include "ui/VectorEditEventListener.h"
 #include "ui/TouchHandler.h"
@@ -32,7 +35,7 @@ namespace Nuti {
 		 * Returns the selected vector element. If no element is currently selected, null is returned.
 		 * @return The selected vector element or null if no element is selected.
 		 */
-		const std::shared_ptr<VectorElement>& getSelectedVectorElement() const;
+		std::shared_ptr<VectorElement> getSelectedVectorElement() const;
 		/**
 		 * Selects the given vector element. Deselects currently selected element is null argument is used.
 		 * @param element The vector element to select or null.
@@ -121,7 +124,7 @@ namespace Nuti {
 
 		std::shared_ptr<TouchHandlerListener> _touchHandlerListener;
 
-		std::shared_ptr<VectorElement> _selectedVectorElement;
+		DirectorPtr<VectorElement> _selectedVectorElement;
 
 		std::shared_ptr<PointRenderer> _overlayRenderer;
 		std::shared_ptr<PointStyle> _overlayStyleNormal;
@@ -134,10 +137,12 @@ namespace Nuti {
         bool _overlayDragStarted;
 		VectorElementDragMode::VectorElementDragMode _overlayDragMode;
 
-		std::shared_ptr<VectorEditEventListener> _vectorEditEventListener;
+		DirectorPtr<VectorEditEventListener> _vectorEditEventListener;
 		mutable std::recursive_mutex _vectorEditEventListenerMutex;
 	};
 
 }
+
+#endif
 
 #endif

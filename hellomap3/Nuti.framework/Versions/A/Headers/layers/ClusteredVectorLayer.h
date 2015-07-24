@@ -7,6 +7,7 @@
 #ifndef _NUTI_CLUSTEREDVECTORLAYER_H_
 #define _NUTI_CLUSTEREDVECTORLAYER_H_
 
+#include "components/DirectorPtr.h"
 #include "core/MapPos.h"
 #include "core/MapTile.h"
 #include "graphics/ViewState.h"
@@ -97,8 +98,7 @@ namespace Nuti {
 
         static const size_t THRESHOLD = 100;
 
-        const std::shared_ptr<ClusterElementBuilder> _clusterElementBuilder;
-        mutable std::recursive_mutex _clusterElementBuilderMutex;
+        const DirectorPtr<ClusterElementBuilder> _clusterElementBuilder;
 
         float _clusterDistance;
         float _dpiScale;

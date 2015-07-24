@@ -50,9 +50,9 @@ namespace Nuti {
 
     protected:
         struct CacheElement {
-            CacheElement(long long tileId, unsigned int sizeInBytes);
+            CacheElement(long long tileId, size_t sizeInBytes);
             long long _tileId;
-            unsigned int _sizeInBytes;
+            size_t _sizeInBytes;
         };
         
         typedef std::list<CacheElement> CacheElementList;

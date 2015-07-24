@@ -7,6 +7,8 @@
 #ifndef _NUTI_PACKAGEMANAGER_H_
 #define _NUTI_PACKAGEMANAGER_H_
 
+#ifdef _NUTI_PACKAGEMANAGER_SUPPORT
+
 #include <string>
 #include <cstdint>
 #include <vector>
@@ -15,6 +17,7 @@
 #include <condition_variable>
 #include <thread>
 
+#include "components/DirectorPtr.h"
 #include "PackageInfo.h"
 #include "PackageMetaInfo.h"
 #include "PackageStatus.h"
@@ -311,12 +314,14 @@ namespace Nuti {
 		PackageAction::PackageAction _prevAction = PackageAction::PACKAGE_ACTION_WAITING;
 		int _prevRoundedProgress = 0;
 
-		std::shared_ptr<PackageManagerListener> _packageManagerListener;
+		DirectorPtr<PackageManagerListener> _packageManagerListener;
 		mutable std::recursive_mutex _packageManagerListenerMutex;
 
 		mutable std::recursive_mutex _mutex; // guards all state
 	};
 
 }
+
+#endif
 
 #endif

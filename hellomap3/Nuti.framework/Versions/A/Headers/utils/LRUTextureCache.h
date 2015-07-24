@@ -190,7 +190,7 @@ namespace Nuti {
     template <typename T>
     unsigned int LRUTextureCache<T>::getUncreatedTextureCount() const {
         std::lock_guard<std::mutex> lock(_mutex);
-        return _addedElements.size();
+        return static_cast<unsigned int>(_addedElements.size());
     }
     
     template <typename T>

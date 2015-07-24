@@ -7,6 +7,8 @@
 #ifndef _NUTI_NUTITEQPACKAGEMANAGER_H_
 #define _NUTI_NUTITEQPACKAGEMANAGER_H_
 
+#ifdef _NUTI_PACKAGEMANAGER_SUPPORT
+
 #include "PackageManager.h"
 
 namespace Nuti {
@@ -44,5 +46,7 @@ namespace Nuti {
 		std::string _source;
 	};
 }
+
+#endif
 
 #endif

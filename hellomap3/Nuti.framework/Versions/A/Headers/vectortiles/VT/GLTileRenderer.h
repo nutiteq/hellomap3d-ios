@@ -25,7 +25,7 @@ namespace Nuti { namespace VT {
 		GLTileRenderer(std::mutex& mutex, const std::shared_ptr<GLExtensions>& glExtensions, float scale);
 		virtual ~GLTileRenderer() = default;
 
-		void setViewState(const cglib::mat4x4<double>& projectionMatrix, const cglib::mat4x4<double>& cameraMatrix, float zoom, float aspectRatio);
+		void setViewState(const cglib::mat4x4<double>& projectionMatrix, const cglib::mat4x4<double>& cameraMatrix, float zoom, float aspectRatio, float resolution);
 		void setLightDir(const cglib::vec3<float>& lightDir);
 		void setBackgroundColor(unsigned int backgroundColor);
 		void setBackgroundPattern(const std::shared_ptr<BitmapPattern>& pattern);
@@ -84,14 +84,17 @@ namespace Nuti { namespace VT {
 		cglib::mat4x4<double> calculateTileMatrix(const TileId& tileId, float coordScale = 1.0f) const;
 		cglib::bounding_box<double, 3> calculateTileBBox(const TileId& tileId) const;
 
-		void updateBlendNode(const std::shared_ptr<BlendNode>& blendNode, float dBlend);
-		void buildRenderNodes(const std::shared_ptr<BlendNode>& blendNode, float blend, std::multimap<int, RenderNode>& renderNodeMap);
+		float calculateBlendNodeOpacity(const BlendNode& blendNode, float blend) const;
+		void updateBlendNode(BlendNode& blendNode, float dBlend);
+		void buildRenderNodes(const BlendNode& blendNode, float blend, std::multimap<int, RenderNode>& renderNodeMap);
+		void addRenderNode(const RenderNode& renderNode, std::multimap<int, RenderNode>& renderNodeMap);
 		void updateLabels(const std::vector<std::shared_ptr<TileLabel>>& labels, float dOpacity);
 
 		bool renderBlendNodes2D(const std::vector<std::shared_ptr<BlendNode>>& blendNodes);
 		bool renderBlendNodes3D(const std::vector<std::shared_ptr<BlendNode>>& blendNodes);
 		bool renderLabels(const std::vector<std::shared_ptr<TileLabel>>& labels);
 
+		void renderTileMask(const TileId& tileId);
 		void renderTileBackground(const TileId& tileId, float opacity);
 		void renderTileGeometry(const TileId& tileId, const TileId& targetTileId, float blend, float opacity, const std::shared_ptr<TileGeometry>& geometry);
 		void renderVertexDataList(const std::shared_ptr<const Bitmap>& bitmap, cglib::mat4x4<double>& mvMatrix, const VertexArray<cglib::vec3<float>>& vertices, const VertexArray<cglib::vec2<float>>& texCoords, const VertexArray<cglib::vec4<unsigned char>>& colors, const VertexArray<unsigned short>& indices);

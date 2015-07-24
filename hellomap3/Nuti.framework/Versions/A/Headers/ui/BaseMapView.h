@@ -62,6 +62,10 @@ namespace Nuti {
          */
         void onDrawFrame();
         /**
+         * Stops renderer. Rendering may resume only after onSurfaceCreated is called again.
+         */
+        void onSurfaceDestroyed();
+        /**
          * Handles a user input event.
          * @param event The event type. First pointer down = 0, second pointer down = 1, either pointer moved = 2, 
                         gesture canceled = 3, first pointer up = 4, second pointer up = 5.
@@ -76,12 +80,12 @@ namespace Nuti {
          * Returns the Layers object, that can be used for adding and removing map layers.
          * @return The Layer object.
          */
-        Layers& getLayers();
+        const std::shared_ptr<Layers>& getLayers() const;
         /**
          * Returns the Options object, that can be used for modifying various map options.
          * @return the Option object.
          */
-        Options& getOptions();
+        const std::shared_ptr<Options>& getOptions() const;
     
         /**
          * Returns the position that the camera is currently looking at.

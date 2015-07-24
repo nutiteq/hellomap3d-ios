@@ -20,7 +20,7 @@
     NTProjection* proj = [[self.mapView getOptions] getBaseProjection];
 
     // Load ground overlay bitmap
-    NTBitmap* overlayBitmap = [[NTBitmap alloc] initWithCompressedData:[NTAssetUtils loadBytes:@"jefferson-building-ground-floor.jpg"] pow2Padding:NO];
+    NTBitmap* overlayBitmap = [NTBitmapUtils loadBitmapFromAssets:@"jefferson-building-ground-floor.jpg" pow2Padding:NO];
     
     // Create two vectors containing geographical positions and corresponding raster image pixel coordinates.
     // 2, 3 or 4 points may be specified. Usually 2 points are enough (for conformal mapping).

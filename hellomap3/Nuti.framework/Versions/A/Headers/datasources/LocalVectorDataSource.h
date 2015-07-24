@@ -7,6 +7,7 @@
 #ifndef _NUTI_LOCALVECTORDATASOURCE_H_
 #define _NUTI_LOCALVECTORDATASOURCE_H_
 
+#include "components/DirectorPtr.h"
 #include "core/MapBounds.h"
 #include "datasources/VectorDataSource.h"
 #include "utils/SpatialIndex.h"
@@ -113,7 +114,7 @@ namespace Nuti {
 
     private:
         std::shared_ptr<GeometrySimplifier> _geometrySimplifier;
-        std::shared_ptr<SpatialIndex<std::shared_ptr<VectorElement> > > _spatialIndex;
+        std::shared_ptr<SpatialIndex<DirectorPtr<VectorElement> > > _spatialIndex;
         
         unsigned int _elementId;
 

@@ -7,13 +7,16 @@
 #ifndef _NUTI_VECTORELEMENTDRAGINFO_H_
 #define _NUTI_VECTORELEMENTDRAGINFO_H_
 
+#ifdef _NUTI_EDITABLE_SUPPORT
+
+#include "components/DirectorPtr.h"
 #include "core/MapPos.h"
 #include "core/ScreenPos.h"
+#include "vectorelements/VectorElement.h"
 
 #include <memory>
 
 namespace Nuti {
-    class VectorElement;
     
     namespace VectorElementDragMode {
         /**
@@ -76,9 +79,11 @@ namespace Nuti {
         ScreenPos _screenPos;
         MapPos _mapPos;
         
-        std::shared_ptr<VectorElement> _vectorElement;
+        DirectorPtr<VectorElement> _vectorElement;
     };
     
 }
+
+#endif
 
 #endif

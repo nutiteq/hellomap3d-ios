@@ -7,6 +7,8 @@
 #ifndef _NUTI_PACKAGETILEMASK_H_
 #define _NUTI_PACKAGETILEMASK_H_
 
+#ifdef _NUTI_PACKAGEMANAGER_SUPPORT
+
 #include <string>
 #include <memory>
 #include <queue>
@@ -110,5 +112,7 @@ namespace Nuti {
 		std::shared_ptr<TileNode> _rootNode;
 	};
 }
+
+#endif
 
 #endif

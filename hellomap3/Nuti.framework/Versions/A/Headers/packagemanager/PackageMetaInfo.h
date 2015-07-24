@@ -7,6 +7,8 @@
 #ifndef _NUTI_PACKAGEMETAINFO_H_
 #define _NUTI_PACKAGEMETAINFO_H_
 
+#ifdef _NUTI_PACKAGEMANAGER_SUPPORT
+
 #include <map>
 #include <string>
 #include <vector>
@@ -139,5 +141,7 @@ namespace Nuti {
 	};
 
 }
+
+#endif
 
 #endif

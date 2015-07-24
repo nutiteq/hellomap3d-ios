@@ -8,6 +8,7 @@
 #define _NUTI_VECTORLAYER_H_
 
 #include "components/CancelableTask.h"
+#include "components/DirectorPtr.h"
 #include "datasources/VectorDataSource.h"
 #include "core/MapEnvelope.h"
 #include "layers/Layer.h"
@@ -118,7 +119,7 @@ namespace Nuti {
 
         virtual std::shared_ptr<CancelableTask> createFetchTask(const std::shared_ptr<CullState>& cullState);
     
-        std::shared_ptr<VectorDataSource> _dataSource;
+        const DirectorPtr<VectorDataSource> _dataSource;
         std::shared_ptr<VectorDataSource::OnChangeListener> _dataSourceListener;
         
     private:

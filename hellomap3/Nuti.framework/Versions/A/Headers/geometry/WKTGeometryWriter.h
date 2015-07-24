@@ -7,6 +7,8 @@
 #ifndef _NUTI_WKTGEOMETRYWRITER_H_
 #define _NUTI_WKTGEOMETRYWRITER_H_
 
+#ifdef _NUTI_WKBT_SUPPORT
+
 #include "core/MapPos.h"
 
 #include <memory>
@@ -51,5 +53,7 @@ namespace Nuti {
     };
 
 }
+
+#endif
 
 #endif

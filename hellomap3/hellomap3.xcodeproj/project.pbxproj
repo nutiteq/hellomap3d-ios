@@ -63,12 +63,11 @@
 		2A319B36187C4F8F0004A3CB = {
 			isa = PBXGroup;
 			children = (
-				4DB60ECB1A15601C00A6AF18 /* osmbright.zip */,
-				4DEB06DD1A10D888003D111C /* README.md */,
+				4DC42AAE1B622EF70022CA0C /* Assets */,
 				4DC84FD01A0E351D00C5124F /* hellomap3 */,
-				2AB2803318EB150400666197 /* marker.png */,
 				2A319B41187C4F8F0004A3CB /* Frameworks */,
 				2A319B40187C4F8F0004A3CB /* Products */,
+				4DEB06DD1A10D888003D111C /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +90,15 @@
 				2A319B46187C4F8F0004A3CB /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DC42AAE1B622EF70022CA0C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2AB2803318EB150400666197 /* marker.png */,
+				4DB60ECB1A15601C00A6AF18 /* osmbright.zip */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		4DC84FD01A0E351D00C5124F /* hellomap3 */ = {

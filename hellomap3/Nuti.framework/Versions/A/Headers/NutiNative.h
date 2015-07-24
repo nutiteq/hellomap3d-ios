@@ -51,7 +51,6 @@
 #include "graphics/Frustum.h"
 #include "graphics/Bitmap.h"
 #include "graphics/Color.h"
-#include "graphics/MapTileQuadTreeNode.h"
 #include "graphics/ViewState.h"
 
 #include "layers/Layers.h"

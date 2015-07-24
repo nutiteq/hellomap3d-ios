@@ -7,6 +7,8 @@
 #ifndef _NUTI_VECTOREDITEVENTLISTENER_H_
 #define _NUTI_VECTOREDITEVENTLISTENER_H_
 
+#ifdef _NUTI_EDITABLE_SUPPORT
+
 #include "core/ScreenPos.h"
 #include "ui/VectorElementDragInfo.h"
 
@@ -122,9 +124,11 @@ namespace Nuti {
 		 * @param dragPointStyle Drag point style.
 		 * @return The point style to use for the drag point.
 		 */
-        virtual std::shared_ptr<PointStyle> getDragPointStyle(const std::shared_ptr<VectorElement>& element, VectorElementDragPointStyle::VectorElementDragPointStyle dragPointStyle) = 0;
+        virtual std::shared_ptr<PointStyle> onSelectDragPointStyle(const std::shared_ptr<VectorElement>& element, VectorElementDragPointStyle::VectorElementDragPointStyle dragPointStyle) = 0;
 	};
         
 }
+
+#endif
 
 #endif

@@ -7,10 +7,11 @@
 #ifndef _NUTI_TILELAYER_H_
 #define _NUTI_TILELAYER_H_
 
+#include "components/CancelableTask.h"
+#include "components/DirectorPtr.h"
 #include "datasources/TileDataSource.h"
 #include "layers/Layer.h"
 #include "utils/LRUCache.h"
-#include "components/CancelableTask.h"
 
 #include <atomic>
 #include <unordered_map>
@@ -224,7 +225,7 @@ namespace Nuti {
         std::atomic<bool> _calculatingTiles;
         std::atomic<bool> _refreshedTiles;
 		
-        std::shared_ptr<TileDataSource> _dataSource;
+        const DirectorPtr<TileDataSource> _dataSource;
         std::shared_ptr<DataSourceListener> _dataSourceListener;
         
         FetchingTileTasks _fetchingTiles;

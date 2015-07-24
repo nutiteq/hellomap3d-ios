@@ -7,12 +7,13 @@
 #ifndef _NUTI_VECTORELEMENTCLICKINFO_H_
 #define _NUTI_VECTORELEMENTCLICKINFO_H_
 
+#include "components/DirectorPtr.h"
 #include "core/MapPos.h"
+#include "vectorelements/VectorElement.h"
 
 #include <memory>
 
 namespace Nuti {
-    class VectorElement;
     class Layer;
     
     /**
@@ -84,7 +85,7 @@ namespace Nuti {
     
         unsigned int _order;
     
-        std::shared_ptr<VectorElement> _vectorElement;
+        DirectorPtr<VectorElement> _vectorElement;
         std::shared_ptr<Layer> _layer;
     };
     

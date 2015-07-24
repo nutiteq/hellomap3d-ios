@@ -7,6 +7,8 @@
 #ifndef _NUTI_PACKAGESTATUS_H_
 #define _NUTI_PACKAGESTATUS_H_
 
+#ifdef _NUTI_PACKAGEMANAGER_SUPPORT
+
 namespace Nuti {
 	
 	namespace PackageAction {
@@ -81,5 +83,7 @@ namespace Nuti {
 		float _progress;
 	};
 }
+
+#endif
 
 #endif

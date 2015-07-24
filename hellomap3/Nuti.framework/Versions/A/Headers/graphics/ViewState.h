@@ -132,6 +132,12 @@ namespace Nuti {
          * @return The distance between focus to camera position, when zoom level = 0.
          */
         float getZoom0Distance() const;
+        
+        /**
+         * Get normalized resolution of the view. This is an internal parameter used by vector tile renderer.
+         * @return The screen resolution of the view.
+         */
+        float getNormalizedResolution() const;
     
         /**
          * Returns the width of the map screen.
@@ -356,6 +362,7 @@ namespace Nuti {
         float _zoom;
         float _2PowZoom;
         float _zoom0Distance;
+        float _normalizedResolution;
     
         int _width;
         int _height;

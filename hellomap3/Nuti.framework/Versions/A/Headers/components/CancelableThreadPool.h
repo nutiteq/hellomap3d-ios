@@ -47,7 +47,7 @@ namespace Nuti {
     
             void operator()();
     
-            std::shared_ptr<CancelableThreadPool> _threadPool;
+            std::weak_ptr<CancelableThreadPool> _threadPool;
         };
     
         typedef std::priority_queue<TaskRecord> TaskRecordQueue;

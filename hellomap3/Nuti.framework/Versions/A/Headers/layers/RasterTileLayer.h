@@ -9,6 +9,7 @@
 
 #include "TileLayer.h"
 #include "components/CancelableTask.h"
+#include "components/DirectorPtr.h"
 #include "components/Task.h"
 #include "core/MapTile.h"
 #include "datasources/TileDataSource.h"
@@ -148,7 +149,7 @@ namespace Nuti {
     
         std::atomic<bool> _synchronizedRefresh;
     
-        std::shared_ptr<TileLoadListener> _tileLoadListener;
+        DirectorPtr<TileLoadListener> _tileLoadListener;
         mutable std::recursive_mutex _tileLoadListenerMutex;
     
         std::shared_ptr<RasterTileRenderer> _renderer;

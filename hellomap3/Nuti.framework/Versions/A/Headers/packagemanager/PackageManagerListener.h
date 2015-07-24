@@ -7,6 +7,8 @@
 #ifndef _NUTI_PACKAGEMANAGERLISTENER_H_
 #define _NUTI_PACKAGEMANAGERLISTENER_H_
 
+#ifdef _NUTI_PACKAGEMANAGER_SUPPORT
+
 #include <string>
 #include <memory>
 
@@ -90,5 +92,7 @@ namespace Nuti {
 	};
 
 }
+
+#endif
 
 #endif

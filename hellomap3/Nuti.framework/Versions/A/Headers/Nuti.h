@@ -52,7 +52,6 @@
 #import "NTFrustum.h"
 #import "NTBitmap.h"
 #import "NTColor.h"
-#import "NTMapTileQuadTreeNode.h"
 #import "NTViewState.h"
 
 #import "NTLayers.h"
