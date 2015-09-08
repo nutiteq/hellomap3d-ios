@@ -1,0 +1,28 @@
+var interface_n_t_balloon_popup_style =
+[
+    [ "getBackgroundColor", "d7/dee/interface_n_t_balloon_popup_style.html#a5e0dc1fc138b249653d99e55ba004bc2", null ],
+    [ "getCornerRadius", "d7/dee/interface_n_t_balloon_popup_style.html#ab18dd707e0f0bdf7795e962532da4f40", null ],
+    [ "getDescriptionColor", "d7/dee/interface_n_t_balloon_popup_style.html#a00d6cac1b4b360b12c74e10fa21e4920", null ],
+    [ "getDescriptionFontName", "d7/dee/interface_n_t_balloon_popup_style.html#a90b144e8f29f46a155fd69f77208b3ec", null ],
+    [ "getDescriptionFontSize", "d7/dee/interface_n_t_balloon_popup_style.html#a17016daccf84f7779b628612fef0bbff", null ],
+    [ "getDescriptionMargins", "d7/dee/interface_n_t_balloon_popup_style.html#af5a6d1da69bda4d048475b3168a068bb", null ],
+    [ "getLeftColor", "d7/dee/interface_n_t_balloon_popup_style.html#aa1db71f4915ea39fcbea904844883939", null ],
+    [ "getLeftImage", "d7/dee/interface_n_t_balloon_popup_style.html#ac0ba29457bbf44164ed02110b71c664a", null ],
+    [ "getLeftMargins", "d7/dee/interface_n_t_balloon_popup_style.html#a1d267cbce781547b4377e9b1eadf738c", null ],
+    [ "getRightColor", "d7/dee/interface_n_t_balloon_popup_style.html#acc848cbc2e04c2b693cd7b06f488a878", null ],
+    [ "getRightImage", "d7/dee/interface_n_t_balloon_popup_style.html#a5c3df599b54e313caa2542fd828c2e19", null ],
+    [ "getRightMargins", "d7/dee/interface_n_t_balloon_popup_style.html#a3b2599c9e45fa4e2e265dfe19ee94570", null ],
+    [ "getStrokeColor", "d7/dee/interface_n_t_balloon_popup_style.html#af281d865bff2a38496691257f18739dd", null ],
+    [ "getStrokeWidth", "d7/dee/interface_n_t_balloon_popup_style.html#a4707a0b3010e3295b2f45910af570952", null ],
+    [ "getTitleColor", "d7/dee/interface_n_t_balloon_popup_style.html#a06cd31238a939a195e794e15b1babdd5", null ],
+    [ "getTitleFontName", "d7/dee/interface_n_t_balloon_popup_style.html#af03511d8b3966ec9f7079c04f6bfee6d", null ],
+    [ "getTitleFontSize", "d7/dee/interface_n_t_balloon_popup_style.html#a9319787cb95f82fb0c5120f675d8eb29", null ],
+    [ "getTitleMargins", "d7/dee/interface_n_t_balloon_popup_style.html#a78ed44930469fdbb5bf66198cd1bcbaf", null ],
+    [ "getTriangleHeight", "d7/dee/interface_n_t_balloon_popup_style.html#aee4c26d696ace2a1e5003611d65aa8c7", null ],
+    [ "getTriangleWidth", "d7/dee/interface_n_t_balloon_popup_style.html#ad7b65701ff34ca1f2caba7aae38c9977", null ],
+    [ "initWithColor:attachAnchorPointX:attachAnchorPointY:causesOverlap:hideIfOverlapped:horizontalOffset:verticalOffset:placementPriority:scaleWithDPI:cornerRadius:leftColor:leftImage:leftMargins:rightColor:rightImage:rightMargins:titleColor:titleFontName:titleFontSize:titleMargins:titleWrap:descColor:descFontName:descFontSize:descMargins:descWrap:strokeColor:strokeWidth:triangleWidth:triangleHeight:", "d7/dee/interface_n_t_balloon_popup_style.html#ae88f014487599317d129f35db5583596", null ],
+    [ "isDescriptionWrap", "d7/dee/interface_n_t_balloon_popup_style.html#a2874bf9586874be3339b9967f28b7adc", null ],
+    [ "isTitleWrap", "d7/dee/interface_n_t_balloon_popup_style.html#a76f63901d8148b8970b9b4c370d439c9", null ],
+    [ "swigGetClassName", "d7/dee/interface_n_t_balloon_popup_style.html#a66f9abd9c520c86cab5e1ff2986f47a7", null ],
+    [ "swigGetDirectorObject", "d7/dee/interface_n_t_balloon_popup_style.html#a50ce75f30af64960c4109d587daff283", null ]
+];

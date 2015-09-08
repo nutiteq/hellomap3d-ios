@@ -1,11 +1,11 @@
 var NAVTREE =
 [
-  [ "Nutiteq Maps SDK 3 iOS", "index.html", [
+  [ "Nutiteq Maps SDK iOS", "index.html", [
     [ "Nutiteq SDK for iOS", "index.html", [
       [ "Introduction", "index.html#intro_sec", null ],
       [ "Getting started", "index.html#install_sec", null ]
     ] ],
-    [ "mainpage", "md_dox_mainpage.html", null ],
+    [ "mainpage", "dc/d66/md_dox_mainpage.html", null ],
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],
       [ "Class Index", "classes.html", null ],
@@ -21,10 +21,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"interface_n_t_compressed_cache_tile_data_source.html",
-"interface_n_t_map_tile.html#af69541011e2976932a51117c46fe0f83",
-"interface_n_t_polygon.html#a99068582ebdc67415c9a39533ea170cc",
-"interface_n_t_view_state.html#a9bf10e0f66e83f54ae196dedd750f5e2"
+"d2/dce/interface_n_t_billboard_style_builder.html#aa5dd8032e3bdef2a1a80a77ae4af6682",
+"d6/de0/interface_n_t_balloon_popup_style_builder.html#a4b563cc8eeeae71adc4a985aa9ec09a3",
+"d9/d6a/interface_n_t_compressed_cache_tile_data_source.html#a956a4a391a4e7660a43b0bde2e8ad84b",
+"dc/db3/interface_n_t_asset_tile_data_source.html#a14708987d8edff5889b9d2abf01b3842"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
