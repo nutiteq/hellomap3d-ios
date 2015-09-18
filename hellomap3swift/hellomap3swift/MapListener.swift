@@ -29,7 +29,7 @@ class MapListener: NTMapEventListener {
   // Map is clicked outside any vector element.
   override func onMapClicked(mapClickInfo: NTMapClickInfo!) {
     
-    if (mapClickInfo.getClickType() == NTClickType._CLICK_TYPE_DOUBLE)
+    if (mapClickInfo.getClickType() == NTClickType.CLICK_TYPE_DOUBLE)
     {
       NTLog.debug("Double map click!")
       self.mapView?.zoom(1.5, durationSeconds: 0.3)
