@@ -8,6 +8,7 @@
 #define _NUTI_CACHETILEDATASOURCE_H_
 
 #include "datasources/TileDataSource.h"
+#include "components/DirectorPtr.h"
 #include "utils/LRUCache.h"
 
 namespace Nuti {
@@ -51,7 +52,7 @@ namespace Nuti {
         
         CacheTileDataSource(const std::shared_ptr<TileDataSource>& dataSource);
 
-        std::shared_ptr<TileDataSource> _dataSource;
+        const DirectorPtr<TileDataSource> _dataSource;
         
     private:
         std::shared_ptr<DataSourceListener> _dataSourceListener;

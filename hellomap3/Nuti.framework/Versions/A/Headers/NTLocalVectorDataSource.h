@@ -52,6 +52,9 @@ __attribute__ ((visibility("default"))) @interface NTLocalVectorDataSource : NTV
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 
+/**
+ * Creates a polymorphic instance of the given native object. This is used internally by the SDK.
+ */
 +(NTLocalVectorDataSource*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
 
 /**
@@ -72,6 +75,11 @@ __attribute__ ((visibility("default"))) @interface NTLocalVectorDataSource : NTV
  * @return A vector containing all the vector elements in this data source.
  */
 -(NTVectorElementVector*)getAll;
+/**
+ * Replaces all vector elements in the data source with the given list of vector elements.<br>
+ * @param elements The list of new vector elements
+ */
+-(void)setAll: (NTVectorElementVector*)elements;
 /**
  * Adds a vector element to the data source. The vector element's coordinates are expected to be<br>
  * in the data source's projection's coordinate system. The order in which the elements are added has<br>

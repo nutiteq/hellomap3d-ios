@@ -24,10 +24,10 @@ namespace Nuti {
 		namespace TransformGeneratorImpl {
 			namespace phx = boost::phoenix;
 			namespace karma = boost::spirit::karma;
-			namespace ascii = boost::spirit::ascii;
+			namespace encoding = boost::spirit::iso8859_1;
 
 			template <typename OutputIterator>
-			struct Grammar : karma::grammar<OutputIterator, std::shared_ptr<Transform>(), ascii::space_type> {
+			struct Grammar : karma::grammar<OutputIterator, std::shared_ptr<Transform>(), encoding::space_type> {
 				Grammar() : Grammar::base_type(transform) {
 					using karma::_pass;
 					using karma::_val;
@@ -75,7 +75,7 @@ namespace Nuti {
 				}
 
 				karma::rule<OutputIterator, float()> number;
-				karma::rule<OutputIterator, std::shared_ptr<Transform>(), ascii::space_type> transform, matrix, translate, rotate, scale, skewx, skewy;
+				karma::rule<OutputIterator, std::shared_ptr<Transform>(), encoding::space_type> transform, matrix, translate, rotate, scale, skewx, skewy;
 
 			private:
 				static bool getMatrixTransform(const std::shared_ptr<Transform>& transform, float& a, float& b, float& c, float& d, float& e, float& f) {

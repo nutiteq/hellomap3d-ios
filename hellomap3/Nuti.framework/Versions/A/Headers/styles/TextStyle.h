@@ -36,6 +36,7 @@ namespace Nuti {
          * @param orientationMode The orientation mode.
          * @param scalingMode The scaling mode.
          * @param fontName The font's name.
+         * @param textField The text field variable to use.
          * @param fontSize The font's size.
          * @param strokeColor The width of the color.
          * @param strokeWidth The width of the stroke.
@@ -54,7 +55,8 @@ namespace Nuti {
                   bool flippable,
                   BillboardOrientation::BillboardOrientation orientationMode,
                   BillboardScaling::BillboardScaling scalingMode,
-                  std::string fontName,
+                  const std::string& fontName,
+                  const std::string& textField,
                   int fontSize,
                   const Color& strokeColor,
                   float strokeWidth);
@@ -71,6 +73,12 @@ namespace Nuti {
          * @return The platform dependent name of the font.
          */
         const std::string& getFontName() const;
+        
+        /**
+         * Returns the text field variable to use.
+         * @return The text field variable.
+         */
+        const std::string& getTextField() const;
 
         /**
          * Returns the font's size.
@@ -94,6 +102,8 @@ namespace Nuti {
         Color _fontColor;
 
         std::string _fontName;
+        
+        std::string _textField;
 
         int _fontSize;
 

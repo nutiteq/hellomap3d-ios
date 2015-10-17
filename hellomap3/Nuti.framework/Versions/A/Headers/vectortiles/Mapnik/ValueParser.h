@@ -24,7 +24,7 @@ namespace Nuti { namespace Mapnik {
 		namespace phx = boost::phoenix;
 		namespace qi = boost::spirit::qi;
 		namespace repo = boost::spirit::repository::qi;
-		namespace ascii = boost::spirit::ascii;
+		namespace encoding = boost::spirit::iso8859_1;
 
 		template <typename Iterator>
 		struct Grammar : qi::grammar<Iterator, Value()> {

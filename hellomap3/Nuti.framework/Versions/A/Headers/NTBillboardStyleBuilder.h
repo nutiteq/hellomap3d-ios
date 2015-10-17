@@ -25,6 +25,9 @@ __attribute__ ((visibility("default"))) @interface NTBillboardStyleBuilder : NTS
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 
+/**
+ * Creates a polymorphic instance of the given native object. This is used internally by the SDK.
+ */
 +(NTBillboardStyleBuilder*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
 
 /**

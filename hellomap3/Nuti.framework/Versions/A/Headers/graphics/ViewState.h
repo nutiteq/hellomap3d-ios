@@ -87,7 +87,7 @@ namespace Nuti {
          * updated at the beginning of the next frame.
          */
         void cameraChanged();
-    
+        
         /**
          * Returns the camera rotation angle.
          * @return The camera rotation angle in degrees.
@@ -313,9 +313,10 @@ namespace Nuti {
          * map panning at small tilt angles.
          * @param screenPos The screen position.
          * @param offsetPercent The percentage used to offset the resulting world space coordinate, in the range of [0..1].
+         * @param options The options object.
          * @return The screen position projected into the map plane, in internal coordinates.
          */
-        MapPos screenToWorldPlane(const ScreenPos& screenPos, float offsetPercent) const;
+        MapPos screenToWorldPlane(const ScreenPos& screenPos, float offsetPercent, std::shared_ptr<Options> options = std::shared_ptr<Options>()) const;
         /**
          * Projects a world position onto the screen using the current view state.
          * @param worldPos The world position.
@@ -339,6 +340,9 @@ namespace Nuti {
     private:
         float calculateNearPlanePersp(const MapPos& cameraPos, float tilt, float halfFOVY) const;
         float calculateFarPlanePersp(const MapPos& cameraPos, float tilt, float halfFOVY, const Options& options) const;
+        cglib::mat4x4<double> calculatePerspMat(float halfFOVY, float near, float far, const Options& options) const;
+        cglib::mat4x4<double> calculateLookatMat() const;
+        cglib::mat4x4<double> calculateModelViewMat(const Options& options) const;
     
         static const int DEFAULT_CAMERA_POS_X = 0;
         static const int DEFAULT_CAMERA_POS_Y = 0;

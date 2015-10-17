@@ -30,6 +30,9 @@ __attribute__ ((visibility("default"))) @interface NTMapEventListener : NSObject
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 
+/**
+ * Creates a polymorphic instance of the given native object. This is used internally by the SDK.
+ */
 +(NTMapEventListener*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
 
 /**
@@ -51,6 +54,30 @@ __attribute__ ((visibility("default"))) @interface NTMapEventListener : NSObject
  * @param vectorElementsClickInfo A container that provides information about the click.
  */
 -(void)onVectorElementClicked: (NTVectorElementsClickInfo*)vectorElementsClickInfo;
+/**
+ * Listener method that gets called at the start of the rendering process.<br>
+ * The method can be used to synchronize vector elements with renderer state, for example<br>
+ * to force marker to be always at the center of the screen (focus point).<br>
+ * This method is called from GL renderer thread, not from main thread.
+ */
+-(void)onBeforeDrawFrame;
+/**
+ * Listener method that gets called at the start of the rendering process.<br>
+ * The method can be used to synchronize vector elements with renderer state, for example<br>
+ * to force marker to be always at the center of the screen (focus point).<br>
+ * This method is called from GL renderer thread, not from main thread.
+ */
+-(void)onBeforeDrawFrameSwigExplicitNTMapEventListener;
+/**
+ * Listener method that gets called at the end of the rendering process.<br>
+ * This method is called from GL renderer thread, not from main thread.
+ */
+-(void)onAfterDrawFrame;
+/**
+ * Listener method that gets called at the end of the rendering process.<br>
+ * This method is called from GL renderer thread, not from main thread.
+ */
+-(void)onAfterDrawFrameSwigExplicitNTMapEventListener;
 /**
  * Returns the actual class name of this object. This is used internally by the SDK.<br>
  * @return The class name of this object.

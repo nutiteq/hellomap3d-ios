@@ -25,10 +25,10 @@ namespace Nuti { namespace Mapnik {
 		namespace phx = boost::phoenix;
 		namespace qi = boost::spirit::qi;
 		namespace repo = boost::spirit::repository::qi;
-		namespace ascii = boost::spirit::ascii;
+		namespace encoding = boost::spirit::iso8859_1;
 
 		template <typename Iterator>
-		struct Grammar : qi::grammar<Iterator, std::shared_ptr<Transform>(), ascii::space_type> {
+		struct Grammar : qi::grammar<Iterator, std::shared_ptr<Transform>(), encoding::space_type> {
 			Grammar() : Grammar::base_type(transform) {
 				using qi::_val;
 				using qi::_1;
@@ -85,7 +85,7 @@ namespace Nuti { namespace Mapnik {
 
 			qi::rule<Iterator, qi::unused_type()> matrix_kw, translate_kw, rotate_kw, scale_kw, skewx_kw, skewy_kw;
 			qi::rule<Iterator, float()> number;
-			qi::rule<Iterator, std::shared_ptr<Transform>(), ascii::space_type> transform, matrix, translate, rotate, scale, skewx, skewy;
+			qi::rule<Iterator, std::shared_ptr<Transform>(), encoding::space_type> transform, matrix, translate, rotate, scale, skewx, skewy;
 
 		private:
 			static std::shared_ptr<Transform> makeMatrixTransform(float a, float b, float c, float d, float e, float f) {

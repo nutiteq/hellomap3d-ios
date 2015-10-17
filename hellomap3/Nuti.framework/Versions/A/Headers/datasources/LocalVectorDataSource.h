@@ -67,6 +67,12 @@ namespace Nuti {
         std::vector<std::shared_ptr<VectorElement> > getAll() const;
         
         /**
+         * Replaces all vector elements in the data source with the given list of vector elements.
+         * @param elements The list of new vector elements
+         */
+        void setAll(const std::vector<std::shared_ptr<VectorElement> >& elements);
+        
+        /**
          * Adds a vector element to the data source. The vector element's coordinates are expected to be
          * in the data source's projection's coordinate system. The order in which the elements are added has
          * no effect on the order they get rendered.

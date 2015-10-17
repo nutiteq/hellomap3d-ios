@@ -30,6 +30,9 @@ __attribute__ ((visibility("default"))) @interface NTBalloonPopup : NTPopup
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 
+/**
+ * Creates a polymorphic instance of the given native object. This is used internally by the SDK.
+ */
 +(NTBalloonPopup*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
 
 /**
@@ -60,6 +63,7 @@ __attribute__ ((visibility("default"))) @interface NTBalloonPopup : NTPopup
  */
 -(id)initWithPos: (NTMapPos*)pos style: (NTBalloonPopupStyle*)style title: (NSString*)title desc: (NSString*)desc;
 -(NTBitmap*)drawBitmap: (NTScreenPos*)anchorScreenPos screenWidth: (float)screenWidth screenHeight: (float)screenHeight dpToPX: (float)dpToPX;
+-(NTBitmap*)drawBitmapSwigExplicitNTBalloonPopup: (NTScreenPos*)anchorScreenPos screenWidth: (float)screenWidth screenHeight: (float)screenHeight dpToPX: (float)dpToPX;
 /**
  * Returns the title of this balloon popup.<br>
  * @return The title of this balloon popup.

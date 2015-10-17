@@ -9,6 +9,8 @@
 
 #include "VectorTileLayer.h"
 
+#include <string>
+
 namespace Nuti {
     /**
      * Specialized online vector tile layer that connects to Nutiteq online tile server.
@@ -19,7 +21,7 @@ namespace Nuti {
     public:
         /**
          * Constructs a NutiteqOnlineVectorTileLayer object from a style asset name.
-         * Uses "nutiteq.mbstreets" as a source.
+         * Uses "nutiteq.osm" as a source.
          * Style asset must be included in the project, style asset defines visual style of the map.
          * @param styleAssetName The name of the style asset that defines visual style of the map.
          */
@@ -27,7 +29,7 @@ namespace Nuti {
         /**
          * Constructs a NutiteqOnlineVectorTileLayer object from a source name and style asset name.
          * Style asset must be included in the project, style asset defines visual style of the map.
-         * @param source The tile source name. Currently only "nutiteq.mbstreets" is supported.
+         * @param source The tile source name. Main and default source is currently "nutiteq.osm".
          * @param styleAssetName The name of the style asset that defines visual style of the map.
          */
         NutiteqOnlineVectorTileLayer(const std::string& source, const std::string& styleAssetName);
@@ -36,6 +38,8 @@ namespace Nuti {
     private:
         static std::shared_ptr<TileDataSource> CreateDataSource(const std::string& source);
         static std::shared_ptr<VectorTileDecoder> CreateTileDecoder(const std::string& syleAssetName);
+        
+        static const std::string DEFAULT_SOURCE;
     };
     
 }

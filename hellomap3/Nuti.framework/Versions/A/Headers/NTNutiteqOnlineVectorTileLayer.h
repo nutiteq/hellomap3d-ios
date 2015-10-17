@@ -27,11 +27,14 @@ __attribute__ ((visibility("default"))) @interface NTNutiteqOnlineVectorTileLaye
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 
+/**
+ * Creates a polymorphic instance of the given native object. This is used internally by the SDK.
+ */
 +(NTNutiteqOnlineVectorTileLayer*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
 
 /**
  * Constructs a NutiteqOnlineVectorTileLayer object from a style asset name.<br>
- * Uses "nutiteq.mbstreets" as a source.<br>
+ * Uses "nutiteq.osm" as a source.<br>
  * Style asset must be included in the project, style asset defines visual style of the map.<br>
  * @param styleAssetName The name of the style asset that defines visual style of the map.
  */
@@ -39,7 +42,7 @@ __attribute__ ((visibility("default"))) @interface NTNutiteqOnlineVectorTileLaye
 /**
  * Constructs a NutiteqOnlineVectorTileLayer object from a source name and style asset name.<br>
  * Style asset must be included in the project, style asset defines visual style of the map.<br>
- * @param source The tile source name. Currently only "nutiteq.mbstreets" is supported.<br>
+ * @param source The tile source name. Main and default source is currently "nutiteq.osm".<br>
  * @param styleAssetName The name of the style asset that defines visual style of the map.
  */
 -(id)initWithSource: (NSString*)source styleAssetName: (NSString*)styleAssetName;

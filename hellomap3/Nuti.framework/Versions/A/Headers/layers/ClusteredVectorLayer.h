@@ -57,6 +57,19 @@ namespace Nuti {
         void setMinimumClusterDistance(float px);
 
         /**
+         * Returns the maximum zoom level when clusters are shown. If zoom level is greater, then
+         * clusters are replaced with individual elements. Default is 24.
+         * @return The maximum clustering zoom level.
+         */
+        float getMaximumClusterZoom() const;
+        /**
+         * Sets the maximum zoom level when clusters are shown. If zoom level is greater, then
+         * clusters are replaced with individual elements.
+         * @param maxZoom The new maximum clustering zoom level.
+         */
+        void setMaximumClusterZoom(float maxZoom);
+
+        /**
          * Expands or shrinks the given cluster element. In expanded state,
          * all elements of the cluster are placed at specified distance from the cluster center.
          * @param clusterElement The cluster element to expand or shrink.
@@ -100,7 +113,8 @@ namespace Nuti {
 
         const DirectorPtr<ClusterElementBuilder> _clusterElementBuilder;
 
-        float _clusterDistance;
+        float _minClusterDistance;
+        float _maxClusterZoom;
         float _dpiScale;
         std::shared_ptr<Cluster> _rootCluster;
         bool _refreshRootCluster;

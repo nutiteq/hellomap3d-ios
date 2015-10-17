@@ -137,8 +137,8 @@ namespace Nuti {
 
                 // Calculate samples
                 cglib::vec2<double> uv = transform(x, y);
-                float uf = uv(0);
-                float vf = uv(1);
+                float uf = static_cast<float>(uv(0));
+                float vf = static_cast<float>(uv(1));
                 int ui = static_cast<int>(std::floor(uf));
                 int vi = static_cast<int>(std::floor(vf));
                 if (ui + du >= _minU && vi + dv >= _minV && ui - du < _maxU && vi - dv < _maxV) {

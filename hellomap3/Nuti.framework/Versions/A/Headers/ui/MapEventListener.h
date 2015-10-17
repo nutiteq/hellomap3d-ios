@@ -44,6 +44,20 @@ namespace Nuti {
          * @param vectorElementsClickInfo A container that provides information about the click.
          */
         virtual void onVectorElementClicked(const std::shared_ptr<VectorElementsClickInfo>& vectorElementsClickInfo) = 0;
+        
+        /**
+         * Listener method that gets called at the start of the rendering process.
+         * The method can be used to synchronize vector elements with renderer state, for example
+         * to force marker to be always at the center of the screen (focus point).
+         * This method is called from GL renderer thread, not from main thread.
+         */
+        virtual void onBeforeDrawFrame() { }
+        
+        /**
+         * Listener method that gets called at the end of the rendering process.
+         * This method is called from GL renderer thread, not from main thread.
+         */
+        virtual void onAfterDrawFrame() { }
     };
     
 }

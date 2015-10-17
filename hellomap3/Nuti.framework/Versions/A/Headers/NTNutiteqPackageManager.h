@@ -29,7 +29,7 @@ __attribute__ ((visibility("default"))) @interface NTNutiteqPackageManager : NTP
  * Constructs a NutiteqPackageManager object, given application context and data folder.<br>
  * The data folder must exist before creating a new package manager and it is assumed to be persistent.<br>
  * Note: the package manager must be explicitly started using start() method!<br>
- * @param source Name of the package source. Currently "nutiteq.mbstreets" source is available<br>
+ * @param source Name of the package source. Default: "nutiteq.osm"<br>
  * @param dataFolder The folder where downloaded packages are kept. It must exist and must be writable.
  */
 -(id)initWithSource: (NSString*)source dataFolder: (NSString*)dataFolder;

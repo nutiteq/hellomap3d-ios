@@ -473,7 +473,7 @@ namespace cglib
 		return m;
 	}
 
-	template <typename T, typename Traits> inline mat<T, 4, Traits>
+	template <typename T, typename Traits = float_traits<T> > inline mat<T, 4, Traits>
 		frustum4_matrix(T left, T right, T bottom, T top, T znear, T zfar)
 	{
 		T dxinv = 1 / (right - left);
@@ -492,7 +492,7 @@ namespace cglib
 		return proj;
 	}
 
-	template <typename T, typename Traits> inline mat<T, 4, Traits>
+	template <typename T, typename Traits = float_traits<T> > inline mat<T, 4, Traits>
 		perspective4_matrix(T fovy, T xaspect, T yaspect, T znear, T zfar)
 	{
 		T c = znear * Traits::tan(fovy / 2);
@@ -503,7 +503,7 @@ namespace cglib
 		return frustum4_matrix<T, Traits>(xmin, xmax, ymin, ymax, znear, zfar);
 	}
 
-	template <typename T, typename Traits> inline mat<T, 4, Traits>
+	template <typename T, typename Traits = float_traits<T> > inline mat<T, 4, Traits>
 		ortho4_matrix(T left, T right, T bottom, T top, T znear, T zfar)
 	{
 		T dxinv = 1 / (right - left);

@@ -24,7 +24,7 @@ namespace Nuti { namespace Mapnik {
 	namespace ValueGeneratorImpl {
 		namespace phx = boost::phoenix;
 		namespace karma = boost::spirit::karma;
-		namespace ascii = boost::spirit::ascii;
+		namespace encoding = boost::spirit::iso8859_1;
 
 		template <typename OutputIterator>
 		struct Grammar : karma::grammar<OutputIterator, Value()> {

@@ -32,10 +32,10 @@ namespace Nuti {
         namespace phx = boost::phoenix;
         namespace qi = boost::spirit::qi;
         namespace repo = boost::spirit::repository::qi;
-        namespace ascii = boost::spirit::ascii;
+        namespace encoding = boost::spirit::iso8859_1;
 
         template <typename Iterator>
-        struct Grammar : qi::grammar<Iterator, std::shared_ptr<Geometry>(), ascii::space_type> {
+        struct Grammar : qi::grammar<Iterator, std::shared_ptr<Geometry>(), encoding::space_type> {
             Grammar() : Grammar::base_type(geometry) {
                 using qi::_val;
                 using qi::_1;
@@ -70,10 +70,10 @@ namespace Nuti {
             }
 
             qi::rule<Iterator, qi::unused_type()> point_kw, linestring_kw, polygon_kw, multipoint_kw, multilinestring_kw, multipolygon_kw, geometrycollection_kw, z_kw, zm_kw, empty_kw, type;
-            qi::rule<Iterator, MapPos(), ascii::space_type> pos;
-            qi::rule<Iterator, std::vector<MapPos>(), ascii::space_type> ring;
-            qi::rule<Iterator, std::vector<std::vector<MapPos> >(), ascii::space_type> rings;
-            qi::rule<Iterator, std::shared_ptr<Geometry>(), ascii::space_type> geometry;
+            qi::rule<Iterator, MapPos(), encoding::space_type> pos;
+            qi::rule<Iterator, std::vector<MapPos>(), encoding::space_type> ring;
+            qi::rule<Iterator, std::vector<std::vector<MapPos> >(), encoding::space_type> rings;
+            qi::rule<Iterator, std::shared_ptr<Geometry>(), encoding::space_type> geometry;
 
         private:
             static MapPos MakeMapPos(double x, double y, boost::optional<double> z) {

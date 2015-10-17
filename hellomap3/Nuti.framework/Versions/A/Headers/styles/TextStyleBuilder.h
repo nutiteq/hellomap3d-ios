@@ -36,6 +36,17 @@ namespace Nuti {
          * @param fontName The new platform dependent font name for the text label.
          */
         void setFontName(const std::string& fontName);
+        
+        /**
+         * Returns the text field variable. If not empty, this variable is used to read actual text string from object meta info.
+         * @return The current text variable.
+         */
+        const std::string& getTextField() const;
+        /**
+         * Sets the text field variable. If not empty, this variable is used to read actual text string from object meta info.
+         * @param field The text field to use for displaying text from metainfo.
+         */
+        void setTextField(const std::string& field);
 
         /**
          * Returns the font size for the text label.
@@ -78,6 +89,8 @@ namespace Nuti {
 
     protected:
         std::string _fontName;
+        
+        std::string _textField;
 
         int _fontSize;
         

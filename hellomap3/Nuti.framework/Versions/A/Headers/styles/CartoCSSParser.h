@@ -47,7 +47,7 @@ namespace Nuti {
         static std::shared_ptr<LineStyleBuilder> CreateLineStyleBuilder(const std::string& cartoCSS);
         /**
          * Read polygon style parameters from CartoCSS description. The following tags are supported:
-         * polygon-fill, polygon-opacity.
+         * polygon-fill, polygon-opacity, line-* (all line tags).
          * @param cartoCSS The CartoCSS to parse. For example, "polygon-fill:#ff00ff; polygon-opacity:0.3"
          * @return Polygon style builder object with parameters set from the specified CartoCSS.
          */
@@ -79,6 +79,11 @@ namespace Nuti {
         };
         
         static std::map<std::string, std::string> ParseCSSKeyValues(const std::string& cartoCSS);
+
+        static std::shared_ptr<PointStyleBuilder> CreatePointStyleBuilder(const CartoCSSKeyValues& keyValues);
+        static std::shared_ptr<LineStyleBuilder> CreateLineStyleBuilder(const CartoCSSKeyValues& keyValues);
+        static std::shared_ptr<PolygonStyleBuilder> CreatePolygonStyleBuilder(const CartoCSSKeyValues& keyValues);
+        static std::shared_ptr<MarkerStyleBuilder> CreateMarkerStyleBuilder(const CartoCSSKeyValues& keyValues);
     };
 }
 

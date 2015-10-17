@@ -8,6 +8,7 @@
 #define _NUTI_NUTITEQONLINETILEDATASOURCE_H_
 
 #include "TileDataSource.h"
+#include "utils/HTTPClient.h"
 #include "utils/LRUCache.h"
 
 namespace Nuti {
@@ -20,7 +21,7 @@ namespace Nuti {
 	public:
 		/**
 		 * Constructs a NutiteqTileDataSource object.
-		 * @param source Tile source id. Currently only "nutiteq.mbstreets" is supported.
+		 * @param source Tile source id. Default: "nutiteq.osm".
 		 */
 		NutiteqOnlineTileDataSource(const std::string& source);
 		virtual ~NutiteqOnlineTileDataSource();
@@ -32,6 +33,7 @@ namespace Nuti {
 
 		std::string _source;
 		LRUCache<long long, std::shared_ptr<TileData> > _cache;
+        HTTPClient _httpClient;
 		mutable std::recursive_mutex _mutex;
 	};
 	

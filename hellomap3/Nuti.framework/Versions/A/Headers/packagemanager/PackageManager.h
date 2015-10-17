@@ -293,7 +293,7 @@ namespace Nuti {
 		static void decryptTile(std::vector<unsigned char>& data, int zoom, int x, int y, const std::string& encKey);
 		static void setCipherKeyIV(unsigned char* k, unsigned char* iv, int zoom, int x, int y, const std::string& encKey);
 
-		static int downloadFile(const std::string& url, std::function<bool(const unsigned char*, std::size_t)> handler, std::uint64_t offset = 0);
+        static int downloadFile(const std::string& url, std::function<bool(std::uint64_t, const unsigned char*, std::size_t)> handler, std::uint64_t offset = 0);
 		static bool inflateData(const std::vector<unsigned char>& in, std::vector<unsigned char>& out);
 
 		const std::string _packageListUrl;

@@ -26,7 +26,7 @@ namespace Nuti { namespace VT {
 		const std::vector<std::shared_ptr<TileLabel>>& getLabels() const { return _labels; }
 
 		std::size_t getResidentSize() const {
-			return std::accumulate(_geometries.begin(), _geometries.end(), 0, [](std::size_t size, const std::shared_ptr<TileGeometry>& geometry) { return size + geometry->getResidentSize(); }) + _labels.size() * sizeof(TileLabel);
+			return std::accumulate(_geometries.begin(), _geometries.end(), static_cast<std::size_t>(0), [](std::size_t size, const std::shared_ptr<TileGeometry>& geometry) { return size + geometry->getResidentSize(); }) + _labels.size() * sizeof(TileLabel);
 		}
 
 	private:

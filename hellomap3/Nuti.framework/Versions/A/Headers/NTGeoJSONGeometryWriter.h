@@ -17,6 +17,7 @@ extern "C" {
 
 
 #import "NTGeometry.h"
+#import "NTProjection.h"
 
 /**
  * A GeoJSON writer. Generates human-readable GeoJSON representation of the geometry.<br>
@@ -33,6 +34,18 @@ __attribute__ ((visibility("default"))) @interface NTGeoJSONGeometryWriter : NSO
  * Constructs a new GeoJSONGeometryWriter object with default settings.
  */
 -(id)init;
+/**
+ * Returns the current source projection. If source projection is set, all geometry<br>
+ * coordinates will be converted from given coordinate system to WGS84.<br>
+ * @return The current source projection or null.
+ */
+-(NTProjection*)getSourceProjection;
+/**
+ * Sets the current source projection. If source projection is set, all geometry<br>
+ * coordinates will be converted from given coordinate system to WGS84.<br>
+ * @param proj The new source projection or null.
+ */
+-(void)setSourceProjection: (NTProjection*)proj;
 /**
  * Returns the state of Z coordinate serialization.<br>
  * @return True if Z coordinate is stored in GeoJSON output, false otherwise. The default is false.

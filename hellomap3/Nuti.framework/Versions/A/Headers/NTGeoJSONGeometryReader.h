@@ -17,6 +17,7 @@ extern "C" {
 
 
 #import "NTGeometry.h"
+#import "NTProjection.h"
 
 /**
  * A GeoJSON parser.<br>
@@ -33,6 +34,18 @@ __attribute__ ((visibility("default"))) @interface NTGeoJSONGeometryReader : NSO
  * Constructs a new GeoJSONGeometryReader object.
  */
 -(id)init;
+/**
+ * Returns the current target projection. If target projection is set, all geometry<br>
+ * coordinates will be converted from WGS84 to target projection coordinate system.<br>
+ * @return The current target projection or null.
+ */
+-(NTProjection*)getTargetProjection;
+/**
+ * Sets the current target projection. If target projection is set, all geometry<br>
+ * coordinates will be converted from WGS84 to target projection coordinate system.<br>
+ * @param proj The new target projection or null.
+ */
+-(void)setTargetProjection: (NTProjection*)proj;
 /**
  * Reads geometry from the specified GeoJSON string.<br>
  * @param geoJSON The GeoJSON string to read.<br>

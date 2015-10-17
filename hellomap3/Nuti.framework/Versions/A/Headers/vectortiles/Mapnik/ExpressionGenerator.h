@@ -26,10 +26,10 @@ namespace Nuti { namespace Mapnik {
 	namespace ExpressionGeneratorImpl {
 		namespace phx = boost::phoenix;
 		namespace karma = boost::spirit::karma;
-		namespace ascii = boost::spirit::ascii;
+		namespace encoding = boost::spirit::iso8859_1;
 
 		template <typename OutputIterator>
-		struct Grammar : karma::grammar<OutputIterator, std::shared_ptr<Expression>(), ascii::space_type> {
+		struct Grammar : karma::grammar<OutputIterator, std::shared_ptr<Expression>(), encoding::space_type> {
 			Grammar() : Grammar::base_type(expression) {
 				using karma::_pass;
 				using karma::_val;
@@ -104,7 +104,7 @@ namespace Nuti { namespace Mapnik {
 			ValueGenerator<OutputIterator> constant;
 			karma::rule<OutputIterator, std::string()> identifier;
 			karma::rule<OutputIterator, std::shared_ptr<Expression>()> variable;
-			karma::rule<OutputIterator, std::shared_ptr<Expression>(), ascii::space_type> expression, term0, term1, term2, term3, unary, postfix, factor;
+			karma::rule<OutputIterator, std::shared_ptr<Expression>(), encoding::space_type> expression, term0, term1, term2, term3, unary, postfix, factor;
 
 		private:
 			static bool getIdentifier(const std::shared_ptr<Expression>& expr, std::string& ident) {

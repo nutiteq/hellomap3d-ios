@@ -30,7 +30,7 @@ namespace Nuti {
     
         float _tiltDelta;
     
-        float _useDelta;
+        bool _useDelta;
     };
     
 }

@@ -31,7 +31,7 @@ namespace Nuti {
     namespace WKTGeometryGeneratorImpl {
         namespace phx = boost::phoenix;
         namespace karma = boost::spirit::karma;
-        namespace ascii = boost::spirit::ascii;
+        namespace encoding = boost::spirit::iso8859_1;
 
         typedef std::function<std::shared_ptr<Geometry>(bool)> Func;
 

@@ -8,6 +8,7 @@
 #define _NUTI_COMBINEDTILEDATASOURCE_H_
 
 #include "datasources/TileDataSource.h"
+#include "components/DirectorPtr.h"
 
 namespace Nuti {
     
@@ -40,8 +41,8 @@ namespace Nuti {
             CombinedTileDataSource& _combinedDataSource;
         };
         
-        std::shared_ptr<TileDataSource> _dataSource1;
-        std::shared_ptr<TileDataSource> _dataSource2;
+        const DirectorPtr<TileDataSource> _dataSource1;
+        const DirectorPtr<TileDataSource> _dataSource2;
         int _zoomLevel;
         
     private:

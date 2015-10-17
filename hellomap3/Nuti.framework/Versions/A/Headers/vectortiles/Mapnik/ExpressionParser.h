@@ -28,10 +28,10 @@ namespace Nuti { namespace Mapnik {
 		namespace phx = boost::phoenix;
 		namespace qi = boost::spirit::qi;
 		namespace repo = boost::spirit::repository::qi;
-		namespace ascii = boost::spirit::ascii;
-		
+		namespace encoding = boost::spirit::iso8859_1;
+
 		template <typename Iterator>
-		struct Grammar : qi::grammar<Iterator, std::shared_ptr<Expression>(), ascii::space_type> {
+		struct Grammar : qi::grammar<Iterator, std::shared_ptr<Expression>(), encoding::space_type> {
 			Grammar() : Grammar::base_type(expression) {
 				using qi::_val;
 				using qi::_1;
@@ -124,7 +124,7 @@ namespace Nuti { namespace Mapnik {
 			qi::rule<Iterator, qi::unused_type()> not_kw, and_kw, or_kw, neq_kw, eq_kw, le_kw, ge_kw, lt_kw, gt_kw, match_kw, replace_kw;
 			qi::rule<Iterator, std::string()> identifier;
 			qi::rule<Iterator, std::shared_ptr<Expression>()> variable;
-			qi::rule<Iterator, std::shared_ptr<Expression>(), ascii::space_type> expression, term0, term1, term2, term3, unary, postfix, factor;
+			qi::rule<Iterator, std::shared_ptr<Expression>(), encoding::space_type> expression, term0, term1, term2, term3, unary, postfix, factor;
 
 		private:
 			static std::shared_ptr<Expression> makeIdentifierExpression(const std::string& ident) {

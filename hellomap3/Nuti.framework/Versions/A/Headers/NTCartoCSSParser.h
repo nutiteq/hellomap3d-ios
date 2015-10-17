@@ -52,7 +52,7 @@ __attribute__ ((visibility("default"))) @interface NTCartoCSSParser : NSObject
 +(NTLineStyleBuilder*)createLineStyleBuilder: (NSString*)cartoCSS;
 /**
  * Read polygon style parameters from CartoCSS description. The following tags are supported:<br>
- * polygon-fill, polygon-opacity.<br>
+ * polygon-fill, polygon-opacity, line-* (all line tags).<br>
  * @param cartoCSS The CartoCSS to parse. For example, "polygon-fill:#ff00ff; polygon-opacity:0.3"<br>
  * @return Polygon style builder object with parameters set from the specified CartoCSS.
  */

@@ -207,13 +207,6 @@ __attribute__ ((visibility("default"))) @interface NTViewState : NSObject
  * @return The current screen height.
  */
 -(int)getScreenHeight;
-/**
- * Projects a world position onto the screen using the current view state.<br>
- * @param worldPos The world position.<br>
- * @param options The options object.<br>
- * @return The world position projected onto the screen, in pixel coordinates.
- */
--(NTScreenPos*)worldToScreen: (NTMapPos*)worldPos options: (NTOptions*)options;
 
 -(void)dealloc;
 

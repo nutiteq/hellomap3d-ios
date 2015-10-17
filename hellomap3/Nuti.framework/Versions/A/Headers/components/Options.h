@@ -9,6 +9,7 @@
 
 #include "core/MapBounds.h"
 #include "core/MapRange.h"
+#include "core/ScreenPos.h"
 #include "graphics/Color.h"
 #include "projections/Projection.h"
 
@@ -457,6 +458,17 @@ namespace Nuti {
         void setPanBounds(const MapBounds& panBounds);
     
         /**
+         * Returns the focus point offset (from screen center) in pixels.
+         * @return The focus point offset in pixels.
+         */
+        const ScreenPos& getFocusPointOffset() const;
+        /**
+         * Sets the focus point offset (from screen center) in pixels.
+         * @param offset The new focus point offset in pixels.
+         */
+        void setFocusPointOffset(const ScreenPos& offset);
+        
+        /**
          * Returns the base projection.
          * @return The base projection.
          */
@@ -539,6 +551,7 @@ namespace Nuti {
         MapRange _tiltRange;
         MapRange _zoomRange;
         MapBounds _panBounds;
+        ScreenPos _focusPointOffset;
     
         std::shared_ptr<Projection> _baseProjection;
     

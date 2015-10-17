@@ -8,6 +8,7 @@
 #define _NUTI_HTTPTILEDATASOURCE_H_
 
 #include "TileDataSource.h"
+#include "utils/HTTPClient.h"
 
 #include <string>
 #include <map>
@@ -53,6 +54,7 @@ namespace Nuti {
     
         std::string _baseUrl;
 		std::map<std::string, std::string> _headers;
+        HTTPClient _httpClient;
 		mutable std::mutex _mutex;
     };
     

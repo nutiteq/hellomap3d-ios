@@ -25,6 +25,7 @@ namespace rapidjson {
 
 namespace Nuti {
     class Geometry;
+    class Projection;
 
     /**
      * A GeoJSON writer. Generates human-readable GeoJSON representation of the geometry.
@@ -36,6 +37,20 @@ namespace Nuti {
          * Constructs a new GeoJSONGeometryWriter object with default settings.
          */
         GeoJSONGeometryWriter();
+
+        /**
+         * Returns the current source projection. If source projection is set, all geometry
+         * coordinates will be converted from given coordinate system to WGS84.
+         * @return The current source projection or null.
+         */
+        std::shared_ptr<Projection> getSourceProjection() const;
+        
+        /**
+         * Sets the current source projection. If source projection is set, all geometry
+         * coordinates will be converted from given coordinate system to WGS84.
+         * @param proj The new source projection or null.
+         */
+        void setSourceProjection(const std::shared_ptr<Projection>& proj);
 
         /**
          * Returns the state of Z coordinate serialization.
@@ -61,6 +76,7 @@ namespace Nuti {
         void writeRing(const std::vector<MapPos>& ring, rapidjson::Value& value, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>& allocator) const;
         void writeRings(const std::vector<std::vector<MapPos> >& rings, rapidjson::Value& value, rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>& allocator) const;
 
+        std::shared_ptr<Projection> _sourceProjection;
         bool _z;
 
         mutable std::mutex _mutex;

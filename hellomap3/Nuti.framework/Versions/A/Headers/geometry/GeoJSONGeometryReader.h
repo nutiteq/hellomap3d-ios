@@ -12,6 +12,7 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include <mutex>
 
 namespace rapidjson {
     class CrtAllocator;
@@ -23,6 +24,7 @@ namespace rapidjson {
 
 namespace Nuti {
     class Geometry;
+    class Projection;
 
     /**
      * A GeoJSON parser.
@@ -34,6 +36,20 @@ namespace Nuti {
          * Constructs a new GeoJSONGeometryReader object.
          */
         GeoJSONGeometryReader();
+        
+        /**
+         * Returns the current target projection. If target projection is set, all geometry
+         * coordinates will be converted from WGS84 to target projection coordinate system.
+         * @return The current target projection or null.
+         */
+        std::shared_ptr<Projection> getTargetProjection() const;
+        
+        /**
+         * Sets the current target projection. If target projection is set, all geometry
+         * coordinates will be converted from WGS84 to target projection coordinate system.
+         * @param proj The new target projection or null.
+         */
+        void setTargetProjection(const std::shared_ptr<Projection>& proj);
 
         /**
          * Reads geometry from the specified GeoJSON string.
@@ -47,6 +63,9 @@ namespace Nuti {
         MapPos readPoint(const rapidjson::Value& value) const;
         std::vector<MapPos> readRing(const rapidjson::Value& value) const;
         std::vector<std::vector<MapPos> > readRings(const rapidjson::Value& value) const;
+
+        std::shared_ptr<Projection> _targetProjection;
+        mutable std::mutex _mutex;
     };
 
 }

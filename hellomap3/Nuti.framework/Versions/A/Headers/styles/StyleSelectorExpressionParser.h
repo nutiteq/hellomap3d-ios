@@ -25,10 +25,10 @@ namespace Nuti {
         namespace phx = boost::phoenix;
         namespace qi = boost::spirit::qi;
         namespace repo = boost::spirit::repository::qi;
-        namespace ascii = boost::spirit::ascii;
+        namespace encoding = boost::spirit::iso8859_1;
     
         template <typename Iterator>
-        struct Grammar : qi::grammar<Iterator, std::shared_ptr<StyleSelectorExpression>(), ascii::space_type> {
+        struct Grammar : qi::grammar<Iterator, std::shared_ptr<StyleSelectorExpression>(), encoding::space_type> {
             Grammar() : Grammar::base_type(expression) {
                 using qi::_val;
                 using qi::_1;
@@ -97,8 +97,8 @@ namespace Nuti {
             qi::rule<Iterator, std::string()> string;
             qi::rule<Iterator, Value()> value;
             qi::rule<Iterator, std::string()> identifier;
-            qi::rule<Iterator, std::shared_ptr<Expression>(), ascii::space_type> expression, term1, term2, term3, predicate;
-            qi::rule<Iterator, std::shared_ptr<Operand>(), ascii::space_type> operand;
+            qi::rule<Iterator, std::shared_ptr<Expression>(), encoding::space_type> expression, term1, term2, term3, predicate;
+            qi::rule<Iterator, std::shared_ptr<Operand>(), encoding::space_type> operand;
         };
     }
 

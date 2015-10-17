@@ -28,11 +28,14 @@ __attribute__ ((visibility("default"))) @interface NTNutiteqOnlineTileDataSource
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 
+/**
+ * Creates a polymorphic instance of the given native object. This is used internally by the SDK.
+ */
 +(NTNutiteqOnlineTileDataSource*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
 
 /**
  * Constructs a NutiteqTileDataSource object.<br>
- * @param source Tile source id. Currently only "nutiteq.mbstreets" is supported.
+ * @param source Tile source id. Default: "nutiteq.osm".
  */
 -(id)initWithSource: (NSString*)source;
 -(NTTileData*)loadTile: (NTMapTile*)mapTile;

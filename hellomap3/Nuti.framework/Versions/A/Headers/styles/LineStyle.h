@@ -25,7 +25,8 @@ namespace Nuti {
             /**
              * Line end points are drawn as half circles.
              */
-            LINE_END_TYPE_ROUND};
+            LINE_END_TYPE_ROUND
+        };
     };
     
     namespace LineJointType {
@@ -46,7 +47,8 @@ namespace Nuti {
              * Line segments are connected with each other using circle sectors resulting in 
              * round corners. Slowest and prettiest.
              */
-            LINE_JOINT_TYPE_ROUND};
+            LINE_JOINT_TYPE_ROUND
+        };
     };
     
     class Bitmap;

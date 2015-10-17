@@ -29,6 +29,9 @@ __attribute__ ((visibility("default"))) @interface NTClusteredVectorLayer : NTVe
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 
+/**
+ * Creates a polymorphic instance of the given native object. This is used internally by the SDK.
+ */
 +(NTClusteredVectorLayer*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
 
 /**
@@ -52,6 +55,18 @@ __attribute__ ((visibility("default"))) @interface NTClusteredVectorLayer : NTVe
  * @param px The new value in device-independent pixels. The default is 100.
  */
 -(void)setMinimumClusterDistance: (float)px;
+/**
+ * Returns the maximum zoom level when clusters are shown. If zoom level is greater, then<br>
+ * clusters are replaced with individual elements. Default is 24.<br>
+ * @return The maximum clustering zoom level.
+ */
+-(float)getMaximumClusterZoom;
+/**
+ * Sets the maximum zoom level when clusters are shown. If zoom level is greater, then<br>
+ * clusters are replaced with individual elements.<br>
+ * @param maxZoom The new maximum clustering zoom level.
+ */
+-(void)setMaximumClusterZoom: (float)maxZoom;
 /**
  * Expands or shrinks the given cluster element. In expanded state,<br>
  * all elements of the cluster are placed at specified distance from the cluster center.<br>

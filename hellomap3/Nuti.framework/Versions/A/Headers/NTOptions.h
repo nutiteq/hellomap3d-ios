@@ -63,6 +63,7 @@ typedef NS_ENUM(NSInteger, NTPanningMode) {
 #import "NTMapBounds.h"
 #import "NTMapRange.h"
 #import "NTMapVec.h"
+#import "NTScreenPos.h"
 #import "NTBitmap.h"
 #import "NTColor.h"
 #import "NTProjection.h"
@@ -416,6 +417,16 @@ __attribute__ ((visibility("default"))) @interface NTOptions : NSObject
  * @param panBounds The new map bounds constraints.
  */
 -(void)setPanBounds: (NTMapBounds*)panBounds;
+/**
+ * Returns the focus point offset (from screen center) in pixels.<br>
+ * @return The focus point offset in pixels.
+ */
+-(NTScreenPos*)getFocusPointOffset;
+/**
+ * Sets the focus point offset (from screen center) in pixels.<br>
+ * @param offset The new focus point offset in pixels.
+ */
+-(void)setFocusPointOffset: (NTScreenPos*)offset;
 /**
  * Returns the base projection.<br>
  * @return The base projection.

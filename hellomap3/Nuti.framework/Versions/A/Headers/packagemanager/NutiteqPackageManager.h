@@ -23,7 +23,7 @@ namespace Nuti {
 		 * Constructs a NutiteqPackageManager object, given application context and data folder.
 		 * The data folder must exist before creating a new package manager and it is assumed to be persistent.
 		 * Note: the package manager must be explicitly started using start() method!
-		 * @param source Name of the package source. Currently "nutiteq.mbstreets" source is available
+		 * @param source Name of the package source. Default: "nutiteq.osm"
 		 * @param dataFolder The folder where downloaded packages are kept. It must exist and must be writable.
 		 */
 		NutiteqPackageManager(const std::string& source, const std::string& dataFolder);

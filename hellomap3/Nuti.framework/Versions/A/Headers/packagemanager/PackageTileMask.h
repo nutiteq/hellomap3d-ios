@@ -38,7 +38,8 @@ namespace Nuti {
 	}
 
 	/**
-	 * Information about map package. This includes id, version, name, description and size.
+	 * Tile mask contains map package spatial coverage information and
+	 * can be used for very fast 'tile in package' tests.
 	 */
 	class PackageTileMask {
 	public:
@@ -71,6 +72,12 @@ namespace Nuti {
 		const std::string& getStringValue() const {
 			return _stringValue;
 		}
+        
+        /**
+         * Returns maximum zoom level encoded in this tilemask.
+         * @return The maximum zoom level encoded in this tilemask.
+         */
+        int getMaxZoomLevel() const;
 
 		/**
 		 * Returns the status of the specified tile. This method can be used for fast testing whether a tile is part of the package.
@@ -106,6 +113,7 @@ namespace Nuti {
 
 		static std::shared_ptr<TileNode> buildTileNode(std::queue<bool>& data, const Tile& tile);
 		static std::shared_ptr<TileNode> buildTileNode(const std::unordered_set<Tile, TileHash, TileEq>& tileSet, const Tile& tile);
+        static int getMaxTileNodeZoom(const std::shared_ptr<TileNode>& node);
 		static std::vector<bool> encodeTileNode(const std::shared_ptr<TileNode>& node);
 
 		std::string _stringValue;

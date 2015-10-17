@@ -26,6 +26,9 @@ __attribute__ ((visibility("default"))) @interface NTTextStyle : NTLabelStyle
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 
+/**
+ * Creates a polymorphic instance of the given native object. This is used internally by the SDK.
+ */
 +(NTTextStyle*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
 
 /**
@@ -46,11 +49,12 @@ __attribute__ ((visibility("default"))) @interface NTTextStyle : NTLabelStyle
  * @param orientationMode The orientation mode.<br>
  * @param scalingMode The scaling mode.<br>
  * @param fontName The font's name.<br>
+ * @param textField The text field variable to use.<br>
  * @param fontSize The font's size.<br>
  * @param strokeColor The width of the color.<br>
  * @param strokeWidth The width of the stroke.
  */
--(id)initWithColor: (NTColor*)color attachAnchorPointX: (float)attachAnchorPointX attachAnchorPointY: (float)attachAnchorPointY causesOverlap: (BOOL)causesOverlap hideIfOverlapped: (BOOL)hideIfOverlapped horizontalOffset: (float)horizontalOffset verticalOffset: (float)verticalOffset placementPriority: (int)placementPriority scaleWithDPI: (BOOL)scaleWithDPI anchorPointX: (float)anchorPointX anchorPointY: (float)anchorPointY flippable: (BOOL)flippable orientationMode: (enum NTBillboardOrientation)orientationMode scalingMode: (enum NTBillboardScaling)scalingMode fontName: (NSString*)fontName fontSize: (int)fontSize strokeColor: (NTColor*)strokeColor strokeWidth: (float)strokeWidth;
+-(id)initWithColor: (NTColor*)color attachAnchorPointX: (float)attachAnchorPointX attachAnchorPointY: (float)attachAnchorPointY causesOverlap: (BOOL)causesOverlap hideIfOverlapped: (BOOL)hideIfOverlapped horizontalOffset: (float)horizontalOffset verticalOffset: (float)verticalOffset placementPriority: (int)placementPriority scaleWithDPI: (BOOL)scaleWithDPI anchorPointX: (float)anchorPointX anchorPointY: (float)anchorPointY flippable: (BOOL)flippable orientationMode: (enum NTBillboardOrientation)orientationMode scalingMode: (enum NTBillboardScaling)scalingMode fontName: (NSString*)fontName textField: (NSString*)textField fontSize: (int)fontSize strokeColor: (NTColor*)strokeColor strokeWidth: (float)strokeWidth;
 /**
  * Returns the font's color.<br>
  * @return The color of the font.
@@ -61,6 +65,11 @@ __attribute__ ((visibility("default"))) @interface NTTextStyle : NTLabelStyle
  * @return The platform dependent name of the font.
  */
 -(NSString*)getFontName;
+/**
+ * Returns the text field variable to use.<br>
+ * @return The text field variable.
+ */
+-(NSString*)getTextField;
 /**
  * Returns the font's size.<br>
  * @return The size of the font in points.

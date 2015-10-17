@@ -28,6 +28,9 @@ __attribute__ ((visibility("default"))) @interface NTTextStyleBuilder : NTLabelS
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 
+/**
+ * Creates a polymorphic instance of the given native object. This is used internally by the SDK.
+ */
 +(NTTextStyleBuilder*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
 
 /**
@@ -44,6 +47,16 @@ __attribute__ ((visibility("default"))) @interface NTTextStyleBuilder : NTLabelS
  * @param fontName The new platform dependent font name for the text label.
  */
 -(void)setFontName: (NSString*)fontName;
+/**
+ * Returns the text field variable. If not empty, this variable is used to read actual text string from object meta info.<br>
+ * @return The current text variable.
+ */
+-(NSString*)getTextField;
+/**
+ * Sets the text field variable. If not empty, this variable is used to read actual text string from object meta info.<br>
+ * @param field The text field to use for displaying text from metainfo.
+ */
+-(void)setTextField: (NSString*)field;
 /**
  * Returns the font size for the text label.<br>
  * @return The font size for the text label in points.

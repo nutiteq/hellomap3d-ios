@@ -38,9 +38,10 @@ namespace Nuti { namespace MapnikVT {
 		std::string _placement = "point";
 		float _size = 10.0f;
 		unsigned int _fill = 0xff000000;
-		unsigned int _haloFill = 0xffffffff;
-		float _haloRadius = 0.0f;
 		float _opacity = 1.0f;
+		unsigned int _haloFill = 0xffffffff;
+		float _haloOpacity = 1.0f;
+		float _haloRadius = 0.0f;
 		float _dx = 0.0f;
 		float _dy = 0.0f;
 		float _minimumDistance = 0.0f;

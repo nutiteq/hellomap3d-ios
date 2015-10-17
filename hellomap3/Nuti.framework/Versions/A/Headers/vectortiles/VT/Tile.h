@@ -23,7 +23,7 @@ namespace Nuti { namespace VT {
 		const std::vector<std::shared_ptr<TileLayer>>& getLayers() const { return _layers; }
 
 		std::size_t getResidentSize() const {
-			return sizeof(TileId) + std::accumulate(_layers.begin(), _layers.end(), 0, [](std::size_t size, const std::shared_ptr<TileLayer>& layer) { return size + layer->getResidentSize(); });
+			return sizeof(TileId) + std::accumulate(_layers.begin(), _layers.end(), static_cast<std::size_t>(0), [](std::size_t size, const std::shared_ptr<TileLayer>& layer) { return size + layer->getResidentSize(); });
 		}
 
 	private:
