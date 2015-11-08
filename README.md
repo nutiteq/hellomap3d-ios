@@ -12,3 +12,9 @@ Developer getting started and doc references are in [Nutiteq Developer site](htt
 Developing also for Android? [Hellomap3d-Android](https://github.com/nutiteq/hellomap3d-android) is our project with Nutiteq SDK for Android
 
 ![screenshot](https://dl.dropboxusercontent.com/u/3573333/public_web/ios_overlays_sample.png)
+
+
+Podfile example:
+```
+pod 'Nutiteq', '= 3.2.1'
+```
