@@ -14,7 +14,7 @@ Developing also for Android? [Hellomap3d-Android](https://github.com/nutiteq/hel
 ![screenshot](https://dl.dropboxusercontent.com/u/3573333/public_web/ios_overlays_sample.png)
 
 
-Podfile example:
+#### Podfile
 ```
 pod 'Nutiteq', '= 3.2.1'
 ```
