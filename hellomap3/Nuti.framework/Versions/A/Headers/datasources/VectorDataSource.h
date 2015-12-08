@@ -13,6 +13,7 @@
 #include <vector>
 
 namespace Nuti {
+    class ViewState;
     class CullState;
     class Projection;
     
@@ -103,6 +104,8 @@ namespace Nuti {
     protected:
         friend class VectorElement;
     
+        float calculateGeometrySimplifierScale(const ViewState& viewState) const;
+        
         virtual void notifyElementAdded(const std::shared_ptr<VectorElement>& element);
         virtual void notifyElementChanged(const std::shared_ptr<VectorElement>& element);
         virtual void notifyElementRemoved(const std::shared_ptr<VectorElement>& element);
@@ -111,7 +114,7 @@ namespace Nuti {
 
         virtual void attachElement(const std::shared_ptr<VectorElement>& element);
         virtual void detachElement(const std::shared_ptr<VectorElement>& element);
-        
+
         std::shared_ptr<Projection> _projection;
     
     private:

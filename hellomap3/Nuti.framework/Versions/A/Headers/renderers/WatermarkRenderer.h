@@ -68,7 +68,6 @@ namespace Nuti {
         GLuint _u_mvpMat;
         GLuint _a_coord;
         GLuint _a_texCoord;
-        GLuint _a_color;
     
         const Options& _options;
     };

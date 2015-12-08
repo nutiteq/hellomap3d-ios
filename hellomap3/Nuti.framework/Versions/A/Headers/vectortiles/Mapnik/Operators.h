@@ -9,8 +9,7 @@
 
 #include "Expression.h"
 #include "StringUtils.h"
-
-#include <boost/lexical_cast.hpp>
+#include "ValueConverter.h"
 
 namespace Nuti { namespace Mapnik {
 	struct UpperCaseOperator : public UnaryExpression::Operator {
@@ -99,7 +98,9 @@ namespace Nuti { namespace Mapnik {
 				return Value();
 			}
 			if (val1.getType() == Value::Type::STRING_VALUE || val2.getType() == Value::Type::STRING_VALUE) {
-				return Value(OpString()(boost::lexical_cast<std::string>(val1), boost::lexical_cast<std::string>(val2)));
+                std::string arg1 = ValueConverter<std::string>::convert(val1);
+                std::string arg2 = ValueConverter<std::string>::convert(val2);
+				return Value(OpString()(arg1, arg2));
 			}
 			if ((val1.getType() == Value::Type::LONG_VALUE || val1.getType() == Value::Type::DOUBLE_VALUE) && (val2.getType() == Value::Type::LONG_VALUE || val2.getType() == Value::Type::DOUBLE_VALUE)) {
 				double arg1 = val1.getType() == Value::Type::LONG_VALUE ? val1.getLong() : val1.getDouble();
@@ -215,39 +216,26 @@ namespace Nuti { namespace Mapnik {
 
 	struct MatchOperator : public BinaryExpression::Operator {
 		virtual Value apply(const Value& val1, const Value& val2) const override {
-			if (val1.getType() == Value::Type::STRING_VALUE && val2.getType() == Value::Type::STRING_VALUE) {
-				return Value(regexMatch(val1.getString(), val2.getString()));
-			}
-			return Value();
+            std::string arg1 = ValueConverter<std::string>::convert(val1);
+            std::string arg2 = ValueConverter<std::string>::convert(val2);
+            return Value(regexMatch(arg1, arg2));
 		}
 	};
 
 	struct ConcatenateOperator : public BinaryExpression::Operator {
 		virtual Value apply(const Value& val1, const Value& val2) const override {
-			std::string arg1;
-			if (val1.getType() == Value::Type::STRING_VALUE) {
-				arg1 = val1.getString();
-			}
-			else if (val1.getType() != Value::Type::NULL_VALUE) {
-				arg1 = boost::lexical_cast<std::string>(val1);
-			}
-			std::string arg2;
-			if (val2.getType() == Value::Type::STRING_VALUE) {
-				arg2 = val2.getString();
-			}
-			else if (val2.getType() != Value::Type::NULL_VALUE) {
-				arg2 = boost::lexical_cast<std::string>(val2);
-			}
+            std::string arg1 = ValueConverter<std::string>::convert(val1);
+            std::string arg2 = ValueConverter<std::string>::convert(val2);
 			return Value(arg1.append(arg2));
 		}
 	};
 
 	struct ReplaceOperator : public TertiaryExpression::Operator {
 		virtual Value apply(const Value& val1, const Value& val2, const Value& val3) const override {
-			if (val1.getType() == Value::Type::STRING_VALUE && val2.getType() == Value::Type::STRING_VALUE && val3.getType() == Value::Type::STRING_VALUE) {
-				return Value(regexReplace(val1.getString(), val2.getString(), val3.getString()));
-			}
-			return Value();
+            std::string arg1 = ValueConverter<std::string>::convert(val1);
+            std::string arg2 = ValueConverter<std::string>::convert(val2);
+            std::string arg3 = ValueConverter<std::string>::convert(val3);
+            return Value(regexReplace(arg1, arg2, arg3));
 		}
 	};
 

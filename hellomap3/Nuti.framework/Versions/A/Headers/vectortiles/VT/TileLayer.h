@@ -17,7 +17,7 @@
 namespace Nuti { namespace VT {
 	class TileLayer {
 	public:
-		TileLayer(int layerIdx, float opacity, const std::vector<std::shared_ptr<TileGeometry>>& geometries, const std::vector<std::shared_ptr<TileLabel>>& labels) : _layerIdx(layerIdx), _opacity(opacity), _geometries(geometries), _labels(labels) { }
+        TileLayer(int layerIdx, float opacity, std::vector<std::shared_ptr<TileGeometry>> geometries, std::vector<std::shared_ptr<TileLabel>> labels) : _layerIdx(layerIdx), _opacity(opacity), _geometries(std::move(geometries)), _labels(std::move(labels)) { }
 
 		int getLayerIndex() const { return _layerIdx; }
 		float getOpacity() const { return _opacity; }

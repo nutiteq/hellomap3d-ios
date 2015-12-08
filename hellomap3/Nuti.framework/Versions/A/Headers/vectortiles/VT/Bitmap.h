@@ -17,7 +17,7 @@ namespace Nuti { namespace VT {
 		const int height;
 		const std::vector<std::uint32_t> data;
 
-		Bitmap(int width, int height, std::vector<std::uint32_t>&& data) : width(width), height(height), data(std::move(data)) { }
+		Bitmap(int width, int height, std::vector<std::uint32_t> data) : width(width), height(height), data(std::move(data)) { }
 	};
 
 	struct BitmapPattern {
@@ -25,7 +25,7 @@ namespace Nuti { namespace VT {
 		const float heightScale;
 		const std::shared_ptr<const Bitmap> bitmap;
 
-		BitmapPattern(float widthScale, float heightScale, const std::shared_ptr<Bitmap>& bitmap) : widthScale(widthScale), heightScale(heightScale), bitmap(bitmap) { }
+        BitmapPattern(float widthScale, float heightScale, std::shared_ptr<Bitmap> bitmap) : widthScale(widthScale), heightScale(heightScale), bitmap(std::move(bitmap)) { }
 	};
 } }
 

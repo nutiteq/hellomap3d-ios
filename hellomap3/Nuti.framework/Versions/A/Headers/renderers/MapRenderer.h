@@ -117,8 +117,6 @@ namespace Nuti {
 
 		friend TouchHandler;
 
-		static bool DistanceComparator(const VectorElementClickInfo& element1, const VectorElementClickInfo& element2);
-    
         void setUpGlState() const;
     
         void drawLayers(float deltaSeconds, const ViewState& viewState);

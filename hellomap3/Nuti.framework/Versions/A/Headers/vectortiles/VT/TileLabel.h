@@ -52,7 +52,7 @@ namespace Nuti { namespace VT {
 			}
 		};
 		
-		TileLabel(long long id, long long groupId, const std::shared_ptr<Font>& font, std::vector<Font::Glyph>&& glyphs, boost::variant<Vertex, VerticesList>&& position, LabelOrientation orientation, const boost::optional<cglib::mat3x3<float>>& transform, float scale, unsigned int color);
+		TileLabel(long long id, long long groupId, std::shared_ptr<Font> font, std::vector<Font::Glyph> glyphs, boost::variant<Vertex, VerticesList> position, LabelOrientation orientation, const boost::optional<cglib::mat3x3<float>>& transform, float scale, unsigned int color);
 		
 		long long getId() const { return _id; }
 		long long getGroupId() const { return _groupId; }

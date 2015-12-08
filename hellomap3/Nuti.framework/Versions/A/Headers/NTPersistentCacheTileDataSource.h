@@ -46,6 +46,16 @@ __attribute__ ((visibility("default"))) @interface NTPersistentCacheTileDataSour
  * @param databasePath The path to the sqlite database, where the tiles will be cached.
  */
 -(id)initWithDataSource: (NTTileDataSource*)dataSource databasePath: (NSString*)databasePath;
+/**
+ * Close the cache database. The datasource will still work afterwards,<br>
+ * but all requests will be directed to the original datasource.
+ */
+-(void)close;
+/**
+ * Close the cache database. The datasource will still work afterwards,<br>
+ * but all requests will be directed to the original datasource.
+ */
+-(void)closeSwigExplicitNTPersistentCacheTileDataSource;
 -(NTTileData*)loadTile: (NTMapTile*)mapTile;
 -(NTTileData*)loadTileSwigExplicitNTPersistentCacheTileDataSource: (NTMapTile*)mapTile;
 -(void)clear;

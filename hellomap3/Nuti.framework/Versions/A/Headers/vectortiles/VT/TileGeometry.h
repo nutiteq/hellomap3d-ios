@@ -51,7 +51,7 @@ namespace Nuti { namespace VT {
 			GeometryLayoutParameters() : vertexSize(0), vertexOffset(-1), attribsOffset(-1), texCoordOffset(-1), binormalOffset(-1), heightOffset(-1), vertexScale(0), texCoordScale(0), binormalScale(0) { }
 		};
 
-		TileGeometry(Type type, float tileSize, const StyleParameters& styleParameters, const GeometryLayoutParameters& geometryLayoutParameters, unsigned int indicesCount, VertexArray<unsigned char>&& vertexGeometry, VertexArray<unsigned short>&& indices) : _type(type), _tileSize(tileSize), _styleParameters(styleParameters), _geometryLayoutParameters(geometryLayoutParameters), _indicesCount(indicesCount), _vertexGeometry(std::move(vertexGeometry)), _indices(std::move(indices)) { }
+		TileGeometry(Type type, float tileSize, const StyleParameters& styleParameters, const GeometryLayoutParameters& geometryLayoutParameters, unsigned int indicesCount, VertexArray<unsigned char> vertexGeometry, VertexArray<unsigned short> indices) : _type(type), _tileSize(tileSize), _styleParameters(styleParameters), _geometryLayoutParameters(geometryLayoutParameters), _indicesCount(indicesCount), _vertexGeometry(std::move(vertexGeometry)), _indices(std::move(indices)) { }
 
 		Type getType() const { return _type; }
 		float getTileSize() const { return _tileSize; }

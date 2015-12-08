@@ -26,7 +26,7 @@ namespace Nuti { namespace VT {
 		TileLabelCuller(std::mutex& mutex, float scale);
 		virtual ~TileLabelCuller() = default;
 
-		void setViewState(const cglib::mat4x4<double>& projectionMatrix, const cglib::mat4x4<double>& cameraMatrix, float zoom, float aspectRatio);
+		void setViewState(const cglib::mat4x4<double>& projectionMatrix, const cglib::mat4x4<double>& cameraMatrix, float zoom, float aspectRatio, float resolution);
 		void process(const std::vector<std::shared_ptr<TileLabel>>& labelList);
 
 	private:
@@ -46,6 +46,7 @@ namespace Nuti { namespace VT {
 
 		cglib::mat4x4<float> _mvpMatrix;
 		TileLabel::ViewState _labelViewState;
+        float _resolution = 0;
 		std::vector<Record> _recordGrid[RESOLUTION][RESOLUTION];
 
 		const float _scale;
