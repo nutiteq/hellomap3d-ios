@@ -13,6 +13,8 @@
 		0C0E58A31A84BC2D0072D7E8 /* 852-map-toolbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C0E58A01A84BC2D0072D7E8 /* 852-map-toolbar@3x.png */; };
 		0C1CF0631B1333DF001A64AD /* nutibright.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C1CF0621B1333DF001A64AD /* nutibright.zip */; };
 		0C1CF0651B134D27001A64AD /* HillshadeSampleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C1CF0641B134D27001A64AD /* HillshadeSampleController.mm */; };
+		0C20CE1A1C18447D003A9F3D /* CartoDbSQLAPIController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C20CE191C18447D003A9F3D /* CartoDbSQLAPIController.mm */; };
+		0C20CE1F1C186136003A9F3D /* CartoDbSqlDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C20CE1E1C186136003A9F3D /* CartoDbSqlDataSource.m */; };
 		0C3C369819E66E0A007573FD /* fcd_auto.nml in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C369719E66E0A007573FD /* fcd_auto.nml */; };
 		0C60B8251A601A820058C740 /* Nuti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABFB6B71947460E00A64571 /* Nuti.framework */; };
 		0CED8F211A5D1C2F00116863 /* osmbright-unifont.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0CED8F201A5D1C2F00116863 /* osmbright-unifont.zip */; };
@@ -75,6 +77,9 @@
 		0C0E58A01A84BC2D0072D7E8 /* 852-map-toolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "852-map-toolbar@3x.png"; sourceTree = "<group>"; };
 		0C1CF0621B1333DF001A64AD /* nutibright.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = nutibright.zip; sourceTree = "<group>"; };
 		0C1CF0641B134D27001A64AD /* HillshadeSampleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = HillshadeSampleController.mm; path = advancedmap3/HillshadeSampleController.mm; sourceTree = SOURCE_ROOT; };
+		0C20CE191C18447D003A9F3D /* CartoDbSQLAPIController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CartoDbSQLAPIController.mm; path = advancedmap3/CartoDbSQLAPIController.mm; sourceTree = SOURCE_ROOT; };
+		0C20CE1D1C186136003A9F3D /* CartoDbSqlDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoDbSqlDataSource.h; sourceTree = SOURCE_ROOT; };
+		0C20CE1E1C186136003A9F3D /* CartoDbSqlDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoDbSqlDataSource.m; sourceTree = SOURCE_ROOT; };
 		0C3C369719E66E0A007573FD /* fcd_auto.nml */ = {isa = PBXFileReference; lastKnownFileType = file; path = fcd_auto.nml; sourceTree = "<group>"; };
 		0CED8F201A5D1C2F00116863 /* osmbright-unifont.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "osmbright-unifont.zip"; sourceTree = "<group>"; };
 		0CED8F221A5D2BEA00116863 /* osmbright-heilight.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "osmbright-heilight.zip"; sourceTree = "<group>"; };
@@ -281,6 +286,7 @@
 			children = (
 				4DFC6C6C1B6224D300AF8E06 /* ClusteredRandomPointsController.mm */,
 				4DFC6C641B62235100AF8E06 /* ClusteredGeoJsonController.mm */,
+				0C20CE191C18447D003A9F3D /* CartoDbSQLAPIController.mm */,
 				4DEB06DF1A10DF0F003D111C /* LauncherListController.h */,
 				4DC850071A0E718100C5124F /* LauncherListController.mm */,
 				4D2BE70A1A52F89C0013ABB3 /* MapSampleBaseController.h */,
@@ -318,6 +324,8 @@
 			children = (
 				2AC270561941EFF9000CA859 /* MyMergedRasterTileDataSource.h */,
 				2AC270571941EFF9000CA859 /* MyMergedRasterTileDataSource.mm */,
+				0C20CE1D1C186136003A9F3D /* CartoDbSqlDataSource.h */,
+				0C20CE1E1C186136003A9F3D /* CartoDbSqlDataSource.m */,
 			);
 			name = "Data Sources";
 			sourceTree = "<group>";
@@ -433,6 +441,7 @@
 				4DEB06D81A10CDC0003D111C /* OfflineVectorMapSampleController.mm in Sources */,
 				0C1CF0651B134D27001A64AD /* HillshadeSampleController.mm in Sources */,
 				4DEB06DA1A10D3D1003D111C /* AerialMapSampleController.mm in Sources */,
+				0C20CE1F1C186136003A9F3D /* CartoDbSqlDataSource.m in Sources */,
 				4DC850081A0E718100C5124F /* LauncherListController.mm in Sources */,
 				0C0E589C1A83CD540072D7E8 /* PackageMapController.mm in Sources */,
 				4D13E2801A6EB72600FA74DC /* CustomPopupSampleController.mm in Sources */,
@@ -441,6 +450,7 @@
 				4DEB06D21A10C103003D111C /* Overlays3DSampleController.mm in Sources */,
 				4DC850101A0E7A5100C5124F /* PinSampleController.mm in Sources */,
 				2AD24F7518FEDAA6000969F4 /* AppDelegate.m in Sources */,
+				0C20CE1A1C18447D003A9F3D /* CartoDbSQLAPIController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

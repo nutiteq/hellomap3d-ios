@@ -21,6 +21,7 @@
              @{ @"name": @"Package Manager Sample", @"controller": @"PackageManagerController" },
              @{ @"name": @"Clustered Random points", @"controller": @"ClusteredRandomPointsController" },
              @{ @"name": @"Clustered GeoJSON points", @"controller": @"ClusteredGeoJsonController" },
+               @{ @"name": @"CartoDB SQL API points", @"controller": @"CartoDbSQLAPIController" },
              ];
 }
 
