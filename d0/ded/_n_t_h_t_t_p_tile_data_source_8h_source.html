@@ -123,38 +123,41 @@ $(document).ready(function(){initNavTree('d0/ded/_n_t_h_t_t_p_tile_data_source_8
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;+(<a class="code" href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html">NTHTTPTileDataSource</a>*)swigCreatePolymorphicInstance:(<span class="keywordtype">void</span>*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;-(id)initWithMinZoom: (<span class="keywordtype">int</span>)minZoom maxZoom: (<span class="keywordtype">int</span>)maxZoom baseURL: (NSString*)baseURL;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;-(NTStringMap*)<a class="code" href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html#a793fe7be0d47d383789f23dcac213a5e">getHTTPHeaders</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;-(void)setHTTPHeaders: (NTStringMap*)headers;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;-(<a class="code" href="../../dd/dac/interface_n_t_tile_data.html">NTTileData</a>*)loadTile: (<a class="code" href="../../d6/d15/interface_n_t_map_tile.html">NTMapTile</a>*)mapTile;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;-(<a class="code" href="../../dd/dac/interface_n_t_tile_data.html">NTTileData</a>*)loadTileSwigExplicitNTHTTPTileDataSource: (<a class="code" href="../../d6/d15/interface_n_t_map_tile.html">NTMapTile</a>*)mapTile;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;-(NSString*)buildTileUrl: (<a class="code" href="../../d6/d15/interface_n_t_map_tile.html">NTMapTile</a>*)tile;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;-(NSString*)buildTileUrlSwigExplicitNTHTTPTileDataSource: (<a class="code" href="../../d6/d15/interface_n_t_map_tile.html">NTMapTile</a>*)tile;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;-(NSString*)<a class="code" href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html#a4479d1c1146561c272656df16c746520">swigGetClassName</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;-(<span class="keywordtype">void</span> *)<a class="code" href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html#af5f2e83418fca671790702898404d8b0">swigGetDirectorObject</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;-(void)dealloc;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">@end</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor"></span>}</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;-(NSString*)<a class="code" href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html#a59379c6503eebe46aa1184b3a4e7466d">getBaseURL</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;-(void)setBaseURL: (NSString*)baseURL;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;-(NTStringMap*)<a class="code" href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html#a793fe7be0d47d383789f23dcac213a5e">getHTTPHeaders</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;-(void)setHTTPHeaders: (NTStringMap*)headers;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;-(<a class="code" href="../../dd/dac/interface_n_t_tile_data.html">NTTileData</a>*)loadTile: (<a class="code" href="../../d6/d15/interface_n_t_map_tile.html">NTMapTile</a>*)mapTile;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;-(<a class="code" href="../../dd/dac/interface_n_t_tile_data.html">NTTileData</a>*)loadTileSwigExplicitNTHTTPTileDataSource: (<a class="code" href="../../d6/d15/interface_n_t_map_tile.html">NTMapTile</a>*)mapTile;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;-(NSString*)buildTileUrl: (<a class="code" href="../../d6/d15/interface_n_t_map_tile.html">NTMapTile</a>*)tile;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;-(NSString*)buildTileUrlSwigExplicitNTHTTPTileDataSource: (<a class="code" href="../../d6/d15/interface_n_t_map_tile.html">NTMapTile</a>*)tile;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;-(NSString*)<a class="code" href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html#a4479d1c1146561c272656df16c746520">swigGetClassName</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;-(<span class="keywordtype">void</span> *)<a class="code" href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html#af5f2e83418fca671790702898404d8b0">swigGetDirectorObject</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;-(void)dealloc;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="interface_n_t_tile_data_html"><div class="ttname"><a href="../../dd/dac/interface_n_t_tile_data.html">NTTileData</a></div><div class="ttdef"><b>Definition:</b> NTTileData.h:24</div></div>
 <div class="ttc" id="interface_n_t_h_t_t_p_tile_data_source_html"><div class="ttname"><a href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html">NTHTTPTileDataSource</a></div><div class="ttdef"><b>Definition:</b> NTHTTPTileDataSource.h:32</div></div>
+<div class="ttc" id="interface_n_t_h_t_t_p_tile_data_source_html_a59379c6503eebe46aa1184b3a4e7466d"><div class="ttname"><a href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html#a59379c6503eebe46aa1184b3a4e7466d">-[NTHTTPTileDataSource getBaseURL]</a></div><div class="ttdeci">NSString * getBaseURL()</div><div class="ttdef"><b>Definition:</b> NTHTTPTileDataSource.mm:55</div></div>
 <div class="ttc" id="interface_n_t_tile_data_source_html"><div class="ttname"><a href="../../d0/d95/interface_n_t_tile_data_source.html">NTTileDataSource</a></div><div class="ttdef"><b>Definition:</b> NTTileDataSource.h:27</div></div>
 <div class="ttc" id="interface_n_t_map_tile_html"><div class="ttname"><a href="../../d6/d15/interface_n_t_map_tile.html">NTMapTile</a></div><div class="ttdef"><b>Definition:</b> NTMapTile.h:21</div></div>
-<div class="ttc" id="interface_n_t_h_t_t_p_tile_data_source_html_af5f2e83418fca671790702898404d8b0"><div class="ttname"><a href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html#af5f2e83418fca671790702898404d8b0">-[NTHTTPTileDataSource swigGetDirectorObject]</a></div><div class="ttdeci">void * swigGetDirectorObject()</div><div class="ttdef"><b>Definition:</b> NTHTTPTileDataSource.mm:100</div></div>
-<div class="ttc" id="interface_n_t_h_t_t_p_tile_data_source_html_a4479d1c1146561c272656df16c746520"><div class="ttname"><a href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html#a4479d1c1146561c272656df16c746520">-[NTHTTPTileDataSource swigGetClassName]</a></div><div class="ttdeci">NSString * swigGetClassName()</div><div class="ttdef"><b>Definition:</b> NTHTTPTileDataSource.mm:95</div></div>
-<div class="ttc" id="interface_n_t_h_t_t_p_tile_data_source_html_a793fe7be0d47d383789f23dcac213a5e"><div class="ttname"><a href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html#a793fe7be0d47d383789f23dcac213a5e">-[NTHTTPTileDataSource getHTTPHeaders]</a></div><div class="ttdeci">NTStringMap * getHTTPHeaders()</div><div class="ttdef"><b>Definition:</b> NTHTTPTileDataSource.mm:55</div></div>
+<div class="ttc" id="interface_n_t_h_t_t_p_tile_data_source_html_af5f2e83418fca671790702898404d8b0"><div class="ttname"><a href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html#af5f2e83418fca671790702898404d8b0">-[NTHTTPTileDataSource swigGetDirectorObject]</a></div><div class="ttdeci">void * swigGetDirectorObject()</div><div class="ttdef"><b>Definition:</b> NTHTTPTileDataSource.mm:110</div></div>
+<div class="ttc" id="interface_n_t_h_t_t_p_tile_data_source_html_a4479d1c1146561c272656df16c746520"><div class="ttname"><a href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html#a4479d1c1146561c272656df16c746520">-[NTHTTPTileDataSource swigGetClassName]</a></div><div class="ttdeci">NSString * swigGetClassName()</div><div class="ttdef"><b>Definition:</b> NTHTTPTileDataSource.mm:105</div></div>
+<div class="ttc" id="interface_n_t_h_t_t_p_tile_data_source_html_a793fe7be0d47d383789f23dcac213a5e"><div class="ttname"><a href="../../d2/d91/interface_n_t_h_t_t_p_tile_data_source.html#a793fe7be0d47d383789f23dcac213a5e">-[NTHTTPTileDataSource getHTTPHeaders]</a></div><div class="ttdeci">NTStringMap * getHTTPHeaders()</div><div class="ttdef"><b>Definition:</b> NTHTTPTileDataSource.mm:65</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dir_39407a35a676e69a760fd4862d1e3e08.html">tmp-doxygen</a></li><li class="navelem"><b>NTHTTPTileDataSource.h</b></li>
-    <li class="footer">Generated on Tue Sep 8 2015 19:46:58 for Nutiteq Maps SDK iOS by
+    <li class="footer">Generated on Mon Dec 28 2015 01:53:42 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

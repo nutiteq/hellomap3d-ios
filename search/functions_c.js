@@ -1,5 +1,9 @@
 var searchData=
 [
+  ['onafterdrawframe',['onAfterDrawFrame',['../d5/d4a/interface_n_t_map_event_listener.html#af4c08d705ab0e6e097cb2cb06918fecd',1,'NTMapEventListener']]],
+  ['onafterdrawframeswigexplicitntmapeventlistener',['onAfterDrawFrameSwigExplicitNTMapEventListener',['../d5/d4a/interface_n_t_map_event_listener.html#a2817f3f380cc30bb75da006cd6f67802',1,'NTMapEventListener']]],
+  ['onbeforedrawframe',['onBeforeDrawFrame',['../d5/d4a/interface_n_t_map_event_listener.html#a430aa7390673c31c781def763a000f11',1,'NTMapEventListener']]],
+  ['onbeforedrawframeswigexplicitntmapeventlistener',['onBeforeDrawFrameSwigExplicitNTMapEventListener',['../d5/d4a/interface_n_t_map_event_listener.html#a23c3163c41e4fb04502c87f083e6edf7',1,'NTMapEventListener']]],
   ['ondrawframe',['onDrawFrame',['../df/d1d/interface_n_t_base_map_view.html#a3dd11cad3fcf859a5733384fa4656ba8',1,'NTBaseMapView']]],
   ['oninputevent_3ax1_3ay1_3ax2_3ay2_3a',['onInputEvent:x1:y1:x2:y2:',['../df/d1d/interface_n_t_base_map_view.html#af8982ad54aee6abf7362e33a53df39e9',1,'NTBaseMapView']]],
   ['onmapclicked_3a',['onMapClicked:',['../d5/d4a/interface_n_t_map_event_listener.html#a5b9b1d4d80acbafda8d8c26321a5c1da',1,'NTMapEventListener']]],

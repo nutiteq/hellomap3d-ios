@@ -113,12 +113,14 @@ Inheritance diagram for NTTextStyle:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
-<tr class="memitem:a9a8c887b3c3d7e8955301d28ccac6e74"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../dd/dfa/interface_n_t_text_style.html#a9a8c887b3c3d7e8955301d28ccac6e74">initWithColor:attachAnchorPointX:attachAnchorPointY:causesOverlap:hideIfOverlapped:horizontalOffset:verticalOffset:placementPriority:scaleWithDPI:anchorPointX:anchorPointY:flippable:orientationMode:scalingMode:fontName:fontSize:strokeColor:strokeWidth:</a></td></tr>
-<tr class="separator:a9a8c887b3c3d7e8955301d28ccac6e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02dca4daf9ad871fd2895255137977bc"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../dd/dfa/interface_n_t_text_style.html#a02dca4daf9ad871fd2895255137977bc">initWithColor:attachAnchorPointX:attachAnchorPointY:causesOverlap:hideIfOverlapped:horizontalOffset:verticalOffset:placementPriority:scaleWithDPI:anchorPointX:anchorPointY:flippable:orientationMode:scalingMode:fontName:textField:fontSize:strokeColor:strokeWidth:</a></td></tr>
+<tr class="separator:a02dca4daf9ad871fd2895255137977bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13f1f5c5852bebb1ca725551e9ec15d7"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="../../dd/d2f/interface_n_t_color.html">NTColor</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../dd/dfa/interface_n_t_text_style.html#a13f1f5c5852bebb1ca725551e9ec15d7">getFontColor</a></td></tr>
 <tr class="separator:a13f1f5c5852bebb1ca725551e9ec15d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9486d5189d8405c7028dee046ecb05dc"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../dd/dfa/interface_n_t_text_style.html#a9486d5189d8405c7028dee046ecb05dc">getFontName</a></td></tr>
 <tr class="separator:a9486d5189d8405c7028dee046ecb05dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1d62a099e0dd77c7ad2be976e212ba4"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../dd/dfa/interface_n_t_text_style.html#ac1d62a099e0dd77c7ad2be976e212ba4">getTextField</a></td></tr>
+<tr class="separator:ac1d62a099e0dd77c7ad2be976e212ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9d1a00d35c4eb0bc8229b0ed8018c62"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../dd/dfa/interface_n_t_text_style.html#aa9d1a00d35c4eb0bc8229b0ed8018c62">getFontSize</a></td></tr>
 <tr class="separator:aa9d1a00d35c4eb0bc8229b0ed8018c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeeff1681ab7ac8f0a9c923b6c768fd1b"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="../../dd/d2f/interface_n_t_color.html">NTColor</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../dd/dfa/interface_n_t_text_style.html#aeeff1681ab7ac8f0a9c923b6c768fd1b">getStrokeColor</a></td></tr>
@@ -265,7 +267,25 @@ Class Methods</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9a8c887b3c3d7e8955301d28ccac6e74"></a>
+<a class="anchor" id="ac1d62a099e0dd77c7ad2be976e212ba4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) getTextField </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the text field variable to use.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>The text field variable. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a02dca4daf9ad871fd2895255137977bc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -360,6 +380,12 @@ Class Methods</h2></td></tr>
           <td class="paramname"><em>fontName</em></td>
         </tr>
         <tr>
+          <td class="paramkey">textField:</td>
+          <td></td>
+          <td class="paramtype">(NSString*)&#160;</td>
+          <td class="paramname"><em>textField</em></td>
+        </tr>
+        <tr>
           <td class="paramkey">fontSize:</td>
           <td></td>
           <td class="paramtype">(int)&#160;</td>
@@ -418,6 +444,8 @@ Class Methods</h2></td></tr>
     <tr><td class="paramname">scalingMode</td><td>The scaling mode.<br/>
  </td></tr>
     <tr><td class="paramname">fontName</td><td>The font's name.<br/>
+ </td></tr>
+    <tr><td class="paramname">textField</td><td>The text field variable to use.<br/>
  </td></tr>
     <tr><td class="paramname">fontSize</td><td>The font's size.<br/>
  </td></tr>
@@ -509,7 +537,7 @@ Class Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../dd/dfa/interface_n_t_text_style.html">NTTextStyle</a></li>
-    <li class="footer">Generated on Tue Sep 8 2015 19:47:00 for Nutiteq Maps SDK iOS by
+    <li class="footer">Generated on Mon Dec 28 2015 01:53:43 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -114,6 +114,14 @@ Inheritance diagram for NTPersistentCacheTileDataSource:</div>
 Instance Methods</h2></td></tr>
 <tr class="memitem:a0f54b591dea85cd5e1600e376311bab3"><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../d0/dab/interface_n_t_persistent_cache_tile_data_source.html#a0f54b591dea85cd5e1600e376311bab3">initWithDataSource:databasePath:</a></td></tr>
 <tr class="separator:a0f54b591dea85cd5e1600e376311bab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9129e74feccc021fa018475ce8270b98"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../d0/dab/interface_n_t_persistent_cache_tile_data_source.html#a9129e74feccc021fa018475ce8270b98">isCacheOnlyMode</a></td></tr>
+<tr class="separator:a9129e74feccc021fa018475ce8270b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7d47a8d2dcd0218673dd35af9ba3691"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../d0/dab/interface_n_t_persistent_cache_tile_data_source.html#af7d47a8d2dcd0218673dd35af9ba3691">setCacheOnlyMode:</a></td></tr>
+<tr class="separator:af7d47a8d2dcd0218673dd35af9ba3691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31a1d2d693cf53b5f4fbffe5bfa4ccce"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../d0/dab/interface_n_t_persistent_cache_tile_data_source.html#a31a1d2d693cf53b5f4fbffe5bfa4ccce">close</a></td></tr>
+<tr class="separator:a31a1d2d693cf53b5f4fbffe5bfa4ccce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab12f84501bf13059ee248169c84b9739"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../d0/dab/interface_n_t_persistent_cache_tile_data_source.html#ab12f84501bf13059ee248169c84b9739">closeSwigExplicitNTPersistentCacheTileDataSource</a></td></tr>
+<tr class="separator:ab12f84501bf13059ee248169c84b9739"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3db02f1dd3a596383b6a6c2d62cefb9"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="../../dd/dac/interface_n_t_tile_data.html">NTTileData</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../d0/dab/interface_n_t_persistent_cache_tile_data_source.html#ae3db02f1dd3a596383b6a6c2d62cefb9">loadTile:</a></td></tr>
 <tr class="separator:ae3db02f1dd3a596383b6a6c2d62cefb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af28162d07ea637e7b0a2c622602d44d0"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../d0/dab/interface_n_t_persistent_cache_tile_data_source.html#af28162d07ea637e7b0a2c622602d44d0">clear</a></td></tr>
@@ -170,6 +178,40 @@ Class Methods</h2></td></tr>
 <p>Clear the cache. </p>
 
 <p>Reimplemented from <a class="el" href="../../db/d8f/interface_n_t_cache_tile_data_source.html#af6f11f19afa8fac9e8fbaf05eebf951a">NTCacheTileDataSource</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a31a1d2d693cf53b5f4fbffe5bfa4ccce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) close </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Close the cache database. The datasource will still work afterwards,<br/>
+ but all requests will be directed to the original datasource. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab12f84501bf13059ee248169c84b9739"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) closeSwigExplicitNTPersistentCacheTileDataSource </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Close the cache database. The datasource will still work afterwards,<br/>
+ but all requests will be directed to the original datasource. </p>
 
 </div>
 </div>
@@ -231,6 +273,24 @@ Class Methods</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9129e74feccc021fa018475ce8270b98"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isCacheOnlyMode </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the state of cache only mode.<br/>
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>True when cache only mode is enabled, false otherwise. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ae3db02f1dd3a596383b6a6c2d62cefb9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -256,6 +316,32 @@ Class Methods</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The tile data. If the tile is not available, null may be returned. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="../../d0/d95/interface_n_t_tile_data_source.html#af4fa377d07f31eb54b65bfce5ee92b7c">NTTileDataSource</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af7d47a8d2dcd0218673dd35af9ba3691"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) setCacheOnlyMode: </td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>enabled</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Switches the datasource to 'cache only' mode or switches back from the mode.<br/>
+ If enabled, tiles are loaded from the cache only and the original data source is not used.<br/>
+ By default, cache only mode is off.<br/>
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enabled</td><td>True when the mode should be enabled, false otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -359,7 +445,7 @@ Class Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d0/dab/interface_n_t_persistent_cache_tile_data_source.html">NTPersistentCacheTileDataSource</a></li>
-    <li class="footer">Generated on Tue Sep 8 2015 19:47:00 for Nutiteq Maps SDK iOS by
+    <li class="footer">Generated on Mon Dec 28 2015 01:53:43 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -12,6 +12,8 @@ var searchData=
   ['clearallcaches',['clearAllCaches',['../df/d1d/interface_n_t_base_map_view.html#a908a7a4fe1ffa6ad7326c7ef61403b5c',1,'NTBaseMapView']]],
   ['clearpreloadingcaches',['clearPreloadingCaches',['../df/d1d/interface_n_t_base_map_view.html#a0d33cdf5a196bce627cd5eaedee05138',1,'NTBaseMapView']]],
   ['cleartilecaches_3a',['clearTileCaches:',['../d1/d80/interface_n_t_raster_tile_layer.html#af646d38c86eebd5b257d8fc4da41fa99',1,'NTRasterTileLayer::clearTileCaches:()'],['../dc/da6/interface_n_t_tile_layer.html#a7476325bcd6c99cca2b0f4a50ffbb0d2',1,'NTTileLayer::clearTileCaches:()'],['../dd/dca/interface_n_t_vector_tile_layer.html#a9765f55a6e763081cc90b3f454e57eb5',1,'NTVectorTileLayer::clearTileCaches:()']]],
+  ['close',['close',['../d0/dab/interface_n_t_persistent_cache_tile_data_source.html#a31a1d2d693cf53b5f4fbffe5bfa4ccce',1,'NTPersistentCacheTileDataSource']]],
+  ['closeswigexplicitntpersistentcachetiledatasource',['closeSwigExplicitNTPersistentCacheTileDataSource',['../d0/dab/interface_n_t_persistent_cache_tile_data_source.html#ab12f84501bf13059ee248169c84b9739',1,'NTPersistentCacheTileDataSource']]],
   ['compresstointernal',['compressToInternal',['../d0/de9/interface_n_t_bitmap.html#a1b68396359049d18163d5f649bd058e6',1,'NTBitmap']]],
   ['compresstopng',['compressToPng',['../d0/de9/interface_n_t_bitmap.html#aeb6c0af49d874caf51abae5c97378bc5',1,'NTBitmap']]],
   ['contains_3a',['contains:',['../d3/db2/interface_n_t_map_envelope.html#a228b2e2e66bc7b4e240302f907f5f838',1,'NTMapEnvelope']]],

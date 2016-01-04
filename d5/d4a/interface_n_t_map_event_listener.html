@@ -110,6 +110,14 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a5b9b1d4d80acbafda8d8c26321a5c1da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a5596e5520ac1036f1baa8b87311828"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../d5/d4a/interface_n_t_map_event_listener.html#a0a5596e5520ac1036f1baa8b87311828">onVectorElementClicked:</a></td></tr>
 <tr class="separator:a0a5596e5520ac1036f1baa8b87311828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a430aa7390673c31c781def763a000f11"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../d5/d4a/interface_n_t_map_event_listener.html#a430aa7390673c31c781def763a000f11">onBeforeDrawFrame</a></td></tr>
+<tr class="separator:a430aa7390673c31c781def763a000f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c3163c41e4fb04502c87f083e6edf7"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../d5/d4a/interface_n_t_map_event_listener.html#a23c3163c41e4fb04502c87f083e6edf7">onBeforeDrawFrameSwigExplicitNTMapEventListener</a></td></tr>
+<tr class="separator:a23c3163c41e4fb04502c87f083e6edf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c08d705ab0e6e097cb2cb06918fecd"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../d5/d4a/interface_n_t_map_event_listener.html#af4c08d705ab0e6e097cb2cb06918fecd">onAfterDrawFrame</a></td></tr>
+<tr class="separator:af4c08d705ab0e6e097cb2cb06918fecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2817f3f380cc30bb75da006cd6f67802"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../d5/d4a/interface_n_t_map_event_listener.html#a2817f3f380cc30bb75da006cd6f67802">onAfterDrawFrameSwigExplicitNTMapEventListener</a></td></tr>
+<tr class="separator:a2817f3f380cc30bb75da006cd6f67802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ea36ac8692ab9830c79242f506c74a2"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../d5/d4a/interface_n_t_map_event_listener.html#a9ea36ac8692ab9830c79242f506c74a2">swigGetClassName</a></td></tr>
 <tr class="separator:a9ea36ac8692ab9830c79242f506c74a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbafb9e8fb9005a284c38a45034feb1c"><td class="memItemLeft" align="right" valign="top">(void *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="../../d5/d4a/interface_n_t_map_event_listener.html#acbafb9e8fb9005a284c38a45034feb1c">swigGetDirectorObject</a></td></tr>
@@ -123,6 +131,78 @@ Class Methods</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Listener for events like map and vector element clicks etc. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a class="anchor" id="af4c08d705ab0e6e097cb2cb06918fecd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) onAfterDrawFrame </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Listener method that gets called at the end of the rendering process.<br/>
+ This method is called from GL renderer thread, not from main thread. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2817f3f380cc30bb75da006cd6f67802"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) onAfterDrawFrameSwigExplicitNTMapEventListener </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Listener method that gets called at the end of the rendering process.<br/>
+ This method is called from GL renderer thread, not from main thread. </p>
+
+</div>
+</div>
+<a class="anchor" id="a430aa7390673c31c781def763a000f11"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) onBeforeDrawFrame </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Listener method that gets called at the start of the rendering process.<br/>
+ The method can be used to synchronize vector elements with renderer state, for example<br/>
+ to force marker to be always at the center of the screen (focus point).<br/>
+ This method is called from GL renderer thread, not from main thread. </p>
+
+</div>
+</div>
+<a class="anchor" id="a23c3163c41e4fb04502c87f083e6edf7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) onBeforeDrawFrameSwigExplicitNTMapEventListener </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Listener method that gets called at the start of the rendering process.<br/>
+ The method can be used to synchronize vector elements with renderer state, for example<br/>
+ to force marker to be always at the center of the screen (focus point).<br/>
+ This method is called from GL renderer thread, not from main thread. </p>
+
+</div>
+</div>
 <a class="anchor" id="a5b9b1d4d80acbafda8d8c26321a5c1da"></a>
 <div class="memitem">
 <div class="memproto">
@@ -265,7 +345,7 @@ Class Methods</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d5/d4a/interface_n_t_map_event_listener.html">NTMapEventListener</a></li>
-    <li class="footer">Generated on Tue Sep 8 2015 19:46:59 for Nutiteq Maps SDK iOS by
+    <li class="footer">Generated on Mon Dec 28 2015 01:53:42 for Nutiteq Maps SDK iOS by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
