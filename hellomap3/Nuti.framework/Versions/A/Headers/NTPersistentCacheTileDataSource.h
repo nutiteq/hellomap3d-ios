@@ -47,6 +47,18 @@ __attribute__ ((visibility("default"))) @interface NTPersistentCacheTileDataSour
  */
 -(id)initWithDataSource: (NTTileDataSource*)dataSource databasePath: (NSString*)databasePath;
 /**
+ * Returns the state of cache only mode.<br>
+ * @return True when cache only mode is enabled, false otherwise.
+ */
+-(BOOL)isCacheOnlyMode;
+/**
+ * Switches the datasource to 'cache only' mode or switches back from the mode.<br>
+ * If enabled, tiles are loaded from the cache only and the original data source is not used.<br>
+ * By default, cache only mode is off.<br>
+ * @param enabled True when the mode should be enabled, false otherwise.
+ */
+-(void)setCacheOnlyMode: (BOOL)enabled;
+/**
  * Close the cache database. The datasource will still work afterwards,<br>
  * but all requests will be directed to the original datasource.
  */
