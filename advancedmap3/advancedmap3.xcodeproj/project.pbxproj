@@ -11,12 +11,12 @@
 		0C0E58A11A84BC2D0072D7E8 /* 852-map-toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C0E589E1A84BC2D0072D7E8 /* 852-map-toolbar.png */; };
 		0C0E58A21A84BC2D0072D7E8 /* 852-map-toolbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C0E589F1A84BC2D0072D7E8 /* 852-map-toolbar@2x.png */; };
 		0C0E58A31A84BC2D0072D7E8 /* 852-map-toolbar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C0E58A01A84BC2D0072D7E8 /* 852-map-toolbar@3x.png */; };
-		0C1CF0631B1333DF001A64AD /* nutibright.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C1CF0621B1333DF001A64AD /* nutibright.zip */; };
+		0C17E1AA1C17227400914995 /* nutibright-contourstyle.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C17E1A71C17227400914995 /* nutibright-contourstyle.zip */; };
+		0C17E1AB1C17227400914995 /* nutibright-v2a.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C17E1A81C17227400914995 /* nutibright-v2a.zip */; };
+		0C17E1AC1C17227400914995 /* nutiteq-dark.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C17E1A91C17227400914995 /* nutiteq-dark.zip */; };
 		0C1CF0651B134D27001A64AD /* HillshadeSampleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C1CF0641B134D27001A64AD /* HillshadeSampleController.mm */; };
 		0C3C369819E66E0A007573FD /* fcd_auto.nml in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C369719E66E0A007573FD /* fcd_auto.nml */; };
 		0C60B8251A601A820058C740 /* Nuti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABFB6B71947460E00A64571 /* Nuti.framework */; };
-		0CED8F211A5D1C2F00116863 /* osmbright-unifont.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0CED8F201A5D1C2F00116863 /* osmbright-unifont.zip */; };
-		0CED8F231A5D2BEA00116863 /* osmbright-heilight.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0CED8F221A5D2BEA00116863 /* osmbright-heilight.zip */; };
 		0CED8F251A5D334E00116863 /* rome_ntvt.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 0CED8F241A5D334E00116863 /* rome_ntvt.mbtiles */; };
 		2A319B43187C4F8F0004A3CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B42187C4F8F0004A3CB /* Foundation.framework */; };
 		2A319B45187C4F8F0004A3CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B44187C4F8F0004A3CB /* CoreGraphics.framework */; };
@@ -38,7 +38,6 @@
 		4D13E2831A6EB80200FA74DC /* CustomPopup.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D13E2821A6EB80200FA74DC /* CustomPopup.mm */; };
 		4D2BE7091A52F86F0013ABB3 /* MapSampleBaseController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D2BE7081A52F86F0013ABB3 /* MapSampleBaseController.mm */; };
 		4D94545E1A80E48D00D37B3B /* PackageManagerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D94545D1A80E48D00D37B3B /* PackageManagerController.mm */; };
-		4D9454991A94AF4600D37B3B /* osmbright.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4D9454981A94AF4600D37B3B /* osmbright.zip */; };
 		4DAF41AF1AD3C307004E7092 /* GroundOverlaySampleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4DAF41AE1AD3C307004E7092 /* GroundOverlaySampleController.mm */; };
 		4DAF41B11AD3C542004E7092 /* jefferson-building-ground-floor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4DAF41B01AD3C542004E7092 /* jefferson-building-ground-floor.jpg */; };
 		4DAF41B31AD3FFE9004E7092 /* looseleaf.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4DAF41B21AD3FFE9004E7092 /* looseleaf.zip */; };
@@ -73,11 +72,11 @@
 		0C0E589E1A84BC2D0072D7E8 /* 852-map-toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "852-map-toolbar.png"; sourceTree = "<group>"; };
 		0C0E589F1A84BC2D0072D7E8 /* 852-map-toolbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "852-map-toolbar@2x.png"; sourceTree = "<group>"; };
 		0C0E58A01A84BC2D0072D7E8 /* 852-map-toolbar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "852-map-toolbar@3x.png"; sourceTree = "<group>"; };
-		0C1CF0621B1333DF001A64AD /* nutibright.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = nutibright.zip; sourceTree = "<group>"; };
+		0C17E1A71C17227400914995 /* nutibright-contourstyle.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "nutibright-contourstyle.zip"; sourceTree = "<group>"; };
+		0C17E1A81C17227400914995 /* nutibright-v2a.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "nutibright-v2a.zip"; sourceTree = "<group>"; };
+		0C17E1A91C17227400914995 /* nutiteq-dark.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "nutiteq-dark.zip"; sourceTree = "<group>"; };
 		0C1CF0641B134D27001A64AD /* HillshadeSampleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = HillshadeSampleController.mm; path = advancedmap3/HillshadeSampleController.mm; sourceTree = SOURCE_ROOT; };
 		0C3C369719E66E0A007573FD /* fcd_auto.nml */ = {isa = PBXFileReference; lastKnownFileType = file; path = fcd_auto.nml; sourceTree = "<group>"; };
-		0CED8F201A5D1C2F00116863 /* osmbright-unifont.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "osmbright-unifont.zip"; sourceTree = "<group>"; };
-		0CED8F221A5D2BEA00116863 /* osmbright-heilight.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "osmbright-heilight.zip"; sourceTree = "<group>"; };
 		0CED8F241A5D334E00116863 /* rome_ntvt.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = rome_ntvt.mbtiles; sourceTree = "<group>"; };
 		2A319B3F187C4F8F0004A3CB /* advancedmap3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = advancedmap3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A319B42187C4F8F0004A3CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,7 +108,6 @@
 		4D2BE7081A52F86F0013ABB3 /* MapSampleBaseController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MapSampleBaseController.mm; path = advancedmap3/MapSampleBaseController.mm; sourceTree = SOURCE_ROOT; };
 		4D2BE70A1A52F89C0013ABB3 /* MapSampleBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapSampleBaseController.h; path = advancedmap3/MapSampleBaseController.h; sourceTree = SOURCE_ROOT; };
 		4D94545D1A80E48D00D37B3B /* PackageManagerController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PackageManagerController.mm; path = advancedmap3/PackageManagerController.mm; sourceTree = SOURCE_ROOT; };
-		4D9454981A94AF4600D37B3B /* osmbright.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright.zip; sourceTree = "<group>"; };
 		4DAF41AE1AD3C307004E7092 /* GroundOverlaySampleController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GroundOverlaySampleController.mm; path = advancedmap3/GroundOverlaySampleController.mm; sourceTree = SOURCE_ROOT; };
 		4DAF41B01AD3C542004E7092 /* jefferson-building-ground-floor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "jefferson-building-ground-floor.jpg"; sourceTree = "<group>"; };
 		4DAF41B21AD3FFE9004E7092 /* looseleaf.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = looseleaf.zip; sourceTree = "<group>"; };
@@ -249,23 +247,22 @@
 		4DC42AAC1B622C350022CA0C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0C17E1A71C17227400914995 /* nutibright-contourstyle.zip */,
+				0C17E1A81C17227400914995 /* nutibright-v2a.zip */,
+				0C17E1A91C17227400914995 /* nutiteq-dark.zip */,
 				4DFC6C681B62248900AF8E06 /* marker_black.png */,
 				4DFC6C691B62248900AF8E06 /* marker_red.png */,
 				4DFC6C661B6223B600AF8E06 /* capitals_3857.geojson */,
 				4DAF41B21AD3FFE9004E7092 /* looseleaf.zip */,
 				4DAF41B01AD3C542004E7092 /* jefferson-building-ground-floor.jpg */,
-				4D9454981A94AF4600D37B3B /* osmbright.zip */,
 				4DB60F381A1770E500A6AF18 /* basic.zip */,
-				0CED8F201A5D1C2F00116863 /* osmbright-unifont.zip */,
 				0C3C369719E66E0A007573FD /* fcd_auto.nml */,
 				2AB2803318EB150400666197 /* marker.png */,
 				2AD24F6718FED992000969F4 /* saku_ios_4bpp.nmldb */,
 				2AEA4FAB19140909002ED69F /* arrow.png */,
 				2A710BBF19196AD100647B81 /* arrow@2x.png */,
-				0C1CF0621B1333DF001A64AD /* nutibright.zip */,
 				2AEA4FA51913F38C002ED69F /* info.png */,
 				2A710BBD191956CC00647B81 /* info@2x.png */,
-				0CED8F221A5D2BEA00116863 /* osmbright-heilight.zip */,
 				0CED8F241A5D334E00116863 /* rome_ntvt.mbtiles */,
 				4DB60F321A16AE1600A6AF18 /* menu.png */,
 				0C0E589E1A84BC2D0072D7E8 /* 852-map-toolbar.png */,
@@ -348,7 +345,7 @@
 		2A319B37187C4F8F0004A3CB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Nutiteq;
 				TargetAttributes = {
 					2A319B3E187C4F8F0004A3CB = {
@@ -383,15 +380,14 @@
 				0CED8F251A5D334E00116863 /* rome_ntvt.mbtiles in Resources */,
 				4DAF41B11AD3C542004E7092 /* jefferson-building-ground-floor.jpg in Resources */,
 				4DB60F391A1770E500A6AF18 /* basic.zip in Resources */,
-				4D9454991A94AF4600D37B3B /* osmbright.zip in Resources */,
 				4DFC6C6B1B62248900AF8E06 /* marker_red.png in Resources */,
 				4DFC6C6A1B62248900AF8E06 /* marker_black.png in Resources */,
 				2AD24F6818FED992000969F4 /* saku_ios_4bpp.nmldb in Resources */,
 				4DB60ED91A16615A00A6AF18 /* UITableExpand.png in Resources */,
 				2A710BBE191956CC00647B81 /* info@2x.png in Resources */,
+				0C17E1AC1C17227400914995 /* nutiteq-dark.zip in Resources */,
+				0C17E1AA1C17227400914995 /* nutibright-contourstyle.zip in Resources */,
 				4DB60EDA1A16615A00A6AF18 /* UITableExpand@2x.png in Resources */,
-				0CED8F231A5D2BEA00116863 /* osmbright-heilight.zip in Resources */,
-				0C1CF0631B1333DF001A64AD /* nutibright.zip in Resources */,
 				4DB60ED81A16615A00A6AF18 /* UITableContract@2x.png in Resources */,
 				2A710BC019196AD100647B81 /* arrow@2x.png in Resources */,
 				0C0E58A11A84BC2D0072D7E8 /* 852-map-toolbar.png in Resources */,
@@ -400,10 +396,10 @@
 				2AEA4FAC19140909002ED69F /* arrow.png in Resources */,
 				4DFC6C671B6223B600AF8E06 /* capitals_3857.geojson in Resources */,
 				4DAF41B31AD3FFE9004E7092 /* looseleaf.zip in Resources */,
+				0C17E1AB1C17227400914995 /* nutibright-v2a.zip in Resources */,
 				4DB60ED71A16615A00A6AF18 /* UITableContract.png in Resources */,
 				4DB60F341A16AE1600A6AF18 /* menu.png in Resources */,
 				2AB2803418EB150400666197 /* marker.png in Resources */,
-				0CED8F211A5D1C2F00116863 /* osmbright-unifont.zip in Resources */,
 				4DB60F351A16AE1600A6AF18 /* menu@2x.png in Resources */,
 				2AEA4FA61913F38C002ED69F /* info.png in Resources */,
 				0C0E58A21A84BC2D0072D7E8 /* 852-map-toolbar@2x.png in Resources */,
@@ -476,6 +472,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -555,6 +552,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nutiteq.advancedmap3;
 				PRODUCT_NAME = advancedmap3;
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -586,6 +584,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nutiteq.advancedmap3;
 				PRODUCT_NAME = advancedmap3;
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "";
