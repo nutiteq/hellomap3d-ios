@@ -99,7 +99,7 @@ static NSString* _language = @"en"; // the language for the package names
     [[NSFileManager defaultManager] createDirectoryAtPath:packagesDir withIntermediateDirectories:YES attributes:nil error:&error];
     
     // Create package manager and package manager listener
-    _packageManager = [[NTNutiteqPackageManager alloc] initWithSource:@"nutiteq.mbstreets" dataFolder:packagesDir];
+    _packageManager = [[NTNutiteqPackageManager alloc] initWithSource:@"nutiteq.osm" dataFolder:packagesDir];
     _packageManagerListener = [[PackageManagerListener alloc] init];
     
     // Register this controller with listener to receive notifications about events
