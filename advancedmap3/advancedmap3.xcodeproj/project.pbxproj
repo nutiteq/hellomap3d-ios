@@ -15,6 +15,10 @@
 		0C1CF0651B134D27001A64AD /* HillshadeSampleController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C1CF0641B134D27001A64AD /* HillshadeSampleController.mm */; };
 		0C20CE1A1C18447D003A9F3D /* CartoDbSQLAPIController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C20CE191C18447D003A9F3D /* CartoDbSQLAPIController.mm */; };
 		0C20CE1F1C186136003A9F3D /* CartoDbSqlDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C20CE1E1C186136003A9F3D /* CartoDbSqlDataSource.m */; };
+		0C327A2D1C45463E005501F7 /* direction_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C327A291C45463E005501F7 /* direction_down.png */; };
+		0C327A2E1C45463E005501F7 /* direction_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C327A2A1C45463E005501F7 /* direction_up.png */; };
+		0C327A2F1C45463E005501F7 /* direction_upthenleft.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C327A2B1C45463E005501F7 /* direction_upthenleft.png */; };
+		0C327A301C45463E005501F7 /* direction_upthenright.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C327A2C1C45463E005501F7 /* direction_upthenright.png */; };
 		0C3C369819E66E0A007573FD /* fcd_auto.nml in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C369719E66E0A007573FD /* fcd_auto.nml */; };
 		0C60B8251A601A820058C740 /* Nuti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABFB6B71947460E00A64571 /* Nuti.framework */; };
 		0C97CC471C09B26000336DF7 /* OfflineRoutingController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC461C09B26000336DF7 /* OfflineRoutingController.mm */; };
@@ -81,6 +85,10 @@
 		0C20CE191C18447D003A9F3D /* CartoDbSQLAPIController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CartoDbSQLAPIController.mm; path = advancedmap3/CartoDbSQLAPIController.mm; sourceTree = SOURCE_ROOT; };
 		0C20CE1D1C186136003A9F3D /* CartoDbSqlDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoDbSqlDataSource.h; sourceTree = SOURCE_ROOT; };
 		0C20CE1E1C186136003A9F3D /* CartoDbSqlDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoDbSqlDataSource.m; sourceTree = SOURCE_ROOT; };
+		0C327A291C45463E005501F7 /* direction_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction_down.png; sourceTree = "<group>"; };
+		0C327A2A1C45463E005501F7 /* direction_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction_up.png; sourceTree = "<group>"; };
+		0C327A2B1C45463E005501F7 /* direction_upthenleft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction_upthenleft.png; sourceTree = "<group>"; };
+		0C327A2C1C45463E005501F7 /* direction_upthenright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction_upthenright.png; sourceTree = "<group>"; };
 		0C3C369719E66E0A007573FD /* fcd_auto.nml */ = {isa = PBXFileReference; lastKnownFileType = file; path = fcd_auto.nml; sourceTree = "<group>"; };
 		0C97CC461C09B26000336DF7 /* OfflineRoutingController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OfflineRoutingController.mm; path = advancedmap3/OfflineRoutingController.mm; sourceTree = SOURCE_ROOT; };
 		0CED8F201A5D1C2F00116863 /* osmbright-unifont.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "osmbright-unifont.zip"; sourceTree = "<group>"; };
@@ -256,6 +264,10 @@
 		4DC42AAC1B622C350022CA0C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0C327A291C45463E005501F7 /* direction_down.png */,
+				0C327A2A1C45463E005501F7 /* direction_up.png */,
+				0C327A2B1C45463E005501F7 /* direction_upthenleft.png */,
+				0C327A2C1C45463E005501F7 /* direction_upthenright.png */,
 				4DFC6C681B62248900AF8E06 /* marker_black.png */,
 				4DFC6C691B62248900AF8E06 /* marker_red.png */,
 				4DFC6C661B6223B600AF8E06 /* capitals_3857.geojson */,
@@ -359,7 +371,7 @@
 		2A319B37187C4F8F0004A3CB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Nutiteq;
 				TargetAttributes = {
 					2A319B3E187C4F8F0004A3CB = {
@@ -392,8 +404,10 @@
 			files = (
 				0C0E58A31A84BC2D0072D7E8 /* 852-map-toolbar@3x.png in Resources */,
 				0CED8F251A5D334E00116863 /* rome_ntvt.mbtiles in Resources */,
+				0C327A2F1C45463E005501F7 /* direction_upthenleft.png in Resources */,
 				4DAF41B11AD3C542004E7092 /* jefferson-building-ground-floor.jpg in Resources */,
 				4DB60F391A1770E500A6AF18 /* basic.zip in Resources */,
+				0C327A2E1C45463E005501F7 /* direction_up.png in Resources */,
 				4D9454991A94AF4600D37B3B /* osmbright.zip in Resources */,
 				4DFC6C6B1B62248900AF8E06 /* marker_red.png in Resources */,
 				4DFC6C6A1B62248900AF8E06 /* marker_black.png in Resources */,
@@ -417,6 +431,8 @@
 				0CED8F211A5D1C2F00116863 /* osmbright-unifont.zip in Resources */,
 				4DB60F351A16AE1600A6AF18 /* menu@2x.png in Resources */,
 				2AEA4FA61913F38C002ED69F /* info.png in Resources */,
+				0C327A2D1C45463E005501F7 /* direction_down.png in Resources */,
+				0C327A301C45463E005501F7 /* direction_upthenright.png in Resources */,
 				0C0E58A21A84BC2D0072D7E8 /* 852-map-toolbar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +506,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -569,6 +586,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nutiteq.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = advancedmap3;
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -600,6 +618,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nutiteq.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = advancedmap3;
 				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "";
