@@ -9,9 +9,17 @@
  - (void)setStop:(NTMapPos*)mapPos;
 
 @property NTLocalVectorDataSource* routeDataSource;
+@property NTLocalVectorDataSource* routeStartStopDataSource;
+
 @property NTMarker* startMarker;
 @property NTMarker* stopMarker;
-@property NTPackageManagerRoutingService* offlineRoutingService;
+@property NTMarkerStyle* instructionUp;
+@property NTMarkerStyle* instructionLeft;
+@property NTMarkerStyle* instructionRight;
+@property NTRoutingService* offlineRoutingService;
+@property NTRoutingService* onlineRoutingService;
+
+@property (nonatomic, assign) bool offlinePackageReady;
 
 @end;
 
@@ -20,11 +28,10 @@
 @property (strong, nonatomic) NTMapView* mapView;
 @property (strong, nonatomic) OfflineRoutingController* routingController;
 
-//@property (strong, nonatomic) NTLocalVectorDataSource* vectorDataSource;
-
 @property (strong, nonatomic) NTMapPos* startPos;
 @property (strong, nonatomic) NTMapPos* stopPos;
-
+@property (strong, nonatomic) NTLocalVectorDataSource* routeDataSource;
+@property (strong, nonatomic) NTBalloonPopup* oldClickLabel;
 
 @end;
 
@@ -59,12 +66,17 @@
 	
 	// Initialize an online vector data source for base map
 	_routeDataSource = [[NTLocalVectorDataSource alloc] initWithProjection:proj];
+    _routeStartStopDataSource = [[NTLocalVectorDataSource alloc] initWithProjection:proj];
+
 	// Initialize a vector layer with the previous data source
 	NTVectorLayer* vectorLayer = [[NTVectorLayer alloc] initWithDataSource:_routeDataSource];
+    NTVectorLayer* vectorLayerStartStop = [[NTVectorLayer alloc] initWithDataSource:_routeStartStopDataSource];
     
 	// Add the previous vector layer to the map
 	[[self.mapView getLayers] add:vectorLayer];
+    [[self.mapView getLayers] add:vectorLayerStartStop];
 
+    
     
     // Create markers for start and end
     NTMarkerStyleBuilder* markerStyleBuilder = [[NTMarkerStyleBuilder alloc] init];
@@ -75,15 +87,28 @@
     // Initial empty markers
     _startMarker = [[NTMarker alloc] initWithPos:[[NTMapPos alloc] initWithX:0 y:0] style:[markerStyleBuilder buildStyle]];
     [_startMarker setVisible:NO];
-    [_routeDataSource add: _startMarker];
+    [_routeStartStopDataSource add: _startMarker];
 
     // change color to Red
     [markerStyleBuilder setColor:[[NTColor alloc] initWithColor:0xFFFF0000]];
 
     _stopMarker = [[NTMarker alloc] initWithPos:[[NTMapPos alloc] initWithX:0 y:0] style:[markerStyleBuilder buildStyle]];
     [_stopMarker setVisible:NO];
-    [_routeDataSource add: _stopMarker];
+    [_routeStartStopDataSource add: _stopMarker];
 	
+    
+    // Create styles for instruction markers
+    [markerStyleBuilder setColor: [[NTColor alloc] initWithColor:0xFFFFFFFF]]; // white
+    [markerStyleBuilder setBitmap:[NTBitmapUtils createBitmapFromUIImage:[UIImage imageNamed:@"direction_up.png"]]];
+    _instructionUp = [markerStyleBuilder buildStyle];
+
+    [markerStyleBuilder setBitmap:[NTBitmapUtils createBitmapFromUIImage:[UIImage imageNamed:@"direction_upthenleft.png"]]];
+    _instructionLeft = [markerStyleBuilder buildStyle];
+    
+    [markerStyleBuilder setBitmap:[NTBitmapUtils createBitmapFromUIImage:[UIImage imageNamed:@"direction_upthenright.png"]]];
+    _instructionRight = [markerStyleBuilder buildStyle];
+    
+    
 	// Create a map event listener
 	RouteClickListener* mapListener = [[RouteClickListener alloc] init];
 	[self.mapView setMapEventListener:mapListener];
@@ -92,6 +117,7 @@
     
 	//[mapListener setMapView: self.mapView];
     [mapListener setRoutingController: self];
+    [mapListener setRouteDataSource:_routeDataSource];
 
     [self.mapView setFocusPos:[proj fromWgs84:[[NTMapPos alloc] initWithX:25.662893 y:58.919365]]  durationSeconds:0];
     [self.mapView setZoom:7 durationSeconds:0];
@@ -124,6 +150,8 @@
     // create offline routing service connected to package manager
     _offlineRoutingService = [[NTPackageManagerRoutingService alloc] initWithPackageManager:packageManager];
     
+    // create also online routing service if no offline package is yet downloaded
+    _onlineRoutingService = [[NTNutiteqOnlineRoutingService alloc] initWithSource:@"nutiteq.osm.car"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -137,7 +165,7 @@
 }
 
 -(void)setStart:(NTMapPos *)mapPos{
-    //[_routeDataSource removeAll];
+    [_routeDataSource removeAll];
     [_stopMarker setVisible:NO];
     [_startMarker setPos:mapPos];
     [_startMarker setVisible:YES];
@@ -157,32 +185,65 @@
      NTMapPosVector* poses = [[NTMapPosVector alloc] init];
      [poses add:startPos];
      [poses add:stopPos];
-                              
+    
+
     NTRoutingRequest* request = [[NTRoutingRequest alloc] initWithProjection:[[self.mapView getOptions] getBaseProjection] points:poses];
     
-    // TODO: this calculation should be in non-UI thread
+    NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
     
-    NTRoutingResult* route = [_offlineRoutingService calculateRoute:request];
-    
-    NSLog(@"route total distance: %f time %f", [route getTotalDistance], [route getTotalTime]);
-    
-    // show line
-    [_routeDataSource add:[self calculateRouteLine: route]];
-    
-    //show instructions as popups
-    for(int i=0;i<[[route getInstructions] size];i++){
-        NTRoutingInstruction *instruction =[[route getInstructions] get:i];
-        [_routeDataSource add:
-         [self createRoutePoint: instruction
-                          point: [[route getPoints] get:[instruction getPointIndex]]]
-         ];
-    }
-    
-    
+    // this calculation should be in background thread
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NTRoutingResult* route;
+        if(_offlinePackageReady){
+            NSLog(@"using offline routing");
+            route = [_offlineRoutingService calculateRoute:request];
+        }else{
+            NSLog(@"using online routing");
+            route = [_onlineRoutingService calculateRoute:request];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSTimeInterval duration = [NSDate timeIntervalSinceReferenceDate] - start;
+            
+            if (route == nil){
+                NSLog(@"route error");
+                return;
+            }
+            
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"HH:mm:ss"];
+            [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+            
+            NSString* routeDesc = [NSString stringWithFormat:@"Route: %0.3f m, travel %@. Calculation took %0.3f s", [route getTotalDistance]/1000.0,
+                                   [dateFormatter stringFromDate: [NSDate dateWithTimeIntervalSince1970:[route getTotalTime]]],
+                                   duration];
+            
+            NSLog(@"%@",routeDesc);
+            
+            // show line
+            NTLine* routeLine = [self calculateRouteLine: route];
+            
+            [routeLine setMetaDataElement:@"desc" element:routeDesc];
+            
+            [_routeDataSource add: routeLine];
+            
+            //show instructions as popups
+            for(int i=0;i<[[route getInstructions] size];i++){
+                NTRoutingInstruction *instruction =[[route getInstructions] get:i];
+                NTMarker* popup = [self createRoutePoint: instruction
+                                                   point: [[route getPoints] get:[instruction getPointIndex]]];
+                if( popup != nil){
+                    [_routeDataSource add:popup];
+                }
+            }
+        });
+    });
 }
 
--(NTBalloonPopup*) createRoutePoint: (NTRoutingInstruction*) instruction point:(NTMapPos*) pos{
+-(NTMarker*) createRoutePoint: (NTRoutingInstruction*) instruction point:(NTMapPos*) pos{
     
+    NTMarkerStyle* style = _instructionUp;
     NSString* str = @"";
     
     switch ([instruction getAction]) {
@@ -193,9 +254,11 @@
             str = @"finish";
             break;
         case NT_ROUTING_ACTION_TURN_LEFT:
+            style = _instructionLeft;
             str = @"turn left";
             break;
         case NT_ROUTING_ACTION_TURN_RIGHT:
+            style = _instructionRight;
             str = @"turn right";
             break;
         case NT_ROUTING_ACTION_UTURN:
@@ -227,45 +290,50 @@
             break;
     }
     
-    NSString* desc =[NSString stringWithFormat:@"%@ \nazimuth:  %f\ndistance: %f m\ntime: %f s\nTurnAngle: %f deg",[instruction getStreetName],
+    NSString* desc =[NSString stringWithFormat:@"%@ \nazimuth:  %.1f deg\ndistance: %.0f m\ntime: %.0f sec\nTurnAngle: %.0f deg",[instruction getStreetName],
                      [instruction getAzimuth],
                      [instruction getDistance],
                      [instruction getTime],
                      [instruction getTurnAngle]
                      ];
-    
-    NTBalloonPopupStyleBuilder* balloonPopupStyleBuilder = [[NTBalloonPopupStyleBuilder alloc] init];
-    
-    NTBalloonPopup* popup = [[NTBalloonPopup alloc] initWithPos:pos
-                                                           style:[balloonPopupStyleBuilder buildStyle]
-                                                           title:str
-                                                            desc:desc];
-    
 
-
+    // filter out some instructions which would be too noisy for the map
+    if([str isEqualToString:@"continue"] or [str isEqualToString:@"enter roundabout"]){
+        return nil;
+    }
+    
+    
+    NTMarker* marker = [[NTMarker alloc] initWithPos:pos style:style];
+    
+    [marker setMetaDataElement:@"desc" element:desc];
+    [marker setMetaDataElement:@"title" element:str];
+    
     NSLog(@"Instruction: %@ (%@)", str, desc);
     
-    return popup;
+    return marker;
 }
 
 -(NTLine*) calculateRouteLine: (NTRoutingResult*) result{
  
     // style for the line
     NTLineStyleBuilder* lineStyleBuilder = [[NTLineStyleBuilder alloc] init];
-    [lineStyleBuilder setColor:[[NTColor alloc] initWithColor:0xFFAAAAAA]];
+    [lineStyleBuilder setColor:[[NTColor alloc] initWithColor:0xFF444444]];
     [lineStyleBuilder setLineJointType:NT_LINE_JOINT_TYPE_ROUND];
     [lineStyleBuilder setStretchFactor:2];
     [lineStyleBuilder setWidth:12];
     
     return [[NTLine alloc] initWithPoses:[result getPoints] style:[lineStyleBuilder buildStyle]];
 
-    
-    
 }
 
 @end
 
 @implementation RouteClickListener
+
+-(void)setVectorDataSource:(NTLocalVectorDataSource*)vectorDataSource
+{
+    _routeDataSource = vectorDataSource;
+}
 
 -(void)onMapMoved
 {
@@ -276,11 +344,16 @@
 {
     // set start and end pos
     
+    // Remove old click label
+    if (_oldClickLabel)
+    {
+        [_routeDataSource remove:_oldClickLabel];
+        _oldClickLabel = nil;
+    }
+    
+    
     if ([mapClickInfo getClickType] == NT_CLICK_TYPE_LONG) {
         NTMapPos* clickPos = [mapClickInfo getClickPos];
-        //NTMapPos* wgs84Clickpos = [[[_mapView getOptions] getBaseProjection] toWgs84:clickPos];
-        
-      //  NSLog(@"onMapClicked: %@", [NSString stringWithFormat:@"%f, %f", [wgs84Clickpos getY], [wgs84Clickpos getX]]);
         
         if(_startPos == nil){
             _startPos = clickPos;
@@ -291,8 +364,6 @@
             _stopPos = clickPos;
             
             [_routingController setStop: clickPos];
-            //setStopMarker(clickPos);
-            //showRoute(startPos, stopPos);
             
             // restart to force new route next time
             _startPos = nil;
@@ -303,7 +374,57 @@
 
 -(void)onVectorElementClicked:(NTVectorElementsClickInfo*)vectorElementsClickInfo
 {
-    // do nothing
+ 
+    // Remove old click label
+    if (_oldClickLabel)
+    {
+        [_routeDataSource remove:_oldClickLabel];
+        _oldClickLabel = nil;
+    }
+    
+    NTVectorElementClickInfo* clickInfo = [[vectorElementsClickInfo getVectorElementClickInfos] get:0];
+    
+    // Check the type of vector element
+    NTVectorElement* vectorElement = [clickInfo getVectorElement];
+    
+    NSString* desc = [vectorElement getMetaDataElement:@"desc"];
+    NSString* title = [vectorElement getMetaDataElement:@"title"];
+    
+    if([desc isEqualToString:@""]){
+        return;
+    }
+
+    NTBalloonPopup* clickPopup = [[NTBalloonPopup alloc] init];
+    NTBalloonPopupStyleBuilder* styleBuilder = [[NTBalloonPopupStyleBuilder alloc] init];
+    [styleBuilder setPlacementPriority: 1]; // make sure it is on top of Markers
+    
+    if([title isEqualToString:@""]){
+        // route description if clicked to line
+        [styleBuilder setLeftColor:[[NTColor alloc] initWithColor:0xFF0000AA]]; // blue
+        
+        clickPopup = [[NTBalloonPopup alloc] initWithPos:[clickInfo getElementClickPos]
+                                                   style:[styleBuilder buildStyle]
+                                                   title:desc
+                                                    desc:@""];
+    }else{
+        [styleBuilder setLeftColor:[[NTColor alloc] initWithColor:0xFF00AA00]]; // green
+
+        NTVectorElement* vectorElement = [clickInfo getVectorElement];
+        
+        if([vectorElement isKindOfClass:[NTBillboard class]]){
+            NTBillboard* billboard = (NTBillboard*)vectorElement;
+
+            clickPopup = [[NTBalloonPopup alloc] initWithBaseBillboard:billboard
+                                                                 style:[styleBuilder buildStyle]
+                                                                 title:title
+                                                                  desc:desc];
+        }
+
+        
+    }
+    
+    [_routeDataSource add:clickPopup];
+    _oldClickLabel = clickPopup;
 }
 
 @end
@@ -316,17 +437,22 @@
     if (status == nil) {
         [_packageManager startPackageDownload: package];
     } else if ([status getCurrentAction] == NT_PACKAGE_ACTION_READY) {
-        // TODO: report controller that it is downloaded, do not allow routing before!
-        NSLog(@"Routing package downloaded");
+        [_routingController setOfflinePackageReady: true];
+        NSLog(@"Routing package %@ downloaded", package);
     }
 }
 
 - (void)onPackageListUpdated
 {
     NSLog(@"onPackageListUpdated");
+    // We have packages all country/regions
+    // see list of available ID-s: https://developer.nutiteq.com/guides/packages
+    // You can download several packages, and route is found through all of them
+    
     [self getPackage:@"EE-routing"];
     [self getPackage:@"LV-routing"];
     [self getPackage:@"LT-routing"];
+//    [self getPackage:@"IT-routing"];
 }
 
 - (void)onPackageListFailed
