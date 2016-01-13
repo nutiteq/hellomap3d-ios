@@ -39,6 +39,25 @@ namespace Nuti {
          */
         PersistentCacheTileDataSource(const std::shared_ptr<TileDataSource>& dataSource, const std::string& databasePath);
         virtual ~PersistentCacheTileDataSource();
+        
+        /**
+         * Returns the state of cache only mode.
+         * @return True when cache only mode is enabled, false otherwise.
+         */
+        bool isCacheOnlyMode() const;
+        /**
+         * Switches the datasource to 'cache only' mode or switches back from the mode.
+         * If enabled, tiles are loaded from the cache only and the original data source is not used.
+         * By default, cache only mode is off.
+         * @param enabled True when the mode should be enabled, false otherwise.
+         */
+        void setCacheOnlyMode(bool enabled);
+
+        /**
+         * Close the cache database. The datasource will still work afterwards,
+         * but all requests will be directed to the original datasource.
+         */
+        virtual void close();
 
         /**
          * Close the cache database. The datasource will still work afterwards,
@@ -80,6 +99,7 @@ namespace Nuti {
         
         std::unique_ptr<sqlite3pp::database> _database;
         
+        bool _cacheOnlyMode;
         unsigned int _capacityInBytes;
         unsigned int _sizeInBytes;
         

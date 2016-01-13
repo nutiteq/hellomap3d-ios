@@ -74,6 +74,14 @@
 
 #include "renderers/components/CullState.h"
 
+#include "routing/RoutingInstruction.h"
+#include "routing/RoutingRequest.h"
+#include "routing/RoutingResult.h"
+#include "routing/RoutingService.h"
+#include "routing/NutiteqOnlineRoutingService.h"
+#include "routing/NutiteqOfflineRoutingService.h"
+#include "routing/PackageManagerRoutingService.h"
+
 #include "styles/BalloonPopupStyleBuilder.h"
 #include "styles/BalloonPopupStyle.h"
 #include "styles/LabelStyleBuilder.h"

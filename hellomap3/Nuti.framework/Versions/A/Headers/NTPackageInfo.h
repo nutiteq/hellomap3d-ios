@@ -15,13 +15,27 @@
 extern "C" {
 #endif
 
+/**
+ * Package types.
+ */
+typedef NS_ENUM(NSInteger, NTPackageType) {
+/**
+ * Map package.
+ */
+  NT_PACKAGE_TYPE_MAP = 0,
+/**
+ * Routing package.
+ */
+  NT_PACKAGE_TYPE_ROUTING = 1
+};
+
 
 #import "NTPackageMetaInfo.h"
 #import "NTPackageTileMask.h"
 #import "NTStringVector.h"
 
 /**
- * Information about map package. This includes id, version, name, description and size.
+ * Information about map package. This includes id, type, version, name, description and size.
  */
 __attribute__ ((visibility("default"))) @interface NTPackageInfo : NSObject
 {
@@ -46,18 +60,24 @@ __attribute__ ((visibility("default"))) @interface NTPackageInfo : NSObject
 /**
  * Constructs a new package info instance.<br>
  * @param packageId The unique id of the package<br>
+ * @param packageType The type of the package<br>
  * @param version The increasing version number of the package<br>
  * @param size Size of the package in bytes<br>
  * @param serverUrl Location of the package<br>
  * @param tileMask The tile mask of the package<br>
  * @param metaInfo Package meta info
  */
--(id)initWithPackageId: (NSString*)packageId version: (int)version size: (unsigned long long)size serverUrl: (NSString*)serverUrl tileMask: (NTPackageTileMask*)tileMask metaInfo: (NTPackageMetaInfo*)metaInfo;
+-(id)initWithPackageId: (NSString*)packageId packageType: (enum NTPackageType)packageType version: (int)version size: (unsigned long long)size serverUrl: (NSString*)serverUrl tileMask: (NTPackageTileMask*)tileMask metaInfo: (NTPackageMetaInfo*)metaInfo;
 /**
  * Returns the internal package id. This should not be displayed to the user.<br>
  * @return The unique package id
  */
 -(NSString*)getPackageId;
+/**
+ * Returns the package type.<br>
+ * @return The package type (map, routing, etc)
+ */
+-(enum NTPackageType)getPackageType;
 /**
  * Returns the package version. This should not be displayed to the user.<br>
  * @return The increasing package version number
@@ -82,7 +102,8 @@ __attribute__ ((visibility("default"))) @interface NTPackageInfo : NSObject
  */
 -(unsigned long long)getSize;
 /**
- * Returns the encoded tile mask of the package. This should not be displayed to the user.<br>
+ * Returns the encoded tile mask of the package. This is available for map packages but not for routing packages.<br>
+ * This should not be displayed to the user.<br>
  * @return The tile mask of the package
  */
 -(NTPackageTileMask*)getTileMask;
