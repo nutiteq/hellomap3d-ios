@@ -116,6 +116,8 @@ namespace Nuti {
         MapBounds getDataExtent() const;
         
     protected:
+        std::shared_ptr<VectorElement> simplifyElement(const std::shared_ptr<VectorElement>& element, float scale) const;
+
         virtual void notifyElementChanged(const std::shared_ptr<VectorElement>& element);
 
     private:

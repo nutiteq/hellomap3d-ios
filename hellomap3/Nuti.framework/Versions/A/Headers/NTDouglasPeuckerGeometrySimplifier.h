@@ -36,7 +36,7 @@ __attribute__ ((visibility("default"))) @interface NTDouglasPeuckerGeometrySimpl
 
 /**
  * Constructs a new simplifier, given tolerance.<br>
- * @param tolerance The maximum error for simplification. The tolerance value multiplied by view size (either height or width) gives maximum error in pixels.
+ * @param tolerance The maximum error for simplification. The tolerance value gives maximum error in pixels.
  */
 -(id)initWithTolerance: (float)tolerance;
 -(NTGeometry*)simplify: (NTGeometry*)geometry scale: (float)scale;

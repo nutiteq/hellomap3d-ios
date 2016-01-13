@@ -86,7 +86,7 @@ namespace Nuti { namespace VT {
 
 		float calculateBlendNodeOpacity(const BlendNode& blendNode, float blend) const;
 		void updateBlendNode(BlendNode& blendNode, float dBlend);
-		void buildRenderNodes(const BlendNode& blendNode, float blend, std::multimap<int, RenderNode>& renderNodeMap);
+		bool buildRenderNodes(const BlendNode& blendNode, float blend, std::multimap<int, RenderNode>& renderNodeMap);
 		void addRenderNode(const RenderNode& renderNode, std::multimap<int, RenderNode>& renderNodeMap);
 		void updateLabels(const std::vector<std::shared_ptr<TileLabel>>& labels, float dOpacity);
 

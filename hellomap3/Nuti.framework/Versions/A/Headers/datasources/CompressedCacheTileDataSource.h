@@ -27,12 +27,12 @@ namespace Nuti {
         virtual ~CompressedCacheTileDataSource();
     
         virtual std::shared_ptr<TileData> loadTile(const MapTile& mapTile);
-        
+                
+        virtual void clear();
+
         virtual unsigned int getCapacity() const;
         
         virtual void setCapacity(unsigned int capacity);
-        
-        virtual void clear();
     
     protected:
         LRUCache<long long, std::shared_ptr<TileData> > _cache;

@@ -16,6 +16,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <thread>
+#include <fstream>
 
 #include "components/DirectorPtr.h"
 #include "PackageInfo.h"
@@ -48,7 +49,7 @@ namespace Nuti {
 		 */
 		class OnChangeListener {
 		public:
-			virtual ~OnChangeListener() = default;
+            virtual ~OnChangeListener() { }
 
 			virtual void onTilesChanged() = 0;
 		};
@@ -106,6 +107,13 @@ namespace Nuti {
 		 * @return The corresponding tile data or null if tile was not found.
 		 */
 		std::shared_ptr<std::vector<unsigned char> > loadTile(int zoom, int x, int y) const;
+        
+        /**
+         * Locks specified local packages and calls specified handler callback with open handles to the files.
+         * @param packageIds The package ids.
+         * @param callback The callback function.
+         */
+        void accessPackageFiles(const std::vector<std::string>& packageIds, std::function<void(const std::map<std::string, std::shared_ptr<std::ifstream> >&)> callback) const;
 
 		/**
 		 * Returns the list of available server packages.
@@ -194,7 +202,7 @@ namespace Nuti {
 		
 	protected:
 		virtual std::string createLocalFilePath(const std::string& name) const;
-		virtual std::string createPackageFileName(const std::string& packageId, int version) const;
+        virtual std::string createPackageFileName(const std::string& packageId, PackageType::PackageType packageType, int version) const;
 		virtual std::string createPackageListUrl(const std::string& baseUrl) const;
 		virtual std::string createPackageUrl(const std::string& packageId, int version, const std::string& baseUrl, bool downloaded) const;
 		
@@ -215,6 +223,7 @@ namespace Nuti {
 			PackageAction::PackageAction action = PackageAction::PACKAGE_ACTION_WAITING;
 			int progress = 0;
 			std::string packageId;
+            PackageType::PackageType packageType = PackageType::PACKAGE_TYPE_MAP;
 			int packageVersion = 0;
 			std::string packageLocation;
 		};
@@ -270,7 +279,7 @@ namespace Nuti {
 		
 		void syncLocalPackages();
 		std::shared_ptr<sqlite3pp::database> getLocalPackageDb(const std::shared_ptr<PackageInfo>& packageInfo) const;
-		void importLocalPackage(int id, const std::string& packageId, const std::string& packageFileName);
+        void importLocalPackage(int id, int taskId, const std::string& packageId, PackageType::PackageType packageType, const std::string& packageFileName);
 		void deleteLocalPackage(int id);
 
 		bool isTaskCancelled(int taskId) const;
@@ -285,9 +294,11 @@ namespace Nuti {
 		void savePackageListJson(const std::string& jsonFileName, const std::string& json) const;
 
 		static void initializeDb(sqlite3pp::database& db, const std::string& encKey);
+        static bool addDbField(sqlite3pp::database& db, const std::string& table, const std::string& field, const std::string& def);
 		static bool checkDbEncryption(sqlite3pp::database& db, const std::string& encKey);
 		static void updateDbEncryption(sqlite3pp::database& db, const std::string& encKey);
-		static std::string calculateDbKeyHash(const std::string& encKey);
+        
+        static std::string calculateKeyHash(const std::string& encKey);
 
 		static void encryptTile(std::vector<unsigned char>& data, int zoom, int x, int y, const std::string& encKey);
 		static void decryptTile(std::vector<unsigned char>& data, int zoom, int x, int y, const std::string& encKey);
@@ -302,6 +313,7 @@ namespace Nuti {
 		const std::string _serverEncKey;
 		const std::string _localEncKey;
 		mutable std::vector<PackageDatabase> _localPackageDbCache;
+        mutable std::map<std::string, std::shared_ptr<std::ifstream> > _localPackageFileCache;
 		mutable std::vector<std::shared_ptr<PackageInfo> > _serverPackageCache;
 		std::vector<std::shared_ptr<PackageInfo> > _localPackages;
 		std::shared_ptr<sqlite3pp::database> _localDb;

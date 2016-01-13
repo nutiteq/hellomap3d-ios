@@ -46,12 +46,23 @@ __attribute__ ((visibility("default"))) @interface NTHTTPTileDataSource : NTTile
  */
 -(id)initWithMinZoom: (int)minZoom maxZoom: (int)maxZoom baseURL: (NSString*)baseURL;
 /**
+ * Returns the base URL template containing tags.<br>
+ * @return The base URL template.
+ */
+-(NSString*)getBaseURL;
+/**
+ * Sets the base URL for the data source.<br>
+ * @param baseURL The base URL containing tags (for example, "http://tile.openstreetmap.org/{zoom}/{x}/{y}.png").
+ */
+-(void)setBaseURL: (NSString*)baseURL;
+/**
  * Returns the current set of HTTP headers used. Initially this set is empty and can be changed with setHTTPHeaders.<br>
  * @return The current set of custom HTTP headers.
  */
 -(NTStringMap*)getHTTPHeaders;
 /**
- * Sets HTTP headers for all requests.<br>
+ * Sets HTTP headers for all requests. Calling this method will invalidate the datasource and<br>
+ * all layers using this data source will be refreshed.<br>
  * @param headers A map of HTTP headers that will be used in subsequent requests.
  */
 -(void)setHTTPHeaders: (NTStringMap*)headers;

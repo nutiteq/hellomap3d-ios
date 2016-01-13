@@ -75,6 +75,14 @@
 
 #import "NTCullState.h"
 
+#import "NTRoutingInstruction.h"
+#import "NTRoutingRequest.h"
+#import "NTRoutingResult.h"
+#import "NTRoutingService.h"
+#import "NTNutiteqOnlineRoutingService.h"
+#import "NTNutiteqOfflineRoutingService.h"
+#import "NTPackageManagerRoutingService.h"
+
 #import "NTBalloonPopupStyleBuilder.h"
 #import "NTBalloonPopupStyle.h"
 #import "NTLabelStyleBuilder.h"

@@ -11,6 +11,7 @@
 #include "renderers/components/CullState.h"
 #include "utils/LRUTextureCache.h"
 
+#include <atomic>
 #include <memory>
 #include <mutex>
 #include <vector>
@@ -129,7 +130,7 @@ namespace Nuti {
         
         std::shared_ptr<CullState> _lastCullState;
        
-        int _priority;
+        std::atomic<int> _priority;
         
         bool _visible;
         

@@ -68,7 +68,7 @@ __attribute__ ((visibility("default"))) @interface NTMapView : GLKView
  *
  * If durationSeconds > 0 the panning operation will be animated over time. If the previous panning animation has not
  * finished by the time this method is called, it will be stopped.
- * @param deltaTilt The number of degrees the camera should be tilted by.
+ * @param deltaPos The coordinate difference the map should be moved by.
  * @param durationSeconds The duration in which the tilting operation will be completed in seconds.
  */
 -(void)pan: (NTMapVec*)deltaPos durationSeconds: (float)durationSeconds;
@@ -79,7 +79,7 @@ __attribute__ ((visibility("default"))) @interface NTMapView : GLKView
  *
  * If durationSeconds > 0 the panning operation will be animated over time. If the previous panning animation has not
  * finished by the time this method is called, it will be stopped.
- * @param tilt The new absolute tilt value in degrees.
+ * @param pos The new focus point position in base coordinate system.
  * @param durationSeconds The duration in which the tilting operation will be completed in seconds.
  */
 -(void)setFocusPos: (NTMapPos*)pos durationSeconds: (float)durationSeconds;
@@ -90,7 +90,7 @@ __attribute__ ((visibility("default"))) @interface NTMapView : GLKView
  *
  * If durationSeconds > 0 the rotating operation will be animated over time. If the previous rotating animation has not
  * finished by the time this method is called, it will be stopped.
- * @param deltaZoom The delta zoom value.
+ * @param deltaAngle The delta angle value in degrees.
  * @param durationSeconds The duration in which the zooming operation will be completed in seconds.
  */
 -(void)rotate: (float)deltaAngle durationSeconds: (float)durationSeconds;
@@ -103,7 +103,7 @@ __attribute__ ((visibility("default"))) @interface NTMapView : GLKView
  *
  * If durationSeconds > 0 the rotating operation will be animated over time. If the previous rotating animation has not
  * finished by the time this method is called, it will be stopped.
- * @param deltaZoom The delta zoom value.
+ * @param deltaAngle The delta angle value in degrees.
  * @param targetPos The zooming target position in the coordinate system of the base projection.
  * @param durationSeconds The duration in which the zooming operation will be completed in seconds.
  */
@@ -115,7 +115,7 @@ __attribute__ ((visibility("default"))) @interface NTMapView : GLKView
  *
  * If durationSeconds > 0 the rotating operation will be animated over time. If the previous rotating animation has not
  * finished by the time this method is called, it will be stopped.
- * @param zoom The new absolute zoom value.
+ * @param angle The new absolute rotation angle value in degrees.
  * @param durationSeconds The duration in which the zooming operation will be completed in seconds.
  */
 -(void)setRotation: (float)angle durationSeconds: (float)durationSeconds;
@@ -128,7 +128,7 @@ __attribute__ ((visibility("default"))) @interface NTMapView : GLKView
  *
  * If durationSeconds > 0 the rotating operation will be animated over time. If the previous rotating animation has not
  * finished by the time this method is called, it will be stopped.
- * @param zoom The new absolute zoom value.
+ * @param angle The new absolute rotation angle value in degrees.
  * @param targetPos The zooming target position in the coordinate system of the base projection.
  * @param durationSeconds The duration in which the zooming operation will be completed in seconds.
  */

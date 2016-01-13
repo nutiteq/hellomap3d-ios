@@ -40,7 +40,7 @@ namespace Nuti { namespace MapnikVT {
 
 		static long long getTextId(long long id, std::size_t hash);
 		static long long getBitmapId(long long id, const std::string& file);
-		static long long getMultiMarkerId(long long id);
+		static long long getMultiMarkerId(long long id, bool shield);
 
 		template <typename V>
 		void bind(V* field, const std::shared_ptr<Mapnik::Expression>& expr) {

@@ -240,8 +240,6 @@ namespace Nuti {
         float _zoomLevelBias;
     
     private:
-        static bool DistanceComparator(const MapTileQuadTreeNode* tile1, const MapTileQuadTreeNode* tile2);
-        
         void calculateVisibleTiles(const std::shared_ptr<CullState>& cullState);
         void calculateVisibleTilesRecursive(const std::shared_ptr<CullState>& cullState, MapTileQuadTreeNode& mapTile);
         

@@ -34,15 +34,27 @@ namespace Nuti {
          */
         HTTPTileDataSource(int minZoom, int maxZoom, const std::string& baseURL);
         virtual ~HTTPTileDataSource();
+        
+        
+        /**
+         * Returns the base URL template containing tags.
+         * @return The base URL template.
+         */
+        const std::string& getBaseURL() const;
+        /**
+         * Sets the base URL for the data source.
+         * @param baseURL The base URL containing tags (for example, "http://tile.openstreetmap.org/{zoom}/{x}/{y}.png").
+         */
+        void setBaseURL(const std::string& baseURL);
 		
 		/**
 		 * Returns the current set of HTTP headers used. Initially this set is empty and can be changed with setHTTPHeaders.
 		 * @returns The current set of custom HTTP headers.
 		 */
-		const std::map<std::string, std::string>& getHTTPHeaders() const;
-		
+		const std::map<std::string, std::string>& getHTTPHeaders() const;		
 		/**
-		 * Sets HTTP headers for all requests.
+		 * Sets HTTP headers for all requests. Calling this method will invalidate the datasource and
+         * all layers using this data source will be refreshed.
 		 * @param headers A map of HTTP headers that will be used in subsequent requests.
 		 */
 		void setHTTPHeaders(const std::map<std::string, std::string>& headers);
@@ -52,7 +64,7 @@ namespace Nuti {
     protected:
         virtual std::string buildTileUrl(const MapTile& tile);
     
-        std::string _baseUrl;
+        std::string _baseURL;
 		std::map<std::string, std::string> _headers;
         HTTPClient _httpClient;
 		mutable std::mutex _mutex;

@@ -24,7 +24,7 @@ namespace Nuti {
     public:
         /**
          * Constructs a new simplifier, given tolerance.
-         * @param tolerance The maximum error for simplification. The tolerance value multiplied by view size (either height or width) gives maximum error in pixels.
+         * @param tolerance The maximum error for simplification. The tolerance value gives maximum error in pixels.
          */
         explicit DouglasPeuckerGeometrySimplifier(float tolerance);
 

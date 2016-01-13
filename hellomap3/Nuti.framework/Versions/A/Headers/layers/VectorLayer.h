@@ -88,7 +88,7 @@ namespace Nuti {
             
             bool _started;
             
-            virtual void loadElements(const std::shared_ptr<CullState>& cullState);
+            virtual bool loadElements(const std::shared_ptr<CullState>& cullState);
         };
         
         virtual void setComponents(const std::shared_ptr<CancelableThreadPool>& envelopeThreadPool,

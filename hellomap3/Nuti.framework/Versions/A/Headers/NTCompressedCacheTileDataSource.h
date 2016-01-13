@@ -41,12 +41,12 @@ __attribute__ ((visibility("default"))) @interface NTCompressedCacheTileDataSour
 -(id)initWithDataSource: (NTTileDataSource*)dataSource;
 -(NTTileData*)loadTile: (NTMapTile*)mapTile;
 -(NTTileData*)loadTileSwigExplicitNTCompressedCacheTileDataSource: (NTMapTile*)mapTile;
+-(void)clear;
+-(void)clearSwigExplicitNTCompressedCacheTileDataSource;
 -(unsigned int)getCapacity;
 -(unsigned int)getCapacitySwigExplicitNTCompressedCacheTileDataSource;
 -(void)setCapacity: (unsigned int)capacity;
 -(void)setCapacitySwigExplicitNTCompressedCacheTileDataSource: (unsigned int)capacity;
--(void)clear;
--(void)clearSwigExplicitNTCompressedCacheTileDataSource;
 /**
  * Returns the actual class name of this object. This is used internally by the SDK.<br>
  * @return The class name of this object.

@@ -106,7 +106,7 @@ namespace Nuti {
             ClusterFetchTask(const std::weak_ptr<ClusteredVectorLayer>& layer);
 
         protected:
-            virtual void loadElements(const std::shared_ptr<CullState>& cullState);
+            virtual bool loadElements(const std::shared_ptr<CullState>& cullState);
         };
 
         static const size_t THRESHOLD = 100;

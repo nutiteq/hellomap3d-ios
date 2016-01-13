@@ -41,7 +41,7 @@ namespace Nuti { namespace VT {
 		std::shared_ptr<StrokeSet> strokeSet;
 		boost::optional<cglib::mat3x3<float>> transform;
 
-		LineStyle(LineJoinMode joinMode, LineCapMode capMode, unsigned int color, float width, const std::shared_ptr<BitmapPattern>& strokePattern, const std::shared_ptr<StrokeSet>& strokeSet, const boost::optional<cglib::mat3x3<float>>& transform) : joinMode(joinMode), capMode(capMode), color(color), width(width), strokePattern(strokePattern), strokeSet(strokeSet), transform(transform) { }
+        LineStyle(LineJoinMode joinMode, LineCapMode capMode, unsigned int color, float width, std::shared_ptr<BitmapPattern> strokePattern, std::shared_ptr<StrokeSet> strokeSet, const boost::optional<cglib::mat3x3<float>>& transform) : joinMode(joinMode), capMode(capMode), color(color), width(width), strokePattern(std::move(strokePattern)), strokeSet(std::move(strokeSet)), transform(transform) { }
 	};
 
 	struct PolygonStyle {
@@ -49,7 +49,7 @@ namespace Nuti { namespace VT {
 		std::shared_ptr<BitmapPattern> pattern;
 		boost::optional<cglib::mat3x3<float>> transform;
 
-		PolygonStyle(unsigned int color, const std::shared_ptr<BitmapPattern>& pattern, const boost::optional<cglib::mat3x3<float>>& transform) : color(color), pattern(pattern), transform(transform) { }
+        PolygonStyle(unsigned int color, std::shared_ptr<BitmapPattern> pattern, const boost::optional<cglib::mat3x3<float>>& transform) : color(color), pattern(std::move(pattern)), transform(transform) { }
 	};
 
 	struct Polygon3DStyle {
@@ -66,18 +66,19 @@ namespace Nuti { namespace VT {
 		std::shared_ptr<Bitmap> bitmap;
 		cglib::mat3x3<float> transform;
 
-		BitmapLabelStyle(LabelOrientation placement, unsigned int color, const std::shared_ptr<Font>& font, const std::shared_ptr<Bitmap>& bitmap, const cglib::mat3x3<float>& transform) : placement(placement), color(color), font(font), bitmap(bitmap), transform(transform) { }
+        BitmapLabelStyle(LabelOrientation placement, unsigned int color, std::shared_ptr<Font> font, std::shared_ptr<Bitmap> bitmap, const cglib::mat3x3<float>& transform) : placement(placement), color(color), font(std::move(font)), bitmap(std::move(bitmap)), transform(transform) { }
 	};
 
 	struct TextLabelStyle {
 		LabelOrientation placement;
 		TextFormatter::Options formatterOptions;
 		std::shared_ptr<Font> font;
+		float angle;
 		float backgroundScale;
 		cglib::vec2<float> backgroundOffset;
 		std::shared_ptr<Bitmap> backgroundBitmap;
 
-		TextLabelStyle(LabelOrientation placement, const TextFormatter::Options& formatterOptions, const std::shared_ptr<Font>& font, float backgroundScale, const cglib::vec2<float>& backgroundOffset, const std::shared_ptr<Bitmap>& backgroundBitmap) : placement(placement), formatterOptions(formatterOptions), font(font), backgroundScale(backgroundScale), backgroundOffset(backgroundOffset), backgroundBitmap(backgroundBitmap) { }
+        TextLabelStyle(LabelOrientation placement, const TextFormatter::Options& formatterOptions, std::shared_ptr<Font> font, float angle, float backgroundScale, const cglib::vec2<float>& backgroundOffset, std::shared_ptr<Bitmap> backgroundBitmap) : placement(placement), formatterOptions(formatterOptions), font(std::move(font)), angle(angle), backgroundScale(backgroundScale), backgroundOffset(backgroundOffset), backgroundBitmap(std::move(backgroundBitmap)) { }
 	};
 } }
 
