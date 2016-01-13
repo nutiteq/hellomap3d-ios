@@ -33,11 +33,10 @@
 {
     return @{
              @"Basic":		   @"basic",
-             @"NutiBright 2D": @"nutibright",
+             @"NutiBright 2D": @"nutibright-v2a",
              @"NutiBright contours": @"nutibright-contourstyle",
              @"Nutiteq dark": @"nutiteq-dark",
              @"NutiBright 3D": @"nutibright3d",
-             @"OSM Bright Chinese": @"osmbright-heilight",
              @"Loose Leaf":	   @"looseleaf"
              };
 }
@@ -61,7 +60,7 @@
     NSString* styleAssetName = [self.vectorStyleName stringByAppendingString: @".zip"];
     BOOL styleBuildings3D = NO;
     if ([self.vectorStyleName isEqualToString:@"nutibright3d"]) {
-        styleAssetName = @"nutibright.zip";
+        styleAssetName = @"nutibright-v2a.zip";
         styleBuildings3D = YES;
     }
     NTUnsignedCharVector *vectorTileStyleSetData = [NTAssetUtils loadBytes:styleAssetName];
@@ -70,14 +69,16 @@
     // Create vector tile decoder using the styleset and update style parameters
     self.vectorTileDecoder = [[NTMBVectorTileDecoder alloc] initWithStyleSet:vectorTileStyleSet];
     [self.vectorTileDecoder setStyleStringParameter:@"lang" value:self.vectorStyleLanguage];
-    if ([styleAssetName isEqualToString:@"nutibright.zip"] && styleBuildings3D) { // only OSM Bright style supports this currently
+    if ([styleAssetName isEqualToString:@"nutibright-v2a.zip"] && styleBuildings3D) { // only OSM Bright style supports this currently
         [self.vectorTileDecoder setStyleBoolParameter:@"buildings3d" value:YES];
     }
     
     [self.vectorTileDecoder setStyleStringParameter:@"markers3d" value:@"1"];
     [self.vectorTileDecoder setStyleStringParameter:@"texts3d" value:@"1"];
+    [self.vectorTileDecoder setStyleStringParameter:@"shields3d" value:@"1"];
+
     
-    
+    // special parameters for elevation contour style
     [self.vectorTileDecoder setStyleStringParameter:@"contour_stroke" value:@"rgba(217, 166, 140, 0.53)"];
     [self.vectorTileDecoder setStyleFloatParameter:@"contour_width" value:0.8];
     
@@ -124,7 +125,7 @@
     [self.mapView setRotation:0 durationSeconds:0];
     
     // Set default style parameters and create base layer
-    self.vectorStyleName = @"nutibright";
+    self.vectorStyleName = @"nutibright-v2a";
     self.vectorStyleLanguage = @"";
     [self updateBaseLayer];
     
