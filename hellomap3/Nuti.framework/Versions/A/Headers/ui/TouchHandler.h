@@ -95,7 +95,7 @@ namespace Nuti {
         
         // Determines how long it takes to cancel kinetic zoom and rotation after one
         // pointer is lifted but the other one is not
-        static const float DUAL_KINETIC_HOLD_DURATION_S;
+        static const std::chrono::milliseconds DUAL_KINETIC_HOLD_DURATION;
     
         // Map panning type, 0 = fast, accurate (finger stays exactly in the same
         // place), 1 = slow, inaccurate
@@ -110,7 +110,7 @@ namespace Nuti {
         cglib::vec2<float> _swipe2;
     
         bool _noDualPointerYet;
-        std::chrono::time_point<std::chrono::system_clock> _dualPointerReleaseTime;
+        std::chrono::time_point<std::chrono::steady_clock> _dualPointerReleaseTime;
     
         std::shared_ptr<ClickHandlerWorker> _clickHandlerWorker;
         std::thread _clickHandlerThread;

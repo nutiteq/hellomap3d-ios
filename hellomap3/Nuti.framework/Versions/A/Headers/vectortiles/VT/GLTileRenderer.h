@@ -36,7 +36,8 @@ namespace Nuti { namespace VT {
 		void deinitialize();
 
 		void startFrame(float dt);
-		bool render();
+		bool render2D();
+		bool renderLabels();
 		bool render3D();
 		void endFrame();
 

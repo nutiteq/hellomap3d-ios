@@ -56,6 +56,7 @@
 #include "layers/Layers.h"
 #include "layers/NMLModelLODTreeLayer.h"
 #include "layers/RasterTileLayer.h"
+#include "layers/UTFGridRasterTileLayer.h"
 #include "layers/TileLoadListener.h"
 #include "layers/VectorLayer.h"
 #include "layers/VectorTileLayer.h"
@@ -73,6 +74,14 @@
 #include "packagemanager/NutiteqPackageManager.h"
 
 #include "renderers/components/CullState.h"
+
+#include "routing/RoutingInstruction.h"
+#include "routing/RoutingRequest.h"
+#include "routing/RoutingResult.h"
+#include "routing/RoutingService.h"
+#include "routing/NutiteqOnlineRoutingService.h"
+#include "routing/NutiteqOfflineRoutingService.h"
+#include "routing/PackageManagerRoutingService.h"
 
 #include "styles/BalloonPopupStyleBuilder.h"
 #include "styles/BalloonPopupStyle.h"

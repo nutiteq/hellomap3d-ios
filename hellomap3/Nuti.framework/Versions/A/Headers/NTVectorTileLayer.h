@@ -15,6 +15,24 @@
 extern "C" {
 #endif
 
+/**
+ * Vector tile label display ordering.
+ */
+typedef NS_ENUM(NSInteger, NTVectorTileLabelOrder) {
+/**
+ * Labels are hidden.
+ */
+  NT_VECTOR_TILE_LABEL_ORDER_HIDDEN,
+/**
+ * Labels are rendered on top of other current layer elements but before subsequent layers.
+ */
+  NT_VECTOR_TILE_LABEL_ORDER_LAYER,
+/**
+ * Labels are rendered on top of all normal layers, except 3D layers.
+ */
+  NT_VECTOR_TILE_LABEL_ORDER_LAST
+};
+
 
 #import "NTTileData.h"
 #import "NTTileDataSource.h"
@@ -59,6 +77,16 @@ __attribute__ ((visibility("default"))) @interface NTVectorTileLayer : NTTileLay
  * @return The new tile bitmap cache capacity in bytes.
  */
 -(void)setTileCacheCapacity: (unsigned int)capacityInBytes;
+/**
+ * Returns the current display order of the labels.<br>
+ * @return The display order of the labels. Default is VECTOR_TILE_LABEL_ORDER_LAYER.
+ */
+-(enum NTVectorTileLabelOrder)getLabelOrder;
+/**
+ * Sets the current display order of the labels.<br>
+ * @param labelOrder The new display order of the labels.
+ */
+-(void)setLabelOrder: (enum NTVectorTileLabelOrder)labelOrder;
 -(void)clearTileCaches: (BOOL)all;
 /**
  * Returns the actual class name of this object. This is used internally by the SDK.<br>

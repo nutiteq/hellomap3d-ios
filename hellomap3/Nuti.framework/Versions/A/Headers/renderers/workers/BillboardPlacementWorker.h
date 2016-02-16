@@ -40,7 +40,7 @@ namespace Nuti {
         
         bool calculateBillboardPlacement();
         
-        bool overlapComparator(const std::shared_ptr<Billboard>& billboard1, const std::shared_ptr<Billboard>& billboard2) const;
+        bool overlapComparator(const std::shared_ptr<BillboardDrawData>& drawData1, const std::shared_ptr<BillboardDrawData>& drawData2) const;
         
         bool _stop;
         bool _idle;
@@ -50,7 +50,7 @@ namespace Nuti {
         bool _sort3D;
     
         bool _pendingWakeup;
-        std::chrono::time_point<std::chrono::system_clock> _wakeupTime;
+        std::chrono::time_point<std::chrono::steady_clock> _wakeupTime;
         
         std::weak_ptr<MapRenderer> _mapRenderer;
         std::shared_ptr<BillboardPlacementWorker> _worker;

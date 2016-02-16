@@ -32,8 +32,9 @@ namespace Nuti {
     
         float getAttachAnchorPointX() const;
         float getAttachAnchorPointY() const;
-    
-        std::shared_ptr<Billboard> getBaseBillboard() const;
+
+        const std::weak_ptr<Billboard>& getBillboard() const;    
+        const std::weak_ptr<Billboard>& getBaseBillboard() const;
     
         std::shared_ptr<Bitmap> getBitmap() const;
     
@@ -99,8 +100,9 @@ namespace Nuti {
         
         float _attachAnchorPointX;
         float _attachAnchorPointY;
-    
-        std::shared_ptr<Billboard> _baseBillboard;
+  
+        std::weak_ptr<Billboard> _billboard;  
+        std::weak_ptr<Billboard> _baseBillboard;
     
         std::shared_ptr<Bitmap> _bitmap;
     

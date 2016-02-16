@@ -69,7 +69,7 @@ namespace Nuti {
         std::unordered_set<T> getKeys() const;
         std::list<CacheKeyInfo> getKeyInfos() const;
     
-		void invalidate(const T& id, std::chrono::system_clock::time_point expirationTime = std::chrono::system_clock::now());
+		void invalidate(const T& id, std::chrono::steady_clock::time_point expirationTime = std::chrono::steady_clock::now());
         void invalidateAll();
         bool isValid(const T& id) const;
         
@@ -98,7 +98,7 @@ namespace Nuti {
     
         typedef std::list<CacheElement> CacheElementList;
         typedef std::unordered_map<T, typename CacheElementList::iterator> CacheElementItMap;
-		typedef std::unordered_map<T, std::chrono::system_clock::time_point> CacheExpirationMap;
+		typedef std::unordered_map<T, std::chrono::steady_clock::time_point> CacheExpirationMap;
 		
         void removeOldestElements();
     
@@ -355,7 +355,7 @@ namespace Nuti {
     }
     
     template <typename T>
-	void LRUTextureCache<T>::invalidate(const T& id, std::chrono::system_clock::time_point expirationTime) {
+	void LRUTextureCache<T>::invalidate(const T& id, std::chrono::steady_clock::time_point expirationTime) {
         std::lock_guard<std::mutex> lock(_mutex);
     
 		_invalidatedElements[id] = expirationTime;
@@ -365,7 +365,7 @@ namespace Nuti {
     void LRUTextureCache<T>::invalidateAll() {
         std::lock_guard<std::mutex> lock(_mutex);
     
-		std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
+		std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
         for (const CacheElement& element : _lruElements) {
             _invalidatedElements[element._id] = now;
         }
@@ -381,7 +381,7 @@ namespace Nuti {
 		
 		auto it = _invalidatedElements.find(id);
         if (it != _invalidatedElements.end()) {
-			return it->second > std::chrono::system_clock::now();
+			return it->second > std::chrono::steady_clock::now();
         }
         return true;
     }

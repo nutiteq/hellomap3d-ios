@@ -57,6 +57,7 @@
 #import "NTLayers.h"
 #import "NTNMLModelLODTreeLayer.h"
 #import "NTRasterTileLayer.h"
+#import "NTUTFGridRasterTileLayer.h"
 #import "NTTileLoadListener.h"
 #import "NTVectorLayer.h"
 #import "NTVectorTileLayer.h"
@@ -74,6 +75,14 @@
 #import "NTNutiteqPackageManager.h"
 
 #import "NTCullState.h"
+
+#import "NTRoutingInstruction.h"
+#import "NTRoutingRequest.h"
+#import "NTRoutingResult.h"
+#import "NTRoutingService.h"
+#import "NTNutiteqOnlineRoutingService.h"
+#import "NTNutiteqOfflineRoutingService.h"
+#import "NTPackageManagerRoutingService.h"
 
 #import "NTBalloonPopupStyleBuilder.h"
 #import "NTBalloonPopupStyle.h"

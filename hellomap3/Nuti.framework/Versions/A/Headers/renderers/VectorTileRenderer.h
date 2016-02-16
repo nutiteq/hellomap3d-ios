@@ -32,11 +32,13 @@ namespace Nuti {
         VectorTileRenderer(const std::weak_ptr<MapRenderer>& mapRenderer);
         virtual ~VectorTileRenderer();
     
+        void setLabelOrder(int labelOrder);
+
         void offsetLayerHorizontally(double offset);
     
         void onSurfaceCreated(ShaderManager& shaderManager);
         bool onDrawFrame(float deltaSeconds, const ViewState& viewState);
-		bool onDrawFrame3D(float deltaSeconds, const ViewState& viewState);
+        bool onDrawFrame3D(float deltaSeconds, const ViewState& viewState);
         void onSurfaceDestroyed();
     
         void setBackgroundColor(const Color& color);
@@ -46,7 +48,8 @@ namespace Nuti {
     
     private:
         std::weak_ptr<MapRenderer> _mapRenderer;
-		std::shared_ptr<VT::GLTileRenderer> _glRenderer;
+        std::shared_ptr<VT::GLTileRenderer> _glRenderer;
+        int _labelOrder;
         double _horizontalLayerOffset;
         std::map<VT::TileId, std::shared_ptr<VT::Tile> > _tiles;
 

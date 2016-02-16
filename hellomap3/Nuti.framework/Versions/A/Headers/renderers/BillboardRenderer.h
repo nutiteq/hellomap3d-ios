@@ -38,7 +38,7 @@ namespace Nuti {
     
         void onSurfaceCreated(ShaderManager& shaderManager);
         void onDrawFrame(float deltaSeconds, BillboardSorter& billboardSorter, LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache, const ViewState& viewState);
-        void onDrawFrameSorted(float deltaSeconds, const std::vector<std::shared_ptr<Billboard> >& billboardsBuffer, LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache, const ViewState& viewState);
+        void onDrawFrameSorted(float deltaSeconds, const std::vector<std::shared_ptr<BillboardDrawData> >& billboardDrawDatas, LRUTextureCache<std::shared_ptr<Bitmap> >& styleCache, const ViewState& viewState);
         void onSurfaceDestroyed();
     
         size_t getElementCount() const;
@@ -50,7 +50,7 @@ namespace Nuti {
         void setLayer(const std::shared_ptr<VectorLayer>& layer);
         std::shared_ptr<VectorLayer> getLayer() const;
     
-        virtual void calculateRayIntersectedElements(const std::vector<std::shared_ptr<Billboard> >& billboardsBuffer, const std::shared_ptr<VectorLayer>& layer, const MapPos& rayOrig, const MapVec& rayDir, const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
+        virtual void calculateRayIntersectedElements(const std::vector<std::shared_ptr<BillboardDrawData> >& billboardDrawDatas, const std::shared_ptr<VectorLayer>& layer, const MapPos& rayOrig, const MapVec& rayDir, const ViewState& viewState, std::vector<VectorElementClickInfo>& results) const;
     
     private:
         static void BuildAndDrawBuffers(GLuint a_color,

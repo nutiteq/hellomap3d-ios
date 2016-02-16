@@ -11,7 +11,6 @@
 #include <vector>
 
 namespace Nuti {
-    class Billboard;
     class BillboardDrawData;
     class ViewState;
     
@@ -20,18 +19,18 @@ namespace Nuti {
         BillboardSorter();
         virtual ~BillboardSorter();
     
-        void addBillboard(const std::shared_ptr<Billboard>& billboard);
+        void clear();
+    
+        void add(const std::shared_ptr<BillboardDrawData>& drawData);
     
         void sort(const ViewState& viewState);
     
-        const std::vector<std::shared_ptr<Billboard> >& getSortedBillboards() const;
-    
-        void clear();
+        const std::vector<std::shared_ptr<BillboardDrawData> >& getSortedBillboardDrawDatas() const;
     
     private:
-        bool distanceComparator(const std::shared_ptr<Billboard>& billboard1, const std::shared_ptr<Billboard>& billboard2) const;
+        bool distanceComparator(const std::shared_ptr<BillboardDrawData>& drawData1, const std::shared_ptr<BillboardDrawData>& drawData2) const;
     
-        std::vector<std::shared_ptr<Billboard> > _billboards;
+        std::vector<std::shared_ptr<BillboardDrawData> > _billboardDrawDatas;
     
         bool _sort3D;
     };

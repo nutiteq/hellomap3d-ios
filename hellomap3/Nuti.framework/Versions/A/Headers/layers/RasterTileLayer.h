@@ -106,6 +106,17 @@ namespace Nuti {
         virtual void clearTileCaches(bool all);
     
     protected:
+        class FetchTask : public TileLayer::FetchTaskBase {
+        public:
+            FetchTask(const std::shared_ptr<RasterTileLayer>& layer, const MapTileQuadTreeNode& tile, bool preloadingTile);
+    
+        protected:
+            bool loadTile(const std::shared_ptr<TileLayer>& tileLayer);
+			
+		private:
+			std::shared_ptr<Bitmap> extractSubTile(const std::shared_ptr<Bitmap>& bitmap, const MapTile& subTile, const MapTile& tile);
+        };
+    
         virtual bool tileExists(const MapTile& mapTile, bool preloadingCache);
         virtual bool tileIsValid(const MapTile& mapTile) const;
         virtual void fetchTile(const MapTileQuadTreeNode& mapTile, bool preloadingTile,bool invalidated);
@@ -131,17 +142,6 @@ namespace Nuti {
         virtual void unregisterDataSourceListener();
     
     private:    
-        class FetchTask : public TileLayer::FetchTaskBase {
-        public:
-            FetchTask(const std::shared_ptr<RasterTileLayer>& layer, const MapTileQuadTreeNode& tile, bool preloadingTile);
-    
-        protected:
-            bool loadTile(const std::shared_ptr<TileLayer>& tileLayer);
-			
-		private:
-			std::shared_ptr<Bitmap> extractSubTile(const std::shared_ptr<Bitmap>& bitmap, const MapTile& subTile, const MapTile& tile);
-        };
-    
         static const int PRELOADING_PRIORITY_OFFSET = -2;
         static const int TILE_TEXTURES_PER_FRAME = 1;
         

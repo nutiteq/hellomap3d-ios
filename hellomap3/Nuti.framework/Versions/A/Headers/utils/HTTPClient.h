@@ -19,15 +19,17 @@ namespace Nuti {
 
     class HTTPClient {
     public:
+        typedef std::function<bool(std::uint64_t, std::uint64_t, const unsigned char*, size_t)> HandlerFn;
+
         explicit HTTPClient(bool log);
 
         int get(const std::string& url, const std::map<std::string, std::string>& requestHeaders, std::map<std::string, std::string>& responseHeaders, std::shared_ptr<std::vector<unsigned char> >& responseData) const;
-        int get(const std::string& url, const std::map<std::string, std::string>& requestHeaders, std::map<std::string, std::string>& responseHeaders, std::function<bool(std::uint64_t, const unsigned char*, size_t)> handler, std::uint64_t offset) const;
+        int get(const std::string& url, const std::map<std::string, std::string>& requestHeaders, std::map<std::string, std::string>& responseHeaders, HandlerFn handler, std::uint64_t offset) const;
 
     private:
         struct Connection;
 
-        int handleGetRequest(Connection& connection, const std::string& url, const std::map<std::string, std::string>& requestHeaders, std::map<std::string, std::string>& responseHeaders, std::function<bool(std::uint64_t, const unsigned char*, size_t)> handler, std::uint64_t offset) const;
+        int handleGetRequest(Connection& connection, const std::string& url, const std::map<std::string, std::string>& requestHeaders, std::map<std::string, std::string>& responseHeaders, HandlerFn handler, std::uint64_t offset) const;
 
         bool _log;
         mutable std::multimap<std::pair<std::string, int>, std::shared_ptr<Connection> > _connectionMap;

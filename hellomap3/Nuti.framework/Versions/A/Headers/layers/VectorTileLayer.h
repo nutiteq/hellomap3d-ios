@@ -27,6 +27,26 @@ namespace Nuti {
         class Tile;
     }
     
+    namespace VectorTileLabelOrder {
+        /**
+         * Vector tile label display ordering.
+         */
+        enum VectorTileLabelOrder {
+            /**
+             * Labels are hidden.
+             */
+            VECTOR_TILE_LABEL_ORDER_HIDDEN,
+            /**
+             * Labels are rendered on top of other current layer elements but before subsequent layers.
+             */
+            VECTOR_TILE_LABEL_ORDER_LAYER,
+            /**
+             * Labels are rendered on top of all normal layers, except 3D layers.
+             */
+            VECTOR_TILE_LABEL_ORDER_LAST
+        };
+    };
+    
     /**
      * A tile layer where each tile is a bitmap. Should be used together with corresponding data source.
      */
@@ -51,7 +71,6 @@ namespace Nuti {
          * @return The tile cache capacity in bytes.
          */
         unsigned int getTileCacheCapacity() const;
-    
         /**
          * Sets the vector tile cache capacity. Tile cache is the primary storage for vector data,
          * all tiles contained within the cache are stored as uncompressed vertex buffers and can immediately be
@@ -62,6 +81,17 @@ namespace Nuti {
          * @return The new tile bitmap cache capacity in bytes.
          */
         void setTileCacheCapacity(unsigned int capacityInBytes);
+        
+        /**
+         * Returns the current display order of the labels.
+         * @return The display order of the labels. Default is VECTOR_TILE_LABEL_ORDER_LAYER.
+         */
+        VectorTileLabelOrder::VectorTileLabelOrder getLabelOrder() const;
+        /**
+         * Sets the current display order of the labels.
+         * @param labelOrder The new display order of the labels.
+         */
+        void setLabelOrder(VectorTileLabelOrder::VectorTileLabelOrder labelOrder);
     
         virtual void clearTileCaches(bool all);
         
@@ -127,6 +157,8 @@ namespace Nuti {
     
         static const int CULL_DELAY_TIME = 200;
         static const int PRELOADING_PRIORITY_OFFSET = -2;
+        
+        VectorTileLabelOrder::VectorTileLabelOrder _labelOrder;
     
         std::shared_ptr<VectorTileDecoder> _tileDecoder;
         std::shared_ptr<VectorTileRenderer> _renderer;

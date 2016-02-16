@@ -32,6 +32,7 @@ namespace Nuti {
     class CameraTiltEvent;
     class CameraZoomEvent;
     class Bitmap;
+    class BillboardDrawData;
     class Layer;
     class Layers;
     class MapPos;
@@ -56,7 +57,7 @@ namespace Nuti {
 		void init();
         void deinit();
         
-        std::vector<std::shared_ptr<Billboard> > getBillboards() const;
+        std::vector<std::shared_ptr<BillboardDrawData> > getBillboardDrawDatas() const;
     
         MapPos getCameraPos() const;
         MapPos getFocusPos() const;
@@ -126,7 +127,7 @@ namespace Nuti {
     
         static const int BILLBOARD_PLACEMENT_TASK_DELAY = 200;
         
-        std::chrono::time_point<std::chrono::system_clock> _lastFrameTime;
+        std::chrono::time_point<std::chrono::steady_clock> _lastFrameTime;
     
         ViewState _viewState;
     
@@ -142,7 +143,7 @@ namespace Nuti {
         WatermarkRenderer _watermarkRenderer;
         
         BillboardSorter _billboardSorter;
-        std::vector<std::shared_ptr<Billboard> > _billboardsBuffer;
+        std::vector<std::shared_ptr<BillboardDrawData> > _billboardDrawDataBuffer;
     
         bool _billboardsChanged;
         std::shared_ptr<BillboardPlacementWorker> _billboardPlacementWorker;

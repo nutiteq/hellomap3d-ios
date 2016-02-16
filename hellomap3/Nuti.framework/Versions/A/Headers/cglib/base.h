@@ -28,7 +28,7 @@ namespace cglib
 
 	public:
 
-		static inline T infinity() { if (!std::numeric_limits<T>::has_infinity) throw std::runtime_error("INFINITY is not representable"); return std::numeric_limits<T>::infinity(); }
+		static inline T infinity() { return std::numeric_limits<T>::has_infinity ? std::numeric_limits<T>::infinity() : std::numeric_limits<T>::max(); }
 		static inline T epsilon() { return 0; }
 		static inline T sqrt(T val) { return static_cast<T>(std::sqrt(static_cast<double>(val))); }
 		static inline T cos(T val) { return static_cast<T>(std::cos(static_cast<double>(val))); }

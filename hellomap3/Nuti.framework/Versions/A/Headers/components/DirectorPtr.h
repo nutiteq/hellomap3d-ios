@@ -71,4 +71,13 @@ namespace Nuti {
 
 }
 
+namespace std {
+    template <typename T>
+    struct hash<Nuti::DirectorPtr<T> > {
+        size_t operator() (const Nuti::DirectorPtr<T>& ptr) const {
+            return hash<shared_ptr<T> >()(ptr.get());
+        }
+    };
+}
+
 #endif

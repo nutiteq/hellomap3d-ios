@@ -213,6 +213,8 @@ namespace Nuti {
         virtual bool tileExists(const MapTile& tile, bool preloadingCache) = 0;
         virtual bool tileIsValid(const MapTile& tile) const = 0;
         virtual void fetchTile(const MapTileQuadTreeNode& tile, bool preloadingTile, bool invalidated) = 0;
+
+        static std::vector<std::shared_ptr<MapTileQuadTreeNode> > buildTileQuadTreeNodes(const MapTile& mapTile);
     
         virtual void calculateDrawData(const MapTileQuadTreeNode& requestedTile, const MapTileQuadTreeNode& closestTile, bool preloadingTile) = 0;
         virtual void refreshDrawData(const std::shared_ptr<CullState>& cullState) = 0;

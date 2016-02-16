@@ -18,11 +18,13 @@ namespace Nuti {
 
     class NetworkUtils {
     public:
+        typedef std::function<bool(std::uint64_t, std::uint64_t, const unsigned char*, size_t)> HandlerFn;
+
         static bool GetHTTP(const std::string& url, std::shared_ptr<std::vector<unsigned char> >& responseData, bool log);
 
         static bool GetHTTP(const std::string& url, const std::map<std::string, std::string>& requestHeaders, std::map<std::string, std::string>& responseHeaders, std::shared_ptr<std::vector<unsigned char> >& responseData, bool log);
 
-        static int GetHTTP(const std::string& url, const std::map<std::string, std::string>& requestHeaders, std::map<std::string, std::string>& responseHeaders, std::function<bool(std::uint64_t, const unsigned char*, size_t)> handler, std::uint64_t offset, bool log);
+        static int GetHTTP(const std::string& url, const std::map<std::string, std::string>& requestHeaders, std::map<std::string, std::string>& responseHeaders, HandlerFn handler, std::uint64_t offset, bool log);
 
         static int GetMaxAgeHTTPHeader(const std::map<std::string, std::string>& headers);
 

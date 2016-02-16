@@ -58,7 +58,7 @@ namespace Nuti {
 		
     private:
         std::shared_ptr<std::vector<unsigned char> > _data;
-		std::shared_ptr<std::chrono::system_clock::time_point> _expirationTime;
+		std::shared_ptr<std::chrono::steady_clock::time_point> _expirationTime;
         bool _replaceWithParent;
 		mutable std::mutex _mutex;
     };

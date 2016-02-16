@@ -30,6 +30,7 @@ namespace Nuti {
         virtual ~NutiteqPackageManager();
 		
 	protected:
+        static std::string GetPackageListUrl(const std::string& source);
         static std::string GetLocalEncKey();
 
         virtual std::string createPackageUrl(const std::string& packageId, int version, const std::string& baseUrl, bool downloaded) const;
@@ -37,8 +38,8 @@ namespace Nuti {
 		virtual std::shared_ptr<PackageInfo> getCustomPackage(const std::string& packageId, int version) const;
 		
 	private:
-		static const std::string PACKAGE_LIST_URL;
-
+		static const std::string MAP_PACKAGE_LIST_URL;
+        static const std::string ROUTING_PACKAGE_LIST_URL;
         static const std::string CUSTOM_BBOX_PACKAGE_URL;
         
         static const std::string SERVER_ENC_KEY;
