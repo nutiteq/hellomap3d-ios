@@ -59,6 +59,12 @@ namespace Nuti {
          */
         virtual void close();
 
+        /**
+         * Close the cache database. The datasource will still work afterwards,
+         * but all requests will be directed to the original datasource.
+         */
+        virtual void close();
+
         virtual std::shared_ptr<TileData> loadTile(const MapTile& mapTile);
         
         virtual void clear();

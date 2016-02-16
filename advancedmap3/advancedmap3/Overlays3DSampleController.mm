@@ -39,11 +39,12 @@
 	[polygon3DPoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.646444 y:59.416245]]];
 	
 	// Create 3D polygon holes poses
-	NTMapPosVectorVector* polygon3DHoles = [[NTMapPosVectorVector alloc] init];
-	[polygon3DHoles add:[[NTMapPosVector alloc] init]];
-	[[polygon3DHoles get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.643409 y:59.411922]]];
-	[[polygon3DHoles get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.651207 y:59.412896]]];
-	[[polygon3DHoles get:0] add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.643207 y:59.414411]]];
+    NTMapPosVector* polygon3DHolePoses = [[NTMapPosVector alloc] init];
+	[polygon3DHolePoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.643409 y:59.411922]]];
+	[polygon3DHolePoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.651207 y:59.412896]]];
+	[polygon3DHolePoses add:[proj fromWgs84:[[NTMapPos alloc] initWithX:24.643207 y:59.414411]]];
+    NTMapPosVectorVector* polygon3DHoles = [[NTMapPosVectorVector alloc] init];
+    [polygon3DHoles add:polygon3DHolePoses];
 	
 	// Add to datasource
 	NTPolygon3D* polygon3D = [[NTPolygon3D alloc] initWithGeometry:[[NTPolygonGeometry alloc] initWithPoses:polygon3DPoses holes:polygon3DHoles] style:[polygon3DStyleBuilder buildStyle] height: 150];

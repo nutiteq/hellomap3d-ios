@@ -34,7 +34,6 @@
     return @{
              @"Basic":		   @"basic",
              @"NutiBright 2D": @"nutibright-v2a",
-             @"NutiBright contours": @"nutibright-contourstyle",
              @"Nutiteq dark": @"nutiteq-dark",
              @"NutiBright 3D": @"nutibright3d",
              @"Loose Leaf":	   @"looseleaf"

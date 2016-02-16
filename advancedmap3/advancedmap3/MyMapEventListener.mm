@@ -23,12 +23,15 @@
 {
  // called very often, even just console logging can lag map movement animation
  // print new map bounding box:
+    /*
     NTMapPos* topLeft = [[[_mapView getOptions] getBaseProjection] toWgs84:[_mapView screenToMap: [[NTScreenPos alloc] initWithX:0 y:0]]];
   
     int w = _mapView.frame.size.width * [[UIScreen mainScreen] scale];
     int h = _mapView.frame.size.height * [[UIScreen mainScreen] scale];
     NTMapPos* bottomRight = [[[_mapView getOptions] getBaseProjection] toWgs84:[_mapView screenToMap:  [[NTScreenPos alloc] initWithX:w y:h]]];
+    NSLog(@"Map zoom %f",[_mapView getZoom]);
     NSLog(@"Map moved to (screen %d %d) topLeft %f %f bottomRight %f %f", w, h, [topLeft getX], [topLeft getY], [bottomRight getX], [bottomRight getY]);
+     */
 }
 
 -(void)onMapClicked:(NTMapClickInfo*)mapClickInfo
@@ -104,9 +107,16 @@
   NTVectorElement* vectorElement = [clickInfo getVectorElement];
   
   NSString* clickText = [vectorElement getMetaDataElement:@"ClickText"];
-  if (clickText == nil || [clickText length] == 0) {
-    return;
-  }
+    
+  NSString* desc = @"";
+    for(int i=0; i<[[vectorElement getMetaData] size]; i++){
+        NSString* key =[[vectorElement getMetaData] get_key:i];
+        desc = [NSString stringWithFormat:@"%@%@ = %@\n", desc, key, [[vectorElement getMetaData] get:key]];
+    }
+    
+//  if (clickText == nil || [clickText length] == 0) {
+//    return;
+//  }
   
   // zoom in for cluster clicks
   if ([vectorElement isKindOfClass:[NTBalloonPopup class]]){
@@ -114,7 +124,6 @@
       [_mapView zoom:2.0f targetPos:[clickInfo getElementClickPos] durationSeconds:0.5f];
       return;
     }
-    
   }
   
   
@@ -125,7 +134,7 @@
     clickPopup = [[NTBalloonPopup alloc] initWithBaseBillboard:billboard
                                                          style:[styleBuilder buildStyle]
                                                          title:clickText
-                                                          desc:@""];
+                                                          desc:desc];
   }
   else
   {
@@ -133,12 +142,12 @@
     clickPopup = [[NTBalloonPopup alloc] initWithPos:[clickInfo getElementClickPos]
                                                style:[styleBuilder buildStyle]
                                                title:clickText
-                                                desc:@""];
+                                                desc:desc];
   }
   [_vectorDataSource add:clickPopup];
   _oldClickLabel = clickPopup;
   
-  NSLog(@"Vector element clicked, metadata : '%@'", clickText);
+  NSLog(@"Vector element clicked, metadata : '%@' desc %@", clickText, desc);
   
   
 }
