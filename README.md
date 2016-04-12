@@ -7,7 +7,12 @@ Here are some simple example apps with Nutiteq Maps SDK 3.x for iOS.
    * AdvancedMap3: various advanced samples showing different aspects and APIs of the SDK
    * Hellomap3swift: Basic Swift sample 
 
-NB! If you are **downloading** the sample project instead of cloning then you need to download SDK latest build separately. Get suitable development build for ios: [sdk3-ios-build-106-54bd10d486222b6221f24dae4bdddcf993502f21.zip](https://nutifront.s3.amazonaws.com/sdk_snapshots/sdk3-ios-build-106-54bd10d486222b6221f24dae4bdddcf993502f21.zip), unzip it and put to hellomap folder. With cloning the library should be downloaded automatically from GIT-LFS.
+
+*NB!* You need to be careful when using the samples:
+
+If you are **cloning** the sample project, then make sure you have [GIT-LFS](https://git-lfs.github.com/) installed. Otherwise SDK binary is not downloaded properly, and you get build errors.
+
+If you are **downloading** the sample project instead of cloning then you need to download SDK latest build separately. Get suitable development build for ios: [sdk3-ios-snapshot-latest.zip](https://nutifront.s3.amazonaws.com/sdk_snapshots/sdk3-ios-snapshot-latest.zip), unzip it and put to hellomap folder. With cloning the library should be downloaded automatically from GIT-LFS.
 
 
 Developer getting started and doc references are in [Nutiteq Developer site](https://developer.nutiteq.com/docs)
