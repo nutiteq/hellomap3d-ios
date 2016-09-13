@@ -59,6 +59,20 @@ typedef NS_ENUM(NSInteger, NTPanningMode) {
   NT_PANNING_MODE_STICKY_FINAL
 };
 
+/**
+ *  Possible pivot modes.
+ */
+typedef NS_ENUM(NSInteger, NTPivotMode) {
+/**
+ * The touch point (or middle point between 2 finger touches) is used as the pivot point.
+ */
+  NT_PIVOT_MODE_TOUCHPOINT,
+/**
+ * Screen center is always used for pivot point.
+ */
+  NT_PIVOT_MODE_CENTERPOINT
+};
+
 
 #import "NTMapBounds.h"
 #import "NTMapRange.h"
@@ -141,7 +155,7 @@ __attribute__ ((visibility("default"))) @interface NTOptions : NSObject
  * require this functionality, it can be turned off. The default is true.<br>
  * @param enabled The new state of the click type detection flag.
  */
--(void)setClickTypeDetecton: (BOOL)enabled;
+-(void)setClickTypeDetection: (BOOL)enabled;
 /**
  * Returns the tile size used for drawing map tiles.<br>
  * @return The tile size in density-independent pixels (dp).
@@ -199,6 +213,16 @@ __attribute__ ((visibility("default"))) @interface NTOptions : NSObject
  * @param panningMode The new panning mode.
  */
 -(void)setPanningMode: (enum NTPanningMode)panningMode;
+/**
+ * Returns the pivot mode.<br>
+ * @return The pivot mode.
+ */
+-(enum NTPivotMode)getPivotMode;
+/**
+ * Sets the pivot mode. The default is PivotMode::TOUCHPOINT<br>
+ * @param pivotMode The new pivot mode.
+ */
+-(void)setPivotMode: (enum NTPivotMode)pivotMode;
 /**
  * Returns the state of seamless horizontal panning flag.<br>
  * @return True if seamless horizontal panning is enabled.

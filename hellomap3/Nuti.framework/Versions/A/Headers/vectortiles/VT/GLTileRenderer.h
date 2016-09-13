@@ -4,13 +4,16 @@
  * to license terms, as given in https://www.nutiteq.com/license/
  */
 
-#ifndef _NUTI_VT_GLTILERENDERERBASE_H_
-#define _NUTI_VT_GLTILERENDERERBASE_H_
+#ifndef _NUTI_VT_GLTILERENDERER_H_
+#define _NUTI_VT_GLTILERENDERER_H_
 
+#include "Color.h"
 #include "Tile.h"
 #include "GLExtensions.h"
 #include "GLShaderManager.h"
 
+#include <memory>
+#include <array>
 #include <vector>
 #include <map>
 #include <unordered_set>
@@ -22,18 +25,19 @@
 namespace Nuti { namespace VT {
 	class GLTileRenderer {
 	public:
-		GLTileRenderer(std::mutex& mutex, const std::shared_ptr<GLExtensions>& glExtensions, float scale);
-		virtual ~GLTileRenderer() = default;
+        explicit GLTileRenderer(std::shared_ptr<std::mutex> mutex, std::shared_ptr<GLExtensions> glExtensions, float scale, bool useFBO, bool useDepth, bool useStencil);
 
 		void setViewState(const cglib::mat4x4<double>& projectionMatrix, const cglib::mat4x4<double>& cameraMatrix, float zoom, float aspectRatio, float resolution);
 		void setLightDir(const cglib::vec3<float>& lightDir);
-		void setBackgroundColor(unsigned int backgroundColor);
-		void setBackgroundPattern(const std::shared_ptr<BitmapPattern>& pattern);
-		void setVisibleTiles(const std::map<TileId, std::shared_ptr<Tile>>& tiles, bool blend);
+		void setFBOClearColor(const Color& clearColor);
+		void setBackgroundColor(const Color& backgroundColor);
+		void setBackgroundPattern(std::shared_ptr<const BitmapPattern> pattern);
+		void setVisibleTiles(const std::map<TileId, std::shared_ptr<const Tile>>& tiles, bool blend);
 		std::vector<std::shared_ptr<TileLabel>> getVisibleLabels() const;
 
-		void initialize();
-		void deinitialize();
+		void initializeRenderer();
+		void resetRenderer();
+		void deinitializeRenderer();
 
 		void startFrame(float dt);
 		bool render2D();
@@ -44,22 +48,39 @@ namespace Nuti { namespace VT {
 	private:
 		struct BlendNode {
 			TileId tileId;
-			std::shared_ptr<Tile> tile;
+			std::shared_ptr<const Tile> tile;
 			float blend;
 			std::vector<std::shared_ptr<BlendNode>> childNodes;
 
-			BlendNode(const TileId& tileId, const std::shared_ptr<Tile>& tile, float blend) : tileId(tileId), tile(tile), blend(blend), childNodes() { }
+			explicit BlendNode(const TileId& tileId, std::shared_ptr<const Tile> tile, float blend) : tileId(tileId), tile(std::move(tile)), blend(blend), childNodes() { }
 		};
 
 		struct RenderNode {
 			TileId tileId;
-			std::shared_ptr<TileLayer> layer;
+			std::shared_ptr<const TileLayer> layer;
 			float blend;
 
-			RenderNode(const TileId& tileId, const std::shared_ptr<TileLayer>& layer, float blend) : tileId(tileId), layer(layer), blend(blend) { }
+            explicit RenderNode(const TileId& tileId, std::shared_ptr<const TileLayer> layer, float blend) : tileId(tileId), layer(std::move(layer)), blend(blend) { }
 		};
 
-		struct CompiledBitmap {
+        struct LayerFBO {
+            GLuint colorTexture;
+            GLuint stencilRB;
+            GLuint fbo;
+
+            LayerFBO() : colorTexture(0), stencilRB(0), fbo(0) { }
+        };
+
+        struct ScreenFBO {
+            GLuint colorTexture;
+            GLuint depthStencilRB;
+            GLuint fbo;
+            std::vector<GLenum> depthStencilAttachments;
+
+            ScreenFBO() : colorTexture(0), depthStencilRB(0), fbo(0), depthStencilAttachments() { }
+        };
+
+        struct CompiledBitmap {
 			GLuint texture;
 
 			CompiledBitmap() : texture(0) { }
@@ -81,9 +102,11 @@ namespace Nuti { namespace VT {
 
 		static cglib::mat4x4<double> calculateLocalViewMatrix(const cglib::mat4x4<double>& cameraMatrix);
 
-		cglib::mat3x3<double> calculateTileMatrix2d(const TileId& tileId, float coordScale = 1.0f) const;
 		cglib::mat4x4<double> calculateTileMatrix(const TileId& tileId, float coordScale = 1.0f) const;
-		cglib::bounding_box<double, 3> calculateTileBBox(const TileId& tileId) const;
+        cglib::mat3x3<double> calculateTileMatrix2D(const TileId& tileId, float coordScale = 1.0f) const;
+        cglib::mat4x4<float> calculateTileMVPMatrix(const TileId& tileId, float coordScale = 1.0f) const;
+        cglib::vec4<double> calculateTileOrigin(const TileId& tileId) const;
+        cglib::bbox3<double> calculateTileBBox(const TileId& tileId) const;
 
 		float calculateBlendNodeOpacity(const BlendNode& blendNode, float blend) const;
 		void updateBlendNode(BlendNode& blendNode, float dBlend);
@@ -93,57 +116,70 @@ namespace Nuti { namespace VT {
 
 		bool renderBlendNodes2D(const std::vector<std::shared_ptr<BlendNode>>& blendNodes);
 		bool renderBlendNodes3D(const std::vector<std::shared_ptr<BlendNode>>& blendNodes);
-		bool renderLabels(const std::vector<std::shared_ptr<TileLabel>>& labels);
+		bool renderLabels(const std::shared_ptr<const Bitmap>& bitmap, const std::vector<std::shared_ptr<TileLabel>>& labels);
 
-		void renderTileMask(const TileId& tileId);
+        void blendScreenTexture(float opacity, GLuint texture);
+        void blendTileTexture(const TileId& tileId, float opacity, GLuint texture);
+        void renderTileMask(const TileId& tileId);
 		void renderTileBackground(const TileId& tileId, float opacity);
 		void renderTileGeometry(const TileId& tileId, const TileId& targetTileId, float blend, float opacity, const std::shared_ptr<TileGeometry>& geometry);
-		void renderVertexDataList(const std::shared_ptr<const Bitmap>& bitmap, cglib::mat4x4<double>& mvMatrix, const VertexArray<cglib::vec3<float>>& vertices, const VertexArray<cglib::vec2<float>>& texCoords, const VertexArray<cglib::vec4<unsigned char>>& colors, const VertexArray<unsigned short>& indices);
-		void checkGLError();
+        void renderLabelBatch(const std::shared_ptr<const Bitmap>& bitmap);
+        void setBlendState(CompOp compOp);
+        void checkGLError();
 
-		virtual GLuint createBuffer();
-		virtual void deleteBuffer(GLuint& buffer);
-		virtual GLuint createVertexArray();
-		virtual void deleteVertexArray(GLuint& vertexArray);
-		virtual GLuint createTexture();
-		virtual void deleteTexture(GLuint& texture);
+		GLuint createBuffer();
+		void deleteBuffer(GLuint& buffer);
+		GLuint createVertexArray();
+		void deleteVertexArray(GLuint& vertexArray);
+		GLuint createTexture();
+		void deleteTexture(GLuint& texture);
+        LayerFBO createLayerFBO(bool useStencil);
+        void deleteLayerFBO(LayerFBO& layerFBO);
+        ScreenFBO createScreenFBO(bool useDepth, bool useStencil);
+        void deleteScreenFBO(ScreenFBO& screenFBO);
 
-		unsigned int _backgroundColor = 0;
-		std::shared_ptr<BitmapPattern> _backgroundPattern;
+		Color _fboClearColor;
+		Color _backgroundColor;
+		std::shared_ptr<const BitmapPattern> _backgroundPattern;
 
 		GLShaderManager::ShaderContext _patternTransformContext[2][2];
 		GLShaderManager _shaderManager;
 
-		GLuint _tileVerticesVBO = 0;
-
-		GLuint _screenTexture = 0;
+		std::vector<LayerFBO> _layerFBOs;
+        ScreenFBO _screenFBO;
+        ScreenFBO _overlayFBO;
 
 		cglib::vec3<float> _lightDir;
 		cglib::mat4x4<double> _projectionMatrix;
 		cglib::mat4x4<double> _cameraMatrix;
+        cglib::mat4x4<double> _cameraProjMatrix;
 		cglib::frustum3<double> _frustum;
 		cglib::mat4x4<double> _labelMatrix;
 		TileLabel::ViewState _labelViewState;
 		VertexArray<cglib::vec3<float>> _labelVertices;
 		VertexArray<cglib::vec2<float>> _labelTexCoords;
-		VertexArray<cglib::vec4<unsigned char>> _labelColors;
+		VertexArray<cglib::vec4<float>> _labelColors;
 		VertexArray<unsigned short> _labelIndices;
 		float _zoom = 0;
 		float _halfResolution = 0;
 		int _screenWidth = 0;
 		int _screenHeight = 0;
 
-		std::shared_ptr<std::vector<std::shared_ptr<BlendNode>>> _renderBlendNodes;
-		std::shared_ptr<std::vector<std::shared_ptr<TileLabel>>> _renderLabels;
 		std::shared_ptr<std::vector<std::shared_ptr<BlendNode>>> _blendNodes;
-		std::shared_ptr<std::vector<std::shared_ptr<TileLabel>>> _labels;
-		std::unordered_map<std::pair<int, long long>, std::shared_ptr<TileLabel>, LabelHash> _labelMap;
+        std::shared_ptr<std::vector<std::shared_ptr<BlendNode>>> _renderBlendNodes;
+        std::shared_ptr<std::unordered_map<std::shared_ptr<const Bitmap>, std::vector<std::shared_ptr<TileLabel>>>> _bitmapLabelMap;
+        std::shared_ptr<std::unordered_map<std::shared_ptr<const Bitmap>, std::vector<std::shared_ptr<TileLabel>>>> _renderBitmapLabelMap;
+        std::vector<std::shared_ptr<TileLabel>> _labels;
+        std::unordered_map<std::pair<int, long long>, std::shared_ptr<TileLabel>, LabelHash> _labelMap;
 		std::unordered_map<std::shared_ptr<const Bitmap>, CompiledBitmap> _compiledBitmapMap;
-		std::unordered_map<std::shared_ptr<TileGeometry>, CompiledGeometry> _compiledGeometryMap;
+		std::unordered_map<std::shared_ptr<const TileGeometry>, CompiledGeometry> _compiledGeometryMap;
 
 		const float _scale;
-		std::shared_ptr<GLExtensions> _glExtensions;
-		std::mutex& _mutex;
+        const bool _useFBO;
+        const bool _useDepth;
+        const bool _useStencil;
+		const std::shared_ptr<GLExtensions> _glExtensions;
+        const std::shared_ptr<std::mutex> _mutex;
 	};
 } }
 

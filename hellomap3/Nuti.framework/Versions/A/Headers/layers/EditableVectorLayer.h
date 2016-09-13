@@ -93,7 +93,7 @@ namespace Nuti {
 			std::weak_ptr<EditableVectorLayer> _layer;
 		};
 
-		class TouchHandlerListener : public TouchHandler::TouchHandlerListener {
+		class TouchHandlerListener : public TouchHandler::OnTouchListener {
 		public:
 			TouchHandlerListener(const std::shared_ptr<EditableVectorLayer>& layer);
 

@@ -82,11 +82,6 @@ __attribute__ ((visibility("default"))) @interface NTViewState : NSObject
  */
 -(float)getZoom;
 /**
- * Returns the number 2 lifted to the power of the zoom level: pow(2, zoom level).<br>
- * @return pow(2, zoomLevel).
- */
--(float)get2PowZoom;
-/**
  * Returns the distance between the focus and the camera position, when the zoom level is set to 0.<br>
  * This parameter depends on the screen size, DPI, tile draw size and field of view settings.<br>
  * @return The distance between focus to camera position, when zoom level = 0.

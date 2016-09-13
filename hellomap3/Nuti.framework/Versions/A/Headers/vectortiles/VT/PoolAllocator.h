@@ -23,6 +23,8 @@ namespace Nuti { namespace VT {
 				throw;
 			}
 		}
+        
+        PoolAllocator(const PoolAllocator&) = delete;
 
 		~PoolAllocator() {
 			while (_first) {
@@ -55,6 +57,8 @@ namespace Nuti { namespace VT {
 			_first->allocated += size;
 			return ptr;
 		}
+
+        PoolAllocator& operator = (const PoolAllocator&) = delete;
 
 	private:
 		const int DEFAULT_BLOCK_SIZE = 65536;

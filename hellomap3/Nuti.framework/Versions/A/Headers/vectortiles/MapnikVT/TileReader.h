@@ -7,14 +7,9 @@
 #ifndef _NUTI_MAPNIKVT_TILEREADER_H_
 #define _NUTI_MAPNIKVT_TILEREADER_H_
 
-#include "TileSymbolizer.h"
-#include "Expression.h"
-#include "ExpressionContext.h"
-#include "Rule.h"
-#include "Filter.h"
-#include "Map.h"
-#include "Tile.h"
-#include "FeaturesDecoder.h"
+#include "FeatureDecoder.h"
+#include "VT/Tile.h"
+#include "VT/TileLayerBuilder.h"
 
 #include <memory>
 
@@ -22,19 +17,34 @@
 #include <cglib/mat.h>
 
 namespace Nuti { namespace MapnikVT {
-	class TileReader {
+    class Map;
+    class Filter;
+    class Rule;
+    class Expression;
+    class ExpressionContext;
+    class Symbolizer;
+    class SymbolizerContext;
+    class Layer;
+    class Style;
+	
+    class TileReader {
 	public:
-		TileReader(const std::shared_ptr<Mapnik::Map>& map, const TileSymbolizerContext& symbolizerContext);
 		virtual ~TileReader() = default;
 
-		std::shared_ptr<VT::Tile> readTile(const VT::TileId& tileId, const FeaturesDecoder& featuresDecoder) const;
+		virtual std::shared_ptr<VT::Tile> readTile(const VT::TileId& tileId) const;
 
-	private:
-		void processStyle(const std::shared_ptr<Mapnik::Style>& mapnikStyle, Mapnik::ExpressionContext& exprContext, const std::shared_ptr<FeaturesDecoder::Features>& features, VT::TileLayerBuilder& layerBuilder) const;
+    protected:
+        explicit TileReader(std::shared_ptr<Map> map, const SymbolizerContext& symbolizerContext);
 
-		const std::shared_ptr<Mapnik::Map> _map;
-		const TileSymbolizerContext& _symbolizerContext;
-		const std::shared_ptr<Mapnik::Filter> _trueFilter;
+        void processLayer(const std::shared_ptr<Layer>& layer, const std::shared_ptr<Style>& style, ExpressionContext& exprContext, VT::TileLayerBuilder& layerBuilder) const;
+
+        std::vector<std::shared_ptr<Symbolizer>> findFeatureSymbolizers(const std::shared_ptr<Style>& style, ExpressionContext& exprContext) const;
+        
+        virtual std::shared_ptr<FeatureDecoder::FeatureIterator> createFeatureIterator(const std::shared_ptr<Layer>& layer, const std::shared_ptr<Style>& style, const ExpressionContext& exprContext) const = 0;
+
+		const std::shared_ptr<Map> _map;
+		const SymbolizerContext& _symbolizerContext;
+		const std::shared_ptr<Filter> _trueFilter;
 	};
 } }
 

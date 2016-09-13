@@ -30,8 +30,8 @@ namespace Nuti {
          * Constructs a MapBounds object from a minimum and maximum map position. If a coordinate of the 
          * minimum map positon is larger than the same coordinate of the maximum map position then those
          * coordinates will be swapped.
-         * @param min The minimum map position.
-         * @param max The maximum map position.
+         * @param min The minimum map position (south-west).
+         * @param max The maximum map position (north-east).
          */
         MapBounds(const MapPos& min, const MapPos& max);
         virtual ~MapBounds();
@@ -53,8 +53,8 @@ namespace Nuti {
          * Sets the minimum and maximum map positions of this map bounds object. If a coordinate of the
          * minimum map positon is larger than the same coordinate of the maximum map position then those
          * coordinates will be swapped.
-         * @param min The minimum map position.
-         * @param max The maximum map position.
+         * @param min The minimum map position (south-west).
+         * @param max The maximum map position (north-east).
          */
         void setBounds(const MapPos& min, const MapPos& max);
         
@@ -71,24 +71,24 @@ namespace Nuti {
         MapVec getDelta() const;
     
         /**
-         * Returns the minimum map position of this map envelope object.
-         * @return The minimum map position of this map envelope object.
+         * Returns the minimum (south west) map position of this map envelope object.
+         * @return The minimum (south west) map position of this map envelope object.
          */
         const MapPos& getMin() const;
         /**
-         * Sets the minimum map position of this map envelope object.
-         * @param min The new minimum map position of this map envelope object.
+         * Sets the minimum (south west) map position of this map envelope object.
+         * @param min The new minimum (south west) map position of this map envelope object.
          */
         void setMin(const MapPos& min);
     
         /**
-         * Returns the maximum map position of this map envelope object.
-         * @return The maximum map position of this map envelope object.
+         * Returns the maximum (north east) map position of this map envelope object.
+         * @return The maximum (north east) map position of this map envelope object.
          */
         const MapPos& getMax() const;
         /**
-         * Sets the maximum map position of this map envelope object.
-         * @param max The new maximum map position of this map envelope object.
+         * Sets the maximum (north east) map position of this map envelope object.
+         * @param max The new maximum (north east) map position of this map envelope object.
          */
         void setMax(const MapPos& max);
     

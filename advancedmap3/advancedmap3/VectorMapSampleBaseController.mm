@@ -33,8 +33,9 @@
 {
     return @{
              @"Basic":		   @"basic",
-             @"NutiBright 2D": @"nutibright-v2a",
-             @"Nutiteq dark": @"nutiteq-dark",
+             @"NutiBright 2D": @"nutibright-v3",
+             @"Nutiteq dark": @"nutiteq-dark-v2",
+             @"Nutiteq grey": @"nutiteq-grey-v2",
              @"NutiBright 3D": @"nutibright3d",
              @"Loose Leaf":	   @"looseleaf"
              };
@@ -59,7 +60,7 @@
     NSString* styleAssetName = [self.vectorStyleName stringByAppendingString: @".zip"];
     BOOL styleBuildings3D = NO;
     if ([self.vectorStyleName isEqualToString:@"nutibright3d"]) {
-        styleAssetName = @"nutibright-v2a.zip";
+        styleAssetName = @"nutibright-v3.zip";
         styleBuildings3D = YES;
     }
     NTUnsignedCharVector *vectorTileStyleSetData = [NTAssetUtils loadBytes:styleAssetName];
@@ -68,7 +69,7 @@
     // Create vector tile decoder using the styleset and update style parameters
     self.vectorTileDecoder = [[NTMBVectorTileDecoder alloc] initWithStyleSet:vectorTileStyleSet];
     [self.vectorTileDecoder setStyleStringParameter:@"lang" value:self.vectorStyleLanguage];
-    if ([styleAssetName isEqualToString:@"nutibright-v2a.zip"] && styleBuildings3D) { // only OSM Bright style supports this currently
+    if ([styleAssetName isEqualToString:@"nutibright-v3.zip"] && styleBuildings3D) { // only OSM Bright style supports this currently
         [self.vectorTileDecoder setStyleBoolParameter:@"buildings3d" value:YES];
     }
     
@@ -80,6 +81,7 @@
     // special parameters for elevation contour style
     [self.vectorTileDecoder setStyleStringParameter:@"contour_stroke" value:@"rgba(217, 166, 140, 0.53)"];
     [self.vectorTileDecoder setStyleFloatParameter:@"contour_width" value:0.8];
+    
     
     // Create tile data source
     if (!self.vectorTileDataSource) {
@@ -124,7 +126,7 @@
     [self.mapView setRotation:0 durationSeconds:0];
     
     // Set default style parameters and create base layer
-    self.vectorStyleName = @"nutibright-v2a";
+    self.vectorStyleName = @"nutibright-v3";
     self.vectorStyleLanguage = @"";
     [self updateBaseLayer];
     

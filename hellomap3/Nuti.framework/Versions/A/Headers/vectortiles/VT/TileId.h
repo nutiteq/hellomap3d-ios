@@ -16,7 +16,7 @@ namespace Nuti { namespace VT {
 		int x;
 		int y;
 
-		TileId(int zoom, int x, int y) : zoom(zoom), x(x), y(y) { }
+		explicit TileId(int zoom, int x, int y) : zoom(zoom), x(x), y(y) { }
 
 		TileId getParent() const {
 			return TileId(zoom - 1, (x < 0 ? x - 1 : x) / 2, (y < 0 ? y - 1 : y) / 2);

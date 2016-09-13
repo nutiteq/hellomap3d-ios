@@ -36,6 +36,10 @@ __attribute__ ((visibility("default"))) @interface NTRedrawRequestListener : NSO
  */
 -(void)onRedrawRequested;
 /**
+ * Called when the screen needs to be redrawn.
+ */
+-(void)onRedrawRequestedSwigExplicitNTRedrawRequestListener;
+/**
  * Returns the actual class name of this object. This is used internally by the SDK.<br>
  * @return The class name of this object.
  */

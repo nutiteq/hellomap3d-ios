@@ -7,32 +7,36 @@
 #ifndef _NUTI_MAPNIKVT_MARKERSSYMBOLIZER_H_
 #define _NUTI_MAPNIKVT_MARKERSSYMBOLIZER_H_
 
-#include "TileSymbolizer.h"
+#include "Symbolizer.h"
 
 namespace Nuti { namespace MapnikVT {
-	class MarkersSymbolizer : public TileSymbolizer {
+	class MarkersSymbolizer : public Symbolizer {
 	public:
-		MarkersSymbolizer(const std::shared_ptr<Mapnik::Logger>& logger, const std::shared_ptr<Mapnik::Map>& map) : TileSymbolizer(logger, map) { }
+        explicit MarkersSymbolizer(std::shared_ptr<Logger> logger) : Symbolizer(std::move(logger)) { }
 
-		virtual void setParameter(const std::string& name, const std::string& value) override;
-
-		virtual void build(const Feature& feature, const TileSymbolizerContext& symbolizerContext, const Mapnik::ExpressionContext& exprContext, VT::TileLayerBuilder& layerBuilder) override;
+		virtual void build(const FeatureCollection& featureCollection, const SymbolizerContext& symbolizerContext, const ExpressionContext& exprContext, VT::TileLayerBuilder& layerBuilder) override;
 
 	protected:
-		static std::shared_ptr<VT::Bitmap> makeEllipseBitmap(int width, int height);
-		static std::shared_ptr<VT::Bitmap> makeArrowBitmap(int width, int height);
+        virtual void bindParameter(const std::string& name, const std::string& value) override;
 
-		const int DEFAULT_CIRCLE_SIZE = 10;
-		const int DEFAULT_ARROW_WIDTH = 28, DEFAULT_ARROW_HEIGHT = 14;
+        static std::shared_ptr<VT::Bitmap> makeEllipseBitmap(float width, float height, const VT::Color& color, float strokeWidth, const VT::Color& strokeColor);
+		static std::shared_ptr<VT::Bitmap> makeArrowBitmap(float width, float height, const VT::Color& color, float strokeWidth, const VT::Color& strokeColor);
+
+		enum { DEFAULT_CIRCLE_SIZE = 10 };
+		enum { DEFAULT_ARROW_WIDTH = 28, DEFAULT_ARROW_HEIGHT = 14 };
+		enum { SUPERSAMPLING_FACTOR = 4 };
 
 		std::string _file;
 		std::string _placement = "point";
 		std::string _markerType;
-		unsigned int _fill = 0xff0000ff;
-		float _opacity = 1.0f;
-		float _width = -1;
-		float _height = -1;
-		float _spacing = 100;
+		VT::Color _fill = VT::Color(0xff0000ff);
+		float _fillOpacity = 1.0f;
+		float _width = -1.0f;
+		float _height = -1.0f;
+		VT::Color _stroke = VT::Color(0xff000000);
+		float _strokeOpacity = 1.0f;
+		float _strokeWidth = 0.5f;
+		float _spacing = 100.0f;
 		bool _allowOverlap = false;
 		bool _ignorePlacement = false;
 		cglib::mat3x3<float> _transform = cglib::mat3x3<float>::identity();

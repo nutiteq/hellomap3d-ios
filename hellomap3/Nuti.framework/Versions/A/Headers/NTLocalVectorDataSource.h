@@ -27,8 +27,6 @@ typedef NS_ENUM(NSInteger, NTLocalSpatialIndexType) {
  * K-d tree index, element culling is exact and fast.
  */
   NT_LOCAL_SPATIAL_INDEX_TYPE_KDTREE
-,NT_NULL_SPATIAL_INDEX __attribute((deprecated)) = NT_LOCAL_SPATIAL_INDEX_TYPE_NULL
-,NT_KDTREE_SPATIAL_INDEX __attribute((deprecated)) = NT_LOCAL_SPATIAL_INDEX_TYPE_KDTREE
 };
 
 

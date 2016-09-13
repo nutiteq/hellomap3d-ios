@@ -27,19 +27,19 @@ namespace Nuti { namespace VT {
 			float characterSpacing;
 			float lineSpacing;
 
-			Options(const cglib::vec2<float>& alignment, const cglib::vec2<float>& offset, bool wrapBefore, float wrapWidth, float characterSpacing, float lineSpacing) : alignment(alignment), offset(offset), wrapBefore(wrapBefore), wrapWidth(wrapWidth), characterSpacing(characterSpacing), lineSpacing(lineSpacing) { }
+			explicit Options(const cglib::vec2<float>& alignment, const cglib::vec2<float>& offset, bool wrapBefore, float wrapWidth, float characterSpacing, float lineSpacing) : alignment(alignment), offset(offset), wrapBefore(wrapBefore), wrapWidth(wrapWidth), characterSpacing(characterSpacing), lineSpacing(lineSpacing) { }
 		};
 
-		TextFormatter(const std::shared_ptr<Font>& font);
+		explicit TextFormatter(const std::shared_ptr<Font>& font);
 
 		std::vector<Font::Glyph> format(const std::string& text, const Options& options) const;
 
 	private:
 		struct Line {
-			cglib::bounding_box<float, 2> bbox;
+			cglib::bbox2<float> bbox;
 			std::vector<Font::Glyph> glyphs;
 
-			Line() : bbox(), glyphs() { }
+			Line() : bbox(cglib::bbox2<float>::smallest()), glyphs() { }
 		};
 
 		std::vector<Line> splitLines(const std::string& text, const Options& options) const;

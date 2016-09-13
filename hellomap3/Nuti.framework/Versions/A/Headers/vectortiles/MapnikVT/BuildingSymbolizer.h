@@ -12,16 +12,16 @@
 namespace Nuti { namespace MapnikVT {
 	class BuildingSymbolizer : public GeometrySymbolizer {
 	public:
-		BuildingSymbolizer(const std::shared_ptr<Mapnik::Logger>& logger, const std::shared_ptr<Mapnik::Map>& map) : GeometrySymbolizer(logger, map) { }
+		explicit BuildingSymbolizer(std::shared_ptr<Logger> logger) : GeometrySymbolizer(std::move(logger)) { }
 
-		virtual void setParameter(const std::string& name, const std::string& value) override;
-
-		virtual void build(const Feature& feature, const TileSymbolizerContext& symbolizerContext, const Mapnik::ExpressionContext& exprContext, VT::TileLayerBuilder& layerBuilder) override;
+		virtual void build(const FeatureCollection& featureCollection, const SymbolizerContext& symbolizerContext, const ExpressionContext& exprContext, VT::TileLayerBuilder& layerBuilder) override;
 
 	protected:
+		virtual void bindParameter(const std::string& name, const std::string& value) override;
+
 		const float HEIGHT_SCALE = static_cast<float>(0.5 / 20037508.34);
 
-		unsigned int _fill = 0xff808080;
+		VT::Color _fill = VT::Color(0xff808080);
 		float _fillOpacity = 1.0f;
 		float _height = 0.0f;
 	};

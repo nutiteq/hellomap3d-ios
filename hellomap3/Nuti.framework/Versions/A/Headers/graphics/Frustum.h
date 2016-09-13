@@ -8,7 +8,7 @@
 #define _NUTI_FRUSTUM_H_
 
 #include <cglib/mat.h>
-#include <vector>
+#include <array>
 
 namespace Nuti {
     class MapBounds;
@@ -28,7 +28,6 @@ namespace Nuti {
          * @param mvpMatrix The modelview projection matrix.
          */
         Frustum(const cglib::mat4x4<double>& mvpMatrix);
-        virtual ~Frustum();
     
         /**
          * Tests if a point is inside with the frustum.
@@ -69,8 +68,7 @@ namespace Nuti {
         void normalize();
     
         // Right, left, bottom, top, far, near
-        //double _planes[6][4];
-        std::vector<std::vector<double> > _planes;
+        std::array<std::array<double, 4>, 6> _planes;
     };
     
 }

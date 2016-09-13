@@ -14,13 +14,16 @@
 #include <vector>
 #include <numeric>
 
+#include <boost/optional.hpp>
+
 namespace Nuti { namespace VT {
 	class TileLayer {
 	public:
-        TileLayer(int layerIdx, float opacity, std::vector<std::shared_ptr<TileGeometry>> geometries, std::vector<std::shared_ptr<TileLabel>> labels) : _layerIdx(layerIdx), _opacity(opacity), _geometries(std::move(geometries)), _labels(std::move(labels)) { }
+		explicit TileLayer(int layerIdx, float opacity, boost::optional<CompOp> compOp, std::vector<std::shared_ptr<TileGeometry>> geometries, std::vector<std::shared_ptr<TileLabel>> labels) : _layerIdx(layerIdx), _opacity(opacity), _compOp(std::move(compOp)), _geometries(std::move(geometries)), _labels(std::move(labels)) { }
 
 		int getLayerIndex() const { return _layerIdx; }
 		float getOpacity() const { return _opacity; }
+		boost::optional<CompOp> getCompOp() const { return _compOp; }
 
 		const std::vector<std::shared_ptr<TileGeometry>>& getGeometries() const { return _geometries; }
 		const std::vector<std::shared_ptr<TileLabel>>& getLabels() const { return _labels; }
@@ -32,6 +35,7 @@ namespace Nuti { namespace VT {
 	private:
 		const int _layerIdx;
 		const float _opacity;
+		const boost::optional<CompOp> _compOp;
 		const std::vector<std::shared_ptr<TileGeometry>> _geometries;
 		const std::vector<std::shared_ptr<TileLabel>> _labels;
 	};

@@ -43,13 +43,23 @@ __attribute__ ((visibility("default"))) @interface NTNMLModelLODTreeLayer : NTLa
  */
 -(NTNMLModelLODTreeDataSource*)getDataSource;
 /**
+ * Returns memory usage constraints for the layer.<br>
+ * @return The memory usage constraints for the layer.
+ */
+-(unsigned int)getMaxMemorySize;
+/**
  * Set memory usage constraints for the layer. The specified limit is not exact, <br>
  * but should be relatively close to the actual memory usage of the layer.<br>
  * If specific view requires more data than specified limit, then lower LOD levels<br>
  * of the models are used. The default is 40MB.<br>
  * @param size The memory limit in bytes.
  */
--(void)setMaxMemorySize: (unsigned long)size;
+-(void)setMaxMemorySize: (unsigned int)size;
+/**
+ * Returns relative model LOD resolution.<br>
+ * @return The relative model LOD resolution.
+ */
+-(float)getLODResolutionFactor;
 /**
  * Set relative model LOD resolution. Higher values than 1 result in higher details <br>
  * (but slower performance and higher memory usage), while lower values give better <br>

@@ -16,6 +16,13 @@ namespace Nuti {
      */
     class MapTile {
     public:
+        /**
+         * Constructs a MapTile object based on coordinates, zoom level and frame number.
+         * @param x The x coordinate of the tile.
+         * @param y The y coordinate of the tile.
+         * @param zoom The zoom level of the tile.
+         * @param frameNr The frame number of the tile.
+         */
         MapTile(int x, int y, int zoom, int frameNr);
         virtual ~MapTile() {}
     
@@ -59,13 +66,13 @@ namespace Nuti {
          */
         long long getTileId() const;
     
-		/**
-		 * Returns the hash value of this object.
-		 * @return The hash value of this object.
-		 */
-		int hash() const;
+        /**
+         * Returns the hash value of this object.
+         * @return The hash value of this object.
+         */
+        int hash() const;
 
-		/**
+        /**
          * Creates a string representation of this map tile, useful for logging.
          * @return The string representation of this map tile.
          */

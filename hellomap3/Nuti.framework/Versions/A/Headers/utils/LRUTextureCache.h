@@ -59,7 +59,7 @@ namespace Nuti {
         
         unsigned int getUncreatedTextureCount() const;
     
-        int createAndDeleteTextures(int maxCreateCount);
+        int createAndDeleteTextures(int maxCreateCount = -1);
     
         CacheResult::CacheResult exists(const T& id);
         CacheResult::CacheResult existsNoMod(const T& id) const;
@@ -200,6 +200,10 @@ namespace Nuti {
         // Load some bitmaps in the creation queue as opengl textures
         int createdCount = 0;
         for (typename CacheElementList::iterator it = _addedElements.begin(); it != _addedElements.end();) {
+            if (maxCreateCount >= 0 && createdCount >= maxCreateCount) {
+                break;
+            }
+
             CacheElement element = *it;
     
             // Create the texture
@@ -234,9 +238,6 @@ namespace Nuti {
             removeOldestElements();
     
             createdCount++;
-            if (createdCount >= maxCreateCount) {
-                break;
-            }
         }
     
         for (CacheElement& element : _removedElements) {

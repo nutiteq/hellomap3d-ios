@@ -7,8 +7,6 @@
 #ifndef _NUTI_BASEMAPVIEW_H_
 #define _NUTI_BASEMAPVIEW_H_
 
-#include "utils/LicenseUtils.h"
-
 #include <memory>
 #include <mutex>
 #include <thread>
@@ -23,6 +21,7 @@ namespace Nuti {
     class MapRenderer;
     class MapVec;
     class Options;
+    class LicenseManagerListener;
     class MapEventListener;
     class MapRenderListener;
     class RedrawRequestListener;
@@ -38,9 +37,16 @@ namespace Nuti {
          * Registers the SDK license. This class method and must be called before
          * creating any actual MapView instances.
          * @param licenseKey The license string provided for this application.
+         * @param listener The listener that receives notifications when the license has been updated.
          * @return True if license is valid, false if not.
          */
-        static bool RegisterLicense(const std::string& licenseKey);
+        static bool RegisterLicense(const std::string& licenseKey, const std::shared_ptr<LicenseManagerListener>& listener);
+
+        /**
+         * Returns the SDK version and build info. The result should be used only for reporting purposes.
+         * @return The SDK version and build info.
+         */
+        static std::string GetSDKVersion();
         
         BaseMapView();
         virtual ~BaseMapView();
@@ -340,8 +346,6 @@ namespace Nuti {
         void captureRendering(const std::shared_ptr<MapRenderListener>& listener, bool waitWhileUpdating);
 
     private:
-        static LicenseType::LicenseType _LicenseType;
-        
         std::shared_ptr<CancelableThreadPool> _envelopeThreadPool;
         std::shared_ptr<CancelableThreadPool> _tileThreadPool;
         std::shared_ptr<Options> _options;

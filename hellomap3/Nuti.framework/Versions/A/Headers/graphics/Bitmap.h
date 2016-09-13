@@ -66,24 +66,6 @@ namespace Nuti {
     class Bitmap {
     public:
         /**
-         * Deprecated: use BitmapUtils.LoadFromAssets instead.
-         * Constructs a bitmap by loading a compressed image bundled with the application. If the power of two conversion flag
-         * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating
-         * OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.
-         * @param assetPath The path to the image to be loaded.
-         * @param pow2Padding The power of two conversion flag.
-         */
-        Bitmap(const std::string& assetPath, bool pow2Padding);
-        /**
-         * Deprecated: use Bitmap.CreateFromCompressed instead.
-         * Constructs a bitmap by decoding a vector of compressed image bytes. If the power of two conversion flag
-         * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating
-         * OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.
-         * @param compressedData A vector of compressed image bytes.
-         * @param pow2Padding The power of two conversion flag.
-         */
-        Bitmap(const std::shared_ptr<std::vector<unsigned char> >& compressedData, bool pow2Padding);
-        /**
          * Constructs a bitmap from an already decoded vector of bytes. The bitmap data is expected to be alpha premultiplied, if alpha channel is used.
          * If the power of two conversion flag is set, additional padding will be added to the image to make it's dimensions power of two.
          * This can be useful when creating OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.

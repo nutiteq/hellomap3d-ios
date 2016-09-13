@@ -7,10 +7,10 @@
 #ifndef _NUTI_TOUCHHANDLER_H_
 #define _NUTI_TOUCHHANDLER_H_
 
-#include "ClickHandlerWorker.h"
 #include "core/MapPos.h"
 #include "core/ScreenPos.h"
 #include "core/MapVec.h"
+#include "renderers/MapRenderer.h"
 
 #include <chrono>
 #include <memory>
@@ -20,8 +20,10 @@
 #include <cglib/vec.h>
 
 namespace Nuti {
+    class ClickHandlerWorker;
     class Options;
-    class MapRenderer;
+    class MapEventListener;
+    class ViewState;
     
     class TouchHandler : public std::enable_shared_from_this<TouchHandler> {
     public:
@@ -34,17 +36,21 @@ namespace Nuti {
             ACTION_POINTER_2_UP = 5
         };
 
-		struct TouchHandlerListener {
-			virtual ~TouchHandlerListener() { }
+        struct OnTouchListener {
+            virtual ~OnTouchListener() { }
 
-			virtual bool onTouchEvent(int action, const ScreenPos& screenPos1, const ScreenPos& screenPos2) = 0;
-		};
+            virtual bool onTouchEvent(int action, const ScreenPos& screenPos1, const ScreenPos& screenPos2) = 0;
+        };
     
         TouchHandler(const std::shared_ptr<MapRenderer>& mapRenderer, const std::shared_ptr<Options>& options);
-        void init();
         virtual ~TouchHandler();
+
+        void init();
         void deinit();
     
+        std::shared_ptr<MapEventListener> getMapEventListener() const;
+        void setMapEventListener(const std::shared_ptr<MapEventListener>& mapEventListener);
+        
         void onTouchEvent(int action, const ScreenPos& screenPos1, const ScreenPos& screenPos2);
     
         void click(const ScreenPos& screenPos) const;
@@ -54,14 +60,31 @@ namespace Nuti {
         void startSinglePointer(const ScreenPos& screenPos);
         void startDualPointer(const ScreenPos& screenPos1, const ScreenPos& screenPos2);
 
-		void registerTouchHandlerListener(const std::shared_ptr<TouchHandlerListener>& listener);
-		void unregisterTouchHandlerListener(const std::shared_ptr<TouchHandlerListener>& listener);
+        void registerOnTouchListener(const std::shared_ptr<OnTouchListener>& listener);
+        void unregisterOnTouchListener(const std::shared_ptr<OnTouchListener>& listener);
         
     protected:
         friend class BaseMapView;
     
     private:
-        float calculateRotatingScalingFactor(const ScreenPos& screenPos1, const ScreenPos& screenPos2) const;    
+        class MapRendererListener : public MapRenderer::OnChangeListener {
+        public:
+            MapRendererListener(const std::shared_ptr<TouchHandler>& touchHandler);
+            
+            virtual void onBeforeDrawFrame();
+            virtual void onAfterDrawFrame();
+            virtual void onMapChanged();
+            virtual void onMapIdle();
+            
+        private:
+            std::weak_ptr<TouchHandler> _touchHandler;
+        };
+        
+        void checkMapStable();
+
+        bool isValidTouchPosition(const MapPos& mapPos, const ViewState& viewState) const;
+
+        float calculateRotatingScalingFactor(const ScreenPos& screenPos1, const ScreenPos& screenPos2) const;
 
         void singlePointerPan(const ScreenPos& screenPos);
         void dualPointerGuess(const ScreenPos& screenPos1, const ScreenPos& screenPos2);
@@ -96,32 +119,41 @@ namespace Nuti {
         // Determines how long it takes to cancel kinetic zoom and rotation after one
         // pointer is lifted but the other one is not
         static const std::chrono::milliseconds DUAL_KINETIC_HOLD_DURATION;
+
+        // Determines how long to hold panning after one pointer is lifted
+        static const std::chrono::milliseconds DUAL_STOP_HOLD_DURATION;
     
         // Map panning type, 0 = fast, accurate (finger stays exactly in the same
         // place), 1 = slow, inaccurate
         static const float PANNING_FACTOR;
     
         int _panningMode;
-    
+        
         ScreenPos _prevScreenPos1;
         ScreenPos _prevScreenPos2;
     
         cglib::vec2<float> _swipe1;
         cglib::vec2<float> _swipe2;
     
+        int _pointersDown;
+        bool _mapMoving;
         bool _noDualPointerYet;
-        std::chrono::time_point<std::chrono::steady_clock> _dualPointerReleaseTime;
+        std::chrono::steady_clock::time_point _dualPointerReleaseTime;
     
+        DirectorPtr<MapEventListener> _mapEventListener;
+        mutable std::mutex _mapEventListenerMutex;
+        
         std::shared_ptr<ClickHandlerWorker> _clickHandlerWorker;
         std::thread _clickHandlerThread;
     
         std::shared_ptr<Options> _options;
         std::shared_ptr<MapRenderer> _mapRenderer;
+        std::shared_ptr<MapRendererListener> _mapRendererListener;
     
         mutable std::mutex _mutex;
 
-		std::shared_ptr<std::vector<std::shared_ptr<TouchHandlerListener> > > _touchHandlerListeners;
-		mutable std::mutex _touchHandlerListenersMutex;
+		std::vector<std::shared_ptr<OnTouchListener> > _onTouchListeners;
+		mutable std::mutex _onTouchListenersMutex;
 	};
     
 }

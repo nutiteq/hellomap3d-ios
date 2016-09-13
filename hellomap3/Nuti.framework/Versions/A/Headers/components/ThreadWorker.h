@@ -17,7 +17,6 @@ namespace Nuti {
     
     protected:
         ThreadWorker() {}
-    
     };
     
 }

@@ -1,15 +1,16 @@
-#ifndef cglib_frustum3_h
-
-#define cglib_frustum3_h
+#ifndef _CGLIB_FRUSTUM3_H
+#define _CGLIB_FRUSTUM3_H
 
 #include "vec.h"
 #include "bbox.h"
+
+#include <array>
 
 namespace cglib
 {
 
 	/**
-	 * N-dimensional bounding box
+	 * 3-dimensional view frustum
 	 */
 
 	template <typename T, typename Traits = float_traits<T> >
@@ -20,25 +21,17 @@ namespace cglib
 
 		typedef T value_type;
 		typedef Traits traits_type;
-		typedef vec<T, 3, Traits> point_type;
-		typedef vec<T, 4, Traits> plane_type;
-		typedef bounding_box<T, 3, Traits> bbox_type;
+		typedef vec3<T, Traits> point_type;
+		typedef vec4<T, Traits> plane_type;
+		typedef bbox3<T, Traits> bbox_type;
 
-		plane_type planes[6];
-
-		inline frustum3() { clear(); }
-
-		void clear()
-		{
-			for (size_t i = 0; i < 6; i++)
-			{
-				planes[i].clear();
-			}
-		}
+		inline frustum3() = default;
+		
+		inline explicit frustum3(const std::array<plane_type, 6> & planes) : planes(planes) { }
 
 		point_type extreme_point(size_t i1, size_t i2, size_t i3) const
 		{
-			typedef vec<T, 4, Traits> vector4_type;
+			typedef vec4<T, Traits> vector4_type;
 
 			T d = dot_product(planes[i1], vector_product(planes[i2], planes[i3]));
 			vector4_type v1 = vector_product(planes[i2], planes[i3]) * planes[i1](3);
@@ -47,7 +40,7 @@ namespace cglib
 			return proj_o(v1 + v2 + v3) * (-1 / d);
 		}
 
-		bbox_type boundingbox() const
+		bbox_type bounding_box() const
 		{               
 			T extreme = traits_type::infinity();
 			point_type min(extreme, extreme, extreme);
@@ -55,9 +48,9 @@ namespace cglib
 			for (int i = 0; i < 8; i++)
 			{
 				size_t idxs[3];
-				idxs[0] = i & 1 ? 4 : 5;
-				idxs[1] = i & 2 ? 2 : 3;
-				idxs[2] = i & 4 ? 0 : 1;
+				idxs[0] = (i & 1) != 0 ? 4 : 5;
+				idxs[1] = (i & 2) != 0 ? 2 : 3;
+				idxs[2] = (i & 4) != 0 ? 0 : 1;
 				point_type point = extreme_point(idxs[0], idxs[1], idxs[2]);
 				for (int j = 0; j < 3; j++)
 				{
@@ -84,16 +77,16 @@ namespace cglib
 			for (int i = 0; i < 8; i++)
 			{
 				size_t idxs[3];
-				idxs[0] = i & 1 ? 4 : 5;
-				idxs[1] = i & 2 ? 2 : 3;
-				idxs[2] = i & 4 ? 0 : 1;
+				idxs[0] = (i & 1) != 0 ? 4 : 5;
+				idxs[1] = (i & 2) != 0 ? 2 : 3;
+				idxs[2] = (i & 4) != 0 ? 0 : 1;
 				T d = plane_distance(plane, extreme_point(idxs[0], idxs[1], idxs[2]));
 				if (d * side > 0)
 					return true;
 			}
 		}
 
-		bool inside(const bbox_type & bbox) const
+		bool inside(const bbox_type & b) const
 		{
 			for (int p = 0; p < 6; p++)
 			{
@@ -101,9 +94,9 @@ namespace cglib
 				for (i = 0; i < 8; i++)
 				{
 					point_type point;
-					point(0) = i & 1 ? bbox.min(0) : bbox.max(0);
-					point(1) = i & 2 ? bbox.min(1) : bbox.max(1);
-					point(2) = i & 4 ? bbox.min(2) : bbox.max(2);
+					point(0) = (i & 1) != 0 ? b.min(0) : b.max(0);
+					point(1) = (i & 2) != 0 ? b.min(1) : b.max(1);
+					point(2) = (i & 4) != 0 ? b.min(2) : b.max(2);
 					T d = plane_distance(p, point);
 					if (d > 0)
 						break;
@@ -127,7 +120,7 @@ namespace cglib
 
 		T plane_distance(size_t i, const point_type & point) const
 		{
-			return dot_product(planes[i], expand(point, (T) 1));
+			return dot_product(planes[i], expand(point, static_cast<T>(1)));
 		}
 
 		frustum3<T, Traits> & intersect(const frustum3<T, Traits> & fru)
@@ -148,6 +141,19 @@ namespace cglib
 			return *this;
 		}
 
+		void clear()
+		{
+			for (size_t p = 0; p < 6; p++)
+			{
+				planes[p].clear();
+			}
+		}
+		
+		void swap(frustum3<T, Traits> & fru)
+		{
+			planes.swap(fru.planes);
+		}
+		
 		template <typename S, typename TraitsS>
 			static frustum3<T, Traits> convert(const frustum3<S, TraitsS> & fru)
 		{
@@ -158,6 +164,10 @@ namespace cglib
 			}
 			return fru2;
 		}
+		
+	public:
+
+		std::array<plane_type, 6> planes;        
 	};
 
 	/**
@@ -167,12 +177,7 @@ namespace cglib
 	template <typename T, typename Traits> inline
 		bool operator == (const frustum3<T, Traits> & fru1, const frustum3<T, Traits> & fru2)
 	{
-		for (size_t i = 0; i < 6; i++)
-		{
-			if (fru1.planes[i] != fru2.planes[i])
-				return false;
-		}
-		return true;
+		return fru1.planes == fru2.planes;
 	}
 
 	template <typename T, typename Traits> inline
@@ -184,22 +189,22 @@ namespace cglib
 	template <typename T, typename Traits>
 		frustum3<T, Traits> ortho_frustum(T left, T right, T bottom, T top, T znear, T zfar)
 	{
-		typedef vec4<T, Traits> plane_type;
+		typedef typename frustum3<T, Traits>::plane_type plane_type;
 
 		frustum3<T, Traits> fru;
-		fru.planes[0] = plane_type( 0,  0, -1, -znear); // z-axis is negated
+		fru.planes[5] = plane_type( 1,  0,  0,  bottom);
+		fru.planes[4] = plane_type(-1,  0,  0, -top);
+		fru.planes[3] = plane_type( 0,  1,  0,  left);
+		fru.planes[2] = plane_type( 0, -1,  0, -right);
 		fru.planes[1] = plane_type( 0,  0,  1,  zfar);
-		fru.planes[2] = plane_type( 0,  1,  0,  left);
-		fru.planes[3] = plane_type( 0, -1,  0, -right);
-		fru.planes[4] = plane_type( 1,  0,  0,  bottom);
-		fru.planes[5] = plane_type(-1,  0,  0, -top);
+		fru.planes[0] = plane_type( 0,  0, -1, -znear); // z-axis is negated
 		return fru;
 	}
 
 	template <typename T, typename Traits>
 		frustum3<T, Traits> perspective_frustum(T fovy, T xaspect, T yaspect, T znear, T zfar)
 	{
-		typedef vec4<T, Traits> plane_type;
+		typedef typename frustum3<T, Traits>::plane_type plane_type;
 
 		T s = Traits::sin(fovy / 2), c = Traits::cos(fovy / 2);
 		frustum3<T, Traits> fru;
@@ -215,7 +220,7 @@ namespace cglib
 	template <typename T, typename Traits>
 		frustum3<T, Traits> gl_projection_frustum(const mat<T, 4, Traits> & m)
 	{
-		typedef vec4<T, Traits> plane_type;
+		typedef typename frustum3<T, Traits>::plane_type plane_type;
 
 		frustum3<T, Traits> fru;
 		fru.planes[5] = plane_type(m(3, 0) + m(0, 0), m(3, 1) + m(0, 1), m(3, 2) + m(0, 2), m(3, 3) + m(0, 3));
@@ -228,17 +233,17 @@ namespace cglib
 	}
 
 	template <typename T, typename Traits>
-		frustum3<T, Traits> bbox_frustum(const bounding_box<T, 3, Traits> & bbox)
+		frustum3<T, Traits> bbox_frustum(const bbox3<T, Traits> & b)
 	{
-		typedef vec4<T, Traits> plane_type;
+		typedef typename frustum3<T, Traits>::plane_type plane_type;
 
 		frustum3<T, Traits> fru;
-		fru.planes[0] = plane_type( 0,  0,  1, -bbox.min(2));
-		fru.planes[1] = plane_type( 0,  0, -1,  bbox.max(2));
-		fru.planes[2] = plane_type( 0,  1,  0, -bbox.min(1));
-		fru.planes[3] = plane_type( 0, -1,  0,  bbox.max(1));
-		fru.planes[4] = plane_type( 1,  0,  0, -bbox.min(0));
-		fru.planes[5] = plane_type(-1,  0,  0,  bbox.max(0));
+		fru.planes[5] = plane_type(-1,  0,  0,  b.max(0));
+		fru.planes[4] = plane_type( 1,  0,  0, -b.min(0));
+		fru.planes[3] = plane_type( 0, -1,  0,  b.max(1));
+		fru.planes[2] = plane_type( 0,  1,  0, -b.min(1));
+		fru.planes[1] = plane_type( 0,  0, -1,  b.max(2));
+		fru.planes[0] = plane_type( 0,  0,  1, -b.min(2));
 		return fru;
 	}
 

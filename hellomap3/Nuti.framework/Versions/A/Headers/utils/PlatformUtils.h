@@ -30,10 +30,14 @@ namespace Nuti {
         
         static std::string GetDeviceId();
         
+        static std::string GetDeviceType();
+
+        static std::string GetDeviceOS();
+        
         static std::string GetAppIdentifier();
 
         static std::string GetAppDeviceId();
-        
+
         static bool ExcludeFolderFromBackup(const std::string& folder);
         
     private:

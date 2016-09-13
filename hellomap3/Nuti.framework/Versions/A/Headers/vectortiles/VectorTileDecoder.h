@@ -12,6 +12,9 @@
 
 #include <memory>
 #include <mutex>
+#include <map>
+
+#include <cglib/mat.h>
 
 namespace Nuti {
     namespace VT {
@@ -25,6 +28,8 @@ namespace Nuti {
      */
     class VectorTileDecoder {
     public:
+        typedef std::map<int, std::shared_ptr<const VT::Tile> > TileMap;
+
         /**
          * Interface for monitoring decoder parameter change events.
          */
@@ -37,7 +42,7 @@ namespace Nuti {
             virtual void onDecoderChanged() = 0;
         };
     
-        virtual ~VectorTileDecoder() { }
+        virtual ~VectorTileDecoder();
     
         /**
          * Returns background color for tiles.
@@ -49,8 +54,8 @@ namespace Nuti {
          * Returns background pattern image for tiles.
          * @return background pattern image for tiles.
          */
-        virtual std::shared_ptr<VT::BitmapPattern> getBackgroundPattern() const = 0;
-        
+        virtual std::shared_ptr<const VT::BitmapPattern> getBackgroundPattern() const = 0;
+
         /**
          * Returns minimum zoom level supported for by the decoder (or style).
          * @return Minimum supported zoom level.
@@ -68,9 +73,9 @@ namespace Nuti {
          * @param tile The id of the tile to load.
          * @param targetTile The target tile id that will be created from the data.
          * @param data The tile data to decode.
-         * @return The vector tile data. If the tile is not available, null may be returned.
+         * @return The vector tile data, for each frame. If the tile is not available, null is returned.
          */
-        virtual std::shared_ptr<VT::Tile> decodeTile(const VT::TileId& tile, const VT::TileId& targetTile, const std::shared_ptr<TileData>& data) const = 0;
+        virtual std::shared_ptr<TileMap> decodeTile(const VT::TileId& tile, const VT::TileId& targetTile, const std::shared_ptr<TileData>& data) const = 0;
     
         /**
          * Notifies listeners that the decoder parameters have changed. Action taken depends on the implementation of the
@@ -91,10 +96,13 @@ namespace Nuti {
         void unregisterOnChangeListener(const std::shared_ptr<OnChangeListener>& listener);
         
     protected:
-        mutable std::mutex _mutex;
+        VectorTileDecoder();
+
+        static cglib::mat3x3<float> calculateTileTransform(const Nuti::VT::TileId& tileId, const Nuti::VT::TileId& targetTileId);
         
     private:
         std::vector<std::shared_ptr<OnChangeListener> > _onChangeListeners;
+        mutable std::mutex _onChangeListenersMutex;
     };
         
 }

@@ -132,7 +132,7 @@ namespace Nuti {
         
         class FetchTaskBase : public CancelableTask {
         public:
-            FetchTaskBase(const std::shared_ptr<TileLayer>& layer, const MapTileQuadTreeNode& tile, bool preloadingTile);
+            FetchTaskBase(const std::shared_ptr<TileLayer>& layer, const MapTile& tile, bool preloadingTile);
 			
 			bool isPreloading() const;
 			void invalidate();

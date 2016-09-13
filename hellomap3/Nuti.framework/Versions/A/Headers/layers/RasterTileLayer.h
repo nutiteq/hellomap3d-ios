@@ -108,7 +108,7 @@ namespace Nuti {
     protected:
         class FetchTask : public TileLayer::FetchTaskBase {
         public:
-            FetchTask(const std::shared_ptr<RasterTileLayer>& layer, const MapTileQuadTreeNode& tile, bool preloadingTile);
+            FetchTask(const std::shared_ptr<RasterTileLayer>& layer, const MapTile& tile, bool preloadingTile);
     
         protected:
             bool loadTile(const std::shared_ptr<TileLayer>& tileLayer);
@@ -154,8 +154,8 @@ namespace Nuti {
     
         std::shared_ptr<RasterTileRenderer> _renderer;
         
-        LRUTextureCache<long long> _visibleCache;
-        LRUTextureCache<long long> _preloadingCache;
+        std::shared_ptr<LRUTextureCache<long long> > _visibleCache;
+        std::shared_ptr<LRUTextureCache<long long> > _preloadingCache;
     };
     
 }

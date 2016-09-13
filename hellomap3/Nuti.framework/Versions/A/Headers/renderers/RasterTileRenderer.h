@@ -7,7 +7,7 @@
 #ifndef _NUTI_RASTERTILERENDERER_H_
 #define _NUTI_RASTERTILERENDERER_H_
 
-#include "drawdatas/RasterTileDrawData.h"
+#include "renderers/drawdatas/RasterTileDrawData.h"
 #include "utils/LRUTextureCache.h"
 
 #include <mutex>
@@ -17,15 +17,16 @@ namespace Nuti {
     class Shader;
     class ShaderManager;
     class ViewState;
+    class MapRenderer;
     
     class RasterTileRenderer {
     public:
-        RasterTileRenderer(LRUTextureCache<long long>& visibleCache, LRUTextureCache<long long>& preloadingCache);
+        RasterTileRenderer(const std::shared_ptr<LRUTextureCache<long long> >& visibleCache, const std::shared_ptr<LRUTextureCache<long long> >& preloadingCache);
         virtual ~RasterTileRenderer();
     
         void offsetLayerHorizontally(double offset);
     
-        void onSurfaceCreated(ShaderManager& shaderManager);
+        void onSurfaceCreated(const std::weak_ptr<MapRenderer>& mapRenderer, ShaderManager& shaderManager);
         bool onDrawFrame(float deltaSeconds, const ViewState& viewState);
         void onSurfaceDestroyed();
     
@@ -37,8 +38,9 @@ namespace Nuti {
     
         void drawTiles(const MapPos& cameraPos, const RasterTileDrawDataVector& drawDatas, const ViewState& viewState);
         
-        LRUTextureCache<long long>& _preloadingCache;
-        LRUTextureCache<long long>& _visibleCache;
+        std::weak_ptr<MapRenderer> _mapRenderer;
+        std::shared_ptr<LRUTextureCache<long long> > _preloadingCache;
+        std::shared_ptr<LRUTextureCache<long long> > _visibleCache;
     
         RasterTileDrawDataVector _drawDatas;
         RasterTileDrawDataVector _tempDrawDatas;

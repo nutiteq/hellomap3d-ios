@@ -64,7 +64,7 @@ namespace Nuti {
          * Returns the tile decoder assigned to this layer.
          * @return The tile decoder assigned to this layer.
          */
-        virtual std::shared_ptr<VectorTileDecoder> getTileDecoder();
+        virtual std::shared_ptr<VectorTileDecoder> getTileDecoder() const;
         
         /**
          * Returns the tile cache capacity.
@@ -122,6 +122,10 @@ namespace Nuti {
     
         virtual void registerDataSourceListener();
         virtual void unregisterDataSourceListener();
+
+        bool _useFBO;
+        bool _useDepth;
+        bool _useStencil;
     
     private:    
         class TileDecoderListener : public VectorTileDecoder::OnChangeListener {
@@ -136,10 +140,10 @@ namespace Nuti {
     
         class FetchTask : public TileLayer::FetchTaskBase {
         public:
-            FetchTask(const std::shared_ptr<VectorTileLayer>& layer, const MapTileQuadTreeNode& tile, bool preloadingTile);
+            FetchTask(const std::shared_ptr<VectorTileLayer>& layer, const MapTile& tile, bool preloadingTile);
             
         protected:
-            bool loadTile(const std::shared_ptr<TileLayer>& tileLayer);
+            virtual bool loadTile(const std::shared_ptr<TileLayer>& tileLayer);
         };
         
         class LabelCullTask : public CancelableTask {
@@ -157,6 +161,7 @@ namespace Nuti {
     
         static const int CULL_DELAY_TIME = 200;
         static const int PRELOADING_PRIORITY_OFFSET = -2;
+        static const int EXTRA_TILE_FOOTPRINT = 4096;
         
         VectorTileLabelOrder::VectorTileLabelOrder _labelOrder;
     
@@ -167,10 +172,10 @@ namespace Nuti {
         std::shared_ptr<TileDecoderListener> _tileDecoderListener;
     
         std::vector<std::shared_ptr<TileDrawData> > _tempDrawDatas;
-        std::map<VT::TileId, std::shared_ptr<VT::Tile> > _visibleTileMap;
+        std::map<VT::TileId, std::shared_ptr<const VT::Tile> > _visibleTileMap;
         
-        LRUCache<long long, std::shared_ptr<VT::Tile> > _visibleCache;
-        LRUCache<long long, std::shared_ptr<VT::Tile> > _preloadingCache;
+        LRUCache<long long, std::shared_ptr<VectorTileDecoder::TileMap> > _visibleCache;
+        LRUCache<long long, std::shared_ptr<VectorTileDecoder::TileMap> > _preloadingCache;
     };
     
 }

@@ -38,6 +38,13 @@ __attribute__ ((visibility("default"))) @interface NTMapTile : NSObject
  */
 -(NSUInteger)hash;
 
+/**
+ * Constructs a MapTile object based on coordinates, zoom level and frame number.<br>
+ * @param x The x coordinate of the tile.<br>
+ * @param y The y coordinate of the tile.<br>
+ * @param zoom The zoom level of the tile.<br>
+ * @param frameNr The frame number of the tile.
+ */
 -(id)initWithX: (int)x y: (int)y zoom: (int)zoom frameNr: (int)frameNr;
 /**
  * Checks for equality between this and another map tile.<br>

@@ -8,8 +8,10 @@
 #define _NUTI_VT_TILEGEOMETRY_H_
 
 #include "Bitmap.h"
-#include "StrokeSet.h"
+#include "Color.h"
+#include "StrokeMap.h"
 #include "VertexArray.h"
+#include "TileLayerStyles.h"
 
 #include <memory>
 #include <array>
@@ -23,18 +25,19 @@ namespace Nuti { namespace VT {
 	class TileGeometry {
 	public:
 		enum class Type {
-			NONE, LINE, POLYGON, POLYGON3D
+			NONE, POINT, LINE, POLYGON, POLYGON3D
 		};
 
 		struct StyleParameters {
 			enum { MAX_PARAMETERS = 16 };
 			int parameterCount;
-			std::array<unsigned int, MAX_PARAMETERS> colorTable;
-			std::array<float, MAX_PARAMETERS> lineWidthTable;
+			std::array<Color, MAX_PARAMETERS> colorTable;
+			std::array<float, MAX_PARAMETERS> widthTable;
 			std::shared_ptr<const BitmapPattern> pattern;
 			boost::optional<cglib::mat3x3<float>> transform;
+            CompOp compOp;
 
-			StyleParameters() : parameterCount(0), colorTable(), lineWidthTable(), pattern(), transform() { }
+			StyleParameters() : parameterCount(0), colorTable(), widthTable(), pattern(), transform(), compOp(CompOp::SRC_OVER) { }
 		};
 
 		struct GeometryLayoutParameters {
@@ -51,7 +54,7 @@ namespace Nuti { namespace VT {
 			GeometryLayoutParameters() : vertexSize(0), vertexOffset(-1), attribsOffset(-1), texCoordOffset(-1), binormalOffset(-1), heightOffset(-1), vertexScale(0), texCoordScale(0), binormalScale(0) { }
 		};
 
-		TileGeometry(Type type, float tileSize, const StyleParameters& styleParameters, const GeometryLayoutParameters& geometryLayoutParameters, unsigned int indicesCount, VertexArray<unsigned char> vertexGeometry, VertexArray<unsigned short> indices) : _type(type), _tileSize(tileSize), _styleParameters(styleParameters), _geometryLayoutParameters(geometryLayoutParameters), _indicesCount(indicesCount), _vertexGeometry(std::move(vertexGeometry)), _indices(std::move(indices)) { }
+		explicit TileGeometry(Type type, float tileSize, const StyleParameters& styleParameters, const GeometryLayoutParameters& geometryLayoutParameters, unsigned int indicesCount, VertexArray<unsigned char> vertexGeometry, VertexArray<unsigned short> indices) : _type(type), _tileSize(tileSize), _styleParameters(styleParameters), _geometryLayoutParameters(geometryLayoutParameters), _indicesCount(indicesCount), _vertexGeometry(std::move(vertexGeometry)), _indices(std::move(indices)) { }
 
 		Type getType() const { return _type; }
 		float getTileSize() const { return _tileSize; }
@@ -64,7 +67,9 @@ namespace Nuti { namespace VT {
 
 		void releaseVertexArrays() {
 			_vertexGeometry.clear();
+            _vertexGeometry.shrink_to_fit();
 			_indices.clear();
+            _indices.shrink_to_fit();
 		}
 
 		std::size_t getResidentSize() const {

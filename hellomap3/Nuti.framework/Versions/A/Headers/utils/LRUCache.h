@@ -32,10 +32,12 @@ namespace Nuti {
         const V get(const K& id);
         const V getNoMod(const K& id) const;
         bool get(const K& id, V& value);
+        bool get(const K& id, V& value, unsigned int& size);
         bool getNoMod(const K& id, V& value) const;
+        bool getNoMod(const K& id, V& value, unsigned int& size) const;
         std::unordered_set<K> getKeys() const;
     
-		void invalidate(const K& id, std::chrono::steady_clock::time_point expirationTime = std::chrono::steady_clock::now());
+        void invalidate(const K& id, std::chrono::steady_clock::time_point expirationTime = std::chrono::steady_clock::now());
         void invalidateAll();
         bool isValid(const K& id) const;
         
@@ -44,6 +46,8 @@ namespace Nuti {
         
         void store(const K& id, const V& data);
         void store(const K& id, const V& data, unsigned int size);
+        
+        bool move(const K& id, LRUCache<K, V>& moveTo);
     
     private:
         struct CacheElement {
@@ -169,6 +173,12 @@ namespace Nuti {
     
     template <typename K, typename V>
     bool LRUCache<K, V>::get(const K& id, V& value) {
+        unsigned int size = 0;
+        return get(id, value, size);
+    }
+
+    template <typename K, typename V>
+    bool LRUCache<K, V>::get(const K& id, V& value, unsigned int& size) {
         std::lock_guard<std::mutex> lock(_mutex);
             
         typename CacheElementItMap::const_iterator it = _mappedElements.find(id);
@@ -183,12 +193,19 @@ namespace Nuti {
             // Update the iterator in the map
             _mappedElements[id] = --_lruElements.end();
             value = element._data;
+            size = element._size;
             return true;
         }
     }
     
     template <typename K, typename V>
     bool LRUCache<K, V>::getNoMod(const K& id, V& value) const {
+        unsigned int size = 0;
+        return getNoMod(id, value, size);
+    }
+
+    template <typename K, typename V>
+    bool LRUCache<K, V>::getNoMod(const K& id, V& value, unsigned int& size) const {
         std::lock_guard<std::mutex> lock(_mutex);
             
         typename CacheElementItMap::const_iterator it = _mappedElements.find(id);
@@ -197,6 +214,7 @@ namespace Nuti {
         } else {
             CacheElement& element = *it->second;
             value = element._data;
+            size = element._size;
             return true;
         }
     }
@@ -292,6 +310,35 @@ namespace Nuti {
         _invalidatedElements.erase(id);
         
         removeOldestElements();
+    }
+    
+    template <typename K, typename V>
+    bool LRUCache<K, V>::move(const K& id, LRUCache<K, V>& moveTo) {
+        // TODO: should be atomic
+        V data;
+        unsigned int size = 0;
+        if (!getNoMod(id, data, size)) {
+            return false;
+        }
+        moveTo.store(id, data, size);
+        
+        bool invalidate = false;
+        std::chrono::steady_clock::time_point invalidateTime;
+        {
+            std::lock_guard<std::mutex> lock(_mutex);
+            auto it = _invalidatedElements.find(id);
+            if (it != _invalidatedElements.end()) {
+                invalidate = true;
+                invalidateTime = it->second;
+            }
+        }
+        if (invalidate) {
+            moveTo.invalidate(id, invalidateTime);
+        }
+
+        remove(id);
+
+        return true;
     }
     
     template <typename K, typename V>

@@ -21,14 +21,14 @@ namespace Nuti {
 			explicit Entry(const std::type_info& typeInfo, const char* name);
 		};
 
+		virtual ~ClassRegistry();
+
 		static std::string GetClassName(const std::type_info& typeInfo);
 
 	private:
-		friend Entry;
-
 		ClassRegistry();
 
-		static ClassRegistry* GetInstance();
+		static ClassRegistry& GetInstance();
 
 		std::unordered_map<std::type_index, std::string> _classNames;
 		std::mutex _mutex;

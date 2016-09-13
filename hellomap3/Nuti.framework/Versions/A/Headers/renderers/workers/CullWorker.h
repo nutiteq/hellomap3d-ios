@@ -49,7 +49,7 @@ namespace Nuti {
     
         static const float VIEWPORT_SCALE;
 
-        std::map<std::shared_ptr<Layer>, std::chrono::time_point<std::chrono::steady_clock> > _layerWakeupMap;
+        std::map<std::shared_ptr<Layer>, std::chrono::steady_clock::time_point> _layerWakeupMap;
         
         bool _firstCull;
         

@@ -1,8 +1,10 @@
-#ifndef cglib_mat_h
-
-#define cglib_mat_h
+#ifndef _CGLIB_MAT_H
+#define _CGLIB_MAT_H
 
 #include "vec.h"
+
+#include <array>
+#include <initializer_list>
 
 namespace cglib
 {
@@ -17,29 +19,74 @@ namespace cglib
 		class mat
 	{
 
-	protected:
-
-		T _colrow[N][N];
-
 	public:
 		
 		typedef T value_type;
 		typedef Traits traits_type;
 
-		inline mat() { }
+		inline mat() = default;
 		
-		inline mat(const mat<T, N, Traits> & m) { *this = m; }
+#if defined(__clang__) // XCode 7.2 seems to generate buggy code for ARM64 for default constructor
+		inline mat(const mat<T, N, Traits> & m)
+		{
+			for (size_t i = 0; i < N; i++)
+			{
+				for_each_unrolled<N>([&](size_t j)
+				{
+					_colrow[i][j] = m._colrow[i][j];
+				});
+			}
+		}
+#endif
+
+		inline explicit mat(const std::array<std::array<T, N>, N> & colrow)
+		{
+			for (size_t i = 0; i < N; i++)
+			{
+				for_each_unrolled<N>([&](size_t j)
+				{
+					_colrow[i][j] = colrow[i][j];
+				});
+			}
+		}
+		
+		inline mat(std::initializer_list<std::initializer_list<T> > list)
+		{
+			assert(list.size() == N);
+			for (size_t i = 0; i < N; i++)
+			{
+				for_each_unrolled<N>([&](size_t j)
+				{
+					assert((list.begin() + j)->size() == N);
+					_colrow[i][j] = *((list.begin() + j)->begin() + i);
+				});
+			}
+		}
 		
 		inline T operator () (size_t r, size_t c) const
 		{
+			assert(r < N && c < N);
 			return _colrow[c][r];
 		}
 		
 		inline T & operator () (size_t r, size_t c)
 		{
+			assert(r < N && c < N);
 			return _colrow[c][r];
 		}
+		
+		inline const std::array<T, N> & operator [] (size_t c) const
+		{
+			assert(c < N);
+			return _colrow[c];
+		}
 
+		inline std::array<T, N> & operator [] (size_t c)
+		{
+			assert(c < N);
+			return _colrow[c];
+		}
+		
 		inline const T * data() const
 		{
 			return &_colrow[0][0];
@@ -85,34 +132,22 @@ namespace cglib
 			mat<T, N, Traits> neg;
 			for (size_t i = 0; i < N; i++)
 			{
-				for (size_t j = 0; j < N; j++)
+				for_each_unrolled<N>([&](size_t j)
 				{
 					neg._colrow[i][j] = -_colrow[i][j];
-				}
+				});
 			}
 			return neg;
-		}
-		
-		mat<T, N, Traits> & operator = (const mat<T, N, Traits> & m)
-		{
-			for (size_t i = 0; i < N; i++)
-			{
-				for (size_t j = 0; j < N; j++)
-				{
-					_colrow[i][j] = m._colrow[i][j];
-				}
-			}
-			return *this;
 		}
 		
 		mat<T, N, Traits> & operator += (const mat<T, N, Traits> & m)
 		{
 			for (size_t i = 0; i < N; i++)
 			{
-				for (size_t j = 0; j < N; j++)
+				for_each_unrolled<N>([&](size_t j)
 				{
 					_colrow[i][j] += m._colrow[i][j];
-				}
+				});
 			}
 			return *this;
 		}
@@ -121,10 +156,10 @@ namespace cglib
 		{
 			for (size_t i = 0; i < N; i++)
 			{
-				for (size_t j = 0; j < N; j++)
+				for_each_unrolled<N>([&](size_t j)
 				{
 					_colrow[i][j] -= m._colrow[i][j];
-				}
+				});
 			}
 			return *this;
 		}
@@ -133,10 +168,10 @@ namespace cglib
 		{
 			for (size_t i = 0; i < N; i++)
 			{
-				for (size_t j = 0; j < N; j++)
+				for_each_unrolled<N>([&](size_t j)
 				{
 					_colrow[i][j] *= val;
-				}
+				});
 			}
 			return *this;
 		}
@@ -149,10 +184,10 @@ namespace cglib
 				for (size_t j = 0; j < N; j++)
 				{
 					T s = 0;
-					for (size_t k = 0; k < N; k++)
+					for_each_unrolled<N>([&](size_t k)
 					{
 						s += m1(i, k) * m2(k, j);
-					}
+					});
 					_colrow[j][i] = s;
 				}
 			}
@@ -169,22 +204,33 @@ namespace cglib
 		{
 			for (size_t i = 0; i < N; i++)
 			{
-				for (size_t j = 0; j < N; j++)
+				for_each_unrolled<N>([&](size_t j)
 				{
 					_colrow[i][j] = 0;
-				}
+				});
 			}
 		}
 
+		inline void swap(mat<T, N, Traits> & m)
+		{
+			for (size_t i = 0; i < N; i++)
+			{
+				for_each_unrolled<N>([&](size_t j)
+				{
+					std::swap(_colrow[i][j], m._colrow[i][j]);
+				});
+			}
+		}
+		
 		static mat<T, N, Traits> zero()
 		{
 			mat<T, N, Traits> m;
 			for (size_t i = 0; i < N; i++)
 			{
-				for (size_t j = 0; j < N; j++)
+				for_each_unrolled<N>([&](size_t j)
 				{
 					m._colrow[i][j] = 0;
-				}
+				});
 			}
 			return m;
 		}
@@ -194,10 +240,10 @@ namespace cglib
 			mat<T, N, Traits> m;
 			for (size_t i = 0; i < N; i++)
 			{
-				for (size_t j = 0; j < N; j++)
+				for_each_unrolled<N>([&](size_t j)
 				{
-					m._colrow[i][j] = (T) (i == j ? 1 : 0);
-				}
+					m._colrow[i][j] = static_cast<T>(i == j ? 1 : 0);
+				});
 			}
 			return m;
 		}
@@ -215,14 +261,17 @@ namespace cglib
 			mat<T, N, Traits> n;
 			for (size_t i = 0; i < N; i++)
 			{
-				for (size_t j = 0; j < N; j++)
+				for_each_unrolled<N>([&](size_t j)
 				{
 					n._colrow[i][j] = static_cast<T>(m(j, i));
-				}
+				});
 			}
 			return n;
 		}
 
+	private:
+		
+		T _colrow[N][N];
 	};
 
 	/**
@@ -437,7 +486,7 @@ namespace cglib
 		rotate3_matrix(const vec<T, 3, Traits> & v, T a)
 	{
 		mat<T, 3, Traits> m;
-		vec<T, 3, Traits> u = unit0(v);
+		vec<T, 3, Traits> u = unit(v);
 		T s = Traits::sin(a), c = Traits::cos(a);
 		T x = u[0], y = u[1], z = u[2];
 		T xx = x * x, yy = y * y, zz = z * z;
@@ -459,7 +508,7 @@ namespace cglib
 		rotate4_matrix(const vec<T, 3, Traits> & v, T a)
 	{
 		mat<T, 4, Traits> m;
-		vec<T, 3, Traits> u = unit0(v);
+		vec<T, 3, Traits> u = unit(v);
 		T s = Traits::sin(a), c = Traits::cos(a);
 		T x = u[0], y = u[1], z = u[2];
 		T xx = x * x, yy = y * y, zz = z * z;
@@ -576,28 +625,6 @@ namespace cglib
 	}
 
 	/**
-	 * Check if matrix produces rigid transform (or reflection).
-	 * @relates mat
-	 */
-
-	template <typename T, size_t N, typename Traits> inline bool
-		rigid_transform(const mat<T, 4, Traits> & m)
-	{
-		if (!(Traits::eq(m(3, 0), 0) && Traits::eq(m(3, 1), 0) && Traits::eq(m(3, 2), 0) && Traits::eq(m(3, 3), 0)))
-			return false;
-		mat<T, 4, Traits> n(inverse0(m));
-		for (size_t i = 0; i < 3; i++)
-		{
-			for (size_t j = 0; j < 3; j++)
-			{
-				if (!Traits::eq(n(i, j), m(j, i)))
-					return false;
-			}
-		}
-		return true;
-	}
-
-	/**
 	 * Transform vector by matrix.
 	 * @relates vec
 	 */
@@ -608,11 +635,12 @@ namespace cglib
 		vec<T, N, Traits> w;
 		for (size_t i = 0; i < N; i++)
 		{
-			w(i) = 0;
-			for (size_t j = 0; j < N; j++)
+			T t = m(i, 0) * v(0);
+			for_each_unrolled<N-1>([&](size_t j)
 			{
-				w(i) += m(i, j) * v(j);
-			}
+				t += m(i, j + 1) * v(j + 1);
+			});
+			w(i) = t;
 		}
 		return w;
 	}
@@ -635,10 +663,10 @@ namespace cglib
 		for (size_t i = 0; i < N; i++)
 		{
 			T t = m(i, N);
-			for (size_t j = 0; j < N; j++)
+			for_each_unrolled<N>([&](size_t j)
 			{
 				t += m(i, j) * v(j);
-			}
+			});
 			w(i) = t * invs;
 		}
 		return w;
@@ -656,10 +684,10 @@ namespace cglib
 		for (size_t i = 0; i < N; i++)
 		{
 			T t = m(i, N);
-			for (size_t j = 0; j < N; j++)
+			for_each_unrolled<N>([&](size_t j)
 			{
 				t += m(i, j) * v(j);
-			}
+			});
 			w(i) = t;
 		}
 		return w;
@@ -676,11 +704,12 @@ namespace cglib
 		vec<T, N, Traits> w;
 		for (size_t i = 0; i < N; i++)
 		{
-			w(i) = 0;
-			for (size_t j = 0; j < N; j++)
+			T t = m(i, 0) * v(0);
+			for_each_unrolled<N-1>([&](size_t j)
 			{
-				w(i) += m(i, j) * v(j);
-			}
+				t += m(i, j + 1) * v(j + 1);
+			});
+			w(i) = t;
 		}
 		return w;
 	}
@@ -701,10 +730,10 @@ namespace cglib
 			return (m(0, 0));
 		case 2:
 			return (m(0, 0) * m(1, 1)) -
-			       (m(0, 1) * m(1, 0));
+				   (m(0, 1) * m(1, 0));
 		case 3:
 			return (m(0, 0) * m(1, 1) * m(2, 2) + m(0, 1) * m(1, 2) * m(2, 0) + m(0, 2) * m(1, 0) * m(2, 1)) -
-			       (m(0, 2) * m(1, 1) * m(2, 0) + m(0, 1) * m(1, 0) * m(2, 2) + m(0, 0) * m(1, 2) * m(2, 1));
+				   (m(0, 2) * m(1, 1) * m(2, 0) + m(0, 1) * m(1, 0) * m(2, 2) + m(0, 0) * m(1, 2) * m(2, 1));
 		}
 		return 1;
 	}
@@ -795,7 +824,7 @@ namespace cglib
 				}
 				r++;
 			}
-			T sign = (T) (1 - ((int) (i % 2) * 2));
+			T sign = static_cast<T>(1 - ((int) (i % 2) * 2));
 			mi(0, i) = subdeterminant(ms, N - 1) * sign * invdet;
 			for (size_t j = 1; j < N; j++)
 			{
@@ -811,20 +840,6 @@ namespace cglib
 			}
 		}
 		return mi;
-	}
-	
-	/**
-	 * Calculates inversion of NxN matrix M. If det(M) = 0, then returns zero matrix.
-	 * @relates mat
-	 */
-	
-	template <typename T, size_t N, typename Traits> inline mat<T, N, Traits>
-		inverse0(const mat<T, N, Traits> & m)
-	{
-		T det = determinant(m);
-		if (Traits::eq(det, 0))
-			return mat<T, N, Traits>::zero();
-		return inverse(m);
 	}
 	
 	/**
@@ -998,50 +1013,9 @@ namespace cglib
 	 * Matrix instances for 2D, 3D and 4D cases.
 	 */
 	
-	template <typename T, typename Traits = float_traits<T> >
-		class mat2x2 : public mat<T, 2, Traits>
-	{
-		
-	public:
-		
-		inline mat2x2()
-		{
-#ifdef CGLIB_CLEAR
-			clear();
-#endif
-		}
-		inline mat2x2(const mat<T, 2, Traits> & v) : mat<T, 2, Traits>(v) { }
-	};
-	
-	template <typename T, typename Traits = float_traits<T> >
-		class mat3x3 : public mat<T, 3, Traits>
-	{
-		
-	public:
-		
-		inline mat3x3()
-		{
-#ifdef CGLIB_CLEAR
-			clear();
-#endif
-		}
-		inline mat3x3(const mat<T, 3, Traits> & v) : mat<T, 3, Traits>(v) { }
-	};
-	
-	template <typename T, typename Traits = float_traits<T> >
-		class mat4x4 : public mat<T, 4, Traits>
-	{
-		
-	public:
-		
-		inline mat4x4()
-		{
-#ifdef CGLIB_CLEAR
-			clear();
-#endif
-		}
-		inline mat4x4(const mat<T, 4, Traits> & v) : mat<T, 4, Traits>(v) { }
-	};
+	template <typename T, typename Traits = float_traits<T> > using mat2x2 = mat<T, 2, Traits>;
+	template <typename T, typename Traits = float_traits<T> > using mat3x3 = mat<T, 3, Traits>;
+	template <typename T, typename Traits = float_traits<T> > using mat4x4 = mat<T, 4, Traits>;
 	
 }
 

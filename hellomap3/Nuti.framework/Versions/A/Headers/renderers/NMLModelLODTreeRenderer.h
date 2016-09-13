@@ -8,9 +8,9 @@
 #define _NUTI_NMLMODELLODTREERENDERER_H_
 
 #include "renderers/NMLModelRendererBase.h"
+#include "renderers/drawdatas/NMLModelLODTreeDrawData.h"
+#include "renderers/nmlGL/Model.h"
 #include "vectorelements/NMLModelLODTree.h"
-#include "drawdatas/NMLModelLODTreeDrawData.h"
-#include "drawdatas/nmlGL/Model.h"
 
 #include <list>
 #include <vector>

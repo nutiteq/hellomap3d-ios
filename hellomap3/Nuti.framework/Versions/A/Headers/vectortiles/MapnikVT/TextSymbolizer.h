@@ -7,40 +7,42 @@
 #ifndef _NUTI_MAPNIKVT_TEXTSYMBOLIZER_H_
 #define _NUTI_MAPNIKVT_TEXTSYMBOLIZER_H_
 
-#include "TileSymbolizer.h"
-#include "ParserUtils.h"
+#include "Symbolizer.h"
 #include "FontSet.h"
 #include "Expression.h"
-#include "Map.h"
 
 #include <vector>
 
 namespace Nuti { namespace MapnikVT {
-	class TextSymbolizer : public TileSymbolizer {
+	class TextSymbolizer : public Symbolizer {
 	public:
-		TextSymbolizer(const std::shared_ptr<Mapnik::Logger>& logger, const std::shared_ptr<Mapnik::Map>& map, const std::shared_ptr<Mapnik::Expression>& textExpression, const std::vector<std::shared_ptr<Mapnik::FontSet>>& fontSets) : TileSymbolizer(logger, map), _textExpression(textExpression), _fontSets(fontSets) { }
+        explicit TextSymbolizer(std::vector<std::shared_ptr<FontSet>> fontSets, std::shared_ptr<Logger> logger) : Symbolizer(std::move(logger)), _fontSets(std::move(fontSets)) { }
 
-		virtual void setParameter(const std::string& name, const std::string& value) override;
-
-		virtual void build(const Feature& feature, const TileSymbolizerContext& symbolizerContext, const Mapnik::ExpressionContext& exprContext, VT::TileLayerBuilder& layerBuilder) override;
+        void setTextExpression(std::shared_ptr<Expression> textExpression);
+        const std::shared_ptr<Expression>& getTextExpression() const;
+		
+		virtual void build(const FeatureCollection& featureCollection, const SymbolizerContext& symbolizerContext, const ExpressionContext& exprContext, VT::TileLayerBuilder& layerBuilder) override;
 
 	protected:
-		std::shared_ptr<Mapnik::Expression> getTextExpression() const;
-		std::shared_ptr<VT::Font> getFont(const TileSymbolizerContext& symbolizerContext) const;
-		VT::TextFormatter::Options getFormatterOptions(const TileSymbolizerContext& symbolizerContext) const;
+        virtual void bindParameter(const std::string& name, const std::string& value) override;
 
-		const std::shared_ptr<Mapnik::Expression> _textExpression;
-		const std::vector<std::shared_ptr<Mapnik::FontSet>> _fontSets;
-		std::string _fieldName;
+        std::string getTransformedText(const std::string& text) const;
+        std::shared_ptr<VT::Font> getFont(const SymbolizerContext& symbolizerContext) const;
+        cglib::bbox2<float> calculateTextSize(const std::shared_ptr<VT::Font>& font, const std::string& text, const VT::TextFormatter::Options& formatterOptions) const;
+        VT::TextFormatter::Options getFormatterOptions(const SymbolizerContext& symbolizerContext) const;
+
+        const std::vector<std::shared_ptr<FontSet>> _fontSets;
+        std::shared_ptr<Expression> _textExpression;
+        std::string _text;
 		std::string _textTransform;
 		std::string _faceName;
 		std::string _fontSetName;
 		std::string _placement = "point";
 		float _size = 10.0f;
         float _spacing = 0.0f;
-		unsigned int _fill = 0xff000000;
+		VT::Color _fill = VT::Color(0xff000000);
 		float _opacity = 1.0f;
-		unsigned int _haloFill = 0xffffffff;
+		VT::Color _haloFill = VT::Color(0xffffffff);
 		float _haloOpacity = 1.0f;
 		float _haloRadius = 0.0f;
 		float _orientation = 0.0f;

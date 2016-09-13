@@ -60,6 +60,7 @@
 #include "layers/TileLoadListener.h"
 #include "layers/VectorLayer.h"
 #include "layers/VectorTileLayer.h"
+#include "layers/TorqueTileLayer.h"
 #include "layers/NutiteqOnlineVectorTileLayer.h"
 #include "layers/EditableVectorLayer.h"
 #include "layers/ClusteredVectorLayer.h"
@@ -111,7 +112,6 @@
 
 #include "ui/BaseMapView.h"
 #include "ui/MapView.h"
-#include "ui/MapViewController.h"
 #include "ui/MapClickInfo.h"
 #include "ui/MapEventListener.h"
 #include "ui/MapRenderListener.h"
@@ -137,7 +137,9 @@
 #include "vectorelements/Text.h"
 #include "vectorelements/GeometryCollection.h"
 
+#include "vectortiles/CartoCSSStyleSet.h"
 #include "vectortiles/MBVectorTileStyleSet.h"
 #include "vectortiles/MBVectorTileDecoder.h"
+#include "vectortiles/TorqueTileDecoder.h"
 
 #endif

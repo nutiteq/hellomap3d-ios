@@ -56,11 +56,11 @@ namespace Nuti {
 		/**
 		 * Listener method that is called when server package list has been successfully updated.
 		 */
-		virtual void onPackageListUpdated() = 0;
+		virtual void onPackageListUpdated() { }
 		/**
 		 * Listener method that is called when server package could not be downloaded or updated.
 		 */
-		virtual void onPackageListFailed() = 0;
+		virtual void onPackageListFailed() { }
 
 		/**
 		 * Listener method that is called when a package status has changed.
@@ -69,26 +69,26 @@ namespace Nuti {
 		 * @param version The version of the package whose status has changed
 		 * @param status The current status of the package
 		 */
-		virtual void onPackageStatusChanged(const std::string& id, int version, const std::shared_ptr<PackageStatus>& status) = 0;
+		virtual void onPackageStatusChanged(const std::string& id, int version, const std::shared_ptr<PackageStatus>& status) { }
 		/**
 		 * Listener method that is called when a package download has been cancelled.
 		 * @param id The id of the package that has been cancelled
 		 * @param version The version of the package that has been cancelled
 		 */
-		virtual void onPackageCancelled(const std::string& id, int version) = 0;
+		virtual void onPackageCancelled(const std::string& id, int version) { }
 		/**
 		 * Listener method that is called when a package is successfully updated (downloaded or removed).
 		 * @param id The id of the package that has been updated
 		 * @param version The version of the package that has been updated
 		 */
-		virtual void onPackageUpdated(const std::string& id, int version) = 0;
+		virtual void onPackageUpdated(const std::string& id, int version) { }
 		/**
 		 * Listener method that is called when updating a package failed (network error, etc).
 		 * @param id The id of the package that failed
 		 * @param version The version of the package that failed
 		 * @param errorType Reason or type of the failure
 		 */
-		virtual void onPackageFailed(const std::string& id, int version, PackageErrorType::PackageErrorType errorType) = 0;
+		virtual void onPackageFailed(const std::string& id, int version, PackageErrorType::PackageErrorType errorType) { }
 	};
 
 }

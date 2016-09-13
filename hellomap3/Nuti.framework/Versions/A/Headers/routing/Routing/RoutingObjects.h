@@ -17,9 +17,11 @@
 #include <utility>
 
 #include <cglib/vec.h>
+#include <cglib/bbox.h>
 
 namespace Nuti { namespace Routing {
     using WGSPos = cglib::vec2<double>;
+    using WGSBounds = cglib::bbox2<double>;
 
     class RoutingQuery {
     public:

@@ -35,7 +35,6 @@ namespace Nuti {
          * @param color The color encoded into 32-bit integer as ARGB.
          */
         Color(int color);
-        virtual ~Color();
     
         /**
          * Checks for equality between this and another map color.
@@ -77,13 +76,13 @@ namespace Nuti {
          */
         int getARGB() const;
     
-		/**
-		 * Returns the hash value of this object.
-		 * @return The hash value of this object.
-		 */
-		int hash() const;
+        /**
+         * Returns the hash value of this object.
+         * @return The hash value of this object.
+         */
+        int hash() const;
 
-		/**
+        /**
          * Creates a string representation of this map color, useful for logging.
          * @return The string representation of this map color.
          */

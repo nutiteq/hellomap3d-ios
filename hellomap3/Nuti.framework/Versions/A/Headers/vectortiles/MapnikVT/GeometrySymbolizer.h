@@ -7,22 +7,20 @@
 #ifndef _NUTI_MAPNIKVT_GEOMETRYSYMBOLIZER_H_
 #define _NUTI_MAPNIKVT_GEOMETRYSYMBOLIZER_H_
 
-#include "TileSymbolizer.h"
+#include "Symbolizer.h"
 
 #include <boost/optional.hpp>
 
 namespace Nuti {
 	namespace MapnikVT {
-		class GeometrySymbolizer : public TileSymbolizer {
-		public:
-			GeometrySymbolizer(const std::shared_ptr<Mapnik::Logger>& logger, const std::shared_ptr<Mapnik::Map>& map) : TileSymbolizer(logger, map) { }
-
-			virtual void setParameter(const std::string& name, const std::string& value) override;
-
+		class GeometrySymbolizer : public Symbolizer {
 		protected:
-			static boost::optional<cglib::mat3x3<float>> convertOptionalTransform(const Mapnik::Value& val);
-
+			explicit GeometrySymbolizer(std::shared_ptr<Logger> logger) : Symbolizer(std::move(logger)) { }
+			
+			virtual void bindParameter(const std::string& name, const std::string& value) override;
+			
 			boost::optional<cglib::mat3x3<float>> _geometryTransform;
+			std::string _compOp = "src-over";
 		};
 	}
 }

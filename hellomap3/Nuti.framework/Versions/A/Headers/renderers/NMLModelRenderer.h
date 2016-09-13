@@ -8,8 +8,8 @@
 #define _NUTI_NMLMODELRENDERER_H_
 
 #include "NMLModelRendererBase.h"
+#include "renderers/drawdatas/NMLModelDrawData.h"
 #include "vectorelements/NMLModel.h"
-#include "drawdatas/NMLModelDrawData.h"
 
 #include <list>
 #include <vector>

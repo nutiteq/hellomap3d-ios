@@ -53,8 +53,8 @@ __attribute__ ((visibility("default"))) @interface NTMapBounds : NSObject
  * Constructs a MapBounds object from a minimum and maximum map position. If a coordinate of the <br>
  * minimum map positon is larger than the same coordinate of the maximum map position then those<br>
  * coordinates will be swapped.<br>
- * @param min The minimum map position.<br>
- * @param max The maximum map position.
+ * @param min The minimum map position (south-west).<br>
+ * @param max The maximum map position (north-east).
  */
 -(id)initWithMin: (NTMapPos*)min max: (NTMapPos*)max;
 /**
@@ -74,13 +74,13 @@ __attribute__ ((visibility("default"))) @interface NTMapBounds : NSObject
  */
 -(NTMapVec*)getDelta;
 /**
- * Returns the minimum map position of this map envelope object.<br>
- * @return The minimum map position of this map envelope object.
+ * Returns the minimum (south west) map position of this map envelope object.<br>
+ * @return The minimum (south west) map position of this map envelope object.
  */
 -(NTMapPos*)getMin;
 /**
- * Returns the maximum map position of this map envelope object.<br>
- * @return The maximum map position of this map envelope object.
+ * Returns the maximum (north east) map position of this map envelope object.<br>
+ * @return The maximum (north east) map position of this map envelope object.
  */
 -(NTMapPos*)getMax;
 /**

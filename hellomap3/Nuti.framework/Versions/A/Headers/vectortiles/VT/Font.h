@@ -8,6 +8,7 @@
 #define _NUTI_VT_FONT_H_
 
 #include "Bitmap.h"
+#include "GlyphMap.h"
 
 #include <memory>
 #include <string>
@@ -23,34 +24,25 @@ namespace Nuti { namespace VT {
 			CR_CODEPOINT      = 0xffff0001,
 			BITMAP_CODEPOINTS = 0xffff0002
 		};
-		
-		struct Glyph {
-			unsigned int codepoint;
-			int x;
-			int y;
-			int width;
-			int height;
-			cglib::vec2<float> size;
-			cglib::vec2<float> offset;
-			cglib::vec2<float> advance;
 
-			Glyph(unsigned int codepoint, int x, int y, int width, int height, const cglib::vec2<float>& size, const cglib::vec2<float>& offset, const cglib::vec2<float>& advance) : codepoint(codepoint), x(x), y(y), width(width), height(height), size(size), offset(offset), advance(advance) { }
-		};
+        using Glyph = GlyphMap::Glyph;
+        using GlyphId = GlyphMap::GlyphId;
+        using CodePoint = GlyphMap::CodePoint;
 
 		struct Metrics {
 			float ascent;
 			float descent;
 			float height;
 
-			Metrics(float ascent, float descent, float height) : ascent(ascent), descent(descent), height(height) { }
+			explicit Metrics(float ascent, float descent, float height) : ascent(ascent), descent(descent), height(height) { }
 		};
 
 		virtual ~Font() = default;
 
 		virtual const Metrics& getMetrics() const = 0;
 		virtual std::vector<Glyph> shapeGlyphs(const std::uint32_t* utf32Text, std::size_t size, bool rtl) const = 0;
-		virtual const std::unique_ptr<Glyph>& loadBitmapGlyph(const std::shared_ptr<Bitmap>& bitmap) = 0;
-		virtual std::shared_ptr<Bitmap> getBitmap() const = 0;
+		virtual const std::unique_ptr<const Glyph>& loadBitmapGlyph(const std::shared_ptr<const Bitmap>& bitmap) = 0;
+		virtual std::shared_ptr<const BitmapPattern> getBitmapPattern() const = 0;
 	};
 } }
 

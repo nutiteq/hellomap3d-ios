@@ -69,6 +69,22 @@ namespace Nuti {
         };
     };
     
+    namespace PivotMode {
+        /**
+         *  Possible pivot modes.
+         */
+        enum PivotMode {
+            /**
+             * The touch point (or middle point between 2 finger touches) is used as the pivot point.
+             */
+            PIVOT_MODE_TOUCHPOINT,
+            /**
+             * Screen center is always used for pivot point.
+             */
+            PIVOT_MODE_CENTERPOINT
+        };
+    };
+    
     /**
      * A class containing various options for rendering and map manipulation.
      */
@@ -93,11 +109,6 @@ namespace Nuti {
          * @param tileThreadPool The thread pool used for tile tasks.
          */
         Options(const std::shared_ptr<CancelableThreadPool>& envelopeThreadPool, const std::shared_ptr<CancelableThreadPool>& tileThreadPool);
-        /**
-         * Copy constructs an Options object from another Options object.
-         * @param options The other Options object.
-         */
-        Options(const Options& options);
         virtual ~Options();
         
         /**
@@ -153,7 +164,7 @@ namespace Nuti {
          * require this functionality, it can be turned off. The default is true.
          * @param enabled The new state of the click type detection flag.
          */
-        void setClickTypeDetecton(bool enabled);
+        void setClickTypeDetection(bool enabled);
     
         /**
          * Returns the tile size used for drawing map tiles.
@@ -216,6 +227,17 @@ namespace Nuti {
          * @param panningMode The new panning mode.
          */
         void setPanningMode(PanningMode::PanningMode panningMode);
+        
+        /**
+         * Returns the pivot mode.
+         * @return The pivot mode.
+         */
+        PivotMode::PivotMode getPivotMode() const;
+        /**
+         * Sets the pivot mode. The default is PivotMode::TOUCHPOINT
+         * @param pivotMode The new pivot mode.
+         */
+        void setPivotMode(PivotMode::PivotMode pivotMode);
     
         /**
          * Returns the state of seamless horizontal panning flag.
@@ -482,8 +504,6 @@ namespace Nuti {
          */
         void setBaseProjection(const std::shared_ptr<Projection>& baseProjection);
 		
-        Options& operator = (const Options& options);
-
         /**
          * Registers listener for options change events.
          * @param listener The listener for change events.
@@ -496,7 +516,7 @@ namespace Nuti {
          */
         void unregisterOnChangeListener(const std::shared_ptr<OnChangeListener>& listener);
 
-	private:
+    private:
         static std::shared_ptr<Bitmap> GetDefaultBackgroundBitmap();
         static std::shared_ptr<Bitmap> GetDefaultSkyBitmap();
         static std::shared_ptr<Bitmap> GetDefaultWatermarkBitmap();
@@ -526,6 +546,8 @@ namespace Nuti {
         int _fovY;
     
         PanningMode::PanningMode _panningMode;
+        
+        PivotMode::PivotMode _pivotMode;
     
         bool _seamlessPanning;
     

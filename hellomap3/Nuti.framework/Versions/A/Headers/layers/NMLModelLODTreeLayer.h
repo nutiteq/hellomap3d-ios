@@ -40,14 +40,24 @@ namespace Nuti {
         std::shared_ptr<NMLModelLODTreeDataSource> getDataSource() const;
 
         /**
+         * Returns memory usage constraints for the layer.
+         * @return The memory usage constraints for the layer.
+         */
+        unsigned int getMaxMemorySize() const;
+        /**
          * Set memory usage constraints for the layer. The specified limit is not exact, 
          * but should be relatively close to the actual memory usage of the layer.
          * If specific view requires more data than specified limit, then lower LOD levels
          * of the models are used. The default is 40MB.
          * @param size The memory limit in bytes.
          */
-        void setMaxMemorySize(size_t size);
-    
+        void setMaxMemorySize(unsigned int size);
+
+        /**
+         * Returns relative model LOD resolution.
+         * @return The relative model LOD resolution.
+         */
+        float getLODResolutionFactor() const;
         /**
          * Set relative model LOD resolution. Higher values than 1 result in higher details 
          * (but slower performance and higher memory usage), while lower values give better 
@@ -166,7 +176,7 @@ namespace Nuti {
         static const int MESH_LOADING_PRIORITY_OFFSET = 0;
         static const int TEXTURE_LOADING_PRIORITY_OFFSET = 0;
     
-        size_t _maxMemorySize;
+        unsigned int _maxMemorySize;
         float _LODResolutionFactor;
     
         MapTileList _mapTileList;

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C17E1A61C16F27600914995 /* nutibright-v2a.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C17E1A51C16F27600914995 /* nutibright-v2a.zip */; };
+		0C2FE5191D884F04007113E1 /* nutibright-v3.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FE5181D884F04007113E1 /* nutibright-v3.zip */; };
 		2A319B43187C4F8F0004A3CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B42187C4F8F0004A3CB /* Foundation.framework */; };
 		2A319B45187C4F8F0004A3CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B44187C4F8F0004A3CB /* CoreGraphics.framework */; };
 		2A319B47187C4F8F0004A3CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A319B46187C4F8F0004A3CB /* UIKit.framework */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C17E1A51C16F27600914995 /* nutibright-v2a.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "nutibright-v2a.zip"; sourceTree = "<group>"; };
+		0C2FE5181D884F04007113E1 /* nutibright-v3.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "nutibright-v3.zip"; sourceTree = "<group>"; };
 		2A319B3F187C4F8F0004A3CB /* hellomap3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hellomap3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A319B42187C4F8F0004A3CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2A319B44187C4F8F0004A3CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,7 +95,7 @@
 		4DC42AAE1B622EF70022CA0C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				0C17E1A51C16F27600914995 /* nutibright-v2a.zip */,
+				0C2FE5181D884F04007113E1 /* nutibright-v3.zip */,
 				2AB2803318EB150400666197 /* marker.png */,
 			);
 			name = Assets;
@@ -181,8 +181,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C2FE5191D884F04007113E1 /* nutibright-v3.zip in Resources */,
 				4DEB06E21A10E083003D111C /* Main.storyboard in Resources */,
-				0C17E1A61C16F27600914995 /* nutibright-v2a.zip in Resources */,
 				4DEB06CE1A0FB11D003D111C /* Images.xcassets in Resources */,
 				2AB2803418EB150400666197 /* marker.png in Resources */,
 			);

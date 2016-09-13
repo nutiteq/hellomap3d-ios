@@ -15,12 +15,12 @@ namespace Nuti {
     public:
         virtual ~Task() {}
 
-        virtual void run() = 0;
-
         void operator()();
 
     protected:
         Task() {}
+
+        virtual void run() = 0;
     };
 
 }

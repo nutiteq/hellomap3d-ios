@@ -20,7 +20,8 @@ namespace Nuti { namespace VT {
 		using ShaderContext = std::shared_ptr<const std::set<std::string>>;
 		
 		GLuint createProgram(const std::string& programName, const ShaderContext& context);
-		void destroyPrograms();
+		void resetPrograms();
+		void deletePrograms();
 
 	private:
 		static std::string createShader(const std::string& name, const std::map<std::string, const std::string*>& shaderMap, const std::set<std::string>& defs);

@@ -127,6 +127,7 @@ public:
   inline const std::vector< std::uint32_t >& geometry() const;
 
   // @@protoc_insertion_point(class_scope:vector_tile.Tile.Feature)
+  void set_id(std::int64_t id) { id_ = id; }
 private:
   std::uint32_t _has_bits_[1];
   std::uint64_t id_ = 0ull;

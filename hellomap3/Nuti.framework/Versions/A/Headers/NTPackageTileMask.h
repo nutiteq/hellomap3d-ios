@@ -33,6 +33,9 @@ typedef NS_ENUM(NSInteger, NTPackageTileStatus) {
   NT_PACKAGE_TILE_STATUS_FULL
 };
 
+
+#import "NTMapTile.h"
+
 /**
  * Tile mask contains map package spatial coverage information and<br>
  * can be used for very fast 'tile in package' tests.
@@ -68,13 +71,20 @@ __attribute__ ((visibility("default"))) @interface NTPackageTileMask : NSObject
  */
 -(int)getMaxZoomLevel;
 /**
+ * Deprecated. Use getTileStatus with MapTile argument instead.<br>
  * Returns the status of the specified tile. This method can be used for fast testing whether a tile is part of the package.<br>
  * @param zoom The zoom level of the tile.<br>
- * @param x The x coordinate of the tile.<br>
- * @param y The y coordinate of the tile.<br>
+ * @param x The x coordinate of the tile. <br>
+ * @param y The y coordinate of the tile. Note that the y-coordinate is flipped.<br>
  * @return The status of the specified tile.
  */
 -(enum NTPackageTileStatus)getTileStatus: (int)zoom x: (int)x y: (int)y;
+/**
+ * Returns the status of the specified tile. This method can be used for fast testing whether a tile is part of the package.<br>
+ * @param tile The tile to check.<br>
+ * @return The status of the specified tile.
+ */
+-(enum NTPackageTileStatus)getTileStatus: (NTMapTile*)tile;
 
 -(void)dealloc;
 

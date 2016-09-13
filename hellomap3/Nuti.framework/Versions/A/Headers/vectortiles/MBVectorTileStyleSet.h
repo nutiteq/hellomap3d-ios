@@ -22,7 +22,7 @@ namespace Nuti {
     public:
         /**
          * Constructs a styleset from byte vector.
-         * @param data Opaque byte vector describing the style set.
+         * @param data Zipped style set data.
          */
         MBVectorTileStyleSet(const std::shared_ptr<std::vector<unsigned char> >& data);
         virtual ~MBVectorTileStyleSet();

@@ -167,7 +167,7 @@ namespace Nuti {
         int dv = std::min(maxFilterWidth, static_cast<int>(std::abs(vx) + std::abs(vy) + 1));
 
         // Find tile area in raster space. Use NxN grid, as the transform can be non-affine.
-        cglib::bounding_box<double, 2> boundsUV;
+        cglib::bbox2<double> boundsUV = cglib::bbox2<double>::smallest();
         for (int y = 0; y <= 4; y++) {
             for (int x = 0; x <= 4; x++) {
                 cglib::vec2<double> uv = transform(x * sizeX / 4, y * sizeY / 4);

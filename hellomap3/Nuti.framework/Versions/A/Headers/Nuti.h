@@ -61,6 +61,7 @@
 #import "NTTileLoadListener.h"
 #import "NTVectorLayer.h"
 #import "NTVectorTileLayer.h"
+#import "NTTorqueTileLayer.h"
 #import "NTNutiteqOnlineVectorTileLayer.h"
 #import "NTEditableVectorLayer.h"
 #import "NTClusteredVectorLayer.h"
@@ -109,7 +110,6 @@
 #import "NTCartoCSSParser.h"
 
 #import "ui/MapView.h"
-#import "ui/MapViewController.h"
 #import "NTMapClickInfo.h"
 #import "NTMapEventListener.h"
 #import "NTMapRenderListener.h"
@@ -134,7 +134,9 @@
 #import "NTPopup.h"
 #import "NTText.h"
 
-#import "NTMBVectorTileDecoder.h"
+#import "NTCartoCSSStyleSet.h"
 #import "NTMBVectorTileStyleSet.h"
+#import "NTMBVectorTileDecoder.h"
+#import "NTTorqueTileDecoder.h"
 
 #endif

@@ -41,7 +41,7 @@
     [mapView setRotation:0 durationSeconds:0];
     
 	// Create online vector tile layer, use style asset embedded in the project
-	NTVectorTileLayer* vectorTileLayer = [[NTNutiteqOnlineVectorTileLayer alloc] initWithStyleAssetName:@"nutibright-v2a.zip"];
+	NTVectorTileLayer* vectorTileLayer = [[NTNutiteqOnlineVectorTileLayer alloc] initWithStyleAssetName:@"nutibright-v3.zip"];
 
 	// Add vector tile layer
     [[mapView getLayers] add:vectorTileLayer];

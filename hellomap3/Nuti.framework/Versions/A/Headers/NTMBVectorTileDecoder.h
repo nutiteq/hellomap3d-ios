@@ -18,6 +18,7 @@ extern "C" {
 
 #import "NTColor.h"
 #import "NTMBVectorTileStyleSet.h"
+#import "NTCartoCSSStyleSet.h"
 #import "NTVectorTileDecoder.h"
 #import "NTUnsignedCharVector.h"
 
@@ -47,17 +48,33 @@ __attribute__ ((visibility("default"))) @interface NTMBVectorTileDecoder : NTVec
  */
 -(id)initWithStyleSet: (NTMBVectorTileStyleSet*)styleSet styleName: (NSString*)styleName;
 /**
- * Returns the current style name.<br>
+ * Constructs decoder for MapBox vector tiles based on specified CartoCSS style set.<br>
+ * @param cartoCSSStyleSet The CartoCSS style set for the tiles.
+ */
+-(id)initWithCartoCSSStyleSet: (NTCartoCSSStyleSet*)cartoCSSStyleSet;
+/**
+ * Returns the current style name. Not used for CartoCSS style sets.<br>
  * @return The current style name.
  */
 -(NSString*)getCurrentStyleName;
 /**
- * Select current style by style name. The style must exist in the <br>
- * style set container specified in the constructor as an xml file.<br>
+ * Select current style by style name. Not used for CartoCSS style sets.<br>
+ * The style must exist in the style set container specified in the constructor as an xml file.<br>
  * This call will also reset style-related parameters, like geometry and billboard scales of the decoder.<br>
  * @param styleName style to use
  */
 -(void)setCurrentStyle: (NSString*)styleName;
+/**
+ * Returns the current CartoCSS style set used by the decoder.<br>
+ * If decoder uses non-CartoCSS style set, null is returned.<br>
+ * @return The current style set.
+ */
+-(NTCartoCSSStyleSet*)getCartoCSSStyleSet;
+/**
+ * Sets the current CartoCSS style set used by the decoder.<br>
+ * @param styleSet The new style set to use.
+ */
+-(void)setCartoCSSStyleSet: (NTCartoCSSStyleSet*)styleSet;
 /**
  * Sets a style parameter to specified boolean value.<br>
  * The style parameter must be declared in the current style.<br>
@@ -86,6 +103,11 @@ __attribute__ ((visibility("default"))) @interface NTMBVectorTileDecoder : NTVec
  * @param value The value for the parameter.
  */
 -(void)setStyleStringParameter: (NSString*)param value: (NSString*)value;
+/**
+ * Set tile buffering. This is intended for special tile sources like MapZen.<br>
+ * @param buffer The amount of buffering to use. It is based on normalized tile coordinates (tile width=1.0), so 1.0/64.0 is a sensible value. The default is 0.
+ */
+-(void)setBuffering: (float)buffer;
 -(int)getMinZoom;
 -(int)getMaxZoom;
 /**

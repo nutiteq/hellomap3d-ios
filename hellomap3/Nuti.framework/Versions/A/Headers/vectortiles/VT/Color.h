@@ -7,35 +7,105 @@
 #ifndef _NUTI_VT_COLOR_H_
 #define _NUTI_VT_COLOR_H_
 
+#include <algorithm>
+
 #include <cglib/vec.h>
-#include <cmath>
 
 namespace Nuti { namespace VT {
-	inline cglib::vec4<float> normalizeColor(unsigned int color) {
-		cglib::vec4<float> normalizedColor;
-		normalizedColor(2) = static_cast<float>((color >>  0) & 255);
-		normalizedColor(1) = static_cast<float>((color >>  8) & 255);
-		normalizedColor(0) = static_cast<float>((color >> 16) & 255);
-		normalizedColor(3) = static_cast<float>((color >> 24) & 255);
-		return normalizedColor * (1.0f / 255.0f);
-	}
+    class Color {
+    public:
+        Color() {
+            _components[0] = _components[1] = _components[2] = _components[3] = 0;
+        }
+        
+        explicit Color(unsigned int value) {
+            _components[0] = ((value >> 16) & 255) * (1.0f / 255.0f);
+            _components[1] = ((value >>  8) & 255) * (1.0f / 255.0f);
+            _components[2] = ((value >>  0) & 255) * (1.0f / 255.0f);
+            _components[3] = ((value >> 24) & 255) * (1.0f / 255.0f);
+        }
+        
+        explicit Color(float r, float g, float b, float a) {
+            _components[0] = r;
+            _components[1] = g;
+            _components[2] = b;
+            _components[3] = a;
+        }
 
-	inline unsigned int denormalizeColor(const cglib::vec4<float>& normalizedColor) {
-		unsigned int color = 0;
-		color |= static_cast<int>(normalizedColor(2) * 255.0f) << 0;
-		color |= static_cast<int>(normalizedColor(1) * 255.0f) << 8;
-		color |= static_cast<int>(normalizedColor(0) * 255.0f) << 16;
-		color |= static_cast<int>(normalizedColor(3) * 255.0f) << 24;
-		return color;
-	}
+        float& operator [] (std::size_t i) {
+            return _components[i];
+        }
 
-	inline cglib::vec4<float> correctGamma(const cglib::vec4<float>& normalizedColor, float gamma) {
-		cglib::vec4<float> correctedColor;
-		for (int i = 0; i < 4; i++) {
-			correctedColor(i) = std::pow(normalizedColor(i), gamma);
-		}
-		return correctedColor;
-	}
+        float operator [] (std::size_t i) const {
+            return _components[i];
+        }
+
+        unsigned int value() const {
+            cglib::vec4<unsigned char> components = rgba8();
+            unsigned int val = components[3];
+            val = (val << 8) | components[0];
+            val = (val << 8) | components[1];
+            val = (val << 8) | components[2];
+            return val;
+        }
+
+        unsigned int flippedValue() const {
+            cglib::vec4<unsigned char> components = rgba8();
+            unsigned int val = components[3];
+            val = (val << 8) | components[2];
+            val = (val << 8) | components[1];
+            val = (val << 8) | components[0];
+            return val;
+        }
+
+        cglib::vec4<float> rgba() const {
+            return cglib::vec4<float>(_components[0], _components[1], _components[2], _components[3]);
+        }
+
+        cglib::vec4<unsigned char> rgba8() const {
+            cglib::vec4<unsigned char> components8;
+            for (std::size_t i = 0; i < 4; i++) {
+                float c = std::max(0.0f, std::min(1.0f, _components[i]));
+                components8[i] = static_cast<unsigned char>(c * 255.0f + 0.5f);
+            }
+            return components8;
+        }
+
+    private:
+        float _components[4]; // rgba
+    };
+
+    inline Color operator + (const Color& color1, const Color& color2) {
+        return Color(color1[0] + color2[0], color1[1] + color2[1], color1[2] + color2[2], color1[3] + color2[3]);
+    }
+
+    inline Color operator - (const Color& color1, const Color& color2) {
+        return Color(color1[0] - color2[0], color1[1] - color2[1], color1[2] - color2[2], color1[3] - color2[3]);
+    }
+
+    inline Color operator * (const Color& color1, const Color& color2) {
+        return Color(color1[0] * color2[0], color1[1] * color2[1], color1[2] * color2[2], color1[3] * color2[3]);
+    }
+
+    inline Color operator * (const Color& color1, float c2) {
+        return Color(color1[0] * c2, color1[1] * c2, color1[2] * c2, color1[3] * c2);
+    }
+
+    inline Color operator * (float c1, const Color& color2) {
+        return Color(c1 * color2[0], c1 * color2[1], c1 * color2[2], c1 * color2[3]);
+    }
+
+    inline bool operator == (const Color& color1, const Color& color2) {
+        return color1.rgba() == color2.rgba();
+    }
+    
+    inline bool operator != (const Color& color1, const Color& color2) {
+        return !(color1 == color2);
+    }
+
+    inline Color blendColor(const Color& color, float blendFactor) {
+        return color * blendFactor;
+    }
 } }
 
 #endif

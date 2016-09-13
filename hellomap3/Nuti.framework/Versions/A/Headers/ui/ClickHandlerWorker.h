@@ -46,10 +46,10 @@ namespace Nuti {
     private:
         enum ClickMode { NO_CLICK, LONG_CLICK, DOUBLE_CLICK, DUAL_CLICK};
         
-        static const std::chrono::milliseconds LONG_CLICK_MIN_DURATION;
-        static const std::chrono::milliseconds DUAL_CLICK_BEGIN_DURATION;
-        static const std::chrono::milliseconds DUAL_CLICK_END_DURATION;
-        static const std::chrono::milliseconds DOUBLE_CLICK_MAX_DURATION;
+        static const float LONG_CLICK_MIN_DURATION_S;
+        static const float DUAL_CLICK_BEGIN_DURATION_S;
+        static const float DUAL_CLICK_END_DURATION_S;
+        static const float DOUBLE_CLICK_MAX_DURATION_S;
         
         static const float DOUBLE_CLICK_TOLERANCE_INCHES;
         static const float MOVING_TOLERANCE_INCHES;
@@ -65,7 +65,7 @@ namespace Nuti {
         ClickMode _clickMode;
     
         bool _clickTypeDetection;
-        std::chrono::time_point<std::chrono::steady_clock> _startTime;
+        std::chrono::time_point<std::chrono::system_clock> _startTime;
     
         int _pointersDown;
     

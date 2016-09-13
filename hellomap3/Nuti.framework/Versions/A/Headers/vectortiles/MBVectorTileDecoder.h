@@ -8,24 +8,22 @@
 #define _NUTI_MBVECTORTILEDECODER_H_
 
 #include "VectorTileDecoder.h"
-#include "MBVectorTileStyleSet.h"
+#include "MapnikVT/Value.h"
 
 #include <memory>
 #include <mutex>
 #include <map>
 #include <string>
 
-#include <cglib/mat.h>
-
 namespace Nuti {
-    namespace Mapnik {
+    namespace MapnikVT {
         class Map;
-        class Value;
+        class SymbolizerContext;
+        class Logger;
     }
 
-    namespace MapnikVT {
-        class TileSymbolizerContext;
-    }
+    class CartoCSSStyleSet;
+    class MBVectorTileStyleSet;
     
     /**
      * Decoder for vector tiles in MapBox format.
@@ -38,7 +36,6 @@ namespace Nuti {
          * @param styleSet Style set for the tiles.
          */
         MBVectorTileDecoder(const std::shared_ptr<MBVectorTileStyleSet>& styleSet);
-    
         /**
          * Constructs decoder for MapBox vector tiles based on specified style set.
          * Specified style is selected as the current style.
@@ -46,22 +43,38 @@ namespace Nuti {
          * @param styleName Style to select.
          */
         MBVectorTileDecoder(const std::shared_ptr<MBVectorTileStyleSet>& styleSet, const std::string& styleName);
-    
+        /**
+         * Constructs decoder for MapBox vector tiles based on specified CartoCSS style set.
+         * @param cartoCSSStyleSet The CartoCSS style set for the tiles.
+         */
+        MBVectorTileDecoder(const std::shared_ptr<CartoCSSStyleSet>& cartoCSSStyleSet);
         virtual ~MBVectorTileDecoder();
         
         /**
-         * Returns the current style name.
+         * Returns the current style name. Not used for CartoCSS style sets.
          * @return The current style name.
          */
         const std::string& getCurrentStyleName() const;
         
         /**
-         * Select current style by style name. The style must exist in the 
-         * style set container specified in the constructor as an xml file.
+         * Select current style by style name. Not used for CartoCSS style sets.
+         * The style must exist in the style set container specified in the constructor as an xml file.
          * This call will also reset style-related parameters, like geometry and billboard scales of the decoder.
          * @param styleName style to use
          */
         void setCurrentStyle(const std::string& styleName);
+
+        /**
+         * Returns the current CartoCSS style set used by the decoder.
+         * If decoder uses non-CartoCSS style set, null is returned.
+         * @return The current style set.
+         */
+        const std::shared_ptr<CartoCSSStyleSet>& getCartoCSSStyleSet() const;
+        /**
+         * Sets the current CartoCSS style set used by the decoder.
+         * @param styleSet The new style set to use.
+         */
+        void setCartoCSSStyleSet(const std::shared_ptr<CartoCSSStyleSet>& styleSet);
     
         /**
          * Sets a style parameter to specified boolean value.
@@ -91,30 +104,42 @@ namespace Nuti {
          * @param value The value for the parameter.
          */
         void setStyleParameter(const std::string& param, const std::string& value);
-    
+
+        /**
+         * Set tile buffering. This is intended for special tile sources like MapZen.
+         * @param buffer The amount of buffering to use. It is based on normalized tile coordinates (tile width=1.0), so 1.0/64.0 is a sensible value. The default is 0.
+         */
+        void setBuffering(float buffer);
+
         virtual Color getBackgroundColor() const;
     
-        virtual std::shared_ptr<VT::BitmapPattern> getBackgroundPattern() const;
+        virtual std::shared_ptr<const VT::BitmapPattern> getBackgroundPattern() const;
         
         virtual int getMinZoom() const;
         
         virtual int getMaxZoom() const;
     
-        virtual std::shared_ptr<VT::Tile> decodeTile(const VT::TileId& tile, const VT::TileId& targetTile, const std::shared_ptr<TileData>& data) const;
+        virtual std::shared_ptr<TileMap> decodeTile(const VT::TileId& tile, const VT::TileId& targetTile, const std::shared_ptr<TileData>& data) const;
     
     protected:
-        void setStyleParameter(const std::string& param, const Mapnik::Value& value);
+        void setStyleParameter(const std::string& param, const MapnikVT::Value& value);
+        void loadMapnikMap(const std::vector<unsigned char>& styleData);
+        void loadCartoCSSMap(const std::string& fileName, const std::vector<unsigned char>& styleData);
+        void loadCartoCSSMap(const std::shared_ptr<CartoCSSStyleSet>& styleSet);
     
-        static cglib::mat3x3<float> calculateTileTransform(const Nuti::VT::TileId& tileId, const Nuti::VT::TileId& targetTileId);
-    
-        static const int DEFAULT_TILE_SIZE = 256;
+        static const int DEFAULT_TILE_SIZE;
+        static const int STROKEMAP_SIZE;
+        static const int GLYPHMAP_SIZE;
         
+        float _buffer;
         std::string _styleName;
-        std::shared_ptr<MBVectorTileStyleSet> _styleSet;
-        std::shared_ptr<Mapnik::Map> _map;
-        std::shared_ptr<std::map<std::string, Mapnik::Value> > _parameterValueMap;
-        std::shared_ptr<VT::BitmapPattern> _backgroundPattern;
-        std::shared_ptr<MapnikVT::TileSymbolizerContext> _symbolizerContext;
+        std::shared_ptr<MBVectorTileStyleSet> _mbStyleSet;
+        std::shared_ptr<CartoCSSStyleSet> _cartoCSSStyleSet;
+        std::shared_ptr<MapnikVT::Map> _map;
+        std::shared_ptr<MapnikVT::Logger> _logger;
+        std::shared_ptr<std::map<std::string, MapnikVT::Value> > _parameterValueMap;
+        std::shared_ptr<const VT::BitmapPattern> _backgroundPattern;
+        std::shared_ptr<MapnikVT::SymbolizerContext> _symbolizerContext;
     
         mutable std::mutex _mutex;
     };

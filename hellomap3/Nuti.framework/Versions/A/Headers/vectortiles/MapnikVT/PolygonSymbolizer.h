@@ -12,14 +12,14 @@
 namespace Nuti { namespace MapnikVT {
 	class PolygonSymbolizer : public GeometrySymbolizer {
 	public:
-		PolygonSymbolizer(const std::shared_ptr<Mapnik::Logger>& logger, const std::shared_ptr<Mapnik::Map>& map) : GeometrySymbolizer(logger, map) { }
+        explicit PolygonSymbolizer(std::shared_ptr<Logger> logger) : GeometrySymbolizer(std::move(logger)) { }
 
-		virtual void setParameter(const std::string& name, const std::string& value) override;
-
-		virtual void build(const Feature& feature, const TileSymbolizerContext& symbolizerContext, const Mapnik::ExpressionContext& exprContext, VT::TileLayerBuilder& layerBuilder) override;
+		virtual void build(const FeatureCollection& featureCollection, const SymbolizerContext& symbolizerContext, const ExpressionContext& exprContext, VT::TileLayerBuilder& layerBuilder) override;
 
 	protected:
-		unsigned int _fill = 0xff808080;
+        virtual void bindParameter(const std::string& name, const std::string& value) override;
+
+        VT::Color _fill = VT::Color(0xff808080);
 		float _fillOpacity = 1.0f;
 	};
 } }

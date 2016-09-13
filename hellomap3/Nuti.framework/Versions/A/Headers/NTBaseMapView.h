@@ -23,6 +23,7 @@ extern "C" {
 #import "NTScreenPos.h"
 #import "NTScreenBounds.h"
 #import "NTLayers.h"
+#import "NTLicenseManagerListener.h"
 #import "NTMapEventListener.h"
 #import "NTMapRenderListener.h"
 #import "NTRedrawRequestListener.h"
@@ -42,9 +43,15 @@ __attribute__ ((visibility("default"))) @interface NTBaseMapView : NSObject
  * Registers the SDK license. This class method and must be called before<br>
  * creating any actual MapView instances.<br>
  * @param licenseKey The license string provided for this application.<br>
+ * @param listener The listener that receives notifications when the license has been updated.<br>
  * @return True if license is valid, false if not.
  */
-+(BOOL)registerLicense: (NSString*)licenseKey;
++(BOOL)registerLicense: (NSString*)licenseKey listener: (NTLicenseManagerListener*)listener;
+/**
+ * Returns the SDK version and build info. The result should be used only for reporting purposes.<br>
+ * @return The SDK version and build info.
+ */
++(NSString*)getSDKVersion;
 -(id)init;
 /**
  * Prepares renderers for drawing. Has to be called again if the graphics context was lost.

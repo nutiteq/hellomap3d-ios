@@ -87,24 +87,6 @@ __attribute__ ((visibility("default"))) @interface NTBitmap : NSObject
 -(NSUInteger)hash;
 
 /**
- * Deprecated: use BitmapUtils.LoadFromAssets instead.<br>
- * Constructs a bitmap by loading a compressed image bundled with the application. If the power of two conversion flag<br>
- * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating<br>
- * OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.<br>
- * @param assetPath The path to the image to be loaded.<br>
- * @param pow2Padding The power of two conversion flag.
- */
--(id)initWithAssetPath: (NSString*)assetPath pow2Padding: (BOOL)pow2Padding __attribute((deprecated));
-/**
- * Deprecated: use Bitmap.CreateFromCompressed instead.<br>
- * Constructs a bitmap by decoding a vector of compressed image bytes. If the power of two conversion flag<br>
- * is set, additional padding will be added to the image to make it's dimensions power of two. This can be useful when creating<br>
- * OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.<br>
- * @param compressedData A vector of compressed image bytes.<br>
- * @param pow2Padding The power of two conversion flag.
- */
--(id)initWithCompressedData: (NTUnsignedCharVector*)compressedData pow2Padding: (BOOL)pow2Padding __attribute((deprecated));
-/**
  * Constructs a bitmap from an already decoded vector of bytes. The bitmap data is expected to be alpha premultiplied, if alpha channel is used.<br>
  * If the power of two conversion flag is set, additional padding will be added to the image to make it's dimensions power of two.<br>
  * This can be useful when creating OpenGL textures from the Bitmap, because some GPUs perform badly with non power of two textures.<br>

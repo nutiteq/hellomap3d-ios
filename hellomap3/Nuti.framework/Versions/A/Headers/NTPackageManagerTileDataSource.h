@@ -38,6 +38,11 @@ __attribute__ ((visibility("default"))) @interface NTPackageManagerTileDataSourc
  * @param packageManager The package manager that is used to retrieve requested tiles.
  */
 -(id)initWithPackageManager: (NTPackageManager*)packageManager;
+/**
+ * Returns the package manager instance used by the data source.<br>
+ * @return The package manager instance used by the data source.
+ */
+-(NTPackageManager*)getPackageManager;
 -(NTTileData*)loadTile: (NTMapTile*)mapTile;
 -(NTTileData*)loadTileSwigExplicitNTPackageManagerTileDataSource: (NTMapTile*)mapTile;
 /**

@@ -21,9 +21,6 @@
 #include <stdext/eiff_file.h>
 #include <stdext/bitstream.h>
 
-#include <cglib/vec.h>
-#include <cglib/bbox.h>
-
 namespace Nuti { namespace Routing {
     class RoutingGraph {
     public:
@@ -106,8 +103,8 @@ namespace Nuti { namespace Routing {
         };
         
         struct RTreeNode {
-            std::vector<std::pair<cglib::bounding_box<double, 2>, RTreeNodeId>> children;
-            std::vector<std::pair<cglib::bounding_box<double, 2>, BlockId>> nodeBlockIds;
+            std::vector<std::pair<WGSBounds, RTreeNodeId>> children;
+            std::vector<std::pair<WGSBounds, BlockId>> nodeBlockIds;
             
             RTreeNode() = default;
         };
@@ -127,6 +124,7 @@ namespace Nuti { namespace Routing {
         struct NodeBlock {
             std::vector<Node> nodes;
             std::vector<Edge> edges;
+            std::vector<WGSBounds> nodeGeometryBoundsCache;
 
             NodeBlock() = default;
         };
@@ -189,7 +187,7 @@ namespace Nuti { namespace Routing {
         struct Package {
             int packageId = -1;
             std::string packageName;
-            cglib::bounding_box<double, 2> bbox;
+            WGSBounds bbox = WGSBounds::smallest();
             std::shared_ptr<eiff::data_chunk> nodeChunk;
             std::shared_ptr<eiff::data_chunk> geometryChunk;
             std::shared_ptr<eiff::data_chunk> nameChunk;
@@ -199,15 +197,27 @@ namespace Nuti { namespace Routing {
             Package() = default;
         };
         
-        struct SearchNode {
+        struct SearchRTreeNode {
             RTreeNodeId rtreeNodeId;
             double distance = 0;
             
-            SearchNode() = default;
-            explicit SearchNode(RTreeNodeId rtreeNodeId, double distance) : rtreeNodeId(rtreeNodeId), distance(distance) { }
+            SearchRTreeNode() = default;
+            explicit SearchRTreeNode(RTreeNodeId rtreeNodeId, double distance) : rtreeNodeId(rtreeNodeId), distance(distance) { }
             
-            bool operator < (const SearchNode& searchNode) const {
-                return distance > searchNode.distance;
+            bool operator < (const SearchRTreeNode& searchRTreeNode) const {
+                return distance > searchRTreeNode.distance;
+            }
+        };
+        
+        struct SearchGeometry {
+            NodeId nodeId;
+            double distance = 0;
+            
+            SearchGeometry() = default;
+            explicit SearchGeometry(NodeId nodeId, double distance) : nodeId(nodeId), distance(distance) { }
+            
+            bool operator < (const SearchGeometry& searchGeometry) const {
+                return distance > searchGeometry.distance;
             }
         };
         
@@ -229,7 +239,7 @@ namespace Nuti { namespace Routing {
         
         static double getPointDistance(const WGSPos& pos0, const WGSPos& pos1);
 
-        static double getBBoxDistance(const WGSPos& pos, const cglib::bounding_box<double, 2>& bbox);
+        static double getBBoxDistance(const WGSPos& pos, const WGSBounds& bbox);
         
         static int decodeZigZagValue(unsigned int val);
 

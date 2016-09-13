@@ -12,14 +12,14 @@
 namespace Nuti { namespace MapnikVT {
 	class ShieldSymbolizer : public TextSymbolizer {
 	public:
-		ShieldSymbolizer(const std::shared_ptr<Mapnik::Logger>& logger, const std::shared_ptr<Mapnik::Map>& map, const std::shared_ptr<Mapnik::Expression>& textExpression, const std::vector<std::shared_ptr<Mapnik::FontSet>>& fontSets) : TextSymbolizer(logger, map, textExpression, fontSets) { }
+        explicit ShieldSymbolizer(std::vector<std::shared_ptr<FontSet>> fontSets, std::shared_ptr<Logger> logger) : TextSymbolizer(std::move(fontSets), std::move(logger)) { }
 
-		virtual void setParameter(const std::string& name, const std::string& value) override;
-
-		virtual void build(const Feature& feature, const TileSymbolizerContext& symbolizerContext, const Mapnik::ExpressionContext& exprContext, VT::TileLayerBuilder& layerBuilder) override;
+		virtual void build(const FeatureCollection& featureCollection, const SymbolizerContext& symbolizerContext, const ExpressionContext& exprContext, VT::TileLayerBuilder& layerBuilder) override;
 
 	protected:
-		std::string _file;
+        virtual void bindParameter(const std::string& name, const std::string& value) override;
+
+        std::string _file;
 		bool _unlockImage = false;
 		float _shieldDx = 0.0f;
 		float _shieldDy = 0.0f;

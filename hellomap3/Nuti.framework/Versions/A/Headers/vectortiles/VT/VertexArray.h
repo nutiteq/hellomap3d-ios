@@ -51,6 +51,17 @@ namespace Nuti { namespace VT {
 			_end = _begin;
 		}
 
+        void shrink_to_fit() {
+            if (empty()) {
+                delete[] _begin;
+                _begin = _end = nullptr;
+                _reserved = 0;
+            } 
+            else {
+                reserve(0);
+            }
+        }
+
 		void append(const T& val) {
 			if (_reserved < 1) {
 				reserve(1);

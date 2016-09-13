@@ -76,11 +76,6 @@ __attribute__ ((visibility("default"))) @interface NTPackageMetaInfo : NSObject
 -(NSUInteger)hash;
 
 /**
- * Returns the underlying JSON value.<br>
- * @return The value of the element.
- */
--(NSString*)getJsonValue;
-/**
  * Returns the type of this meta info element.<br>
  * @return The type of this element.
  */

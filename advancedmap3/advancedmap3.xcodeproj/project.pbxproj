@@ -16,9 +16,10 @@
 		0C327A2E1C45463E005501F7 /* direction_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C327A2A1C45463E005501F7 /* direction_up.png */; };
 		0C327A2F1C45463E005501F7 /* direction_upthenleft.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C327A2B1C45463E005501F7 /* direction_upthenleft.png */; };
 		0C327A301C45463E005501F7 /* direction_upthenright.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C327A2C1C45463E005501F7 /* direction_upthenright.png */; };
-		0C327A331C465EE2005501F7 /* nutiteq-dark.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C327A311C465EE2005501F7 /* nutiteq-dark.zip */; };
-		0C327A341C465EE2005501F7 /* nutibright-v2a.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C327A321C465EE2005501F7 /* nutibright-v2a.zip */; };
 		0C3C369819E66E0A007573FD /* fcd_auto.nml in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C369719E66E0A007573FD /* fcd_auto.nml */; };
+		0C4630181CCA431600275334 /* nutiteq-dark-v2.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C4630151CCA431600275334 /* nutiteq-dark-v2.zip */; };
+		0C4630191CCA431600275334 /* nutiteq-grey-v2.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C4630161CCA431600275334 /* nutiteq-grey-v2.zip */; };
+		0C46301A1CCA431600275334 /* nutibright-v3.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C4630171CCA431600275334 /* nutibright-v3.zip */; };
 		0C60B8251A601A820058C740 /* Nuti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ABFB6B71947460E00A64571 /* Nuti.framework */; };
 		0C97CC471C09B26000336DF7 /* OfflineRoutingController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0C97CC461C09B26000336DF7 /* OfflineRoutingController.mm */; };
 		0CED8F251A5D334E00116863 /* rome_ntvt.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 0CED8F241A5D334E00116863 /* rome_ntvt.mbtiles */; };
@@ -81,9 +82,10 @@
 		0C327A2A1C45463E005501F7 /* direction_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction_up.png; sourceTree = "<group>"; };
 		0C327A2B1C45463E005501F7 /* direction_upthenleft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction_upthenleft.png; sourceTree = "<group>"; };
 		0C327A2C1C45463E005501F7 /* direction_upthenright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction_upthenright.png; sourceTree = "<group>"; };
-		0C327A311C465EE2005501F7 /* nutiteq-dark.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "nutiteq-dark.zip"; sourceTree = "<group>"; };
-		0C327A321C465EE2005501F7 /* nutibright-v2a.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "nutibright-v2a.zip"; sourceTree = "<group>"; };
 		0C3C369719E66E0A007573FD /* fcd_auto.nml */ = {isa = PBXFileReference; lastKnownFileType = file; path = fcd_auto.nml; sourceTree = "<group>"; };
+		0C4630151CCA431600275334 /* nutiteq-dark-v2.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "nutiteq-dark-v2.zip"; sourceTree = "<group>"; };
+		0C4630161CCA431600275334 /* nutiteq-grey-v2.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "nutiteq-grey-v2.zip"; sourceTree = "<group>"; };
+		0C4630171CCA431600275334 /* nutibright-v3.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "nutibright-v3.zip"; sourceTree = "<group>"; };
 		0C97CC461C09B26000336DF7 /* OfflineRoutingController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OfflineRoutingController.mm; path = advancedmap3/OfflineRoutingController.mm; sourceTree = SOURCE_ROOT; };
 		0CED8F241A5D334E00116863 /* rome_ntvt.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = rome_ntvt.mbtiles; sourceTree = "<group>"; };
 		2A319B3F187C4F8F0004A3CB /* advancedmap3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = advancedmap3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,13 +257,14 @@
 		4DC42AAC1B622C350022CA0C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0C4630151CCA431600275334 /* nutiteq-dark-v2.zip */,
+				0C4630161CCA431600275334 /* nutiteq-grey-v2.zip */,
+				0C4630171CCA431600275334 /* nutibright-v3.zip */,
 				0C327A291C45463E005501F7 /* direction_down.png */,
 				0C327A2A1C45463E005501F7 /* direction_up.png */,
 				0C327A2B1C45463E005501F7 /* direction_upthenleft.png */,
 				0C327A2C1C45463E005501F7 /* direction_upthenright.png */,
 				4DFC6C681B62248900AF8E06 /* marker_black.png */,
-				0C327A311C465EE2005501F7 /* nutiteq-dark.zip */,
-				0C327A321C465EE2005501F7 /* nutibright-v2a.zip */,
 				4DFC6C691B62248900AF8E06 /* marker_red.png */,
 				4DFC6C661B6223B600AF8E06 /* capitals_3857.geojson */,
 				4DAF41B21AD3FFE9004E7092 /* looseleaf.zip */,
@@ -390,6 +393,7 @@
 			files = (
 				0C0E58A31A84BC2D0072D7E8 /* 852-map-toolbar@3x.png in Resources */,
 				0CED8F251A5D334E00116863 /* rome_ntvt.mbtiles in Resources */,
+				0C46301A1CCA431600275334 /* nutibright-v3.zip in Resources */,
 				0C327A2F1C45463E005501F7 /* direction_upthenleft.png in Resources */,
 				4DAF41B11AD3C542004E7092 /* jefferson-building-ground-floor.jpg in Resources */,
 				4DB60F391A1770E500A6AF18 /* basic.zip in Resources */,
@@ -401,6 +405,7 @@
 				2A710BBE191956CC00647B81 /* info@2x.png in Resources */,
 				4DB60EDA1A16615A00A6AF18 /* UITableExpand@2x.png in Resources */,
 				4DB60ED81A16615A00A6AF18 /* UITableContract@2x.png in Resources */,
+				0C4630191CCA431600275334 /* nutiteq-grey-v2.zip in Resources */,
 				2A710BC019196AD100647B81 /* arrow@2x.png in Resources */,
 				0C0E58A11A84BC2D0072D7E8 /* 852-map-toolbar.png in Resources */,
 				0C3C369819E66E0A007573FD /* fcd_auto.nml in Resources */,
@@ -411,11 +416,10 @@
 				4DB60ED71A16615A00A6AF18 /* UITableContract.png in Resources */,
 				4DB60F341A16AE1600A6AF18 /* menu.png in Resources */,
 				2AB2803418EB150400666197 /* marker.png in Resources */,
-				0C327A341C465EE2005501F7 /* nutibright-v2a.zip in Resources */,
 				4DB60F351A16AE1600A6AF18 /* menu@2x.png in Resources */,
-				0C327A331C465EE2005501F7 /* nutiteq-dark.zip in Resources */,
 				2AEA4FA61913F38C002ED69F /* info.png in Resources */,
 				0C327A2D1C45463E005501F7 /* direction_down.png in Resources */,
+				0C4630181CCA431600275334 /* nutiteq-dark-v2.zip in Resources */,
 				0C327A301C45463E005501F7 /* direction_upthenright.png in Resources */,
 				0C0E58A21A84BC2D0072D7E8 /* 852-map-toolbar@2x.png in Resources */,
 			);

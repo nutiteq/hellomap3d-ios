@@ -36,10 +36,19 @@ __attribute__ ((visibility("default"))) @interface NTTileLoadListener : NSObject
  */
 -(void)onVisibleTilesLoaded;
 /**
+ * Listener method that gets called when all visible raster tiles have finished loading.
+ */
+-(void)onVisibleTilesLoadedSwigExplicitNTTileLoadListener;
+/**
  * Listener method that gets called when all preloading raster tiles have finished loading.<br>
  * This method gets called after onVisibleTilesLoaded() and only if preloading is enabled.
  */
 -(void)onPreloadingTilesLoaded;
+/**
+ * Listener method that gets called when all preloading raster tiles have finished loading.<br>
+ * This method gets called after onVisibleTilesLoaded() and only if preloading is enabled.
+ */
+-(void)onPreloadingTilesLoadedSwigExplicitNTTileLoadListener;
 /**
  * Returns the actual class name of this object. This is used internally by the SDK.<br>
  * @return The class name of this object.

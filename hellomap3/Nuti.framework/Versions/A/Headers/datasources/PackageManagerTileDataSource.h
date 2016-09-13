@@ -29,6 +29,12 @@ class PackageManager;
         PackageManagerTileDataSource(const std::shared_ptr<PackageManager>& packageManager);
         virtual ~PackageManagerTileDataSource();
 
+        /**
+         * Returns the package manager instance used by the data source.
+         * @return The package manager instance used by the data source.
+         */
+        const std::shared_ptr<PackageManager>& getPackageManager() const;
+
         virtual std::shared_ptr<TileData> loadTile(const MapTile& mapTile);
 
     protected:

@@ -23,19 +23,21 @@
 namespace Nuti { namespace VT {
 	class TileLabelCuller {
 	public:
-		TileLabelCuller(std::mutex& mutex, float scale);
-		virtual ~TileLabelCuller() = default;
+        explicit TileLabelCuller(std::shared_ptr<std::mutex> mutex, float scale);
 
 		void setViewState(const cglib::mat4x4<double>& projectionMatrix, const cglib::mat4x4<double>& cameraMatrix, float zoom, float aspectRatio, float resolution);
 		void process(const std::vector<std::shared_ptr<TileLabel>>& labelList);
 
 	private:
-		enum { RESOLUTION = 16 };
+		enum { GRID_RESOLUTION = 16 };
 
 		struct Record {
-			cglib::bounding_box<float, 2> bounds;
+			cglib::bbox2<float> bounds;
 			std::array<cglib::vec2<float>, 4> envelope;
 			std::shared_ptr<TileLabel> label;
+
+			Record() = default;
+			explicit Record(const cglib::bbox2<float>& bounds, const std::array<cglib::vec2<float>, 4>& envelope, std::shared_ptr<TileLabel> label) : bounds(bounds), envelope(envelope), label(std::move(label)) { }
 		};
 
 		void clearGrid();
@@ -46,11 +48,11 @@ namespace Nuti { namespace VT {
 
 		cglib::mat4x4<float> _mvpMatrix;
 		TileLabel::ViewState _labelViewState;
-        float _resolution = 0;
-		std::vector<Record> _recordGrid[RESOLUTION][RESOLUTION];
+		float _resolution = 0;
+		std::vector<Record> _recordGrid[GRID_RESOLUTION][GRID_RESOLUTION];
 
 		const float _scale;
-		std::mutex& _mutex;
+        const std::shared_ptr<std::mutex> _mutex;
 	};
 } }
 

@@ -37,6 +37,12 @@ __attribute__ ((visibility("default"))) @interface NTPackageManager : NSObject
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
 
+/**
+ * Creates a polymorphic instance of the given native object. This is used internally by the SDK.
+ */
++(NTPackageManager*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
+
 /**  
  * Checks if this object is equal to the specified object.
  * @return True when objects are equal, false otherwise.
@@ -159,6 +165,16 @@ __attribute__ ((visibility("default"))) @interface NTPackageManager : NSObject
  * @param priority The priority of the download package. If it is less than zero, package download is paused.
  */
 -(void)setPackagePriority: (NSString*)packageId priority: (int)priority;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
+/**
+ * Returns the pointer to the connected director object. This is used internally by the SDK.<br>
+ * @return The pointer to the connected director object or null if director is not connected.
+ */
+-(void *)swigGetDirectorObject;
 
 -(void)dealloc;
 

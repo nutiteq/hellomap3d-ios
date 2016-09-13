@@ -7,7 +7,7 @@
 #ifndef _NUTI_NMLMODELRENDERERBASE_H_
 #define _NUTI_NMLMODELRENDERERBASE_H_
 
-#include "drawdatas/nmlGL/BaseTypes.h"
+#include "renderers/nmlGL/BaseTypes.h"
 
 #include <mutex>
 #include <memory>

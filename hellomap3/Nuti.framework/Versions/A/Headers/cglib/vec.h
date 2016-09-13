@@ -1,8 +1,10 @@
-#ifndef cglib_vec_h
-
-#define cglib_vec_h
+#ifndef _CGLIB_VEC_H
+#define _CGLIB_VEC_H
 
 #include "base.h"
+
+#include <array>
+#include <initializer_list>
 
 namespace cglib
 {
@@ -18,23 +20,75 @@ namespace cglib
 		class vec
 	{
 		
-	protected:
-		
-		T _col[N];
-
 	public:
 
 		typedef T value_type;
 		typedef Traits traits_type;
+		typedef T * iterator;
+		typedef const T * const_iterator;
+
+		inline vec() = default;
 		
-		inline vec() { }
-		
+#if defined(__clang__) // XCode 7.2 seems to generate buggy code for ARM64 for default constructor
 		inline vec(const vec<T, N, Traits> & v)
 		{
-			for (size_t i = 0; i < N; i++) // *this = v;
+			for_each_unrolled<N>([&](size_t i)
 			{
 				_col[i] = v._col[i];
-			}
+			});
+		}
+#endif
+
+		inline explicit vec(const std::array<T, N> & col)
+		{
+			for_each_unrolled<N>([&](size_t i)
+			{
+				_col[i] = col[i];
+			});
+		}
+		
+#if defined(_MSC_VER) && _MSC_VER < 1900 // VS2013 and older compilers do not support {} initialization
+		inline explicit vec(T x, T y)
+		{
+			static_assert(N == 2, "Wrong number of constructor arguments");
+			_col[0] = x; _col[1] = y;
+		}
+
+		inline explicit vec(T x, T y, T z)
+		{
+			static_assert(N == 3, "Wrong number of constructor arguments");
+			_col[0] = x; _col[1] = y; _col[2] = z;
+		}
+
+		inline explicit vec(T x, T y, T z, T w)
+		{
+			static_assert(N == 4, "Wrong number of constructor arguments");
+			_col[0] = x; _col[1] = y; _col[2] = z; _col[3] = w;
+		}
+#else
+		inline explicit vec(T x, T y) : _col { x, y }
+		{
+			static_assert(N == 2, "Wrong number of constructor arguments");
+		}
+
+		inline explicit vec(T x, T y, T z) : _col { x, y, z }
+		{
+			static_assert(N == 3, "Wrong number of constructor arguments");
+		}
+
+		inline explicit vec(T x, T y, T z, T w) : _col { x, y, z, w }
+		{
+			static_assert(N == 4, "Wrong number of constructor arguments");
+		}
+#endif
+
+		inline vec(std::initializer_list<T> list)
+		{
+			assert(list.size() == N);
+			for_each_unrolled<N>([&](size_t i)
+			{
+				_col[i] = *(list.begin() + i);
+			});
 		}
 		
 		inline T operator () (size_t c) const
@@ -59,6 +113,26 @@ namespace cglib
 			return (*this)(c);
 		}
 		
+		inline iterator begin()
+		{
+			return &_col[0];
+		}
+		
+		inline iterator end()
+		{
+			return &_col[0] + N;
+		}
+		
+		inline const_iterator cbegin() const
+		{
+			return &_col[0];
+		}
+		
+		inline const_iterator cend() const
+		{
+			return &_col[0] + N;
+		}
+		
 		inline const T * data() const
 		{
 			return &_col[0];
@@ -71,84 +145,83 @@ namespace cglib
 
 		inline vec<T, N, Traits> & copy(const T * data)
 		{
-			for (size_t i = 0; i < N; i++)
+			for_each_unrolled<N>([&](size_t i)
 			{
-				_col[i] = *data++;
-			}
+				_col[i] = data[i];
+			});
 			return *this;
 		}
 		
 		inline vec<T, N, Traits> operator - () const
 		{
 			vec<T, N, Traits> neg;
-			for (size_t i = 0; i < N; i++)
+			for_each_unrolled<N>([&](size_t i)
 			{
 				neg._col[i] = -_col[i];
-			}
+			});
 			return neg;
-		}
-		
-		inline vec<T, N, Traits> & operator = (const vec<T, N, Traits> & v)
-		{
-			for (size_t i = 0; i < N; i++)
-			{
-				_col[i] = v._col[i];
-			}
-			return *this;
 		}
 		
 		inline vec<T, N, Traits> & operator += (const vec<T, N, Traits> & v)
 		{
-			for (size_t i = 0; i < N; i++)
+			for_each_unrolled<N>([&](size_t i)
 			{
 				_col[i] += v._col[i];
-			}
+			});
 			return *this;
 		}
 		
 		inline vec<T, N, Traits> & operator -= (const vec<T, N, Traits> & v)
 		{
-			for (size_t i = 0; i < N; i++)
+			for_each_unrolled<N>([&](size_t i)
 			{
 				_col[i] -= v._col[i];
-			}
+			});
 			return *this;
 		}
 		
 		inline vec<T, N, Traits> & operator *= (T val)
 		{
-			for (size_t i = 0; i < N; i++)
+			for_each_unrolled<N>([&](size_t i)
 			{
 				_col[i] *= val;
-			}
+			});
 			return *this;
 		}
 		
 		inline void clear()
 		{
-			for (size_t i = 0; i < N; i++)
+			for_each_unrolled<N>([&](size_t i)
 			{
 				_col[i] = 0;
-			}
+			});
+		}
+		
+		inline void swap(vec<T, N, Traits> & v)
+		{
+			for_each_unrolled<N>([&](size_t i)
+			{
+				std::swap(_col[i], v._col[i]);
+			});
 		}
 		
 		inline static vec<T, N, Traits> zero()
 		{
 			vec<T, N, Traits> v;
-			for (size_t i = 0; i < N; i++)
+			for_each_unrolled<N>([&](size_t i)
 			{
 				v._col[i] = 0;
-			}
+			});
 			return v;
 		}
 		
-		static vec<T, N, Traits> unit(size_t n)
+		static vec<T, N, Traits> axis(size_t n)
 		{
 			vec<T, N, Traits> v;
-			for (size_t i = 0; i < N; i++)
+			for_each_unrolled<N>([&](size_t i)
 			{
 				v._col[i] = static_cast<T>(i == n ? 1 : 0);
-			}
+			});
 			return v;
 		}
 		
@@ -156,18 +229,20 @@ namespace cglib
 			static vec<T, N, Traits> convert(const vec<S, N, TraitsS> & v)
 		{
 			vec<T, N, Traits> w;
-			for (size_t i = 0; i < N; i++)
+			for_each_unrolled<N>([&](size_t i)
 			{
 				w._col[i] = static_cast<T>(v[i]);
-			}
+			});
 			return w;
 		}
 		
+	private:
+		
+		T _col[N];
 	};
 	
 	/**
-	 * Calculates dot product of two vectors. Note that vectors do not
-	 * have to be of same length!
+	 * Calculates dot product of two vectors.
 	 * @relates vec
 	 */
 	
@@ -175,10 +250,10 @@ namespace cglib
 		dot_product(const vec<T, N, Traits> & v1, const vec<T, N, Traits> & v2)
 	{
 		T sp = 0;
-		for (size_t i = 0; i < N; i++)
+		for_each_unrolled<N>([&](size_t i)
 		{
 			sp += v1(i) * v2(i);
-		}
+		});
 		return sp;
 	}
 	
@@ -226,21 +301,6 @@ namespace cglib
 	}
 
 	/**
-	 * Normalizes non-zero vector, ie finds vector with same direction
-	 * but unit length. On zero vector, returns zero vector.
-	 * @relates vec
-	 */
-	
-	template <typename T, size_t N, typename Traits> inline vec<T, N, Traits> 
-		unit0(const vec<T, N, Traits> & v)
-	{
-		T len = length(v);
-		if (Traits::eq(len, 0))
-			return vec<T, N, Traits>::zero();
-		return unit(v);
-	}
-
-	/**
 	 * @relates vec
 	 */
 
@@ -266,13 +326,13 @@ namespace cglib
 	 */
 	
 	template <typename T, size_t N, typename Traits> inline vec<T, N+1, Traits>
-		expand(const vec<T, N, Traits> & v, T last = T())
+		expand(const vec<T, N, Traits> & v, T last = 0)
 	{
 		vec<T, N+1, Traits> w;
-		for (size_t i = 0; i < N; i++)
+		for_each_unrolled<N>([&](size_t i)
 		{
 			w(i) = v(i);
-		}
+		});
 		w(N) = last;
 		return w;
 	}
@@ -286,10 +346,10 @@ namespace cglib
 		proj_o(const vec<T, N, Traits> & v)
 	{
 		vec<T, N-1, Traits> w;
-		for (size_t i = 0; i < N - 1; i++)
+		for_each_unrolled<N-1>([&](size_t i)
 		{
 			w(i) = v(i);
-		}
+		});
 		return w;
 	}
 	
@@ -307,28 +367,13 @@ namespace cglib
 		else
 			invcoeff = 1 / coeff;
 		vec<T, N-1, Traits> w;
-		for (size_t i = 0; i < N - 1; i++)
+		for_each_unrolled<N-1>([&](size_t i)
 		{
 			w(i) = v(i) * invcoeff;
-		}
+		});
 		return w;
 	}
 	
-	/**
-	 * Perspective projection (divides vector with last element and drops it then).
-	 * If last element is zero, returns zero vector.
-	 * @relates vec
-	 */
-	
-	template <typename T, size_t N, typename Traits> inline vec<T, N-1, Traits>
-		proj_p0(const vec<T, N, Traits> & v)
-	{
-		T coeff = v(N - 1);
-		if (Traits::eq(coeff, 0))
-			return vec<T, N-1, Traits>::zero();
-		return proj_p(v);
-	}
-
 	/**
 	 * Perspective projection (divides vector with last element but does not drop it).
 	 * @relates vec
@@ -343,28 +388,13 @@ namespace cglib
 		else
 			invcoeff = 1 / coeff;
 		vec<T, N, Traits> w;
-		for (size_t i = 0; i < N; i++)
+		for_each_unrolled<N>([&](size_t i)
 		{
 			w(i) = v(i) * invcoeff;
-		}
+		});
 		return w;
 	}
 	
-	/**
-	 * Perspective projection (divides vector with last element but does not drop it).
-	 * If last element is zero, returns zero vector.
-	 * @relates vec
-	 */
-	
-	template <typename T, size_t N, typename Traits> inline vec<T, N, Traits>
-		div_p0(const vec<T, N, Traits> & v)
-	{
-		T coeff = v(N - 1);
-		if (Traits::eq(coeff, 0))
-			return vec<T, N, Traits>::zero();
-		return div_p(v);
-	}
-
 	/**
 	 * @relates vec
 	 */
@@ -495,92 +525,12 @@ namespace cglib
 	}
 
 	/**
-	 * Derived vector instances for 2D, 3D and 4D cases
+	 * Commonly used instances for 2D, 3D and 4D cases
 	 */
 	
-	template <typename T, typename Traits = float_traits<T> >
-		class vec2 : public vec<T, 2, Traits>
-	{
-		
-	public:
-		
-		inline vec2()
-		{
-#ifdef CGLIB_CLEAR
-			clear();
-#endif
-		}
-		inline vec2(const vec<T, 2, Traits> & v)
-		{
-			this->_col[0] = v(0); this->_col[1] = v(1);
-		}
-		inline explicit vec2(T s1, T s2)
-		{
-			this->_col[0] = s1; this->_col[1] = s2;
-		}
-
-		inline vec2<T, Traits> & operator = (const vec<T, 2, Traits> & v)
-		{
-			this->_col[0] = v(0); this->_col[1] = v(1);
-			return *this;
-		}
-	};
-
-	template <typename T, typename Traits = float_traits<T> >
-		class vec3 : public vec<T, 3, Traits>
-	{
-		
-	public:
-		
-		inline vec3()
-		{
-#ifdef CGLIB_CLEAR
-			clear();
-#endif
-		}
-		inline vec3(const vec<T, 3, Traits> & v)
-		{
-			this->_col[0] = v(0); this->_col[1] = v(1); this->_col[2] = v(2);
-		}
-		inline explicit vec3(T s1, T s2, T s3)
-		{
-			this->_col[0] = s1; this->_col[1] = s2; this->_col[2] = s3;
-		}
-
-		inline vec3<T, Traits> & operator = (const vec<T, 3, Traits> & v)
-		{
-			this->_col[0] = v(0); this->_col[1] = v(1); this->_col[2] = v(2);
-			return *this;
-		}
-	};
-
-	template <typename T, typename Traits = float_traits<T> >
-		class vec4 : public vec<T, 4, Traits>
-	{
-		
-	public:
-		
-		inline vec4()
-		{
-#ifdef CGLIB_CLEAR
-			clear();
-#endif
-		}
-		inline vec4(const vec<T, 4, Traits> & v)
-		{
-			this->_col[0] = v(0); this->_col[1] = v(1); this->_col[2] = v(2); this->_col[3] = v(3);
-		}
-		inline explicit vec4(T s1, T s2, T s3, T s4)
-		{
-			this->_col[0] = s1; this->_col[1] = s2; this->_col[2] = s3; this->_col[3] = s4;
-		}
-
-		inline vec4<T, Traits> & operator = (const vec<T, 4, Traits> & v)
-		{
-			this->_col[0] = v(0); this->_col[1] = v(1); this->_col[2] = v(2); this->_col[3] = v(3);
-			return *this;
-		}
-	};
+	template <typename T, typename Traits = float_traits<T> > using vec2 = vec<T, 2, Traits>;
+	template <typename T, typename Traits = float_traits<T> > using vec3 = vec<T, 3, Traits>;
+	template <typename T, typename Traits = float_traits<T> > using vec4 = vec<T, 4, Traits>;
 
 }
 

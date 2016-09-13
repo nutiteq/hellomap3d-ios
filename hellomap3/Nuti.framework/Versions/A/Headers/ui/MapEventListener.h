@@ -21,20 +21,37 @@ namespace Nuti {
      */
     class MapEventListener {
     public:
-        virtual ~MapEventListener() {}
+        virtual ~MapEventListener() { }
     
+        /**
+         * Listener method that gets called at the end of the rendering process when the
+         * map view needs no further refreshing.
+         * Note that there can still be background processes (tile loading) that may change
+         * the map view but these may take long time.
+         * This method is called from GL renderer thread, not from main thread.
+         */
+        virtual void onMapIdle() { }
+
         /**
          * Listener method that gets called when the map is panned, rotated, tilted or zoomed.
          * The thread this method is called from may vary.
          */
-        virtual void onMapMoved() = 0;
+        virtual void onMapMoved() { }
+        
+        /**
+         * Listener method that gets called when map is in 'stable' state - map animations have finished,
+         * user has lifted fingers from the screen. This method is similar to onMapIdle, but is called less
+         * frequently and takes account touch state.
+         * The thread this method is called from may vary.
+         */
+        virtual void onMapStable() { }
     
         /**
          * Listener method that gets called when a click is performed on an empty area of the map.
          * This method will NOT be called from the main thread.
          * @param mapClickInfo A container that provides information about the click.
          */
-        virtual void onMapClicked(const std::shared_ptr<MapClickInfo>& mapClickInfo) = 0;
+        virtual void onMapClicked(const std::shared_ptr<MapClickInfo>& mapClickInfo) { }
     
         /**
          * Listener method that gets called when a click is performed on a vector element.
@@ -43,7 +60,7 @@ namespace Nuti {
          * in the list. This method will NOT be called from the main thread.
          * @param vectorElementsClickInfo A container that provides information about the click.
          */
-        virtual void onVectorElementClicked(const std::shared_ptr<VectorElementsClickInfo>& vectorElementsClickInfo) = 0;
+        virtual void onVectorElementClicked(const std::shared_ptr<VectorElementsClickInfo>& vectorElementsClickInfo) { }
         
         /**
          * Listener method that gets called at the start of the rendering process.

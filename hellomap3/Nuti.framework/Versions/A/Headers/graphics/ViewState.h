@@ -308,15 +308,12 @@ namespace Nuti {
         void calculateViewState(const Options& options);
     
         /**
-         * Projects a screen position into the map plane using the current view state. If offsetPercent is > 0 the resulting
-         * world space position will be offset towards the camera position. This is used internally to artificially slow down
-         * map panning at small tilt angles.
+         * Projects a screen position into the map plane using the current view state.
          * @param screenPos The screen position.
-         * @param offsetPercent The percentage used to offset the resulting world space coordinate, in the range of [0..1].
          * @param options The options object.
          * @return The screen position projected into the map plane, in internal coordinates.
          */
-        MapPos screenToWorldPlane(const ScreenPos& screenPos, float offsetPercent, std::shared_ptr<Options> options = std::shared_ptr<Options>()) const;
+        MapPos screenToWorldPlane(const ScreenPos& screenPos, std::shared_ptr<Options> options = std::shared_ptr<Options>()) const;
         /**
          * Projects a world position onto the screen using the current view state.
          * @param worldPos The world position.

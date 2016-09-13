@@ -28,11 +28,18 @@ namespace Nuti { namespace VT {
 		void glGenVertexArraysOES(GLsizei n, GLuint* arrays);
 		GLboolean glIsVertexArrayOES(GLuint array);
 
-		bool GL_EXT_texture_filter_anisotropic_supported() const { return _GL_EXT_texture_filter_anisotropic_supported; }
+        bool GL_EXT_discard_framebuffer_supported() const { return _GL_EXT_discard_framebuffer_supported; }
+        void glDiscardFramebufferEXT(GLenum target, GLsizei numAttachments, const GLenum* attachments);
 
-	private:
+        bool GL_EXT_texture_filter_anisotropic_supported() const { return _GL_EXT_texture_filter_anisotropic_supported; }
+
+        bool GL_OES_packed_depth_stencil_supported() const { return _GL_OES_packed_depth_stencil_supported; }
+
+    private:
 		bool _GL_OES_vertex_array_object_supported = false;
+        bool _GL_EXT_discard_framebuffer_supported = false;
 		bool _GL_EXT_texture_filter_anisotropic_supported = false;
+        bool _GL_OES_packed_depth_stencil_supported = false;
 
 #if !defined(__APPLE__) && defined(GL_OES_vertex_array_object)
 		PFNGLBINDVERTEXARRAYOESPROC _glBindVertexArrayOES = nullptr;
@@ -40,7 +47,11 @@ namespace Nuti { namespace VT {
 		PFNGLGENVERTEXARRAYSOESPROC _glGenVertexArraysOES = nullptr;
 		PFNGLISVERTEXARRAYOESPROC _glIsVertexArrayOES = nullptr;
 #endif
-	};
+
+#if !defined(__APPLE__) && defined(GL_EXT_discard_framebuffer)
+        PFNGLDISCARDFRAMEBUFFEREXTPROC _glDiscardFramebufferEXT = nullptr;
+#endif
+    };
 } }
 
 #endif

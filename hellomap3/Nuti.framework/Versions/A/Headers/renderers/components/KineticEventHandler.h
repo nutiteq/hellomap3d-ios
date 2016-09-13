@@ -25,17 +25,21 @@ namespace Nuti {
     
         void calculate(const ViewState& viewState, float deltaSeconds);
     
+        bool isPanning() const;
         void setPanDelta(const MapVec& deltaFocusPos, float zoom);
         void startPan();
         void stopPan();
     
+        bool isRotating() const;
         void setRotationDelta(float deltaRotation, const MapPos& targetPos);
         void startRotation();
         void stopRotation();
         
+        bool isZooming() const;
         void setZoomDelta(float deltaZoom, const MapPos& targetPos);
         void startZoom();
         void stopZoom();
+
     private:
         void handlePan(const ViewState& viewState, float deltaSeconds);
         void handleRotation(const ViewState& viewState, float deltaSeconds);

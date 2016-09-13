@@ -7,9 +7,8 @@
 #ifndef _NUTI_WATERMARKRENDERER_H_
 #define _NUTI_WATERMARKRENDERER_H_
 
-#include "ui/BaseMapView.h"
+#include "components/LicenseManager.h"
 #include "utils/GLES2.h"
-#include "utils/LicenseUtils.h"
 
 #include <cglib/mat.h>
 #include <memory>
@@ -24,7 +23,7 @@ namespace Nuti {
     
     class WatermarkRenderer {
     public:
-        WatermarkRenderer(const Options& options, const LicenseType::LicenseType& licenseType);
+        WatermarkRenderer(const Options& options);
         virtual ~WatermarkRenderer();
     
         void onSurfaceCreated(ShaderManager& shaderManager);
@@ -48,8 +47,6 @@ namespace Nuti {
         const static int WATERMARK_WIDTH_DP = 100;
         
         void drawWatermark(const ViewState& viewState);
-        
-        const LicenseType::LicenseType& _licenseType;
         
         float _randomAlignmentX;
         float _randomAlignmentY;

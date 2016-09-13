@@ -9,6 +9,8 @@
 
 #ifdef _NUTI_PACKAGEMANAGER_SUPPORT
 
+#include "core/MapTile.h"
+
 #include <string>
 #include <memory>
 #include <queue>
@@ -80,13 +82,21 @@ namespace Nuti {
         int getMaxZoomLevel() const;
 
 		/**
+		 * Deprecated. Use getTileStatus with MapTile argument instead.
 		 * Returns the status of the specified tile. This method can be used for fast testing whether a tile is part of the package.
 		 * @param zoom The zoom level of the tile.
-		 * @param x The x coordinate of the tile.
-		 * @param y The y coordinate of the tile.
+		 * @param x The x coordinate of the tile. 
+		 * @param y The y coordinate of the tile. Note that the y-coordinate is flipped.
 		 * @return The status of the specified tile.
 		 */
 		PackageTileStatus::PackageTileStatus getTileStatus(int zoom, int x, int y) const;
+
+		/**
+		 * Returns the status of the specified tile. This method can be used for fast testing whether a tile is part of the package.
+		 * @param tile The tile to check.
+		 * @return The status of the specified tile.
+		 */
+		PackageTileStatus::PackageTileStatus getTileStatus(const MapTile& tile) const;
 
 	private:
 		struct TileNode {

@@ -29,7 +29,7 @@ namespace Nuti {
     
 	class VectorTileRenderer : public std::enable_shared_from_this<VectorTileRenderer> {
     public:
-        VectorTileRenderer(const std::weak_ptr<MapRenderer>& mapRenderer);
+        VectorTileRenderer(const std::weak_ptr<MapRenderer>& mapRenderer, bool useFBO, bool useDepth, bool useStencil);
         virtual ~VectorTileRenderer();
     
         void setLabelOrder(int labelOrder);
@@ -42,16 +42,20 @@ namespace Nuti {
         void onSurfaceDestroyed();
     
         void setBackgroundColor(const Color& color);
-        void setBackgroundPattern(const std::shared_ptr<VT::BitmapPattern>& pattern);
+        void setBackgroundPattern(const std::shared_ptr<const VT::BitmapPattern>& pattern);
         bool cullLabels(const ViewState& viewState);
-        bool refreshTiles(const std::map<VT::TileId, std::shared_ptr<VT::Tile> >& tiles);
+        bool refreshTiles(const std::map<VT::TileId, std::shared_ptr<const VT::Tile> >& tiles);
     
     private:
         std::weak_ptr<MapRenderer> _mapRenderer;
         std::shared_ptr<VT::GLTileRenderer> _glRenderer;
+        std::shared_ptr<std::mutex> _glRendererMutex;
+        bool _useFBO;
+        bool _useDepth;
+        bool _useStencil;
         int _labelOrder;
         double _horizontalLayerOffset;
-        std::map<VT::TileId, std::shared_ptr<VT::Tile> > _tiles;
+        std::map<VT::TileId, std::shared_ptr<const VT::Tile> > _tiles;
 
         mutable std::mutex _mutex;
     };

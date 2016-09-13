@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C1CF0611B1308CD001A64AD /* MapListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1CF0601B1308CD001A64AD /* MapListener.swift */; };
+		0C2FE51B1D8850C5007113E1 /* nutibright-v3.zip in Resources */ = {isa = PBXBuildFile; fileRef = 0C2FE51A1D8850C5007113E1 /* nutibright-v3.zip */; };
 		4D301AF81A1E2D4D00F4CCD0 /* Nuti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D301AF71A1E2D4D00F4CCD0 /* Nuti.framework */; };
 		4D79D1EB1A1A756F000709E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D79D1EA1A1A756F000709E8 /* UIKit.framework */; };
 		4D79D1ED1A1A758B000709E8 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D79D1EC1A1A758B000709E8 /* GLKit.framework */; };
@@ -17,7 +18,6 @@
 		4D79D1FC1A1A782E000709E8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D79D1FB1A1A782E000709E8 /* libz.dylib */; };
 		4D79D1FF1A1A7EED000709E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D79D1FD1A1A7CCE000709E8 /* Main.storyboard */; };
 		4D79D2021A1A8083000709E8 /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D79D2011A1A8083000709E8 /* marker.png */; };
-		4D79D2041A1A8089000709E8 /* osmbright.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4D79D2031A1A8089000709E8 /* osmbright.zip */; };
 		4DB60F4B1A1A6C1500A6AF18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB60F4A1A1A6C1500A6AF18 /* AppDelegate.swift */; };
 		4DB60F4D1A1A6C1500A6AF18 /* MyMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB60F4C1A1A6C1500A6AF18 /* MyMapViewController.swift */; };
 		4DB60F521A1A6C1500A6AF18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DB60F511A1A6C1500A6AF18 /* Images.xcassets */; };
@@ -26,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		0C1CF0601B1308CD001A64AD /* MapListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapListener.swift; sourceTree = "<group>"; };
+		0C2FE51A1D8850C5007113E1 /* nutibright-v3.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "nutibright-v3.zip"; sourceTree = "<group>"; };
 		4D301AF71A1E2D4D00F4CCD0 /* Nuti.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuti.framework; path = ../../hellomap3/Nuti.framework; sourceTree = "<group>"; };
 		4D498DAA1A1A82200062BD5C /* hellomap3swift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "hellomap3swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D79D1EA1A1A756F000709E8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -38,7 +39,6 @@
 		4D79D1FB1A1A782E000709E8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		4D79D1FD1A1A7CCE000709E8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4D79D2011A1A8083000709E8 /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
-		4D79D2031A1A8089000709E8 /* osmbright.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = osmbright.zip; sourceTree = "<group>"; };
 		4DB60F451A1A6C1500A6AF18 /* hellomap3swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hellomap3swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB60F491A1A6C1500A6AF18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DB60F4A1A1A6C1500A6AF18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		4DC42AAF1B622F810022CA0C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				4D79D2031A1A8089000709E8 /* osmbright.zip */,
+				0C2FE51A1D8850C5007113E1 /* nutibright-v3.zip */,
 				4D79D2011A1A8083000709E8 /* marker.png */,
 			);
 			name = Assets;
@@ -159,7 +159,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Nutiteq;
 				TargetAttributes = {
 					4DB60F441A1A6C1500A6AF18 = {
@@ -190,8 +190,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C2FE51B1D8850C5007113E1 /* nutibright-v3.zip in Resources */,
 				4D79D1FF1A1A7EED000709E8 /* Main.storyboard in Resources */,
-				4D79D2041A1A8089000709E8 /* osmbright.zip in Resources */,
 				4DB60F521A1A6C1500A6AF18 /* Images.xcassets in Resources */,
 				4D79D2021A1A8083000709E8 /* marker.png in Resources */,
 			);
@@ -234,6 +234,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -309,6 +310,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nutiteq.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "hellomap3swift/hellomap3swift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -331,6 +333,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nutiteq.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "hellomap3swift/hellomap3swift-Bridging-Header.h";
 			};

@@ -7,6 +7,7 @@
 #ifndef _NUTI_VT_FONTMANAGER_H_
 #define _NUTI_VT_FONTMANAGER_H_
 
+#include "Color.h"
 #include "Font.h"
 
 #include <memory>
@@ -18,16 +19,16 @@ namespace Nuti { namespace VT {
 	public:
 		struct Parameters {
 			const float size;
-			const unsigned int color;
+			const Color color;
 			const float haloSize;
-			const unsigned int haloColor;
+			const Color haloColor;
 			const std::shared_ptr<Font> baseFont;
 
-			Parameters(float size, unsigned int color, float haloSize, unsigned int haloColor, const std::shared_ptr<Font>& baseFont) : size(size), color(color), haloSize(haloSize), haloColor(haloColor), baseFont(baseFont) { }
+			explicit Parameters(float size, const Color& color, float haloSize, const Color& haloColor, std::shared_ptr<Font> baseFont) : size(size), color(color), haloSize(haloSize), haloColor(haloColor), baseFont(std::move(baseFont)) { }
 		};
 
-		FontManager();
-		~FontManager();
+		explicit FontManager(int maxGlyphMapWidth, int maxGlyphMapHeight);
+		virtual ~FontManager();
 
 		void loadFontData(const std::vector<unsigned char>& data);
 		std::shared_ptr<Font> getFont(const std::string& name, const Parameters& parameters) const;

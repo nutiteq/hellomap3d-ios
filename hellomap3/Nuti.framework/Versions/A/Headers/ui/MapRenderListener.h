@@ -23,7 +23,7 @@ namespace Nuti {
          * Listener method that is called when the map has been rendered.
          * @param mapBitmap rendered map as bitmap.
          */
-        virtual void onMapRendered(const std::shared_ptr<Bitmap>& mapBitmap) = 0;
+        virtual void onMapRendered(const std::shared_ptr<Bitmap>& mapBitmap) { }
     };
     
 }

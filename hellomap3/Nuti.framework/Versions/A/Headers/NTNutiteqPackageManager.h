@@ -25,6 +25,12 @@ extern "C" {
 __attribute__ ((visibility("default"))) @interface NTNutiteqPackageManager : NTPackageManager
 -(void*)getCptr;
 -(id)initWithCptr: (void*)cptr swigOwnCObject: (BOOL)ownCObject;
+
+/**
+ * Creates a polymorphic instance of the given native object. This is used internally by the SDK.
+ */
++(NTNutiteqPackageManager*)swigCreatePolymorphicInstance:(void*)cPtr swigOwnCObject:(BOOL)cMemoryOwn;
+
 /**
  * Constructs a NutiteqPackageManager object, given application context and data folder.<br>
  * The data folder must exist before creating a new package manager and it is assumed to be persistent.<br>
@@ -33,6 +39,16 @@ __attribute__ ((visibility("default"))) @interface NTNutiteqPackageManager : NTP
  * @param dataFolder The folder where downloaded packages are kept. It must exist and must be writable.
  */
 -(id)initWithSource: (NSString*)source dataFolder: (NSString*)dataFolder;
+/**
+ * Returns the actual class name of this object. This is used internally by the SDK.<br>
+ * @return The class name of this object.
+ */
+-(NSString*)swigGetClassName;
+/**
+ * Returns the pointer to the connected director object. This is used internally by the SDK.<br>
+ * @return The pointer to the connected director object or null if director is not connected.
+ */
+-(void *)swigGetDirectorObject;
 
 -(void)dealloc;
 

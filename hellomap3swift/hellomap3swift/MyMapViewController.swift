@@ -36,7 +36,7 @@ class MyMapViewController: GLKViewController {
 		mapView.setRotation(0, durationSeconds:0)
 		
 		// Create online vector tile layer, use style asset embedded in the project
-		let vectorTileLayer = NTNutiteqOnlineVectorTileLayer(styleAssetName:"osmbright.zip")
+		let vectorTileLayer = NTNutiteqOnlineVectorTileLayer(styleAssetName:"nutibright-v3.zip")
 		
 		// Add vector tile layer
 		mapView.getLayers().add(vectorTileLayer)

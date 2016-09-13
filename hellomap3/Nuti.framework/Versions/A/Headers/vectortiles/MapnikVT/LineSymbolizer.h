@@ -12,16 +12,18 @@
 namespace Nuti { namespace MapnikVT {
 	class LineSymbolizer : public GeometrySymbolizer {
 	public:
-		LineSymbolizer(const std::shared_ptr<Mapnik::Logger>& logger, const std::shared_ptr<Mapnik::Map>& map) : GeometrySymbolizer(logger, map) { }
+        explicit LineSymbolizer(std::shared_ptr<Logger> logger) : GeometrySymbolizer(std::move(logger)) { }
 
-		virtual void setParameter(const std::string& name, const std::string& value) override;
-
-		virtual void build(const Feature& feature, const TileSymbolizerContext& symbolizerContext, const Mapnik::ExpressionContext& exprContext, VT::TileLayerBuilder& layerBuilder) override;
+		virtual void build(const FeatureCollection& featureCollection, const SymbolizerContext& symbolizerContext, const ExpressionContext& exprContext, VT::TileLayerBuilder& layerBuilder) override;
 
 	protected:
-		static std::shared_ptr<VT::BitmapPattern> createDashBitmapPattern(const std::vector<float>& strokeDashArray);
+        virtual void bindParameter(const std::string& name, const std::string& value) override;
 
-		unsigned int _stroke = 0xff000000;
+        static std::shared_ptr<VT::BitmapPattern> createDashBitmapPattern(const std::vector<float>& strokeDashArray);
+
+		enum { MIN_SUPERSAMPLING_FACTOR = 2, MAX_SUPERSAMPLING_FACTOR = 16 };
+
+		VT::Color _stroke = VT::Color(0xff000000);
 		float _strokeWidth = 1.0f;
 		float _strokeOpacity = 1.0f;
 		std::string _strokeLinejoin = "miter";

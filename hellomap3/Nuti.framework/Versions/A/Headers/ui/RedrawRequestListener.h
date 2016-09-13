@@ -19,7 +19,7 @@ namespace Nuti {
         /**
          * Called when the screen needs to be redrawn.
          */
-        virtual void onRedrawRequested() const = 0;
+        virtual void onRedrawRequested() const { }
     };
     
 }

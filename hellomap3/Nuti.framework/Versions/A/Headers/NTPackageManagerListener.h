@@ -67,9 +67,17 @@ __attribute__ ((visibility("default"))) @interface NTPackageManagerListener : NS
  */
 -(void)onPackageListUpdated;
 /**
+ * Listener method that is called when server package list has been successfully updated.
+ */
+-(void)onPackageListUpdatedSwigExplicitNTPackageManagerListener;
+/**
  * Listener method that is called when server package could not be downloaded or updated.
  */
 -(void)onPackageListFailed;
+/**
+ * Listener method that is called when server package could not be downloaded or updated.
+ */
+-(void)onPackageListFailedSwigExplicitNTPackageManagerListener;
 /**
  * Listener method that is called when a package status has changed.<br>
  * Information about the status of the package (current action, progress, etc) is explictly given with this event.<br>
@@ -79,11 +87,25 @@ __attribute__ ((visibility("default"))) @interface NTPackageManagerListener : NS
  */
 -(void)onPackageStatusChanged: (NSString*)arg1 version: (int)version status: (NTPackageStatus*)status;
 /**
+ * Listener method that is called when a package status has changed.<br>
+ * Information about the status of the package (current action, progress, etc) is explictly given with this event.<br>
+ * @param id The id of the package whose status has changed<br>
+ * @param version The version of the package whose status has changed<br>
+ * @param status The current status of the package
+ */
+-(void)onPackageStatusChangedSwigExplicitNTPackageManagerListener: (NSString*)arg1 version: (int)version status: (NTPackageStatus*)status;
+/**
  * Listener method that is called when a package download has been cancelled.<br>
  * @param id The id of the package that has been cancelled<br>
  * @param version The version of the package that has been cancelled
  */
 -(void)onPackageCancelled: (NSString*)arg1 version: (int)version;
+/**
+ * Listener method that is called when a package download has been cancelled.<br>
+ * @param id The id of the package that has been cancelled<br>
+ * @param version The version of the package that has been cancelled
+ */
+-(void)onPackageCancelledSwigExplicitNTPackageManagerListener: (NSString*)arg1 version: (int)version;
 /**
  * Listener method that is called when a package is successfully updated (downloaded or removed).<br>
  * @param id The id of the package that has been updated<br>
@@ -91,12 +113,25 @@ __attribute__ ((visibility("default"))) @interface NTPackageManagerListener : NS
  */
 -(void)onPackageUpdated: (NSString*)arg1 version: (int)version;
 /**
+ * Listener method that is called when a package is successfully updated (downloaded or removed).<br>
+ * @param id The id of the package that has been updated<br>
+ * @param version The version of the package that has been updated
+ */
+-(void)onPackageUpdatedSwigExplicitNTPackageManagerListener: (NSString*)arg1 version: (int)version;
+/**
  * Listener method that is called when updating a package failed (network error, etc).<br>
  * @param id The id of the package that failed<br>
  * @param version The version of the package that failed<br>
  * @param errorType Reason or type of the failure
  */
 -(void)onPackageFailed: (NSString*)arg1 version: (int)version errorType: (enum NTPackageErrorType)errorType;
+/**
+ * Listener method that is called when updating a package failed (network error, etc).<br>
+ * @param id The id of the package that failed<br>
+ * @param version The version of the package that failed<br>
+ * @param errorType Reason or type of the failure
+ */
+-(void)onPackageFailedSwigExplicitNTPackageManagerListener: (NSString*)arg1 version: (int)version errorType: (enum NTPackageErrorType)errorType;
 /**
  * Returns the actual class name of this object. This is used internally by the SDK.<br>
  * @return The class name of this object.

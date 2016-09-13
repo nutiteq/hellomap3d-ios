@@ -50,7 +50,7 @@ namespace Nuti {
         bool _sort3D;
     
         bool _pendingWakeup;
-        std::chrono::time_point<std::chrono::steady_clock> _wakeupTime;
+        std::chrono::steady_clock::time_point _wakeupTime;
         
         std::weak_ptr<MapRenderer> _mapRenderer;
         std::shared_ptr<BillboardPlacementWorker> _worker;

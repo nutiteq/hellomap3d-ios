@@ -1,6 +1,5 @@
-#ifndef cglib_base_h
-
-#define cglib_base_h
+#ifndef _CGLIB_BASE_H
+#define _CGLIB_BASE_H
 
 #include <cstdlib>
 #include <cstddef>
@@ -78,6 +77,26 @@ namespace cglib
 		static inline double asin(double val) { return std::asin(val);}
 		static inline double atan2(double val1, double val2) { return std::atan2(val1, val2); }
 		static inline bool eq(double val1, double val2) { return val1 == val2; }
+	};
+	
+	template <size_t N>
+		struct for_each_unrolled
+	{
+		template <typename UnaryFunction>
+			for_each_unrolled(UnaryFunction f)
+		{
+			for_each_unrolled<N-1> unroll(f);
+			f(N - 1);
+		}
+	};
+	
+	template <>
+		struct for_each_unrolled<0>
+	{
+		template <typename UnaryFunction>
+			for_each_unrolled(UnaryFunction f)
+		{
+		}
 	};
 
 }

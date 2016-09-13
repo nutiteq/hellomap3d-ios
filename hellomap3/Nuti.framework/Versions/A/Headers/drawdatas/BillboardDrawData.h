@@ -32,7 +32,7 @@ namespace Nuti {
     
         float getAttachAnchorPointX() const;
         float getAttachAnchorPointY() const;
-
+    
         const std::weak_ptr<Billboard>& getBillboard() const;    
         const std::weak_ptr<Billboard>& getBaseBillboard() const;
     
@@ -100,7 +100,7 @@ namespace Nuti {
         
         float _attachAnchorPointX;
         float _attachAnchorPointY;
-  
+    
         std::weak_ptr<Billboard> _billboard;  
         std::weak_ptr<Billboard> _baseBillboard;
     

@@ -17,7 +17,7 @@
 namespace Nuti { namespace VT {
 	class Tile {
 	public:
-		Tile(const TileId& tileId, const std::vector<std::shared_ptr<TileLayer>>& layers) : _tileId(tileId), _layers(layers) { }
+		explicit Tile(const TileId& tileId, std::vector<std::shared_ptr<TileLayer>> layers) : _tileId(tileId), _layers(std::move(layers)) { }
 
 		const TileId& getTileId() const { return _tileId; }
 		const std::vector<std::shared_ptr<TileLayer>>& getLayers() const { return _layers; }
