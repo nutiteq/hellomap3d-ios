@@ -17,13 +17,13 @@
 		AD97A6231D898B4A00B942AC /* nutibright-v3.zip in Resources */ = {isa = PBXBuildFile; fileRef = AD97A6211D898B4A00B942AC /* nutibright-v3.zip */; };
 		AD97A6251D898C3100B942AC /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD97A6241D898C3100B942AC /* GLKit.framework */; };
 		AD97A6271D898C3700B942AC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AD97A6261D898C3700B942AC /* libz.tbd */; };
-		E89D0B4EE9854B895D7D78CE /* Pods_hellomap_cocoapods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587735CE8B5FDB95F3F512E6 /* Pods_hellomap_cocoapods.framework */; };
+		B55750CB6916EB17C1A88E30 /* libPods-hellomap-cocoapods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9789EF5D2462E7723D1504C /* libPods-hellomap-cocoapods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		48C7691E2C2E3EA73EEB76B8 /* Pods-hellomap-cocoapods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hellomap-cocoapods.release.xcconfig"; path = "Pods/Target Support Files/Pods-hellomap-cocoapods/Pods-hellomap-cocoapods.release.xcconfig"; sourceTree = "<group>"; };
-		587735CE8B5FDB95F3F512E6 /* Pods_hellomap_cocoapods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hellomap_cocoapods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DFFD21FB039D6EDE805047E /* Pods-hellomap-cocoapods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hellomap-cocoapods.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hellomap-cocoapods/Pods-hellomap-cocoapods.debug.xcconfig"; sourceTree = "<group>"; };
+		A9789EF5D2462E7723D1504C /* libPods-hellomap-cocoapods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hellomap-cocoapods.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD97A6051D89797500B942AC /* hellomap-cocoapods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hellomap-cocoapods.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD97A6091D89797500B942AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AD97A60B1D89797500B942AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 			files = (
 				AD97A6271D898C3700B942AC /* libz.tbd in Frameworks */,
 				AD97A6251D898C3100B942AC /* GLKit.framework in Frameworks */,
-				E89D0B4EE9854B895D7D78CE /* Pods_hellomap_cocoapods.framework in Frameworks */,
+				B55750CB6916EB17C1A88E30 /* libPods-hellomap-cocoapods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			children = (
 				AD97A6261D898C3700B942AC /* libz.tbd */,
 				AD97A6241D898C3100B942AC /* GLKit.framework */,
-				587735CE8B5FDB95F3F512E6 /* Pods_hellomap_cocoapods.framework */,
+				A9789EF5D2462E7723D1504C /* libPods-hellomap-cocoapods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
