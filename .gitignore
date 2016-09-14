@@ -26,3 +26,7 @@ DerivedData
 # Pods/
 
 #overlays/Nuti.framework
+
+.DS_Store
+
+Pods/
