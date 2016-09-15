@@ -22,7 +22,8 @@
     
     // Set the base projection, that will be used for most MapView, MapEventListener and Options methods
     NTEPSG3857* proj = [[NTEPSG3857 alloc] init];
-    [[mapView getOptions] setBaseProjection:proj]; // EPSG3857 is actually the default base projection, so this is actually not needed
+    // EPSG3857 is actually the default base projection, so this is actually not needed
+    [[mapView getOptions] setBaseProjection:proj];
     
     // General options
     [[mapView getOptions] setRotatable:YES]; // make map rotatable (this is actually the default)
