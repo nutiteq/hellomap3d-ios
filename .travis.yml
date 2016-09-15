@@ -8,4 +8,4 @@ language: objective-c
 env:
    - TEST_DIR=hellomap-cocoapods
 
-script: cd $TEST_DIR && pod install && xcodebuild -workspace $TEST_DIR.xcworkspace -scheme $TEST_DIR -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+script: cd $TEST_DIR && pod install && xcodebuild -workspace $TEST_DIR.xcworkspace -scheme $TEST_DIR -sdk iphonesimulator -arch i386 ONLY_ACTIVE_ARCH=NO
