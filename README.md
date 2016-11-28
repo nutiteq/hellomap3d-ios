@@ -24,5 +24,5 @@ Developing also for Android? [Hellomap3d-Android](https://github.com/nutiteq/hel
 
 #### Podfile
 ```
-pod 'Nutiteq', '= 3.2.1'
+pod 'Nutiteq', '= 3.3.1'
 ```
