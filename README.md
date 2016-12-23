@@ -1,4 +1,10 @@
-Nutiteq HelloMap 3D for iOs
+
+# Update - new major map SDK version available!
+
+Nutiteq joined CARTO in early 2016. We suggest to develop your app using newer **CARTO Mobile Map SDK** version 4.x. It has all same features, plus more. The new and much advanced sample code here: https://github.com/CartoDB/mobile-ios-samples/ and developer Getting Started guidelines can be found from https://carto.com/docs/carto-engine/mobile-sdk/getting-started 
+
+
+Nutiteq HelloMap 3D for iOs (old version)
 ===========================
 
 Here are some simple example apps with Nutiteq Maps SDK 3.x for iOS.
