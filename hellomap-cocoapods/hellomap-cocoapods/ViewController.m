@@ -7,11 +7,20 @@
 //
 
 #import "ViewController.h"
+#import "Locator.h"
+
+@interface ViewController () <LocatorDelegate>
+@property (nonatomic, strong) NTMapView *mapView;
+@end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[Locator sharedLocator] setDelegate:self];
+    [[Locator sharedLocator] startUpdatingLocation];
+    
     
     // GLKViewController-specific parameters for smoother animations
     [self setResumeOnDidBecomeActive: NO];
@@ -19,6 +28,7 @@
     
     // The storyboard has NTMapView connected as a view
     NTMapView* mapView = (NTMapView*) self.view;
+    self.mapView = mapView;
     
     // Set the base projection, that will be used for most MapView, MapEventListener and Options methods
     NTEPSG3857* proj = [[NTEPSG3857 alloc] init];
@@ -63,6 +73,16 @@
     
     // Add the previous vector layer to the map
     [[mapView getLayers] add:vectorLayer];
+}
+
+
+- (void)locator:(Locator*) locator didUpdateLocationTo:(CLLocation *) location
+{
+    CLLocationCoordinate2D coord = location.coordinate;
+    
+    NTEPSG3857* proj = [[NTEPSG3857 alloc] init];
+    
+    [self.mapView setFocusPos:[proj fromWgs84:[[NTMapPos alloc] initWithX:coord.longitude y:coord.latitude]]  durationSeconds:0];
 }
 
 @end
